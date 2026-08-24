@@ -8,18 +8,18 @@
 <meta name="theme-color" content="#002f2f">
 <link rel="icon" type="image/webp" href="/assets/kliawota-logo.webp">
 <style>
-:root{--cream:#f4efe5;--teal:#70d2c5;--line:rgba(244,239,229,.42);--pad:clamp(18px,2.5vw,40px);--blend:0;--transition:0;--image-x:0px;--image-y:0px;--image-scale:1.035;--gradient-x:50%;--gradient-y:42%;--gradient-angle:132deg;--gradient-shift-x:0px;--gradient-shift-y:0px;--tide-y:50vh;--tide-tilt:0deg}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Arial,Helvetica,sans-serif;color:var(--cream);background:#002f2f;-webkit-font-smoothing:antialiased}.background{position:fixed;inset:-4%;z-index:0;pointer-events:none;will-change:opacity,transform}.background-image{background:url('/assets/desktop-bg-teal-caustics.webp') center/cover no-repeat;opacity:calc(1 - var(--blend));transform:translate3d(var(--image-x),var(--image-y),0) scale(var(--image-scale));filter:saturate(calc(1 - var(--blend)*.10)) brightness(calc(1 - var(--blend)*.06))}.background-gradient{background:radial-gradient(circle at var(--gradient-x) var(--gradient-y),rgba(112,210,197,.44) 0,rgba(41,142,134,.24) 24%,rgba(0,68,66,.08) 46%,transparent 66%),linear-gradient(var(--gradient-angle),#001f20 0%,#004d4b 31%,#08756e 57%,#023b3b 78%,#001d1e 100%);opacity:var(--blend);transform:translate3d(var(--gradient-shift-x),var(--gradient-shift-y),0) scale(1.055)}.background-tide{inset:-35% -10%;opacity:var(--transition);transform:translate3d(0,var(--tide-y),0) rotate(var(--tide-tilt));background:linear-gradient(180deg,transparent 0%,rgba(144,239,226,.04) 28%,rgba(195,255,244,.17) 48%,rgba(114,218,205,.07) 61%,transparent 100%);filter:blur(26px);mix-blend-mode:screen}.shade{position:fixed;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,22,22,.47),rgba(0,22,22,.08) 55%,rgba(0,22,22,.28));pointer-events:none}.card{position:relative;z-index:2;height:100dvh;min-height:100svh;padding:max(var(--pad),env(safe-area-inset-top)) max(var(--pad),env(safe-area-inset-right)) max(var(--pad),env(safe-area-inset-bottom)) max(var(--pad),env(safe-area-inset-left));display:grid;grid-template-rows:auto 1fr auto;gap:clamp(12px,2vh,26px)}
+:root{--cream:#f4efe5;--teal:#70d2c5;--line:rgba(244,239,229,.42);--pad:clamp(18px,2.5vw,40px);--gradient-opacity:0}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Arial,Helvetica,sans-serif;color:var(--cream);background:#002f2f;-webkit-font-smoothing:antialiased}.background-image{position:fixed;inset:0;z-index:0;background:url('/assets/desktop-bg-teal-caustics.webp') center/cover no-repeat;pointer-events:none}.gradient-bed{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:var(--gradient-opacity);background:radial-gradient(circle at 68% 31%,rgba(91,190,177,.52) 0%,rgba(25,126,118,.26) 27%,rgba(0,73,71,.06) 51%,transparent 69%),linear-gradient(132deg,#001f20 0%,#004d4b 31%,#08756e 57%,#023b3b 78%,#001d1e 100%)}.pixel-field{position:fixed;inset:0;z-index:2;display:grid;grid-template-columns:repeat(var(--cols),1fr);grid-template-rows:repeat(var(--rows),1fr);pointer-events:none;overflow:hidden}.pixel{opacity:0;transform:scale(.78);transform-origin:center;will-change:opacity,transform;box-shadow:0 0 0 .5px rgba(255,255,255,.018) inset}.shade{position:fixed;inset:0;z-index:3;background:linear-gradient(90deg,rgba(0,22,22,.47),rgba(0,22,22,.08) 55%,rgba(0,22,22,.28));pointer-events:none}.card{position:relative;z-index:4;height:100dvh;min-height:100svh;padding:max(var(--pad),env(safe-area-inset-top)) max(var(--pad),env(safe-area-inset-right)) max(var(--pad),env(safe-area-inset-bottom)) max(var(--pad),env(safe-area-inset-left));display:grid;grid-template-rows:auto 1fr auto;gap:clamp(12px,2vh,26px)}
 .top,.bottom{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px}.mark{width:clamp(52px,5.4vw,78px);aspect-ratio:1;overflow:hidden;border-radius:50%;position:relative;flex:0 0 auto}.mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.58)}.brandtext strong{display:block;font-size:clamp(15px,1.4vw,23px);letter-spacing:-.03em;text-transform:uppercase}.micro,.kicker,.downloads a,.contact a,.contact span{font-family:"Courier New",monospace;text-transform:uppercase;letter-spacing:.08em}.micro{font-size:clamp(8px,.7vw,11px);opacity:.84;margin-top:4px}.place{text-align:right}.hero{align-self:center;max-width:min(950px,76vw);padding-left:clamp(0px,2vw,26px)}.kicker{margin:0 0 clamp(12px,2vh,22px);font-size:clamp(9px,.8vw,12px);color:var(--teal);font-weight:700}.hero h1{margin:0;font-size:clamp(58px,9.7vw,158px);line-height:.82;letter-spacing:-.075em;text-transform:uppercase;font-weight:900;text-wrap:balance}.hero p{margin:clamp(18px,3vh,34px) 0 0;max-width:680px;font-size:clamp(16px,1.55vw,25px);line-height:1.18;letter-spacing:-.025em}.bottom{border-top:1px solid var(--line);padding-top:clamp(12px,1.7vh,20px);align-items:flex-end}.downloads{display:flex;flex-wrap:wrap;gap:8px 18px;max-width:64%}.downloads:before{content:"DOWNLOADS";width:100%;font-family:"Courier New",monospace;font-size:9px;letter-spacing:.11em;color:var(--teal)}a{color:inherit;text-decoration:none}.downloads a{font-size:clamp(9px,.76vw,12px);border-bottom:1px solid rgba(244,239,229,.35);padding-bottom:3px}.downloads a:hover,.contact a:hover{color:var(--teal);border-color:var(--teal)}.contact-wrap{display:flex;align-items:flex-end;justify-content:flex-end;gap:clamp(10px,1.2vw,16px)}.contact-logo{width:clamp(58px,5.3vw,84px);height:auto;display:block;flex:0 0 auto}.contact{text-align:right;display:grid;gap:4px}.contact span,.contact a{font-size:clamp(9px,.75vw,11px)}.contact .name{font-weight:700;color:var(--teal)}
 @media (max-width:760px) and (orientation:portrait){.background-image{background-position:44% center}.card{gap:12px}.top{align-items:center}.mark{width:54px}.brandtext .micro{display:none}.hero{max-width:100%;padding:0;align-self:center}.hero h1{font-size:clamp(56px,18vw,96px);line-height:.84}.hero p{font-size:clamp(15px,4vw,20px);max-width:34ch}.bottom{align-items:flex-end;gap:14px}.downloads{max-width:53%;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}.downloads:before{grid-column:1/-1}.downloads a{font-size:9px;line-height:1.15}.contact-wrap{gap:8px}.contact-logo{width:50px}.contact a,.contact span{font-size:8.2px}}
 @media (max-height:520px) and (orientation:landscape){.card{grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr);grid-template-rows:auto 1fr;gap:12px 28px}.top{grid-column:1/-1}.hero{grid-column:1;grid-row:2;align-self:center;max-width:100%;padding:0}.hero h1{font-size:clamp(48px,10vw,98px)}.hero p{font-size:clamp(13px,1.7vw,18px);margin-top:12px;max-width:45ch}.kicker{margin-bottom:10px}.bottom{grid-column:2;grid-row:2;border-top:0;border-left:1px solid var(--line);padding:0 0 0 24px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.downloads{max-width:100%;display:grid;grid-template-columns:1fr 1fr}.contact-wrap{margin-top:18px;justify-content:flex-start;align-items:center}.contact{text-align:left}.contact-logo{width:48px}}
-@media (min-aspect-ratio:2/1){.hero{max-width:68vw}.hero h1{font-size:min(8.5vw,145px)}}@media (prefers-reduced-motion:no-preference){.downloads a,.contact a{transition:color .16s ease,border-color .16s ease}}@media (prefers-reduced-motion:reduce){.background-gradient,.background-tide{display:none}.background-image{opacity:1;transform:none}}
+@media (min-aspect-ratio:2/1){.hero{max-width:68vw}.hero h1{font-size:min(8.5vw,145px)}}@media (prefers-reduced-motion:no-preference){.downloads a,.contact a{transition:color .16s ease,border-color .16s ease}}@media (prefers-reduced-motion:reduce){.pixel-field,.gradient-bed{display:none}}
 </style>
 </head>
 <body>
-<div class="background background-image" aria-hidden="true"></div>
-<div class="background background-gradient" aria-hidden="true"></div>
-<div class="background background-tide" aria-hidden="true"></div>
+<div class="background-image" aria-hidden="true"></div>
+<div class="gradient-bed" aria-hidden="true"></div>
+<div class="pixel-field" aria-hidden="true"></div>
 <div class="shade" aria-hidden="true"></div>
 <main class="card">
 <header class="top"><div class="brand"><div class="mark" aria-hidden="true"><img src="/assets/kliawota-logo.webp" alt=""></div><div class="brandtext"><strong>Kliawota Disaen</strong><div class="micro">Web · Print · Events</div></div></div><div class="micro place">Port Vila · Vanuatu</div></header>
@@ -29,49 +29,95 @@
 <script>
 (() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   const root=document.documentElement;
-  let phase=0,target=0,velocity=0,touchY=null,frame=0;
-  const TAU=Math.PI*2;
+  const field=document.querySelector('.pixel-field');
   const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
+  const smoothstep=(a,b,x)=>{x=clamp((x-a)/(b-a),0,1);return x*x*(3-2*x)};
+  const mix=(a,b,t)=>a+(b-a)*t;
+  const mixColor=(a,b,t)=>a.map((v,i)=>Math.round(mix(v,b[i],t)));
+  const rgb=c=>`rgb(${c[0]} ${c[1]} ${c[2]})`;
+  const hash=(x,y)=>{const n=Math.sin(x*127.1+y*311.7)*43758.5453;return n-Math.floor(n)};
+
+  let cols=0,rows=0,tiles=[];
+  let phase=0,target=0,velocity=0,touchY=null,frame=0;
+
+  function gradientColor(x,y){
+    const top=[0,31,32], mid=[0,77,75], bright=[8,117,110], bottom=[0,29,30], glow=[74,168,156];
+    let base;
+    if(y<.34) base=mixColor(top,mid,y/.34);
+    else if(y<.62) base=mixColor(mid,bright,(y-.34)/.28);
+    else base=mixColor(bright,bottom,(y-.62)/.38);
+    const dx=x-.68,dy=y-.31;
+    const light=Math.exp(-(dx*dx*4.3+dy*dy*5.4))*.46;
+    base=mixColor(base,glow,light);
+    const diagonal=clamp((x*.42+(1-y)*.58),0,1);
+    return mixColor(base,[0,61,60],diagonal*.12);
+  }
+
+  function buildTiles(){
+    const portrait=window.innerWidth<760&&window.innerHeight>window.innerWidth;
+    const nextCols=portrait?7:12;
+    const nextRows=portrait?11:7;
+    if(nextCols===cols&&nextRows===rows) return;
+    cols=nextCols;rows=nextRows;tiles=[];field.innerHTML='';
+    field.style.setProperty('--cols',cols);
+    field.style.setProperty('--rows',rows);
+    for(let y=0;y<rows;y++){
+      for(let x=0;x<cols;x++){
+        const el=document.createElement('div');
+        el.className='pixel';
+        const nx=(x+.5)/cols,ny=(y+.5)/rows;
+        el.style.backgroundColor=rgb(gradientColor(nx,ny));
+        field.appendChild(el);
+        const noise=hash(x+3,y+11);
+        const sweep=(x/(Math.max(1,cols-1)))*.42+(y/(Math.max(1,rows-1)))*.33;
+        const threshold=clamp(.08+sweep*.62+noise*.28,0,1);
+        tiles.push({el,threshold,noise});
+      }
+    }
+    draw();
+  }
+
   function input(delta){
-    velocity=clamp(velocity+clamp(delta,-180,180)*0.00135,-0.32,0.32);
-    target+=clamp(delta,-180,180)*0.0042;
+    const d=clamp(delta,-180,180);
+    velocity=clamp(velocity+d*.00115,-.24,.24);
+    target+=d*.0037;
     if(!frame) frame=requestAnimationFrame(render);
   }
-  function render(){
-    phase+=(target-phase)*0.105+velocity;
-    velocity*=0.78;
-    if(Math.abs(target-phase)<0.0004) phase=target;
-    const blend=(1-Math.cos(phase))*0.5;
-    const transition=clamp(4*blend*(1-blend),0,1);
-    const imageX=Math.sin(phase)*14;
-    const imageY=Math.sin(phase*0.5)*8;
-    const imageScale=1.035+transition*0.022;
-    const gx=50+Math.sin(phase*0.72)*21;
-    const gy=44+Math.cos(phase*0.58)*16;
-    const angle=132+Math.sin(phase*0.43)*24;
-    const gradientX=Math.sin(phase*0.61)*10;
-    const gradientY=Math.cos(phase*0.49)*7;
-    const cycle=((phase%TAU)+TAU)%TAU;
-    const tideY=-32+(cycle/TAU)*164;
-    const tideTilt=Math.sin(phase*0.5)*7;
-    root.style.setProperty('--blend',blend.toFixed(4));
-    root.style.setProperty('--transition',transition.toFixed(4));
-    root.style.setProperty('--image-x',`${imageX.toFixed(2)}px`);
-    root.style.setProperty('--image-y',`${imageY.toFixed(2)}px`);
-    root.style.setProperty('--image-scale',imageScale.toFixed(4));
-    root.style.setProperty('--gradient-x',`${gx.toFixed(2)}%`);
-    root.style.setProperty('--gradient-y',`${gy.toFixed(2)}%`);
-    root.style.setProperty('--gradient-angle',`${angle.toFixed(2)}deg`);
-    root.style.setProperty('--gradient-shift-x',`${gradientX.toFixed(2)}px`);
-    root.style.setProperty('--gradient-shift-y',`${gradientY.toFixed(2)}px`);
-    root.style.setProperty('--tide-y',`${tideY.toFixed(2)}vh`);
-    root.style.setProperty('--tide-tilt',`${tideTilt.toFixed(2)}deg`);
-    if(Math.abs(target-phase)>0.0005||Math.abs(velocity)>0.0005){frame=requestAnimationFrame(render)}else{frame=0}
+
+  function getBlend(){
+    return (1-Math.cos(phase))*0.5;
   }
+
+  function draw(){
+    const blend=getBlend();
+    const finalGradient=smoothstep(.86,1,blend);
+    root.style.setProperty('--gradient-opacity',finalGradient.toFixed(4));
+    for(const tile of tiles){
+      const visible=smoothstep(tile.threshold-.09,tile.threshold+.055,blend);
+      const tileFade=1-finalGradient*.84;
+      const opacity=visible*tileFade;
+      const scale=.78+.22*smoothstep(0,1,visible);
+      const lift=(1-visible)*(6+tile.noise*10);
+      tile.el.style.opacity=opacity.toFixed(3);
+      tile.el.style.transform=`translate3d(0,${lift.toFixed(2)}px,0) scale(${scale.toFixed(3)})`;
+    }
+  }
+
+  function render(){
+    phase+=(target-phase)*.115+velocity;
+    velocity*=.76;
+    if(Math.abs(target-phase)<.00035) phase=target;
+    draw();
+    if(Math.abs(target-phase)>.00045||Math.abs(velocity)>.00045){frame=requestAnimationFrame(render)}else{frame=0}
+  }
+
+  buildTiles();
+  window.addEventListener('resize',buildTiles,{passive:true});
   window.addEventListener('wheel',e=>input(e.deltaY),{passive:true});
   window.addEventListener('touchstart',e=>{touchY=e.touches[0]?.clientY??null},{passive:true});
-  window.addEventListener('touchmove',e=>{const y=e.touches[0]?.clientY;if(touchY===null||y==null)return;input((touchY-y)*2.15);touchY=y},{passive:true});
+  window.addEventListener('touchmove',e=>{const y=e.touches[0]?.clientY;if(touchY===null||y==null)return;input((touchY-y)*2.0);touchY=y},{passive:true});
   window.addEventListener('touchend',()=>{touchY=null},{passive:true});
 })();
 </script>
