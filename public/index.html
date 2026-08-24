@@ -38,9 +38,10 @@
   const mixColor=(a,b,t)=>a.map((v,i)=>Math.round(mix(v,b[i],t)));
   const rgb=c=>`rgb(${c[0]} ${c[1]} ${c[2]})`;
   const hash=(x,y)=>{const n=Math.sin(x*127.1+y*311.7)*43758.5453;return n-Math.floor(n)};
+  const EFFORT_PER_STATE=3200;
 
   let cols=0,rows=0,tiles=[];
-  let phase=0,target=0,velocity=0,touchY=null,frame=0;
+  let position=0,target=0,touchY=null,frame=0;
 
   function gradientColor(x,y){
     const top=[0,31,32], mid=[0,77,75], bright=[8,117,110], bottom=[0,29,30], glow=[74,168,156];
@@ -71,8 +72,8 @@
         el.style.backgroundColor=rgb(gradientColor(nx,ny));
         field.appendChild(el);
         const noise=hash(x+3,y+11);
-        const sweep=(x/(Math.max(1,cols-1)))*.42+(y/(Math.max(1,rows-1)))*.33;
-        const threshold=clamp(.08+sweep*.62+noise*.28,0,1);
+        const sweep=(x/Math.max(1,cols-1))*.42+(y/Math.max(1,rows-1))*.33;
+        const threshold=clamp(.18+sweep*.58+noise*.22,0,1);
         tiles.push({el,threshold,noise});
       }
     }
@@ -80,44 +81,44 @@
   }
 
   function input(delta){
-    const d=clamp(delta,-180,180);
-    velocity=clamp(velocity+d*.00115,-.24,.24);
-    target+=d*.0037;
+    const d=clamp(delta,-160,160);
+    target+=d/EFFORT_PER_STATE;
     if(!frame) frame=requestAnimationFrame(render);
   }
 
   function getBlend(){
-    return (1-Math.cos(phase))*0.5;
+    const cycle=((position%2)+2)%2;
+    const raw=cycle<=1?cycle:2-cycle;
+    return smoothstep(.18,.92,raw);
   }
 
   function draw(){
     const blend=getBlend();
-    const finalGradient=smoothstep(.86,1,blend);
+    const finalGradient=smoothstep(.78,.995,blend);
     root.style.setProperty('--gradient-opacity',finalGradient.toFixed(4));
     for(const tile of tiles){
-      const visible=smoothstep(tile.threshold-.09,tile.threshold+.055,blend);
-      const tileFade=1-finalGradient*.84;
+      const visible=smoothstep(tile.threshold-.12,tile.threshold+.10,blend);
+      const tileFade=1-finalGradient*.92;
       const opacity=visible*tileFade;
-      const scale=.78+.22*smoothstep(0,1,visible);
-      const lift=(1-visible)*(6+tile.noise*10);
+      const scale=.82+.18*visible;
+      const lift=(1-visible)*(5+tile.noise*9);
       tile.el.style.opacity=opacity.toFixed(3);
       tile.el.style.transform=`translate3d(0,${lift.toFixed(2)}px,0) scale(${scale.toFixed(3)})`;
     }
   }
 
   function render(){
-    phase+=(target-phase)*.115+velocity;
-    velocity*=.76;
-    if(Math.abs(target-phase)<.00035) phase=target;
+    position+=(target-position)*.075;
+    if(Math.abs(target-position)<.0002) position=target;
     draw();
-    if(Math.abs(target-phase)>.00045||Math.abs(velocity)>.00045){frame=requestAnimationFrame(render)}else{frame=0}
+    if(Math.abs(target-position)>.0003){frame=requestAnimationFrame(render)}else{frame=0}
   }
 
   buildTiles();
   window.addEventListener('resize',buildTiles,{passive:true});
   window.addEventListener('wheel',e=>input(e.deltaY),{passive:true});
   window.addEventListener('touchstart',e=>{touchY=e.touches[0]?.clientY??null},{passive:true});
-  window.addEventListener('touchmove',e=>{const y=e.touches[0]?.clientY;if(touchY===null||y==null)return;input((touchY-y)*2.0);touchY=y},{passive:true});
+  window.addEventListener('touchmove',e=>{const y=e.touches[0]?.clientY;if(touchY===null||y==null)return;input((touchY-y)*1.35);touchY=y},{passive:true});
   window.addEventListener('touchend',()=>{touchY=null},{passive:true});
 })();
 </script>
