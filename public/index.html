@@ -89,21 +89,19 @@
   function getCycleState(){
     const cycle=((position%2)+2)%2;
     const raw=cycle<=1?cycle:2-cycle;
-    const reveal=smoothstep(.18,.72,raw);
-    const solidify=smoothstep(.72,.90,raw);
-    const lockMix=smoothstep(.90,.96,raw);
-    const locked=raw>=.96;
-    return {reveal,solidify,lockMix,locked};
+    const locked=raw>=.80;
+    const blend=locked?1:smoothstep(.18,.80,raw);
+    return {blend,locked};
   }
 
   function draw(){
-    const {reveal,solidify,lockMix,locked}=getCycleState();
-    const finalGradient=locked?1:solidify*.58+lockMix*.42;
+    const {blend,locked}=getCycleState();
+    const finalGradient=locked?1:smoothstep(.78,.995,blend);
     root.style.setProperty('--gradient-opacity',finalGradient.toFixed(4));
     for(const tile of tiles){
-      const visible=smoothstep(tile.threshold-.12,tile.threshold+.10,reveal);
-      const solidityBoost=.72+solidify*.28;
-      const opacity=locked?0:visible*solidityBoost;
+      const visible=smoothstep(tile.threshold-.12,tile.threshold+.10,blend);
+      const tileFade=locked?0:1-finalGradient*.92;
+      const opacity=visible*tileFade;
       const scale=.82+.18*visible;
       const lift=(1-visible)*(5+tile.noise*9);
       tile.el.style.opacity=opacity.toFixed(3);
