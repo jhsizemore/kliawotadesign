@@ -8,8 +8,8 @@
 <meta name="theme-color" content="#002f2f">
 <link rel="icon" type="image/webp" href="/assets/kliawota-logo.webp">
 <style>
-:root{--cream:#f4efe5;--teal:#70d2c5;--line:rgba(244,239,229,.42);--pad:clamp(18px,2.5vw,40px)}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Arial,Helvetica,sans-serif;color:var(--cream);background:#002f2f url('/assets/desktop-bg-teal-caustics.webp') center/cover no-repeat;-webkit-font-smoothing:antialiased}body:after{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rgba(0,22,22,.45),rgba(0,22,22,.1) 55%,rgba(0,22,22,.28));pointer-events:none}.card{position:relative;z-index:1;height:100dvh;min-height:100svh;padding:max(var(--pad),env(safe-area-inset-top)) max(var(--pad),env(safe-area-inset-right)) max(var(--pad),env(safe-area-inset-bottom)) max(var(--pad),env(safe-area-inset-left));display:grid;grid-template-rows:auto 1fr auto;gap:clamp(12px,2vh,26px)}
+:root{--cream:#f4efe5;--teal:#70d2c5;--line:rgba(244,239,229,.42);--pad:clamp(18px,2.5vw,40px);--caustic-x:0px;--caustic-y:0px;--caustic-rotate:0deg;--caustic-opacity:.18}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Arial,Helvetica,sans-serif;color:var(--cream);background:#002f2f url('/assets/desktop-bg-teal-caustics.webp') center/cover no-repeat;-webkit-font-smoothing:antialiased}body:before{content:"";position:fixed;inset:-16%;z-index:0;pointer-events:none;background:repeating-radial-gradient(ellipse at 18% 28%,transparent 0 24px,rgba(174,255,244,.13) 27px 30px,transparent 34px 53px),repeating-radial-gradient(ellipse at 72% 58%,transparent 0 31px,rgba(196,255,247,.105) 34px 38px,transparent 42px 68px),repeating-radial-gradient(ellipse at 48% 82%,transparent 0 42px,rgba(122,233,220,.08) 46px 50px,transparent 55px 86px);background-size:320px 235px,430px 315px,560px 410px;background-position:12% 18%,76% 62%,44% 88%;mix-blend-mode:screen;filter:blur(4px) saturate(1.08);opacity:var(--caustic-opacity);transform:translate3d(var(--caustic-x),var(--caustic-y),0) rotate(var(--caustic-rotate)) scale(1.08);transform-origin:center;will-change:transform,opacity}body:after{content:"";position:fixed;inset:0;z-index:0;background:linear-gradient(90deg,rgba(0,22,22,.45),rgba(0,22,22,.1) 55%,rgba(0,22,22,.28));pointer-events:none}.card{position:relative;z-index:1;height:100dvh;min-height:100svh;padding:max(var(--pad),env(safe-area-inset-top)) max(var(--pad),env(safe-area-inset-right)) max(var(--pad),env(safe-area-inset-bottom)) max(var(--pad),env(safe-area-inset-left));display:grid;grid-template-rows:auto 1fr auto;gap:clamp(12px,2vh,26px)}
 .top,.bottom{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px}.mark{width:clamp(52px,5.4vw,78px);aspect-ratio:1;overflow:hidden;border-radius:50%;position:relative;flex:0 0 auto}.mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.58)}.brandtext strong{display:block;font-size:clamp(15px,1.4vw,23px);letter-spacing:-.03em;text-transform:uppercase}.micro,.kicker,.downloads a,.contact a,.contact span{font-family:"Courier New",monospace;text-transform:uppercase;letter-spacing:.08em}.micro{font-size:clamp(8px,.7vw,11px);opacity:.84;margin-top:4px}.place{text-align:right}
 .hero{align-self:center;max-width:min(950px,76vw);padding-left:clamp(0px,2vw,26px)}.kicker{margin:0 0 clamp(12px,2vh,22px);font-size:clamp(9px,.8vw,12px);color:var(--teal);font-weight:700}.hero h1{margin:0;font-size:clamp(58px,9.7vw,158px);line-height:.82;letter-spacing:-.075em;text-transform:uppercase;font-weight:900;text-wrap:balance}.hero p{margin:clamp(18px,3vh,34px) 0 0;max-width:680px;font-size:clamp(16px,1.55vw,25px);line-height:1.18;letter-spacing:-.025em}
 .bottom{border-top:1px solid var(--line);padding-top:clamp(12px,1.7vh,20px);align-items:flex-end}.downloads{display:flex;flex-wrap:wrap;gap:8px 18px;max-width:64%}.downloads:before{content:"DOWNLOADS";width:100%;font-family:"Courier New",monospace;font-size:9px;letter-spacing:.11em;color:var(--teal)}a{color:inherit;text-decoration:none}.downloads a{font-size:clamp(9px,.76vw,12px);border-bottom:1px solid rgba(244,239,229,.35);padding-bottom:3px}.downloads a:hover,.contact a:hover{color:var(--teal);border-color:var(--teal)}.contact-wrap{display:flex;align-items:flex-end;justify-content:flex-end;gap:clamp(10px,1.2vw,16px)}.contact-logo{width:clamp(58px,5.3vw,84px);height:auto;display:block;flex:0 0 auto}.contact{text-align:right;display:grid;gap:4px}.contact span,.contact a{font-size:clamp(9px,.75vw,11px)}.contact .name{font-weight:700;color:var(--teal)}
@@ -17,6 +17,7 @@
 @media (max-height:520px) and (orientation:landscape){.card{grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr);grid-template-rows:auto 1fr;gap:12px 28px}.top{grid-column:1/-1}.hero{grid-column:1;grid-row:2;align-self:center;max-width:100%;padding:0}.hero h1{font-size:clamp(48px,10vw,98px)}.hero p{font-size:clamp(13px,1.7vw,18px);margin-top:12px;max-width:45ch}.kicker{margin-bottom:10px}.bottom{grid-column:2;grid-row:2;border-top:0;border-left:1px solid var(--line);padding:0 0 0 24px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.downloads{max-width:100%;display:grid;grid-template-columns:1fr 1fr}.contact-wrap{margin-top:18px;justify-content:flex-start;align-items:center}.contact{text-align:left}.contact-logo{width:48px}}
 @media (min-aspect-ratio:2/1){.hero{max-width:68vw}.hero h1{font-size:min(8.5vw,145px)}}
 @media (prefers-reduced-motion:no-preference){.downloads a,.contact a{transition:color .16s ease,border-color .16s ease}}
+@media (prefers-reduced-motion:reduce){body:before{display:none}}
 </style>
 </head>
 <body>
@@ -43,5 +44,58 @@
   </div>
 </footer>
 </main>
+<script>
+(() => {
+  const root = document.documentElement;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (reduceMotion.matches) return;
+
+  let phase = 0;
+  let velocity = 0;
+  let frame = 0;
+  let touchY = null;
+
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+  function moveCaustics(delta) {
+    velocity = clamp(velocity + clamp(delta, -140, 140) * 0.0009, -0.13, 0.13);
+    if (!frame) frame = requestAnimationFrame(render);
+  }
+
+  function render() {
+    phase += velocity;
+    velocity *= 0.9;
+
+    const x = Math.sin(phase * 1.7) * 22;
+    const y = Math.cos(phase * 1.25) * 18;
+    const rotate = Math.sin(phase * 0.72) * 1.6;
+    const opacity = 0.18 + Math.min(Math.abs(velocity) * 0.5, 0.055);
+
+    root.style.setProperty('--caustic-x', `${x.toFixed(2)}px`);
+    root.style.setProperty('--caustic-y', `${y.toFixed(2)}px`);
+    root.style.setProperty('--caustic-rotate', `${rotate.toFixed(2)}deg`);
+    root.style.setProperty('--caustic-opacity', opacity.toFixed(3));
+
+    if (Math.abs(velocity) > 0.00045) {
+      frame = requestAnimationFrame(render);
+    } else {
+      velocity = 0;
+      frame = 0;
+    }
+  }
+
+  window.addEventListener('wheel', event => moveCaustics(event.deltaY), { passive: true });
+  window.addEventListener('touchstart', event => {
+    touchY = event.touches[0]?.clientY ?? null;
+  }, { passive: true });
+  window.addEventListener('touchmove', event => {
+    const nextY = event.touches[0]?.clientY;
+    if (touchY === null || nextY == null) return;
+    moveCaustics((touchY - nextY) * 2.2);
+    touchY = nextY;
+  }, { passive: true });
+  window.addEventListener('touchend', () => { touchY = null; }, { passive: true });
+})();
+</script>
 </body>
 </html>
