@@ -90,10 +90,8 @@
       p *= scale;
       vec2 cell = floor(p);
       vec2 local = fract(p);
-
-      vec2 nearest = vec2(0.0);
-      vec2 nearestOffset = vec2(0.0);
-      float nearestDist = 20.0;
+      float first = 20.0;
+      float second = 20.0;
 
       for (int y = -1; y <= 1; y++) {
         for (int x = -1; x <= 1; x++) {
@@ -102,33 +100,19 @@
           vec2 wobble = 0.5 + 0.36 * sin(time * vec2(0.73, 0.91) + 6.2831 * rnd + vec2(rnd.y, rnd.x) * 2.4);
           vec2 offset = neighbor + wobble - local;
           float d = dot(offset, offset);
-          if (d < nearestDist) {
-            nearestDist = d;
-            nearest = neighbor;
-            nearestOffset = offset;
+          if (d < first) {
+            second = first;
+            first = d;
+          } else if (d < second) {
+            second = d;
           }
         }
       }
 
-      float edge = 20.0;
-      for (int y = -2; y <= 2; y++) {
-        for (int x = -2; x <= 2; x++) {
-          vec2 neighbor = nearest + vec2(float(x), float(y));
-          vec2 rnd = hash22(cell + neighbor);
-          vec2 wobble = 0.5 + 0.36 * sin(time * vec2(0.73, 0.91) + 6.2831 * rnd + vec2(rnd.y, rnd.x) * 2.4);
-          vec2 offset = neighbor + wobble - local;
-          vec2 diff = offset - nearestOffset;
-          float lenDiff = length(diff);
-          if (lenDiff > 0.001) {
-            edge = min(edge, dot(0.5 * (nearestOffset + offset), diff / lenDiff));
-          }
-        }
-      }
-
-      float filament = 1.0 - smoothstep(width, width * 2.8, edge);
-      filament *= filament;
-      float focus = 1.0 - smoothstep(0.0, 0.28, sqrt(nearestDist));
-      return filament * (0.82 + 0.30 * focus);
+      float gap = max(0.0, sqrt(second) - sqrt(first));
+      float filament = 1.0 - smoothstep(width, width * 2.65, gap);
+      filament = filament * filament;
+      return filament;
     }
 
     void main() {
@@ -154,26 +138,26 @@
       vec2 warped = p + broadWarp + fineWarp;
       warped.x += flow * 0.012;
 
-      float fine = causticCells(warped + vec2(t * 0.006, -t * 0.004), t * 0.54, 7.4, 0.026);
-      float medium = causticCells(warped * 0.86 + vec2(-t * 0.004, t * 0.005), -t * 0.39 + 8.0, 5.1, 0.030);
-      float lines = max(fine, medium * 0.78);
+      float fine = causticCells(warped + vec2(t * 0.006, -t * 0.004), t * 0.54, 7.4, 0.020);
+      float medium = causticCells(warped * 0.86 + vec2(-t * 0.004, t * 0.005), -t * 0.39 + 8.0, 5.0, 0.024);
+      float lines = max(fine, medium * 0.72);
 
-      float glow = smoothstep(0.10, 0.74, lines);
-      float hot = pow(clamp(lines, 0.0, 1.0), 3.4);
+      float glow = smoothstep(0.08, 0.70, lines);
+      float hot = pow(clamp(lines, 0.0, 1.0), 3.6);
 
       float slowLight = 0.5 + 0.5 * sin(p.x * 2.0 + p.y * 2.8 + t * 0.10);
       slowLight *= 0.5 + 0.5 * sin(p.x * -1.7 + p.y * 2.2 - t * 0.075 + 1.4);
 
-      float intensity = glow * (0.085 + energy * 0.040) + hot * (0.15 + energy * 0.085);
-      intensity += slowLight * 0.010;
+      float intensity = glow * (0.075 + energy * 0.038) + hot * (0.145 + energy * 0.075);
+      intensity += slowLight * 0.009;
 
       float vignette = smoothstep(1.05, 0.28, length(vec2(p.x * 0.76, p.y)));
-      intensity *= mix(0.72, 1.0, vignette);
+      intensity *= mix(0.70, 1.0, vignette);
 
       vec3 coolGlow = vec3(0.47, 0.94, 0.88);
       vec3 hotLight = vec3(0.82, 1.0, 0.94);
       vec3 lightColor = mix(coolGlow, hotLight, hot);
-      float alpha = clamp(intensity, 0.0, 0.27);
+      float alpha = clamp(intensity, 0.0, 0.255);
 
       gl_FragColor = vec4(lightColor * alpha, alpha);
     }
@@ -237,13 +221,14 @@
   let flow = 0;
   let touchY = null;
   let previousTime = performance.now();
+  let lastDraw = 0;
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
   function resize() {
     const mobile = window.innerWidth < 760;
-    const scale = mobile ? 0.42 : 0.55;
-    const maxWidth = mobile ? 620 : 1080;
+    const scale = mobile ? 0.40 : 0.50;
+    const maxWidth = mobile ? 580 : 960;
     width = Math.max(1, Math.min(maxWidth, Math.round(window.innerWidth * scale)));
     height = Math.max(1, Math.round(width * window.innerHeight / window.innerWidth));
     if (canvas.width !== width || canvas.height !== height) {
@@ -268,16 +253,19 @@
     flow += velocity * dt * 0.72;
     flow *= Math.pow(0.92, dt);
 
-    const ambientTime = now * 0.00018;
-    const responsiveTime = flow * 0.36;
-    const shaderTime = ambientTime + responsiveTime;
-    const energy = clamp(impulse + Math.abs(velocity) * 0.22, 0, 1);
+    if (now - lastDraw >= 31) {
+      lastDraw = now;
+      const ambientTime = now * 0.00018;
+      const responsiveTime = flow * 0.36;
+      const shaderTime = ambientTime + responsiveTime;
+      const energy = clamp(impulse + Math.abs(velocity) * 0.22, 0, 1);
 
-    gl.uniform2f(resolutionUniform, width, height);
-    gl.uniform1f(timeUniform, shaderTime);
-    gl.uniform1f(energyUniform, energy);
-    gl.uniform1f(flowUniform, flow);
-    gl.drawArrays(gl.TRIANGLES, 0, 6);
+      gl.uniform2f(resolutionUniform, width, height);
+      gl.uniform1f(timeUniform, shaderTime);
+      gl.uniform1f(energyUniform, energy);
+      gl.uniform1f(flowUniform, flow);
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
+    }
 
     requestAnimationFrame(render);
   }
