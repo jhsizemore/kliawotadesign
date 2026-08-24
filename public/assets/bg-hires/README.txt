@@ -1,0 +1,1 @@
+High-resolution background data is assembled client-side from chunk files generated from the Kliawota source artwork.
