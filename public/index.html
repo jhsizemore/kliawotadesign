@@ -8,283 +8,71 @@
 <meta name="theme-color" content="#002f2f">
 <link rel="icon" type="image/webp" href="/assets/kliawota-logo.webp">
 <style>
-:root{--cream:#f4efe5;--teal:#70d2c5;--line:rgba(244,239,229,.42);--pad:clamp(18px,2.5vw,40px)}
-*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Arial,Helvetica,sans-serif;color:var(--cream);background:#002f2f url('/assets/desktop-bg-teal-caustics.webp') center/cover no-repeat;-webkit-font-smoothing:antialiased}#caustics{position:fixed;inset:0;z-index:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:screen;opacity:.74;filter:blur(.45px);transform:translateZ(0)}body:after{content:"";position:fixed;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,22,22,.45),rgba(0,22,22,.1) 55%,rgba(0,22,22,.28));pointer-events:none}.card{position:relative;z-index:2;height:100dvh;min-height:100svh;padding:max(var(--pad),env(safe-area-inset-top)) max(var(--pad),env(safe-area-inset-right)) max(var(--pad),env(safe-area-inset-bottom)) max(var(--pad),env(safe-area-inset-left));display:grid;grid-template-rows:auto 1fr auto;gap:clamp(12px,2vh,26px)}
-.top,.bottom{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px}.mark{width:clamp(52px,5.4vw,78px);aspect-ratio:1;overflow:hidden;border-radius:50%;position:relative;flex:0 0 auto}.mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.58)}.brandtext strong{display:block;font-size:clamp(15px,1.4vw,23px);letter-spacing:-.03em;text-transform:uppercase}.micro,.kicker,.downloads a,.contact a,.contact span{font-family:"Courier New",monospace;text-transform:uppercase;letter-spacing:.08em}.micro{font-size:clamp(8px,.7vw,11px);opacity:.84;margin-top:4px}.place{text-align:right}
-.hero{align-self:center;max-width:min(950px,76vw);padding-left:clamp(0px,2vw,26px)}.kicker{margin:0 0 clamp(12px,2vh,22px);font-size:clamp(9px,.8vw,12px);color:var(--teal);font-weight:700}.hero h1{margin:0;font-size:clamp(58px,9.7vw,158px);line-height:.82;letter-spacing:-.075em;text-transform:uppercase;font-weight:900;text-wrap:balance}.hero p{margin:clamp(18px,3vh,34px) 0 0;max-width:680px;font-size:clamp(16px,1.55vw,25px);line-height:1.18;letter-spacing:-.025em}
-.bottom{border-top:1px solid var(--line);padding-top:clamp(12px,1.7vh,20px);align-items:flex-end}.downloads{display:flex;flex-wrap:wrap;gap:8px 18px;max-width:64%}.downloads:before{content:"DOWNLOADS";width:100%;font-family:"Courier New",monospace;font-size:9px;letter-spacing:.11em;color:var(--teal)}a{color:inherit;text-decoration:none}.downloads a{font-size:clamp(9px,.76vw,12px);border-bottom:1px solid rgba(244,239,229,.35);padding-bottom:3px}.downloads a:hover,.contact a:hover{color:var(--teal);border-color:var(--teal)}.contact-wrap{display:flex;align-items:flex-end;justify-content:flex-end;gap:clamp(10px,1.2vw,16px)}.contact-logo{width:clamp(58px,5.3vw,84px);height:auto;display:block;flex:0 0 auto}.contact{text-align:right;display:grid;gap:4px}.contact span,.contact a{font-size:clamp(9px,.75vw,11px)}.contact .name{font-weight:700;color:var(--teal)}
-@media (max-width:760px) and (orientation:portrait){body{background-position:44% center}#caustics{opacity:.64}.card{gap:12px}.top{align-items:center}.mark{width:54px}.brandtext .micro{display:none}.hero{max-width:100%;padding:0;align-self:center}.hero h1{font-size:clamp(56px,18vw,96px);line-height:.84}.hero p{font-size:clamp(15px,4vw,20px);max-width:34ch}.bottom{align-items:flex-end;gap:14px}.downloads{max-width:53%;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}.downloads:before{grid-column:1/-1}.downloads a{font-size:9px;line-height:1.15}.contact-wrap{gap:8px}.contact-logo{width:50px}.contact a,.contact span{font-size:8.2px}}
+:root{--cream:#f4efe5;--teal:#70d2c5;--line:rgba(244,239,229,.42);--pad:clamp(18px,2.5vw,40px);--blend:0;--transition:0;--image-x:0px;--image-y:0px;--image-scale:1.035;--gradient-x:50%;--gradient-y:42%;--gradient-angle:132deg;--gradient-shift-x:0px;--gradient-shift-y:0px;--tide-y:50vh;--tide-tilt:0deg}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Arial,Helvetica,sans-serif;color:var(--cream);background:#002f2f;-webkit-font-smoothing:antialiased}.background{position:fixed;inset:-4%;z-index:0;pointer-events:none;will-change:opacity,transform}.background-image{background:url('/assets/desktop-bg-teal-caustics.webp') center/cover no-repeat;opacity:calc(1 - var(--blend));transform:translate3d(var(--image-x),var(--image-y),0) scale(var(--image-scale));filter:saturate(calc(1 - var(--blend)*.10)) brightness(calc(1 - var(--blend)*.06))}.background-gradient{background:radial-gradient(circle at var(--gradient-x) var(--gradient-y),rgba(112,210,197,.44) 0,rgba(41,142,134,.24) 24%,rgba(0,68,66,.08) 46%,transparent 66%),linear-gradient(var(--gradient-angle),#001f20 0%,#004d4b 31%,#08756e 57%,#023b3b 78%,#001d1e 100%);opacity:var(--blend);transform:translate3d(var(--gradient-shift-x),var(--gradient-shift-y),0) scale(1.055)}.background-tide{inset:-35% -10%;opacity:var(--transition);transform:translate3d(0,var(--tide-y),0) rotate(var(--tide-tilt));background:linear-gradient(180deg,transparent 0%,rgba(144,239,226,.04) 28%,rgba(195,255,244,.17) 48%,rgba(114,218,205,.07) 61%,transparent 100%);filter:blur(26px);mix-blend-mode:screen}.shade{position:fixed;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,22,22,.47),rgba(0,22,22,.08) 55%,rgba(0,22,22,.28));pointer-events:none}.card{position:relative;z-index:2;height:100dvh;min-height:100svh;padding:max(var(--pad),env(safe-area-inset-top)) max(var(--pad),env(safe-area-inset-right)) max(var(--pad),env(safe-area-inset-bottom)) max(var(--pad),env(safe-area-inset-left));display:grid;grid-template-rows:auto 1fr auto;gap:clamp(12px,2vh,26px)}
+.top,.bottom{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px}.mark{width:clamp(52px,5.4vw,78px);aspect-ratio:1;overflow:hidden;border-radius:50%;position:relative;flex:0 0 auto}.mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.58)}.brandtext strong{display:block;font-size:clamp(15px,1.4vw,23px);letter-spacing:-.03em;text-transform:uppercase}.micro,.kicker,.downloads a,.contact a,.contact span{font-family:"Courier New",monospace;text-transform:uppercase;letter-spacing:.08em}.micro{font-size:clamp(8px,.7vw,11px);opacity:.84;margin-top:4px}.place{text-align:right}.hero{align-self:center;max-width:min(950px,76vw);padding-left:clamp(0px,2vw,26px)}.kicker{margin:0 0 clamp(12px,2vh,22px);font-size:clamp(9px,.8vw,12px);color:var(--teal);font-weight:700}.hero h1{margin:0;font-size:clamp(58px,9.7vw,158px);line-height:.82;letter-spacing:-.075em;text-transform:uppercase;font-weight:900;text-wrap:balance}.hero p{margin:clamp(18px,3vh,34px) 0 0;max-width:680px;font-size:clamp(16px,1.55vw,25px);line-height:1.18;letter-spacing:-.025em}.bottom{border-top:1px solid var(--line);padding-top:clamp(12px,1.7vh,20px);align-items:flex-end}.downloads{display:flex;flex-wrap:wrap;gap:8px 18px;max-width:64%}.downloads:before{content:"DOWNLOADS";width:100%;font-family:"Courier New",monospace;font-size:9px;letter-spacing:.11em;color:var(--teal)}a{color:inherit;text-decoration:none}.downloads a{font-size:clamp(9px,.76vw,12px);border-bottom:1px solid rgba(244,239,229,.35);padding-bottom:3px}.downloads a:hover,.contact a:hover{color:var(--teal);border-color:var(--teal)}.contact-wrap{display:flex;align-items:flex-end;justify-content:flex-end;gap:clamp(10px,1.2vw,16px)}.contact-logo{width:clamp(58px,5.3vw,84px);height:auto;display:block;flex:0 0 auto}.contact{text-align:right;display:grid;gap:4px}.contact span,.contact a{font-size:clamp(9px,.75vw,11px)}.contact .name{font-weight:700;color:var(--teal)}
+@media (max-width:760px) and (orientation:portrait){.background-image{background-position:44% center}.card{gap:12px}.top{align-items:center}.mark{width:54px}.brandtext .micro{display:none}.hero{max-width:100%;padding:0;align-self:center}.hero h1{font-size:clamp(56px,18vw,96px);line-height:.84}.hero p{font-size:clamp(15px,4vw,20px);max-width:34ch}.bottom{align-items:flex-end;gap:14px}.downloads{max-width:53%;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}.downloads:before{grid-column:1/-1}.downloads a{font-size:9px;line-height:1.15}.contact-wrap{gap:8px}.contact-logo{width:50px}.contact a,.contact span{font-size:8.2px}}
 @media (max-height:520px) and (orientation:landscape){.card{grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr);grid-template-rows:auto 1fr;gap:12px 28px}.top{grid-column:1/-1}.hero{grid-column:1;grid-row:2;align-self:center;max-width:100%;padding:0}.hero h1{font-size:clamp(48px,10vw,98px)}.hero p{font-size:clamp(13px,1.7vw,18px);margin-top:12px;max-width:45ch}.kicker{margin-bottom:10px}.bottom{grid-column:2;grid-row:2;border-top:0;border-left:1px solid var(--line);padding:0 0 0 24px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.downloads{max-width:100%;display:grid;grid-template-columns:1fr 1fr}.contact-wrap{margin-top:18px;justify-content:flex-start;align-items:center}.contact{text-align:left}.contact-logo{width:48px}}
-@media (min-aspect-ratio:2/1){.hero{max-width:68vw}.hero h1{font-size:min(8.5vw,145px)}}
-@media (prefers-reduced-motion:no-preference){.downloads a,.contact a{transition:color .16s ease,border-color .16s ease}}
-@media (prefers-reduced-motion:reduce){#caustics{display:none}}
+@media (min-aspect-ratio:2/1){.hero{max-width:68vw}.hero h1{font-size:min(8.5vw,145px)}}@media (prefers-reduced-motion:no-preference){.downloads a,.contact a{transition:color .16s ease,border-color .16s ease}}@media (prefers-reduced-motion:reduce){.background-gradient,.background-tide{display:none}.background-image{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<canvas id="caustics" aria-hidden="true"></canvas>
+<div class="background background-image" aria-hidden="true"></div>
+<div class="background background-gradient" aria-hidden="true"></div>
+<div class="background background-tide" aria-hidden="true"></div>
+<div class="shade" aria-hidden="true"></div>
 <main class="card">
-<header class="top">
-  <div class="brand"><div class="mark" aria-hidden="true"><img src="/assets/kliawota-logo.webp" alt=""></div><div class="brandtext"><strong>Kliawota Disaen</strong><div class="micro">Web · Print · Events</div></div></div>
-  <div class="micro place">Port Vila · Vanuatu</div>
-</header>
-<section class="hero">
-  <p class="kicker">Design · Communication · Creative Support</p>
-  <h1>Kliawota<br>Disaen</h1>
-  <p>Practical, high-quality design and communications support for businesses, government and development organisations.</p>
-</section>
-<footer class="bottom">
-  <nav class="downloads" aria-label="Downloads">
-    <a href="https://drive.google.com/file/d/1glP0ZFY97dr01hqtmEc8eiX-1Vbm8rB5/view" target="_blank" rel="noopener">CV</a>
-    <a href="https://drive.google.com/file/d/1nRGL9qMfbVQ8tG2cPng2EtOltsGE3Aio/view" target="_blank" rel="noopener">Selected Work</a>
-    <a href="https://drive.google.com/file/d/1bP9Haw8a5G4SV09Q-TEWAEMvI0JfnLbF/view" target="_blank" rel="noopener">Services</a>
-    <a href="https://drive.google.com/file/d/1hoZ6HJNNqxd8LUw2AuSN3KUQuo4B_7P9/view" target="_blank" rel="noopener">Pacific Design</a>
-  </nav>
-  <div class="contact-wrap">
-    <img class="contact-logo" src="/assets/kliawota-logo.webp" alt="Kliawota Disaen logo">
-    <div class="contact"><span class="name">J. Hunter Sizemore</span><span>Port Vila · Vanuatu</span><a href="tel:+6787113830">+678 711 3830</a><a href="mailto:jhsizemore@gmail.com">jhsizemore@gmail.com</a></div>
-  </div>
-</footer>
+<header class="top"><div class="brand"><div class="mark" aria-hidden="true"><img src="/assets/kliawota-logo.webp" alt=""></div><div class="brandtext"><strong>Kliawota Disaen</strong><div class="micro">Web · Print · Events</div></div></div><div class="micro place">Port Vila · Vanuatu</div></header>
+<section class="hero"><p class="kicker">Design · Communication · Creative Support</p><h1>Kliawota<br>Disaen</h1><p>Practical, high-quality design and communications support for businesses, government and development organisations.</p></section>
+<footer class="bottom"><nav class="downloads" aria-label="Downloads"><a href="https://drive.google.com/file/d/1glP0ZFY97dr01hqtmEc8eiX-1Vbm8rB5/view" target="_blank" rel="noopener">CV</a><a href="https://drive.google.com/file/d/1nRGL9qMfbVQ8tG2cPng2EtOltsGE3Aio/view" target="_blank" rel="noopener">Selected Work</a><a href="https://drive.google.com/file/d/1bP9Haw8a5G4SV09Q-TEWAEMvI0JfnLbF/view" target="_blank" rel="noopener">Services</a><a href="https://drive.google.com/file/d/1hoZ6HJNNqxd8LUw2AuSN3KUQuo4B_7P9/view" target="_blank" rel="noopener">Pacific Design</a></nav><div class="contact-wrap"><img class="contact-logo" src="/assets/kliawota-logo.webp" alt="Kliawota Disaen logo"><div class="contact"><span class="name">J. Hunter Sizemore</span><span>Port Vila · Vanuatu</span><a href="tel:+6787113830">+678 711 3830</a><a href="mailto:jhsizemore@gmail.com">jhsizemore@gmail.com</a></div></div></footer>
 </main>
 <script>
 (() => {
-  const canvas = document.getElementById('caustics');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (!canvas || reduceMotion.matches) return;
-
-  const gl = canvas.getContext('webgl', {
-    alpha: true,
-    antialias: false,
-    depth: false,
-    stencil: false,
-    premultipliedAlpha: true,
-    powerPreference: 'low-power'
-  });
-  if (!gl) {
-    canvas.style.display = 'none';
-    return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const root=document.documentElement;
+  let phase=0,target=0,velocity=0,touchY=null,frame=0;
+  const TAU=Math.PI*2;
+  const clamp=(v,min,max)=>Math.min(max,Math.max(min,v));
+  function input(delta){
+    velocity=clamp(velocity+clamp(delta,-180,180)*0.00135,-0.32,0.32);
+    target+=clamp(delta,-180,180)*0.0042;
+    if(!frame) frame=requestAnimationFrame(render);
   }
-
-  const vertexSource = `
-    attribute vec2 a_position;
-    void main() {
-      gl_Position = vec4(a_position, 0.0, 1.0);
-    }
-  `;
-
-  const fragmentSource = `
-    precision mediump float;
-    uniform vec2 u_resolution;
-    uniform float u_time;
-    uniform float u_energy;
-    uniform float u_flow;
-
-    vec2 hash22(vec2 p) {
-      vec2 q = vec2(
-        dot(p, vec2(127.1, 311.7)),
-        dot(p, vec2(269.5, 183.3))
-      );
-      return fract(sin(q) * 43758.5453);
-    }
-
-    float causticCells(vec2 p, float time, float scale, float width) {
-      p *= scale;
-      vec2 cell = floor(p);
-      vec2 local = fract(p);
-      float first = 20.0;
-      float second = 20.0;
-
-      for (int y = -1; y <= 1; y++) {
-        for (int x = -1; x <= 1; x++) {
-          vec2 neighbor = vec2(float(x), float(y));
-          vec2 rnd = hash22(cell + neighbor);
-          vec2 wobble = 0.5 + 0.36 * sin(time * vec2(0.73, 0.91) + 6.2831 * rnd + vec2(rnd.y, rnd.x) * 2.4);
-          vec2 offset = neighbor + wobble - local;
-          float d = dot(offset, offset);
-          if (d < first) {
-            second = first;
-            first = d;
-          } else if (d < second) {
-            second = d;
-          }
-        }
-      }
-
-      float gap = max(0.0, sqrt(second) - sqrt(first));
-      float filament = 1.0 - smoothstep(width, width * 2.65, gap);
-      filament = filament * filament;
-      return filament;
-    }
-
-    void main() {
-      vec2 uv = gl_FragCoord.xy / u_resolution.xy;
-      float aspect = u_resolution.x / u_resolution.y;
-      vec2 p = vec2((uv.x - 0.5) * aspect, uv.y - 0.5);
-
-      float t = u_time;
-      float energy = clamp(u_energy, 0.0, 1.0);
-      float flow = u_flow;
-
-      vec2 broadWarp = vec2(
-        sin(p.y * 5.2 + t * 0.31) + 0.55 * sin(p.y * 9.1 - t * 0.19),
-        cos(p.x * 4.7 - t * 0.27) + 0.50 * cos(p.x * 8.3 + t * 0.22)
-      );
-      broadWarp *= 0.022 + energy * 0.014;
-
-      vec2 fineWarp = vec2(
-        sin((p.x + p.y) * 12.0 - t * 0.42 + flow * 1.7),
-        cos((p.x - p.y) * 10.0 + t * 0.37 - flow * 1.3)
-      ) * (0.010 + energy * 0.010);
-
-      vec2 warped = p + broadWarp + fineWarp;
-      warped.x += flow * 0.012;
-
-      float fine = causticCells(warped + vec2(t * 0.006, -t * 0.004), t * 0.54, 7.4, 0.020);
-      float medium = causticCells(warped * 0.86 + vec2(-t * 0.004, t * 0.005), -t * 0.39 + 8.0, 5.0, 0.024);
-      float lines = max(fine, medium * 0.72);
-
-      float glow = smoothstep(0.08, 0.70, lines);
-      float hot = pow(clamp(lines, 0.0, 1.0), 3.6);
-
-      float slowLight = 0.5 + 0.5 * sin(p.x * 2.0 + p.y * 2.8 + t * 0.10);
-      slowLight *= 0.5 + 0.5 * sin(p.x * -1.7 + p.y * 2.2 - t * 0.075 + 1.4);
-
-      float intensity = glow * (0.075 + energy * 0.038) + hot * (0.145 + energy * 0.075);
-      intensity += slowLight * 0.009;
-
-      float vignette = smoothstep(1.05, 0.28, length(vec2(p.x * 0.76, p.y)));
-      intensity *= mix(0.70, 1.0, vignette);
-
-      vec3 coolGlow = vec3(0.47, 0.94, 0.88);
-      vec3 hotLight = vec3(0.82, 1.0, 0.94);
-      vec3 lightColor = mix(coolGlow, hotLight, hot);
-      float alpha = clamp(intensity, 0.0, 0.255);
-
-      gl_FragColor = vec4(lightColor * alpha, alpha);
-    }
-  `;
-
-  function compile(type, source) {
-    const shader = gl.createShader(type);
-    gl.shaderSource(shader, source);
-    gl.compileShader(shader);
-    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      console.warn('Caustics shader compile failed:', gl.getShaderInfoLog(shader));
-      gl.deleteShader(shader);
-      return null;
-    }
-    return shader;
+  function render(){
+    phase+=(target-phase)*0.105+velocity;
+    velocity*=0.78;
+    if(Math.abs(target-phase)<0.0004) phase=target;
+    const blend=(1-Math.cos(phase))*0.5;
+    const transition=clamp(4*blend*(1-blend),0,1);
+    const imageX=Math.sin(phase)*14;
+    const imageY=Math.sin(phase*0.5)*8;
+    const imageScale=1.035+transition*0.022;
+    const gx=50+Math.sin(phase*0.72)*21;
+    const gy=44+Math.cos(phase*0.58)*16;
+    const angle=132+Math.sin(phase*0.43)*24;
+    const gradientX=Math.sin(phase*0.61)*10;
+    const gradientY=Math.cos(phase*0.49)*7;
+    const cycle=((phase%TAU)+TAU)%TAU;
+    const tideY=-32+(cycle/TAU)*164;
+    const tideTilt=Math.sin(phase*0.5)*7;
+    root.style.setProperty('--blend',blend.toFixed(4));
+    root.style.setProperty('--transition',transition.toFixed(4));
+    root.style.setProperty('--image-x',`${imageX.toFixed(2)}px`);
+    root.style.setProperty('--image-y',`${imageY.toFixed(2)}px`);
+    root.style.setProperty('--image-scale',imageScale.toFixed(4));
+    root.style.setProperty('--gradient-x',`${gx.toFixed(2)}%`);
+    root.style.setProperty('--gradient-y',`${gy.toFixed(2)}%`);
+    root.style.setProperty('--gradient-angle',`${angle.toFixed(2)}deg`);
+    root.style.setProperty('--gradient-shift-x',`${gradientX.toFixed(2)}px`);
+    root.style.setProperty('--gradient-shift-y',`${gradientY.toFixed(2)}px`);
+    root.style.setProperty('--tide-y',`${tideY.toFixed(2)}vh`);
+    root.style.setProperty('--tide-tilt',`${tideTilt.toFixed(2)}deg`);
+    if(Math.abs(target-phase)>0.0005||Math.abs(velocity)>0.0005){frame=requestAnimationFrame(render)}else{frame=0}
   }
-
-  const vertexShader = compile(gl.VERTEX_SHADER, vertexSource);
-  const fragmentShader = compile(gl.FRAGMENT_SHADER, fragmentSource);
-  if (!vertexShader || !fragmentShader) {
-    canvas.style.display = 'none';
-    return;
-  }
-
-  const program = gl.createProgram();
-  gl.attachShader(program, vertexShader);
-  gl.attachShader(program, fragmentShader);
-  gl.linkProgram(program);
-  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-    console.warn('Caustics program link failed:', gl.getProgramInfoLog(program));
-    canvas.style.display = 'none';
-    return;
-  }
-
-  gl.useProgram(program);
-  gl.disable(gl.DEPTH_TEST);
-  gl.disable(gl.CULL_FACE);
-  gl.enable(gl.BLEND);
-  gl.blendFunc(gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
-
-  const buffer = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-    -1, -1, 1, -1, -1, 1,
-    -1, 1, 1, -1, 1, 1
-  ]), gl.STATIC_DRAW);
-
-  const position = gl.getAttribLocation(program, 'a_position');
-  gl.enableVertexAttribArray(position);
-  gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
-
-  const resolutionUniform = gl.getUniformLocation(program, 'u_resolution');
-  const timeUniform = gl.getUniformLocation(program, 'u_time');
-  const energyUniform = gl.getUniformLocation(program, 'u_energy');
-  const flowUniform = gl.getUniformLocation(program, 'u_flow');
-
-  let width = 1;
-  let height = 1;
-  let impulse = 0;
-  let velocity = 0;
-  let flow = 0;
-  let touchY = null;
-  let previousTime = performance.now();
-  let lastDraw = 0;
-
-  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-
-  function resize() {
-    const mobile = window.innerWidth < 760;
-    const scale = mobile ? 0.40 : 0.50;
-    const maxWidth = mobile ? 580 : 960;
-    width = Math.max(1, Math.min(maxWidth, Math.round(window.innerWidth * scale)));
-    height = Math.max(1, Math.round(width * window.innerHeight / window.innerWidth));
-    if (canvas.width !== width || canvas.height !== height) {
-      canvas.width = width;
-      canvas.height = height;
-      gl.viewport(0, 0, width, height);
-    }
-  }
-
-  function disturb(delta) {
-    const normalized = clamp(delta / 150, -1, 1);
-    velocity = clamp(velocity + normalized * 0.48, -1.15, 1.15);
-    impulse = clamp(impulse + Math.abs(normalized) * 0.34, 0, 1);
-  }
-
-  function render(now) {
-    const dt = Math.min(0.05, (now - previousTime) / 1000);
-    previousTime = now;
-
-    velocity *= Math.pow(0.06, dt);
-    impulse *= Math.pow(0.14, dt);
-    flow += velocity * dt * 0.72;
-    flow *= Math.pow(0.92, dt);
-
-    if (now - lastDraw >= 31) {
-      lastDraw = now;
-      const ambientTime = now * 0.00018;
-      const responsiveTime = flow * 0.36;
-      const shaderTime = ambientTime + responsiveTime;
-      const energy = clamp(impulse + Math.abs(velocity) * 0.22, 0, 1);
-
-      gl.uniform2f(resolutionUniform, width, height);
-      gl.uniform1f(timeUniform, shaderTime);
-      gl.uniform1f(energyUniform, energy);
-      gl.uniform1f(flowUniform, flow);
-      gl.drawArrays(gl.TRIANGLES, 0, 6);
-    }
-
-    requestAnimationFrame(render);
-  }
-
-  resize();
-  window.addEventListener('resize', resize, { passive: true });
-  window.addEventListener('wheel', event => disturb(event.deltaY), { passive: true });
-  window.addEventListener('touchstart', event => {
-    touchY = event.touches[0]?.clientY ?? null;
-  }, { passive: true });
-  window.addEventListener('touchmove', event => {
-    const nextY = event.touches[0]?.clientY;
-    if (touchY === null || nextY == null) return;
-    disturb((touchY - nextY) * 2.1);
-    touchY = nextY;
-  }, { passive: true });
-  window.addEventListener('touchend', () => { touchY = null; }, { passive: true });
-
-  requestAnimationFrame(render);
+  window.addEventListener('wheel',e=>input(e.deltaY),{passive:true});
+  window.addEventListener('touchstart',e=>{touchY=e.touches[0]?.clientY??null},{passive:true});
+  window.addEventListener('touchmove',e=>{const y=e.touches[0]?.clientY;if(touchY===null||y==null)return;input((touchY-y)*2.15);touchY=y},{passive:true});
+  window.addEventListener('touchend',()=>{touchY=null},{passive:true});
 })();
 </script>
 </body>
