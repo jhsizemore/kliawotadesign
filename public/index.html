@@ -51,9 +51,10 @@
   const rgb=c=>`rgb(${c[0]} ${c[1]} ${c[2]})`;
   const hash=(x,y)=>{const n=Math.sin(x*127.1+y*311.7)*43758.5453;return n-Math.floor(n)};
   const EFFORT_PER_STATE=3200;
+  const INITIAL_POSITION=.353;
 
   let cols=0,rows=0,tiles=[];
-  let position=0,target=0,touchY=null,frame=0;
+  let position=INITIAL_POSITION,target=INITIAL_POSITION,touchY=null,frame=0;
 
   function gradientColor(x,y){
     const top=[0,31,32], mid=[0,77,75], bright=[8,117,110], bottom=[0,29,30], glow=[74,168,156];
