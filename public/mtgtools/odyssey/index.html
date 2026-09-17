@@ -601,6 +601,12 @@ function manaHTML(cost){const toks=(String(cost||'').toUpperCase().match(/\d+|[W
 function splitSpecial(m){let main=m.rules||'',special=null;if(m.layout==='adventure'&&main.includes('//Adventure//')){let [a,b]=main.split('//Adventure//',2);main=a.trim();special=parseSub(b,'Adventure')}else if(m.layout==='prepare'&&(main.includes('//Prep//')||main.includes('//Prepare//'))){let mark=main.includes('//Prep//')?'//Prep//':'//Prepare//';let [a,b]=main.split(mark,2);main=a.trim();special=parseSub(b,'Prepare')}else if(m.layout==='battle'){let match=/\bBACK\s+[—-]\s+/i.exec(main);if(match){let idx=match.index;let front=main.slice(0,idx).replace(/^FRONT\s+[—-]\s*/i,'').trim();let back=main.slice(idx+match[0].length).trim();main=front;special={title:(m.name.split('//')[1]||'Back face').trim(),meta:'Battle back face',text:back}}}return{main,special}}
 function parseSub(s,fallback){s=s.trim();let lines=s.split(/\n+/);let head=(lines.shift()||'').trim();let parts=head.split(/\s+[—-]\s+/);if(parts.length>=3){return{title:parts[0],meta:parts.slice(1).join(' · '),text:lines.join('\n').trim()||fallback}}return{title:fallback,meta:'Inset spell',text:s}}
 function artMetaFor(m){return artById[m.artId]||null}
+function visibleArtCredit(m,art){
+  const credit=String(m.credit||art?.credit||'').trim();
+  if(credit)return credit;
+  if(art?.artist)return 'Art: '+art.artist+(art.institution?' · '+art.institution:'');
+  return m.artId||m.imageUrl?'Art credit pending':'Art pending';
+}
 function formatRulesText(text){const e=esc(text||'');const ital=e.replace(/(\([^()\n]*\))/g,'<span class="reminder">$1</span>');return ital.replace(/\{(\d+|[WUBRGCXT])\}/g,(_,tok)=>inlineManaTokenHTML(tok)).replace(/\n+/g,'<br>')}
 const PLAYTEST_REMINDERS={
  manifest:{label:'Manifest hope',priority:1,text:'Look at the top two cards of your library. Manifest one of them, then put the other on the bottom of your library. A manifested permanent is a face-down 2/2 creature.'},
