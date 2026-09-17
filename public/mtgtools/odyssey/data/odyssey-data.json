@@ -1,7 +1,7 @@
 {
   "schema": "odyssey-studio-data/v1",
-  "datasetVersion": "2026-09-17.1",
-  "generatedAt": "2026-09-17T02:15:34.148260+00:00",
+  "datasetVersion": "2026-09-17.2",
+  "generatedAt": "2026-09-17T11:14:58.411549+00:00",
   "set": {
     "name": "The Odyssey",
     "code": "ODY",
@@ -8039,7 +8039,7 @@
       "candidateCards": "Penelope, Queen in Waiting; Penelope, Patient Queen; Penelope, Weaver of Fate; Penelope's Unbroken Oath; Odysseus, Cunning Voyager; Home at Last",
       "cropNotes": "Compact, intimate reunion image; excellent crop potential.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://images.metmuseum.org/CRDImages/dp/original/DP864192.jpg"
     },
     {
       "id": "ART-002",
@@ -8059,7 +8059,7 @@
       "candidateCards": "Telemachus, Young Heir; Telemachus, Returned Son; Telemachus, Defender of Ithaca; Hope of Homecoming",
       "cropNotes": "Major museum painting; strong emotional character image.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP169392.jpg"
     },
     {
       "id": "ART-003",
@@ -8079,7 +8079,7 @@
       "candidateCards": "Telemachus, Young Heir; Calypso, Keeper of Ogygia; Calypso's Islander; Ogygian Nymph; Hope-Bound Nymph",
       "cropNotes": "Not Homeric canon (from Fénelon), but a superb period image for Telemachus/Calypso visual vocabulary.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP169393.jpg"
     },
     {
       "id": "ART-004",
@@ -8099,7 +8099,7 @@
       "candidateCards": "Circe, Witch of Aeaea; Circe, Mistress of Aeaea; Spellbound Swine; Moly Sprig; Moly, Root Against Sorcery",
       "cropNotes": "Strong silhouette and card-frame readability.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://images.metmuseum.org/CRDImages/dp/original/DP104992.jpg"
     },
     {
       "id": "ART-005",
@@ -8119,7 +8119,7 @@
       "candidateCards": "Aeolus, Lord of the Winds; Open Aeolus's Bag; Aeolus's Wind-Bag; The Sealed Winds of Aeolus",
       "cropNotes": "Excellent standalone character portrait; monochrome but forceful.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://images.metmuseum.org/CRDImages/dp/original/DP811861.jpg"
     },
     {
       "id": "ART-006",
@@ -8139,7 +8139,7 @@
       "candidateCards": "Open Aeolus's Bag; Aeolus's Wind-Bag; The Sealed Winds of Aeolus; Aeolus, Lord of the Winds",
       "cropNotes": "Literal match for the wind-bag cards.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://images.metmuseum.org/CRDImages/dp/original/DP885417.jpg"
     },
     {
       "id": "ART-007",
@@ -8159,7 +8159,7 @@
       "candidateCards": "Odysseus, Cunning Voyager; Penelope, Queen in Waiting; Telemachus, Returned Son; Laertes, Rooted Patriarch; Eumaeus, Loyal Swineherd; The Beggar's Disguise; Home at Last",
       "cropNotes": "Exceptionally valuable ancient image containing five core characters.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://images.metmuseum.org/CRDImages/gr/original/gr30.11.9.R.jpg"
     },
     {
       "id": "ART-008",
@@ -8179,7 +8179,7 @@
       "candidateCards": "Eurycleia, Keeper of the Scar; Eurycleia, Keeper of Secrets; Secret Laid Bare; The Beggar's Disguise",
       "cropNotes": "Ancient direct depiction of the scar-recognition scene.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://images.metmuseum.org/CRDImages/gr/original/DT5590.jpg"
     },
     {
       "id": "ART-009",
@@ -8199,7 +8199,7 @@
       "candidateCards": "Nausicaa, Princess of Scheria; Nausicaa's Attendant; Phaeacian Dreamer; Hope of Homecoming",
       "cropNotes": "Hero-image quality: large, dramatic, wide composition.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://iiif.micr.io/zAdDE/full/2400,/0/default.jpg"
     },
     {
       "id": "ART-010",
@@ -8219,7 +8219,7 @@
       "candidateCards": "Calypso, Keeper of Ogygia; Calypso, Keeper Beyond Time; Ogygian Nymph; Calypso's Orchard; Ogygia, Island Beyond Time",
       "cropNotes": "Strong Calypso hero image.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://iiif.micr.io/pNsTm/full/2400,/0/default.jpg"
     },
     {
       "id": "ART-011",
@@ -8239,7 +8239,7 @@
       "candidateCards": "Hermes, Guide of Wanderers; Calypso, Keeper Beyond Time; Depart the Realm; The Long Way Home",
       "cropNotes": "Strong choice for Hermes/Calypso interaction.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://iiif.micr.io/XSeee/full/2400,/0/default.jpg"
     },
     {
       "id": "ART-012",
@@ -8259,7 +8259,7 @@
       "candidateCards": "Circe, Witch of Aeaea; Circe, Mistress of Aeaea; Moly Sprig; Moly, Root Against Sorcery; Spellbound Swine; Hermes, Guide of Wanderers",
       "cropNotes": "One image covers Circe, moly, Hermes and transformed companions.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://iiif.micr.io/qXSvI/full/2400,/0/default.jpg"
     },
     {
       "id": "ART-013",
@@ -8279,7 +8279,7 @@
       "candidateCards": "Polyphemus, Eater of Men; Monster Beneath the Cliffs; Cyclopean Pathfinder",
       "cropNotes": "Clear monster/landscape setup.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://iiif.micr.io/lQbwB/full/2400,/0/default.jpg"
     },
     {
       "id": "ART-014",
@@ -8299,7 +8299,7 @@
       "candidateCards": "Polyphemus, Eater of Men; Pride Before the Gods; Island Ravager; Storm-Tossed Sailor",
       "cropNotes": "Very Magic-readable action scene.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://iiif.micr.io/VKRZR/full/2400,/0/default.jpg"
     },
     {
       "id": "ART-015",
@@ -8319,7 +8319,7 @@
       "candidateCards": "Aeolus, Lord of the Winds; Aeolus's Wind-Bag; The Sealed Winds of Aeolus",
       "cropNotes": "Direct alternate to ART-006.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://iiif.micr.io/Jqxei/full/2400,/0/default.jpg"
     },
     {
       "id": "ART-016",
@@ -8339,7 +8339,7 @@
       "candidateCards": "The Bag Is Opened; Open Aeolus's Bag; Mutiny at Sea; Storm on the Horizon",
       "cropNotes": "Almost exact title match for The Bag Is Opened.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://iiif.micr.io/oqebu/full/2400,/0/default.jpg"
     },
     {
       "id": "ART-017",
@@ -10311,7 +10311,7 @@
       "medium": "White and black stone marble with variegated marble socle",
       "institution": "The Metropolitan Museum of Art",
       "objectId": "2015.507.2a, b",
-      "rights": "Public Domain",
+      "rights": "Met display preview · restricted reuse · 437 × 600 px",
       "source": "https://www.metmuseum.org/art/collection/search/631294",
       "credit": "Art: possibly Flemish · The Met",
       "matchType": "Direct concept / Athena",
@@ -10319,7 +10319,7 @@
       "candidateCards": "Gods Willing",
       "cropNotes": "A calm martial Minerva-like figure communicates divine protection without reusing the Athena intervention artwork.",
       "status": "CURATED",
-      "imageUrl": ""
+      "imageUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/631294/1835655/restricted"
     },
     {
       "id": "ART-116",
@@ -12120,6 +12120,926 @@
       "cropNotes": "Warships and working seamen under a stormy sky provide a distinct sailor-in-weather image with excellent horizontal crop options.",
       "status": "CURATED",
       "imageUrl": ""
+    },
+    {
+      "id": "ART-206",
+      "tags": "storm; sailor; shoreline; ship; lookout; wind; sea",
+      "title": "Le Criard (The Shrieker)",
+      "artist": "Félix-Hilaire Buhot",
+      "date": "1879/1880",
+      "period": "19th century",
+      "medium": "Etching, drypoint, aquatint, salt lift, and related techniques on Japanese paper",
+      "institution": "National Gallery of Art",
+      "objectId": "1995.54.47",
+      "rights": "Public Domain / NGA Open Access",
+      "source": "https://www.nga.gov/artworks/93118-le-criard-shrieker",
+      "credit": "Art: “Le Criard (The Shrieker)” · Félix-Hilaire Buhot · National Gallery of Art",
+      "matchType": "Direct concept / storm watcher",
+      "heroScore": 5,
+      "candidateCards": "Storm-Watching Sailor",
+      "cropNotes": "A figure braces against a storm-lashed shore while a ship is visible beyond; far more human and card-specific than a generic storm seascape.",
+      "status": "CURATED",
+      "imageUrl": "https://api.nga.gov/iiif/94737452-13a3-4597-9e8b-b110a3f50c0c/full/2400,/0/default.jpg",
+      "imageWidth": 2400,
+      "imageHeight": 3724,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-207",
+      "tags": "Odyssey; painting; Penelope; Unravelling; Her; Web; by; Lamp; Light",
+      "title": "Penelope Unravelling Her Web by Lamp Light",
+      "artist": "Joseph Wright of Derby",
+      "date": "1785 (exhibited)",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "J. Paul Getty Museum",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Joseph_Wright_of_Derby._Penelope_Unravelling_Her_Web_by_Lamp_Light._exhibited_1785.jpg",
+      "credit": "Art: “Penelope Unravelling Her Web by Lamp Light” · Joseph Wright of Derby · J. Paul Getty Museum · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Penelope, Weaver of Fate",
+      "cropNotes": "Keep the lamp, hands, and loom together; the dark room supports a subtle full-art rules overlay. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Joseph_Wright_of_Derby._Penelope_Unravelling_Her_Web_by_Lamp_Light._exhibited_1785.jpg",
+      "imageWidth": 3000,
+      "imageHeight": 2422,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-208",
+      "tags": "Odyssey; painting; Penelope",
+      "title": "Penelope",
+      "artist": "John Roddam Spencer Stanhope",
+      "date": "1864",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Private collection",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:John_Roddam_Spencer_Stanhope_Penelope.jpg",
+      "credit": "Art: “Penelope” · John Roddam Spencer Stanhope · Private collection · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Penelope, Patient Queen",
+      "cropNotes": "Portrait composition; preserve Penelope and the loom. Strong full-art option. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/John_Roddam_Spencer_Stanhope_Penelope.jpg",
+      "imageWidth": 1495,
+      "imageHeight": 2000,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-209",
+      "tags": "Odyssey; painting; Penelope",
+      "title": "Penelope",
+      "artist": "Bela Čikoš Sesija",
+      "date": "1894",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "National Museum of Modern Art, Zagreb",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Bela_%C4%8Ciko%C5%A1_Sesija_-_Penelopa.jpg",
+      "credit": "Art: “Penelope” · Bela Čikoš Sesija · National Museum of Modern Art, Zagreb · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Penelope's Unbroken Oath",
+      "cropNotes": "Use the solitary figure and shadowed interior to convey endurance. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Bela_%C4%8Ciko%C5%A1_Sesija_-_Penelopa.jpg",
+      "imageWidth": 4516,
+      "imageHeight": 3088,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-210",
+      "tags": "Odyssey; painting; Odysseus; and; Penelope",
+      "title": "Odysseus and Penelope",
+      "artist": "Johann Heinrich Wilhelm Tischbein",
+      "date": "1802",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Private collection",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Odysseus_und_Penelope_%28Tischbein%29.jpg",
+      "credit": "Art: “Odysseus and Penelope” · Johann Heinrich Wilhelm Tischbein · Private collection · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Home at Last",
+      "cropNotes": "The available source is a detail of the larger painting; retain both figures for the reunion. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Odysseus_und_Penelope_%28Tischbein%29.jpg",
+      "imageWidth": 2136,
+      "imageHeight": 1598,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-211",
+      "tags": "Odyssey; painting; Telemachus; Leading; Theoclymenus; before; Penelope",
+      "title": "Telemachus Leading Theoclymenus before Penelope",
+      "artist": "Jacob Jordaens",
+      "date": "c. 1640",
+      "period": "Historic painting",
+      "medium": "Painting",
+      "institution": "Collection not stated",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:T%C3%A9l%C3%A9maque_conduisant_Th%C3%A9oclym%C3%A8ne_devant_sa_m%C3%A8re_P%C3%A9n%C3%A9lope_-_Jacob_JORDAENS.jpg",
+      "credit": "Art: “Telemachus Leading Theoclymenus before Penelope” · Jacob Jordaens · Collection not stated · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Theoclymenus, Omen Reader",
+      "cropNotes": "Keep the prophet and court figures together; a direct character and episode match. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/04/T%C3%A9l%C3%A9maque_conduisant_Th%C3%A9oclym%C3%A8ne_devant_sa_m%C3%A8re_P%C3%A9n%C3%A9lope_-_Jacob_JORDAENS.jpg",
+      "imageWidth": 4306,
+      "imageHeight": 3250,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-212",
+      "tags": "Odyssey; painting; Odysseus; Takes; Counsel; with; Teiresias",
+      "title": "Odysseus Takes Counsel with Teiresias",
+      "artist": "Nicolai Abildgaard",
+      "date": "1809",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Statens Museum for Kunst",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Nicolai_Abildgaard_-_Odysseus_Takes_Counsel_with_Teiresias._From_Homer%C2%B4s_Odyssey_-_KMS1837_-_Statens_Museum_for_Kunst.jpg",
+      "credit": "Art: “Odysseus Takes Counsel with Teiresias” · Nicolai Abildgaard · Statens Museum for Kunst · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Tiresias, Seer Below",
+      "cropNotes": "Retain the encounter between hero and seer. Moderate source resolution; avoid extreme zoom. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Nicolai_Abildgaard_-_Odysseus_Takes_Counsel_with_Teiresias._From_Homer%C2%B4s_Odyssey_-_KMS1837_-_Statens_Museum_for_Kunst.jpg",
+      "imageWidth": 1200,
+      "imageHeight": 1000,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-213",
+      "tags": "Odyssey; painting; Ulysses; and; Calypso",
+      "title": "Ulysses and Calypso",
+      "artist": "Arnold Böcklin",
+      "date": "1882",
+      "period": "Historic painting",
+      "medium": "Oil on mahogany",
+      "institution": "Kunstmuseum Basel",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_008.jpg",
+      "credit": "Art: “Ulysses and Calypso” · Arnold Böcklin · Kunstmuseum Basel · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Calypso, Keeper Beyond Time",
+      "cropNotes": "Keep Calypso and the distant, turned-away Odysseus. Broad sea and rock shapes work behind the full-art overlay. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Arnold_B%C3%B6cklin_008.jpg",
+      "imageWidth": 6576,
+      "imageHeight": 4562,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-214",
+      "tags": "Odyssey; painting; Ulysses; Revenge; on; Penelope; s; Suitors",
+      "title": "Ulysses’ Revenge on Penelope’s Suitors",
+      "artist": "Christoffer Wilhelm Eckersberg",
+      "date": "1814",
+      "period": "Historic painting",
+      "medium": "Painting",
+      "institution": "Hirschsprung Collection",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Christoffer_Wilhelm_Eckersberg_-_Ulysses%27_revenge_on_Penelope%27s_suitors_-_Google_Art_Project.jpg",
+      "credit": "Art: “Ulysses’ Revenge on Penelope’s Suitors” · Christoffer Wilhelm Eckersberg · Hirschsprung Collection · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Vengeance in the Great Hall",
+      "cropNotes": "Use a wide crop retaining the archer and the hall; avoid isolating an unidentified suitor. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Christoffer_Wilhelm_Eckersberg_-_Ulysses%27_revenge_on_Penelope%27s_suitors_-_Google_Art_Project.jpg",
+      "imageWidth": 2525,
+      "imageHeight": 1406,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-215",
+      "tags": "Odyssey; painting; The; Shipwreck; of; Odysseus",
+      "title": "The Shipwreck of Odysseus",
+      "artist": "Henry Fuseli",
+      "date": "1803",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Private collection",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Johann_Heinrich_F%C3%BCssli_015.jpg",
+      "credit": "Art: “The Shipwreck of Odysseus” · Henry Fuseli · Private collection · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Leucothea, Sea-Borne Aid",
+      "cropNotes": "Vertical rescue scene; preserve the relationship between the drowning hero and divine aid. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Johann_Heinrich_F%C3%BCssli_015.jpg",
+      "imageWidth": 2024,
+      "imageHeight": 2565,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-216",
+      "tags": "Odyssey; painting; Tiresias; Appears; to; Ulysses; during; the; Sacrifice",
+      "title": "Tiresias Appears to Ulysses during the Sacrifice",
+      "artist": "Henry Fuseli",
+      "date": "1780–1785",
+      "period": "Historic painting",
+      "medium": "Watercolor and tempera on cardboard",
+      "institution": "Albertina",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Johann_Heinrich_F%C3%BCssli_063.jpg",
+      "credit": "Art: “Tiresias Appears to Ulysses during the Sacrifice” · Henry Fuseli · Albertina · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "The Trench of Blood",
+      "cropNotes": "This source is a monochrome reproduction. Preserve the apparition and sacrificial foreground. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Johann_Heinrich_F%C3%BCssli_063.jpg",
+      "imageWidth": 4112,
+      "imageHeight": 5986,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-217",
+      "tags": "Odyssey; painting; Ulysses; Threatening; Circe",
+      "title": "Ulysses Threatening Circe",
+      "artist": "Jacob Jordaens",
+      "date": "1630–1635",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Kunstmuseum Basel",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Jacob_Jordaens_%28I%29_-_Ulysses_threatening_Circe%2C_1630-35.jpg",
+      "credit": "Art: “Ulysses Threatening Circe” · Jacob Jordaens · Kunstmuseum Basel · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Moly, Root Against Sorcery",
+      "cropNotes": "Direct episode: the hero resists Circe. Moly itself is not the focal subject; retain the confrontation. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Jacob_Jordaens_%28I%29_-_Ulysses_threatening_Circe%2C_1630-35.jpg",
+      "imageWidth": 6666,
+      "imageHeight": 4968,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-218",
+      "tags": "Odyssey; painting; Circe; and; the; Swine",
+      "title": "Circe and the Swine",
+      "artist": "Briton Rivière",
+      "date": "1896",
+      "period": "Historic painting",
+      "medium": "Painting",
+      "institution": "Collection not stated",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Brighton_Riviere_Circ%C3%A9_aux_cochons%2C_1896.jpg",
+      "credit": "Art: “Circe and the Swine” · Briton Rivière · Collection not stated · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Spellbound Swine",
+      "cropNotes": "Keep the transformed pigs visible; the broad composition suits the standard art window. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Brighton_Riviere_Circ%C3%A9_aux_cochons%2C_1896.jpg",
+      "imageWidth": 2800,
+      "imageHeight": 1480,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-219",
+      "tags": "Odyssey; painting; Circe",
+      "title": "Circe",
+      "artist": "Wright Barker",
+      "date": "1889",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Cartwright Hall Art Gallery",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Circe_by_Wright_Barker_%281889%29.jpg",
+      "credit": "Art: “Circe” · Wright Barker · Cartwright Hall Art Gallery · Wikimedia Commons",
+      "matchType": "Related myth / evocative (see notes)",
+      "heroScore": 4,
+      "candidateCards": "Wild-Isle Beastmaster",
+      "cropNotes": "Related character imagery for the beastmaster; retain Circe with the surrounding animals. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/49/Circe_by_Wright_Barker_%281889%29.jpg",
+      "imageWidth": 1260,
+      "imageHeight": 868,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-220",
+      "tags": "Odyssey; painting; Circe",
+      "title": "Circe",
+      "artist": "Émile Lévy",
+      "date": "1889",
+      "period": "Historic painting",
+      "medium": "Painting",
+      "institution": "Collection not stated",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Emile_Levy_-_Circ%C3%A9.jpg",
+      "credit": "Art: “Circe” · Émile Lévy · Collection not stated · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Circe, Witch of Aeaea",
+      "cropNotes": "Vertical character portrait; leave breathing room above the head for a legendary title. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Emile_Levy_-_Circ%C3%A9.jpg",
+      "imageWidth": 2008,
+      "imageHeight": 2750,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-221",
+      "tags": "Odyssey; painting; The; Adventures; of; Ulysses",
+      "title": "The Adventures of Ulysses",
+      "artist": "Apollonio di Giovanni",
+      "date": "1435–1445",
+      "period": "Historic painting",
+      "medium": "Tempera on panel",
+      "institution": "Art Institute of Chicago",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Apollonio_di_Giovanni_-_The_Adventures_of_Ulysses_-_1933.1006_-_Art_Institute_of_Chicago.jpg",
+      "credit": "Art: “The Adventures of Ulysses” · Apollonio di Giovanni · Art Institute of Chicago · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "The Long Way Home",
+      "cropNotes": "Continuous narrative with several episodes. Use the whole strip for a journey overview or select one complete scene. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Apollonio_di_Giovanni_-_The_Adventures_of_Ulysses_-_1933.1006_-_Art_Institute_of_Chicago.jpg",
+      "imageWidth": 3000,
+      "imageHeight": 1133,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-222",
+      "tags": "Odyssey; painting; Athena; Appearing; to; Odysseus; Reveal; the; Island; of; Ithaca",
+      "title": "Athena Appearing to Odysseus to Reveal the Island of Ithaca",
+      "artist": "Giuseppe Bottani",
+      "date": "18th century",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Collection not stated",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Athena_appearing_to_Odysseus_to_reveal_the_Island_of_Ithaca_by_Giuseppe_Bottani.jpg",
+      "credit": "Art: “Athena Appearing to Odysseus to Reveal the Island of Ithaca” · Giuseppe Bottani · Collection not stated · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Athena's Veiling Mist",
+      "cropNotes": "Keep the goddess and hero in the same crop; the landscape grounds the revelation of Ithaca. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Athena_appearing_to_Odysseus_to_reveal_the_Island_of_Ithaca_by_Giuseppe_Bottani.jpg",
+      "imageWidth": 4000,
+      "imageHeight": 3103,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-223",
+      "tags": "Odyssey; painting; Ulysses; and; the; Sirens",
+      "title": "Ulysses and the Sirens",
+      "artist": "Léon Belly",
+      "date": "1867",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Musée de l’hôtel Sandelin",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Ulysses_And_The_Sirens_by_L%C3%A9on_Belly.jpg",
+      "credit": "Art: “Ulysses and the Sirens” · Léon Belly · Musée de l’hôtel Sandelin · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "The Sirens' Song",
+      "cropNotes": "Vertical interpretation of the Siren encounter. Avoid deep zoom at this source resolution. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Ulysses_And_The_Sirens_by_L%C3%A9on_Belly.jpg",
+      "imageWidth": 1040,
+      "imageHeight": 1260,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-224",
+      "tags": "Odyssey; painting; Odysseus; and; Calypso",
+      "title": "Odysseus and Calypso",
+      "artist": "Jan Brueghel the Elder",
+      "date": "1616",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Collection not stated",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Jan_Brueghel_the_Elder_-_Odysseus_and_Calypso%2C_1616.jpg",
+      "credit": "Art: “Odysseus and Calypso” · Jan Brueghel the Elder · Collection not stated · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Calypso, Keeper of Ogygia",
+      "cropNotes": "Keep the island setting with its figures; useful for an alternate Calypso treatment. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Jan_Brueghel_the_Elder_-_Odysseus_and_Calypso%2C_1616.jpg",
+      "imageWidth": 1395,
+      "imageHeight": 1139,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-225",
+      "tags": "Odyssey; painting; The; Recognition; of; Ulysses; and; Telemachus",
+      "title": "The Recognition of Ulysses and Telemachus",
+      "artist": "Eugène Buland",
+      "date": "1880",
+      "period": "Historic painting",
+      "medium": "Painting",
+      "institution": "Private collection",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Buland_Reconnaissance_Ulysse_T%C3%A9l%C3%A9maque.jpg",
+      "credit": "Art: “The Recognition of Ulysses and Telemachus” · Eugène Buland · Private collection · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 4,
+      "candidateCards": "Telemachus and Odysseus, Reunited",
+      "cropNotes": "Retain both figures and their gesture of recognition; naturally suited to full-art portrait framing. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Buland_Reconnaissance_Ulysse_T%C3%A9l%C3%A9maque.jpg",
+      "imageWidth": 942,
+      "imageHeight": 1200,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-226",
+      "tags": "Odyssey; painting; Ulysses; Fighting; the; Beggar",
+      "title": "Ulysses Fighting the Beggar",
+      "artist": "Lovis Corinth",
+      "date": "1903",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "National Gallery Prague",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Lovis_Corinth_Odysseus_im_Kampf_mit_dem_Bettler_1903.jpg",
+      "credit": "Art: “Ulysses Fighting the Beggar” · Lovis Corinth · National Gallery Prague · Wikimedia Commons",
+      "matchType": "Related myth / evocative (see notes)",
+      "heroScore": 5,
+      "candidateCards": "Mortal's Resolve",
+      "cropNotes": "Direct Odyssey episode: the contest with Irus. An evocative match for mortal resolve, not a named Irus card. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Lovis_Corinth_Odysseus_im_Kampf_mit_dem_Bettler_1903.jpg",
+      "imageWidth": 3000,
+      "imageHeight": 2294,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-227",
+      "tags": "Odyssey; painting; Ulysses; and; Nausicaa",
+      "title": "Ulysses and Nausicaa",
+      "artist": "Michele Desubleo",
+      "date": "1654",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Museo di Capodimonte",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Michele_Desubleo_-_Ulysses_and_Nausicaa%2C_1654.jpg",
+      "credit": "Art: “Ulysses and Nausicaa” · Michele Desubleo · Museo di Capodimonte · Wikimedia Commons",
+      "matchType": "Related myth / evocative (see notes)",
+      "heroScore": 5,
+      "candidateCards": "Nymph of Safe Harbor",
+      "cropNotes": "Direct episode, evocative safe-harbor match. Nausicaa is a mortal princess, not a nymph. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Michele_Desubleo_-_Ulysses_and_Nausicaa%2C_1654.jpg",
+      "imageWidth": 1280,
+      "imageHeight": 1012,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-228",
+      "tags": "Odyssey; painting; The; Return; of; Odysseus; Book; XIX",
+      "title": "The Return of Odysseus: Odyssey Book XIX",
+      "artist": "Christoffer Wilhelm Eckersberg",
+      "date": "1812",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Statens Museum for Kunst",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:CW_Eckersberg%2C_Odysseus%27_hjemkomst_Motiv_fra_Odyss%C3%A9en_XIX_sang%2C_1812%2C_KMS7256%2C_Statens_Museum_for_Kunst.jpg",
+      "credit": "Art: “The Return of Odysseus: Odyssey Book XIX” · Christoffer Wilhelm Eckersberg · Statens Museum for Kunst · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Eurycleia, Keeper of Secrets",
+      "cropNotes": "Preserve the recognition scene and the nurse; a direct match for Eurycleia. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/CW_Eckersberg%2C_Odysseus%27_hjemkomst_Motiv_fra_Odyss%C3%A9en_XIX_sang%2C_1812%2C_KMS7256%2C_Statens_Museum_for_Kunst.jpg",
+      "imageWidth": 1600,
+      "imageHeight": 1330,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-229",
+      "tags": "Odyssey; painting; Ulysses; Fleeing; the; Cave; of; Polyphemus",
+      "title": "Ulysses Fleeing the Cave of Polyphemus",
+      "artist": "Christoffer Wilhelm Eckersberg",
+      "date": "1812",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Princeton University Art Museum",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Eckersberg%2C_Christoffer_Wilhelm%2C_Ulysses_Fleeing_the_Cave_of_Polyphemus%2C_1812.jpg",
+      "credit": "Art: “Ulysses Fleeing the Cave of Polyphemus” · Christoffer Wilhelm Eckersberg · Princeton University Art Museum · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Cyclopean Pathfinder",
+      "cropNotes": "Keep Odysseus beneath the ram; a direct escape episode rather than a generic giant portrait. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Eckersberg%2C_Christoffer_Wilhelm%2C_Ulysses_Fleeing_the_Cave_of_Polyphemus%2C_1812.jpg",
+      "imageWidth": 1607,
+      "imageHeight": 2000,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-230",
+      "tags": "Odyssey; painting; The; Embarkation; of; Ulysses",
+      "title": "The Embarkation of Ulysses",
+      "artist": "Erastus Salisbury Field",
+      "date": "c. 1844",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Springfield Museums",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:The_Embarkation_of_Ulysses_by_Erastus_Salisbury_Field.jpg",
+      "credit": "Art: “The Embarkation of Ulysses” · Erastus Salisbury Field · Springfield Museums · Wikimedia Commons",
+      "matchType": "Related myth / evocative (see notes)",
+      "heroScore": 4,
+      "candidateCards": "Phaeacian Wonder-Ship",
+      "cropNotes": "Emphasize the vessel and luminous harbor. Evocative ship match; not securely identified as the Phaeacian vessel. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d8/The_Embarkation_of_Ulysses_by_Erastus_Salisbury_Field.jpg",
+      "imageWidth": 1280,
+      "imageHeight": 848,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-231",
+      "tags": "Odyssey; painting; Odysseus; in; the; Cave; of; Polyphemus",
+      "title": "Odysseus in the Cave of Polyphemus",
+      "artist": "Constantin Hansen",
+      "date": "1835",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Collection unknown",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Constantin_Hansen_-_Ulysses_i_kyklopen_Polyphems_hule_-_1835.png",
+      "credit": "Art: “Odysseus in the Cave of Polyphemus” · Constantin Hansen · Collection unknown · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Monster Beneath the Cliffs",
+      "cropNotes": "Retain the cavern and the encounter; strong wide standard-frame scene. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Constantin_Hansen_-_Ulysses_i_kyklopen_Polyphems_hule_-_1835.png",
+      "imageWidth": 1880,
+      "imageHeight": 1532,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-232",
+      "tags": "Odyssey; painting; Ulysses; at; the; Court; of; Alcinous",
+      "title": "Ulysses at the Court of Alcinous",
+      "artist": "Francesco Hayez",
+      "date": "c. 1814–1815",
+      "period": "Historic painting",
+      "medium": "Painting",
+      "institution": "Collection not stated",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Hayez_-_Ulisse_alla_corte_di_Alcinoo%2C_1814-15_ca.%2C_0064.jpg",
+      "credit": "Art: “Ulysses at the Court of Alcinous” · Francesco Hayez · Collection not stated · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Alcinous, Hospitable King",
+      "cropNotes": "Keep the guest and royal court together to convey hospitality. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Hayez_-_Ulisse_alla_corte_di_Alcinoo%2C_1814-15_ca.%2C_0064.jpg",
+      "imageWidth": 2878,
+      "imageHeight": 1746,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-233",
+      "tags": "Odyssey; painting; Penelope; Awakened; by; Eurycleia",
+      "title": "Penelope Awakened by Eurycleia",
+      "artist": "Angelica Kauffmann",
+      "date": "1772",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Vorarlberg Museum, Bregenz",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Penelope_Waken_by_Eurykleia_%281772%29%2C_oil_on_canvas%2C_dimensions_unknown%2C_Vorarlberger_Landesmuseum%2C_Bregenz.jpg",
+      "credit": "Art: “Penelope Awakened by Eurycleia” · Angelica Kauffmann · Vorarlberg Museum, Bregenz · Wikimedia Commons",
+      "matchType": "Related myth / evocative (see notes)",
+      "heroScore": 5,
+      "candidateCards": "Secret Laid Bare",
+      "cropNotes": "Direct recognition episode, used evocatively for a secret revealed. Preserve both women. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Penelope_Waken_by_Eurykleia_%281772%29%2C_oil_on_canvas%2C_dimensions_unknown%2C_Vorarlberger_Landesmuseum%2C_Bregenz.jpg",
+      "imageWidth": 1752,
+      "imageHeight": 1200,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-234",
+      "tags": "Odyssey; painting; Minerva; Polias; on; the; Acropolis; of; Athens",
+      "title": "Minerva Polias on the Acropolis of Athens",
+      "artist": "Louis-Hector Leroux",
+      "date": "1878",
+      "period": "Historic painting",
+      "medium": "Painting",
+      "institution": "Musée d’Abbeville",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Louis_Hector_Leroux--Minerve_Poliade_sur_lAcropole_d%27Ath%C3%A8nes--1878.jpg",
+      "credit": "Art: “Minerva Polias on the Acropolis of Athens” · Louis-Hector Leroux · Musée d’Abbeville · Wikimedia Commons",
+      "matchType": "Related myth / evocative (see notes)",
+      "heroScore": 5,
+      "candidateCards": "Temple of Enlightenment",
+      "cropNotes": "Related Greek sacred architecture and Athena imagery; not an Odyssey episode. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Louis_Hector_Leroux--Minerve_Poliade_sur_lAcropole_d%27Ath%C3%A8nes--1878.jpg",
+      "imageWidth": 3292,
+      "imageHeight": 2180,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-235",
+      "tags": "Odyssey; painting; Poseidon; and; Amphitrite",
+      "title": "Poseidon and Amphitrite",
+      "artist": "Rupert Bunny",
+      "date": "c. 1913",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "National Gallery of Australia",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Rupert_Bunny_-_Poseidon_and_Amphitrite_-_Google_Art_Project.jpg",
+      "credit": "Art: “Poseidon and Amphitrite” · Rupert Bunny · National Gallery of Australia · Wikimedia Commons",
+      "matchType": "Related myth / evocative (see notes)",
+      "heroScore": 5,
+      "candidateCards": "Poseidon, Earth-Shaker",
+      "cropNotes": "Colorful divine sea procession. Keep Poseidon recognizable; a related-myth portrait, not a Homeric episode. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Rupert_Bunny_-_Poseidon_and_Amphitrite_-_Google_Art_Project.jpg",
+      "imageWidth": 4169,
+      "imageHeight": 3337,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-236",
+      "tags": "Odyssey; painting; Ulysses; and; the; Sirens",
+      "title": "Ulysses and the Sirens",
+      "artist": "Herbert James Draper",
+      "date": "c. 1909",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Ferens Art Gallery",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Draper-Ulysses_and_Sirens.jpg",
+      "credit": "Art: “Ulysses and the Sirens” · Herbert James Draper · Ferens Art Gallery · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "The Sirens, Voices Beyond Shore",
+      "cropNotes": "Keep the bound hero, the ship, and at least one Siren together; strong full-art alternative. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Draper-Ulysses_and_Sirens.jpg",
+      "imageWidth": 2074,
+      "imageHeight": 1704,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-237",
+      "tags": "Odyssey; painting; Odysseus; before; Scylla; and; Charybdis",
+      "title": "Odysseus before Scylla and Charybdis",
+      "artist": "Henry Fuseli",
+      "date": "1794–1796",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Aargauer Kunsthaus",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Johann_Heinrich_F%C3%BCssli_054.jpg",
+      "credit": "Art: “Odysseus before Scylla and Charybdis” · Henry Fuseli · Aargauer Kunsthaus · Wikimedia Commons",
+      "matchType": "Related myth / evocative (see notes)",
+      "heroScore": 5,
+      "candidateCards": "Charybdis, Devouring Whirlpool",
+      "cropNotes": "Vertical peril scene. The source connects this interpretation with Milton; label as related literary imagery. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/42/Johann_Heinrich_F%C3%BCssli_054.jpg",
+      "imageWidth": 2024,
+      "imageHeight": 2543,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-238",
+      "tags": "Odyssey; painting; Ulysses; in; the; Palace; of; Alcinous",
+      "title": "Ulysses in the Palace of Alcinous",
+      "artist": "Jean-Jacques Lagrenée",
+      "date": "1750–1821",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Musée d’art et d’histoire de Narbonne",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Jean-Jacques_Lagren%C3%A9e_-_Ulysse_dans_le_palais_d%27Alcino%C3%BCs.jpg",
+      "credit": "Art: “Ulysses in the Palace of Alcinous” · Jean-Jacques Lagrenée · Musée d’art et d’histoire de Narbonne · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Arete, Wise Queen",
+      "cropNotes": "Source is described as a detail. Court-scene option for Arete; do not treat an unidentified figure as a verified portrait. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Jean-Jacques_Lagren%C3%A9e_-_Ulysse_dans_le_palais_d%27Alcino%C3%BCs.jpg",
+      "imageWidth": 1504,
+      "imageHeight": 1000,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-239",
+      "tags": "Odyssey; painting; Ulysses; Deriding; Polyphemus",
+      "title": "Ulysses Deriding Polyphemus",
+      "artist": "J. M. W. Turner",
+      "date": "1829",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "National Gallery, London",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Turner_-_Ulysses_deriding_Polyphemus_1829.jpg",
+      "credit": "Art: “Ulysses Deriding Polyphemus” · J. M. W. Turner · National Gallery, London · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "The Black-Hulled Ship, Homeward Bound",
+      "cropNotes": "Retain the ship, sail, and luminous sky. The scene is the departure from Polyphemus, not the final homecoming. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/Turner_-_Ulysses_deriding_Polyphemus_1829.jpg",
+      "imageWidth": 6493,
+      "imageHeight": 4226,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-240",
+      "tags": "Odyssey; painting; The; Return; of; Neptune",
+      "title": "The Return of Neptune",
+      "artist": "John Singleton Copley",
+      "date": "c. 1754",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "The Metropolitan Museum of Art",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:The_Return_of_Neptune_by_John_Singleton_Copley.jpg",
+      "credit": "Art: “The Return of Neptune” · John Singleton Copley · The Metropolitan Museum of Art · Wikimedia Commons",
+      "matchType": "Related myth / evocative (see notes)",
+      "heroScore": 5,
+      "candidateCards": "Sea God's Revenge",
+      "cropNotes": "Related Poseidon/Neptune imagery; sea-god procession rather than the specific vengeance episode. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/The_Return_of_Neptune_by_John_Singleton_Copley.jpg",
+      "imageWidth": 2000,
+      "imageHeight": 1247,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-241",
+      "tags": "Odyssey; painting; Neptune; Creating; the; Horse",
+      "title": "Neptune Creating the Horse",
+      "artist": "Jacob Jordaens",
+      "date": "1645",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Palazzo Pitti",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Jacob_Jordaens_-_Neptune_Creating_the_Horse_%281645%29.jpg",
+      "credit": "Art: “Neptune Creating the Horse” · Jacob Jordaens · Palazzo Pitti · Wikimedia Commons",
+      "matchType": "Related myth / evocative (see notes)",
+      "heroScore": 5,
+      "candidateCards": "Poseidon, Earth-Shaker",
+      "cropNotes": "Alternate Earth-Shaker treatment from the related Poseidon horse myth; retain god and horse. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/17/Jacob_Jordaens_-_Neptune_Creating_the_Horse_%281645%29.jpg",
+      "imageWidth": 2556,
+      "imageHeight": 1280,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-242",
+      "tags": "Odyssey; painting; Circe; Invidiosa",
+      "title": "Circe Invidiosa",
+      "artist": "John William Waterhouse",
+      "date": "1892",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Art Gallery of South Australia",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:J._W._Waterhouse_-_Circe_Invidiosa_-_Google_Art_Project.jpg",
+      "credit": "Art: “Circe Invidiosa” · John William Waterhouse · Art Gallery of South Australia · Wikimedia Commons",
+      "matchType": "Related myth / evocative (see notes)",
+      "heroScore": 5,
+      "candidateCards": "Circe, Witch of Aeaea",
+      "cropNotes": "Circe poisoning Scylla’s water, from Ovid; a direct character match, not a Homeric episode. Excellent vertical full-art composition. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/J._W._Waterhouse_-_Circe_Invidiosa_-_Google_Art_Project.jpg",
+      "imageWidth": 2350,
+      "imageHeight": 5001,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-243",
+      "tags": "Odyssey; painting; Circe; Offering; the; Cup; to; Ulysses",
+      "title": "Circe Offering the Cup to Ulysses",
+      "artist": "John William Waterhouse",
+      "date": "1891",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Gallery Oldham",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Circe_Offering_the_Cup_to_Odysseus_%282457_x_4023px_ed.%29.jpg",
+      "credit": "Art: “Circe Offering the Cup to Ulysses” · John William Waterhouse · Gallery Oldham · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 5,
+      "candidateCards": "Circe, Mistress of Aeaea",
+      "cropNotes": "Keep the cup, gaze, and raised arm; portrait format offers generous room beneath a translucent rules overlay. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/be/Circe_Offering_the_Cup_to_Odysseus_%282457_x_4023px_ed.%29.jpg",
+      "imageWidth": 2457,
+      "imageHeight": 4023,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-244",
+      "tags": "Odyssey; painting; Penelope; and; the; Suitors",
+      "title": "Penelope and the Suitors",
+      "artist": "John William Waterhouse",
+      "date": "1912",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "Aberdeen Archives, Gallery & Museums",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:JohnWilliamWaterhouse-PenelopeandtheSuitors%281912%29.jpg",
+      "credit": "Art: “Penelope and the Suitors” · John William Waterhouse · Aberdeen Archives, Gallery & Museums · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 4,
+      "candidateCards": "Penelope, Queen in Waiting",
+      "cropNotes": "Retain Penelope and the loom. Lower-resolution source: prefer standard framing and restrained zoom. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/JohnWilliamWaterhouse-PenelopeandtheSuitors%281912%29.jpg",
+      "imageWidth": 900,
+      "imageHeight": 612,
+      "addedIn": "2026-09-17.2"
+    },
+    {
+      "id": "ART-245",
+      "tags": "Odyssey; painting; Ulysses; and; the; Sirens",
+      "title": "Ulysses and the Sirens",
+      "artist": "John William Waterhouse",
+      "date": "1891",
+      "period": "Historic painting",
+      "medium": "Oil on canvas",
+      "institution": "National Gallery of Victoria",
+      "objectId": "",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_Ulysses_and_the_Sirens_%281891%29.jpg",
+      "credit": "Art: “Ulysses and the Sirens” · John William Waterhouse · National Gallery of Victoria · Wikimedia Commons",
+      "matchType": "Direct character / episode",
+      "heroScore": 4,
+      "candidateCards": "The Sirens, Voices Beyond Shore",
+      "cropNotes": "Wide composition with bird-bodied Sirens; preserve the ship and bound hero. Prefer standard framing at this resolution. Entire source image is available for free positioning; no application pre-crop.",
+      "status": "CURATED",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/John_William_Waterhouse_-_Ulysses_and_the_Sirens_%281891%29.jpg",
+      "imageWidth": 1296,
+      "imageHeight": 641,
+      "addedIn": "2026-09-17.2"
     }
   ],
   "coverage": [
@@ -12159,7 +13079,8 @@
       "layer": "3 — Evocative / abstract",
       "candidateIds": [
         "ART-084",
-        "ART-110"
+        "ART-110",
+        "ART-227"
       ],
       "primary": "ART-110",
       "creditReady": "YES",
@@ -13336,7 +14257,8 @@
         "ART-042",
         "ART-043",
         "ART-045",
-        "ART-046"
+        "ART-046",
+        "ART-214"
       ],
       "primary": "ART-036",
       "creditReady": "YES",
@@ -13426,7 +14348,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-044",
-        "ART-194"
+        "ART-194",
+        "ART-240"
       ],
       "primary": "ART-194",
       "creditReady": "YES",
@@ -13451,7 +14374,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-008",
-        "ART-035"
+        "ART-035",
+        "ART-233"
       ],
       "primary": "ART-008",
       "creditReady": "YES",
@@ -13646,7 +14570,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-044",
-        "ART-205"
+        "ART-205",
+        "ART-206"
       ],
       "primary": "ART-205",
       "creditReady": "YES",
@@ -13756,7 +14681,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-004",
-        "ART-012"
+        "ART-012",
+        "ART-218"
       ],
       "primary": "ART-004",
       "creditReady": "YES",
@@ -13914,7 +14840,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "3 — Evocative / abstract",
       "candidateIds": [
-        "ART-062"
+        "ART-062",
+        "ART-226"
       ],
       "primary": "ART-062",
       "creditReady": "YES",
@@ -14014,7 +14941,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-001",
-        "ART-007"
+        "ART-007",
+        "ART-244"
       ],
       "primary": "ART-001",
       "creditReady": "YES",
@@ -14044,7 +14972,8 @@
         "ART-025",
         "ART-035",
         "ART-036",
-        "ART-039"
+        "ART-039",
+        "ART-210"
       ],
       "primary": "ART-001",
       "creditReady": "YES",
@@ -14080,7 +15009,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "3 — Evocative / abstract",
       "candidateIds": [
-        "ART-073"
+        "ART-073",
+        "ART-211"
       ],
       "primary": "ART-073",
       "creditReady": "YES",
@@ -14280,7 +15210,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "3 — Evocative / abstract",
       "candidateIds": [
-        "ART-079"
+        "ART-079",
+        "ART-219"
       ],
       "primary": "ART-079",
       "creditReady": "YES",
@@ -14304,7 +15235,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-013"
+        "ART-013",
+        "ART-231"
       ],
       "primary": "ART-013",
       "creditReady": "YES",
@@ -14353,7 +15285,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-013"
+        "ART-013",
+        "ART-229"
       ],
       "primary": "ART-013",
       "creditReady": "YES",
@@ -14367,7 +15300,8 @@
       "candidateIds": [
         "ART-001",
         "ART-035",
-        "ART-039"
+        "ART-039",
+        "ART-208"
       ],
       "primary": "ART-001",
       "creditReady": "YES",
@@ -14381,7 +15315,9 @@
       "candidateIds": [
         "ART-004",
         "ART-012",
-        "ART-038"
+        "ART-038",
+        "ART-220",
+        "ART-242"
       ],
       "primary": "ART-004",
       "creditReady": "YES",
@@ -14394,7 +15330,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-003",
-        "ART-010"
+        "ART-010",
+        "ART-224"
       ],
       "primary": "ART-003",
       "creditReady": "YES",
@@ -14544,7 +15481,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "3 — Evocative / abstract",
       "candidateIds": [
-        "ART-067"
+        "ART-067",
+        "ART-234"
       ],
       "primary": "ART-067",
       "creditReady": "YES",
@@ -14665,7 +15603,9 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-044"
+        "ART-044",
+        "ART-235",
+        "ART-241"
       ],
       "primary": "ART-044",
       "creditReady": "YES",
@@ -14678,7 +15618,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-001",
-        "ART-040"
+        "ART-040",
+        "ART-207"
       ],
       "primary": "ART-001",
       "creditReady": "YES",
@@ -14692,7 +15633,8 @@
       "candidateIds": [
         "ART-004",
         "ART-012",
-        "ART-038"
+        "ART-038",
+        "ART-243"
       ],
       "primary": "ART-004",
       "creditReady": "YES",
@@ -14705,7 +15647,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-010",
-        "ART-011"
+        "ART-011",
+        "ART-213"
       ],
       "primary": "ART-010",
       "creditReady": "YES",
@@ -14718,7 +15661,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-026",
-        "ART-027"
+        "ART-027",
+        "ART-232"
       ],
       "primary": "ART-026",
       "creditReady": "YES",
@@ -14730,7 +15674,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-026"
+        "ART-026",
+        "ART-238"
       ],
       "primary": "ART-026",
       "creditReady": "YES",
@@ -14791,7 +15736,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-020"
+        "ART-020",
+        "ART-237"
       ],
       "primary": "ART-020",
       "creditReady": "YES",
@@ -14866,7 +15812,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-008",
-        "ART-042"
+        "ART-042",
+        "ART-228"
       ],
       "primary": "ART-008",
       "creditReady": "YES",
@@ -14907,7 +15854,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-033"
+        "ART-033",
+        "ART-222"
       ],
       "primary": "ART-033",
       "creditReady": "YES",
@@ -14982,7 +15930,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-004",
-        "ART-012"
+        "ART-012",
+        "ART-217"
       ],
       "primary": "ART-004",
       "creditReady": "YES",
@@ -15007,7 +15956,8 @@
       "layer": "1 — Direct / iconic",
       "candidateIds": [
         "ART-023",
-        "ART-036"
+        "ART-036",
+        "ART-225"
       ],
       "primary": "ART-023",
       "creditReady": "YES",
@@ -15019,7 +15969,9 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-019"
+        "ART-019",
+        "ART-236",
+        "ART-245"
       ],
       "primary": "ART-019",
       "creditReady": "YES",
@@ -15031,7 +15983,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-027"
+        "ART-027",
+        "ART-230"
       ],
       "primary": "ART-027",
       "creditReady": "YES",
@@ -15095,7 +16048,8 @@
       "candidateIds": [
         "ART-017",
         "ART-018",
-        "ART-047"
+        "ART-047",
+        "ART-216"
       ],
       "primary": "ART-017",
       "creditReady": "YES",
@@ -15192,7 +16146,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-018"
+        "ART-018",
+        "ART-212"
       ],
       "primary": "ART-018",
       "creditReady": "YES",
@@ -15204,7 +16159,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-032"
+        "ART-032",
+        "ART-215"
       ],
       "primary": "ART-032",
       "creditReady": "YES",
@@ -15257,7 +16213,8 @@
       "candidateIds": [
         "ART-001",
         "ART-035",
-        "ART-040"
+        "ART-040",
+        "ART-209"
       ],
       "primary": "ART-001",
       "creditReady": "YES",
@@ -15293,7 +16250,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-019"
+        "ART-019",
+        "ART-223"
       ],
       "primary": "ART-019",
       "creditReady": "YES",
@@ -15305,7 +16263,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-011"
+        "ART-011",
+        "ART-221"
       ],
       "primary": "ART-011",
       "creditReady": "YES",
@@ -15317,7 +16276,8 @@
       "status": "LAYER 1 CANDIDATE",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
-        "ART-049"
+        "ART-049",
+        "ART-239"
       ],
       "primary": "ART-049",
       "creditReady": "YES",
@@ -15325,9 +16285,9 @@
     }
   ],
   "integrity": {
-    "sha256": "f737c9ba9b9fc3355ebec66dbe6cf54f5946884760fa57fabf718a4cfae78b6a",
+    "sha256": "e1c980f993a5e6e87d868898a8838a965fc05a2b8633b3dfe5dc72ec11397a6f",
     "cards": 250,
-    "artworks": 205,
+    "artworks": 245,
     "coverage": 250
   }
 }
