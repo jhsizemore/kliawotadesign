@@ -18,6 +18,22 @@ export default {
         }
       });
     }
-    return env.ASSETS.fetch(request);
+    const response = await env.ASSETS.fetch(request);
+    if ((url.pathname === "/mtgtools/odyssey" || url.pathname === "/mtgtools/odyssey/") &&
+        response.headers.get("content-type")?.includes("text/html")) {
+      return new HTMLRewriter()
+        .on("head", {
+          element(element) {
+            element.append('<link rel="stylesheet" href="/mtgtools/odyssey/frame-system.css?v=20260917-1">', { html: true });
+          }
+        })
+        .on("body", {
+          element(element) {
+            element.append('<script src="/mtgtools/odyssey/frame-system.js?v=20260917-1"></script>', { html: true });
+          }
+        })
+        .transform(response);
+    }
+    return response;
   }
 };
