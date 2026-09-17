@@ -388,7 +388,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}
 
 /* Full art uses one continuous source image. Its upper window stays unobstructed. */
 .render-card.treatment-full-art .artbox{height:auto!important;bottom:7px!important;border-radius:2px 2px 9px 9px;}
-.render-card.treatment-full-art .rules{background:rgba(250,248,240,.87)!important;border:1px solid rgba(255,252,238,.75)!important;box-shadow:0 1px 8px rgba(25,23,17,.12)!important;color:#201f1b!important;}
+.render-card.treatment-full-art .rules{background:rgba(250,248,240,.80)!important;border:1px solid rgba(255,252,238,.75)!important;box-shadow:0 1px 8px rgba(25,23,17,.12)!important;color:#201f1b!important;}
 .render-card.treatment-full-art .typebar{background:color-mix(in srgb,var(--proxy-type) 94%,transparent)!important;}
 .render-card.treatment-full-art .footer{background:linear-gradient(180deg,rgba(248,244,231,.90),rgba(248,244,231,.96))!important;border-radius:0 0 7px 7px;}
 .render-card.treatment-full-art .special-box{background:rgba(235,227,206,.82);}
@@ -664,8 +664,8 @@ function fitCardTypography(card){
  if(!card||!card.isConnected||!card.offsetWidth)return;
  // Layout pixels, rather than visual zoom, also keep printed cards proportionally fitted.
  const scale=card.offsetWidth/378,name=card.querySelector('.name'),titleText=card.querySelector('.title-text'),type=card.querySelector('.type-text'),rules=card.querySelector('.rules');
- if(name&&titleText){const alias=card.querySelector('.titlebar')?.classList.contains('alias');fitDown(name,(alias?17.5:21)*scale,12.2*scale,.2*scale,()=>name.scrollWidth>titleText.clientWidth-.5)}
- if(type)fitDown(type,14.2*scale,10.6*scale,.2*scale,()=>type.scrollWidth>type.clientWidth-.5);
+ if(name&&titleText){const alias=card.querySelector('.titlebar')?.classList.contains('alias');fitDown(name,(alias?17.5:21)*scale,12.2*scale,.2*scale,()=>name.scrollWidth>titleText.clientWidth+.5)}
+ if(type)fitDown(type,14.2*scale,10.6*scale,.2*scale,()=>type.scrollWidth>type.clientWidth+.5);
  if(!rules||!rules.clientHeight)return;
  const start=15.2*scale,comfort=12.6*scale,min=10.8*scale,rems=[...rules.querySelectorAll('.playtest-reminder')];
  rems.forEach(r=>r.classList.remove('auto-hidden'));
