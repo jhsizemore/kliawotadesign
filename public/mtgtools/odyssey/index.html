@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Odyssey Card Layout Studio</title>
+<style>
+html,body{margin:0;min-height:100%;background:#10120f;color:#efece2;font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}body{display:grid;place-items:center}.boot{max-width:520px;padding:28px;text-align:center}.boot b{display:block;font:700 22px Georgia,serif;margin-bottom:10px}.muted{color:#aaa99f;font-size:13px}.err{color:#efb5a6;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<div class="boot"><b>Loading Odyssey Studio…</b><div id="status" class="muted">Loading the hosted card editor.</div></div>
+<script>
+(async()=>{
+ const status=document.getElementById('status');
+ try{
+  if(!('DecompressionStream' in window)) throw new Error('This browser does not support the hosted Studio loader. Please use a current Chrome, Edge, Safari, or Firefox build.');
+  const response=await fetch('./app.html.gz?v=20260917-1',{cache:'no-store'});
+  if(!response.ok) throw new Error('Studio payload returned HTTP '+response.status);
+  status.textContent='Starting Studio…';
+  const stream=response.body.pipeThrough(new DecompressionStream('gzip'));
+  const html=await new Response(stream).text();
+  document.open();
+  document.write(html);
+  document.close();
+ }catch(err){
+  status.className='err';
+  status.textContent='Could not load Odyssey Studio.\n\n'+(err&&err.message?err.message:String(err));
+ }
+})();
+</script>
+</body>
+</html>
