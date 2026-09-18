@@ -184,7 +184,9 @@
     };
     const select = document.getElementById('fLayout');
     if (select) [...select.options].forEach(option => {
-      option.textContent = labels[option.value] || labels[option.textContent] || option.textContent;
+      const value = option.value;
+      option.label = labels[value] || labels[option.textContent] || option.textContent;
+      option.value = value;
     });
   }
 
