@@ -1,0 +1,40 @@
+name: Odyssey continuity regression
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/mtgtools/odyssey/**'
+      - 'src/**'
+      - 'tests/odyssey-continuity*'
+      - 'wrangler.jsonc'
+      - 'package.json'
+      - '.github/workflows/odyssey-continuity.yml'
+  pull_request:
+    paths:
+      - 'public/mtgtools/odyssey/**'
+      - 'src/**'
+      - 'tests/odyssey-continuity*'
+      - 'wrangler.jsonc'
+      - 'package.json'
+      - '.github/workflows/odyssey-continuity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odyssey-continuity-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Card data, rendering notation and artwork-sync regression
+        run: node --test tests/odyssey-continuity.test.cjs
+      - name: Install existing build dependencies
+        run: npm install --no-package-lock
+      - name: Verify the complete Worker and asset build without deploying
+        run: npx wrangler deploy --dry-run --outdir /tmp/odyssey-verified-build
