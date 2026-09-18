@@ -352,6 +352,16 @@
           tile.classList.remove('new');
           const newBadge = tile.querySelector('.art-opt-badge.new');
           if (newBadge) newBadge.remove();
+          tile.querySelectorAll('.art-option-badges .art-opt-badge').forEach(candidateBadge => {
+            if (candidateBadge.classList.contains('unique') || /^×\d+$/i.test(candidateBadge.textContent.trim())) candidateBadge.remove();
+          });
+          const art = artById[id], meta = tile.querySelector('.art-option-meta');
+          if (art && meta) {
+            meta.textContent = '';
+            const artist = document.createElement('b'); artist.textContent = art.artist || 'Unknown artist'; meta.appendChild(artist);
+            meta.appendChild(document.createElement('br')); meta.appendChild(document.createTextNode(art.institution || ''));
+            meta.appendChild(document.createElement('br')); meta.appendChild(document.createTextNode(id + ' · full library'));
+          }
         }
         const otherUses = (usage.get(id) || []).filter(number => Number(number) !== Number(n));
         if (otherUses.length && !tile.querySelector('.art-option-use-indicator')) {
