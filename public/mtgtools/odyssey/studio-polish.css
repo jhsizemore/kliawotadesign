@@ -1,0 +1,43 @@
+/* Generous artwork options: rows grow, never squeeze to fit the viewport. */
+#artOptionsOverlay .art-options-sheet{display:flex!important;flex-direction:column!important;width:min(1240px,100%)!important;height:min(90dvh,920px)!important;max-height:calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom))!important;min-height:0!important;overflow:hidden!important}
+#artOptionsOverlay .art-options-head{flex:0 0 auto!important;flex-wrap:wrap;gap:8px}
+#artOptionsOverlay .art-options-head>div:first-child{min-width:0;flex:1 1 230px}
+#artOptionsOverlay h2{overflow-wrap:anywhere}
+#artOptionsGrid{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr))!important;grid-auto-rows:max-content!important;align-items:start!important;align-content:start!important;gap:14px!important;flex:1 1 auto!important;min-height:0!important;max-height:none!important;overflow:auto!important;overscroll-behavior:contain;scrollbar-gutter:stable;padding:14px!important;-webkit-overflow-scrolling:touch}
+#artOptionsGrid .art-option{display:flex!important;flex-direction:column!important;align-self:start!important;flex:none!important;width:100%!important;height:auto!important;min-height:330px!important;max-height:none!important;white-space:normal;text-align:left}
+#artOptionsGrid .art-option-thumb{position:relative;width:100%!important;height:220px!important;min-height:220px!important;max-height:220px!important;flex:0 0 220px!important;aspect-ratio:auto!important;overflow:hidden}
+#artOptionsGrid .art-option-thumb img{width:100%!important;height:100%!important;object-fit:contain!important}
+#artOptionsGrid .art-option-body{flex:1 0 auto!important;min-height:110px!important;padding:10px!important}
+#artOptionsGrid .art-option-title,#artOptionsGrid .art-option-meta{white-space:normal!important;overflow-wrap:anywhere;max-height:none!important;-webkit-line-clamp:unset!important}
+#artOptionsOverlay .art-options-note{flex:0 0 auto!important;max-height:6em;overflow:auto}
+@media(max-width:600px){#artOptionsGrid{grid-template-columns:1fr!important}#artOptionsGrid .art-option-thumb{height:240px!important;min-height:240px!important;max-height:240px!important;flex-basis:240px!important}#artOptionsGrid .art-option{min-height:350px!important}}
+/* The text line itself must include room for glyph ascenders and descenders. */
+.render-card .titlebar{align-items:center!important;overflow:visible!important}
+.render-card .title-text{display:flex!important;flex-direction:column!important;justify-content:center!important;flex:1 1 auto!important;min-width:0!important;height:auto!important;max-height:none!important;overflow:visible!important;padding:0!important}
+.render-card .name{display:block!important;height:auto!important;max-height:none!important;line-height:1.16!important;padding:.06em 0 .1em!important;margin:0!important;overflow:visible!important;text-transform:uppercase!important;white-space:nowrap!important}
+.render-card .under-name{flex:0 0 auto;line-height:1.15!important}
+.render-card .mana{flex:0 0 auto!important}
+.od-symbol{position:relative;box-sizing:border-box;flex-shrink:0;vertical-align:-.15em}
+.inline-mana.od-symbol{display:inline-flex!important;align-items:center;justify-content:center;width:1.06em;height:1.06em;line-height:1}
+.od-symbol.od-vector{background:#ddd8c9!important;color:#29271f!important;border:1px solid #4b473c!important;border-radius:50%;overflow:hidden}
+.od-symbol.od-vector>svg{display:block;width:90%!important;height:90%!important}
+.od-symbol.od-vector:not(.od-hybrid){font-family:Arial,sans-serif;font-weight:700}
+.od-symbol.od-hybrid{overflow:hidden!important}
+.od-hybrid-parts{display:flex;width:100%;height:100%;align-items:stretch}
+.od-hybrid-half{display:flex;align-items:center;justify-content:center;min-width:0;flex:1;font:700 .75em/1 Arial,sans-serif}
+.od-hybrid-half img,.od-hybrid-half svg{width:100%!important;height:70%!important;object-fit:contain}
+.od-symbol-error{color:#ffca92;font:700 10px/1.15 system-ui,sans-serif;max-width:100px;overflow-wrap:anywhere}
+.od-sync-button{white-space:normal;min-height:40px}
+.od-sync-dialog{background:#1b1e18;color:#efefe7;border:1px solid #6f674f;border-radius:14px;padding:20px;width:min(580px,calc(100vw - 24px));max-height:calc(90dvh - 20px);overflow:auto;font:14px/1.5 system-ui,sans-serif}
+.od-sync-dialog::backdrop{background:rgba(0,0,0,.72)}
+.od-sync-dialog h2{margin:0 0 12px}.od-sync-dialog button{min-height:42px;margin:4px}.od-sync-dialog input,.od-sync-dialog textarea{width:100%;padding:9px;background:#10120f;color:#fff;border:1px solid #605d50;border-radius:6px;font:12px/1.5 ui-monospace,monospace}.od-sync-dialog textarea{min-height:76px;resize:vertical}
+.od-sync-row{border-top:1px solid #484c3d;padding:12px 0;overflow-wrap:anywhere}.od-sync-row pre{white-space:pre-wrap;font-size:11px;max-height:140px;overflow:auto}.od-sync-warning{color:#eed08c}.od-sync-status{font-size:12px;margin:8px 0;overflow-wrap:anywhere}
+@media print{.od-sync-button,.od-sync-dialog{display:none!important}}
+
+.od-small-number{font-size:.75em}
+.od-sync-actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.od-sync-conflict{border-top:1px solid #565443;padding:12px 0}.od-sync-conflict pre{font:11px/1.4 monospace;white-space:pre-wrap;overflow-wrap:anywhere}.od-sync-conflict button{margin:4px 6px 0 0}
+#odSyncConflicts{max-height:40dvh;overflow:auto} .od-sync-dialog input{max-width:100%;margin:8px 0}.od-sync-dialog details{margin:16px 0}.od-sync-dialog label{display:block}
+@media screen and (max-width:760px){.odyssey-mobile .top-actions{flex-wrap:wrap;gap:5px}.odyssey-mobile .od-sync-button{min-height:38px;font-size:11px}.od-sync-dialog input{font-size:16px}}
+
+.odyssey-mobile .top-actions .od-sync-button{display:inline-flex!important;align-items:center;justify-content:center}
