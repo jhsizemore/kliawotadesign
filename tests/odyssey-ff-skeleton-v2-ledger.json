@@ -1,9 +1,9 @@
 {
-  "schema": "odyssey-ff-skeleton-ledger/v3",
+  "schema": "odyssey-ff-skeleton-ledger/v4",
   "sourceCandidateCommit": "ea2471aa7e1339ff0e22c260c827acddbf158e20",
-  "finalCandidateBlob": "2b63ddf5b7dc168d1476a2ecb2a8ca7f152311df",
-  "generatedAt": "2026-09-18T20:18:27.307Z",
-  "contractRun": "ff-skeleton-v2-single-face",
+  "finalCandidateBlob": "863f5ddcafd5127d66e95dc8f53e7725bd832ac1",
+  "generatedAt": "2026-09-18T23:24:15.482Z",
+  "contractRun": "ff-skeleton-v2-story-15-70-15",
   "summary": {
     "modifiedExisting": 250,
     "added": 59,
@@ -11,16 +11,40 @@
   },
   "validations": {
     "cards": true,
-    "singleFace": true,
-    "noActiveDfcs": true,
+    "story": true,
+    "soleDfc": true,
+    "noMeld": true,
     "rarity": true,
     "lands": true,
     "legends": true,
-    "signposts": true,
-    "highCurve": true,
-    "showcase": true,
-    "bonus": true,
-    "commander": true
+    "highCurve": true
+  },
+  "storyApportionment": {
+    "totalCards": 309,
+    "target": [
+      {
+        "era": "Iliad + young Odysseus",
+        "count": 46,
+        "share": 0.1488673139158576
+      },
+      {
+        "era": "Odyssey",
+        "count": 217,
+        "share": 0.7022653721682848
+      },
+      {
+        "era": "Old Odysseus beyond the Odyssey",
+        "count": 46,
+        "share": 0.1488673139158576
+      }
+    ],
+    "actual": {
+      "Iliad + young Odysseus": 46,
+      "Odyssey": 217,
+      "Old Odysseus beyond the Odyssey": 46
+    },
+    "note": "Exact integer allocation nearest to 15% / 70% / 15% while preserving symmetry around the Odyssey core.",
+    "postOdysseyAuthority": "Telegony/Epic Cycle synopsis and later mythographic traditions; variants should be identified as post-Homeric rather than presented as Odyssey canon."
   },
   "actual": {
     "physicalCards": 309,
@@ -31,14 +55,15 @@
       "M": 20
     },
     "layouts": {
-      "singleFace": 309,
-      "doubleFace": 0,
+      "singleFace": 308,
+      "doubleFace": 1,
       "byLayout": {
         "standard": 274,
         "saga": 15,
-        "vehicle": 11,
+        "vehicle": 10,
         "adventure": 8,
-        "prepare": 1
+        "prepare": 1,
+        "double-face-battle": 1
       }
     },
     "lands": 40,
@@ -101,6 +126,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Young Odysseus in Ithaca before the war"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -141,6 +182,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books I–IV / maturation"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -165,6 +222,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The distant shore where the inland journey begins"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -193,6 +266,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Penelope in the years after the suitors"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -223,6 +312,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Athena's protection / revelation"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -247,6 +352,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Crew rally"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -277,6 +398,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The restored household of old Odysseus"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -301,6 +438,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Telegonus lands on Ithaca"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -337,6 +490,22 @@
         "functionalWords": {
           "before": null,
           "after": 18
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Athena’s favor over Odysseus at Troy"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -373,6 +542,22 @@
         "functionalWords": {
           "before": null,
           "after": 11
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Odysseus holds the Achaean battle line"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -397,6 +582,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Old Odysseus takes the road inland"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -421,6 +622,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "A dream of Odysseus’s last journey"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -445,6 +662,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Odysseus feigns madness to avoid the war"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -469,6 +702,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Poseidon's storms"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -493,6 +742,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "An omen before the fleet sails for Troy"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -517,6 +782,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Sirens"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -541,6 +822,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Odysseus sails to Elis"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -577,6 +874,22 @@
         "functionalWords": {
           "before": null,
           "after": 16
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -613,6 +926,22 @@
         "functionalWords": {
           "before": null,
           "after": 9
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -649,6 +978,22 @@
         "functionalWords": {
           "before": null,
           "after": 13
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -673,6 +1018,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Underworld exploitation"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -709,6 +1070,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / Elpenor"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -733,6 +1110,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Underworld"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -757,6 +1150,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Tiresias’s final instruction to Odysseus"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -781,6 +1190,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Suitors"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -805,6 +1230,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Funeral obligation"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -835,6 +1276,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / Underworld"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -871,6 +1328,22 @@
         "functionalWords": {
           "before": null,
           "after": 7
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -907,6 +1380,22 @@
         "functionalWords": {
           "before": null,
           "after": 13
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -935,6 +1424,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -959,6 +1464,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "A sailor in Telegonus’s company"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -983,6 +1504,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Palamedes exposes Odysseus’s feigned madness"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -1007,6 +1544,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Aeolus"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1031,6 +1584,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Laestrygonians"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1055,6 +1624,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The Ithacan war fleet"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -1079,6 +1664,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Poseidon"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1107,6 +1708,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Telegonus crosses the sea in search of his father"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -1135,6 +1752,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Zeus’s lightning over Troy"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -1171,6 +1804,22 @@
         "functionalWords": {
           "before": null,
           "after": 11
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Ajax in the crush of battle"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -1207,6 +1856,22 @@
         "functionalWords": {
           "before": null,
           "after": 26
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1231,6 +1896,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Telegonus’s men forage on Ithaca"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -1255,6 +1936,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Nymph / divine nature"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1279,6 +1976,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Helios's cattle"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1303,6 +2016,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Odysseus carries the oar inland"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -1327,6 +2056,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Island monsters"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1355,6 +2100,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Ithaca under the next generation"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -1383,6 +2144,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1411,6 +2188,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book IV / Elysian Plain; Theros Beyond Death reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1439,6 +2232,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1467,6 +2276,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1533,6 +2358,22 @@
         "functionalWords": {
           "before": null,
           "after": 41
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books I–II / Mentor's counsel"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1579,6 +2420,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / Tiresias"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1624,6 +2481,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Crew dissent"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1680,6 +2553,22 @@
         "functionalWords": {
           "before": null,
           "after": 17
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book IX / Cyclops"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1725,6 +2614,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Ithaca / loyalty"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1770,6 +2675,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Suitors"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1835,6 +2756,22 @@
         "functionalWords": {
           "before": null,
           "after": 37
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Telegonus, Seeker of His Father"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -1904,6 +2841,22 @@
         "functionalWords": {
           "before": null,
           "after": 40
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / Odysseus meets his mother among the dead"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -1973,6 +2926,22 @@
         "functionalWords": {
           "before": null,
           "after": 35
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Wandering crew / steadfast service"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2041,6 +3010,22 @@
         "functionalWords": {
           "before": null,
           "after": 42
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Telegonus, Stranger to Ithaca"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -2079,6 +3064,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Odysseus / voyage"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2116,6 +3117,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Athena"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2152,6 +3169,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book IX / Odysseus names himself to Polyphemus"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2176,6 +3209,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Odysseus's ship"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2200,6 +3249,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Phaeacia"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2231,6 +3296,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The Bow of Iphitus, received by young Odysseus"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -2259,6 +3340,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The Oar Mistaken for a Winnowing Fan"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -2287,6 +3384,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2315,6 +3428,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The Thesprotian war camp"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -2389,6 +3518,22 @@
         "functionalWords": {
           "before": null,
           "after": 6
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Ithaca, the Final Shore"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -2463,6 +3608,22 @@
         "functionalWords": {
           "before": null,
           "after": 6
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / road to the dead"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2491,6 +3652,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Aulis, harbor of the Achaean oath"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -2515,6 +3692,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Nestor’s Pylian war fleet"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -2539,6 +3732,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book VI / Scheria"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2563,6 +3772,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Odysseus returns from Thesprotia"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -2598,6 +3823,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XIX / recognition"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2622,6 +3863,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Phaeacia / expert sailors"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2646,6 +3903,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book VIII / court song"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2676,6 +3949,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book VIII / Demodocus"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2700,6 +3989,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Ithaca / disguised poverty"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2724,6 +4029,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Suitors / palace abuse"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2748,6 +4069,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / Agamemnon"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2772,6 +4109,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "An Ithacan spearman at Troy"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -2796,6 +4149,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "A sailor of the last voyage"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -2820,6 +4189,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / narrow straits"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2844,6 +4229,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Old Odysseus beyond the Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The old orchard after peace"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Telegony / post-Odyssey traditions"
         }
       }
     },
@@ -2868,6 +4269,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Eumaeus / swineherd"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2892,6 +4309,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book IX / Lotus-Eaters"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -2922,6 +4355,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Nestor, counselor of the Achaeans"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -2967,6 +4416,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book VI / Nausicaa finds Odysseus"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3011,6 +4476,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XXIV / Laertes"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3041,6 +4522,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XXII / palace battle"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3077,6 +4574,22 @@
         "functionalWords": {
           "before": null,
           "after": 24
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3105,6 +4618,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3141,6 +4670,22 @@
         "functionalWords": {
           "before": null,
           "after": 20
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3169,6 +4714,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3205,6 +4766,22 @@
         "functionalWords": {
           "before": null,
           "after": 17
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3241,6 +4818,22 @@
         "functionalWords": {
           "before": null,
           "after": 28
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3269,6 +4862,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3293,6 +4902,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / Scylla and Charybdis"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3317,6 +4942,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Disguise becomes resource"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3341,6 +4982,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Island monsters / surviving battle"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3365,6 +5022,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Oath, loyalty, homecoming"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3401,6 +5074,22 @@
         "functionalWords": {
           "before": null,
           "after": 9
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Returning-mechanic reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3455,6 +5144,22 @@
         "functionalWords": {
           "before": null,
           "after": 11
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Supernatural abundance / large Hope hit"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3479,6 +5184,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Improvised voyage / storm survival"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3521,6 +5242,22 @@
         "functionalWords": {
           "before": null,
           "after": 13
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros Beyond Death reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3545,6 +5282,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Ithaca / palace household"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3569,6 +5322,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Sparta before the war"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -3593,6 +5362,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XVI / reunion at Eumaeus's hut"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3617,6 +5402,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XVII / Argos"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3641,6 +5442,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XX / omens of homecoming"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3669,6 +5486,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3705,6 +5538,22 @@
         "functionalWords": {
           "before": null,
           "after": 6
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3733,6 +5582,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3757,6 +5622,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Storm voyage"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3781,6 +5662,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book V / Ogygia"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3805,6 +5702,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / narrow straits"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3843,6 +5756,22 @@
         "functionalWords": {
           "before": null,
           "after": 19
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Voyage / storm aftermath"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3867,6 +5796,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book V / Ogygia"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3903,6 +5848,22 @@
         "functionalWords": {
           "before": null,
           "after": 10
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3931,6 +5892,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3955,6 +5932,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Suitors / consumption"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -3979,6 +5972,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / trench of blood"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4003,6 +6012,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / Circe"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4027,6 +6052,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Underworld crossing"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4051,6 +6092,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Suitors / predation"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4089,6 +6146,22 @@
         "functionalWords": {
           "before": null,
           "after": 19
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / fallen warriors"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4113,6 +6186,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / forbidden cattle"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4141,6 +6230,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The hammer-blow of battle at Troy"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -4169,6 +6274,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4193,6 +6314,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Crew / reckless companions"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4217,6 +6354,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / Laestrygonians"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4271,6 +6424,22 @@
         "functionalWords": {
           "before": null,
           "after": 21
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Poseidon's storm-tossed sea"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4295,6 +6464,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / Scylla"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4319,6 +6504,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Voyage / wrecked ships"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4347,6 +6548,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "A war singer of Ithaca"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -4383,6 +6600,22 @@
         "functionalWords": {
           "before": null,
           "after": 12
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Born of the Gods reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4411,6 +6644,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros Beyond Death reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4435,6 +6684,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Unknown shores / herbs and abundance"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4459,6 +6724,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Rocky islands"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4483,6 +6764,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / Hermes's moly"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4557,6 +6854,22 @@
         "functionalWords": {
           "before": null,
           "after": 7
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Ithaca / palace consumed by the suitors"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4581,6 +6894,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / funerary payment"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4605,6 +6934,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Phaeacian transport / sturdy ship"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4635,6 +6980,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Ithaca / Penelope's endurance"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4659,6 +7020,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Divine aid / hope embodied"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4731,6 +7108,22 @@
         "functionalWords": {
           "before": null,
           "after": 39
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books XXII–XXIII / the herald spared in the hall"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4759,6 +7152,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "An Ithacan hoplite"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -4787,6 +7196,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The Achaean fleet launches for Troy"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -4817,6 +7242,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XX / Theoclymenus"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4841,6 +7282,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Phaeacia / miraculous ships"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4887,6 +7344,22 @@
         "functionalWords": {
           "before": null,
           "after": 31
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The fall of Troy"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -4915,6 +7388,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Kaldheim reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4943,6 +7432,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -4967,6 +7472,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Masks carried into the Underworld"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5039,6 +7560,22 @@
         "functionalWords": {
           "before": null,
           "after": 33
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books XVII–XXII / betrayal inside the palace"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5067,6 +7604,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros Beyond Death reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5111,6 +7664,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / Aeolus gives the winds"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5135,6 +7704,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Long voyage / experienced captain"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5175,6 +7760,22 @@
         "functionalWords": {
           "before": null,
           "after": 15
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / Scylla"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5221,6 +7822,22 @@
         "functionalWords": {
           "before": null,
           "after": 35
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Crew dissent / fatal choices"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5249,6 +7866,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Achilles revealed on Scyros"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -5277,6 +7910,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The Achaeans muster for war"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -5305,6 +7954,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Apollo’s arrows over the Achaean camp"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -5349,6 +8014,22 @@
         "functionalWords": {
           "before": null,
           "after": 38
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Hidden potential made enormous"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5373,6 +8054,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Endurance among island monsters"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5397,6 +8094,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book V / supernatural abundance"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5437,6 +8150,22 @@
         "functionalWords": {
           "before": null,
           "after": 15
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Unknown island monster"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5465,6 +8194,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5493,6 +8238,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros reprint / mortal hero facing island monsters"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5521,6 +8282,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Odyssey (2001) reprint / beast of an unknown shore"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5589,6 +8366,22 @@
         "functionalWords": {
           "before": null,
           "after": 39
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / the crew enters Circe’s hall"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5619,6 +8412,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Ithaca / weaving and recognition"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5663,6 +8472,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / Circe"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5707,6 +8532,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book V / Calypso"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5751,6 +8592,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books XV–XXII / return and battle"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5827,6 +8684,22 @@
         "functionalWords": {
           "before": null,
           "after": 47
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book VIII / Phaeacian games"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5903,6 +8776,22 @@
         "functionalWords": {
           "before": null,
           "after": 37
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / Sisyphus among the punished dead"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5931,6 +8820,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Kaldheim reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -5959,6 +8864,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Hermes aids Odysseus before Troy"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -5987,6 +8908,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Odysseus on the night raid"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -6015,6 +8952,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6039,6 +8992,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / opening the bag of winds"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6083,6 +9052,22 @@
         "functionalWords": {
           "before": null,
           "after": 46
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Royal expedition / voyage"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6107,6 +9092,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Storm navigation"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6135,6 +9136,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Reprint"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6219,6 +9236,22 @@
         "functionalWords": {
           "before": null,
           "after": 26
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Ithaca before Odysseus sails to war"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -6304,6 +9337,22 @@
         "functionalWords": {
           "before": null,
           "after": 18
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books VI–XIII / miraculous Phaeacian passage"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6388,6 +9437,22 @@
         "functionalWords": {
           "before": null,
           "after": 26
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / the Underworld"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6472,6 +9537,22 @@
         "functionalWords": {
           "before": null,
           "after": 33
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / Circe’s island"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6557,6 +9638,22 @@
         "functionalWords": {
           "before": null,
           "after": 30
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / cattle of Helios"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6585,6 +9682,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros Temple cycle / structural fixing"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6613,6 +9726,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros Temple cycle / structural fixing"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6641,6 +9770,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros Temple cycle / structural fixing"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6669,6 +9814,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Theros Temple cycle / structural fixing"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6697,6 +9858,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Whole poem / homeward path"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6734,6 +9911,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books V, IX, XIII / Poseidon's wrath"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6771,6 +9964,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books I–XXIII / Penelope's waiting and weaving"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6824,6 +10033,22 @@
         "functionalWords": {
           "before": null,
           "after": 33
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / Circe prepares the transforming draught"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6861,6 +10086,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book V / Calypso and Ogygia"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6897,6 +10138,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books VI–XIII / Scheria"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6929,6 +10186,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books VII–VIII / Arete's judgment"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -6961,6 +10234,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Menelaus at Troy"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -6997,6 +10286,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Helen of Troy"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -7033,6 +10338,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books XV–XXII / Telemachus returns and fights"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7065,6 +10386,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book V / Ino's saving veil"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7101,6 +10438,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / Charybdis"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7136,6 +10489,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / Scylla"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7186,6 +10555,22 @@
         "functionalWords": {
           "before": null,
           "after": 78
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / cattle of Helios"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7220,6 +10605,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books V and X / Hermes aids the journey"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7250,6 +10651,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / descent to Hades"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7280,6 +10697,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XXIII / the immovable marriage bed"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7312,6 +10745,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XIX / Eurycleia recognizes the scar"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7342,6 +10791,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XXI / contest of the bow"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7388,6 +10853,22 @@
         "functionalWords": {
           "before": null,
           "after": 35
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books XIII–XVII / Odysseus prepares his disguise"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7412,6 +10893,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Athena shrouds an Achaean stratagem"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -7448,6 +10945,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books I–XXII / Antinous consumes Odysseus's household"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7484,6 +10997,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books II–XXII / Eurymachus's persuasion"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7520,6 +11049,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books X–XII / mutiny and forbidden choices"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7550,6 +11095,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / slaughter of Helios's cattle"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7596,6 +11157,22 @@
         "functionalWords": {
           "before": null,
           "after": 40
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book IX / Lotus-Eaters"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7627,6 +11204,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / Hermes's moly"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7659,6 +11252,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books XIV–XXII / faithful servants"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7695,6 +11304,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XVI / father and son reunited"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7727,6 +11352,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / the Sirens"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7778,6 +11419,22 @@
         "functionalWords": {
           "before": null,
           "after": 45
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books VIII–XIII / Phaeacian ship homeward"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7808,46 +11465,42 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XXIV / Athena ends the feud"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
     {
       "id": "ODY-229",
       "number": 229,
-      "name": "The Wooden Horse of Troy",
+      "name": "The Siege of Troy // The Wooden Horse",
       "change": "modified",
       "fields": {
-        "name": {
-          "before": "The Siege of Troy // The Wooden Horse",
-          "after": "The Wooden Horse of Troy"
-        },
-        "displayName": {
-          "before": "The Siege of Troy // The Wooden Horse",
-          "after": "The Wooden Horse of Troy"
-        },
-        "type": {
-          "before": "Enchantment — Saga // Legendary Artifact — Vehicle",
-          "after": "Legendary Artifact — Vehicle"
-        },
-        "pt": {
-          "before": "// 5/5",
-          "after": "5/5"
-        },
         "mechanics": {
           "before": "Saga / Vehicle / remembered Troy",
-          "after": "Vehicle; Crew; Infiltration"
+          "after": "Saga; Vehicle; Crew; Infiltration"
         },
         "rules": {
           "before": "I — Create two 1/1 white Human Soldier creature tokens.\nII — Until your next turn, whenever one or more creatures you control attack, they get +1/+0 until end of turn.\nIII — Exile this Saga, then return it transformed under your control.\n//BACK// The Wooden Horse\nWhenever The Wooden Horse attacks, another target attacking creature can't be blocked this turn. Crew 3.",
-          "after": "When The Wooden Horse of Troy enters, create two 1/1 white Human Soldier creature tokens. Whenever The Wooden Horse of Troy attacks, another target attacking creature can’t be blocked this turn. Crew 3."
+          "after": "I — Create two 1/1 white Human Soldier creature tokens.\nII — Until your next turn, whenever one or more creatures you control attack, they get +1/+0 until end of turn.\nIII — Exile this Saga, then return it transformed under your control.\n//BACK// The Wooden Horse\nWhenever The Wooden Horse attacks, another target attacking creature can’t be blocked this turn. Crew 3."
         },
         "story": {
           "before": "Troy remembered / the long siege and the Wooden Horse",
-          "after": "Troy remembered / the Wooden Horse breaks the siege"
-        },
-        "layout": {
-          "before": "transform",
-          "after": "vehicle"
+          "after": "Trojan War / the Wooden Horse breaks the siege"
         },
         "productLayer": {
           "before": null,
@@ -7855,7 +11508,7 @@
         },
         "skeletonClass": {
           "before": null,
-          "after": "vehicle"
+          "after": "double-face-battle"
         },
         "cycleIds": {
           "before": null,
@@ -7870,11 +11523,27 @@
         },
         "functionalWords": {
           "before": null,
-          "after": 34
+          "after": 61
         },
         "changeStatus": {
           "before": null,
-          "after": "converted-dfc-to-single-face"
+          "after": "restored-sole-dfc"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "The Siege of Troy and the Wooden Horse"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -7905,6 +11574,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book VIII / Phaeacian games"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7941,6 +11626,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / Agamemnon among the dead"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -7987,6 +11688,22 @@
         "functionalWords": {
           "before": null,
           "after": 29
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / blood summons the shades"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8019,6 +11736,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books X–XI / Elpenor demands burial"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8051,6 +11784,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / Laestrygonian king"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8103,6 +11852,22 @@
         "functionalWords": {
           "before": null,
           "after": 31
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / the crew opens Aeolus's bag"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8149,6 +11914,22 @@
         "functionalWords": {
           "before": null,
           "after": 34
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / Scylla takes six sailors"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8173,6 +11954,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Young Odysseus scarred by the boar on Parnassus"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -8197,6 +11994,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / sacred cattle of Helios"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8228,6 +12041,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books XXIII–XXIV / rooted home at Ithaca"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8264,6 +12093,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XI / Tiresias foretells the road home"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8296,6 +12141,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book V / Ino as Leucothea saves Odysseus"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8326,6 +12187,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Iliad + young Odysseus"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Zeus weighs the fate of Troy"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": true
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
         }
       }
     },
@@ -8356,6 +12233,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book X / Aeolus seals the winds"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8386,6 +12279,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books X–XI / Hermes guides and protects"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8439,6 +12348,22 @@
         "functionalWords": {
           "before": null,
           "after": 40
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Books I–XXIII / Penelope waits and preserves the household"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8463,6 +12388,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / destruction after the cattle are slain"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8493,6 +12434,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book V / Ogygia hides a future outside ordinary time"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8523,6 +12480,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Book XII / irresistible song of the Sirens"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8547,6 +12520,22 @@
         "changeStatus": {
           "before": null,
           "after": "carried-from-analysis-candidate-v1"
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Whole poem / every road bends toward Ithaca"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8583,6 +12572,22 @@
         "functionalWords": {
           "before": null,
           "after": 54
+        },
+        "narrativeEra": {
+          "before": null,
+          "after": "Odyssey"
+        },
+        "storyTarget": {
+          "before": null,
+          "after": "Whole voyage / the homeward ship"
+        },
+        "storyRethemeRequired": {
+          "before": null,
+          "after": false
+        },
+        "storySourceBand": {
+          "before": null,
+          "after": "Odyssey Books I–XXIV"
         }
       }
     },
@@ -8625,7 +12630,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Ithaca — the palace above the olive groves",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Ithaca — the palace above the olive groves",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -8667,7 +12676,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Pylos — sacrifice by the bright shore",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Pylos in the age before the voyage home",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -8709,7 +12722,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Sparta — the court of Menelaus",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Sparta and the oath of Helen’s suitors",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -8751,7 +12768,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Scheria — Phaeacian harbor",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Scheria — Phaeacian harbor",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -8793,7 +12814,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "The wine-dark sea at dawn",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "The wine-dark sea at dawn",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -8835,7 +12860,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Ogygia — Calypso’s hidden shore",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Ogygia — Calypso’s hidden shore",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -8877,7 +12906,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Hades — the trench of blood",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Hades — the trench of blood",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -8919,7 +12952,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Asphodel — fields of shades",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Asphodel — fields of shades",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -8961,7 +12998,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "The palace hall before vengeance",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "The palace hall before vengeance",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9003,7 +13044,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Aeaea — Circe’s cliffs",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Aeaea — Circe’s cliffs",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9045,7 +13090,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "The Laestrygonian harbor",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "The Laestrygonian harbor",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9087,7 +13136,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Scylla’s narrow cliff",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Scylla’s narrow cliff",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9129,7 +13182,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Ithaca — Laertes’ orchard",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Ithaca — Laertes’ orchard",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9171,7 +13228,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Eumaeus’s pasture",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Eumaeus’s pasture",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9213,7 +13274,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "Thrinacia — pasture of the Sun",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Thrinacia — pasture of the Sun",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9255,7 +13320,11 @@
         "changeStatus": "added-ff-skeleton",
         "basicArtTheme": "The wild slopes of Parnassus",
         "skeletonClass": "standard",
-        "functionalWords": 1
+        "functionalWords": 1,
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Parnassus, where young Odysseus is scarred",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -9296,7 +13365,11 @@
         ],
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
-        "functionalWords": 6
+        "functionalWords": 6,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Book IX / Cyclops island",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9337,7 +13410,11 @@
         ],
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
-        "functionalWords": 6
+        "functionalWords": 6,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Books XIV–XVI / Eumaeus",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9378,7 +13455,11 @@
         ],
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
-        "functionalWords": 9
+        "functionalWords": 9,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Ithaca / Penelope and the suitors",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9419,7 +13500,11 @@
         ],
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
-        "functionalWords": 7
+        "functionalWords": 7,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Book X / Aeolus",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9460,7 +13545,11 @@
         ],
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
-        "functionalWords": 6
+        "functionalWords": 6,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Book XI / fields of the dead",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9501,7 +13590,11 @@
         ],
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
-        "functionalWords": 6
+        "functionalWords": 6,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Book VIII / games and competition",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9542,7 +13635,11 @@
         ],
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
-        "functionalWords": 7
+        "functionalWords": 7,
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Book V / Ogygia",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV"
       }
     },
     {
@@ -9584,7 +13681,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 26
+        "functionalWords": 26,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "The Inland Oar",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -9626,7 +13727,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 26
+        "functionalWords": 26,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Polyxenus of Elis",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -9668,7 +13773,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 29
+        "functionalWords": 29,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "The Herds of Elis",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -9710,7 +13819,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 34
+        "functionalWords": 34,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "The Gift of the Mixing Bowl",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -9752,7 +13865,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 38
+        "functionalWords": 38,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Trophonius",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -9794,7 +13911,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 26
+        "functionalWords": 26,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Agamedes",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -9836,7 +13957,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 27
+        "functionalWords": 27,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Augeas of Elis",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -9878,7 +14003,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 24
+        "functionalWords": 24,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Sacrifice to the Nymphs",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -9920,7 +14049,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 30
+        "functionalWords": 30,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "The Road Through Epirus",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -9962,7 +14095,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 29
+        "functionalWords": 29,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Callidice, Queen of Thesprotia",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10004,7 +14141,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 35
+        "functionalWords": 35,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Polypoetes, Son of Odysseus",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10046,7 +14187,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 33
+        "functionalWords": 33,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "The Thesprotian Host",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10089,7 +14234,11 @@
           "extended-art-legend"
         ],
         "functionalWords": 33,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Achilles at Troy",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -10131,7 +14280,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 36
+        "functionalWords": 36,
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Ajax at Troy",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -10174,7 +14327,11 @@
           "extended-art-legend"
         ],
         "functionalWords": 36,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Odysseus, King in Thesprotia",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10216,7 +14373,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 40
+        "functionalWords": 40,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "The War with the Brygians",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10259,7 +14420,11 @@
           "extended-art-legend"
         ],
         "functionalWords": 40,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Ares Routs the Thesprotians",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10302,7 +14467,11 @@
           "extended-art-legend"
         ],
         "functionalWords": 32,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Athena Confronts Ares",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10344,7 +14513,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 37
+        "functionalWords": 37,
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Priam, King of Troy",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -10386,7 +14559,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 27
+        "functionalWords": 27,
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Hector, defender of Troy",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -10428,7 +14605,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 33
+        "functionalWords": 33,
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Cassandra before the fall",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -10470,7 +14651,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 35
+        "functionalWords": 35,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Apollo Separates the Gods",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10512,7 +14697,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 29
+        "functionalWords": 29,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "The Death of Callidice",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10555,7 +14744,11 @@
           "extended-art-legend"
         ],
         "functionalWords": 38,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Polypoetes Inherits Thesprotia",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10597,7 +14790,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 35
+        "functionalWords": 35,
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Hephaestus forges the arms of heroes",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -10640,7 +14837,11 @@
           "extended-art-legend"
         ],
         "functionalWords": 28,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Apollo, defender of Troy",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -10683,7 +14884,11 @@
           "extended-art-legend"
         ],
         "functionalWords": 32,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Artemis at Aulis",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -10725,7 +14930,11 @@
         "showcase": [
           "extended-art-legend"
         ],
-        "functionalWords": 37
+        "functionalWords": 37,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Odysseus Returns to Ithaca Again",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10765,7 +14974,11 @@
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
         "functionalWords": 36,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Poliporthes, Son of Penelope",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10804,7 +15017,11 @@
         "cycleIds": [],
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
-        "functionalWords": 42
+        "functionalWords": 42,
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Autolycus names and trains young Odysseus",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -10844,7 +15061,11 @@
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
         "functionalWords": 25,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Telegonus Searches for His Father",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10886,7 +15107,11 @@
         "showcase": [
           "master-artist"
         ],
-        "functionalWords": 35
+        "functionalWords": 35,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "Telegonus Ravages Ithaca",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10929,7 +15154,11 @@
           "master-artist"
         ],
         "functionalWords": 45,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "The Stingray Spear",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -10971,7 +15200,11 @@
         "showcase": [
           "master-artist"
         ],
-        "functionalWords": 27
+        "functionalWords": 27,
+        "narrativeEra": "Old Odysseus beyond the Odyssey",
+        "storyTarget": "The Islands of the Blest",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Telegony / post-Odyssey traditions"
       }
     },
     {
@@ -11011,7 +15244,11 @@
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
         "functionalWords": 51,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Aphrodite in the Trojan War",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     },
     {
@@ -11051,7 +15288,11 @@
         "changeStatus": "added-ff-skeleton",
         "skeletonClass": "standard",
         "functionalWords": 52,
-        "lateGameRole": "seven-plus showcase payoff"
+        "lateGameRole": "seven-plus showcase payoff",
+        "narrativeEra": "Iliad + young Odysseus",
+        "storyTarget": "Ares in the Trojan War",
+        "storyRethemeRequired": true,
+        "storySourceBand": "Trojan War / Iliad-adjacent tradition / young Odysseus tradition"
       }
     }
   ]
