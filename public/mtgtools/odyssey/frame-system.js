@@ -1,5 +1,5 @@
-/* Odyssey frame system v3.12
-   Adds an automatic, type-aware frame taxonomy without changing card data. */
+/* Odyssey frame system v3.13
+   Automatic type-aware frames with MTG-style structural layouts. */
 (function () {
   'use strict';
 
@@ -73,18 +73,29 @@
     inner.appendChild(ornament);
   }
 
+  function escapeHTML(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
   function decorateSaga(card, model) {
     const rules = card.querySelector('.rules');
-    if (!rules || rules.querySelector('.saga-rail')) return;
-    const numerals = String(model.rules || '').match(/(?:^|\s)(I{1,3}|IV|V)(?=\s*[—-])/g) || [];
-    const chapters = (numerals.length ? numerals : [' I', ' II', ' III'])
-      .slice(0, 4)
-      .map(value => value.trim());
-    const rail = document.createElement('div');
-    rail.className = 'saga-rail';
-    rail.setAttribute('aria-hidden', 'true');
-    rail.innerHTML = chapters.map(n => `<span>${n}</span>`).join('');
-    rules.prepend(rail);
+    const main = rules?.querySelector('.rule-main');
+    if (!main || main.querySelector('.saga-chapters')) return;
+    const source = String(model.rules || '').trim();
+    const markers = [...source.matchAll(/(?:^|\s)(IV|V|III|II|I)\s*[—-]\s*/g)];
+    if (!markers.length) return;
+    const chapters = markers.map((match, index) => {
+      const start = match.index + match[0].length;
+      const end = markers[index + 1]?.index ?? source.length;
+      return { numeral: match[1], text: source.slice(start, end).trim() };
+    });
+    main.innerHTML = `<div class="saga-chapters">${chapters.map(chapter =>
+      `<div class="saga-chapter"><span class="saga-medallion" aria-hidden="true">${chapter.numeral}</span><span>${escapeHTML(chapter.text)}</span></div>`
+    ).join('')}</div>`;
   }
 
   function decorateBattleStats(card, model) {
@@ -93,7 +104,8 @@
     const source = String(model.pt || '');
     const defense = source.match(/Defense\s*(\d+)/i)?.[1] || source.match(/\d+/)?.[0] || '—';
     const back = source.match(/\/\/\s*([0-9*]+\s*\/\s*[0-9*]+)/)?.[1] || '';
-    stat.innerHTML = `<span class="defense-label">DEF</span><span class="defense-value">${defense}</span>${back ? `<span class="battle-back-stat">${back}</span>` : ''}`;
+    stat.setAttribute('aria-label', `Defense ${defense}${back ? `; back face ${back}` : ''}`);
+    stat.innerHTML = `<span class="defense-label">DEFENSE</span><span class="defense-value">${defense}</span>${back ? `<span class="battle-back-stat">${back}</span>` : ''}`;
   }
 
   function decorateSpecialInset(card, family) {
@@ -102,7 +114,7 @@
     const mark = document.createElement('span');
     mark.className = 'special-kind-mark';
     mark.setAttribute('aria-hidden', 'true');
-    mark.textContent = family === 'adventure' ? '✦' : family === 'prepare' ? '◈' : family === 'battle' ? '◆' : '';
+    mark.textContent = family === 'adventure' ? 'A' : family === 'prepare' ? 'P' : family === 'battle' ? '↻' : '';
     box.prepend(mark);
   }
 
@@ -149,6 +161,8 @@
   }
 
   function currentNumber() {
+    const titleNumber = Number.parseInt(document.querySelector('#selectedTitle')?.textContent, 10);
+    if (Number.isFinite(titleNumber) && titleNumber > 0) return titleNumber;
     const active = document.querySelector('.card-row.active');
     const value = Number(active?.dataset.n);
     return Number.isFinite(value) && value > 0 ? value : 1;
@@ -156,7 +170,22 @@
 
   function upgradeVersionLabel() {
     const label = document.querySelector('.topbar .version');
-    if (label) label.textContent = 'v3.12 · complete frame system';
+    if (label) label.textContent = 'v3.13 · MTG structural frames';
+  }
+
+  function upgradeInspectorLabels() {
+    const labels = {
+      standard: 'Standard MTG frame',
+      adventure: 'Adventure split frame',
+      prepare: 'Prepared split frame',
+      battle: 'Battle — landscape',
+      saga: 'Saga — story panel',
+      vehicle: 'Vehicle — artifact frame'
+    };
+    const select = document.getElementById('fLayout');
+    if (select) [...select.options].forEach(option => {
+      option.textContent = labels[option.value] || labels[option.textContent] || option.textContent;
+    });
   }
 
   function install() {
@@ -166,6 +195,7 @@
     }
     installReadout();
     upgradeVersionLabel();
+    upgradeInspectorLabels();
 
     const originalMakeCardShell = window.makeCardShell;
     window.makeCardShell = function (model) {
@@ -189,6 +219,16 @@
       updateReadout(window.model(currentNumber()));
       return result;
     };
+
+    const observer = new MutationObserver(() => {
+      const card = document.querySelector('#previewShell .render-card:not([data-frame-family])');
+      if (!card) return;
+      const current = window.model(currentNumber());
+      applyFrameSystem(card, current);
+      updateReadout(current);
+    });
+    const preview = document.getElementById('previewShell');
+    if (preview) observer.observe(preview, { childList: true, subtree: true });
 
     window.renderPreview();
   }

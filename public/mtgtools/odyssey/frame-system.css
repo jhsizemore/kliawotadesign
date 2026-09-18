@@ -523,3 +523,498 @@
   .print-sheet .battle-back-stat { font-size: 1.7mm; padding-left: .8mm; }
   .print-sheet .special-kind-mark { left: 1mm; top: 1.1mm; width: 2.8mm; height: 2.8mm; font-size: 1.3mm; }
 }
+
+/* v3.13 structural rebuild ------------------------------------------------
+   These rules deliberately change the card architecture, not merely its tint. */
+
+.render-card {
+  --od-panel-line: color-mix(in srgb, var(--proxy-edge) 72%, #241f18 28%);
+  --od-panel-hi: color-mix(in srgb, var(--proxy-type) 84%, #fff 16%);
+  --od-panel-lo: color-mix(in srgb, var(--proxy-type) 78%, #4c4436 22%);
+}
+
+.render-card .frame-identity { z-index: 6; }
+.render-card .frame-identity .identity-mark,
+.render-card .frame-identity .identity-line { opacity: .5; }
+
+/* Standard modern frame language. Creature and spell geometry is shared in
+   real MTG frames; power/toughness and subtle furniture identify creatures. */
+.render-card.kind-creature .pt,
+.render-card.kind-artifact-creature .pt,
+.render-card.kind-enchantment-creature .pt {
+  min-width: 62px !important;
+  padding: 4px 12px 3px !important;
+  border-radius: 3px 3px 10px 10px !important;
+  clip-path: polygon(7% 0, 93% 0, 100% 25%, 94% 100%, 6% 100%, 0 25%);
+}
+
+.render-card.kind-instant .rules,
+.render-card.kind-sorcery .rules {
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,.2), transparent 28%),
+    linear-gradient(180deg, var(--proxy-rules), color-mix(in srgb, var(--proxy-rules) 91%, var(--proxy-type) 9%)) !important;
+}
+
+.render-card.kind-instant .typebar::before,
+.render-card.kind-sorcery .typebar::before {
+  flex: 0 0 auto;
+  margin-right: 7px;
+}
+
+.render-card.kind-instant .typebar::before {
+  width: 19px;
+  height: 10px;
+  border: 0;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  border-radius: 80% 100% 0 0;
+  transform: skewX(-20deg);
+  opacity: .42;
+}
+
+.render-card.kind-sorcery .typebar::before {
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid currentColor;
+  background: transparent;
+  transform: rotate(45deg) scale(.68);
+  opacity: .42;
+}
+
+.render-card.kind-land .frame {
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,.1), transparent 26%),
+    repeating-linear-gradient(8deg, transparent 0 17px, rgba(47,34,22,.08) 18px 19px),
+    linear-gradient(135deg, color-mix(in srgb, var(--proxy-edge) 58%, #756044 42%), color-mix(in srgb, var(--proxy-edge) 42%, #3b3227 58%)) !important;
+}
+
+.render-card.kind-land .typebar {
+  border-radius: 0 0 13px 13px !important;
+  box-shadow: inset 0 -2px rgba(70,52,34,.22) !important;
+}
+
+.render-card.kind-land .rules {
+  background-image:
+    radial-gradient(ellipse at 50% 112%, rgba(108,82,49,.15), transparent 62%),
+    linear-gradient(180deg, var(--proxy-rules), color-mix(in srgb, var(--proxy-rules) 86%, #bfa777 14%)) !important;
+}
+
+/* Artifact frames use the cool silver/etched visual system; Vehicles add the
+   clipped prow and high-contrast combat stat badge used by official frames. */
+.render-card.kind-artifact .frame,
+.render-card.kind-artifact-creature .frame,
+.render-card.kind-vehicle .frame {
+  background:
+    linear-gradient(115deg, transparent 0 37%, rgba(255,255,255,.18) 42%, transparent 47%),
+    repeating-linear-gradient(90deg, rgba(28,29,29,.08) 0 1px, transparent 1px 7px),
+    linear-gradient(145deg, #d0c9b8 0, #78766f 22%, #aaa597 50%, #595954 78%, #c7bea9 100%) !important;
+}
+
+.render-card.kind-artifact .inner,
+.render-card.kind-artifact-creature .inner,
+.render-card.kind-vehicle .inner {
+  border-color: #363735 !important;
+  background: #bbb7ad !important;
+}
+
+.render-card.kind-artifact .titlebar,
+.render-card.kind-artifact-creature .titlebar,
+.render-card.kind-vehicle .titlebar {
+  background: linear-gradient(180deg, #5e5e59, #353633) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.32), inset 0 -2px rgba(0,0,0,.28) !important;
+}
+
+.render-card.kind-artifact .typebar,
+.render-card.kind-artifact-creature .typebar,
+.render-card.kind-vehicle .typebar {
+  background: linear-gradient(180deg, #d9d6cd, #a6a39a) !important;
+  color: #292a28 !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.64), inset 0 -1px rgba(40,40,37,.25) !important;
+}
+
+.render-card.kind-artifact .rules,
+.render-card.kind-artifact-creature .rules,
+.render-card.kind-vehicle .rules {
+  background: linear-gradient(180deg, #f0eee7, #d8d5cc) !important;
+  border: 1px solid rgba(62,62,58,.42) !important;
+}
+
+.render-card.kind-vehicle .artbox {
+  height: 265px !important;
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 86% 100%, 14% 100%, 0 95%);
+  border: 2px solid #3d3e3b !important;
+}
+.render-card.kind-vehicle .typebar { top: 314px !important; clip-path: polygon(3% 0, 97% 0, 100% 50%, 97% 100%, 3% 100%, 0 50%); padding-left: 15px !important; }
+.render-card.kind-vehicle .rules { top: 348px !important; }
+.render-card.kind-vehicle.artheight-tall .artbox { height: 279px !important; }
+.render-card.kind-vehicle.artheight-tall .typebar { top: 328px !important; }
+.render-card.kind-vehicle.artheight-tall .rules { top: 362px !important; }
+.render-card.kind-vehicle.artheight-short .artbox { height: 241px !important; }
+.render-card.kind-vehicle.artheight-short .typebar { top: 290px !important; }
+.render-card.kind-vehicle.artheight-short .rules { top: 324px !important; }
+
+.render-card.kind-vehicle .pt {
+  min-width: 66px !important;
+  color: #fff7df !important;
+  border-color: #d39c50 !important;
+  background: linear-gradient(180deg, #6a512f, #242522) !important;
+  clip-path: polygon(12% 0, 88% 0, 100% 28%, 91% 100%, 9% 100%, 0 28%);
+}
+
+.render-card.kind-vehicle .frame-identity::before,
+.render-card.kind-vehicle .frame-identity::after,
+.render-card.kind-artifact .frame-identity::before,
+.render-card.kind-artifact .frame-identity::after,
+.render-card.kind-artifact-creature .frame-identity::before,
+.render-card.kind-artifact-creature .frame-identity::after {
+  top: 303px;
+  z-index: 9;
+}
+
+.render-card.kind-vehicle .frame-identity::before,
+.render-card.kind-vehicle .frame-identity::after { top: 317px; }
+
+/* Enchantments carry a restrained Nyx treatment. Enchantment creatures and
+   Gods intensify the star field, without changing the color identity. */
+.render-card.kind-enchantment .frame,
+.render-card.kind-enchantment-creature .frame {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255,244,184,.78) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 84% 17%, rgba(207,233,255,.7) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 25% 82%, rgba(255,255,255,.55) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 76% 72%, rgba(255,225,173,.55) 0 1px, transparent 1.8px),
+    linear-gradient(145deg, color-mix(in srgb, var(--proxy-bar) 76%, #171b31 24%), color-mix(in srgb, var(--proxy-edge) 58%, #22223d 42%)) !important;
+  background-size: 53px 61px, 67px 59px, 71px 73px, 83px 79px, 100% 100% !important;
+}
+
+.render-card.kind-enchantment .titlebar,
+.render-card.kind-enchantment-creature .titlebar {
+  box-shadow: inset 0 0 0 1px rgba(255,240,188,.22), 0 0 9px rgba(189,199,255,.15) !important;
+}
+
+.render-card.kind-enchantment .rules,
+.render-card.kind-enchantment-creature .rules {
+  border: 1px solid color-mix(in srgb, var(--proxy-edge) 40%, transparent) !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.28), transparent 34%),
+    linear-gradient(180deg, color-mix(in srgb, var(--proxy-rules) 94%, #e9e4ff 6%), color-mix(in srgb, var(--proxy-rules) 88%, #a9a3cb 12%)) !important;
+}
+
+.render-card.kind-enchantment-creature .frame,
+.render-card.trait-god .frame { box-shadow: inset 0 0 14px rgba(198,201,255,.3), 0 0 0 1px rgba(57,41,20,.42) !important; }
+
+/* Adventure: official-style mini spell on the left of the lower text box. */
+.render-card.kind-adventure .artbox,
+.render-card.kind-prepare .artbox { height: 249px !important; }
+.render-card.kind-adventure .typebar,
+.render-card.kind-prepare .typebar { top: 298px !important; }
+.render-card.kind-adventure .rules,
+.render-card.kind-prepare .rules { top: 332px !important; }
+.render-card.kind-adventure.artheight-tall .artbox,
+.render-card.kind-prepare.artheight-tall .artbox { height: 265px !important; }
+.render-card.kind-adventure.artheight-tall .typebar,
+.render-card.kind-prepare.artheight-tall .typebar { top: 314px !important; }
+.render-card.kind-adventure.artheight-tall .rules,
+.render-card.kind-prepare.artheight-tall .rules { top: 348px !important; }
+.render-card.kind-adventure.artheight-short .artbox,
+.render-card.kind-prepare.artheight-short .artbox { height: 225px !important; }
+.render-card.kind-adventure.artheight-short .typebar,
+.render-card.kind-prepare.artheight-short .typebar { top: 274px !important; }
+.render-card.kind-adventure.artheight-short .rules,
+.render-card.kind-prepare.artheight-short .rules { top: 308px !important; }
+
+.render-card.kind-adventure .rules,
+.render-card.kind-prepare .rules {
+  display: grid !important;
+  grid-template-columns: minmax(0, 41%) minmax(0, 59%);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.render-card.kind-adventure .rule-main,
+.render-card.kind-prepare .rule-main {
+  min-width: 0;
+  padding: 10px 10px 7px;
+  overflow: hidden;
+}
+
+.render-card.kind-adventure .special-box,
+.render-card.kind-prepare .special-box {
+  display: flex !important;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  margin: 0 !important;
+  padding: 9px 8px 7px 27px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  font-size: .82em !important;
+  line-height: 1.13 !important;
+  overflow: hidden;
+}
+
+.render-card.kind-adventure .special-box {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  border-right: 2px solid #6f5630 !important;
+  background:
+    linear-gradient(110deg, rgba(255,255,255,.35), transparent 35%),
+    linear-gradient(180deg, #e7d6ab, #cbaa6c) !important;
+  box-shadow: inset -4px 0 7px rgba(68,48,22,.12) !important;
+}
+.render-card.kind-adventure .rule-main { grid-column: 2; grid-row: 1; }
+.render-card.kind-adventure .flavor { grid-column: 2; grid-row: 2; margin: 0 9px 7px !important; }
+
+/* Prepared is Odyssey's custom sister frame: the banked spell sits on the
+   right like a face-down card tucked behind the permanent's text panel. */
+.render-card.kind-prepare .special-box {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  border-left: 2px solid #574562 !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.3), transparent 34%),
+    repeating-linear-gradient(45deg, rgba(83,61,96,.055) 0 2px, transparent 2px 8px),
+    linear-gradient(180deg, #d8c9df, #aa92b8) !important;
+  box-shadow: inset 4px 0 7px rgba(51,34,58,.15) !important;
+}
+.render-card.kind-prepare .rule-main { grid-column: 1; grid-row: 1; }
+.render-card.kind-prepare .flavor { grid-column: 1; grid-row: 2; margin: 0 9px 7px !important; }
+
+.render-card.kind-adventure .special-head,
+.render-card.kind-prepare .special-head {
+  display: block !important;
+  padding: 0 0 6px !important;
+  margin: 0 0 6px !important;
+  border-bottom: 1px solid rgba(62,46,31,.42) !important;
+  line-height: 1.02 !important;
+}
+.render-card.kind-adventure .special-head > span:first-child,
+.render-card.kind-prepare .special-head > span:first-child { display: block; font-size: 1.16em; margin-bottom: 4px; }
+.render-card.kind-adventure .special-meta,
+.render-card.kind-prepare .special-meta { display: block; text-align: left !important; font-size: 7.8px !important; line-height: 1.15 !important; text-transform: uppercase; letter-spacing: .04em; }
+
+.render-card.kind-adventure .special-kind-mark,
+.render-card.kind-prepare .special-kind-mark {
+  left: 7px;
+  top: 8px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font: 900 8px/1 var(--card-small-font);
+  transform: none;
+}
+.render-card.kind-prepare .special-kind-mark { border-radius: 2px; transform: rotate(45deg); }
+
+/* Saga: a genuine vertical illustration panel with a separate chapter field. */
+.render-card.kind-saga .artbox {
+  top: 46px !important;
+  left: 6px !important;
+  right: auto !important;
+  width: 146px !important;
+  height: 341px !important;
+  border-width: 1.5px !important;
+}
+.render-card.kind-saga .typebar {
+  top: 390px !important;
+  left: 6px !important;
+  right: auto !important;
+  width: 146px !important;
+  height: 31px !important;
+  padding: 0 4px 0 7px !important;
+  font-size: 12.6px !important;
+}
+.render-card.kind-saga .set-symbol { width: 19px !important; height: 19px !important; flex-basis: 19px !important; margin-left: 2px !important; }
+.render-card.kind-saga .set-symbol svg { width: 18px !important; height: 18px !important; }
+.render-card.kind-saga .rules {
+  top: 46px !important;
+  left: 157px !important;
+  right: 6px !important;
+  bottom: 57px !important;
+  display: block !important;
+  padding: 10px 9px !important;
+  border: 1px solid rgba(85,67,40,.42) !important;
+  border-radius: 0 8px 8px 0 !important;
+  background:
+    linear-gradient(90deg, rgba(129,96,48,.12), transparent 12px),
+    linear-gradient(180deg, #f1e6c8, #d9c49a) !important;
+  font-size: 13.1px !important;
+  line-height: 1.12 !important;
+}
+.render-card.kind-saga .rules::before { display: none !important; }
+.saga-chapters { height: 100%; display: flex; flex-direction: column; justify-content: space-around; gap: 6px; }
+.saga-chapter { display: grid; grid-template-columns: 32px minmax(0,1fr); gap: 7px; align-items: center; min-height: 0; }
+.saga-medallion {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #6f5837;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 28%, #fff2c4 0 8%, #cfad68 42%, #886b3d 100%);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.22), 0 1px 2px rgba(57,41,23,.32);
+  color: #3f3323;
+  font: 900 9px/1 var(--card-display-font);
+}
+.render-card.kind-saga .frame-identity::before {
+  content: "";
+  position: absolute;
+  left: 151px;
+  top: 52px;
+  bottom: 58px;
+  width: 7px;
+  background: linear-gradient(90deg, #715431, #ead7a7 42%, #735431 100%);
+  box-shadow: 1px 0 2px rgba(52,38,23,.3);
+}
+
+/* Battle: Battles are landscape cards. The preview changes orientation and
+   uses a dedicated art field, rules column, transform panel and defense shield. */
+.card-shell:has(.render-card.kind-battle) { width: 528px; height: 378px; }
+.render-card.kind-battle { inset: 0 !important; width: 528px !important; height: 378px !important; }
+.render-card.kind-battle .frame {
+  background:
+    linear-gradient(132deg, transparent 0 46%, rgba(255,255,255,.12) 47%, transparent 49%),
+    repeating-linear-gradient(90deg, rgba(78,39,27,.1) 0 1px, transparent 1px 11px),
+    linear-gradient(145deg, #9e684e, #d3ab78 36%, #775143 66%, #ba875f) !important;
+}
+.render-card.kind-battle .inner { background: #c8a682 !important; border-color: #4b3027 !important; }
+.render-card.kind-battle .titlebar {
+  top: 3px !important;
+  left: 3px !important;
+  right: 73px !important;
+  height: 40px !important;
+  clip-path: polygon(0 0, 97% 0, 100% 50%, 97% 100%, 0 100%) !important;
+  border-radius: 8px 0 0 8px !important;
+  padding-right: 18px !important;
+  background: linear-gradient(90deg, #6c3a2e, #9f5f42 70%, #5a342d) !important;
+}
+.render-card.kind-battle .name { font-size: 20px !important; }
+.render-card.kind-battle .artbox {
+  top: 46px !important;
+  left: 6px !important;
+  right: auto !important;
+  width: 271px !important;
+  height: 197px !important;
+  border: 2px solid #53372b !important;
+  clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+}
+.render-card.kind-battle .typebar {
+  top: 246px !important;
+  left: 6px !important;
+  right: auto !important;
+  width: 271px !important;
+  height: 31px !important;
+  padding-left: 12px !important;
+  clip-path: polygon(3% 0, 97% 0, 100% 50%, 97% 100%, 3% 100%, 0 50%) !important;
+  background: linear-gradient(90deg, #e5d4b1, #c88f6d) !important;
+}
+.render-card.kind-battle .rules {
+  top: 46px !important;
+  left: 284px !important;
+  right: 6px !important;
+  bottom: 57px !important;
+  display: grid !important;
+  grid-template-rows: minmax(0,1fr) auto;
+  padding: 9px !important;
+  border: 1px solid rgba(82,48,35,.55) !important;
+  border-radius: 3px 9px 9px 3px !important;
+  background: linear-gradient(180deg, #f0e1c8, #d9b692) !important;
+  font-size: 13px !important;
+  line-height: 1.12 !important;
+}
+.render-card.kind-battle .special-box {
+  position: relative;
+  display: block !important;
+  margin: 6px 0 0 !important;
+  padding: 7px 7px 6px 26px !important;
+  border: 1px solid #714838 !important;
+  border-radius: 3px !important;
+  background: linear-gradient(180deg, #c98865, #a95f4f) !important;
+  color: #fff8e9 !important;
+  font-size: .78em !important;
+  overflow: hidden;
+}
+.render-card.kind-battle .special-head { display: block !important; border-color: rgba(255,255,255,.28) !important; }
+.render-card.kind-battle .special-meta { display: block; color: #f5ddcb !important; text-align: left !important; margin-top: 2px; }
+.render-card.kind-battle .pt {
+  top: 5px !important;
+  right: 8px !important;
+  bottom: auto !important;
+  width: 61px !important;
+  min-width: 61px !important;
+  height: 58px !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: auto 1fr auto !important;
+  place-items: center !important;
+  gap: 0 !important;
+  padding: 5px 5px 7px !important;
+  border: 2px solid #e2ad68 !important;
+  border-radius: 5px 5px 16px 16px !important;
+  clip-path: polygon(12% 0, 88% 0, 100% 18%, 89% 84%, 50% 100%, 11% 84%, 0 18%);
+  background: linear-gradient(180deg, #7d4432, #342825) !important;
+  z-index: 10 !important;
+}
+.render-card.kind-battle .defense-label { font-size: 6.5px !important; letter-spacing: .06em; }
+.render-card.kind-battle .defense-value { font-size: 23px !important; line-height: .95; }
+.render-card.kind-battle .battle-back-stat { width: 100%; padding: 2px 0 0 !important; border: 0 !important; border-top: 1px solid rgba(255,255,255,.3) !important; font-size: 8px !important; }
+.render-card.kind-battle .footer { left: 6px !important; right: 6px !important; bottom: 5px !important; height: 48px !important; }
+
+/* Full-art stays a treatment layered beneath every structural layout. */
+.render-card.treatment-full-art.kind-adventure .artbox,
+.render-card.treatment-full-art.kind-prepare .artbox,
+.render-card.treatment-full-art.kind-vehicle .artbox,
+.render-card.treatment-full-art.kind-saga .artbox,
+.render-card.treatment-full-art.kind-battle .artbox {
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  border: 0 !important;
+  clip-path: none !important;
+}
+.render-card.treatment-full-art.kind-saga .typebar { top: 390px !important; left: 6px !important; right: auto !important; width: 146px !important; }
+.render-card.treatment-full-art.kind-saga .rules { top: 46px !important; left: 157px !important; right: 6px !important; bottom: 57px !important; background: linear-gradient(180deg, rgba(245,232,199,.92), rgba(222,199,155,.88)) !important; }
+.render-card.treatment-full-art.kind-battle .typebar { top: 246px !important; left: 6px !important; right: auto !important; width: 271px !important; }
+.render-card.treatment-full-art.kind-battle .rules { top: 46px !important; left: 284px !important; right: 6px !important; bottom: 57px !important; background: linear-gradient(180deg, rgba(244,226,199,.91), rgba(213,178,145,.88)) !important; }
+.render-card.treatment-full-art.kind-vehicle .typebar { top: 314px !important; }
+.render-card.treatment-full-art.kind-vehicle .rules { top: 348px !important; }
+
+/* Legendary is a supertype modifier, so it remains compatible with every
+   structural family instead of becoming a competing frame choice. */
+.render-card.trait-legendary .frame { box-shadow: inset 0 0 0 1px rgba(255,235,168,.32), 0 0 0 1px rgba(44,31,18,.62) !important; }
+.render-card.trait-legendary .typebar { border-bottom: 1px solid color-mix(in srgb, var(--proxy-edge) 64%, transparent) !important; }
+
+@media (max-width: 760px) {
+  .card-shell:has(.render-card.kind-battle) { transform: scale(.72); transform-origin: top center; margin-bottom: -106px; }
+}
+
+@media print {
+  .print-sheet .kind-adventure .artbox,
+  .print-sheet .kind-prepare .artbox { height: 41.5mm !important; }
+  .print-sheet .kind-adventure .typebar,
+  .print-sheet .kind-prepare .typebar { top: 49.65mm !important; }
+  .print-sheet .kind-adventure .rules,
+  .print-sheet .kind-prepare .rules { top: 55.3mm !important; }
+
+  .print-sheet .kind-saga .artbox { top: 7.75mm !important; left: .95mm !important; right: auto !important; width: 24mm !important; height: 61.9mm !important; }
+  .print-sheet .kind-saga .typebar { top: 70mm !important; left: .95mm !important; right: auto !important; width: 24mm !important; height: 5.15mm !important; font-size: 1.9mm !important; }
+  .print-sheet .kind-saga .rules { top: 7.75mm !important; left: 25.7mm !important; right: .95mm !important; bottom: 9.5mm !important; padding: 1.5mm !important; font-size: 2.05mm !important; }
+  .print-sheet .saga-chapter { grid-template-columns: 5mm minmax(0,1fr); gap: 1.1mm; }
+  .print-sheet .saga-medallion { width: 4.6mm; height: 4.6mm; font-size: 1.4mm; }
+
+  .print-sheet .card-shell:has(.kind-battle) { width: 63mm !important; height: 88mm !important; transform: none !important; margin: 0 !important; }
+  .print-sheet .render-card.kind-battle { width: 88mm !important; height: 63mm !important; transform: translateX(63mm) rotate(90deg); transform-origin: 0 0; }
+  .print-sheet .kind-battle .titlebar { top: .5mm !important; left: .5mm !important; right: 12mm !important; height: 6.65mm !important; }
+  .print-sheet .kind-battle .name { font-size: 3.3mm !important; }
+  .print-sheet .kind-battle .artbox { top: 7.75mm !important; left: .95mm !important; right: auto !important; width: 45mm !important; height: 33mm !important; }
+  .print-sheet .kind-battle .typebar { top: 41.2mm !important; left: .95mm !important; right: auto !important; width: 45mm !important; height: 5.15mm !important; }
+  .print-sheet .kind-battle .rules { top: 7.75mm !important; left: 47mm !important; right: .95mm !important; bottom: 9.5mm !important; padding: 1.45mm !important; font-size: 1.95mm !important; }
+  .print-sheet .kind-battle .pt { top: .75mm !important; right: 1mm !important; bottom: auto !important; width: 10mm !important; min-width: 10mm !important; height: 9.5mm !important; padding: .8mm !important; }
+  .print-sheet .kind-battle .defense-label { font-size: .95mm !important; }
+  .print-sheet .kind-battle .defense-value { font-size: 3.8mm !important; }
+  .print-sheet .kind-battle .battle-back-stat { font-size: 1.2mm !important; }
+}
