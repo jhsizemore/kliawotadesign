@@ -21,7 +21,8 @@
       if (!response.ok) throw new Error('Studio source returned ' + response.status);
       let markup = await response.text();
       const transferScript = '<script src="./art-settings-transfer.js?v=20260918-4"><' + '/script>';
-      markup = markup.replace('</head>', '<link rel="stylesheet" href="./frame-system.css?v=20260918-2">' + transferScript + '</head>');
+      const mobileStyle = '<link rel="stylesheet" href="./mobile-navigation.css?v=20260918-5">';
+      markup = markup.replace('</head>', '<link rel="stylesheet" href="./frame-system.css?v=20260918-2">' + transferScript + mobileStyle + '</head>');
       // Keep the canonical app/data intact. Scope only the four per-set state stores.
       const statePatches = [
         ["const STORAGE='odyssey-layout-overrides-v02';",
@@ -36,7 +37,8 @@
       const frameScript = '<script src="./frame-system.js?v=20260918-2"><' + '/script>';
       const artworkScript = '<script src="./artwork-tools.js?v=20260918-3"><' + '/script>';
       const transferMount = '<script>OdysseyArtTransfer.mount(ODYSSEY_ART_STATE);<' + '/script>';
-      markup = markup.replace('</body>', frameScript + artworkScript + transferMount + '</body>');
+      const mobileScript = '<script src="./mobile-navigation.js?v=20260918-5"><' + '/script>';
+      markup = markup.replace('</body>', frameScript + artworkScript + transferMount + mobileScript + '</body>');
       document.open();
       document.write(markup);
       document.close();
