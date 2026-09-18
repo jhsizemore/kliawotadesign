@@ -44,7 +44,7 @@
     s = s.replace(/\b(Ward|Equip|Foretell|Flashback|Bestow|Escape|Miracle|Boast|Plot|Unearth|Kicker|Cycling) ([WUBRGC]+|\d+)(?=[.,;: \n]|$)/g, (_, word, cost) => word + ' ' + normalizeCost(cost));
     s = s.replace(/\b(Add|Pay|pay|costs?) ([WUBRGC]+|\d+)(?=[.,;: \n]|$)/g, (_, word, cost) => word + ' ' + normalizeCost(cost));
     // Only standalone T/Q in an activated cost, never the English instruction “Tap”.
-    s = s.replace(/(^|\n|[.!?] +)([ \t]*(?:(?:\{[^{}\n]+\}|\d+)[ \t]*,[ \t]*)*)([TQ])(?=[ \t]*(?:,|:))/g, '$1$2{$3}');
+    s = s.replace(/(^|[^A-Za-z0-9{])([TQ])(?=[ \t]*(?:,|:))/g, '$1{$2}');
     s = s.replace(/(^|\n|[.!?] +)([ \t]*)(\d+)(?=[ \t]*(?:,[ \t]*\{[TQ]\}|:))/g, '$1$2{$3}');
     // An inset spell's header has an explicit cost field, unlike arbitrary rules prose.
     s = s.replace(/(^|\n)([^\n]+?[ \t]+[—–-][ \t]+)([^\n]+?)([ \t]+[—–-][ \t]+(?:Instant|Sorcery)\b)/gi,
