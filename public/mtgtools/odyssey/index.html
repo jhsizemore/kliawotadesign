@@ -17,11 +17,11 @@
   <script>
   (async () => {
     try {
-      const response = await fetch('./app.html?v=20260918-1', { cache: 'no-store' });
+      const response = await fetch('./app.html?v=20260918-2', { cache: 'no-store' });
       if (!response.ok) throw new Error('Studio source returned ' + response.status);
       let markup = await response.text();
-      markup = markup.replace('</head>', '<link rel="stylesheet" href="./frame-system.css?v=20260918-1"></head>');
-      const frameScript = '<script src="./frame-system.js?v=20260918-1"><' + '/script>';
+      markup = markup.replace('</head>', '<link rel="stylesheet" href="./frame-system.css?v=20260918-2"></head>');
+      const frameScript = '<script src="./frame-system.js?v=20260918-2"><' + '/script>';
       markup = markup.replace('</body>', frameScript + '</body>');
       document.open();
       document.write(markup);
