@@ -40,11 +40,12 @@
     let s = String(value ?? '').replace(/\{([^{}\n]+)\}/g, (whole, inner) => token(inner) ? `{${token(inner)}}` : whole);
     // Legacy card data uses compact costs in prose as well as in mana fields.
     // A number followed by a color code is unambiguous; do not rewrite ordinary numbers.
-    s = s.replace(/(?<![\w{])\d+[WUBRGC]+(?![\w}])/g, cost => normalizeCost(cost));
-    s = s.replace(/\b(Foretell|Flashback|Bestow|Escape|Miracle|Boast|Plot|Unearth|Kicker|Cycling) ([WUBRGC]+|\d+)(?=[.,;: \n]|$)/g, (_, word, cost) => word + ' ' + normalizeCost(cost));
-    s = s.replace(/\b(Add|Pay|pay|costs?) ([WUBRGC]+)(?=[.,;: \n]|$)/g, (_, word, cost) => word + ' ' + normalizeCost(cost));
+    s = s.replace(/(?<![\w{])(?:\d+)?[WUBRGCX]+(?![\w}])/g, cost => normalizeCost(cost));
+    s = s.replace(/\b(Ward|Equip|Foretell|Flashback|Bestow|Escape|Miracle|Boast|Plot|Unearth|Kicker|Cycling) ([WUBRGC]+|\d+)(?=[.,;: \n]|$)/g, (_, word, cost) => word + ' ' + normalizeCost(cost));
+    s = s.replace(/\b(Add|Pay|pay|costs?) ([WUBRGC]+|\d+)(?=[.,;: \n]|$)/g, (_, word, cost) => word + ' ' + normalizeCost(cost));
     // Only standalone T/Q in an activated cost, never the English instruction “Tap”.
     s = s.replace(/(^|\n|[.!?] +)([ \t]*(?:(?:\{[^{}\n]+\}|\d+)[ \t]*,[ \t]*)*)([TQ])(?=[ \t]*(?:,|:))/g, '$1$2{$3}');
+    s = s.replace(/(^|\n|[.!?] +)([ \t]*)(\d+)(?=[ \t]*(?:,[ \t]*\{[TQ]\}|:))/g, '$1$2{$3}');
     // An inset spell's header has an explicit cost field, unlike arbitrary rules prose.
     s = s.replace(/(^|\n)([^\n]+?[ \t]+[—–-][ \t]+)([^\n]+?)([ \t]+[—–-][ \t]+(?:Instant|Sorcery)\b)/gi,
       (whole, start, name, cost, type) => tokens(cost) === null ? whole : start + name + normalizeCost(cost) + type);
@@ -177,4 +178,8 @@
   const api = {token, tokens, normalizeCost, normalizeRules, normalizeCard, normalizeDataset, symbolHTML, costHTML, rulesHTML, install};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.OdysseyPolish = api;
+  if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', install, {once:true});
+    else install();
+  }
 })(typeof window === 'undefined' ? globalThis : window);
