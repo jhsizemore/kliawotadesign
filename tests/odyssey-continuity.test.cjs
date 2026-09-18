@@ -1,0 +1,38 @@
+const test=require('node:test'),assert=require('node:assert/strict');
+const core=require('../public/mtgtools/odyssey/art-sync-core.js');
+const polish=require('../public/mtgtools/odyssey/studio-polish.js');
+const sync=require('../public/mtgtools/odyssey/art-sync.js');
+const key='current:card:ODY-001',crop='current:crop:ART-001|standard|normal';
+for(const [input,expected]of [['2WU','{2}{W}{U}'],['{w/u}{2} X','{W/U}{2}{X}'],['{tap}','{T}'],['10{C}','{10}{C}'],['W/U/P','{W/U/P}'],['—',''],['WRONG!','WRONG!']])test('canonical mana: '+input,()=>assert.equal(polish.normalizeCost(input),expected));
+for(const [input,expected]of [['T: Add U.','{T}: Add {U}.'],['6U: Draw a card.','{6}{U}: Draw a card.'],['Foretell 1U. Tap target creature.','Foretell {1}{U}. Tap target creature.'],['This spell costs 1W more.','This spell costs {1}{W} more.'],['Sacrifice two creatures.','Sacrifice two creatures.'],['Flying. T: Add G.','Flying. {T}: Add {G}.'],['Spell — 2U — Sorcery','Spell — {2}{U} — Sorcery']])test('rules encoding: '+input,()=>assert.equal(polish.normalizeRules(input),expected));
+test('hybrid remains a single top-level symbol',()=>assert.equal((polish.costHTML('W/U').match(/data-symbol=/g)||[]).length,1));
+test('tap and untap have vector glyphs and accessible names',()=>{for(const t of ['T','Q'])assert.match(polish.symbolHTML(t,true),/<svg/);assert.match(polish.symbolHTML('T',true),/aria-label="Tap"/)});
+test('unsafe and unknown text remains escaped',()=>{assert.ok(!polish.costHTML('<script>x</script>').includes('<script>'));assert.match(polish.rulesHTML('{BOGUS}'),/\{BOGUS\}/)});
+test('pairing key is private hash, not arbitrary query',()=>{const t='a'.repeat(64);assert.equal(sync.parseKey('https://example.com/#odyssey-sync='+t),t);assert.equal(sync.parseKey(t),t);assert.equal(sync.parseKey('https://example.com/?key='+t),'')});
+test('valid schema excludes card design and local image blobs',()=>{assert.equal(core.validValue(key,{zoom:2,artId:'ART-002'}),true);for(const v of [{rules:'x'},{layout:'battle'},{imageUrl:'blob:test'},{zoom:Infinity},{zoom:-1},{focusX:'2'}])assert.equal(core.validValue(key,v),false);assert.equal(core.validValue(crop,{zoom:2,fit:'cover',updated:'2026',fromCard:1}),true)});
+test('invalid keys cannot cross scope or prototypes',()=>{for(const k of ['__proto__','custom:card:ODY-001','current:card:../../x'])assert.equal(core.validKey(k),false)});
+test('first local edits upload without treating another card as changed',()=>{const r=core.reconcile({}, {[key]:{zoom:2}},{});assert.equal(r.pending.length,1);assert.equal(r.conflicts.length,0)});
+test('first shared edits download',()=>{const r=core.reconcile({}, {},{[key]:{revision:1,value:{zoom:2}}});assert.deepEqual(r.local[key],{zoom:2});assert.deepEqual(r.downloaded,[key])});
+test('concurrent first edits are conflicts, never last-writer-wins',()=>{const r=core.reconcile({}, {[key]:{zoom:3}},{[key]:{revision:1,value:{zoom:2}}});assert.equal(r.conflicts.length,1);assert.equal(r.local[key].zoom,3);assert.equal(r.pending.length,0)});
+test('reset becomes a revisioned tombstone',()=>{const b={[key]:{revision:1,value:{zoom:2}}},r=core.reconcile(b,{},b);const a=core.applyChanges(b,r.pending);assert.equal(a.records[key].revision,2);assert.equal(a.records[key].value,null)});
+test('remote reset applies when local unchanged',()=>{const b={[key]:{revision:1,value:{zoom:2}}};const r=core.reconcile(b,{[key]:{zoom:2}},{[key]:{revision:2,value:null}});assert.equal(r.local[key],undefined)});
+test('stale writes are rejected and retries idempotent',()=>{const r={[key]:{revision:2,value:{zoom:3}}};assert.equal(core.applyChanges(r,[{key,baseRevision:1,value:{zoom:4}}]).conflicts[key].revision,2);assert.equal(core.applyChanges(r,[{key,baseRevision:1,value:{zoom:3}}]).accepted[key].revision,2)});
+test('edit during upload remains pending after exact acknowledgement',()=>{const r={[key]:{revision:2,value:{zoom:3}}};const m=core.reconcile(r,{[key]:{zoom:4}},r);assert.equal(m.pending[0].value.zoom,4);assert.equal(m.conflicts.length,0)});
+test('independent cards and dataset scopes merge',()=>{const other='analysis-candidate-v1:card:ODY-001';const r=core.reconcile({}, {[key]:{zoom:2}},{[other]:{revision:1,value:{zoom:3}}});assert.equal(r.pending.length,1);assert.equal(r.local[other].zoom,3);assert.equal(r.conflicts.length,0)});
+test('duplicate or oversized batches fail atomically',()=>{const change={key,baseRevision:0,value:{zoom:2}};assert.throws(()=>core.applyChanges({},[change,change]));assert.throws(()=>core.applyChanges({},Array(65).fill(change)))});
+test('storage failure rolls back all previously written stores',()=>{let data={a:'1',b:'2'},failed=false;const storage={getItem:k=>data[k]??null,removeItem:k=>delete data[k],setItem(k,v){if(k==='b'&&!failed){failed=true;throw new Error('full')}data[k]=v}};assert.throws(()=>sync.writeBatch(storage,{a:3,b:4}));assert.deepEqual(data,{a:'1',b:'2'})});
+class Storage{constructor(){this.map=new Map()}async get(k){return this.map.get(k)}async put(k,v){this.map.set(k,structuredClone(v))}async list({prefix}){return new Map([...this.map].filter(([k])=>k.startsWith(prefix)))}async transaction(fn){const old=structuredClone(this.map);try{return await fn(this)}catch(e){this.map=old;throw e}}}
+const endpoint='https://example.com/mtgtools/odyssey/api/art-sync';
+test('backend persistence, auth, isolation and validation',async()=>{
+ const {handleSync,OdysseyArtWorkspace}=await import('../src/odyssey-sync.mjs');const map=new Map();const env={ODYSSEY_ART_SYNC:{idFromName:x=>x,get(id){if(!map.has(id))map.set(id,new OdysseyArtWorkspace({storage:new Storage()}));return map.get(id)}}};
+ const req=(token,method='GET',changes)=>new Request(endpoint,{method,headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:changes?JSON.stringify({changes}):undefined});
+ assert.equal((await handleSync(new Request(endpoint),env)).status,401);
+ assert.equal((await handleSync(new Request(endpoint,{headers:{Origin:'https://evil.test'}}),env)).status,403);
+ assert.equal(await handleSync(new Request('https://example.com/other'),env),null);
+ assert.equal((await handleSync(req('a'.repeat(64)),{})).status,503);
+ const first=await handleSync(req('a'.repeat(64),'PATCH',[{key,baseRevision:0,value:{zoom:2}}]),env);assert.equal(first.status,200);assert.equal((await first.json()).records[key].revision,1);
+ assert.equal((await(await handleSync(req('a'.repeat(64)),env)).json()).records[key].value.zoom,2);
+ assert.deepEqual((await(await handleSync(req('b'.repeat(64)),env)).json()).records,{});
+ assert.equal((await handleSync(req('a'.repeat(64),'PATCH',[{key,baseRevision:1,value:{rules:'bad'}}]),env)).status,400);
+ assert.equal((await handleSync(req('a'.repeat(64),'PATCH',[{key,baseRevision:1,value:{credit:'x'.repeat(140000)}}]),env)).status,400);
+});
