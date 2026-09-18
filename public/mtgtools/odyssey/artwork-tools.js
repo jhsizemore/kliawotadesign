@@ -1,8 +1,8 @@
-/* Odyssey artwork tools v3.14: live print-resolution warning and shared subject pools.
+/* Odyssey artwork tools v3.18: live DPI, subject pools, and searchable full-library artwork browsing.
    This is a read-only view over the active dataset; it never rewrites art assignments. */
 (function (root) {
   'use strict';
-  const VERSION = '3.14';
+  const VERSION = '3.18';
   const normalize = value => String(value == null ? '' : value).normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   const textOf = (record, keys) => normalize(keys.map(key => {
@@ -13,6 +13,36 @@
   const unique = values => [...new Set(values.filter(Boolean))];
   const NAME_KEYS = ['displayName', 'name'];
   const ART_KEYS = ['title', 'tags', 'subject', 'subjects', 'characters', 'entities', 'theme', 'themes', 'candidateCards', 'description', 'cropNotes'];
+  const ART_SEARCH_KEYS = ['id','title','artist','tags','subject','subjects','characters','entities','theme','themes','candidateCards','description','cropNotes','date','period','medium','institution','matchType','status'];
+  function artworkSearchText(art) { return textOf(art || {}, ART_SEARCH_KEYS); }
+  function artworkSearchScore(art, query) {
+    const q = normalize(query), terms = q.split(/\s+/).filter(Boolean);
+    if (!terms.length) return 0;
+    const fields = {
+      title: normalize(art && art.title), tags: normalize(art && art.tags), candidates: normalize(art && art.candidateCards),
+      artist: normalize(art && art.artist), rest: artworkSearchText(art)
+    };
+    if (!terms.every(term => fields.rest.includes(term))) return -1;
+    let score = 0;
+    terms.forEach(term => {
+      if (fields.title === term) score += 120; else if (fields.title.includes(term)) score += 55;
+      if (fields.tags.includes(term)) score += 45;
+      if (fields.candidates.includes(term)) score += 35;
+      if (fields.artist.includes(term)) score += 15;
+    });
+    if (q && fields.title.includes(q)) score += 80;
+    if (q && fields.tags.includes(q)) score += 55;
+    if (q && fields.candidates.includes(q)) score += 40;
+    return score;
+  }
+  function searchArtworks(artworks, query) {
+    const q = normalize(query);
+    if (!q) return [...(artworks || [])];
+    return (artworks || []).map(art => ({art, score: artworkSearchScore(art, q)}))
+      .filter(row => row.score >= 0)
+      .sort((a,b) => b.score - a.score || String(a.art.title || a.art.id).localeCompare(String(b.art.title || b.art.id), undefined, {sensitivity:'base', numeric:true}))
+      .map(row => row.art);
+  }
   const ENTITY_ALIASES = [
     'Odysseus|Ulysses|Ulisse|Ulysse', 'Penelope|Penelopeia', 'Telemachus|Telemakhos|Telemachos|Telemaque',
     'Athena|Athene|Minerva|Pallas Athena', 'Poseidon|Neptune|Neptunus', 'Zeus|Jupiter',
@@ -150,6 +180,17 @@
 .art-opt-badge.related{background:#274b55;color:#e4f5f8}
 .art-related-browse{margin-top:7px}
 .art-dpi-status{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+
+.art-search-tools{display:grid;grid-template-columns:auto minmax(180px,1fr) auto;align-items:center;gap:9px;padding:10px 13px;border-bottom:1px solid #343a30;background:#171a15}
+.art-search-scope{display:flex;gap:3px;padding:3px;border:1px solid #41483a;border-radius:9px;background:#10120f}
+.art-search-scope button{min-height:34px;padding:6px 10px;border:0;border-radius:6px;background:transparent;color:#aeb3a0;font:800 10px/1 system-ui,sans-serif;cursor:pointer}
+.art-search-scope button.active{background:#39402f;color:#f1ead8;box-shadow:inset 0 0 0 1px #606952}
+.art-search-input{width:100%;min-width:0;height:38px;box-sizing:border-box;padding:8px 10px;border-radius:8px;border:1px solid #4b5242;background:#0f110e;color:#f1eee3;font:13px/1.2 system-ui,sans-serif}
+.art-search-input:focus{outline:2px solid #b99c58;outline-offset:1px}
+.art-search-count{color:#9ca18f;font:800 9px/1.2 system-ui,sans-serif;white-space:nowrap}
+.art-option-use-indicator{position:absolute;z-index:3;right:7px;bottom:7px;padding:3px 6px;border-radius:999px;background:rgba(18,20,17,.68);border:1px solid rgba(230,226,210,.18);color:rgba(239,236,224,.74);font:700 7px/1.1 system-ui,sans-serif;letter-spacing:.045em;text-transform:uppercase;backdrop-filter:blur(3px)}
+.art-option-use-indicator::before{content:"";display:inline-block;width:4px;height:4px;margin-right:4px;border-radius:50%;background:currentColor;vertical-align:1px;opacity:.8}
+@media(max-width:760px){.art-search-tools{grid-template-columns:1fr auto;padding:8px}.art-search-scope{grid-column:1/-1}.art-search-scope button{flex:1;min-height:40px}.art-search-input{font-size:16px;height:42px}.art-search-count{font-size:8px}}
 @media print{.art-dpi-frame,.art-dpi-status,.art-related-browse,.art-related-note{display:none!important}}
 `;
 
@@ -226,33 +267,136 @@
       return result;
     };
     const originalOptions = root.renderArtOptions;
-    root.renderArtOptions = function () {
-      const result = originalOptions.apply(this, arguments);
-      if (!document.getElementById('artOptionsOverlay')?.classList.contains('open')) return result;
-      const related = getRelated(selected), assigned = new Set(originalCandidates(selected));
+    const suggestedCandidates = root.effectiveCandidateIds;
+    let artSearchCard = null, artSearchScope = 'suggested', artSearchQuery = '';
+
+    function assignedUsage() {
+      const use = new Map();
+      CARDS.forEach(card => {
+        const current = root.model(card.number), id = current && current.artId;
+        if (!id) return;
+        if (!use.has(id)) use.set(id, []);
+        use.get(id).push(card.number);
+      });
+      return use;
+    }
+    function ensureSearchTools() {
       const grid = document.getElementById('artOptionsGrid');
+      if (!grid) return null;
+      let tools = document.getElementById('artSearchTools');
+      if (!tools) {
+        tools = document.createElement('div'); tools.id = 'artSearchTools'; tools.className = 'art-search-tools';
+        tools.innerHTML = '<div class="art-search-scope" role="group" aria-label="Artwork search scope"><button type="button" data-art-search-scope="suggested">Suggested</button><button type="button" data-art-search-scope="all">Search all</button></div><input id="artOptionSearch" class="art-search-input" type="search" autocomplete="off" enterkeyhint="search" aria-label="Search artworks"><span id="artSearchCount" class="art-search-count" role="status" aria-live="polite"></span>';
+        grid.before(tools);
+        tools.querySelectorAll('[data-art-search-scope]').forEach(button => button.onclick = () => {
+          artSearchScope = button.dataset.artSearchScope;
+          root.renderArtOptions(false);
+          requestAnimationFrame(() => {
+            const search = document.getElementById('artOptionSearch');
+            if (search) search.focus({preventScroll:true});
+          });
+        });
+        tools.querySelector('#artOptionSearch').addEventListener('input', event => {
+          artSearchQuery = event.target.value;
+          root.renderArtOptions(false);
+        });
+      }
+      return tools;
+    }
+    function resultIds(n) {
+      const suggested = suggestedCandidates(n);
+      const source = artSearchScope === 'all' ? ART : suggested.map(id => artById[id]).filter(Boolean);
+      const rows = searchArtworks(source, artSearchQuery);
+      if (!artSearchQuery && artSearchScope === 'suggested') return [...suggested];
+      const suggestedSet = new Set(suggested);
+      return rows.map(a => a.id).filter(Boolean).sort((a,b) => {
+        const sa = artworkSearchScore(artById[a], artSearchQuery), sb = artworkSearchScore(artById[b], artSearchQuery);
+        if (artSearchQuery && sb !== sa) return sb - sa;
+        if (artSearchScope === 'all' && suggestedSet.has(a) !== suggestedSet.has(b)) return Number(suggestedSet.has(b)) - Number(suggestedSet.has(a));
+        return String((artById[a] && artById[a].title) || a).localeCompare(String((artById[b] && artById[b].title) || b), undefined, {sensitivity:'base', numeric:true});
+      });
+    }
+    root.renderArtOptions = function () {
+      const overlay = document.getElementById('artOptionsOverlay');
+      if (!overlay || !overlay.classList.contains('open')) return originalOptions.apply(this, arguments);
+      const n = selected;
+      if (artSearchCard !== n) { artSearchCard = n; artSearchScope = 'suggested'; artSearchQuery = ''; }
+      const suggested = suggestedCandidates(n), suggestedSet = new Set(suggested), visible = resultIds(n);
+      const savedCandidates = root.effectiveCandidateIds;
+      root.effectiveCandidateIds = target => Number(target) === Number(n) ? visible : savedCandidates(target);
+      let result;
+      try { result = originalOptions.apply(this, arguments); }
+      finally { root.effectiveCandidateIds = savedCandidates; }
+
+      const tools = ensureSearchTools(), input = tools && tools.querySelector('#artOptionSearch');
+      if (input && input.value !== artSearchQuery) input.value = artSearchQuery;
+      if (tools) tools.querySelectorAll('[data-art-search-scope]').forEach(button => {
+        const active = button.dataset.artSearchScope === artSearchScope;
+        button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
+      });
+      if (input) input.placeholder = artSearchScope === 'all'
+        ? 'Search all ' + ART.length + ' artworks — title, artist, subject, place…'
+        : 'Search ' + suggested.length + ' suggested artworks…';
+      const count = tools && tools.querySelector('#artSearchCount');
+      if (count) count.textContent = artSearchQuery
+        ? visible.length + ' result' + (visible.length === 1 ? '' : 's') + ' · ' + (artSearchScope === 'all' ? 'all library' : 'suggested')
+        : artSearchScope === 'all' ? ART.length + ' artworks' : suggested.length + ' suggested';
+
+      const grid = document.getElementById('artOptionsGrid'), usage = assignedUsage();
+      const order = new Map(visible.map((id,i)=>[id,i]));
+      const tiles = grid ? [...grid.querySelectorAll('[data-art-option]')] : [];
+      tiles.sort((a,b)=>(order.get(a.dataset.artOption)??9999)-(order.get(b.dataset.artOption)??9999)).forEach(tile=>grid.appendChild(tile));
+      tiles.forEach(tile => {
+        const id = tile.dataset.artOption;
+        if (artSearchScope === 'all' && !suggestedSet.has(id)) {
+          tile.classList.remove('new');
+          const newBadge = tile.querySelector('.art-opt-badge.new');
+          if (newBadge) newBadge.remove();
+        }
+        const otherUses = (usage.get(id) || []).filter(number => Number(number) !== Number(n));
+        if (otherUses.length && !tile.querySelector('.art-option-use-indicator')) {
+          const badge = document.createElement('span'); badge.className = 'art-option-use-indicator';
+          badge.textContent = otherUses.length === 1 ? 'used' : 'used ×' + otherUses.length;
+          badge.title = 'Already assigned to ' + otherUses.map(number => {
+            const card = CARDS.find(c => Number(c.number) === Number(number)), current = root.model(number);
+            return card ? String(number).padStart(3,'0') + ' ' + ((current && current.displayName) || card.name) : String(number);
+          }).join(' · ');
+          const thumb = tile.querySelector('.art-option-thumb');
+          if (thumb) thumb.appendChild(badge);
+        }
+      });
+
+      const related = getRelated(n), assigned = new Set(originalCandidates(n));
       let note = document.getElementById('artRelatedNote');
       if (!note && grid) {
-        note = document.createElement('div'); note.id = 'artRelatedNote'; note.className = 'art-related-note'; grid.before(note);
+        note = document.createElement('div'); note.id = 'artRelatedNote'; note.className = 'art-related-note';
+        if (tools) tools.after(note); else grid.before(note);
       }
       const extra = related.ids.filter(id => !assigned.has(id)).length;
-      if (note) note.textContent = extra
-        ? `${extra} additional library matches${related.labels.length ? ' · ' + related.labels.join(' · ') : ''}. Existing assignments are unchanged; low-resolution sources remain unavailable.`
-        : 'Showing assigned artwork and all matching library entries. Existing assignments are unchanged.';
-      grid?.querySelectorAll('[data-art-option]').forEach(tile => {
+      if (note) {
+        if (artSearchScope === 'all') note.textContent = 'Searching the full ' + ART.length + '-artwork library. Suggested and related matches still appear first when relevant; existing assignments change only when you select an image.';
+        else if (artSearchQuery) note.textContent = 'Searching this card\'s ' + suggested.length + ' suggested and related artworks' + (extra ? ', including ' + extra + ' broader library matches.' : '.');
+        else note.textContent = extra
+          ? extra + ' additional library matches' + (related.labels.length ? ' · ' + related.labels.join(' · ') : '') + '. Existing assignments are unchanged; low-resolution sources remain unavailable.'
+          : 'Showing assigned artwork and all matching library entries. Existing assignments are unchanged.';
+      }
+      tiles.forEach(tile => {
         const id = tile.dataset.artOption;
-        if (assigned.has(id) || tile.querySelector('.art-opt-badge.related')) return;
+        if (assigned.has(id) || !suggestedSet.has(id) || tile.querySelector('.art-opt-badge.related')) return;
         const badge = document.createElement('span'); badge.className = 'art-opt-badge related'; badge.textContent = 'RELATED';
         badge.title = (related.reasons.get(id) || []).join(' · ');
-        tile.querySelector('.art-option-badges')?.appendChild(badge);
+        const badges = tile.querySelector('.art-option-badges');
+        if (badges) badges.appendChild(badge);
       });
+      const meta = document.getElementById('artOptionsMeta');
+      if (meta) meta.textContent = visible.length + ' shown · ' + suggested.length + ' suggested · ' + ART.length + ' total · current ' + (root.model(n).artId || 'none');
       return result;
     };
     root.renderPreview();
     const label = document.querySelector('.topbar .version');
     if (label) label.textContent = `v${VERSION} · shared artwork + live DPI`;
   }
-  const api = { VERSION, normalize, createRelatedIndex, warningState, install };
+  const api = { VERSION, normalize, createRelatedIndex, warningState, artworkSearchScore, searchArtworks, install };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.OdysseyArtworkTools = api;
   if (typeof document !== 'undefined') {
