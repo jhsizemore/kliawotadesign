@@ -106,6 +106,21 @@ Candidate-only additive columns expose Skeleton Class, Cycle IDs, Showcase Progr
 
 Current/production Odyssey data was not edited. `datasetVersion` remains `analysis-candidate-v1`, and the candidate remains opt-in in Studio. Full before/after card changes are in `tests/odyssey-ff-skeleton-v2-ledger.json`.
 
-## Single-face override
 
-The later design decision supersedes the earlier transform/meld target: **no MDFCs, transforming DFCs, or meld cards are active in the candidate**. This is now a regression-tested candidate invariant.
+## Narrative apportionment
+
+The 309-card candidate now uses this exact integer allocation:
+
+- **46 cards — Iliad + young Odysseus** (14.89%)
+- **217 cards — Odyssey Books I–XXIV** (70.23%)
+- **46 cards — old Odysseus beyond the Odyssey** (14.89%)
+
+Each card now has `narrativeEra`, `storyTarget`, `storyRethemeRequired`, and `storySourceBand` metadata. Where a card's current name/flavour has not yet been rewritten to the assigned era, the target is explicit rather than silently pretending the retheme is complete.
+
+The post-Odyssey band is grounded primarily in the Telegony/Epic Cycle and later mythographic traditions: the inland-oar journey, Elis, Polyxenus, Trophonius/Agamedes/Augeas, Thesprotia and Callidice, the Brygian war, Polypoetes/Poliporthes, Telegonus, Odysseus's death, and the later Circe/Penelope/Telemachus traditions. These are identified as post-Homeric traditions, not events of the Odyssey itself.
+
+## Double-faced-card exception
+
+The later design decision permits exactly **one** double-faced card: **The Siege of Troy // The Wooden Horse** (ODY-229). It is restored as the Saga-front / Vehicle-back Battle of Troy card. All other cards remain single-faced, and meld remains prohibited.
+
+The resulting physical-card policy is **308 single-faced + 1 DFC**.
