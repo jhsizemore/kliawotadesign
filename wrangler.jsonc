@@ -2,9 +2,14 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "kliawotadesign",
   "compatibility_date": "2026-08-24",
-  "main": "src/index.js",
+  "main": "src/odyssey-worker.js",
   "assets": {
     "directory": "./public",
-    "binding": "ASSETS"
-  }
+    "binding": "ASSETS",
+    "run_worker_first": ["/mtgtools/odyssey/api/*"]
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "ODYSSEY_ART_SYNC", "class_name": "OdysseyArtWorkspace" }]
+  },
+  "migrations": [{ "tag": "odyssey-art-sync-v1", "new_sqlite_classes": ["OdysseyArtWorkspace"] }]
 }
