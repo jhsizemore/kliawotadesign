@@ -36,3 +36,5 @@ test('backend persistence, auth, isolation and validation',async()=>{
  assert.equal((await handleSync(req('a'.repeat(64),'PATCH',[{key,baseRevision:1,value:{rules:'bad'}}]),env)).status,400);
  assert.equal((await handleSync(req('a'.repeat(64),'PATCH',[{key,baseRevision:1,value:{credit:'x'.repeat(140000)}}]),env)).status,400);
 });
+
+test('bundled datasets store canonical symbol notation',()=>{const fs=require('node:fs'),path=require('node:path');for(const file of ['public/mtgtools/odyssey/data/odyssey-data.json','public/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json']){const data=JSON.parse(fs.readFileSync(path.join(__dirname,'..',file),'utf8'));assert.equal(data.symbolEncoding,'mtg-brace-v1');for(const card of data.cards){assert.equal(card.mana,polish.normalizeCost(card.mana),file+' mana '+card.number);assert.equal(card.rules,polish.normalizeRules(card.rules),file+' rules '+card.number)}}});
