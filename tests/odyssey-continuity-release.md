@@ -7,7 +7,7 @@ Date: 2026-09-18. Based on main commit 168abe11b2579774a06094e17d3dc667892e936c.
 - Artwork options are non-shrinking tiles in an independently scrolling grid. Desktop thumbnails are 220 px high and mobile thumbnails 240 px; tiles retain at least 330/350 px respectively. Re-rendering options on the same card preserves scroll position and keyboard focus.
 - Card titles render in uppercase without changing stored names. Titles and underlying-name aliases are vertically centred with ascender/descender clearance. Fitting checks both width and height, after Saga/special-frame decoration.
 - Explicit mana fields normalize to brace notation; compact costs such as 1W and 6U in rules, explicit inset spell costs and standalone tap costs are normalized. Existing Greek W/U/B/R/G/C pip assets are retained. Tap and untap render as vector symbols. Hybrid, Phyrexian, snow and variable costs are parsed without splitting a compound symbol into separate costs. Unknown notation remains visible rather than silently disappearing.
-- Normalization runs on the active in-memory dataset, model/edit operations and JSON exports. Canonical source files and Google Sheets are not rewritten. Card designs are not changed by this release.
+- Normalization runs on the bundled Current and Analysis-candidate working datasets, the active in-memory model, edit operations and JSON exports. `mana` and working `rules` fields use brace notation; `sourceRules` remains verbatim as the live-sheet provenance snapshot. Google Sheets are not rewritten. Card designs are not changed by this release.
 - Private device sync covers artwork assignments, hosted image links, credits/source, crop zoom/position/fit, art height and frame treatment, plus shared crop profiles. It does not synchronize card rules, names, mana costs, structural layout, reviews or uploaded image bytes.
 
 ## Pairing
@@ -38,4 +38,8 @@ Browser navigation is restricted in the execution environment. These were repres
 
 ## Preserved files and behaviour
 
-The canonical current/candidate data files, app.html, original site worker, frame-system files, artwork-related pools/240-DPI warning, Current-to-candidate art transfer and mobile navigation files remain unchanged. New modules mount after those existing tools. No candidate-to-production cutover is performed.
+The underlying card designs, `sourceRules` provenance, original site worker, frame-system files, artwork-related pools/240-DPI warning, Current-to-candidate art transfer and mobile navigation remain intact. The bundled Current/candidate working datasets and app cache versions were updated only for canonical symbol encoding. No candidate-to-production cutover is performed.
+
+## Follow-up verification
+
+After the persistence pass, an in-process audit of both 250-card bundled datasets found **0 remaining legacy mana/tap encoding issues**. The regression suite now also asserts that both shipped datasets remain idempotently canonical under the symbol normalizer. The public live URL could not be reached from the current execution environment, so production-edge verification is still separate from source verification.
