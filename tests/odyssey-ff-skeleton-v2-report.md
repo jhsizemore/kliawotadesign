@@ -22,11 +22,12 @@ The original 250-card Analysis Candidate is now the starting material for a **30
 | Gold uncommon legendary signposts | 20 | 20 |
 | MV 6 | 17 | 17 |
 | MV 7+ | 14 | 14 |
-| Normal skeleton slots | 260 | 260 |
-| Transform skeleton slots | 27 | 27 |
-| Saga skeleton slots | 15 | 15 |
-| Adventure slots | 5 | 5 |
-| Meld cards | 2 | 2 |
+| Single-faced cards | — | 309 |
+| Double-faced cards | 27 transform + 2 meld in FIN | 0 |
+| Saga cards | 15 benchmark slots | 15 |
+| Adventure cards | 5 FIN benchmark | 8 Odyssey single-face cards |
+| Vehicle cards | — | 11 |
+| Prepared cards | — | 1 |
 
 Every two-color pair has exactly two multicolor legendary uncommon signposts.
 
@@ -57,10 +58,13 @@ Ten previous nonlegendary signpost slots were rebuilt as named Odyssey figures (
 - 5 rare monocolor Adventure lands.
 - 5-card basic-landcycling smoothing cycle.
 - 15 Saga-class story slots.
-- 27 transform-class progression slots.
-- 1 two-card meld pair.
+- No transform cards.
+- No meld cards.
+- All 309 physical cards are single-faced.
+- The 29 physical slots analogous to FIN's 27 transform cards plus 2 meld cards are retained as ordinary single-faced Odyssey cards.
+- **The Siege of Troy // The Wooden Horse** was replaced by the single-faced rare Vehicle **The Wooden Horse of Troy**.
 
-Transform and meld counts are **candidate structural commitments**, not a claim that every back face has already received final renderer-ready rules/art. Back-face plans are recorded per card.
+Adventure, Saga, Vehicle and Prepared layouts remain because they are single-faced technologies.
 
 ## Showcase / booster-fun analogs
 
@@ -90,14 +94,18 @@ Odyssey intentionally does **not** force FIN's artifact-heavy type mix. Enchantm
 
 The main draft file retains the six-system Odyssey syllabus: Manifest Fate, Survival, Escape, Vehicles/Crew, Sagas, provisional Foretell.
 
-FIN's Job Select and Tiered structures are modeled through Odyssey-native glue, scalable modes, Survival, Vehicles and the reopened high-end curve rather than imported as additional named mechanics. Adventure and Prepared remain signature treatments rather than high-as-fan systems.
+FIN's Job Select and Tiered structures are modeled through Odyssey-native glue, scalable modes, Survival, Vehicles and the reopened high-end curve rather than imported as additional named mechanics. FIN's transform/meld architecture is also deliberately not copied: Odyssey uses only single-faced physical cards. Adventure and Prepared remain signature treatments rather than high-as-fan systems.
 
 ## Source-sheet synchronization
 
 The duplicated Google Sheet **14A — The Odyssey MTG — Analysis Candidate Card File v1** contains all 309 main-set rows in `Card File v1.0 Candidate`.
 
-Candidate-only additive columns expose Skeleton Class, Cycle IDs, Showcase Programs, Product Layer, Back Face / Meld Plan, Signpost Pair, Functional Words and Change Status. Appended rows retain native Rarity, Origin and Status validation. `Skeleton Summary` contains target-vs-actual FIN metrics plus product/showcase counts.
+Candidate-only additive columns expose Skeleton Class, Cycle IDs, Showcase Programs, Product Layer, Single-Face Special Plan, Signpost Pair, Functional Words and Change Status. Appended rows retain native Rarity, Origin and Status validation. `Skeleton Summary` contains target-vs-actual FIN metrics plus product/showcase counts.
 
 ## Isolation
 
 Current/production Odyssey data was not edited. `datasetVersion` remains `analysis-candidate-v1`, and the candidate remains opt-in in Studio. Full before/after card changes are in `tests/odyssey-ff-skeleton-v2-ledger.json`.
+
+## Single-face override
+
+The later design decision supersedes the earlier transform/meld target: **no MDFCs, transforming DFCs, or meld cards are active in the candidate**. This is now a regression-tested candidate invariant.
