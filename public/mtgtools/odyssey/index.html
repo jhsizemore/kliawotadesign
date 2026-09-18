@@ -17,13 +17,26 @@
   <script>
   (async () => {
     try {
-      const response = await fetch('./app.html?v=20260918-3', { cache: 'no-store' });
+      const response = await fetch('./app.html?v=20260918-4', { cache: 'no-store' });
       if (!response.ok) throw new Error('Studio source returned ' + response.status);
       let markup = await response.text();
-      markup = markup.replace('</head>', '<link rel="stylesheet" href="./frame-system.css?v=20260918-2"></head>');
+      const transferScript = '<script src="./art-settings-transfer.js?v=20260918-4"><' + '/script>';
+      markup = markup.replace('</head>', '<link rel="stylesheet" href="./frame-system.css?v=20260918-2">' + transferScript + '</head>');
+      // Keep the canonical app/data intact. Scope only the four per-set state stores.
+      const statePatches = [
+        ["const STORAGE='odyssey-layout-overrides-v02';",
+         "const ODYSSEY_ART_STATE=OdysseyArtTransfer.prepare(window.ODYSSEY_DATA,ODYSSEY_DATASET,localStorage);\nconst STORAGE=ODYSSEY_ART_STATE.keys.overrides;"],
+        ["const CROP_PROFILE_STORAGE='odyssey-art-crop-profiles-v04', REVIEW_STORAGE='odyssey-card-review-v04', PROFILE_REVIEW_STORAGE='odyssey-profile-review-v05';",
+         "const CROP_PROFILE_STORAGE=ODYSSEY_ART_STATE.keys.crops, REVIEW_STORAGE=ODYSSEY_ART_STATE.keys.review, PROFILE_REVIEW_STORAGE=ODYSSEY_ART_STATE.keys.profileReview;"]
+      ];
+      for (const [before, after] of statePatches) {
+        if (!markup.includes(before)) throw new Error('Studio art-settings integration needs an update; saved settings have not been changed.');
+        markup = markup.replace(before, after);
+      }
       const frameScript = '<script src="./frame-system.js?v=20260918-2"><' + '/script>';
       const artworkScript = '<script src="./artwork-tools.js?v=20260918-3"><' + '/script>';
-      markup = markup.replace('</body>', frameScript + artworkScript + '</body>');
+      const transferMount = '<script>OdysseyArtTransfer.mount(ODYSSEY_ART_STATE);<' + '/script>';
+      markup = markup.replace('</body>', frameScript + artworkScript + transferMount + '</body>');
       document.open();
       document.write(markup);
       document.close();
