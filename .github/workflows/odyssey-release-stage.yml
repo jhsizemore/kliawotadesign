@@ -1,0 +1,67 @@
+name: Odyssey release staging
+on:
+  push:
+    branches: [odyssey/release-20260919]
+    paths:
+      - '.github/workflows/odyssey-release-stage.yml'
+      - 'scripts/odyssey-release*'
+      - 'tests/odyssey-release*'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odyssey-release-stage-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Snapshot release source and data architecture
+        shell: bash
+        run: |
+          mkdir -p /tmp/odyssey-release-audit
+          tar -czf /tmp/odyssey-release-audit/source.tgz public src tests package.json wrangler.jsonc .github
+          node <<'NODE' > /tmp/odyssey-release-audit/data-audit.json
+          const fs=require('node:fs');
+          const selected=new Set([216,153,162,232,245,174,98,168,275,199,72,193,194,195,196]);
+          const out={commit:process.env.GITHUB_SHA,datasets:{}};
+          for(const name of ['odyssey-analysis-candidate-v1.json','odyssey-data.json']){
+            const d=JSON.parse(fs.readFileSync('public/mtgtools/odyssey/data/'+name,'utf8'));
+            out.datasets[name]={keys:Object.keys(d),cards:d.cards.length,selected:d.cards.filter(c=>selected.has(c.number)),metadata:Object.fromEntries(Object.entries(d).filter(([k])=>!['cards','artworks','coverage'].includes(k))),coverageSample:d.coverage?.slice?.(0,2)};
+          }
+          console.log(JSON.stringify(out,null,2));
+          NODE
+      - name: Existing continuity regression
+        run: node --test tests/odyssey-continuity.test.cjs > /tmp/odyssey-release-audit/continuity.txt
+      - name: Probe live production assets without changing them
+        if: always()
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {createHash} from 'node:crypto';
+          const hash=x=>createHash('sha256').update(x).digest('hex');
+          const files=['index.html','app.html','data/odyssey-data.json'];
+          const results=await Promise.all(files.map(async file=>{
+            try {
+              const response=await fetch('https://kliawota.design/mtgtools/odyssey/'+file+'?release-audit='+process.env.GITHUB_SHA,{signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache'}});
+              const text=await response.text();
+              const local=fs.readFileSync('public/mtgtools/odyssey/'+file,'utf8');
+              const result={file,status:response.status,bytes:Buffer.byteLength(text),sameAsRepository:hash(text)===hash(local)};
+              if(file.endsWith('.json')&&response.ok){const d=JSON.parse(text);result.datasetVersion=d.datasetVersion;result.cards=d.cards?.length;}
+              return result;
+            }catch(error){return {file,error:String(error)}}
+          }));
+          fs.writeFileSync('/tmp/odyssey-release-audit/live-probe.json',JSON.stringify(results,null,2));
+          console.log(JSON.stringify(results,null,2));
+          NODE
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-release-audit
+          path: /tmp/odyssey-release-audit
+          retention-days: 3
