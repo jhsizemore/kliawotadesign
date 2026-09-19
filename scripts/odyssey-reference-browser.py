@@ -23,7 +23,7 @@ try:
    count=page.evaluate('OdysseyReferenceBrowser.refsFor(selected).length')
    assert page.locator('#openCardReferences').is_enabled(), 'reference toolbar button disabled for referenced card'\n   assert page.locator('#odCardReferences .od-ref-card').count()==count, ('compact reference count',page.locator('#odCardReferences .od-ref-card').count(),count)\n   page.locator('#openCardReferences').click()
    page.wait_for_selector('#odReferenceOverlay.open')
-   assert page.locator('#odReferenceOverlay .od-ref-card').count()==count, ('modal reference count',page.locator('#odReferenceOverlay .od-ref-card').count(),count)\n   assert page.locator('#odReferenceOverlay a[href^="https://scryfall.com/card/"]').count()==count, ('Scryfall link count',page.locator('#odReferenceOverlay a[href^="https://scryfall.com/card/"]').count(),count)\n   for i in range(count):
+   assert page.locator('#odReferenceOverlay .od-ref-card').count()==count, ('modal reference count',page.locator('#odReferenceOverlay .od-ref-card').count(),count)\n   assert page.locator('#odReferenceOverlay a[href^="https://scryfall.com/card/"]').count()==count*2, ('Scryfall link count',page.locator('#odReferenceOverlay a[href^="https://scryfall.com/card/"]').count(),count*2)\n   for i in range(count):
     img=page.locator('#odReferenceOverlay .od-ref-card img').nth(i)
     img.scroll_into_view_if_needed()
     page.wait_for_function("(i)=>{const x=document.querySelectorAll('#odReferenceOverlay .od-ref-card img')[i];return x&&x.complete&&x.naturalWidth>0}",i,timeout=30000)
@@ -34,7 +34,7 @@ try:
    assert page.evaluate('(id)=>!!JSON.parse(localStorage.getItem("odyssey-reference-review-v1")||"{}")[id]',current_id), 'review mark not stored'\n   page.screenshot(path=str(OUT/(name+'-references.png')),full_page=False)
    page.reload(wait_until='domcontentloaded')
    page.wait_for_function("window.OdysseyReferenceBrowserMounted",timeout=45000)
-   assert page.evaluate('(id)=>!!JSON.parse(localStorage.getItem("odyssey-reference-review-v1")||"{}")[id]',current_id), 'review mark did not persist after reload'\n   assert not errors,('page errors',errors)\n   report[name]={'coverage':coverage,'sampleNumber':number,'sampleReferences':count,'imagesDecoded':count,'annotationsVisible':True,'scryfallLinks':count,'reviewPersists':True,'pageErrors':errors}
+   assert page.evaluate('(id)=>!!JSON.parse(localStorage.getItem("odyssey-reference-review-v1")||"{}")[id]',current_id), 'review mark did not persist after reload'\n   assert not errors,('page errors',errors)\n   report[name]={'coverage':coverage,'sampleNumber':number,'sampleReferences':count,'imagesDecoded':count,'annotationsVisible':True,'scryfallLinks':count*2,'reviewPersists':True,'pageErrors':errors}
    context.close()
   browser.close()
  report['passed']=True
