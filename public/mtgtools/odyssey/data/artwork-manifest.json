@@ -1,7 +1,7 @@
 {
   "schema": "odyssey-artwork-delivery/v1",
   "revision": "artwork-performance-v1",
-  "checkedAt": "2026-09-19T09:13:51Z",
+  "checkedAt": "2026-09-19T09:25:16Z",
   "datasetVersion": "2026-09-19.2",
   "artworks": {
     "ART-001": {
@@ -4399,14 +4399,49 @@
       "credit": "Art: Hylas and the Nymphs · Salomon Gessner · National Gallery of Art",
       "source": "https://www.nga.gov/artworks/111489-hylas-and-nymphs",
       "rights": "Public Domain / NGA Open Access",
-      "attempts": [
-        {
-          "stage": "exact-source-metadata",
-          "error": "403 Client Error: Forbidden for url: https://www.nga.gov/artworks/111489-hylas-and-nymphs"
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://api.nga.gov/iiif/1b70d88f-5ae2-4310-ac69-e77adafca9e3/full/max/0/default.jpg",
+      "requestedUrl": "https://api.nga.gov/iiif/1b70d88f-5ae2-4310-ac69-e77adafca9e3/full/max/0/default.jpg",
+      "width": 3294,
+      "height": 4096,
+      "originalBytes": 5341728,
+      "sourceSha256": "470bed951b54d49d6ec3b36fd37bebab14d63d17c32777d3eb39e18bcf25307f",
+      "full": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-143.ea707d3e38ad.full.webp",
+        "width": 3294,
+        "height": 4096,
+        "bytes": 5219724,
+        "sha256": "ea707d3e38ad176ae3958bcdaaddc32894a072c40bcd7c53db6e06bc7762442d"
+      },
+      "thumb": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-143.f46d656d1bf9.thumb.webp",
+        "width": 290,
+        "height": 360,
+        "bytes": 25038,
+        "sha256": "f46d656d1bf9fbff6868f85dee04a37c94a2fb69a9000685223f40002ad6e45a"
+      },
+      "delivery": "same-origin",
+      "seconds": 6.39,
+      "recoveryProvenance": {
+        "source": "NGA official published_images.csv",
+        "objectId": 111489,
+        "record": {
+          "uuid": "1b70d88f-5ae2-4310-ac69-e77adafca9e3",
+          "iiifurl": "https://api.nga.gov/iiif/1b70d88f-5ae2-4310-ac69-e77adafca9e3",
+          "iiifthumburl": "https://api.nga.gov/iiif/1b70d88f-5ae2-4310-ac69-e77adafca9e3/full/!200,200/0/default.jpg",
+          "viewtype": "primary",
+          "sequence": "0",
+          "width": "3494",
+          "height": "4345",
+          "maxpixels": "",
+          "openaccess": "1",
+          "created": "2012-02-22 15:39:05-05",
+          "modified": "2026-04-13 12:44:44-04",
+          "depictstmsobjectid": "111489",
+          "assistivetext": "The image shows a clearing surrounded by dense foliage, with a group of nude figures gathered near a waterfall in a small stream. The landscape is depicted in monochromatic shades of black, white, and gray, with intricate brushstrokes. The background features a cluster of trees and a cloudy sky."
         }
-      ],
-      "status": "unavailable",
-      "seconds": 0.1
+      }
     },
     "ART-144": {
       "id": "ART-144",
@@ -4445,14 +4480,49 @@
       "credit": "Art: Travelers on a Forest Road in a Storm · F. A. Milatz · National Gallery of Art",
       "source": "https://www.nga.gov/artworks/151069-travelers-forest-road-storm",
       "rights": "Public Domain / NGA Open Access",
-      "attempts": [
-        {
-          "stage": "exact-source-metadata",
-          "error": "403 Client Error: Forbidden for url: https://www.nga.gov/artworks/151069-travelers-forest-road-storm"
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://api.nga.gov/iiif/6eeb7eb7-1e3b-4d56-a526-3a73bb16fecb/full/max/0/default.jpg",
+      "requestedUrl": "https://api.nga.gov/iiif/6eeb7eb7-1e3b-4d56-a526-3a73bb16fecb/full/max/0/default.jpg",
+      "width": 4096,
+      "height": 2921,
+      "originalBytes": 5440251,
+      "sourceSha256": "cc04ee8fe66efe003f353cc737cca550312fa36e36a828166bf447e5800eb335",
+      "full": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-145.8238e3384051.full.webp",
+        "width": 4096,
+        "height": 2921,
+        "bytes": 5205564,
+        "sha256": "8238e33840519adf1866e26716c71bcdb7396832a6945551e316649f4cfa481f"
+      },
+      "thumb": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-145.07a6bb68ce70.thumb.webp",
+        "width": 480,
+        "height": 342,
+        "bytes": 49386,
+        "sha256": "07a6bb68ce702f582536e6e1465f695d18cea386756a82f4e45315afa8bcd4d0"
+      },
+      "delivery": "same-origin",
+      "seconds": 3.58,
+      "recoveryProvenance": {
+        "source": "NGA official published_images.csv",
+        "objectId": 151069,
+        "record": {
+          "uuid": "6eeb7eb7-1e3b-4d56-a526-3a73bb16fecb",
+          "iiifurl": "https://api.nga.gov/iiif/6eeb7eb7-1e3b-4d56-a526-3a73bb16fecb",
+          "iiifthumburl": "https://api.nga.gov/iiif/6eeb7eb7-1e3b-4d56-a526-3a73bb16fecb/full/!200,200/0/default.jpg",
+          "viewtype": "primary",
+          "sequence": "0",
+          "width": "4861",
+          "height": "3467",
+          "maxpixels": "",
+          "openaccess": "1",
+          "created": "2010-05-17 16:13:57-04",
+          "modified": "2026-04-13 13:39:06-04",
+          "depictstmsobjectid": "151069",
+          "assistivetext": "The image depicts a landscape with a path winding through a forest. Large trees dominate the scene, reaching towards the sky. The style shows detailed etching and fine lines, creating texture in the foliage and tree bark. The color palette is monochrome in shades of black and white. Tree trunks line the foreground, while the path leads deeper into the forest where two figures are visible. The sky is overcast with clouds above the treetops."
         }
-      ],
-      "status": "unavailable",
-      "seconds": 0.1
+      }
     },
     "ART-146": {
       "id": "ART-146",
@@ -5049,14 +5119,49 @@
       "credit": "Art: “Galley and Small Boat” · Leone Leoni · National Gallery of Art",
       "source": "https://www.nga.gov/artworks/45099-galley-and-small-boat-reverse",
       "rights": "Public Domain / NGA Open Access",
-      "attempts": [
-        {
-          "stage": "exact-source-metadata",
-          "error": "403 Client Error: Forbidden for url: https://www.nga.gov/artworks/45099-galley-and-small-boat-reverse"
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://api.nga.gov/iiif/c94274db-d33c-49cf-b87a-b6127bf1cfdc/full/max/0/default.jpg",
+      "requestedUrl": "https://api.nga.gov/iiif/c94274db-d33c-49cf-b87a-b6127bf1cfdc/full/max/0/default.jpg",
+      "width": 3607,
+      "height": 3638,
+      "originalBytes": 3234251,
+      "sourceSha256": "15ceb10589c93feaec8ced63fdfaf137fc6cc4e5047192b1a64595e09d538950",
+      "full": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-165.961712bb708a.full.webp",
+        "width": 3607,
+        "height": 3638,
+        "bytes": 2973140,
+        "sha256": "961712bb708a347d070628ed877800b686b03e0b616db6243aa72f74bba1b315"
+      },
+      "thumb": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-165.5b7222b528d7.thumb.webp",
+        "width": 357,
+        "height": 360,
+        "bytes": 19548,
+        "sha256": "5b7222b528d736529da850928f5c9d420d222bbf18c0cdffdd23fc29ddb7a25c"
+      },
+      "delivery": "same-origin",
+      "seconds": 5.66,
+      "recoveryProvenance": {
+        "source": "NGA official published_images.csv",
+        "objectId": 45099,
+        "record": {
+          "uuid": "c94274db-d33c-49cf-b87a-b6127bf1cfdc",
+          "iiifurl": "https://api.nga.gov/iiif/c94274db-d33c-49cf-b87a-b6127bf1cfdc",
+          "iiifthumburl": "https://api.nga.gov/iiif/c94274db-d33c-49cf-b87a-b6127bf1cfdc/full/!200,200/0/default.jpg",
+          "viewtype": "primary",
+          "sequence": "0",
+          "width": "3607",
+          "height": "3638",
+          "maxpixels": "",
+          "openaccess": "1",
+          "created": "2017-08-09 14:54:11-04",
+          "modified": "2026-04-13 11:46:41-04",
+          "depictstmsobjectid": "45099",
+          "assistivetext": "This is an image of an antique coin or medallion. The image displays a scene of an ancient ship in turbulent waters, with oars extended and sails furled, suggesting it's being powered manually by oarsmen. There are small human figures etched into the design as part of the ship's crew. In the foreground, chaotic waves are depicted, and towards the bottom right, there is a smaller boat carrying a few additional figures. The surface has an aged patina, giving it an authentic and historical feel, with intricate details indicating a careful crafting process."
         }
-      ],
-      "status": "unavailable",
-      "seconds": 0.28
+      }
     },
     "ART-166": {
       "id": "ART-166",
@@ -5188,14 +5293,49 @@
       "credit": "Art: “An Italian Coast Scene” · John 'Warwick' Smith · National Gallery of Art",
       "source": "https://www.nga.gov/artworks/143861-italian-coast-scene",
       "rights": "Public Domain / NGA Open Access",
-      "attempts": [
-        {
-          "stage": "exact-source-metadata",
-          "error": "403 Client Error: Forbidden for url: https://www.nga.gov/artworks/143861-italian-coast-scene"
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://api.nga.gov/iiif/87a42764-a9db-4dea-974b-32e762211222/full/max/0/default.jpg",
+      "requestedUrl": "https://api.nga.gov/iiif/87a42764-a9db-4dea-974b-32e762211222/full/max/0/default.jpg",
+      "width": 4096,
+      "height": 2998,
+      "originalBytes": 2350191,
+      "sourceSha256": "37f53786eff858e7a93323ff10639b6e582b6db2bf29f1f7333d19c6327870cb",
+      "full": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-170.90f41d7fc6ed.full.webp",
+        "width": 4096,
+        "height": 2998,
+        "bytes": 1994054,
+        "sha256": "90f41d7fc6ed668dc8e662b00d6a7ebcaac6358db5392755fe3885e9d6a6ed82"
+      },
+      "thumb": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-170.51a80782181d.thumb.webp",
+        "width": 480,
+        "height": 351,
+        "bytes": 9490,
+        "sha256": "51a80782181d21da23871880524372870105f494746c4d3fffa2149b2787903c"
+      },
+      "delivery": "same-origin",
+      "seconds": 11.28,
+      "recoveryProvenance": {
+        "source": "NGA official published_images.csv",
+        "objectId": 143861,
+        "record": {
+          "uuid": "87a42764-a9db-4dea-974b-32e762211222",
+          "iiifurl": "https://api.nga.gov/iiif/87a42764-a9db-4dea-974b-32e762211222",
+          "iiifthumburl": "https://api.nga.gov/iiif/87a42764-a9db-4dea-974b-32e762211222/full/!200,200/0/default.jpg",
+          "viewtype": "primary",
+          "sequence": "0",
+          "width": "4903",
+          "height": "3589",
+          "maxpixels": "",
+          "openaccess": "1",
+          "created": "2010-01-27 12:03:11-05",
+          "modified": "2026-08-27 22:51:19-04",
+          "depictstmsobjectid": "143861",
+          "assistivetext": "The image shows a coastal landscape with rocky cliffs, buildings, greenery, and the sea. The horizon is high in the composition, with a distant mountain or hill. The watercolor technique displays subtle brushstrokes and a color palette of earth tones, grays, green, and pale blue-gray."
         }
-      ],
-      "status": "unavailable",
-      "seconds": 0.07
+      }
     },
     "ART-171": {
       "id": "ART-171",
@@ -5389,14 +5529,49 @@
       "credit": "Art: “Blind Homer” · J.-B.-R.-U. Massard, after François Gérard · National Gallery of Art",
       "source": "https://www.nga.gov/artworks/157097-blind-homer",
       "rights": "Public Domain / NGA Open Access",
-      "attempts": [
-        {
-          "stage": "exact-source-metadata",
-          "error": "403 Client Error: Forbidden for url: https://www.nga.gov/artworks/157097-blind-homer"
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://api.nga.gov/iiif/24cf3743-ef63-48ea-b0e0-4d7189c48824/full/max/0/default.jpg",
+      "requestedUrl": "https://api.nga.gov/iiif/24cf3743-ef63-48ea-b0e0-4d7189c48824/full/max/0/default.jpg",
+      "width": 3026,
+      "height": 4096,
+      "originalBytes": 4076339,
+      "sourceSha256": "a1b45d027738567dab6dc968df44434a205ed48b8d1a6139be1f0e7c8cd092c8",
+      "full": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-177.f6b4b6d1d608.full.webp",
+        "width": 3026,
+        "height": 4096,
+        "bytes": 4050492,
+        "sha256": "f6b4b6d1d6085492b474bb9d4cf8102c0f199072aa9fd9c207b05b584f61566c"
+      },
+      "thumb": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-177.d595a8106fd1.thumb.webp",
+        "width": 266,
+        "height": 360,
+        "bytes": 9376,
+        "sha256": "d595a8106fd1a8ef81aab241c9dbd25db51568fc46a36750dff79354157736ae"
+      },
+      "delivery": "same-origin",
+      "seconds": 8.7,
+      "recoveryProvenance": {
+        "source": "NGA official published_images.csv",
+        "objectId": 157097,
+        "record": {
+          "uuid": "24cf3743-ef63-48ea-b0e0-4d7189c48824",
+          "iiifurl": "https://api.nga.gov/iiif/24cf3743-ef63-48ea-b0e0-4d7189c48824",
+          "iiifthumburl": "https://api.nga.gov/iiif/24cf3743-ef63-48ea-b0e0-4d7189c48824/full/!200,200/0/default.jpg",
+          "viewtype": "primary",
+          "sequence": "0",
+          "width": "3636",
+          "height": "4921",
+          "maxpixels": "",
+          "openaccess": "1",
+          "created": "2012-05-16 14:37:39-04",
+          "modified": "2026-04-13 13:42:38-04",
+          "depictstmsobjectid": "157097",
+          "assistivetext": "The image shows two male figures on rocky terrain near a body of water. The larger figure has curly hair, a beard, a draped garment, sandals, and a musical instrument slung over his shoulder. The smaller figure is a young boy with curly hair, wearing a short tunic. They are in a dramatic natural setting with a cloudy sky and the sea in the background."
         }
-      ],
-      "status": "unavailable",
-      "seconds": 0.06
+      }
     },
     "ART-178": {
       "id": "ART-178",
@@ -5807,14 +5982,49 @@
       "credit": "Art: “Orpheus Redeeming Eurydice” · Moderno · National Gallery of Art",
       "source": "https://www.nga.gov/artworks/44055-orpheus-redeeming-eurydice",
       "rights": "Public Domain",
-      "attempts": [
-        {
-          "stage": "exact-source-metadata",
-          "error": "403 Client Error: Forbidden for url: https://www.nga.gov/artworks/44055-orpheus-redeeming-eurydice"
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://api.nga.gov/iiif/7261298d-5aaa-4f09-9f45-0523575913b5/full/max/0/default.jpg",
+      "requestedUrl": "https://api.nga.gov/iiif/7261298d-5aaa-4f09-9f45-0523575913b5/full/max/0/default.jpg",
+      "width": 4096,
+      "height": 4096,
+      "originalBytes": 4281867,
+      "sourceSha256": "e7c1ce8c22d4cd4c8565b96adf0f3ba56053becb86d97c8f3e2ad3e589a40e7e",
+      "full": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-191.025746770d3d.full.webp",
+        "width": 4096,
+        "height": 4096,
+        "bytes": 4032394,
+        "sha256": "025746770d3d8547589f2631f14a1b45bab672aa2a04090fcab86be82152c651"
+      },
+      "thumb": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-191.322a4afd76df.thumb.webp",
+        "width": 360,
+        "height": 360,
+        "bytes": 21000,
+        "sha256": "322a4afd76dfffc64b7bb500e0e4cf80962e71d0b7eccc6f30c409d3dc84fccf"
+      },
+      "delivery": "same-origin",
+      "seconds": 6.77,
+      "recoveryProvenance": {
+        "source": "NGA official published_images.csv",
+        "objectId": 44055,
+        "record": {
+          "uuid": "7261298d-5aaa-4f09-9f45-0523575913b5",
+          "iiifurl": "https://api.nga.gov/iiif/7261298d-5aaa-4f09-9f45-0523575913b5",
+          "iiifthumburl": "https://api.nga.gov/iiif/7261298d-5aaa-4f09-9f45-0523575913b5/full/!200,200/0/default.jpg",
+          "viewtype": "primary",
+          "sequence": "0",
+          "width": "4485",
+          "height": "4485",
+          "maxpixels": "",
+          "openaccess": "1",
+          "created": "2017-07-12 14:50:47-04",
+          "modified": "2026-04-13 11:45:20-04",
+          "depictstmsobjectid": "44055",
+          "assistivetext": "The sculpture is a circular relief depicting three human figures and an angel. The central figure is a nude male standing on the left, holding a stringed musical instrument. To his left stands a female figure, also nude, with a draped cloth covering her lap. Behind them is a winged being and a smaller figure peeking from behind the female. The background includes textured details resembling architectural or environmental elements. The relief is made from a bronze-like material with intricate detailing and a double border along the rim. A small hole at the top suggests it may have been designed for hanging or display."
         }
-      ],
-      "status": "unavailable",
-      "seconds": 0.05
+      }
     },
     "ART-192": {
       "id": "ART-192",
@@ -5822,14 +6032,49 @@
       "credit": "Art: “The Forge of Vulcan” · Enea Vico, after Francesco Primaticcio · National Gallery of Art",
       "source": "https://www.nga.gov/artworks/221932-forge-vulcan",
       "rights": "Public Domain",
-      "attempts": [
-        {
-          "stage": "exact-source-metadata",
-          "error": "403 Client Error: Forbidden for url: https://www.nga.gov/artworks/221932-forge-vulcan"
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://api.nga.gov/iiif/e80f3c24-43ba-4184-861d-f5d489bbab57/full/max/0/default.jpg",
+      "requestedUrl": "https://api.nga.gov/iiif/e80f3c24-43ba-4184-861d-f5d489bbab57/full/max/0/default.jpg",
+      "width": 4096,
+      "height": 3046,
+      "originalBytes": 5741006,
+      "sourceSha256": "99d61879cce0cf7e49cfe48732adbda76a46f51047320ba28636ed6c03899203",
+      "full": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-192.e16750ee6d72.full.webp",
+        "width": 4096,
+        "height": 3046,
+        "bytes": 5767706,
+        "sha256": "e16750ee6d72ef623e2e636f690c0f2e068e1d999f3f5809edd97553b450650e"
+      },
+      "thumb": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-192.1ee60fca084f.thumb.webp",
+        "width": 480,
+        "height": 357,
+        "bytes": 37324,
+        "sha256": "1ee60fca084fade4eee9a9bab0c0ed335867c5875a0ed74ada071b55a4a879d1"
+      },
+      "delivery": "same-origin",
+      "seconds": 9.77,
+      "recoveryProvenance": {
+        "source": "NGA official published_images.csv",
+        "objectId": 221932,
+        "record": {
+          "uuid": "e80f3c24-43ba-4184-861d-f5d489bbab57",
+          "iiifurl": "https://api.nga.gov/iiif/e80f3c24-43ba-4184-861d-f5d489bbab57",
+          "iiifthumburl": "https://api.nga.gov/iiif/e80f3c24-43ba-4184-861d-f5d489bbab57/full/!200,200/0/default.jpg",
+          "viewtype": "primary",
+          "sequence": "0",
+          "width": "11602",
+          "height": "8628",
+          "maxpixels": "",
+          "openaccess": "1",
+          "created": "2025-07-10 15:16:27-04",
+          "modified": "2026-04-13 14:38:47-04",
+          "depictstmsobjectid": "221932",
+          "assistivetext": "This is a drawing of a mythological scene depicting various figures working and interacting. The scene is filled with human figures engaged in industrious activities within an architectural setting resembling an ancient workshop or forge. The figures are shown in detailed anatomical poses, and the setting includes elements like stone walls, arches, and steps with textures and patterns. The combination of tools, presence of draped garments, and mythical winged figures suggest a classical or allegorical narrative. Various angelic or cherubic figures are seen assisting or in action, adding complexity to the scene."
         }
-      ],
-      "status": "unavailable",
-      "seconds": 0.05
+      }
     },
     "ART-193": {
       "id": "ART-193",
@@ -12986,14 +13231,49 @@
       "credit": "Art: Joris Hoefnagel · National Gallery of Art",
       "source": "https://www.nga.gov/artworks/69829-plate-13-two-stingrays-anglerfish-monkfish-and-angel-shark",
       "rights": "Public Domain / NGA Open Access",
-      "attempts": [
-        {
-          "stage": "exact-source-metadata",
-          "error": "403 Client Error: Forbidden for url: https://www.nga.gov/artworks/69829-plate-13-two-stingrays-anglerfish-monkfish-and-angel-shark"
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://api.nga.gov/iiif/279ee8a2-f54f-4e7d-8eb8-e8c8f225498e/full/max/0/default.jpg",
+      "requestedUrl": "https://api.nga.gov/iiif/279ee8a2-f54f-4e7d-8eb8-e8c8f225498e/full/max/0/default.jpg",
+      "width": 4096,
+      "height": 3206,
+      "originalBytes": 2333434,
+      "sourceSha256": "b2e9fb93cb4ec54e6e702d5ff4644a801723ffdd056573fc08b721bbf87571ac",
+      "full": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-424.932244300dea.full.webp",
+        "width": 4096,
+        "height": 3206,
+        "bytes": 1895850,
+        "sha256": "932244300deaf5ee8fbd9724e88d68f39b1a5b3bc58e7acc83834acf52087107"
+      },
+      "thumb": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-424.14e609fa316d.thumb.webp",
+        "width": 460,
+        "height": 360,
+        "bytes": 12522,
+        "sha256": "14e609fa316dd695b0d27a10f6aa67571ee4d8e44c81872e89f619f0572c08cb"
+      },
+      "delivery": "same-origin",
+      "seconds": 2.73,
+      "recoveryProvenance": {
+        "source": "NGA official published_images.csv",
+        "objectId": 69829,
+        "record": {
+          "uuid": "279ee8a2-f54f-4e7d-8eb8-e8c8f225498e",
+          "iiifurl": "https://api.nga.gov/iiif/279ee8a2-f54f-4e7d-8eb8-e8c8f225498e",
+          "iiifthumburl": "https://api.nga.gov/iiif/279ee8a2-f54f-4e7d-8eb8-e8c8f225498e/full/!200,200/0/default.jpg",
+          "viewtype": "primary",
+          "sequence": "0",
+          "width": "5265",
+          "height": "4121",
+          "maxpixels": "",
+          "openaccess": "1",
+          "created": "2016-08-08 11:02:05-04",
+          "modified": "2026-04-13 12:20:13-04",
+          "depictstmsobjectid": "69829",
+          "assistivetext": "This is a drawing of sea creatures against a blue background. The creatures are depicted in a detailed artistic style, each unique in appearance. The left side shows a skate or ray, followed by a fish with long appendages and a large mouth. To the right is a creature resembling a butterfly ray, and below it, a fish with a fan-like structure on its back. A shark-like fish is at the lower right. The creatures are drawn with emphasis on their forms and textures, with shading and color variations for depth. The image is enclosed within a circle."
         }
-      ],
-      "status": "unavailable",
-      "seconds": 0.05
+      }
     },
     "ART-425": {
       "id": "ART-425",
@@ -13804,24 +14084,16 @@
   },
   "summary": {
     "total": 450,
-    "verified": 441,
-    "sameOrigin": 440,
+    "verified": 449,
+    "sameOrigin": 448,
     "externalPreviews": [
       "ART-115"
     ],
     "unavailable": [
-      "ART-143",
-      "ART-145",
-      "ART-165",
-      "ART-170",
-      "ART-177",
-      "ART-191",
-      "ART-192",
-      "ART-200",
-      "ART-424"
+      "ART-200"
     ],
-    "originalBytes": 1293672258,
-    "fullBytes": 994175744,
-    "thumbnailBytes": 8865674
+    "originalBytes": 1326471325,
+    "fullBytes": 1025314668,
+    "thumbnailBytes": 9049358
   }
 }

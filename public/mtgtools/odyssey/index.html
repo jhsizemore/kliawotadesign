@@ -24,7 +24,7 @@
         window.OdysseyIncomingSyncKey = location.hash.slice(14);
         history.replaceState(null, '', location.pathname + location.search);
       }
-      const response = await fetch('./app.html?v=20260919-16', { cache: 'no-store' });
+      const response = await fetch('./app.html?v=20260919-17', { cache: 'no-store' });
       if (!response.ok) throw new Error('Studio source returned ' + response.status);
       let markup = await response.text();
       const transferScript = '<script src="./art-settings-transfer.js?v=20260918-4"><' + '/script>';
@@ -43,7 +43,7 @@
         markup = markup.replace(before, after);
       }
       const frameScript = '<script src="./frame-system.js?v=20260918-2"><' + '/script>';
-      const artworkScript = '<script src="./artwork-tools.js?v=20260918-4"><' + '/script>';
+      const artworkScript = '<script src="./artwork-tools.js?v=20260919-1"><' + '/script>';
       const transferMount = '<script>OdysseyArtTransfer.mount(ODYSSEY_ART_STATE);<' + '/script>';
       const mobileScript = '<script src="./mobile-navigation.js?v=20260918-5"><' + '/script>';
       const polishScript = '<script src="./studio-polish.js?v=20260918-7"><' + '/script>';

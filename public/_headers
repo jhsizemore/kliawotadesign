@@ -1,0 +1,8 @@
+
+/mtgtools/odyssey/assets/artwork/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/mtgtools/odyssey/assets/mana-pips/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff

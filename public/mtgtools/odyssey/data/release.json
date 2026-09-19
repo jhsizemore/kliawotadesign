@@ -101,5 +101,20 @@
   "notes": [
     "The 15 Saga type cards include the sole double-faced Troy card. Layout buckets are exclusive: 14 single-faced Saga layouts plus one double-faced battle.",
     "Legacy benchmark totals remain targets. Actual counts are recomputed from card records, not forced by unrequested card redesigns."
-  ]
+  ],
+  "appRevision": "artwork-performance-v1",
+  "artworkDelivery": {
+    "total": 450,
+    "verified": 449,
+    "sameOrigin": 448,
+    "externalPreviews": [
+      "ART-115"
+    ],
+    "unavailable": [
+      "ART-200"
+    ],
+    "originalBytes": 1326471325,
+    "fullBytes": 1025314668,
+    "thumbnailBytes": 9049358
+  }
 }

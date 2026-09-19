@@ -2,7 +2,7 @@
    This is a read-only view over the active dataset; it never rewrites art assignments. */
 (function (root) {
   'use strict';
-  const VERSION = '3.18';
+  const VERSION = '3.19';
   const normalize = value => String(value == null ? '' : value).normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   const textOf = (record, keys) => normalize(keys.map(key => {
@@ -15,13 +15,17 @@
   const ART_KEYS = ['title', 'tags', 'subject', 'subjects', 'characters', 'entities', 'theme', 'themes', 'candidateCards', 'description', 'cropNotes'];
   const ART_SEARCH_KEYS = ['id','title','artist','tags','subject','subjects','characters','entities','theme','themes','candidateCards','description','cropNotes','date','period','medium','institution','matchType','status'];
   function artworkSearchText(art) { return textOf(art || {}, ART_SEARCH_KEYS); }
+  const searchFieldCache = new WeakMap();
+  function searchFields(art) {
+    if (!art || typeof art !== 'object') return {title:'',tags:'',candidates:'',artist:'',rest:''};
+    if (searchFieldCache.has(art)) return searchFieldCache.get(art);
+    const fields={title:normalize(art.title),tags:normalize(art.tags),candidates:normalize(art.candidateCards),artist:normalize(art.artist),rest:artworkSearchText(art)};
+    searchFieldCache.set(art,fields); return fields;
+  }
   function artworkSearchScore(art, query) {
     const q = normalize(query), terms = q.split(/\s+/).filter(Boolean);
     if (!terms.length) return 0;
-    const fields = {
-      title: normalize(art && art.title), tags: normalize(art && art.tags), candidates: normalize(art && art.candidateCards),
-      artist: normalize(art && art.artist), rest: artworkSearchText(art)
-    };
+    const fields = searchFields(art);
     if (!terms.every(term => fields.rest.includes(term))) return -1;
     let score = 0;
     terms.forEach(term => {
@@ -296,9 +300,13 @@
             if (search) search.focus({preventScroll:true});
           });
         });
+        let searchTimer = 0;
         tools.querySelector('#artOptionSearch').addEventListener('input', event => {
           artSearchQuery = event.target.value;
-          root.renderArtOptions(false);
+          clearTimeout(searchTimer);
+          searchTimer = setTimeout(() => {
+            if(document.getElementById('artOptionsOverlay')?.classList.contains('open')) root.renderArtOptions(false);
+          }, 100);
         });
       }
       return tools;
