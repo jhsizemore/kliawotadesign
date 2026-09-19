@@ -4,16 +4,15 @@ on:
     branches: [odyssey/release-20260919]
     paths:
       - '.github/workflows/odyssey-release-stage.yml'
-      - 'scripts/odyssey-release*'
-      - 'tests/odyssey-release*'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: odyssey-release-stage-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   verify:
+    if: github.ref == 'refs/heads/odyssey/release-20260919'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -21,44 +20,33 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Snapshot release source and data architecture
-        shell: bash
+      - name: Generate reconciled candidate and production assets
         run: |
           mkdir -p /tmp/odyssey-release-audit
-          tar -czf /tmp/odyssey-release-audit/source.tgz public src tests package.json wrangler.jsonc .github
-          node <<'NODE' > /tmp/odyssey-release-audit/data-audit.json
-          const fs=require('node:fs');
-          const selected=new Set([216,153,162,232,245,174,98,168,275,199,72,193,194,195,196]);
-          const out={commit:process.env.GITHUB_SHA,datasets:{}};
-          for(const name of ['odyssey-analysis-candidate-v1.json','odyssey-data.json']){
-            const d=JSON.parse(fs.readFileSync('public/mtgtools/odyssey/data/'+name,'utf8'));
-            out.datasets[name]={keys:Object.keys(d),cards:d.cards.length,selected:d.cards.filter(c=>selected.has(c.number)),metadata:Object.fromEntries(Object.entries(d).filter(([k])=>!['cards','artworks','coverage'].includes(k))),coverageSample:d.coverage?.slice?.(0,2)};
-          }
-          console.log(JSON.stringify(out,null,2));
-          NODE
-      - name: Existing continuity regression
-        run: node --test tests/odyssey-continuity.test.cjs > /tmp/odyssey-release-audit/continuity.txt
-      - name: Probe live production assets without changing them
-        if: always()
+          node scripts/odyssey-release.cjs | tee /tmp/odyssey-release-audit/release-generation.json
+      - name: Test all artwork, mobile, continuity and release regressions
+        run: node --test tests/*.test.cjs tests/*.test.js | tee /tmp/odyssey-release-audit/continuity.txt
+      - name: Verify repeatable generation
         run: |
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          import {createHash} from 'node:crypto';
-          const hash=x=>createHash('sha256').update(x).digest('hex');
-          const files=['index.html','app.html','data/odyssey-data.json'];
-          const results=await Promise.all(files.map(async file=>{
-            try {
-              const response=await fetch('https://kliawota.design/mtgtools/odyssey/'+file+'?release-audit='+process.env.GITHUB_SHA,{signal:AbortSignal.timeout(20000),headers:{'Cache-Control':'no-cache'}});
-              const text=await response.text();
-              const local=fs.readFileSync('public/mtgtools/odyssey/'+file,'utf8');
-              const result={file,status:response.status,bytes:Buffer.byteLength(text),sameAsRepository:hash(text)===hash(local)};
-              if(file.endsWith('.json')&&response.ok){const d=JSON.parse(text);result.datasetVersion=d.datasetVersion;result.cards=d.cards?.length;}
-              return result;
-            }catch(error){return {file,error:String(error)}}
-          }));
-          fs.writeFileSync('/tmp/odyssey-release-audit/live-probe.json',JSON.stringify(results,null,2));
-          console.log(JSON.stringify(results,null,2));
-          NODE
+          sha256sum public/mtgtools/odyssey/data/*.json public/mtgtools/odyssey/data/*.js public/mtgtools/odyssey/app.html public/mtgtools/odyssey/index.html > /tmp/odyssey-before.sha
+          node scripts/odyssey-release.cjs > /dev/null
+          sha256sum public/mtgtools/odyssey/data/*.json public/mtgtools/odyssey/data/*.js public/mtgtools/odyssey/app.html public/mtgtools/odyssey/index.html > /tmp/odyssey-after.sha
+          diff -u /tmp/odyssey-before.sha /tmp/odyssey-after.sha
+      - name: Install existing build dependencies
+        run: npm install --no-package-lock
+      - name: Verify Worker build without deployment
+        run: npx wrangler deploy --dry-run --outdir /tmp/odyssey-verified-build | tee /tmp/odyssey-release-audit/build.txt
+      - name: Commit verified generated files only to isolated release branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/odyssey-release-stage.yml
+          git add public/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json public/mtgtools/odyssey/data/odyssey-data.json public/mtgtools/odyssey/data/odyssey-data.js public/mtgtools/odyssey/data/release.json public/mtgtools/odyssey/app.html public/mtgtools/odyssey/index.html tests/odyssey-continuity.test.cjs tests/odyssey-mobile-navigation.test.js .github/workflows/odyssey-continuity.yml
+          git diff --cached --stat > /tmp/odyssey-release-audit/changes.txt
+          git diff --cached --quiet || git commit -m 'Release Odyssey song cycles with preserved artwork and verified data audits'
+          git push origin HEAD:refs/heads/odyssey/release-20260919
+          git rev-parse HEAD > /tmp/odyssey-release-audit/verified-commit.txt
+          tar -czf /tmp/odyssey-release-audit/source.tgz public src tests scripts package.json wrangler.jsonc .github
       - uses: actions/upload-artifact@v4
         if: always()
         with:
