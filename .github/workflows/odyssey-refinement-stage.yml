@@ -1,0 +1,71 @@
+name: Odyssey text and locale staging
+on:
+  push:
+    branches: [odyssey/refinement-20260919]
+    paths:
+      - '.github/workflows/odyssey-refinement-stage.yml'
+      - 'scripts/odyssey-refinement*'
+      - 'tests/odyssey-refinement*'
+      - 'public/mtgtools/odyssey/design-refinement.js'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: odyssey-refinement-stage
+  cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/odyssey/refinement-20260919'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install exact-source and browser inspection tools
+        run: |
+          pip install requests pillow playwright
+          python -m playwright install --with-deps chromium
+          mkdir -p /tmp/odyssey-refinement/browser
+      - name: Build the approved changes and decode all eight new artworks
+        run: python scripts/odyssey-refinement-build.py | tee /tmp/odyssey-refinement/build-data.log
+      - name: Run every unit and data regression
+        run: node --test tests/*.test.cjs tests/*.test.js | tee /tmp/odyssey-refinement/tests.txt
+      - name: Inspect all 309 card text boxes and desktop/mobile review controls
+        run: |
+          python -m http.server 8787 --directory public > /tmp/odyssey-refinement/http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          python scripts/odyssey-refinement-browser.py | tee /tmp/odyssey-refinement/browser-result.log
+      - name: Verify complete Worker build without deployment
+        run: |
+          npm install --no-package-lock
+          npx wrangler deploy --dry-run --outdir /tmp/odyssey-refinement-build | tee /tmp/odyssey-refinement/worker-build.log
+      - name: Commit only verified assets to the isolated branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/mtgtools/odyssey scripts/odyssey-release-cycles.json tests/odyssey-release.test.cjs
+          git diff --cached --stat > /tmp/odyssey-refinement/changes.txt
+          git diff --cached --quiet || git commit -m 'Release sentence-level rules, refined utility pips and art-led Odyssean locales'
+          git push origin HEAD:refs/heads/odyssey/refinement-20260919
+          git rev-parse HEAD > /tmp/odyssey-refinement/verified-commit.txt
+      - name: Package exact source and diagnostics for release review
+        if: always()
+        run: |
+          mkdir -p /tmp/odyssey-refinement
+          tar --exclude='public/mtgtools/odyssey/assets/artwork' -czf /tmp/odyssey-refinement/source.tgz public src tests scripts package.json wrangler.jsonc .github
+          cp public/mtgtools/odyssey/data/refinement-report.json /tmp/odyssey-refinement/refinement-report.json 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-refinement-verification
+          path: /tmp/odyssey-refinement
+          retention-days: 7
