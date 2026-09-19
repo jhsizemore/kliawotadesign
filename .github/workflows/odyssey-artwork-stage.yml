@@ -9,6 +9,9 @@ permissions:
 concurrency:
   group: odyssey-artwork-optimization-stage
   cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
 jobs:
   artwork-audit:
     if: github.ref == 'refs/heads/odyssey/artwork-performance-20260919'
@@ -19,27 +22,63 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install image inspection tools
-        run: pip install requests pillow
-      - name: Recover the remaining exact artwork sources
-        run: python scripts/odyssey-artwork-recover.py | tee /tmp/odyssey-artwork-log.txt
-      - name: Commit verified image assets to staging only
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install inspection and browser tools
         run: |
+          pip install requests pillow playwright
+          python -m playwright install --with-deps chromium
+          mkdir -p /tmp/odyssey-artwork-audit /tmp/odyssey-browser-audit
+      - name: Recover exact NGA images through their official open data index
+        run: python scripts/odyssey-artwork-recover.py | tee /tmp/odyssey-artwork-audit/recovery.log
+      - name: Verify all default card assignments and documented exception
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=Path('public/mtgtools/odyssey/data')
+          m=json.loads((d/'artwork-manifest.json').read_text())
+          assert m['summary']['unavailable']==['ART-200'],m['summary']
+          for name in ['odyssey-data.json','odyssey-analysis-candidate-v1.json']:
+            cards=json.loads((d/name).read_text())['cards']
+            assert all(m['artworks'][c['primaryArt']]['status']=='verified' for c in cards)
+          PY
+      - name: Apply guarded editor and image performance optimization
+        run: python scripts/odyssey-performance-patch.py | tee /tmp/odyssey-artwork-audit/performance.json
+      - name: All unit and continuity regressions
+        run: node --test tests/*.test.cjs tests/*.test.js | tee /tmp/odyssey-artwork-audit/tests.txt
+      - name: Decode every full image and thumbnail in real desktop/mobile Chromium
+        run: |
+          python -m http.server 8787 --directory public > /tmp/odyssey-artwork-audit/http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          python scripts/odyssey-browser-audit.py | tee /tmp/odyssey-browser-audit/result.log
+      - name: Verify complete Worker build without deploying
+        run: |
+          npm install --no-package-lock
+          npx wrangler deploy --dry-run --outdir /tmp/odyssey-verified-build | tee /tmp/odyssey-artwork-audit/build.log
+      - name: Commit verified release assets to staging only
+        run: |
+          git diff --exit-code -- public/mtgtools/odyssey/data/odyssey-data.json public/mtgtools/odyssey/data/odyssey-data.js public/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public/mtgtools/odyssey/assets/artwork public/mtgtools/odyssey/data/artwork-manifest.json
-          git diff --cached --quiet || git commit -m 'Recover missing exact artwork sources with native resolution and provenance'
+          git add public/mtgtools/odyssey/assets/artwork public/mtgtools/odyssey/assets/mana-pips public/mtgtools/odyssey/data/artwork-manifest.json public/mtgtools/odyssey/data/artwork-delivery-manifest.*.js public/mtgtools/odyssey/artwork-delivery.js public/mtgtools/odyssey/app.html public/mtgtools/odyssey/artwork-tools.js public/mtgtools/odyssey/index.html public/mtgtools/odyssey/data/release.json public/_headers tests/odyssey-release.test.cjs
+          git diff --cached --stat > /tmp/odyssey-artwork-audit/changes.txt
+          git diff --cached --quiet || git commit -m 'Optimize Odyssey and serve browser-verified artwork with preserved crops'
           git push origin HEAD:refs/heads/odyssey/artwork-performance-20260919
           git rev-parse HEAD > /tmp/odyssey-artwork-audit/staged-commit.txt
-      - name: Package source and diagnostics
+      - name: Package diagnostics and rendered previews
         if: always()
         run: |
           mkdir -p /tmp/odyssey-artwork-audit
-          cp /tmp/odyssey-artwork-log.txt /tmp/odyssey-artwork-audit/ 2>/dev/null || true
           tar --exclude='public/mtgtools/odyssey/assets/artwork' -czf /tmp/odyssey-artwork-audit/source.tgz public src tests scripts package.json wrangler.jsonc .github
+          cp public/mtgtools/odyssey/data/artwork-manifest.json /tmp/odyssey-artwork-audit/artwork-audit.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: odyssey-artwork-audit
-          path: /tmp/odyssey-artwork-audit
+          path: |
+            /tmp/odyssey-artwork-audit
+            /tmp/odyssey-browser-audit
           retention-days: 7
