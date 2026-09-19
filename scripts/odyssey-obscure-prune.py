@@ -29,7 +29,7 @@ cal=by[15]
 cal.update({
     'mana':'{4}{W}{U}','mv':6,'color':'WU','frame':'M','rarity':'R',
     'mechanics':'Scry 9 / punisher sacrifice / stun pseudo-wipe',
-    'rules':'Target opponent may sacrifice up to nine permanents. Scry X, where X is nine minus the number of permanents sacrificed this way. Then choose up to X creatures and/or artifacts that player controls. Tap those permanents and put a stun counter on each of them.',
+    'rules':'Target opponent may sacrifice up to nine permanents. Scry {X}, where {X} is nine minus the number of permanents sacrificed this way. Then choose up to {X} creatures and/or artifacts that player controls. Tap those permanents and put a stun counter on each of them.',
     'status':'PROTOTYPE'
 })
 cal['functionalWords']=len(cal['rules'].replace('{',' ').replace('}',' ').split())
@@ -40,6 +40,18 @@ for n in KEEP_NUMBERS:
     assert by[n]['status']!='CUT',n
 
 candidate['cards']=json.loads(json.dumps(current['cards']))
+# Refresh structural actuals after Calchas moves from common MV2 mono-U to rare MV6 WU.
+for d in (current,candidate):
+    rar={k:sum(1 for x in d['cards'] if x['rarity']==k) for k in ['C','U','R','M']}
+    nonlands=[x for x in d['cards'] if 'Land' not in x.get('type','')]
+    curve={'1':0,'2':0,'3':0,'4':0,'5':0,'6':0,'7+':0}
+    for x in nonlands:
+        mv=int(x.get('mv') or 0)
+        key='7+' if mv>=7 else str(mv)
+        if key in curve:curve[key]+=1
+    d['ffSkeleton']['actual']['rarity']=rar
+    d['ffSkeleton']['actual']['manaCurve']=curve
+    d['ffSkeleton']['actual']['sixPlusManaValue']=sum(1 for x in nonlands if int(x.get('mv') or 0)>=6)
 empty=[{'number':x['number'],'formerName':x['name'],'rarity':x['rarity'],'color':x['color']} for x in archive]
 for d in (current,candidate):
     if d is current:d['datasetVersion']=VERSION
