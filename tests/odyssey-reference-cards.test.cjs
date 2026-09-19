@@ -26,6 +26,8 @@ test('reference cards are distinct Scryfall cards with reviewable imagery and an
    const image=r.card.images.small||r.card.images.normal||r.card.images.large;
    assert.ok(image,e.id+' '+r.card.name);
    assert.match(image,/^https:\/\/cards\.scryfall\.io\//);
+   assert.ok(typeof r.card.oracleText==='string'&&r.card.oracleText.trim(),e.id+' '+r.card.name+' oracle text');
+   assert.ok(r.card.releasedAt<=refs.scryfallBulk.releasedOnOrBefore,e.id+' unreleased reference '+r.card.name);
    const key=r.card.oracleId||r.card.id;assert.ok(!seen.has(key),e.id+' duplicate '+r.card.name);seen.add(key);
   }
  }
@@ -44,7 +46,7 @@ test('Studio loads reference data before the review browser and keeps it separat
  assert.match(app,/odyssey-data\.js\?v=20260919-live3/);
  const index=fs.readFileSync(path.join(dir,'index.html'),'utf8');assert.match(index,/app\.html\?v=20260919-20/);
  const browser=fs.readFileSync(path.join(dir,'card-reference-browser.js'),'utf8');
- for(const phrase of ['Real card references','Mark reviewed + next','Open on Scryfall','odyssey-reference-review-v1'])assert.ok(browser.includes(phrase),phrase);
+ for(const phrase of ['Real card references','Mark reviewed + next','Open on Scryfall','Oracle text','odyssey-reference-review-v1'])assert.ok(browser.includes(phrase),phrase);
 });
 test('release metadata records the exact reference snapshot',()=>{
  const release=JSON.parse(fs.readFileSync(path.join(dir,'data/release.json'),'utf8'));
