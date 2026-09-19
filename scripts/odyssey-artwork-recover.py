@@ -1,20 +1,26 @@
 """Repair exact sources without substituting unrelated works or altering card data."""
 from pathlib import Path
-import csv, io, json, re, time, types, concurrent.futures
+import csv, json, re, time, types, concurrent.futures
 p=Path(__file__).with_name('odyssey-artwork-audit.py')
 a=types.ModuleType('source_audit');a.__file__=str(p)
 code=p.read_text().replace('if total > 65 * 1024 * 1024:',"if total > (128 if 'PK.OPB.0177.033.tif' in url else 65) * 1024 * 1024:")
 exec(compile(code,str(p),'exec'),a.__dict__)
 manifest=json.loads((a.APP/'data/artwork-manifest.json').read_text())
 missing={k for k,v in manifest['artworks'].items() if v['status']!='verified'}
-notes={}
-nga={111489:'ART-143',151069:'ART-145',45099:'ART-165',143861:'ART-170',157097:'ART-177',44055:'ART-191',221932:'ART-192',69829:'ART-424'}
-# This public metadata table is much larger than a single image. Stream it; retain only eight exact records.
+notes={};nga={111489:'ART-143',151069:'ART-145',45099:'ART-165',143861:'ART-170',157097:'ART-177',44055:'ART-191',221932:'ART-192',69829:'ART-424'}
+# Keep the large public CSV on disk, not in memory. Only eight selected records enter the manifest.
 try:
- with a.requests.get('https://raw.githubusercontent.com/NationalGalleryOfArt/opendata/main/data/published_images.csv',stream=True,timeout=(10,60),headers={'User-Agent':a.UA}) as response:
-  response.raise_for_status();response.raw.decode_content=True
-  matches=[];chosen={}
-  for rawrow in csv.DictReader(io.TextIOWrapper(response.raw,encoding='utf-8-sig',newline='')):
+ csvpath=Path('/tmp/odyssey-nga-images.csv')
+ with a.requests.get('https://raw.githubusercontent.com/NationalGalleryOfArt/opendata/main/data/published_images.csv',stream=True,timeout=(10,60),headers={'User-Agent':a.UA}) as response, csvpath.open('wb') as output:
+  response.raise_for_status();total=0
+  for block in response.iter_content(1024*1024):
+   total+=len(block)
+   if total>256*1024*1024:raise ValueError('NGA metadata exceeds bounded 256 MiB CSV limit')
+   output.write(block)
+ csv.field_size_limit(16*1024*1024)
+ matches=[];chosen={}
+ with csvpath.open(encoding='utf-8-sig',newline='') as infile:
+  for rawrow in csv.DictReader(infile):
    row={k.lower():v for k,v in rawrow.items()}
    try:oid=int(row.get('depictstmsobjectid',row.get('objectid','0')))
    except ValueError:continue
@@ -22,17 +28,17 @@ try:
    matches.append(row)
    if row.get('openaccess')!='1' or row.get('viewtype','').lower()!='primary':continue
    old=chosen.get(oid)
-   if old and int(old.get('sequence') or '999')<=int(row.get('sequence') or '999'):continue
+   if old and float(old.get('sequence') or '999')<=float(row.get('sequence') or '999'):continue
    chosen[oid]=row
-  for oid,row in chosen.items():
-   url=row.get('iiifurl','') or row.get('iiifthumburl','')
-   if not url and row.get('uuid'):url='https://api.nga.gov/iiif/'+row['uuid']
-   if url:
-    url=re.sub(r'/full/.*$','',url.rstrip('/')).replace('http://','https://')
-    a.KNOWN[nga[oid]]=url+'/full/max/0/default.jpg'
-    notes[nga[oid]]={'source':'NGA official published_images.csv','objectId':oid,'record':row}
-  (a.OUT/'nga-records.json').write_text(json.dumps(matches,indent=2))
-  print('NGA primary open-access records:',len(chosen),flush=True)
+ for oid,row in chosen.items():
+  url=row.get('iiifurl','') or row.get('iiifthumburl','')
+  if not url and row.get('uuid'):url='https://api.nga.gov/iiif/'+row['uuid']
+  if url:
+   url=re.sub(r'/full/.*$','',url.rstrip('/')).replace('http://','https://')
+   a.KNOWN[nga[oid]]=url+'/full/max/0/default.jpg'
+   notes[nga[oid]]={'source':'NGA official published_images.csv','objectId':oid,'record':row}
+ (a.OUT/'nga-records.json').write_text(json.dumps(matches,indent=2))
+ print('NGA primary open-access records:',len(chosen),'matched:',len(matches),flush=True)
 except Exception as e:
  notes['ngaError']=str(e);print('NGA metadata error:',str(e),flush=True)
 for art in a.DATA['artworks']:
