@@ -33,11 +33,12 @@ def ref_evidence(c):
 def apply(c,new,reason):
     old=c['rules']
     if new==old:return
+    old_words=c.get('functionalWords')
+    old_status=c.get('changeStatus','')
     c['rules']=new
-    c['functionalWords']=max(0,int(c.get('functionalWords') or len(old.split()))+len(new.split())-len(old.split()))
-    status=c.get('changeStatus','')
-    if REVISION not in status:c['changeStatus']=(status+' · '+REVISION).strip(' ·')
-    changes.append({'id':c['id'],'number':c['number'],'name':c['name'],'before':old,'after':new,'reason':reason,'references':ref_evidence(c)})
+    c['functionalWords']=max(0,int(old_words or len(old.split()))+len(new.split())-len(old.split()))
+    if REVISION not in old_status:c['changeStatus']=(old_status+' · '+REVISION).strip(' ·')
+    changes.append({'id':c['id'],'number':c['number'],'name':c['name'],'before':old,'after':new,'functionalWordsBefore':old_words,'functionalWordsAfter':c['functionalWords'],'changeStatusBefore':old_status,'changeStatusAfter':c.get('changeStatus',''),'reason':reason,'references':ref_evidence(c)})
 
 def modern_self_reference(c,text):
     name=re.escape(c['name'])
