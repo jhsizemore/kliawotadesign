@@ -1,7 +1,7 @@
 {
   "schema": "odyssey-artwork-delivery/v1",
   "revision": "artwork-performance-v1",
-  "checkedAt": "2026-09-19T09:06:23Z",
+  "checkedAt": "2026-09-19T09:13:51Z",
   "datasetVersion": "2026-09-19.2",
   "artworks": {
     "ART-001": {
@@ -785,14 +785,30 @@
       "credit": "Art: James Parker, after John Flaxman · Rijksmuseum",
       "source": "https://www.rijksmuseum.nl/en/collection/object/Odysseus-bij-koning-Alkinoos-en-koningin-Arete--2e4d80e70ccafb9dc22009196e0a8709",
       "rights": "Public Domain",
-      "attempts": [
-        {
-          "stage": "exact-source-metadata",
-          "error": "Not a public HTTPS source"
-        }
-      ],
-      "status": "unavailable",
-      "seconds": 0.13
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://iiif.micr.io/MxYhC/full/max/0/default.jpg",
+      "requestedUrl": "https://iiif.micr.io/MxYhC/full/max/0/default.jpg",
+      "width": 4081,
+      "height": 2717,
+      "originalBytes": 1620639,
+      "sourceSha256": "c46383f613f7aa3eeb54665e99170966515891de65c8716b0e44a629b8b819aa",
+      "full": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-026.ee1da713caf8.full.webp",
+        "width": 4081,
+        "height": 2717,
+        "bytes": 1712512,
+        "sha256": "ee1da713caf86f583f12b1b6c42dd1423ae828f49c565e6cb35f5a2b561705ea"
+      },
+      "thumb": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-026.db56beb4a281.thumb.webp",
+        "width": 480,
+        "height": 320,
+        "bytes": 8736,
+        "sha256": "db56beb4a2816469723b74b50ddb23d3334011957979a2668e5b524902b31f96"
+      },
+      "delivery": "same-origin",
+      "seconds": 5.38
     },
     "ART-027": {
       "id": "ART-027",
@@ -4390,7 +4406,7 @@
         }
       ],
       "status": "unavailable",
-      "seconds": 0.45
+      "seconds": 0.1
     },
     "ART-144": {
       "id": "ART-144",
@@ -4436,7 +4452,7 @@
         }
       ],
       "status": "unavailable",
-      "seconds": 0.06
+      "seconds": 0.1
     },
     "ART-146": {
       "id": "ART-146",
@@ -5040,7 +5056,7 @@
         }
       ],
       "status": "unavailable",
-      "seconds": 0.07
+      "seconds": 0.28
     },
     "ART-166": {
       "id": "ART-166",
@@ -5179,7 +5195,7 @@
         }
       ],
       "status": "unavailable",
-      "seconds": 0.06
+      "seconds": 0.07
     },
     "ART-171": {
       "id": "ART-171",
@@ -5380,7 +5396,7 @@
         }
       ],
       "status": "unavailable",
-      "seconds": 0.05
+      "seconds": 0.06
     },
     "ART-178": {
       "id": "ART-178",
@@ -5798,7 +5814,7 @@
         }
       ],
       "status": "unavailable",
-      "seconds": 0.06
+      "seconds": 0.05
     },
     "ART-192": {
       "id": "ART-192",
@@ -6040,7 +6056,11 @@
       "rights": "Public Domain",
       "attempts": [],
       "status": "unavailable",
-      "seconds": 0.1
+      "seconds": 0.0,
+      "recoveryProvenance": {
+        "reason": "The Met currently publishes no image for accession 41.11.1 / object 253618. Kept as a documented source record, not silently replaced.",
+        "officialSource": "https://www.metmuseum.org/art/collection/search/253618"
+      }
     },
     "ART-201": {
       "id": "ART-201",
@@ -12868,14 +12888,35 @@
       "credit": "Art: Felice Giani · Smithsonian",
       "source": "https://www.si.edu/object/zeus-deciding-destiny-troy-palazzo-gessi-faenza%3Achndm_1901-39-1640",
       "rights": "Public domain / Smithsonian Open Access",
-      "attempts": [
-        {
-          "stage": "exact-source-metadata",
-          "error": "403 Client Error: Forbidden for url: https://www.si.edu/object/zeus-deciding-destiny-troy-palazzo-gessi-faenza%3Achndm_1901-39-1640"
-        }
-      ],
-      "status": "unavailable",
-      "seconds": 0.15
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Drawing,_Zeus_Deciding_on_the_Destiny_of_Troy,_Palazzo_Gessi,_Faenza,_1813_(CH_18110481).jpg",
+      "requestedUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Drawing,_Zeus_Deciding_on_the_Destiny_of_Troy,_Palazzo_Gessi,_Faenza,_1813_(CH_18110481).jpg",
+      "width": 3431,
+      "height": 4096,
+      "originalBytes": 18985601,
+      "sourceSha256": "19420c3f1ff1361bbbbf9238456e7422783f9d88d5e5db47bd70aa91279fde9f",
+      "full": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-421.f4e2b1023530.full.webp",
+        "width": 3431,
+        "height": 4096,
+        "bytes": 5110364,
+        "sha256": "f4e2b102353033cf32dd363dedc9c423ba826a3426ae57354a7e343f3f8dd6a9"
+      },
+      "thumb": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-421.238a0205171c.thumb.webp",
+        "width": 302,
+        "height": 360,
+        "bytes": 26774,
+        "sha256": "238a0205171cbc8d680e7d5974245bc291dc01e77b4c3a42a7a24e4c3a62f2da"
+      },
+      "delivery": "same-origin",
+      "seconds": 3.98,
+      "recoveryProvenance": {
+        "source": "Smithsonian Open Access reproduction on Wikimedia Commons",
+        "objectId": "1901-39-1640",
+        "commonsFile": "Drawing, Zeus Deciding on the Destiny of Troy, Palazzo Gessi, Faenza, 1813 (CH 18110481).jpg"
+      }
     },
     "ART-422": {
       "id": "ART-422",
@@ -12952,7 +12993,7 @@
         }
       ],
       "status": "unavailable",
-      "seconds": 0.06
+      "seconds": 0.05
     },
     "ART-425": {
       "id": "ART-425",
@@ -13177,18 +13218,30 @@
       "credit": "Art: Theodoor van Thulden, after Primaticcio · Museum Plantin-Moretus · Wikimedia Commons",
       "source": "https://commons.wikimedia.org/wiki/File:Odysseus_bij_Eumaeus,_zijn_varkenshoeder,_objectno_PK.OPB.0177.033.tif",
       "rights": "Public Domain / faithful reproduction",
-      "attempts": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Odysseus_bij_Eumaeus,_zijn_varkenshoeder,_objectno_PK.OPB.0177.033.tif",
-          "error": "Source exceeds safe 65 MiB acquisition bound"
-        },
-        {
-          "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Odysseus_bij_Eumaeus,_zijn_varkenshoeder,_objectno_PK.OPB.0177.033.tif",
-          "error": "Source exceeds safe 65 MiB acquisition bound"
-        }
-      ],
-      "status": "unavailable",
-      "seconds": 28.55
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Odysseus_bij_Eumaeus,_zijn_varkenshoeder,_objectno_PK.OPB.0177.033.tif",
+      "requestedUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Odysseus_bij_Eumaeus,_zijn_varkenshoeder,_objectno_PK.OPB.0177.033.tif",
+      "width": 7195,
+      "height": 4686,
+      "originalBytes": 101816718,
+      "sourceSha256": "c942027dc8859099d6b44bb97bb6349d3aa52abb10caac99c07dd9c652181fe6",
+      "full": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-432.045388a8fb32.full.webp",
+        "width": 7195,
+        "height": 4686,
+        "bytes": 10497880,
+        "sha256": "045388a8fb3287c6fc1e066a46a0930a870f672bb9286d1a4f57e5676038d70c"
+      },
+      "thumb": {
+        "url": "/mtgtools/odyssey/assets/artwork/ART-432.2ae76bf1a8db.thumb.webp",
+        "width": 480,
+        "height": 313,
+        "bytes": 17172,
+        "sha256": "2ae76bf1a8dbca78792b3d43e9fb3696a6e1e972d73f8fb6d533b4b7258691eb"
+      },
+      "delivery": "same-origin",
+      "seconds": 16.98
     },
     "ART-433": {
       "id": "ART-433",
@@ -13751,13 +13804,12 @@
   },
   "summary": {
     "total": 450,
-    "verified": 438,
-    "sameOrigin": 437,
+    "verified": 441,
+    "sameOrigin": 440,
     "externalPreviews": [
       "ART-115"
     ],
     "unavailable": [
-      "ART-026",
       "ART-143",
       "ART-145",
       "ART-165",
@@ -13766,12 +13818,10 @@
       "ART-191",
       "ART-192",
       "ART-200",
-      "ART-421",
-      "ART-424",
-      "ART-432"
+      "ART-424"
     ],
-    "originalBytes": 1171249300,
-    "fullBytes": 976854988,
-    "thumbnailBytes": 8812992
+    "originalBytes": 1293672258,
+    "fullBytes": 994175744,
+    "thumbnailBytes": 8865674
   }
 }
