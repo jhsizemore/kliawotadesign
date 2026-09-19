@@ -113,9 +113,9 @@ The initial 46 / 217 / 46 allocation was superseded by the bottom-fifth flavour 
 
 The current allocation is:
 
-- **66 cards — Iliad + young Odysseus** (21.36%)
-- **177 cards — Odyssey Books I–XXIV** (57.28%)
-- **66 cards — old Odysseus beyond the Odyssey / Telegony traditions** (21.36%)
+- **67 cards — Iliad + young Odysseus** (21.68%)
+- **175 cards — Odyssey Books I–XXIV** (56.63%)
+- **67 cards — old Odysseus beyond the Odyssey / Telegony traditions** (21.68%)
 
 This was a deliberate quality trade: the Odyssey remains the clear majority, but generic duplicate monster/island/reprint material no longer occupies space merely to preserve the earlier percentage target.
 
@@ -127,7 +127,16 @@ The lowest-scoring 62 cards were replaced or substantially redesigned against sp
 - The wider Trojan Epic Cycle: Palamedes, Telephus, Philoctetes, Neoptolemus, Odysseus's beggar-spy infiltration, the Palladium, the false withdrawal to Tenedos.
 - The Telegony: burial of the suitors, Elis and Polyxenus, the inland-oar obligation, Thesprotia/Callidice, the Brygian war, Telegonus, Odysseus's death, Aeaea, immortality and the final marriages.
 
-After the pass the 0–5 flavour distribution is **102 score-5 / 162 score-4 / 45 score-3 / 0 score-2-or-lower**, with a set-wide average of **4.18**.
+After the bottom-fifth pass plus the final redundancy cull, the 0–5 flavour distribution is **104 score-5 / 161 score-4 / 44 score-3 / 0 score-2-or-lower**, with a set-wide average of **4.19**.
+
+### Redundancy cull
+
+A second pass removed two additional Odyssey cards that were not technically in the bottom fifth but duplicated already-covered monster/island material:
+
+- **Laestrygonian Glutton** → **Odysseus Guards Achilles**, using the Aethiopis episode in which Ajax carries Achilles's body while Odysseus holds off the Trojans.
+- **Abundant Shore Giant** → **Circe Makes Them Immortal**, using the Telegony ending on Aeaea.
+
+The Laestrygonian episode is now represented compactly by **Antiphates**, **Laestrygonian Stone-Hurler**, and the **Laestrygonian harbor** land. The Cyclops episode remains centered on **Polyphemus**, **Odysseus, Named Nobody**, and **Cyclopean Shore**, avoiding low-value repetition.
 
 ## Double-faced-card exception
 
