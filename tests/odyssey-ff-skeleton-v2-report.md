@@ -109,34 +109,15 @@ Current/production Odyssey data was not edited. `datasetVersion` remains `analys
 
 ## Narrative apportionment
 
-The initial 46 / 217 / 46 allocation was superseded by the bottom-fifth flavour audit. The weakest 62 cards were redesigned, and 40 low-flavour Odyssey filler slots were reassigned equally to richer Trojan/young-Odysseus and Telegony/post-Odyssey material.
+The 309-card candidate now uses this exact integer allocation:
 
-The current allocation is:
+- **46 cards — Iliad + young Odysseus** (14.89%)
+- **217 cards — Odyssey Books I–XXIV** (70.23%)
+- **46 cards — old Odysseus beyond the Odyssey** (14.89%)
 
-- **67 cards — Iliad + young Odysseus** (21.68%)
-- **175 cards — Odyssey Books I–XXIV** (56.63%)
-- **67 cards — old Odysseus beyond the Odyssey / Telegony traditions** (21.68%)
+Each card now has `narrativeEra`, `storyTarget`, `storyRethemeRequired`, and `storySourceBand` metadata. Where a card's current name/flavour has not yet been rewritten to the assigned era, the target is explicit rather than silently pretending the retheme is complete.
 
-This was a deliberate quality trade: the Odyssey remains the clear majority, but generic duplicate monster/island/reprint material no longer occupies space merely to preserve the earlier percentage target.
-
-## Bottom-fifth flavour redesign
-
-The lowest-scoring 62 cards were replaced or substantially redesigned against specific source elements. The pass drew especially on:
-
-- Homeric Odysseus at Troy: rallying the army, Thersites, the embassy to Achilles, the night raid with Diomedes, Socus's wound, Patroclus's funeral games.
-- The wider Trojan Epic Cycle: Palamedes, Telephus, Philoctetes, Neoptolemus, Odysseus's beggar-spy infiltration, the Palladium, the false withdrawal to Tenedos.
-- The Telegony: burial of the suitors, Elis and Polyxenus, the inland-oar obligation, Thesprotia/Callidice, the Brygian war, Telegonus, Odysseus's death, Aeaea, immortality and the final marriages.
-
-After the bottom-fifth pass plus the final redundancy cull, the 0–5 flavour distribution is **104 score-5 / 161 score-4 / 44 score-3 / 0 score-2-or-lower**, with a set-wide average of **4.19**.
-
-### Redundancy cull
-
-A second pass removed two additional Odyssey cards that were not technically in the bottom fifth but duplicated already-covered monster/island material:
-
-- **Laestrygonian Glutton** → **Odysseus Guards Achilles**, using the Aethiopis episode in which Ajax carries Achilles's body while Odysseus holds off the Trojans.
-- **Abundant Shore Giant** → **Circe Makes Them Immortal**, using the Telegony ending on Aeaea.
-
-The Laestrygonian episode is now represented compactly by **Antiphates**, **Laestrygonian Stone-Hurler**, and the **Laestrygonian harbor** land. The Cyclops episode remains centered on **Polyphemus**, **Odysseus, Named Nobody**, and **Cyclopean Shore**, avoiding low-value repetition.
+The post-Odyssey band is grounded primarily in the Telegony/Epic Cycle and later mythographic traditions: the inland-oar journey, Elis, Polyxenus, Trophonius/Agamedes/Augeas, Thesprotia and Callidice, the Brygian war, Polypoetes/Poliporthes, Telegonus, Odysseus's death, and the later Circe/Penelope/Telemachus traditions. These are identified as post-Homeric traditions, not events of the Odyssey itself.
 
 ## Double-faced-card exception
 
