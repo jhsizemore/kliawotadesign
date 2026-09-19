@@ -5,9 +5,7 @@ on:
     paths:
       - '.github/workflows/odyssey-templating-stage.yml'
       - 'scripts/odyssey-initial-templating.py'
-      - 'tests/odyssey-templating.test.cjs'
-      - 'tests/odyssey-release.test.cjs'
-      - 'tests/odyssey-reference-cards.test.cjs'
+      - 'tests/odyssey-*'
   workflow_dispatch:
 permissions:
   contents: write
