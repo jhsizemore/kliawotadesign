@@ -18,7 +18,13 @@
     flush();
    }else if(ch===')'&&!parentheses&&/[.!?]\s*\([^]*\)$/.test(buffer)&&/^(?:\s+[A-Z{]|$)/.test(text.slice(i+1))){flush();}
   }
-  flush();return out;
+  flush();
+  const keyword=/^(?:flying|reach|vigilance|flash|haste|trample|menace|lifelink|deathtouch|first strike|double strike|defender|indestructible|hexproof|shroud)$/i;
+  return out.flatMap(line=>{
+   const period=line.endsWith('.'),parts=line.replace(/\.$/,'').split(/\s*,\s*/);
+   if(parts.length<2||!parts.every(part=>keyword.test(part)))return [line];
+   return parts.map((part,i)=>part[0].toUpperCase()+part.slice(1)+(period&&i===parts.length-1?'.':''));
+  });
  }
  function isDevotion(line){return /^As long as (?:your devotion\b|the number of (?:white|blue|black|red|green)[^]*mana symbols[^]*less than)/i.test(line);}
  function rulesHTML(value,renderSymbol){
