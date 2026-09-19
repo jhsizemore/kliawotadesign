@@ -1,0 +1,74 @@
+name: Odyssey empty-slot pruning staging
+on:
+  push:
+    branches: [odyssey/empty-slots-20260920]
+    paths:
+      - '.github/workflows/odyssey-empty-slots-stage.yml'
+      - 'scripts/odyssey-obscure-prune.py'
+      - 'tests/odyssey-*'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: odyssey-empty-slots-stage
+  cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/odyssey/empty-slots-20260920'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Restore current live data as repeatable baseline
+        run: |
+          git fetch origin main
+          git checkout origin/main -- public/mtgtools/odyssey/data/odyssey-data.json public/mtgtools/odyssey/data/odyssey-data.js public/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json public/mtgtools/odyssey/data/release.json public/mtgtools/odyssey/app.html public/mtgtools/odyssey/index.html public/mtgtools/odyssey/studio-polish.js
+          rm -f public/mtgtools/odyssey/data/empty-slot-report.json
+      - name: Apply obscure-reference pruning and Calchas recast
+        run: |
+          mkdir -p /tmp/odyssey-empty-slots
+          python scripts/odyssey-obscure-prune.py | tee /tmp/odyssey-empty-slots/build.log
+          cp public/mtgtools/odyssey/data/empty-slot-report.json /tmp/odyssey-empty-slots/empty-slot-report.json
+      - name: Run complete Odyssey regression suite
+        run: node --test tests/*.test.cjs tests/*.test.js | tee /tmp/odyssey-empty-slots/tests.txt
+      - name: Install browser verifier
+        run: |
+          pip install requests pillow playwright
+          python -m playwright install --with-deps chromium
+      - name: Verify rendered cards, artwork and Scryfall references still function
+        run: |
+          python -m http.server 8787 --directory public > /tmp/odyssey-empty-slots/http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          AUDIT_URL=http://127.0.0.1:8787/mtgtools/odyssey/ AUDIT_OUT=/tmp/odyssey-empty-slots/refinement python scripts/odyssey-refinement-browser.py
+          AUDIT_URL=http://127.0.0.1:8787/mtgtools/odyssey/ python scripts/odyssey-reference-browser.py
+      - name: Verify Worker build
+        run: |
+          npm install --no-package-lock
+          npx wrangler deploy --dry-run --outdir /tmp/odyssey-empty-slots-worker | tee /tmp/odyssey-empty-slots/worker.log
+      - name: Commit verified generated data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/mtgtools/odyssey/data/odyssey-data.json public/mtgtools/odyssey/data/odyssey-data.js public/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json public/mtgtools/odyssey/data/release.json public/mtgtools/odyssey/data/empty-slot-report.json public/mtgtools/odyssey/app.html public/mtgtools/odyssey/index.html public/mtgtools/odyssey/studio-polish.js
+          git diff --cached --stat > /tmp/odyssey-empty-slots/changes.txt
+          git diff --cached --quiet || git commit -m 'Collect twenty empty slots and recast Calchas around the nine-bird omen'
+          git push origin HEAD:refs/heads/odyssey/empty-slots-20260920
+          git rev-parse HEAD > /tmp/odyssey-empty-slots/verified-commit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-empty-slots-verification
+          path: /tmp/odyssey-empty-slots
+          retention-days: 7
