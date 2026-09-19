@@ -24,12 +24,12 @@
         window.OdysseyIncomingSyncKey = location.hash.slice(14);
         history.replaceState(null, '', location.pathname + location.search);
       }
-      const response = await fetch('./app.html?v=20260919-17', { cache: 'no-store' });
+      const response = await fetch('./app.html?v=20260919-18', { cache: 'no-store' });
       if (!response.ok) throw new Error('Studio source returned ' + response.status);
       let markup = await response.text();
       const transferScript = '<script src="./art-settings-transfer.js?v=20260918-4"><' + '/script>';
       const mobileStyle = '<link rel="stylesheet" href="./mobile-navigation.css?v=20260918-5">';
-      const polishStyle = '<link rel="stylesheet" href="./studio-polish.css?v=20260918-6">';
+      const polishStyle = '<link rel="stylesheet" href="./studio-polish.css?v=20260919-8">';
       markup = markup.replace('</head>', '<meta name="referrer" content="no-referrer"><link rel="stylesheet" href="./frame-system.css?v=20260918-2">' + transferScript + mobileStyle + polishStyle + '</head>');
       // Keep the canonical app/data intact. Scope only the four per-set state stores.
       const statePatches = [
@@ -46,7 +46,7 @@
       const artworkScript = '<script src="./artwork-tools.js?v=20260919-1"><' + '/script>';
       const transferMount = '<script>OdysseyArtTransfer.mount(ODYSSEY_ART_STATE);<' + '/script>';
       const mobileScript = '<script src="./mobile-navigation.js?v=20260918-5"><' + '/script>';
-      const polishScript = '<script src="./studio-polish.js?v=20260918-7"><' + '/script>';
+      const polishScript = '<script src="./studio-polish.js?v=20260919-8"><' + '/script>';
       const syncCore = '<script src="./art-sync-core.js?v=20260918-6"><' + '/script>';
       const syncScript = '<script src="./art-sync.js?v=20260918-6"><' + '/script>';
       const mount = '<script>document.addEventListener("DOMContentLoaded",function(){try{OdysseyPolish.install();OdysseyArtSync.mount(ODYSSEY_ART_STATE);}catch(error){console.error("Odyssey continuity tools:",error);if(window.toast)toast("Device tools did not start; local editor is still available.");}},{once:true});<' + '/script>';

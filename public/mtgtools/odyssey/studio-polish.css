@@ -41,3 +41,23 @@
 @media screen and (max-width:760px){.odyssey-mobile .top-actions{flex-wrap:wrap;gap:5px}.odyssey-mobile .od-sync-button{min-height:38px;font-size:11px}.od-sync-dialog input{font-size:16px}}
 
 .odyssey-mobile .top-actions .od-sync-button{display:inline-flex!important;align-items:center;justify-content:center}
+
+/* Soft sentence returns preserve ability grouping and do not add paragraph padding. */
+.od-rule-sentence{margin:0;padding:0}.od-ability-label{font-weight:700}.od-sentence-return{line-height:inherit}
+.od-symbol[data-symbol="Q"]{background:#29271f!important;color:#f5edda!important}.od-utility-glyph{overflow:visible}
+.od-generic-value{font-variant-numeric:tabular-nums;line-height:1}.od-design-review{margin-top:10px;padding:10px;border:1px solid #655e45;border-radius:7px}.od-design-review[hidden]{display:none}.od-design-review-status{font-size:12px;line-height:1.4;margin-bottom:7px}
+.od-hybrid-parts[data-parts="2"]{position:relative;display:block;width:100%;height:100%}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half{position:absolute;inset:0;display:block;width:100%;height:100%}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half:first-child{clip-path:polygon(0 0,100% 0,0 100%)}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half:last-child{clip-path:polygon(100% 0,100% 100%,0 100%)}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half>img,.od-hybrid-parts[data-parts="2"] .od-hybrid-half>svg{position:absolute;width:64%!important;height:64%!important;object-fit:contain}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half:first-child>*{left:-1%;top:-1%}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half:last-child>*{right:-1%;bottom:-1%}
+@media print{.od-design-review,#odReplacementDialog{display:none!important}}
+
+/* A requested return is a soft line break, not paragraph spacing. */
+.rules br.od-sentence-return{display:revert!important;content:normal!important;margin:0!important}
+.render-card.od-rules-compact:not(.kind-saga):not(.kind-battle):not(.kind-adventure):not(.kind-prepare) .rules{padding-top:8px!important;padding-bottom:6px!important;line-height:1.12!important}
+.render-card.od-rules-compact.kind-adventure .rule-main,.render-card.od-rules-compact.kind-prepare .rule-main{padding-top:8px;padding-bottom:5px}
+.render-card.od-rules-compact.kind-adventure .special-box,.render-card.od-rules-compact.kind-prepare .special-box{padding-top:7px!important;padding-bottom:5px!important;padding-left:24px!important}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half>.od-generic-value{position:absolute;width:60%;height:60%;display:grid;place-items:center;font-size:.72em;line-height:1}

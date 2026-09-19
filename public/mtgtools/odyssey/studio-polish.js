@@ -1,6 +1,7 @@
 /* Odyssey Studio v3.17: canonical symbol notation and uncropped title typography. */
 (function (root) {
   'use strict';
+  const refinement=root.OdysseyRefinement||(typeof require==='function'?require('./design-refinement.js'):null);
   const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const TOKEN = /^(?:\d{1,3}|[WUBRGCSXYZTQEP]|[WUBRGC2]\/[WUBRGC]|[WUBRG]\/P|[WUBRG]\/[WUBRG]\/P|∞|½)$/;
   const COMPACT = /(?:[WUBRG]\/[WUBRG]\/P|[WUBRGC2]\/[WUBRGC]|[WUBRG]\/P|\d{1,3}|[WUBRGCSXYZTQEP]|∞|½)/y;
@@ -65,18 +66,19 @@
     return LABELS[t] || (t.includes('/') ? t.split('/').map(x => LABELS[x] || x).join(' or ') : `${t} generic mana`);
   }
   function glyph(t, pips) {
+    const utility=refinement?.utilityGlyph(t);if(utility)return utility;
     const src = pips?.[t];
     if (src) return `<img class="mana-pip" src="${escapeHTML(src)}" alt="" aria-hidden="true">`;
     if (t === 'T' || t === 'Q') return `<svg class="od-tap-glyph" viewBox="0 0 24 24" aria-hidden="true"><g${t === 'Q' ? ' transform="translate(24 0) scale(-1 1)"' : ''}><path d="M5 17V7a3 3 0 0 1 3-3h7" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M11 1h9v9l-3-3-6 6-3-3 6-6z" fill="currentColor"/><path d="M3 17h10v4H3z" fill="currentColor"/></g></svg>`;
     if (t === 'S') return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 4l3 3 3-3M9 20l3-3 3 3" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
     if (t === 'P') return '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M12 1v22" stroke="currentColor" stroke-width="2.2"/></svg>';
-    if (t.includes('/')) return `<span class="od-hybrid-parts">${t.split('/').map(p => `<span class="od-hybrid-half m${/^[WUBRGC]$/.test(p) ? p : 'N'}">${glyph(p, pips)}</span>`).join('')}</span>`;
+    if (t.includes('/')) return `<span class="od-hybrid-parts" data-parts="${t.split('/').length}">${t.split('/').map(p => `<span class="od-hybrid-half m${/^[WUBRGC]$/.test(p) ? p : 'N'}">${glyph(p, pips)}</span>`).join('')}</span>`;
     return `<span class="od-generic-value${t.length > 2 ? ' od-small-number' : ''}">${escapeHTML(t)}</span>`;
   }
   function symbolHTML(value, inline, pips = {}) {
     const t = token(value);
     if (!t) return escapeHTML(`{${value}}`);
-    const art = !!pips[t], special = ['T','Q','S','P'].includes(t), hybrid = t.includes('/');
+    const art = !!pips[t]&&!refinement?.utilityGlyph(t), special = ['C','T','Q','S','P','E'].includes(t), hybrid = t.includes('/');
     const classes = [inline ? 'inline-mana' : 'mana-symbol', 'od-symbol', art ? 'pip-art' : 'od-vector', hybrid ? 'od-hybrid' : '', special ? 'od-special-symbol' : '', `m${/^[WUBRGC]$/.test(t) ? t : 'N'}`].filter(Boolean).join(' ');
     return `<span class="${classes}" data-symbol="${escapeHTML(t)}" role="img" aria-label="${escapeHTML(label(t))}">${glyph(t, pips)}</span>`;
   }
@@ -86,8 +88,7 @@
     return parsed.map(t => symbolHTML(t, false, pips)).join('');
   }
   function rulesHTML(value, pips) {
-    return escapeHTML(normalizeRules(value)).replace(/(\([^()\n]*\))/g, '<span class="reminder">$1</span>')
-      .replace(/\{([^{}\n]+)\}/g, (whole, t) => token(t) ? symbolHTML(t, true, pips) : whole).replace(/\n+/g, '<br>');
+    return refinement.rulesHTML(normalizeRules(value),t=>token(t)?symbolHTML(t,true,pips):escapeHTML('{'+t+'}'));
   }
   function install() {
     if (root.OdysseyPolishInstalled || typeof root.model !== 'function') return;
@@ -123,24 +124,45 @@
       return oldDownload.call(this, filename, content, ...rest);
     };
     function decorate(card) {
-      // Saga frame decoration replaces the rules HTML, so process its text nodes last.
-      for (const host of card.querySelectorAll('.saga-chapter, .special-meta')) {
-        const walker = document.createTreeWalker(host, NodeFilter.SHOW_TEXT);
-        const nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
-        for (const node of nodes) {
-          if (node.parentElement.closest('.od-symbol')) continue;
-          let text = node.nodeValue;
-          if (host.classList.contains('special-meta')) text = text.split(' · ').map(x => tokens(x)?.length ? normalizeCost(x) : x).join(' · ');
-          if (![...text.matchAll(/\{([^{}]+)\}/g)].some(m => token(m[1]))) continue;
-          const span = document.createElement('span'); span.innerHTML = rulesHTML(text, pips); node.replaceWith(span);
-        }
+      for(const host of card.querySelectorAll('.saga-chapter > span:last-child')){
+        if(host.dataset.odSentenceLayout)continue;
+        const source=host.textContent;host.innerHTML=rulesHTML(source,pips);host.dataset.odSentenceLayout='1';
+      }
+      for(const host of card.querySelectorAll('.special-meta')){
+        if(host.dataset.odSymbols)continue;
+        const text=host.textContent.split(' · ').map(x=>tokens(x)?.length?normalizeCost(x):x).join(' · ');
+        host.innerHTML=escapeHTML(text).replace(/\{([^{}]+)\}/g,(whole,t)=>token(t)?symbolHTML(t,true,pips):whole);host.dataset.odSymbols='1';
       }
     }
     const oldFit = root.fitCardTypography;
     root.fitCardTypography = function (card) {
       if (!card) return;
       decorate(card);
+      // Undo only this helper's transient geometry, including when print CSS changes.
+      for(const saved of card.odTextGeometry||[]){
+        if(saved.value)saved.element.style.setProperty(saved.property,saved.value,saved.priority);
+        else saved.element.style.removeProperty(saved.property);
+      }
+      card.odTextGeometry=[];delete card.dataset.rulesExpansion;
+      card.classList.remove('od-rules-compact');
       oldFit(card);
+      const rules=card.querySelector('.rules');
+      if(rules?.dataset.fitState==='overflow'){card.classList.add('od-rules-compact');oldFit(card);}
+      if(rules?.dataset.fitState==='overflow'&&!card.matches('.kind-saga,.kind-battle')&&card.offsetWidth){
+        const scale=card.offsetWidth/378,art=card.querySelector('.artbox'),typebar=card.querySelector('.typebar');
+        const amount=Math.min(24*scale,Math.max(14*scale,rules.scrollHeight-rules.clientHeight+8*scale));
+        const move=(element,property,delta)=>{
+          if(!element)return;
+          const current=parseFloat(getComputedStyle(element)[property]);if(!Number.isFinite(current))return;
+          card.odTextGeometry.push({element,property,value:element.style.getPropertyValue(property),priority:element.style.getPropertyPriority(property)});
+          element.style.setProperty(property,Math.max(0,current+delta)+'px','important');
+        };
+        // The full native image and saved pan/zoom remain intact; only a little art-window height yields to text.
+        if(!card.classList.contains('treatment-full-art'))move(art,'height',-amount);
+        move(typebar,'top',-amount);move(rules,'top',-amount);
+        card.dataset.rulesExpansion=(amount/scale).toFixed(1);oldFit(card);
+        for(const img of card.querySelectorAll('.art-img')){const m=artViewModels.get(img);if(m)applyArtView(img,m);}
+      }
       const name = card.querySelector('.name'), text = card.querySelector('.title-text'), bar = card.querySelector('.titlebar');
       if (!name || !text || !bar || !card.offsetWidth) return;
       const scale = card.offsetWidth / 378;
@@ -171,7 +193,8 @@
       });
     });
     const label = document.querySelector('.topbar .version');
-    if (label) label.textContent = 'v3.17 · art continuity';
+    if (label) label.textContent = 'v3.20 · text & locales';
+    refinement.mount();
     root.renderPreview();
     document.fonts?.ready.then(() => document.querySelectorAll('.render-card').forEach(root.fitCardTypography));
   }

@@ -540,12 +540,13 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}
 <div id="toast" class="toast"></div>
 <input id="importFile" type="file" accept="application/json,.json" hidden>
 <input id="datasetFile" type="file" accept="application/json,.json" hidden>
-<script src="/mtgtools/odyssey/data/artwork-delivery-manifest.1d1baddf683c.js"></script>
+<script src="/mtgtools/odyssey/data/artwork-delivery-manifest.138e0c69ce5f.js"></script>
 <script src="/mtgtools/odyssey/artwork-delivery.js?v=20260919-1"></script>
-<script src="/mtgtools/odyssey/data/odyssey-data.js?v=20260919-live2"></script>
+<script src="/mtgtools/odyssey/design-refinement.js?v=20260919-1"></script>
+<script src="/mtgtools/odyssey/data/odyssey-data.js?v=20260919-live3"></script>
 <script>
 const DATASET_STORAGE='odyssey-studio-dataset-v4';
-const ANALYSIS_CANDIDATE_URL='/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json?v=20260919-songs';
+const ANALYSIS_CANDIDATE_URL='/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json?v=20260919-refinement';
 function validOdysseyDataset(d){return !!(d&&d.schema==='odyssey-studio-data/v1'&&Array.isArray(d.cards)&&Array.isArray(d.artworks)&&Array.isArray(d.coverage)&&d.cards.length)}
 function loadOdysseyDataset(){
   let d=window.ODYSSEY_DATA;
@@ -715,7 +716,7 @@ function candidateUseCount(id){return (candidateUsage()[id]||[]).length}
 function updateUniqueArtTop(){const c=uniqueArtCounts(),el=$('uniqueArtTop');if(el)el.textContent=`${c.covered} / ${c.total} unique-art covered · ${c.gaps} gaps`}
 function openUniqueArtQueue(){galleryMode='unique';$('gallerySearch').value='';$('galleryStatus').value='';$('galleryLayout').value='';$('galleryResolved').value='';openProfileGallery('unique')}
 function exportUniqueArtQueue(){const use=candidateUsage();const rows=CARDS.filter(c=>!hasUniqueCandidate(c.number)).map(c=>{const m=model(c.number),cv=cov(c.number);return{number:c.number,name:m.displayName,type:m.type,color:m.frame,story:c.story,mechanics:c.mechanics,currentArt:m.artId||'',candidateIds:effectiveCandidateIds(c.number),candidateUseCounts:Object.fromEntries(effectiveCandidateIds(c.number).map(id=>[id,(use[id]||[]).length])),notes:cv.notes||''}});download('odyssey_unique_art_queue_v1.9.json',JSON.stringify({version:'3.2',exported:new Date().toISOString(),rule:'Every card requires at least one candidate artwork used by no other card.',covered:CARDS.length-rows.length,gaps:rows.length,cards:rows},null,2));toast('Unique-art queue exported')}
-function defaultsFor(n){const b=baseCard(n),cv=cov(n),aid=b.primaryArt||cv.primary||'',a=artById[aid]||{};return{displayName:b.displayName||b.name,mana:b.mana,frame:b.frame,type:b.type,rules:b.rules,rarity:b.rarity,pt:b.pt,flavor:'',layout:b.layout,artHeight:'normal',frameStyle:'standard',artId:aid,imageUrl:b.imageUrl||a.imageUrl||'',credit:b.credit||a.credit||'',source:b.source||a.source||'',zoom:1,focusX:0,focusY:0,fit:'cover'}}
+function defaultsFor(n){const b=baseCard(n),cv=cov(n),aid=b.primaryArt||cv.primary||'',a=artById[aid]||{};return{displayName:b.displayName||b.name,mana:b.mana,frame:b.frame,type:b.type,rules:b.rules,rarity:b.rarity,pt:b.pt,flavor:'',layout:b.layout,artHeight:'normal',frameStyle:'standard',artId:aid,imageUrl:b.imageUrl||a.imageUrl||'',credit:b.credit||a.credit||'',source:b.source||a.source||'',zoom:1,focusX:0,focusY:0,fit:'cover',designDisposition:b.designDisposition||''}}
 function cropProfileKey(data){return `${data.artId||'NOART'}|${data.layout||'standard'}|${data.artHeight||'normal'}${data.frameStyle==='full-art'?'|full-art':''}`}
 function cropProfileFor(data){return cropProfiles[cropProfileKey(data)]||null}
 function effectiveDefaultsFor(n,data){const d=defaultsFor(n),probe=Object.assign({},d,data||{}),p=cropProfileFor(probe);if(p)CROP_KEYS.forEach(k=>{if(p[k]!==undefined)d[k]=p[k]});return d}
@@ -790,9 +791,23 @@ function fitCardTypography(card){
  // Start shrinking before the last line touches the bottom padding, with four design pixels of breathing room.
  const overflow=()=>{
   if(rules.scrollHeight>rules.clientHeight+.5)return true;
-  const rect=rules.getBoundingClientRect(),visualScale=rect.height/rules.offsetHeight,padding=parseFloat(getComputedStyle(rules).paddingBottom)||0;
-  const bottom=Math.max(rect.top,...[...rules.children].filter(el=>getComputedStyle(el).display!=='none').map(el=>el.getBoundingClientRect().bottom));
-  return bottom>rect.bottom-(padding+4*scale)*visualScale+.25;
+  const ruleRect=rules.getBoundingClientRect(),visualScale=ruleRect.height/rules.offsetHeight;
+  const bottomLimit=ruleRect.bottom-((parseFloat(getComputedStyle(rules).paddingBottom)||0)+2*scale)*visualScale;
+  const walker=document.createTreeWalker(rules,NodeFilter.SHOW_TEXT);let node;
+  while((node=walker.nextNode())){
+   if(!node.nodeValue.trim()||node.parentElement.closest('.od-symbol,.saga-medallion'))continue;
+   const range=document.createRange();range.selectNodeContents(node);
+   const rects=[...range.getClientRects()].filter(r=>r.height>0&&r.width>0);
+   if(!rects.length)continue;
+   let limit=bottomLimit;
+   const panel=node.parentElement.closest('.special-box,.rule-main');
+   if(panel&&rules.contains(panel)){
+    const style=getComputedStyle(panel),rect=panel.getBoundingClientRect();
+    if(style.overflowY==='hidden'||style.overflowY==='clip')limit=Math.min(limit,rect.bottom-(parseFloat(style.paddingBottom)||0)*visualScale);
+   }
+   if(rects.some(r=>r.bottom>limit+.5))return true;
+  }
+  return false;
  };
  let size=fitDown(rules,start,comfort,.15*scale,overflow);
  if(overflow())for(const r of [...rems].sort((a,b)=>(+b.dataset.priority)-(+a.dataset.priority))){r.classList.add('auto-hidden');size=fitDown(rules,start,comfort,.15*scale,overflow);if(!overflow())break}
