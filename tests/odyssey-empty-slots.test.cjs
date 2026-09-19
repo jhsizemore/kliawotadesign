@@ -28,7 +28,7 @@ test('Calchas becomes the requested nine-bird punisher pseudo-board-wipe',()=>{
  assert.equal(c.name,'Calchas Reads the Omen');
  assert.equal(c.mana,'{4}{W}{U}');assert.equal(c.mv,6);assert.equal(c.color,'WU');assert.equal(c.rarity,'R');
  assert.match(c.rules,/sacrifice up to nine permanents/i);
- assert.match(c.rules,/Scry \\{X\\}, where \\{X\\} is nine minus/);
+ assert.ok(c.rules.includes('Scry {X}, where {X} is nine minus'));
  assert.match(c.rules,/choose up to \{X\} creatures and\/or artifacts/);
  assert.match(c.rules,/stun counter/);
 });
