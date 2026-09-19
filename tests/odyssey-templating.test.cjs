@@ -60,3 +60,20 @@ test('every changed card records evidence and no numerical game data changed',()
   const c=card(x.number);assert.ok(c.changeStatus.includes('templating-v1'),x.id);
  }
 });
+
+test('same-object references stay consistently modern within a card',()=>{
+ assert.match(card(18).rules,/Sacrifice this enchantment/);
+ assert.match(card(65).rules,/this Vehicle gains flying/);
+ assert.match(card(86).rules,/this creature gets \+1\/\+1/);
+ assert.match(card(111).rules,/this creature has vigilance/);
+ assert.match(card(147).rules,/until this creature leaves the battlefield/);
+ assert.match(card(237).rules,/fought this creature this way/);
+ assert.match(card(283).rules,/this creature deals 1 damage/);
+ assert.match(card(284).rules,/put a \+1\/\+1 counter on this creature/);
+});
+test('Olive Tree uses a normal zone-change trigger, guardrail, and encoded ward cost',()=>{
+ assert.match(card(239).rules,/Whenever a permanent you control enters from your graveyard or from exile/);
+ assert.match(card(239).rules,/This ability triggers only once each turn/);
+ assert.match(card(239).rules,/ward \{1\}/);
+ assert.doesNotMatch(card(239).rules,/Once each turn, whenever|ward 1/);
+});
