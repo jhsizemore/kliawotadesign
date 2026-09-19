@@ -13,7 +13,7 @@ for d in [current,candidate]:
   c['functionalWords']+=len(oldRule.split())-len(c['rules'].split());c['rules']=oldRule;c['changeStatus']=c['changeStatus'].replace(' · '+plan['revision'],'')
  for c in d['cards']:
   if c.get('localeCycle')==plan['cycleId']:
-   c['underlyingName']='';c['treatment']=''  # These custom taplands are not functional Holdout Settlement reprints.
+   c['underlyingName']='';c['treatment']=''
   if c.get('devotionPresentation') and re.search(r'\bDevotion\b',c.get('mechanics','').split('; Devotion')[0]):c['mechanics']=c['mechanics'].removesuffix('; Devotion')
  d['ffSkeleton']['softAudit']['functionalWordMeans']={r:{'count':len(group),'mean':round(sum(c['functionalWords'] for c in group)/len(group),1)} for r in ['C','U','R','M'] if (group:=[c for c in d['cards'] if c['rarity']==r and 'Basic' not in c['type']])}
  d['integrity']['sha256']=hashlib.sha256(json.dumps(d['cards'],ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
@@ -49,7 +49,35 @@ new=r''' const overflow=()=>{
   return false;
  };'''
 s=s[:start]+new+s[end:];app.write_text(s)
-polish=APP/'studio-polish.js';s=polish.read_text();s=s.replace('      decorate(card);\n      oldFit(card);','      decorate(card);\n      card.classList.remove("od-rules-compact");\n      oldFit(card);\n      if(card.querySelector(".rules")?.dataset.fitState==="overflow"){card.classList.add("od-rules-compact");oldFit(card);}',1);polish.write_text(s)
+polish=APP/'studio-polish.js';s=polish.read_text()
+replacement=r'''      decorate(card);
+      // Undo only this helper's transient geometry, including when print CSS changes.
+      for(const saved of card.odTextGeometry||[]){
+        if(saved.value)saved.element.style.setProperty(saved.property,saved.value,saved.priority);
+        else saved.element.style.removeProperty(saved.property);
+      }
+      card.odTextGeometry=[];delete card.dataset.rulesExpansion;
+      card.classList.remove('od-rules-compact');
+      oldFit(card);
+      const rules=card.querySelector('.rules');
+      if(rules?.dataset.fitState==='overflow'){card.classList.add('od-rules-compact');oldFit(card);}
+      if(rules?.dataset.fitState==='overflow'&&!card.matches('.kind-saga,.kind-battle')&&card.offsetWidth){
+        const scale=card.offsetWidth/378,art=card.querySelector('.artbox'),typebar=card.querySelector('.typebar');
+        const amount=Math.min(24*scale,Math.max(14*scale,rules.scrollHeight-rules.clientHeight+8*scale));
+        const move=(element,property,delta)=>{
+          if(!element)return;
+          const current=parseFloat(getComputedStyle(element)[property]);if(!Number.isFinite(current))return;
+          card.odTextGeometry.push({element,property,value:element.style.getPropertyValue(property),priority:element.style.getPropertyPriority(property)});
+          element.style.setProperty(property,Math.max(0,current+delta)+'px','important');
+        };
+        // The full native image and saved pan/zoom remain intact; only a little art-window height yields to text.
+        if(!card.classList.contains('treatment-full-art'))move(art,'height',-amount);
+        move(typebar,'top',-amount);move(rules,'top',-amount);
+        card.dataset.rulesExpansion=(amount/scale).toFixed(1);oldFit(card);
+        for(const img of card.querySelectorAll('.art-img')){const m=artViewModels.get(img);if(m)applyArtView(img,m);}
+      }'''
+assert '      decorate(card);\n      oldFit(card);' in s
+s=s.replace('      decorate(card);\n      oldFit(card);',replacement,1);polish.write_text(s)
 css=APP/'studio-polish.css';css.write_text(css.read_text()+'''
 /* A requested return is a soft line break, not paragraph spacing. */
 .rules br.od-sentence-return{display:revert!important;content:normal!important;margin:0!important}
@@ -58,4 +86,4 @@ css=APP/'studio-polish.css';css.write_text(css.read_text()+'''
 .render-card.od-rules-compact.kind-adventure .special-box,.render-card.od-rules-compact.kind-prepare .special-box{padding-top:7px!important;padding-bottom:5px!important;padding-left:24px!important}
 .od-hybrid-parts[data-parts="2"] .od-hybrid-half>.od-generic-value{position:absolute;width:60%;height:60%;display:grid;place-items:center;font-size:.72em;line-height:1}
 ''')
-print('15 rate-limit clauses changed; cleared row 147 preserved. Soft returns and content-aware text-fit checks applied.')
+print('15 rate-limit clauses changed; cleared row 147 preserved. Text-fitting retains the existing minimum font size and adds space only where genuinely required.')
