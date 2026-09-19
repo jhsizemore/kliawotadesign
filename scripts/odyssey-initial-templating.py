@@ -23,8 +23,9 @@ by_num={c['number']:c for c in current['cards']}
 ref_by_id=refs.get('cards',{})
 changes=[]
 
+SKIP_AUTHORING_ROWS={146}
 def original(c):
-    return str(c.get('originFull','New')).lower()=='new' and str(c.get('origin','')).upper()!='RPR' and 'Basic Land' not in c.get('type','')
+    return c.get('number') not in SKIP_AUTHORING_ROWS and str(c.get('originFull','New')).lower()=='new' and str(c.get('origin','')).upper()!='RPR' and 'Basic Land' not in c.get('type','')
 
 def ref_evidence(c):
     rows=ref_by_id.get(c['id'],{}).get('references',[])
