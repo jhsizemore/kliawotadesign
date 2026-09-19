@@ -34,8 +34,10 @@ jobs:
           pip install requests pillow playwright
           python -m playwright install --with-deps chromium
           mkdir -p /tmp/odyssey-refinement/browser
-      - name: Build the approved changes and decode all eight new artworks
-        run: python scripts/odyssey-refinement-build.py | tee /tmp/odyssey-refinement/build-data.log
+      - name: Build approved changes and decode all eight new artworks
+        run: |
+          python scripts/odyssey-refinement-build.py | tee /tmp/odyssey-refinement/build-data.log
+          python scripts/odyssey-refinement-finalize.py | tee /tmp/odyssey-refinement/finalize.log
       - name: Run every unit and data regression
         run: node --test tests/*.test.cjs tests/*.test.js | tee /tmp/odyssey-refinement/tests.txt
       - name: Inspect all 309 card text boxes and desktop/mobile review controls
@@ -52,7 +54,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public/mtgtools/odyssey scripts/odyssey-release-cycles.json tests/odyssey-release.test.cjs
+          git add public/mtgtools/odyssey scripts/odyssey-release-cycles.json scripts/odyssey-refinement-plan.json tests/odyssey-release.test.cjs tests/odyssey-refinement.test.cjs
           git diff --cached --stat > /tmp/odyssey-refinement/changes.txt
           git diff --cached --quiet || git commit -m 'Release sentence-level rules, refined utility pips and art-led Odyssean locales'
           git push origin HEAD:refs/heads/odyssey/refinement-20260919
