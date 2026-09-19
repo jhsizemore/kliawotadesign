@@ -237,16 +237,19 @@ def main():
         if not scores:
             raise RuntimeError('No Scryfall candidates for '+o['id'])
         chosen=[];used=set()
-        for role,si,threshold in [('template',1,.34),('mechanic',2,.40),('rate',3,.55)]:
+        for role,si,threshold in [('template',1,.34),('mechanic',2,.45),('rate',3,.55)]:
             for item in sorted(scores,key=lambda x:(x[si],x[0]),reverse=True):
                 c=pool[item[4]]
                 oid=c.get('oracle_id') or c['id']
                 if oid in used or item[si]<threshold:continue
-                # Mechanic slot must have an actual shared mechanism or trigger shape.
+                # Mechanics references need a substantive shared mechanic/trigger, not merely the same card type.
                 if role=='mechanic' and not (item[5] or item[6]):continue
+                phrase=overlap_phrase(onorm,c['_norm']) if role=='template' else ''
+                # A weaker template is admitted only when it has concrete shared wording or multiple matching trigger shapes.
+                if role=='template' and item[si]<.42 and not phrase and len(item[6])<2:continue
                 used.add(oid)
                 chosen.append({
-                  'role':role,'score':round(item[si],3),'annotation':annotation(role,o,c,item[5],item[6],overlap_phrase(onorm,c['_norm'])),
+                  'role':role,'score':round(item[si],3),'annotation':annotation(role,o,c,item[5],item[6],phrase),
                   'sharedMechanics':sorted(item[5]),'sharedPatterns':sorted(item[6]),'card':scry_row(c)
                 });break
         # Do not pad weak designs. “Up to a few” means one strong benchmark is better than a vague analogue.
