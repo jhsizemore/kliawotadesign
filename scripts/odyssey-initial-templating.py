@@ -45,26 +45,39 @@ def modern_self_reference(c,text):
     if 'Legendary' in typ:return text,[]
     reasons=[]
     noun=None
-    if re.search(r'\bCreature\b',typ):noun='creature'
-    elif re.search(r'\bLand\b',typ):noun='land'
-    elif re.search(r'\bEnchantment\b',typ):noun='enchantment'
-    elif re.search(r'\bArtifact\b',typ):noun='artifact'
+    if re.search(r'\\bVehicle\\b',typ):noun='Vehicle'
+    elif re.search(r'\\bCreature\\b',typ):noun='creature'
+    elif re.search(r'\\bLand\\b',typ):noun='land'
+    elif re.search(r'\\bEnchantment\\b',typ):noun='enchantment'
+    elif re.search(r'\\bArtifact\\b',typ):noun='artifact'
     if not noun:return text,reasons
-    # Current Oracle increasingly uses "this [card type]" for nonlegendary self-reference.
     patterns=[
-      (rf'\bWhen {name} enters\b',f'When this {noun} enters'),
-      (rf'\bWhenever {name} enters\b',f'Whenever this {noun} enters'),
-      (rf'\bWhen {name} dies\b',f'When this {noun} dies'),
-      (rf'\bWhenever {name} dies\b',f'Whenever this {noun} dies'),
-      (rf'\bWhenever {name} attacks\b',f'Whenever this {noun} attacks'),
-      (rf'\bWhen {name} attacks\b',f'When this {noun} attacks'),
-      (rf'\bif {name} is tapped\b',f'if this {noun} is tapped'),
-      (rf'\bIf {name} is tapped\b',f'If this {noun} is tapped'),
-      (rf'\b{name} enters tapped\b',f'This {noun} enters tapped'),
+      (rf'\\bWhen {name} enters\\b',f'When this {noun} enters'),
+      (rf'\\bWhenever {name} enters\\b',f'Whenever this {noun} enters'),
+      (rf'\\bWhen {name} dies\\b',f'When this {noun} dies'),
+      (rf'\\bWhenever {name} dies\\b',f'Whenever this {noun} dies'),
+      (rf'\\bWhenever {name} attacks\\b',f'Whenever this {noun} attacks'),
+      (rf'\\bWhen {name} attacks\\b',f'When this {noun} attacks'),
+      (rf'\\bif {name} is tapped\\b',f'if this {noun} is tapped'),
+      (rf'\\bIf {name} is tapped\\b',f'If this {noun} is tapped'),
+      (rf'\\b{name} enters tapped\\b',f'This {noun} enters tapped'),
+      (rf'\\bSacrifice {name}\\b',f'Sacrifice this {noun}'),
+      (rf'\\b{name} gets\\b',f'this {noun} gets'),
+      (rf'\\b{name} gains\\b',f'this {noun} gains'),
+      (rf'\\b{name} has\\b',f'this {noun} has'),
+      (rf'\\b{name} deals\\b',f'this {noun} deals'),
+      (rf'\\buntil {name} leaves the battlefield\\b',f'until this {noun} leaves the battlefield'),
+      (rf'\\bWhen {name} leaves the battlefield\\b',f'When this {noun} leaves the battlefield'),
+      (rf'\\bWhenever {name} leaves the battlefield\\b',f'Whenever this {noun} leaves the battlefield'),
+      (rf'\\bfought {name} this way\\b',f'fought this {noun} this way'),
+      (rf'\\bcrewed {name} this turn\\b',f'crewed this {noun} this turn'),
     ]
     for pat,repl in patterns:
         text,n=re.subn(pat,repl,text)
         if n:reasons.append('modern nonlegendary self-reference')
+    counter_pat=rf'\\bput ((?:a|an|one|two|three|four|five|six|seven|eight|nine|ten|\\d+|X) [^,.]*?counter(?:s)?) on {name}\\b'
+    text,n=re.subn(counter_pat,lambda m:f'put {m.group(1)} on this {noun}',text)
+    if n:reasons.append('modern nonlegendary self-reference')
     return text,reasons
 
 for c in current['cards']:
