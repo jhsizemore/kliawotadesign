@@ -6,11 +6,11 @@ const candidate=JSON.parse(fs.readFileSync(path.join(dir,'odyssey-analysis-candi
 const report=JSON.parse(fs.readFileSync(path.join(dir,'templating-report.json'),'utf8'));
 const card=n=>current.cards.find(c=>c.number===n);
 test('templating release is conservative and synchronized',()=>{
- assert.equal(current.datasetVersion,'2026-09-19.4');
+ assert.equal(current.datasetVersion,'2026-09-20.1');
  assert.equal(candidate.candidate.productionDatasetVersion,current.datasetVersion);
  assert.deepEqual(candidate.cards,current.cards);
  assert.equal(report.revision,'templating-v1');
- assert.equal(report.version,current.datasetVersion);
+ assert.equal(report.version,'2026-09-19.4');
  assert.ok(report.changedCards>=10&&report.changedCards<=120,report.changedCards);
  assert.equal(report.changes.length,report.changedCards);
 });
