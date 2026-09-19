@@ -193,7 +193,7 @@
       });
     });
     const label = document.querySelector('.topbar .version');
-    if (label) label.textContent = 'v3.23 · templating pass';
+    if (label) label.textContent = 'v3.24 · empty slots';
     refinement.mount();
     root.renderPreview();
     document.fonts?.ready.then(() => document.querySelectorAll('.render-card').forEach(root.fitCardTypography));
