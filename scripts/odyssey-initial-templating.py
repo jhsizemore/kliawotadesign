@@ -130,6 +130,12 @@ for c in current['cards']:
         if target in text:
             text=text.replace(target,'Until end of turn, you may play that card. You may spend mana as though it were mana of any color to cast that spell.')
             reasons.append('separate play permission from colored-mana casting permission')
+    if c['number']==239:
+        target='Once each turn, whenever a permanent card enters under your control from your graveyard or from exile, put a root counter on The Olive Tree of Ithaca. Permanents you control with counters on them have ward 1.'
+        if target in text:
+            text=text.replace(target,'Whenever a permanent you control enters from your graveyard or from exile, put a root counter on The Olive Tree of Ithaca. This ability triggers only once each turn. Permanents you control with counters on them have ward {1}.')
+            reasons.append('standard zone-change trigger, once-each-turn guardrail, and encoded ward cost')
+
 
     # Do not record formatting-only churn where normalization ended unchanged.
     if text!=old:apply(c,text,'; '.join(dict.fromkeys(reasons)) or 'Oracle wording normalization')
