@@ -102,7 +102,7 @@ def power_num(v):
 def scry_row(c):
     return {
       'id':c['id'],'oracleId':c.get('oracle_id',''),'name':c['name'],'manaCost':c.get('mana_cost',''),
-      'manaValue':c.get('cmc',0),'type':c.get('type_line',''),
+      'manaValue':c.get('cmc',0),'type':c.get('type_line',''),'oracleText':face_oracle(c),
       'power':c.get('power',''),'toughness':c.get('toughness',''),'loyalty':c.get('loyalty',''),
       'colors':c.get('colors') or [],'colorIdentity':c.get('color_identity') or [],
       'keywords':c.get('keywords') or [],'rarity':c.get('rarity',''),'set':c.get('set',''),
@@ -188,10 +188,13 @@ def main():
     else:
         raw=json.loads(bulk.read_text())
     pool=[]
+    cutoff=dt.datetime.now(dt.timezone.utc).date().isoformat()
     for c in raw:
         if 'paper' not in (c.get('games') or []):continue
+        if c.get('released_at') and c.get('released_at')>cutoff:continue
         if c.get('security_stamp')=='acorn' or c.get('border_color')=='silver':continue
         tl=c.get('type_line','')
+        if 'Basic Land' in tl:continue
         if any(x in tl for x in ['Token','Emblem','Dungeon','Card —']):continue
         text=face_oracle(c)
         if not text and broad_type(tl)!='Land':continue
@@ -261,7 +264,7 @@ def main():
         if pos%25==0:print('curated',pos,'/',len(originals),flush=True)
     missing=[o['id'] for o in originals if not refs[o['id']]['references']]
     if missing:raise RuntimeError('Original cards without reference cards: '+', '.join(missing))
-    payload={'schema':'odyssey-reference-cards/v1','generatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'datasetVersion':DATA['datasetVersion'],'scryfallBulk':{'type':meta.get('type'),'updatedAt':meta.get('updated_at'),'downloadUri':uri,'format':'jsonl.gz' if uri.endswith('.gz') else 'json'},'method':'automated design-reference curation from Scryfall Oracle bulk data; each role chosen independently and annotated from objective shared rules/mechanics/rate features','originalCards':len(originals),'cards':refs}
+    payload={'schema':'odyssey-reference-cards/v1','generatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'datasetVersion':DATA['datasetVersion'],'scryfallBulk':{'type':meta.get('type'),'updatedAt':meta.get('updated_at'),'downloadUri':uri,'format':'jsonl.gz' if uri.endswith('.gz') else 'json','releasedOnOrBefore':cutoff},'method':'automated design-reference curation from Scryfall Oracle bulk data; each role chosen independently and annotated from objective shared rules/mechanics/rate features','originalCards':len(originals),'cards':refs}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':'))+'\n')
     OUTJS.write_text('window.ODYSSEY_CARD_REFERENCES='+json.dumps(payload,ensure_ascii=False,separators=(',',':'))+';\n')
     summary={'originalCards':len(originals),'referencedCards':len(refs),'totalReferences':sum(len(x['references']) for x in refs.values()),'oneRef':sum(len(x['references'])==1 for x in refs.values()),'twoRefs':sum(len(x['references'])==2 for x in refs.values()),'threeRefs':sum(len(x['references'])==3 for x in refs.values()),'missing':missing,'scryfallUpdatedAt':meta.get('updated_at')}
