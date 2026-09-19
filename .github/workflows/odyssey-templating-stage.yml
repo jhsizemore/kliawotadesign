@@ -1,0 +1,69 @@
+name: Odyssey initial templating staging
+on:
+  push:
+    branches: [odyssey/templating-pass-20260919]
+    paths:
+      - '.github/workflows/odyssey-templating-stage.yml'
+      - 'scripts/odyssey-initial-templating.py'
+      - 'tests/odyssey-templating.test.cjs'
+      - 'tests/odyssey-release.test.cjs'
+      - 'tests/odyssey-reference-cards.test.cjs'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: odyssey-templating-stage
+  cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/odyssey/templating-pass-20260919'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply conservative Oracle templating pass
+        run: |
+          mkdir -p /tmp/odyssey-templating
+          python scripts/odyssey-initial-templating.py | tee /tmp/odyssey-templating/build.log
+          cp public/mtgtools/odyssey/data/templating-report.json /tmp/odyssey-templating/templating-report.json
+      - name: Run complete regression suite
+        run: node --test tests/*.test.cjs tests/*.test.js | tee /tmp/odyssey-templating/tests.txt
+      - name: Install browser verification
+        run: |
+          pip install requests pillow playwright
+          python -m playwright install --with-deps chromium
+      - name: Verify sentence layout, artwork and reference review after templating
+        run: |
+          python -m http.server 8787 --directory public > /tmp/odyssey-templating/http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          AUDIT_URL=http://127.0.0.1:8787/mtgtools/odyssey/ AUDIT_OUT=/tmp/odyssey-templating/refinement python scripts/odyssey-refinement-browser.py
+          AUDIT_URL=http://127.0.0.1:8787/mtgtools/odyssey/ python scripts/odyssey-reference-browser.py
+      - name: Verify Worker build without deployment
+        run: |
+          npm install --no-package-lock
+          npx wrangler deploy --dry-run --outdir /tmp/odyssey-templating-worker | tee /tmp/odyssey-templating/worker.log
+      - name: Commit verified generated dataset and report to staging
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/mtgtools/odyssey/data/odyssey-data.json public/mtgtools/odyssey/data/odyssey-data.js public/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json public/mtgtools/odyssey/data/release.json public/mtgtools/odyssey/data/templating-report.json public/mtgtools/odyssey/app.html public/mtgtools/odyssey/index.html public/mtgtools/odyssey/studio-polish.js
+          git diff --cached --stat > /tmp/odyssey-templating/changes.txt
+          git diff --cached --quiet || git commit -m 'Apply initial Scryfall-backed Oracle templating pass'
+          git push origin HEAD:refs/heads/odyssey/templating-pass-20260919
+          git rev-parse HEAD > /tmp/odyssey-templating/verified-commit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-templating-verification
+          path: /tmp/odyssey-templating
+          retention-days: 7
