@@ -2,7 +2,10 @@ name: Odyssey artwork optimization staging
 on:
   push:
     branches: [odyssey/artwork-performance-20260919]
-    paths: ['.github/workflows/odyssey-artwork-stage.yml']
+    paths:
+      - '.github/workflows/odyssey-artwork-stage.yml'
+      - 'scripts/odyssey-*'
+      - 'tests/odyssey-artwork*'
   workflow_dispatch:
 permissions:
   contents: write
