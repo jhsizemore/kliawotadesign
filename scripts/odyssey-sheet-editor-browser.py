@@ -55,8 +55,8 @@ try:
    }""")
    page.locator('[data-check]').click()
    page.wait_for_selector('.sheet-ok')
-   page.locator('[data-confirm]').check()
-   page.locator('[data-push]').click()
+   page.locator('#odSheetPushDialog [data-confirm]').check()
+   page.locator('#odSheetPushDialog [data-push]').click()
    page.wait_for_function("document.querySelector('[data-report]')?.textContent.includes('Push verified.')",timeout=20000)
    assert page.evaluate('window.__sheetPosts')==1
    assert page.evaluate("""() => {
@@ -76,7 +76,7 @@ try:
    posts=page.evaluate('window.__sheetPosts')
    page.locator('[data-check]').click();page.wait_for_selector('.sheet-block')
    assert 'Live value changed' in page.locator('.sheet-block').inner_text()
-   assert page.locator('[data-push]').is_disabled()
+   assert page.locator('#odSheetPushDialog [data-push]').is_disabled()
    assert page.evaluate('window.__sheetPosts')==posts
    page.screenshot(path=str(OUT/(name+'-safe-push.png')),full_page=False)
    assert not errors,errors
