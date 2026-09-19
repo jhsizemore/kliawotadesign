@@ -1,0 +1,105 @@
+{
+  "version": "2026-09-19.2",
+  "revision": "mainset-song-cycles-v1",
+  "cards": 309,
+  "artworks": 450,
+  "rarity": {
+    "C": 106,
+    "U": 109,
+    "R": 74,
+    "M": 20
+  },
+  "songSagas": [
+    {
+      "id": "ODY-216",
+      "name": "Lay of the Hidden King"
+    },
+    {
+      "id": "ODY-153",
+      "name": "Song of the Wooden Horse"
+    },
+    {
+      "id": "ODY-162",
+      "name": "Song of the Faithless Crew"
+    },
+    {
+      "id": "ODY-232",
+      "name": "Lament at the Blood-Trench"
+    },
+    {
+      "id": "ODY-245",
+      "name": "Song of the Faithful Queen"
+    }
+  ],
+  "cardsSha256": "1f3fd4f2f2246b39618957bf5d033b9b3b75e28b6042dc6971a1e257f9701942",
+  "actual": {
+    "physicalCards": 309,
+    "rarity": {
+      "C": 106,
+      "U": 109,
+      "R": 74,
+      "M": 20
+    },
+    "layouts": {
+      "singleFace": 308,
+      "doubleFace": 1,
+      "byLayout": {
+        "standard": 275,
+        "vehicle": 10,
+        "adventure": 8,
+        "saga": 14,
+        "prepare": 1,
+        "double-face-battle": 1
+      }
+    },
+    "lands": 40,
+    "legendaryCards": 103,
+    "legendaryByRarity": {
+      "C": 2,
+      "U": 36,
+      "R": 47,
+      "M": 18
+    },
+    "sixPlusManaValue": 31,
+    "goldUncommonLegendarySignposts": 20,
+    "signpostPairs": {
+      "WU": 2,
+      "UB": 2,
+      "BR": 2,
+      "GW": 2,
+      "WB": 2,
+      "UR": 2,
+      "BG": 2,
+      "RW": 2,
+      "GU": 2,
+      "RG": 2
+    },
+    "manaCurve": {
+      "1": 18,
+      "2": 58,
+      "3": 93,
+      "4": 48,
+      "5": 21,
+      "6": 17,
+      "7+": 14
+    },
+    "sagaCards": 15
+  },
+  "knownBenchmarkDifferences": {
+    "legendaryCards": {
+      "target": 105,
+      "actual": 103
+    },
+    "showcase": {
+      "greek-vase-showcase": 48,
+      "character-showcase": 31,
+      "master-artist": 10,
+      "adventure-land-showcase": 5,
+      "extended-art-legend": 93
+    }
+  },
+  "notes": [
+    "The 15 Saga type cards include the sole double-faced Troy card. Layout buckets are exclusive: 14 single-faced Saga layouts plus one double-faced battle.",
+    "Legacy benchmark totals remain targets. Actual counts are recomputed from card records, not forced by unrequested card redesigns."
+  ]
+}

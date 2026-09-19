@@ -24,7 +24,7 @@ const fixture = "<html><head></head><body><script>const STORAGE='odyssey-layout-
 async function runLoader(source, ok = true) {
   let output = '', error = '';
   const document = { open() {}, write(s) { output = s; }, close() {}, body: { innerHTML: '' }, getElementById() { return { set textContent(s) { error = s; } }; } };
-  await vm.runInNewContext(script, { fetch: async () => ({ ok, status: 503, text: async () => source }), document });
+  await vm.runInNewContext(script, { fetch: async () => ({ ok, status: 503, text: async () => source }), document, location: { hash: '', pathname: '/mtgtools/odyssey/', search: '' }, window: {}, history: { replaceState() {} } });
   return { output, error };
 }
 test('loader retains inherited-art patches and mounts mobile last', async () => {
