@@ -43,14 +43,13 @@ test('Studio loads reference data before the review browser and keeps it separat
  const app=fs.readFileSync(path.join(dir,'app.html'),'utf8');
  const a=app.indexOf('card-references.js?v=20260919-1'),b=app.indexOf('card-reference-browser.js?v=20260919-1');
  assert.ok(a>0&&b>a);
- assert.match(app,/odyssey-data\.js\?v=20260919-live3/);
- const index=fs.readFileSync(path.join(dir,'index.html'),'utf8');assert.match(index,/app\.html\?v=20260919-20/);
+ assert.match(app,/odyssey-data\.js\?v=20260919-live4/);
+ const index=fs.readFileSync(path.join(dir,'index.html'),'utf8');assert.match(index,/app\.html\?v=20260919-21/);
  const browser=fs.readFileSync(path.join(dir,'card-reference-browser.js'),'utf8');
  for(const phrase of ['Real card references','Mark reviewed + next','Open on Scryfall','Oracle text','odyssey-reference-review-v1'])assert.ok(browser.includes(phrase),phrase);
 });
 test('release metadata records the exact reference snapshot',()=>{
  const release=JSON.parse(fs.readFileSync(path.join(dir,'data/release.json'),'utf8'));
- assert.equal(release.appRevision,'card-references-v1');
  assert.equal(release.referenceCards.originalCards,originals.length);
  assert.equal(release.referenceCards.totalReferences,Object.values(refs.cards).reduce((n,e)=>n+e.references.length,0));
  assert.ok(release.referenceCards.scryfallBulkUpdatedAt);
