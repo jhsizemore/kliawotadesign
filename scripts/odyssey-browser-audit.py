@@ -38,6 +38,18 @@ try:
     page.evaluate('(n)=>selectCard(n)',number)
     page.wait_for_timeout(80)
     assert page.locator('#previewShell .render-card').count()==1
+   page.evaluate("selectCard(1);applyArt('ART-432');setCropField('zoom',1.23);setCropField('focusX',43);setCropField('focusY',57)")
+   page.wait_for_function("document.querySelector('#previewShell .art-img')?.naturalWidth===7195 && document.querySelector('#previewShell .art-img')?.src.includes('/assets/artwork/')",timeout=45000)
+   chosen=page.evaluate("({zoom:model(1).zoom,x:model(1).focusX,y:model(1).focusY,art:model(1).artId})")
+   page.reload(wait_until='domcontentloaded')
+   page.wait_for_function("typeof CARDS!=='undefined' && CARDS.length===309",timeout=45000)
+   page.evaluate('selectCard(1)')
+   page.wait_for_function("document.querySelector('#previewShell .art-img')?.naturalWidth===7195 && document.querySelector('#previewShell .art-img')?.src.includes('/assets/artwork/')",timeout=45000)
+   assert page.evaluate("({zoom:model(1).zoom,x:model(1).focusX,y:model(1).focusY,art:model(1).artId})")==chosen
+   assert page.evaluate("model(1).artId")== 'ART-432'
+   if name=='desktop':
+    assert page.evaluate("document.querySelector('.topbar .topstats').getBoundingClientRect().bottom <= document.querySelector('.topbar').getBoundingClientRect().bottom"), 'Desktop status badges overlap card browser'
+   page.screenshot(path=str(OUT/(name+'-studio.png')),full_page=False)
    page.evaluate('selectCard(1);openArtOptions(1)')
    page.wait_for_selector('#artOptionsGrid [data-art-option]',timeout=10000)
    page.locator('[data-art-search-scope="all"]').click()
@@ -49,7 +61,7 @@ try:
    timings=page.evaluate("""() => {let a=performance.now();for(let i=0;i<20;i++)qualityCounts();let quality=(performance.now()-a)/20;a=performance.now();for(const art of ART)candidateUseCount(art.id);return {qualityScanMs:quality,allUseBadgesMs:performance.now()-a,documentWidth:document.documentElement.scrollWidth,viewport:innerWidth};}""")
    assert timings['documentWidth']<=width+2,(name,'horizontal overflow',timings)
    assert not errors,errors
-   report['viewports'][name]={'readyMs':ready,'searchMatches':found,'cropReloadPreserved':True,'dpiWarningVerified':True,'frameFamilies':len(frames),'measurements':timings,'pageErrors':errors}
+   report['viewports'][name]={'readyMs':ready,'searchMatches':found,'cropReloadPreserved':True,'selectedArtworkReloadVerified':True,'dpiWarningVerified':True,'frameFamilies':len(frames),'measurements':timings,'pageErrors':errors}
    if name=='desktop':
     images=[]
     for id,row in manifest['artworks'].items():
