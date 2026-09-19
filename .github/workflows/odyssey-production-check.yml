@@ -6,6 +6,7 @@ on:
       - 'public/mtgtools/odyssey/**'
       - 'src/**'
       - 'wrangler.jsonc'
+      - 'scripts/odyssey-production-artwork.py'
       - '.github/workflows/odyssey-production-check.yml'
   workflow_dispatch:
 permissions:
@@ -13,11 +14,14 @@ permissions:
 concurrency:
   group: odyssey-production-verification
   cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
 jobs:
   verify-live:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -33,13 +37,13 @@ jobs:
           const files=['index.html','app.html','data/odyssey-data.json','data/odyssey-data.js','data/odyssey-analysis-candidate-v1.json','data/release.json'];
           const hash=text=>createHash('sha256').update(text).digest('hex');
           let results=[],matched=false;
-          for(let attempt=1;attempt<=24;attempt++){
+          for(let attempt=1;attempt<=60;attempt++){
             results=await Promise.all(files.map(async file=>{
               try{
                 const response=await fetch(base+file+'?verify='+process.env.GITHUB_SHA+'-'+attempt,{headers:{'Cache-Control':'no-cache'},signal:AbortSignal.timeout(15000)});
                 const text=await response.text();
                 const result={file,status:response.status,sameAsRepository:response.ok&&hash(text)===hash(fs.readFileSync('public/mtgtools/odyssey/'+file,'utf8'))};
-                if(file==='data/release.json'&&response.ok){const release=JSON.parse(text);result.version=release.version;result.cards=release.cards;result.artworks=release.artworks;result.songSagas=release.songSagas;}
+                if(file==='data/release.json'&&response.ok){const release=JSON.parse(text);result.version=release.version;result.cards=release.cards;result.artworks=release.artworks;result.appRevision=release.appRevision;result.artworkDelivery=release.artworkDelivery;}
                 return result;
               }catch(error){return {file,error:String(error)}}
             }));
@@ -60,9 +64,20 @@ jobs:
           console.log(JSON.stringify(report,null,2));
           if(!matched||sync.anonymousStatus!==401||sync.isolatedWorkspaceStatus!==200)process.exitCode=1;
           NODE
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install production browser and image verification tools
+        run: |
+          pip install requests pillow playwright
+          python -m playwright install --with-deps chromium
+      - name: Verify every deployed full image and thumbnail, then desktop and mobile editing
+        run: python scripts/odyssey-production-artwork.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: odyssey-production-verification
-          path: /tmp/odyssey-production-check
+          path: |
+            /tmp/odyssey-production-check
+            /tmp/odyssey-production-artwork
           retention-days: 7
