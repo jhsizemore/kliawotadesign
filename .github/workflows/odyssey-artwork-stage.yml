@@ -13,7 +13,7 @@ jobs:
   artwork-audit:
     if: github.ref == 'refs/heads/odyssey/artwork-performance-20260919'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -21,14 +21,14 @@ jobs:
           python-version: '3.12'
       - name: Install image inspection tools
         run: pip install requests pillow
-      - name: Audit every source and prepare full-composition delivery assets
-        run: python scripts/odyssey-artwork-audit.py | tee /tmp/odyssey-artwork-log.txt
+      - name: Recover the remaining exact artwork sources
+        run: python scripts/odyssey-artwork-recover.py | tee /tmp/odyssey-artwork-log.txt
       - name: Commit verified image assets to staging only
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add public/mtgtools/odyssey/assets/artwork public/mtgtools/odyssey/data/artwork-manifest.json
-          git diff --cached --quiet || git commit -m 'Stage decoded artwork images, lightweight thumbnails and exact-source audit'
+          git diff --cached --quiet || git commit -m 'Recover missing exact artwork sources with native resolution and provenance'
           git push origin HEAD:refs/heads/odyssey/artwork-performance-20260919
           git rev-parse HEAD > /tmp/odyssey-artwork-audit/staged-commit.txt
       - name: Package source and diagnostics
