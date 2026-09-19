@@ -161,6 +161,7 @@ def annotation(role,o,c,shared_mech,shared_shapes,phrase):
         op,ot=power_num(o.get('power')),power_num(o.get('toughness'));cp,ct=power_num(c.get('power')),power_num(c.get('toughness'))
         if cp is not None and ct is not None:bits.append(str(c.get('power'))+'/'+str(c.get('toughness'))+' body')
         lead='Rate / role benchmark'
+        bits.append('compare cost/body/role only — not a mechanics template')
     note=lead+': '+'; '.join(bits)+'.'
     cn=norm_text(face_oracle(c));on=norm_text(o.get('rules',''))
     if ('only once each turn' in cn or 'first time each turn' in cn) and not ('only once each turn' in on or 'first time each turn' in on):
