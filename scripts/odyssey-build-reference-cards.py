@@ -7,7 +7,7 @@ a rules-template analogue, a mechanics/play-pattern analogue, and a rate/role be
 Annotations are generated only from objective overlaps (rules skeleton, keywords, mana/type/rate).
 """
 from __future__ import annotations
-import collections, datetime as dt, hashlib, json, math, os, re, sys, time
+import collections, datetime as dt, gzip, hashlib, json, math, os, re, sys, time
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -171,10 +171,24 @@ def annotation(role,o,c,shared_mech,shared_shapes,phrase):
     return note
 
 def main():
-    meta=fetch_json('https://api.scryfall.com/bulk-data/oracle_cards')
-    uri=meta['download_uri'];bulk=REPORT/'oracle-cards.json'
+    listing=fetch_json('https://api.scryfall.com/bulk-data')
+    items=listing.get('data') or []
+    meta=next((x for x in items if x.get('type')=='oracle_cards'),None)
+    if not meta: raise RuntimeError('Scryfall bulk listing did not include oracle_cards')
+    uri=meta.get('jsonl_download_uri') or meta.get('download_uri')
+    if not uri: raise RuntimeError('Scryfall oracle_cards bulk record has no supported download URI')
+    suffix='.jsonl.gz' if uri.endswith('.gz') else '.json'
+    bulk=REPORT/('oracle-cards'+suffix)
     download(uri,bulk)
-    raw=json.loads(bulk.read_text())
+    if uri.endswith('.gz'):
+        def rows():
+            with gzip.open(bulk,'rt',encoding='utf-8') as fh:
+                for line in fh:
+                    line=line.strip()
+                    if line: yield json.loads(line)
+        raw=rows()
+    else:
+        raw=json.loads(bulk.read_text())
     pool=[]
     for c in raw:
         if 'paper' not in (c.get('games') or []):continue
@@ -249,7 +263,7 @@ def main():
         if pos%25==0:print('curated',pos,'/',len(originals),flush=True)
     missing=[o['id'] for o in originals if not refs[o['id']]['references']]
     if missing:raise RuntimeError('Original cards without reference cards: '+', '.join(missing))
-    payload={'schema':'odyssey-reference-cards/v1','generatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'datasetVersion':DATA['datasetVersion'],'scryfallBulk':{'type':meta.get('type'),'updatedAt':meta.get('updated_at'),'downloadUri':uri},'method':'automated design-reference curation from Scryfall Oracle bulk data; each role chosen independently and annotated from objective shared rules/mechanics/rate features','originalCards':len(originals),'cards':refs}
+    payload={'schema':'odyssey-reference-cards/v1','generatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'datasetVersion':DATA['datasetVersion'],'scryfallBulk':{'type':meta.get('type'),'updatedAt':meta.get('updated_at'),'downloadUri':uri,'format':'jsonl.gz' if uri.endswith('.gz') else 'json'},'method':'automated design-reference curation from Scryfall Oracle bulk data; each role chosen independently and annotated from objective shared rules/mechanics/rate features','originalCards':len(originals),'cards':refs}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':'))+'\n')
     OUTJS.write_text('window.ODYSSEY_CARD_REFERENCES='+json.dumps(payload,ensure_ascii=False,separators=(',',':'))+';\n')
     summary={'originalCards':len(originals),'referencedCards':len(refs),'totalReferences':sum(len(x['references']) for x in refs.values()),'oneRef':sum(len(x['references'])==1 for x in refs.values()),'twoRefs':sum(len(x['references'])==2 for x in refs.values()),'threeRefs':sum(len(x['references'])==3 for x in refs.values()),'missing':missing,'scryfallUpdatedAt':meta.get('updated_at')}
