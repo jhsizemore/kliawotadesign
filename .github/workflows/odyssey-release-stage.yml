@@ -36,16 +36,16 @@ jobs:
         run: npm install --no-package-lock
       - name: Verify Worker build without deployment
         run: npx wrangler deploy --dry-run --outdir /tmp/odyssey-verified-build | tee /tmp/odyssey-release-audit/build.txt
-      - name: Commit verified generated files only to isolated release branch
+      - name: Commit verified generated data only to isolated release branch
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git rm .github/workflows/odyssey-release-stage.yml
-          git add public/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json public/mtgtools/odyssey/data/odyssey-data.json public/mtgtools/odyssey/data/odyssey-data.js public/mtgtools/odyssey/data/release.json public/mtgtools/odyssey/app.html public/mtgtools/odyssey/index.html tests/odyssey-continuity.test.cjs tests/odyssey-mobile-navigation.test.js .github/workflows/odyssey-continuity.yml
+          git add public/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json public/mtgtools/odyssey/data/odyssey-data.json public/mtgtools/odyssey/data/odyssey-data.js public/mtgtools/odyssey/data/release.json public/mtgtools/odyssey/app.html public/mtgtools/odyssey/index.html tests/odyssey-continuity.test.cjs tests/odyssey-mobile-navigation.test.js
           git diff --cached --stat > /tmp/odyssey-release-audit/changes.txt
           git diff --cached --quiet || git commit -m 'Release Odyssey song cycles with preserved artwork and verified data audits'
-          git push origin HEAD:refs/heads/odyssey/release-20260919
+          git push origin HEAD:refs/heads/odyssey/release-20260919 2>&1 | tee /tmp/odyssey-release-audit/push.txt
           git rev-parse HEAD > /tmp/odyssey-release-audit/verified-commit.txt
+          git restore .github/workflows/odyssey-continuity.yml
           tar -czf /tmp/odyssey-release-audit/source.tgz public src tests scripts package.json wrangler.jsonc .github
       - uses: actions/upload-artifact@v4
         if: always()
