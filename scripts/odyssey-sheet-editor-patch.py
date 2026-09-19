@@ -22,3 +22,5 @@ idx=APP/'index.html';x=idx.read_text().replace('app.html?v=20260919-18','app.htm
 pol=APP/'studio-polish.js';x=pol.read_text().replace("v3.20 · text & locales","v3.21 · full authoring");pol.write_text(x)
 rel=APP/'data/release.json';d=json.loads(rel.read_text());d['appRevision']='full-sheet-editor-v1';d['sheetEditor']={'spreadsheetId':'1RtYrpZq3NuBZz4jbalJSYZysNN_bHQyqMPfqb4AV66Q','sheetName':'Card File v1.0 Candidate','fields':35,'slotAndJsonIdLocked':True,'writeMode':'review + optimistic concurrency + RAW changed-cell writes + read-back verification'};rel.write_text(json.dumps(d,ensure_ascii=False,separators=(',',':'))+'\n')
 print('Full authoring fields integrated; canonical Card File link and v3.21 cache version set.')
+
+rt=ROOT/'tests/odyssey-release.test.cjs';t=rt.read_text().replace('app\\.html\\?v=20260919-18','app\\.html\\?v=20260919-19');rt.write_text(t)
