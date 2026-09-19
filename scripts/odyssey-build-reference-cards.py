@@ -235,7 +235,7 @@ def main():
             total=.55*template+.30*mech+.15*rate
             # Prefer cards with images and modern/current Oracle presentation for review.
             if image_urls(c):total+=.03
-            scores.append((total,template,mech,rate,i,shared_mech,shared_shape,phrase))
+            scores.append((total,template,mech,rate,i,shared_mech,shared_shape))
         if not scores:
             raise RuntimeError('No Scryfall candidates for '+o['id'])
         chosen=[];used=set()
@@ -248,7 +248,7 @@ def main():
                 if role=='mechanic' and not (item[5] or item[6]):continue
                 used.add(oid)
                 chosen.append({
-                  'role':role,'score':round(item[si],3),'annotation':annotation(role,o,c,item[5],item[6],item[7]),
+                  'role':role,'score':round(item[si],3),'annotation':annotation(role,o,c,item[5],item[6],overlap_phrase(onorm,c['_norm'])),
                   'sharedMechanics':sorted(item[5]),'sharedPatterns':sorted(item[6]),'card':scry_row(c)
                 });break
         # Guarantee at least two useful references when possible using overall similarity.
