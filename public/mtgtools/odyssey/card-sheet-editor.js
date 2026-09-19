@@ -32,10 +32,11 @@ function baseline(){
 }
 function baseVal(n,f){var s=baseline(),x=s.cards[n]&&s.cards[n][f.h];return x!==undefined?x:val(baseCard(n),f)}
 function diffs(scope){var nums=scope==="selected"?[selected]:CARDS.map(function(c){return c.number}),out=[];nums.forEach(function(n){var m=model(n);FIELDS.forEach(function(f){var a=baseVal(n,f),b=val(m,f);if(norm(a)!==norm(b))out.push({number:n,header:f.h,before:a,after:b})})});return out}
+function identityName(n){try{var s=baseline(),v=s.cards&&s.cards[n]&&s.cards[n]['Name'];if(v!==undefined)return norm(v)}catch(_){}return norm(baseCard(n).name)}
 function rowFor(rows,n){
  var exact=[];for(var i=1;i<rows.length;i++)if(norm(rows[i]&&rows[i][0])===String(n))exact.push(i);
  if(exact.length===1)return exact[0];if(exact.length>1)throw Error("Card "+n+" appears more than once in column A.");
- var name=norm(baseCard(n).name),fallback=[];for(i=1;i<rows.length;i++)if(!norm(rows[i]&&rows[i][0])&&norm(rows[i]&&rows[i][1])===name)fallback.push(i);
+ var name=identityName(n),fallback=[];for(i=1;i<rows.length;i++)if(!norm(rows[i]&&rows[i][0])&&norm(rows[i]&&rows[i][1])===name)fallback.push(i);
  if(fallback.length===1)return fallback[0];throw Error("Could not safely locate card "+n+" in the live sheet.")
 }
 function analyze(rows,ds){
