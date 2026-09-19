@@ -109,15 +109,25 @@ Current/production Odyssey data was not edited. `datasetVersion` remains `analys
 
 ## Narrative apportionment
 
-The 309-card candidate now uses this exact integer allocation:
+The initial 46 / 217 / 46 allocation was superseded by the bottom-fifth flavour audit. The weakest 62 cards were redesigned, and 40 low-flavour Odyssey filler slots were reassigned equally to richer Trojan/young-Odysseus and Telegony/post-Odyssey material.
 
-- **46 cards — Iliad + young Odysseus** (14.89%)
-- **217 cards — Odyssey Books I–XXIV** (70.23%)
-- **46 cards — old Odysseus beyond the Odyssey** (14.89%)
+The current allocation is:
 
-Each card now has `narrativeEra`, `storyTarget`, `storyRethemeRequired`, and `storySourceBand` metadata. Where a card's current name/flavour has not yet been rewritten to the assigned era, the target is explicit rather than silently pretending the retheme is complete.
+- **66 cards — Iliad + young Odysseus** (21.36%)
+- **177 cards — Odyssey Books I–XXIV** (57.28%)
+- **66 cards — old Odysseus beyond the Odyssey / Telegony traditions** (21.36%)
 
-The post-Odyssey band is grounded primarily in the Telegony/Epic Cycle and later mythographic traditions: the inland-oar journey, Elis, Polyxenus, Trophonius/Agamedes/Augeas, Thesprotia and Callidice, the Brygian war, Polypoetes/Poliporthes, Telegonus, Odysseus's death, and the later Circe/Penelope/Telemachus traditions. These are identified as post-Homeric traditions, not events of the Odyssey itself.
+This was a deliberate quality trade: the Odyssey remains the clear majority, but generic duplicate monster/island/reprint material no longer occupies space merely to preserve the earlier percentage target.
+
+## Bottom-fifth flavour redesign
+
+The lowest-scoring 62 cards were replaced or substantially redesigned against specific source elements. The pass drew especially on:
+
+- Homeric Odysseus at Troy: rallying the army, Thersites, the embassy to Achilles, the night raid with Diomedes, Socus's wound, Patroclus's funeral games.
+- The wider Trojan Epic Cycle: Palamedes, Telephus, Philoctetes, Neoptolemus, Odysseus's beggar-spy infiltration, the Palladium, the false withdrawal to Tenedos.
+- The Telegony: burial of the suitors, Elis and Polyxenus, the inland-oar obligation, Thesprotia/Callidice, the Brygian war, Telegonus, Odysseus's death, Aeaea, immortality and the final marriages.
+
+After the pass the 0–5 flavour distribution is **102 score-5 / 162 score-4 / 45 score-3 / 0 score-2-or-lower**, with a set-wide average of **4.18**.
 
 ## Double-faced-card exception
 
