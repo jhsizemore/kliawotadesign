@@ -36,9 +36,7 @@ MECH_TERMS={
 'disturb','embalm','eternalize','unearth','rebound','convoke','delve','improvise','affinity','kicker',
 'multikicker','buyback','madness','spectacle','riot','adapt','evolve','proliferate','populate',
 'treasure','food','clue','blood','map','sacrifice','discard','draw','untap','tap','counter','counters',
-'exile','graveyard','legendary','equipment','vehicle','aura','saga','battle','enchantment','artifact',
-'instant','sorcery','land','creature','token','tokens','transform','face-down','faceup','face-down',
-'combat','attack','attacks','attacking','dies','enters','leaves','cast','casts'
+'exile','graveyard','equipment','vehicle','aura','saga','battle','token','tokens','transform','face-down','faceup'
 }
 TRIGGER_PHRASES=[
 'when ~ enters','whenever ~ attacks','whenever one or more','at the beginning of combat',
@@ -205,7 +203,7 @@ def main():
         for t in c['_tokens']:df[t]+=1;inv[t].append(i)
     N=len(pool)
     def idf(t):return math.log((N+1)/(df[t]+1))+1
-    originals=[c for c in DATA['cards'] if str(c.get('originFull','New')).lower()=='new' and str(c.get('origin','')).upper()!='RPR']
+    originals=[c for c in DATA['cards'] if str(c.get('originFull','New')).lower()=='new' and str(c.get('origin','')).upper()!='RPR' and 'Basic Land' not in str(c.get('type',''))]
     refs={}
     audit=[]
     for pos,o in enumerate(originals,1):
@@ -239,7 +237,7 @@ def main():
         if not scores:
             raise RuntimeError('No Scryfall candidates for '+o['id'])
         chosen=[];used=set()
-        for role,si,threshold in [('template',1,.12),('mechanic',2,.12),('rate',3,.45)]:
+        for role,si,threshold in [('template',1,.34),('mechanic',2,.40),('rate',3,.55)]:
             for item in sorted(scores,key=lambda x:(x[si],x[0]),reverse=True):
                 c=pool[item[4]]
                 oid=c.get('oracle_id') or c['id']
@@ -251,13 +249,10 @@ def main():
                   'role':role,'score':round(item[si],3),'annotation':annotation(role,o,c,item[5],item[6],overlap_phrase(onorm,c['_norm'])),
                   'sharedMechanics':sorted(item[5]),'sharedPatterns':sorted(item[6]),'card':scry_row(c)
                 });break
-        # Guarantee at least two useful references when possible using overall similarity.
-        if len(chosen)<2:
-            for item in sorted(scores,reverse=True):
-                c=pool[item[4]];oid=c.get('oracle_id') or c['id']
-                if oid in used or item[0]<.12:continue
-                used.add(oid);chosen.append({'role':'analogue','score':round(item[0],3),'annotation':'General analogue: closest combined rules, mechanics, color and rate profile in the Scryfall Oracle snapshot.','sharedMechanics':sorted(item[5]),'sharedPatterns':sorted(item[6]),'card':scry_row(c)})
-                if len(chosen)>=2:break
+        # Do not pad weak designs. “Up to a few” means one strong benchmark is better than a vague analogue.
+        if not chosen:
+            item=max(scores,key=lambda x:x[3]);c=pool[item[4]]
+            chosen.append({'role':'rate','score':round(item[3],3),'annotation':annotation('rate',o,c,item[5],item[6],''),'sharedMechanics':sorted(item[5]),'sharedPatterns':sorted(item[6]),'card':scry_row(c)})
         refs[o['id']]={'id':o['id'],'number':o['number'],'name':o['name'],'references':chosen[:3]}
         audit.append({'id':o['id'],'number':o['number'],'name':o['name'],'count':len(chosen[:3]),'references':[{'name':x['card']['name'],'role':x['role'],'score':x['score'],'annotation':x['annotation']} for x in chosen[:3]]})
         if pos%25==0:print('curated',pos,'/',len(originals),flush=True)
