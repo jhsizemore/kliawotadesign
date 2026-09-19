@@ -193,7 +193,7 @@
       });
     });
     const label = document.querySelector('.topbar .version');
-    if (label) label.textContent = 'v3.21 · full authoring';
+    if (label) label.textContent = 'v3.22 · card references';
     refinement.mount();
     root.renderPreview();
     document.fonts?.ready.then(() => document.querySelectorAll('.render-card').forEach(root.fitCardTypography));
