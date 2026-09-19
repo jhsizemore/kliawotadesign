@@ -104,7 +104,7 @@ def power_num(v):
 def scry_row(c):
     return {
       'id':c['id'],'oracleId':c.get('oracle_id',''),'name':c['name'],'manaCost':c.get('mana_cost',''),
-      'manaValue':c.get('cmc',0),'type':c.get('type_line',''),'oracleText':face_oracle(c),
+      'manaValue':c.get('cmc',0),'type':c.get('type_line',''),
       'power':c.get('power',''),'toughness':c.get('toughness',''),'loyalty':c.get('loyalty',''),
       'colors':c.get('colors') or [],'colorIdentity':c.get('color_identity') or [],
       'keywords':c.get('keywords') or [],'rarity':c.get('rarity',''),'set':c.get('set',''),
