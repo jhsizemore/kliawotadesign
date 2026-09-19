@@ -2,14 +2,14 @@
 "use strict";
 var STORE="odyssey-reference-review-v1";
 var data=root.ODYSSEY_CARD_REFERENCES||{cards:{},originalCards:0};
-var review={};try{review=JSON.parse(localStorage.getItem(STORE)||"{}")}catch(_){}
+var review={};if(typeof localStorage!=="undefined"){try{review=JSON.parse(localStorage.getItem(STORE)||"{}")}catch(_){}}
 var overlay=null;
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function entryFor(n){var b=baseCard(n);return b&&data.cards?data.cards[b.id]||null:null}
 function refsFor(n){var e=entryFor(n);return e&&e.references?e.references:[]}
 function roleLabel(r){return r==="template"?"Template":r==="mechanic"?"Mechanics":r==="rate"?"Rate / role":"Analogue"}
 function roleClass(r){return"od-ref-role-"+(r||"analogue")}
-function save(){try{localStorage.setItem(STORE,JSON.stringify(review))}catch(_){}}
+function save(){if(typeof localStorage!=="undefined"){try{localStorage.setItem(STORE,JSON.stringify(review))}catch(_){}}}
 function isReviewed(n){var b=baseCard(n);return !!(b&&review[b.id])}
 function counts(){var ids=Object.keys(data.cards||{}),done=ids.filter(function(id){return !!review[id]}).length;return{done:done,total:ids.length}}
 function image(ref,size){var x=ref&&ref.card&&ref.card.images||{};return x[size||"small"]||x.normal||x.small||x.large||""}
