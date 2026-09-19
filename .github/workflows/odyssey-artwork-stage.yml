@@ -1,0 +1,45 @@
+name: Odyssey artwork optimization staging
+on:
+  push:
+    branches: [odyssey/artwork-performance-20260919]
+    paths: ['.github/workflows/odyssey-artwork-stage.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: odyssey-artwork-optimization-stage
+  cancel-in-progress: true
+jobs:
+  artwork-audit:
+    if: github.ref == 'refs/heads/odyssey/artwork-performance-20260919'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image inspection tools
+        run: pip install requests pillow
+      - name: Audit every source and prepare full-composition delivery assets
+        run: python scripts/odyssey-artwork-audit.py | tee /tmp/odyssey-artwork-log.txt
+      - name: Commit verified image assets to staging only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/mtgtools/odyssey/assets/artwork public/mtgtools/odyssey/data/artwork-manifest.json
+          git diff --cached --quiet || git commit -m 'Stage decoded artwork images, lightweight thumbnails and exact-source audit'
+          git push origin HEAD:refs/heads/odyssey/artwork-performance-20260919
+          git rev-parse HEAD > /tmp/odyssey-artwork-audit/staged-commit.txt
+      - name: Package source and diagnostics
+        if: always()
+        run: |
+          mkdir -p /tmp/odyssey-artwork-audit
+          cp /tmp/odyssey-artwork-log.txt /tmp/odyssey-artwork-audit/ 2>/dev/null || true
+          tar --exclude='public/mtgtools/odyssey/assets/artwork' -czf /tmp/odyssey-artwork-audit/source.tgz public src tests scripts package.json wrangler.jsonc .github
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-artwork-audit
+          path: /tmp/odyssey-artwork-audit
+          retention-days: 7
