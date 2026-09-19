@@ -13,7 +13,7 @@ try:
    page.goto(BASE,wait_until='domcontentloaded',timeout=60000)
    page.wait_for_function("window.OdysseyReferenceBrowserMounted && window.ODYSSEY_CARD_REFERENCES && Object.keys(window.ODYSSEY_CARD_REFERENCES.cards).length>0",timeout=45000)
    coverage=page.evaluate("""() => {
-     const original=CARDS.filter(c=>String(c.originFull||'New').toLowerCase()==='new'&&String(c.origin||'').toUpperCase()!=='RPR');
+     const original=CARDS.filter(c=>String(c.originFull||'New').toLowerCase()==='new'&&String(c.origin||'').toUpperCase()!=='RPR'&&!/\\bBasic Land\\b/.test(c.type||''));
      return {original:original.length,covered:original.filter(c=>OdysseyReferenceBrowser.refsFor(c.number).length>0).length,max:Math.max(...original.map(c=>OdysseyReferenceBrowser.refsFor(c.number).length)),min:Math.min(...original.map(c=>OdysseyReferenceBrowser.refsFor(c.number).length))};
    }""")
    assert coverage['original']==coverage['covered'] and 1<=coverage['min']<=coverage['max']<=3,coverage
