@@ -10,7 +10,7 @@ function refsFor(n){var e=entryFor(n);return e&&e.references?e.references:[]}
 function roleLabel(r){return r==="template"?"Template":r==="mechanic"?"Mechanics":r==="rate"?"Rate / role":"Analogue"}
 function roleClass(r){return"od-ref-role-"+(r||"analogue")}
 function save(){if(typeof localStorage!=="undefined"){try{localStorage.setItem(STORE,JSON.stringify(review))}catch(_){}}}
-function isReviewed(n){var b=baseCard(n);return !!(b&&review[b.id])}
+function signature(n){return String(data.scryfallBulk&&data.scryfallBulk.updatedAt||"")+"|"+refsFor(n).map(function(r){return r.role+":"+(r.card.oracleId||r.card.id)}).join("|")}\nfunction isReviewed(n){var b=baseCard(n),r=b&&review[b.id];return !!(r&&typeof r==="object"&&r.signature===signature(n))}
 function counts(){var ids=Object.keys(data.cards||{}),done=ids.filter(function(id){return !!review[id]}).length;return{done:done,total:ids.length}}
 function image(ref,size){var x=ref&&ref.card&&ref.card.images||{};return x[size||"small"]||x.normal||x.small||x.large||""}
 function tile(ref,compact){
@@ -33,7 +33,7 @@ function renderSection(){
  var host=document.getElementById("odCardReferences");if(!host)return;var refs=refsFor(selected),e=entryFor(selected);
  if(!refs.length){host.innerHTML="<div class='od-ref-summary'>No curated real-card references for this card. The reference layer is attached to original Odyssey designs.</div>";return}
  host.innerHTML="<div class='od-ref-summary'><b>"+refs.length+" real-card reference"+(refs.length===1?"":"s")+"</b> for "+esc(e&&e.name||model(selected).displayName)+" · "+(isReviewed(selected)?"<span class='od-ref-reviewed'>reviewed ✓</span>":"not reviewed")+"</div><div class='od-ref-strip'>"+refs.map(function(r){return tile(r,true)}).join("")+"</div><div class='od-ref-actions'><button class='btn secondary small' data-open-refs>Open large</button><button class='btn secondary small' data-reviewed>"+(isReviewed(selected)?"Mark unreviewed":"Mark reviewed ✓")+"</button></div>";
- host.querySelector("[data-open-refs]").onclick=open;host.querySelector("[data-reviewed]").onclick=function(){var id=baseCard(selected).id;if(review[id])delete review[id];else review[id]=new Date().toISOString();save();renderSection();updateTop()}
+ host.querySelector("[data-open-refs]").onclick=open;host.querySelector("[data-reviewed]").onclick=function(){var id=baseCard(selected).id;if(isReviewed(selected))delete review[id];else review[id]={at:new Date().toISOString(),signature:signature(selected)};save();renderSection();updateTop()}
 }
 function updateButton(){var b=document.getElementById("openCardReferences");if(!b)return;var n=refsFor(selected).length;b.disabled=!n;b.innerHTML="Refs <span class='od-ref-button-count'>"+n+"</span>"}
 function updateTop(){var c=counts(),el=document.getElementById("referenceReviewTop");if(el)el.textContent=c.done+" / "+c.total+" reference sets reviewed"}
@@ -55,7 +55,7 @@ function mount(){
  overlay.querySelector("[data-ref-close]").onclick=close;overlay.onclick=function(e){if(e.target===overlay)close()};
  overlay.querySelector("[data-ref-prev]").onclick=function(){for(var i=1;i<=CARDS.length;i++){var n=((selected-1-i+CARDS.length)%CARDS.length)+1;if(refsFor(n).length){selectCard(n);renderModal();break}}};
  overlay.querySelector("[data-ref-next]").onclick=function(){selectCard(nextReferenced(selected));renderModal()};
- overlay.querySelector("[data-ref-mark]").onclick=function(){if(!refsFor(selected).length)return;review[baseCard(selected).id]=new Date().toISOString();save();selectCard(nextReferenced(selected));renderModal();updateTop()};
+ overlay.querySelector("[data-ref-mark]").onclick=function(){if(!refsFor(selected).length)return;review[baseCard(selected).id]={at:new Date().toISOString(),signature:signature(selected)};save();selectCard(nextReferenced(selected));renderModal();updateTop()};
  var old=root.renderPreview;root.renderPreview=function(){var x=old.apply(this,arguments);renderSection();updateButton();if(overlay&&overlay.classList.contains("open"))renderModal();return x};
  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&overlay&&overlay.classList.contains("open")){e.preventDefault();close()}});
  renderSection();updateButton();updateTop()
