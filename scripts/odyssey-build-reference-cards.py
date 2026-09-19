@@ -145,8 +145,9 @@ def trigger_shapes(text):
 def annotation(role,o,c,shared_mech,shared_shapes,phrase):
     bits=[]
     if role=='template':
-        if phrase:bits.append('shared wording skeleton: “'+phrase+'”')
-        if shared_shapes:bits.append('same '+', '.join(sorted(shared_shapes)[:2]))
+        if shared_shapes:bits.append('use for '+', '.join(sorted(shared_shapes)[:2])+' wording')
+        if shared_mech:bits.append('shared '+', '.join(sorted(shared_mech)[:4])+' terminology')
+        if phrase and not bits:bits.append('close multi-word Oracle wording and clause order')
         if not bits:bits.append('closest Oracle-text structure')
         lead='Rules template'
     elif role=='mechanic':
