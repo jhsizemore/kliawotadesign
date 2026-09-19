@@ -18,32 +18,23 @@ try:
    }""")
    assert coverage['original']==coverage['covered'] and 1<=coverage['min']<=coverage['max']<=3,coverage
    number=page.evaluate("""() => CARDS.find(c=>OdysseyReferenceBrowser.refsFor(c.number).length>=2)?.number""")
-   assert number
-   page.evaluate('(n)=>selectCard(n)',number)
+   assert number, 'no original card with at least two references found'\n   page.evaluate('(n)=>selectCard(n)',number)
    page.wait_for_timeout(100)
    count=page.evaluate('OdysseyReferenceBrowser.refsFor(selected).length')
-   assert page.locator('#openCardReferences').is_enabled()
-   assert page.locator('#odCardReferences .od-ref-card').count()==count
-   page.locator('#openCardReferences').click()
+   assert page.locator('#openCardReferences').is_enabled(), 'reference toolbar button disabled for referenced card'\n   assert page.locator('#odCardReferences .od-ref-card').count()==count, ('compact reference count',page.locator('#odCardReferences .od-ref-card').count(),count)\n   page.locator('#openCardReferences').click()
    page.wait_for_selector('#odReferenceOverlay.open')
-   assert page.locator('#odReferenceOverlay .od-ref-card').count()==count
-   assert page.locator('#odReferenceOverlay a[href^="https://scryfall.com/card/"]').count()==count
-   for i in range(count):
+   assert page.locator('#odReferenceOverlay .od-ref-card').count()==count, ('modal reference count',page.locator('#odReferenceOverlay .od-ref-card').count(),count)\n   assert page.locator('#odReferenceOverlay a[href^="https://scryfall.com/card/"]').count()==count, ('Scryfall link count',page.locator('#odReferenceOverlay a[href^="https://scryfall.com/card/"]').count(),count)\n   for i in range(count):
     img=page.locator('#odReferenceOverlay .od-ref-card img').nth(i)
     img.scroll_into_view_if_needed()
     page.wait_for_function("(i)=>{const x=document.querySelectorAll('#odReferenceOverlay .od-ref-card img')[i];return x&&x.complete&&x.naturalWidth>0}",i,timeout=30000)
    annotations=page.locator('#odReferenceOverlay .od-ref-card p').all_inner_texts()
-   assert all(len(x)>20 for x in annotations)
-   current_id=page.evaluate('baseCard(selected).id')
+   assert all(len(x)>20 for x in annotations), ('short annotation',annotations)\n   current_id=page.evaluate('baseCard(selected).id')
    page.locator('[data-ref-mark]').click()
    page.wait_for_timeout(100)
-   assert page.evaluate('(id)=>!!JSON.parse(localStorage.getItem("odyssey-reference-review-v1")||"{}")[id]',current_id)
-   page.screenshot(path=str(OUT/(name+'-references.png')),full_page=False)
+   assert page.evaluate('(id)=>!!JSON.parse(localStorage.getItem("odyssey-reference-review-v1")||"{}")[id]',current_id), 'review mark not stored'\n   page.screenshot(path=str(OUT/(name+'-references.png')),full_page=False)
    page.reload(wait_until='domcontentloaded')
    page.wait_for_function("window.OdysseyReferenceBrowserMounted",timeout=45000)
-   assert page.evaluate('(id)=>!!JSON.parse(localStorage.getItem("odyssey-reference-review-v1")||"{}")[id]',current_id)
-   assert not errors,errors
-   report[name]={'coverage':coverage,'sampleNumber':number,'sampleReferences':count,'imagesDecoded':count,'annotationsVisible':True,'scryfallLinks':count,'reviewPersists':True,'pageErrors':errors}
+   assert page.evaluate('(id)=>!!JSON.parse(localStorage.getItem("odyssey-reference-review-v1")||"{}")[id]',current_id), 'review mark did not persist after reload'\n   assert not errors,('page errors',errors)\n   report[name]={'coverage':coverage,'sampleNumber':number,'sampleReferences':count,'imagesDecoded':count,'annotationsVisible':True,'scryfallLinks':count,'reviewPersists':True,'pageErrors':errors}
    context.close()
   browser.close()
  report['passed']=True
