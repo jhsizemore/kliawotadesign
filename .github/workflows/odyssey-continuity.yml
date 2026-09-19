@@ -5,7 +5,8 @@ on:
     paths:
       - 'public/mtgtools/odyssey/**'
       - 'src/**'
-      - 'tests/odyssey-continuity*'
+      - 'tests/odyssey-*'
+      - 'scripts/odyssey-release*'
       - 'wrangler.jsonc'
       - 'package.json'
       - '.github/workflows/odyssey-continuity.yml'
@@ -13,7 +14,8 @@ on:
     paths:
       - 'public/mtgtools/odyssey/**'
       - 'src/**'
-      - 'tests/odyssey-continuity*'
+      - 'tests/odyssey-*'
+      - 'scripts/odyssey-release*'
       - 'wrangler.jsonc'
       - 'package.json'
       - '.github/workflows/odyssey-continuity.yml'
@@ -33,7 +35,7 @@ jobs:
         with:
           node-version: '22'
       - name: Card data, rendering notation and artwork-sync regression
-        run: node --test tests/odyssey-continuity.test.cjs
+        run: node --test tests/*.test.cjs tests/*.test.js
       - name: Install existing build dependencies
         run: npm install --no-package-lock
       - name: Verify the complete Worker and asset build without deploying
