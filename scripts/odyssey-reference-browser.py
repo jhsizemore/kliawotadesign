@@ -31,7 +31,7 @@ try:
    for i in range(count):
     img=page.locator('#odReferenceOverlay .od-ref-card img').nth(i)
     img.scroll_into_view_if_needed()
-    page.wait_for_function("(i)=>{const x=document.querySelectorAll('#odReferenceOverlay .od-ref-card img')[i];return x&&x.complete&&x.naturalWidth>0}",i,timeout=30000)
+    page.wait_for_function("(i)=>{const x=document.querySelectorAll('#odReferenceOverlay .od-ref-card img')[i];return x&&x.complete&&x.naturalWidth>0}",arg=i,timeout=30000)
    annotations=page.locator('#odReferenceOverlay .od-ref-card p').all_inner_texts()
    assert all(len(x)>20 for x in annotations), ('short annotation',annotations)
    current_id=page.evaluate('baseCard(selected).id')
