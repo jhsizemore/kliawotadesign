@@ -10,7 +10,8 @@ function refsFor(n){var e=entryFor(n);return e&&e.references?e.references:[]}
 function roleLabel(r){return r==="template"?"Template":r==="mechanic"?"Mechanics":r==="rate"?"Rate / role":"Analogue"}
 function roleClass(r){return"od-ref-role-"+(r||"analogue")}
 function save(){if(typeof localStorage!=="undefined"){try{localStorage.setItem(STORE,JSON.stringify(review))}catch(_){}}}
-function signature(n){return String(data.scryfallBulk&&data.scryfallBulk.updatedAt||"")+"|"+refsFor(n).map(function(r){return r.role+":"+(r.card.oracleId||r.card.id)}).join("|")}\nfunction isReviewed(n){var b=baseCard(n),r=b&&review[b.id];return !!(r&&typeof r==="object"&&r.signature===signature(n))}
+function signature(n){return String(data.scryfallBulk&&data.scryfallBulk.updatedAt||"")+"|"+refsFor(n).map(function(r){return r.role+":"+(r.card.oracleId||r.card.id)}).join("|")}
+function isReviewed(n){var b=baseCard(n),r=b&&review[b.id];return !!(r&&typeof r==="object"&&r.signature===signature(n))}
 function counts(){var ids=Object.keys(data.cards||{}),done=ids.filter(function(id){var e=data.cards[id],r=review[id],sig=String(data.scryfallBulk&&data.scryfallBulk.updatedAt||"")+"|"+(e&&e.references||[]).map(function(x){return x.role+":"+(x.card.oracleId||x.card.id)}).join("|");return !!(r&&typeof r==="object"&&r.signature===sig)}).length;return{done:done,total:ids.length}}
 function image(ref,size){var x=ref&&ref.card&&ref.card.images||{};return x[size||"small"]||x.normal||x.small||x.large||""}
 function tile(ref,compact){
