@@ -34,6 +34,7 @@ extra="""   page.evaluate(\"selectCard(1);applyArt('ART-432');setCropField('zoom
    chosen=page.evaluate(\"({zoom:model(1).zoom,x:model(1).focusX,y:model(1).focusY,art:model(1).artId})\")
    page.reload(wait_until='domcontentloaded')
    page.wait_for_function(\"typeof CARDS!=='undefined' && CARDS.length===309\",timeout=45000)
+   page.evaluate('selectCard(1)')
    page.wait_for_function(\"document.querySelector('#previewShell .art-img')?.naturalWidth===7195 && document.querySelector('#previewShell .art-img')?.src.includes('/assets/artwork/')\",timeout=45000)
    assert page.evaluate(\"({zoom:model(1).zoom,x:model(1).focusX,y:model(1).focusY,art:model(1).artId})\")==chosen
    assert page.evaluate(\"model(1).artId\")== 'ART-432'
@@ -45,7 +46,6 @@ if 'chosen=page.evaluate' not in browser:
  assert anchor in browser;browser=browser.replace(anchor,extra+anchor,1)
  browser=browser.replace("'cropReloadPreserved':True,","'cropReloadPreserved':True,'selectedArtworkReloadVerified':True,",1)
  b.write_text(browser)
-# Remove obsolete generated boot manifests, never source data or art assets.
 manifest=re.search(r'/data/(artwork-delivery-manifest\.[a-f0-9]+\.js)',s).group(1)
 for old in (app.parent/'data').glob('artwork-delivery-manifest.*.js'):
  if old.name!=manifest:old.unlink()
