@@ -171,7 +171,7 @@ def annotation(role,o,c,shared_mech,shared_shapes,phrase):
     return note
 
 def main():
-    meta=fetch_json('https://api.scryfall.com/bulk-data/oracle-cards')
+    meta=fetch_json('https://api.scryfall.com/bulk-data/oracle_cards')
     uri=meta['download_uri'];bulk=REPORT/'oracle-cards.json'
     download(uri,bulk)
     raw=json.loads(bulk.read_text())
