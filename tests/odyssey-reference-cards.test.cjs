@@ -3,7 +3,8 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const root=path.resolve(__dirname,'..'),dir=path.join(root,'public/mtgtools/odyssey');
 const data=JSON.parse(fs.readFileSync(path.join(dir,'data/odyssey-data.json'),'utf8'));
 const refs=JSON.parse(fs.readFileSync(path.join(dir,'data/card-references.json'),'utf8'));
-const originals=data.cards.filter(c=>String(c.originFull||'New').toLowerCase()==='new'&&String(c.origin||'').toUpperCase()!=='RPR'&&!/\\bBasic Land\\b/.test(c.type||''));\nrequire('../public/mtgtools/odyssey/card-reference-browser.js');
+const originals=data.cards.filter(c=>String(c.originFull||'New').toLowerCase()==='new'&&String(c.origin||'').toUpperCase()!=='RPR'&&!/\\bBasic Land\\b/.test(c.type||''));
+require('../public/mtgtools/odyssey/card-reference-browser.js');
 test('every original Odyssey design has one to three real-card references',()=>{
  assert.equal(refs.schema,'odyssey-reference-cards/v1');
  assert.equal(refs.originalCards,originals.length);
