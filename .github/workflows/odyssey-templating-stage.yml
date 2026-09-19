@@ -22,12 +22,19 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Restore current production data as the repeatable templating baseline
+        run: |
+          git fetch origin main
+          git checkout origin/main -- public/mtgtools/odyssey/data/odyssey-data.json public/mtgtools/odyssey/data/odyssey-data.js public/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json public/mtgtools/odyssey/data/release.json public/mtgtools/odyssey/app.html public/mtgtools/odyssey/index.html public/mtgtools/odyssey/studio-polish.js
+          rm -f public/mtgtools/odyssey/data/templating-report.json
       - name: Apply conservative Oracle templating pass
         run: |
           mkdir -p /tmp/odyssey-templating
