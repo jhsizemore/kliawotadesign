@@ -1,7 +1,8 @@
 {
-  "version": "0.1.15",
-  "publishedAt": "2026-09-21T00:37:00Z",
+  "version": "0.1.16",
+  "publishedAt": "2026-09-21T00:51:00Z",
   "baseline": "cbd-demolition-2026-09-17.1",
   "sourcePdf": "Publisher original; local original remains unchanged",
-  "release": "mobile-onboarding-3"
+  "release": "mobile-onboarding-3",
+  "note": "Supplied loader header image asset corrected"
 }
