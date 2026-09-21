@@ -60,8 +60,9 @@ function cleanId(value, label) {
 
 function validateNoteAction(body) {
   if (!body || typeof body !== 'object' || Array.isArray(body)) throw new Error('Invalid note request.');
-  const action = body.action === 'status' ? 'status' : body.action === 'append' ? 'append' : '';
+  const action = body.action === 'status' ? 'status' : body.action === 'append' ? 'append' : body.action === 'probe' ? 'probe' : '';
   if (!action) throw new Error('Unknown note action.');
+  if (action === 'probe') return {action};
   const datasetVersion = cleanId(body.datasetVersion,'dataset version');
   const cardId = cleanId(body.cardId,'card id');
   const number = Number(body.number);
@@ -141,6 +142,14 @@ export class OdysseyArtWorkspace {
           const notes = [...stored.values()].filter(row=>row && typeof row === 'object');
           notes.sort((a,b)=>(a.number||0)-(b.number||0)||String(a.cardId||'').localeCompare(String(b.cardId||'')));
           return {schema:NOTES_SCHEMA,notes};
+        }
+
+        if (body.action === 'probe') {
+          const probe={at:new Date().toISOString(),ok:true};
+          await txn.put('notes-probe',probe);
+          const check=await txn.get('notes-probe');
+          await txn.delete('notes-probe');
+          return {schema:NOTES_SCHEMA,probe:!!(check&&check.ok)};
         }
 
         const key = noteStorageKey(body.datasetVersion,body.cardId);
