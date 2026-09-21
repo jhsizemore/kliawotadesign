@@ -24,7 +24,7 @@
         window.OdysseyIncomingSyncKey = location.hash.slice(14);
         history.replaceState(null, '', location.pathname + location.search);
       }
-      const response = await fetch('./app.html?v=20260920-22', { cache: 'no-store' });
+      const response = await fetch('./app.html?v=20260921-1', { cache: 'no-store' });
       if (!response.ok) throw new Error('Studio source returned ' + response.status);
       let markup = await response.text();
       const transferScript = '<script src="./art-settings-transfer.js?v=20260918-4"><' + '/script>';
