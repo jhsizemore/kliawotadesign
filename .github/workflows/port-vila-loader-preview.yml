@@ -1,0 +1,63 @@
+name: Capture Port Vila loader preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/port-vila-loader-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install browser
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Capture loaded mobile app
+        run: |
+          cat > /tmp/capture-port-vila.mjs <<'NODE'
+          import { chromium } from 'playwright';
+          const browser = await chromium.launch({headless:true});
+          const page = await browser.newPage({viewport:{width:430,height:932}, deviceScaleFactor:1});
+          await page.goto('https://kliawota.design/portvilasandbox/?preview-capture=1', {
+            waitUntil: 'domcontentloaded',
+            timeout: 120000
+          });
+          await page.waitForFunction(() => !document.querySelector('#loading'), null, {timeout:120000});
+          await page.waitForFunction(() => !!window.sandbox?.stats, null, {timeout:30000});
+          await page.waitForTimeout(2500);
+          await page.evaluate(() => {
+            document.querySelector('#pv-welcome-nudge')?.remove();
+            document.body.classList.remove('pv-welcome-active');
+          });
+          await page.screenshot({
+            path:'public/portvilasandbox/assets/loader-preview.png',
+            fullPage:false
+          });
+          await browser.close();
+          NODE
+          node /tmp/capture-port-vila.mjs
+
+      - name: Commit refreshed preview
+        run: |
+          if git diff --quiet -- public/portvilasandbox/assets/loader-preview.png; then
+            echo "Preview unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/portvilasandbox/assets/loader-preview.png
+          git commit -m "Add Port Vila loader app preview"
+          git push
