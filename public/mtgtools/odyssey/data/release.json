@@ -195,5 +195,11 @@
       "Enchantment Land",
       "Land — Cave"
     ]
+  },
+  "reviewNotes": {
+    "revision": "studio-notes-20260922-v1",
+    "actionedOpenCount": 20,
+    "sourceDatasetVersion": "2026-09-22.2",
+    "closure": "production-verification-hook"
   }
 }
