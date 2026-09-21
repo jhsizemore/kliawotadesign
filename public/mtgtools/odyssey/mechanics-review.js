@@ -95,7 +95,7 @@
       {id:'rebuild',title:'Rebuild',detail:role?'Rebuild while preserving its draft role: '+role+'.':'The slot is useful, but this mechanical execution should be replaced.'}
     ];
     if(ordeal){
-      out[4]={id:'replace-ordeal',title:'Replace → '+ordeal.name,detail:ordeal.cost+' Aura · three Survival-timing trials · payoff: '+ordeal.payoff+' Theme: '+ordeal.theme+'.',dynamic:true};
+      out[4]={id:'replace-ordeal',title:'Replace → '+ordeal.name,detail:ordeal.cost+' Aura · grants the creature Survival · complete three Survival triggers · payoff: '+ordeal.payoff+' Theme: '+ordeal.theme+'.',dynamic:true};
     }else if(String(m.origin||'').toUpperCase().includes('REPRINT')){
       out[4]={id:'preserve-reprint',title:'Preserve reprint',detail:'Keep Oracle function intact; solve flavour through name, art or treatment.',dynamic:true};
     }else if(/\bsurvival\b/i.test((m.mechanics||'')+' '+(m.rules||''))&&!/\bSurvivor\b/.test(m.type||'')){
