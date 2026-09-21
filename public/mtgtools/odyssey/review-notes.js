@@ -12,7 +12,10 @@ function cacheKey(){return CACHE_PREFIX+"::"+datasetTag()}
 function saveCache(){try{localStorage.setItem(cacheKey(),JSON.stringify({savedAt:new Date().toISOString(),records}))}catch(_){}}
 function loadCache(){try{const x=JSON.parse(localStorage.getItem(cacheKey())||"null");if(x&&x.records&&typeof x.records==="object")records=x.records}catch(_){}}
 function clearLegacyPairingHash(){
-  try{if(location.hash.startsWith("#odyssey-notes="))history.replaceState(null,"",location.pathname+location.search)}catch(_){}
+  try{
+    localStorage.removeItem("odyssey-studio-notes-key-v1");
+    if(location.hash.startsWith("#odyssey-notes="))history.replaceState(null,"",location.pathname+location.search);
+  }catch(_){}
 }
 function cardBase(n){try{return baseCard(n)||{}}catch(_){return{}}}
 function cardId(n){const b=cardBase(n);return String(b.id||("ODY-"+String(n).padStart(3,"0")))}
