@@ -40,10 +40,6 @@ async function hexDigest(prefix, value) {
   return [...new Uint8Array(digest)].map(x=>x.toString(16).padStart(2,'0')).join('');
 }
 
-function validNotesKey(value) {
-  return /^[a-f0-9]{64}$/.test(String(value || ''));
-}
-
 function cleanText(value, max) {
   const text = String(value == null ? '' : value).replace(/\r\n?/g,'\n').trim();
   if (!text || text.length > max) throw new Error('Invalid note text.');
@@ -147,13 +143,6 @@ export class OdysseyArtWorkspace {
           return {schema:NOTES_SCHEMA,notes};
         }
 
-        const writeKey = request.headers.get('x-odyssey-notes-key') || '';
-        if (!validNotesKey(writeKey)) return {auth:true};
-        const ownerHash = await hexDigest('odyssey-review-notes-owner/v1:',writeKey);
-        const storedOwner = await txn.get('notes-owner');
-        if (storedOwner && storedOwner !== ownerHash) return {forbidden:true};
-        if (!storedOwner) await txn.put('notes-owner',ownerHash);
-
         const key = noteStorageKey(body.datasetVersion,body.cardId);
         const current = await txn.get(key) || {
           datasetVersion:body.datasetVersion,
@@ -183,8 +172,6 @@ export class OdysseyArtWorkspace {
         return {schema:NOTES_SCHEMA,note:current};
       });
       if (result.limited) return json({error:'Notes rate limit reached. Retry shortly.'},429);
-      if (result.auth) return json({error:'A private notes key is required.'},401);
-      if (result.forbidden) return json({error:'This notes workspace is paired to another browser key.'},403);
       return json(result);
     } catch (error) {
       return json({error:error.message},400);
