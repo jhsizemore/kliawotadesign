@@ -62,22 +62,36 @@ test('all 309 candidate cards have specific flavour scores',()=>{const fs=requir
 test('flavour redesign eliminates weak story matches',()=>{const fs=require('node:fs'),path=require('node:path');const d=JSON.parse(fs.readFileSync(path.join(__dirname,'..','public/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json'),'utf8'));assert.equal(d.cards.length,309);assert.equal(d.cards.filter(c=>c.flavorMatchScore<=2).length,0);assert.equal(d.flavorAudit.lowMatchCards.length,0);assert.ok(d.flavorAudit.average>=3.9);assert.equal(d.flavorAudit.redesignedCards.length,34);assert.equal(d.cards.find(c=>c.number===30).displayName,'First Arrow at the Feast');assert.equal(d.cards.find(c=>c.number===58).displayName,'Anticleia, Shade of Home');assert.equal(d.cards.find(c=>c.number===126).displayName,'Blood-Drinking Shade');assert.equal(d.cards.find(c=>c.number===300).displayName,'Artemis, Huntress at Aulis');assert.equal(d.cards.find(c=>c.number===300).flavorMatchScore,5);});
 
 
-test('Studio review notes are separate, timestamped authoring records',()=>{
+test('Studio review notes are separate, timestamped site records',()=>{
  const notes=require('../public/mtgtools/odyssey/review-notes.js');
- assert.equal(notes.NOTE_COL,'AK');assert.equal(notes.STATUS_COL,'AL');assert.equal(notes.UPDATED_COL,'AM');
+ assert.equal(notes.API,'/mtgtools/odyssey/api/review-notes');
  const entry=notes.appendEntry('2026-09-20T00:00:00.000Z — Earlier note','Try the alternate art','Artwork ART-123: Test Piece',new Date('2026-09-21T10:00:00.000Z'));
  assert.match(entry,/Earlier note/);assert.match(entry,/2026-09-21T10:00:00\.000Z/);assert.match(entry,/Artwork ART-123: Test Piece — Try the alternate art/);
 });
-test('Studio loads persistent notes and large media previews',()=>{
+test('Studio loads site-backed notes and large media previews without Sheet OAuth',()=>{
  const fs=require('node:fs'),path=require('node:path');
  const app=fs.readFileSync(path.join(__dirname,'..','public/mtgtools/odyssey/app.html'),'utf8');
- assert.match(app,/review-notes\.js/);assert.match(app,/media-preview\.js/);
- const sheet=require('../public/mtgtools/odyssey/card-sheet-editor.js');
- assert.equal(sheet.SHEET_ID,'1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE');assert.equal(typeof sheet.auth,'function');assert.equal(typeof sheet.api,'function');
+ const notes=fs.readFileSync(path.join(__dirname,'..','public/mtgtools/odyssey/review-notes.js'),'utf8');
+ assert.match(app,/review-notes\.js\?v=20260921-2/);assert.match(app,/media-preview\.js/);
+ assert.match(notes,/api\/review-notes/);assert.doesNotMatch(notes,/OdysseySheetEditor|sheets\.googleapis|Studio Notes.*AK/);
 });
 test('large preview can resolve Scryfall-backed reference records',()=>{
  const media=require('../public/mtgtools/odyssey/media-preview.js');
  global.ODYSSEY_CARD_REFERENCES={cards:{x:{references:[{card:{id:'sf-test',name:'Test Reference',images:{large:'https://example.test/card.jpg'}}}]}}};
  assert.equal(media.findReference('sf-test').name,'Test Reference');
  delete global.ODYSSEY_CARD_REFERENCES;
+});
+
+test('site-backed review notes persist without Google OAuth and keep writes private',async()=>{
+ const {handleSync,OdysseyArtWorkspace}=await import('../src/odyssey-sync.mjs');
+ const map=new Map(),env={ODYSSEY_ART_SYNC:{idFromName:x=>x,get(id){if(!map.has(id))map.set(id,new OdysseyArtWorkspace({storage:new Storage()}));return map.get(id)}}};
+ const url='https://example.com/mtgtools/odyssey/api/review-notes',key='c'.repeat(64),wrong='d'.repeat(64);
+ const get=()=>handleSync(new Request(url),env);
+ const post=(k,body)=>handleSync(new Request(url,{method:'POST',headers:{'Content-Type':'application/json','X-Odyssey-Notes-Key':k},body:JSON.stringify(body)}),env);
+ let r=await get();assert.equal(r.status,200);assert.deepEqual((await r.json()).notes,[]);
+ r=await post(key,{action:'append',datasetVersion:'analysis-candidate-v2',cardId:'ODY-001',number:1,name:'Card 1',text:'Tune this card',context:'Mechanics'});
+ assert.equal(r.status,200);let body=await r.json();assert.equal(body.note.status,'OPEN');assert.equal(body.note.entries[0].text,'Tune this card');
+ r=await get();body=await r.json();assert.equal(body.notes.length,1);assert.equal(body.notes[0].entries[0].context,'Mechanics');
+ r=await post(wrong,{action:'status',datasetVersion:'analysis-candidate-v2',cardId:'ODY-001',number:1,name:'Card 1',status:'RESOLVED'});assert.equal(r.status,403);
+ r=await post(key,{action:'status',datasetVersion:'analysis-candidate-v2',cardId:'ODY-001',number:1,name:'Card 1',status:'RESOLVED'});assert.equal(r.status,200);assert.equal((await r.json()).note.status,'RESOLVED');
 });
