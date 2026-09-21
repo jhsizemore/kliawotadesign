@@ -7,6 +7,7 @@ const card = (id,number,extra={}) => ({id,number,name:id,layout:'standard',prima
 const data = cards => ({cards,artworks:[art('ART-001'),art('ART-002')],coverage:[]});
 const baseline = data([card('ODY-001',1),card('ODY-002',2)]);
 const candidate = {...data([card('ODY-001',1,{name:'Renamed',rules:'Manifest fate',type:'Enchantment'}),card('ODY-002',2)]),datasetVersion:'analysis-candidate-v1'};
+const candidate2 = {...clone(candidate),datasetVersion:'analysis-candidate-v2'};
 const input = extra => ({baseline:clone(baseline),candidate:clone(candidate),...extra});
 const view = (r,n=1,d=candidate) => A.effective(d.cards.find(c=>c.number===n),A.indexDataset(d),r.overrides,r.crops);
 class Store {
@@ -106,6 +107,18 @@ test('manual copy updates art without touching candidate gameplay or source data
 });
 test('quota failure rolls back without damaging original settings',()=>{
   const s=new Store({[A.BASE.overrides]:{1:{zoom:2}}});A.prepare(baseline,baseline,s);const before=[...s.values];const set=s.setItem.bind(s);let failed=false;s.setItem=(k,v)=>{if(k.includes('::analysis-candidate-v1')&&!k.includes('backup')&&!failed){failed=true;throw new Error('Quota exceeded');}set(k,v);};assert.throws(()=>A.prepare(baseline,candidate,s),/Quota/);assert.deepEqual([...s.values],before);
+});
+test('Candidate 2 uses its own stores and leaves Current and Candidate v1 untouched',()=>{
+  const s=new Store({[A.BASE.overrides]:{1:{zoom:2,rules:'Current rule'}}});
+  A.prepare(baseline,baseline,s);
+  const v1=A.prepare(baseline,candidate,s),v2=A.prepare(baseline,candidate2,s);
+  assert.equal(v1.candidateVersion,'analysis-candidate-v1');assert.equal(v2.candidateVersion,'analysis-candidate-v2');
+  assert.notEqual(v2.keys.overrides,A.BASE.overrides);assert.notEqual(v2.keys.overrides,v1.keys.overrides);
+  assert.match(v2.keys.overrides,/::analysis-candidate-v2$/);
+  const baseBefore=s.getItem(A.BASE.overrides),v1Before=s.getItem(v1.keys.overrides);
+  s.setItem(v2.keys.overrides,JSON.stringify({1:{zoom:8,rules:'Candidate 2 local rule'}}));
+  assert.equal(s.getItem(A.BASE.overrides),baseBefore);assert.equal(s.getItem(v1.keys.overrides),v1Before);
+  const inherited=JSON.parse(s.getItem(v2.keys.crops));assert.deepEqual(inherited,{});
 });
 test('corrupt saved data is not silently overwritten',()=>{
   const s=new Store();s.setItem(A.BASE.overrides,'broken');assert.throws(()=>A.prepare(baseline,candidate,s));assert.equal(s.getItem(A.BASE.overrides),'broken');
