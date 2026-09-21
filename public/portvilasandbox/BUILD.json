@@ -1,8 +1,8 @@
 {
-  "version": "0.1.16",
-  "publishedAt": "2026-09-21T00:51:00Z",
+  "version": "0.1.17",
+  "publishedAt": "2026-09-21T01:04:00Z",
   "baseline": "cbd-demolition-2026-09-17.1",
   "sourcePdf": "Publisher original; local original remains unchanged",
-  "release": "mobile-onboarding-3",
-  "note": "Supplied loader header image asset corrected"
+  "release": "mobile-onboarding-4",
+  "note": "First-run mobile onboarding polish: loader order/copy, supplied preview placement, opening camera, and in-app Back safeguards."
 }

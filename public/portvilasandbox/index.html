@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#132b2c" />
     <meta name="description" content="Explore downtown Port Vila as an interactive 3D city prototype, including rough DUAP July 2025 plan layers." />
     <title>Port Vila Sandbox</title>
-    <script type="module" crossorigin src="/portvilasandbox/assets/index-DKcirIOB.js?v=mobile-onboarding-3"></script>
+    <script type="module" crossorigin src="/portvilasandbox/assets/index-DKcirIOB.js?v=mobile-onboarding-4"></script>
     <link rel="stylesheet" crossorigin href="/portvilasandbox/assets/index-gwXGNLWK.css">
     <style>
       /* The introductory district card duplicates the onboarding. Keep the map clear. */
@@ -31,7 +31,7 @@
         padding: max(44px, env(safe-area-inset-top)) 24px max(34px, env(safe-area-inset-bottom));
         box-sizing: border-box;
       }
-      #loading .loading-brand { margin-top: 0; }
+      #loading .loading-brand { display: none; margin-top: 0; }
       #loading .loading-line {
         flex: 0 0 auto;
         margin: 28px 0 10px;
@@ -90,7 +90,7 @@
       #loading .pv-loader-header {
         width: min(760px, calc(100vw - 28px));
         aspect-ratio: 1536 / 509;
-        margin: 0 auto 22px;
+        margin: 20px auto 22px;
         border: 1px solid rgba(41, 72, 63, .14);
         border-radius: 12px;
         overflow: hidden;
@@ -103,6 +103,7 @@
         height: 100%;
         display: block;
         object-fit: cover;
+        object-position: 42% center;
       }
 
       /* The only thing that temporarily occupies the lower-left corner. */
@@ -256,8 +257,8 @@
           const brand = loading.querySelector('.loading-brand');
           const header = document.createElement('figure');
           header.className = 'pv-loader-header';
-          header.innerHTML = '<img src="/portvilasandbox/assets/loader-header.jpg?v=1" alt="Port Vila 3D city model around Central Market" onerror="this.closest(\'.pv-loader-header\').hidden=true">';
-          brand.before(header);
+          header.innerHTML = '<img src="/portvilasandbox/assets/loader-header.jpg?v=2" alt="Elevated oblique overview of central Port Vila with Central Market and the waterfront" onerror="this.closest(\'.pv-loader-header\').hidden=true">';
+          void brand;
 
           const state = document.createElement('div');
           state.className = 'pv-loading-state';
@@ -266,7 +267,7 @@
           label.textContent = 'Loading the interactive 3D city';
           const wait = document.createElement('p');
           wait.className = 'pv-loading-wait';
-          wait.textContent = 'The first load on a phone can take up to a minute.';
+          wait.textContent = 'First load on mobile may take up to a minute.';
           status.classList.add('pv-loading-status');
           state.append(label, status, wait);
           line.after(state);
@@ -279,8 +280,9 @@
           explainer.className = 'pv-loading-explainer';
           explainer.innerHTML =
             '<p><strong>Move through the city like a map.</strong>Drag to explore central Port Vila, pinch to zoom, and tap buildings to inspect them. This is an interactive prototype of the downtown city centre.</p>' +
-            '<p><strong>Explore the July 2025 DUAP vision.</strong>Plan Layers and DUAP Vision give a rough interactive implementation of information from the Port Vila Downtown Renewal Project design booklet launched by DUAP.</p>';
+            '<p><strong>Explore the July 2025 DUAP vision.</strong>Plan Layers and DUAP Vision provide a rough interactive implementation of information from the Port Vila Downtown Renewal Project design booklet launched by DUAP.</p>';
           heading.after(explainer);
+          explainer.after(header);
 
         }
 
@@ -375,6 +377,11 @@
             const close = document.getElementById('research-close');
             if (close) close.click();
             else document.getElementById('research-toggle')?.click();
+            return true;
+          }
+
+          if (window.sandbox?.layersOpen) {
+            window.sandbox.closeLayers();
             return true;
           }
 
