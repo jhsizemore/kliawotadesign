@@ -24,7 +24,7 @@
         window.OdysseyIncomingSyncKey = location.hash.slice(14);
         history.replaceState(null, '', location.pathname + location.search);
       }
-      const response = await fetch('./app.html?v=20260921-4', { cache: 'no-store' });
+      const response = await fetch('./app.html?v=20260921-5', { cache: 'no-store' });
       if (!response.ok) throw new Error('Studio source returned ' + response.status);
       let markup = await response.text();
       const transferScript = '<script src="./art-settings-transfer.js?v=20260921-2"><' + '/script>';
@@ -48,7 +48,7 @@
       const transferMount = '<script>OdysseyArtTransfer.mount(ODYSSEY_ART_STATE);<' + '/script>';
       const mobileScript = '<script src="./mobile-navigation.js?v=20260918-5"><' + '/script>';
       const polishScript = '<script src="./studio-polish.js?v=20260919-8"><' + '/script>';
-      const mechanicsScript = '<script src="./mechanics-review.js?v=20260921-2"><' + '/script>';
+      const mechanicsScript = '<script src="./mechanics-review.js?v=20260921-3"><' + '/script>';
       const syncCore = '<script src="./art-sync-core.js?v=20260921-1"><' + '/script>';
       const syncScript = '<script src="./art-sync.js?v=20260921-1"><' + '/script>';
       const mount = '<script>document.addEventListener("DOMContentLoaded",function(){try{OdysseyPolish.install();OdysseyArtSync.mount(ODYSSEY_ART_STATE);}catch(error){console.error("Odyssey continuity tools:",error);if(window.toast)toast("Device tools did not start; local editor is still available.");}},{once:true});<' + '/script>';
