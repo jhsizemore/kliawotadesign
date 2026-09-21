@@ -80,14 +80,14 @@
     return next;
   }
   function transfer(input) {
-    const { baseline, candidate, sourceOverrides = {}, sourceProfiles = {} } = input;
+    const { baseline, candidate, sourceOverrides = {}, sourceProfiles = {}, preserveCandidateArt = false } = input;
     const targetOverrides = clone(input.targetOverrides || {});
     const targetProfiles = clone(input.targetProfiles || {});
     const beforeProfiles = clone(targetProfiles);
     const meta = clone(input.meta || {});
     meta.cards ||= {};
     const source = indexDataset(baseline), target = indexDataset(candidate);
-    const report = { applied: 0, changed: 0, kept: 0, unmatched: 0, missingArt: 0, transient: 0, layoutReview: 0, profilesCopied: 0 };
+    const report = { applied: 0, changed: 0, kept: 0, curatedArtKept: 0, unmatched: 0, missingArt: 0, transient: 0, layoutReview: 0, profilesCopied: 0 };
     // Existing candidate profiles always win. New source profiles remain shared crops,
     // rather than turning every inherited card into a card-specific crop exception.
     Object.entries(sourceProfiles).forEach(([key, profile]) => {
@@ -118,9 +118,14 @@
         : ART_KEYS.some(k => own(old, k)) || (existingProfile && !equal(existingProfile, sourceProfiles[profileKey(before)]));
       if (edited) { report.kept++; keep(); continue; }
       const from = effective(original, source, sourceOverrides, sourceProfiles);
+      if (preserveCandidateArt && String(from.artId || '') !== String(before.artId || '')) {
+        report.curatedArtKept++; keep(); meta.cards[card.id] = { visual: pick(before), sourceNumber: original.number }; continue;
+      }
       if (from.artId && !target.artworks.has(from.artId)) { report.missingArt++; keep(); continue; }
       if (/^blob:/i.test(from.imageUrl || '')) { report.transient++; keep(); continue; }
-      const desired = pick(from);
+      const desired = preserveCandidateArt
+        ? Object.assign(pick(before), Object.fromEntries([...CROP_KEYS,'artHeight','frameStyle'].filter(k=>own(from,k)).map(k=>[k,from[k]])))
+        : pick(from);
       // Layout, type, rules, stats, mana and names are deliberately outside ART_KEYS.
       const next = artOverride(card, target, old, desired, targetProfiles);
       if (Object.keys(next).length) targetOverrides[card.number] = next;
@@ -158,7 +163,8 @@
     const oldOverrides = existed ? read(storage, keys.overrides) : legacyCandidate ? sourceOverrides : {};
     const oldProfiles = storage.getItem(keys.crops) !== null ? read(storage, keys.crops) : legacyCandidate ? sourceProfiles : {};
     const result = transfer({ baseline, candidate: active, sourceOverrides, sourceProfiles,
-      targetOverrides: oldOverrides, targetProfiles: oldProfiles, meta });
+      targetOverrides: oldOverrides, targetProfiles: oldProfiles, meta,
+      preserveCandidateArt: candidateVersion === 'analysis-candidate-v2' });
     result.meta.legacySharedSettings = legacyCandidate;
     const writes = {
       [`${PREFIX}-legacy-backup`]: {
@@ -184,7 +190,8 @@
     const overrides = read(storage, keys.overrides), crops = read(storage, keys.crops), meta = read(storage, metaKey);
     const result = transfer({ baseline, candidate: active,
       sourceOverrides: read(storage, BASE.overrides), sourceProfiles: read(storage, BASE.crops),
-      targetOverrides: overrides, targetProfiles: crops, meta });
+      targetOverrides: overrides, targetProfiles: crops, meta,
+      preserveCandidateArt: state.candidateVersion === 'analysis-candidate-v2' });
     writeBatch(storage, {
       [`${metaKey}-last-backup`]: { overrides, crops, meta },
       [keys.overrides]: result.overrides, [keys.crops]: result.crops, [metaKey]: result.meta
@@ -195,6 +202,7 @@
   function reportText(r) {
     if (!r) return '';
     const parts = [`${r.applied} cards inherited art settings`, `${r.kept} existing art edits kept`];
+    if (r.curatedArtKept) parts.push(`${r.curatedArtKept} Candidate 2 art choices preserved`);
     if (r.layoutReview) parts.push(`${r.layoutReview} changed layouts to check`);
     if (r.unmatched) parts.push(`${r.unmatched} unmatched cards skipped`);
     if (r.missingArt) parts.push(`${r.missingArt} unavailable artworks skipped`);
@@ -212,8 +220,9 @@
       button.id = 'copyOriginalArt';
       button.className = 'btn secondary small';
       button.type = 'button';
-      button.textContent = 'Copy art from Current set';
-      button.title = 'Copy artwork and crops from Current set in this browser. Keep candidate-specific art edits and all candidate rules/layouts.';
+      const curatedCandidate = state.candidateVersion === 'analysis-candidate-v2';
+      button.textContent = curatedCandidate ? 'Copy matching crops from Current set' : 'Copy art from Current set';
+      button.title = curatedCandidate ? 'Copy crop/zoom treatment only when Current uses the same artwork. Keep Candidate 2 curated art choices, candidate-specific edits and all rules/layouts.' : 'Copy artwork and crops from Current set in this browser. Keep candidate-specific art edits and all candidate rules/layouts.';
       picker.insertAdjacentElement('afterend', button);
       const info = document.createElement('div');
       info.id = 'artTransferStatus';
