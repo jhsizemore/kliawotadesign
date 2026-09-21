@@ -1,6 +1,7 @@
 {
-  "version": "0.1.12",
-  "publishedAt": "2026-09-17T22:51:51.947Z",
+  "version": "0.1.13",
+  "publishedAt": "2026-09-21T00:09:00Z",
   "baseline": "cbd-demolition-2026-09-17.1",
-  "sourcePdf": "Publisher original; local original remains unchanged"
+  "sourcePdf": "Publisher original; local original remains unchanged",
+  "release": "mobile-onboarding-1"
 }
