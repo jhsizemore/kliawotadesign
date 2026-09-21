@@ -31,6 +31,16 @@ function randomKey(){
   const bytes=crypto.getRandomValues(new Uint8Array(32));
   return [...bytes].map(n=>n.toString(16).padStart(2,"0")).join("");
 }
+function acceptIncomingKey(){
+  try{
+    if(!location.hash.startsWith("#odyssey-notes="))return false;
+    const key=location.hash.slice(15);
+    if(!/^[a-f0-9]{64}$/.test(key))return false;
+    localStorage.setItem(KEY_STORE,key);
+    history.replaceState(null,"",location.pathname+location.search);
+    return true;
+  }catch(_){return false}
+}
 function writeKey(){
   try{
     let key=String(localStorage.getItem(KEY_STORE)||"").trim();
@@ -169,6 +179,11 @@ async function resolveCurrent(){
   catch(error){message("Could not resolve note: "+(error.message||error))}
   finally{setBusy(b,false)}
 }
+async function pairDevice(){
+  const link=location.origin+location.pathname+"#odyssey-notes="+writeKey();
+  try{await navigator.clipboard.writeText(link);message("Private notes pairing link copied")}
+  catch(_){prompt("Copy this private notes pairing link:",link)}
+}
 function openQueue(){
   if(!queueDialog)return;queueDialog.showModal();renderQueue();
   refreshNotes(queueDialog.querySelector("[data-note-refresh]"));
@@ -190,7 +205,7 @@ async function saveComposer(){
 }
 function mount(){
   if(root.OdysseyReviewNotesMounted||typeof document==="undefined"||typeof model!=="function")return;
-  root.OdysseyReviewNotesMounted=true;style();loadCache();
+  root.OdysseyReviewNotesMounted=true;style();acceptIncomingKey();loadCache();
 
   const top=document.querySelector(".top-actions")||document.querySelector(".topbar");
   if(top){const q=document.createElement("button");q.type="button";q.className="btn secondary";q.id="odNotesQueue";q.onclick=openQueue;top.appendChild(q)}
@@ -208,9 +223,10 @@ function mount(){
   }
 
   queueDialog=document.createElement("dialog");queueDialog.className="od-note-dialog";
-  queueDialog.innerHTML='<div class="od-note-head"><h2>Open Studio notes</h2><div class="grow"></div><button class="btn secondary small" data-note-refresh>Refresh</button><button class="btn secondary small" data-note-close>Close</button></div><div class="od-note-body" data-note-list></div>';
+  queueDialog.innerHTML='<div class="od-note-head"><h2>Open Studio notes</h2><div class="grow"></div><button class="btn secondary small" data-note-pair>Pair device</button><button class="btn secondary small" data-note-refresh>Refresh</button><button class="btn secondary small" data-note-close>Close</button></div><div class="od-note-body" data-note-list></div>';
   document.body.appendChild(queueDialog);
   queueDialog.querySelector("[data-note-close]").onclick=()=>queueDialog.close();
+  queueDialog.querySelector("[data-note-pair]").onclick=pairDevice;
   queueDialog.querySelector("[data-note-refresh]").onclick=e=>refreshNotes(e.currentTarget);
 
   composeDialog=document.createElement("dialog");composeDialog.className="od-note-dialog od-note-compose";
@@ -225,7 +241,7 @@ function mount(){
   refresh().catch(()=>{});
   root.addEventListener("focus",()=>refresh().catch(()=>{}));
 }
-const apiObject={VERSION,API,appendEntry,openCount:()=>openCount(),noteFor,refresh,addNote,resolveNote,openQueue,compose:openComposer,mount};
+const apiObject={VERSION,API,appendEntry,openCount:()=>openCount(),noteFor,refresh,addNote,resolveNote,openQueue,compose:openComposer,acceptIncomingKey,mount};
 if(typeof module!=="undefined"&&module.exports)module.exports=apiObject;
 root.OdysseyReviewNotes=apiObject;
 if(typeof document!=="undefined"){if(document.readyState==="complete")setTimeout(mount,0);else root.addEventListener("load",()=>setTimeout(mount,0),{once:true})}
