@@ -115,10 +115,20 @@ test('Candidate 2 uses its own stores and leaves Current and Candidate v1 untouc
   assert.equal(v1.candidateVersion,'analysis-candidate-v1');assert.equal(v2.candidateVersion,'analysis-candidate-v2');
   assert.notEqual(v2.keys.overrides,A.BASE.overrides);assert.notEqual(v2.keys.overrides,v1.keys.overrides);
   assert.match(v2.keys.overrides,/::analysis-candidate-v2$/);
+  const inheritedV2=JSON.parse(s.getItem(v2.keys.overrides));assert.equal(inheritedV2[1].zoom,2);assert.equal(inheritedV2[1].rules,undefined);
   const baseBefore=s.getItem(A.BASE.overrides),v1Before=s.getItem(v1.keys.overrides);
   s.setItem(v2.keys.overrides,JSON.stringify({1:{zoom:8,rules:'Candidate 2 local rule'}}));
   assert.equal(s.getItem(A.BASE.overrides),baseBefore);assert.equal(s.getItem(v1.keys.overrides),v1Before);
   const inherited=JSON.parse(s.getItem(v2.keys.crops));assert.deepEqual(inherited,{});
+});
+test('Candidate 2 migration preserves curated art when Current uses a different artwork',()=>{
+  const c2=clone(candidate2);c2.cards[0].primaryArt='ART-002';
+  const s=new Store({[A.BASE.overrides]:{1:{artId:'ART-001',zoom:3,focusX:17}}});
+  A.prepare(baseline,baseline,s);const state=A.prepare(baseline,c2,s);
+  const overrides=JSON.parse(s.getItem(state.keys.overrides)),crops=JSON.parse(s.getItem(state.keys.crops));
+  const model=A.effective(c2.cards[0],A.indexDataset(c2),overrides,crops);
+  assert.equal(model.artId,'ART-002');assert.equal(model.zoom,1);assert.equal(model.focusX,0);
+  assert.equal(state.report.curatedArtKept,1);
 });
 test('corrupt saved data is not silently overwritten',()=>{
   const s=new Store();s.setItem(A.BASE.overrides,'broken');assert.throws(()=>A.prepare(baseline,candidate,s));assert.equal(s.getItem(A.BASE.overrides),'broken');
