@@ -27,7 +27,7 @@ jobs:
 
       - name: Capture loaded mobile app
         run: |
-          cat > /tmp/capture-port-vila.mjs <<'NODE'
+          cat > ./capture-port-vila.mjs <<'NODE'
           import { chromium } from 'playwright';
           const browser = await chromium.launch({headless:true});
           const page = await browser.newPage({viewport:{width:430,height:932}, deviceScaleFactor:1});
@@ -48,7 +48,8 @@ jobs:
           });
           await browser.close();
           NODE
-          node /tmp/capture-port-vila.mjs
+          node ./capture-port-vila.mjs
+          rm ./capture-port-vila.mjs
 
       - name: Commit refreshed preview
         run: |
