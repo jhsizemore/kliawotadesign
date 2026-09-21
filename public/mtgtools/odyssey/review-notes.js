@@ -93,7 +93,7 @@ function style(){
 ".od-note-row{border:1px solid #3c4235;border-radius:10px;padding:9px;background:#1d211a}.od-note-row-head{display:flex;gap:8px;align-items:center}.od-note-row-head strong{font:700 13px Georgia,serif}.od-note-row-head .grow{flex:1}"+
 ".od-note-row pre{white-space:pre-wrap;word-break:break-word;margin:7px 0 0;color:#d8d7cc;font:10px/1.45 ui-monospace,monospace}.od-note-compose-context{font-size:10px;color:#b7bba9;margin-bottom:8px}"+
 ".od-note-compose textarea{width:100%;min-height:130px;resize:vertical;background:#0f110e;border:1px solid #454b3e;border-radius:8px;color:#f0eee4;padding:10px;font-size:14px;line-height:1.45}"+
-".od-note-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.od-note-sync-state{font-size:9px;color:#989d8c;margin-top:6px}"+
+".od-note-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.od-note-sync-state{font-size:10px;color:#aeb3a0;margin:8px 0;line-height:1.45}.od-note-sync-state[data-state=ok]{color:#b9d79d}.od-note-sync-state[data-state=error]{color:#f0b0a6}"+
 "@media(max-width:760px){.od-note-dialog{width:100vw;max-width:none;height:92vh;max-height:92vh;border-radius:16px 16px 0 0;margin:auto 0 0}.od-note-dialog[open]{position:fixed;inset:auto 0 0}.od-note-body{max-height:78vh}.od-note-compose textarea{font-size:16px}}"+
 "@media print{.od-note-dialog,.od-note-section,#odNoteQuick,#odNotesQueue{display:none!important}}";
   document.head.appendChild(s);
@@ -188,12 +188,18 @@ function openComposer(context){
   const ta=composeDialog.querySelector("textarea");ta.value="";composeDialog.showModal();requestAnimationFrame(()=>ta.focus());
 }
 async function saveComposer(){
-  const ta=composeDialog.querySelector("textarea"),b=composeDialog.querySelector("[data-compose-save]"),text=norm(ta.value);
-  if(!text)return message("Write a note first");
-  setBusy(b,true,"Saving…");
-  try{await addNote(selected,text,activeContext);composeDialog.close();message("Note saved on Odyssey Studio")}
-  catch(error){message("Note not saved: "+(error.message||error))}
-  finally{setBusy(b,false)}
+  const ta=composeDialog.querySelector("textarea"),b=composeDialog.querySelector("[data-compose-save]"),status=composeDialog.querySelector("[data-compose-status]"),text=norm(ta.value);
+  if(!text){if(status)status.textContent="Write a note first.";return message("Write a note first")}
+  setBusy(b,true,"Saving…");if(status)status.textContent="Saving to Odyssey Studio…";
+  try{
+    await addNote(selected,text,activeContext);
+    if(status)status.textContent="Saved ✓ This note is now in the shared Odyssey queue.";
+    message("Saved ✓ This note is now in the shared Odyssey queue.");
+    setTimeout(()=>{if(composeDialog.open)composeDialog.close()},650);
+  }catch(error){
+    if(status)status.textContent="Save failed: "+(error.message||error);
+    message("Save failed: "+(error.message||error));
+  }finally{setBusy(b,false)}
 }
 function mount(){
   if(root.OdysseyReviewNotesMounted||typeof document==="undefined"||typeof model!=="function")return;
