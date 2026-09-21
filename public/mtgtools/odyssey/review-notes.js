@@ -1,6 +1,6 @@
 (function(root){
 "use strict";
-const VERSION="2.1";
+const VERSION="2.2";
 const API="/mtgtools/odyssey/api/review-notes";
 const CACHE_PREFIX="odyssey-studio-notes-v2";
 let records={},loaded=false,queueDialog=null,composeDialog=null,activeContext="";
@@ -34,7 +34,7 @@ function appendEntry(existing,text,context,when){
 }
 async function request(method,body){
   const headers=body?{"Content-Type":"application/json"}:{};
-  const response=await fetch(API,{method:method||"GET",cache:"no-store",credentials:"same-origin",referrerPolicy:"no-referrer",headers,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(16000)});
+  const response=await fetch(API,{method:method||"GET",cache:"no-store",credentials:"same-origin",referrerPolicy:"no-referrer",headers,body:body?JSON.stringify(body):undefined,signal:(AbortSignal.timeout?AbortSignal.timeout(8000):undefined)});
   const data=await response.json().catch(()=>({}));
   if(!response.ok)throw Error(data.error||("Notes service returned HTTP "+response.status+"."));
   if(data.schema!=="odyssey-review-notes/v1")throw Error("Unexpected notes response.");
@@ -124,7 +124,7 @@ function paintTop(){
 }
 function queueHTML(){
   const rows=Object.entries(records).filter(pair=>pair[1]&&pair[1].status==="OPEN"&&pair[1].entries&&pair[1].entries.length).sort((a,b)=>Number(a[0])-Number(b[0]));
-  if(!rows.length)return '<div class="od-note-empty">No open Studio notes.</div>';
+  if(!rows.length)return '<div class="od-note-empty"><strong>No open Studio notes yet.</strong><br>To add one, use <strong>Add note to current card</strong> above, type what should change, then press <strong>Save note</strong>.</div>';
   return '<div class="od-note-list">'+rows.map(pair=>{
     const n=pair[0],r=pair[1];
     return '<div class="od-note-row"><div class="od-note-row-head"><strong>'+String(n).padStart(3,"0")+' · '+esc(cardName(+n))+'</strong><div class="grow"></div><button class="btn secondary small" data-note-open-card="'+n+'">Open card</button></div><pre>'+esc(noteText(r))+'</pre></div>';
@@ -140,11 +140,23 @@ function message(text){
   if(status)status.textContent=text;
   if(root.toast)root.toast(text);
 }
+function setQueueState(text,kind){
+  const el=queueDialog&&queueDialog.querySelector("[data-note-queue-state]");
+  if(!el)return;
+  el.textContent=text||"";
+  el.dataset.state=kind||"";
+}
 async function refreshNotes(button){
   setBusy(button,true,"Refreshing…");
-  try{await refresh();message("Studio notes refreshed")}
-  catch(error){message("Notes refresh failed: "+(error.message||error))}
-  finally{setBusy(button,false)}
+  setQueueState("Checking the Odyssey notes store…","loading");
+  try{
+    await refresh();
+    setQueueState("Connected · "+openCount()+" open note"+(openCount()===1?"":"s"),"ok");
+    message("Studio notes refreshed");
+  }catch(error){
+    setQueueState("Could not reach the notes store. Your existing cached notes are still shown. "+(error.message||error),"error");
+    message("Notes refresh failed: "+(error.message||error));
+  }finally{setBusy(button,false)}
 }
 async function saveSectionNote(){
   const input=document.getElementById("odNoteInput"),b=document.getElementById("odSaveNote");if(!input)return;
@@ -161,8 +173,12 @@ async function resolveCurrent(){
   finally{setBusy(b,false)}
 }
 function openQueue(){
-  if(!queueDialog)return;queueDialog.showModal();renderQueue();
-  refreshNotes(queueDialog.querySelector("[data-note-refresh]"));
+  if(!queueDialog)return;
+  queueDialog.showModal();
+  renderQueue();
+  const add=queueDialog.querySelector("[data-note-add-current]");
+  if(add)add.textContent="Add note to "+String(selected).padStart(3,"0")+" · "+cardName(selected);
+  refreshNotes(null);
 }
 function openComposer(context){
   activeContext=norm(context);
@@ -199,13 +215,14 @@ function mount(){
   }
 
   queueDialog=document.createElement("dialog");queueDialog.className="od-note-dialog";
-  queueDialog.innerHTML='<div class="od-note-head"><h2>Open Studio notes</h2><div class="grow"></div><button class="btn secondary small" data-note-refresh>Refresh</button><button class="btn secondary small" data-note-close>Close</button></div><div class="od-note-body"><div class="od-note-sync-state">Shared project queue. Notes saved from phone or desktop appear here automatically.</div><div data-note-list></div></div>';
+  queueDialog.innerHTML='<div class="od-note-head"><h2>Open Studio notes</h2><div class="grow"></div><button class="btn secondary small" data-note-refresh>Refresh</button><button class="btn secondary small" data-note-close>Close</button></div><div class="od-note-body"><div class="od-note-actions" style="margin:0 0 10px"><button class="btn" data-note-add-current>Add note to current card</button></div><div class="od-note-sync-state" data-note-queue-state>Shared project queue. Notes saved from phone or desktop appear here automatically.</div><div data-note-list></div></div>';
   document.body.appendChild(queueDialog);
   queueDialog.querySelector("[data-note-close]").onclick=()=>queueDialog.close();
+  queueDialog.querySelector("[data-note-add-current]").onclick=()=>{queueDialog.close();openComposer("")};
   queueDialog.querySelector("[data-note-refresh]").onclick=e=>refreshNotes(e.currentTarget);
 
   composeDialog=document.createElement("dialog");composeDialog.className="od-note-dialog od-note-compose";
-  composeDialog.innerHTML='<div class="od-note-head"><h2 data-compose-title>Add note</h2><div class="grow"></div><button class="btn secondary small" data-compose-close>Close</button></div><div class="od-note-body"><div class="od-note-compose-context" data-compose-context></div><textarea maxlength="4000" placeholder="What should change, be checked, or be reconsidered?"></textarea><div class="od-note-actions"><button class="btn" data-compose-save>Save note</button></div></div>';
+  composeDialog.innerHTML='<div class="od-note-head"><h2 data-compose-title>Add note</h2><div class="grow"></div><button class="btn secondary small" data-compose-close>Close</button></div><div class="od-note-body"><div class="od-note-compose-context" data-compose-context></div><textarea maxlength="4000" placeholder="What should change, be checked, or be reconsidered?"></textarea><div class="od-note-actions"><button class="btn" data-compose-save>Save note</button></div><div class="od-note-sync-state" data-compose-status>Saved notes go straight into the shared Odyssey queue.</div></div>';
   document.body.appendChild(composeDialog);
   composeDialog.querySelector("[data-compose-close]").onclick=()=>composeDialog.close();
   composeDialog.querySelector("[data-compose-save]").onclick=saveComposer;
