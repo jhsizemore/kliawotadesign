@@ -58,6 +58,8 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git rebase origin/main
           git add public/portvilasandbox/assets/loader-preview.png
           git commit -m "Add Port Vila loader app preview"
-          git push
+          git push origin HEAD:main
