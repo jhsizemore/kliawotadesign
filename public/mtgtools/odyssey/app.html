@@ -554,7 +554,22 @@ const ANALYSIS_CANDIDATE_V2_URL='/mtgtools/odyssey/data/odyssey-analysis-candida
 function validOdysseyDataset(d){return !!(d&&d.schema==='odyssey-studio-data/v1'&&Array.isArray(d.cards)&&Array.isArray(d.artworks)&&Array.isArray(d.coverage)&&d.cards.length)}
 function loadOdysseyDataset(){
   let d=window.ODYSSEY_DATA;
-  try{const raw=localStorage.getItem(DATASET_STORAGE);if(raw){const parsed=JSON.parse(raw);if(validOdysseyDataset(parsed))d=parsed}}catch(e){}
+  try{
+    const raw=localStorage.getItem(DATASET_STORAGE);
+    if(raw){
+      const parsed=JSON.parse(raw);
+      const promotedCandidate2=parsed?.datasetVersion==='analysis-candidate-v2'
+        && d?.release?.publishedFrom==='analysis-candidate-v2'
+        && /^2026-09-21\./.test(String(d?.datasetVersion||''));
+      if(promotedCandidate2){
+        // Candidate 2 is now Current. Do not let a pre-cutover browser snapshot
+        // hide the promoted production dataset indefinitely.
+        localStorage.removeItem(DATASET_STORAGE);
+      }else if(validOdysseyDataset(parsed)){
+        d=parsed;
+      }
+    }
+  }catch(e){}
   if(!validOdysseyDataset(d))throw new Error('Odyssey dataset missing or invalid');
   return d;
 }
