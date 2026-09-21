@@ -1,0 +1,57 @@
+name: Port Vila production verification
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/portvilasandbox/**'
+      - '.github/workflows/port-vila-production-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: port-vila-production-verification
+  cancel-in-progress: true
+
+jobs:
+  verify-live:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify deployed Port Vila onboarding bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://kliawota.design/portvilasandbox/'
+          local_sha="$(sha256sum public/portvilasandbox/index.html | awk '{print $1}')"
+          echo "Local index SHA: $local_sha"
+
+          for attempt in $(seq 1 36); do
+            url="${base}?verify=${GITHUB_SHA}-${attempt}"
+            body="$(mktemp)"
+            headers="$(mktemp)"
+            if curl --fail --silent --show-error --location               -H 'Cache-Control: no-cache'               -D "$headers"               -o "$body" "$url"; then
+              live_sha="$(sha256sum "$body" | awk '{print $1}')"
+              echo "Attempt $attempt live SHA: $live_sha"
+              grep -iE '^(cf-cache-status|cache-control|etag|age|last-modified):' "$headers" || true
+
+              if grep -q 'Explore downtown Port Vila in 3D.' "$body"                 && grep -q 'Welcome to the Port Vila Sandbox' "$body"; then
+                echo "Live onboarding markers are present."
+                if [ "$live_sha" = "$local_sha" ]; then
+                  echo "Live index exactly matches repository index."
+                else
+                  echo "Markers are live, although transformed/cached bytes differ from local."
+                fi
+                exit 0
+              fi
+            fi
+            sleep 10
+          done
+
+          echo 'Live Port Vila index never exposed the new onboarding markers.'
+          exit 1
