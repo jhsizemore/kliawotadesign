@@ -57,17 +57,22 @@ jobs:
             if(matched)break;
             await new Promise(resolve=>setTimeout(resolve,5000));
           }
-          let sync;
+          let sync,notes;
           try{
             const anonymous=await fetch(base+'api/art-sync',{signal:AbortSignal.timeout(15000)});
             const isolated=await fetch(base+'api/art-sync',{headers:{Authorization:'Bearer '+randomBytes(32).toString('hex')},signal:AbortSignal.timeout(15000)});
             const isolatedData=await isolated.json();
             sync={anonymousStatus:anonymous.status,isolatedWorkspaceStatus:isolated.status,isolatedRecords:Object.keys(isolatedData.records||{}).length};
           }catch(error){sync={error:String(error)}}
-          const report={commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),assetsMatch:matched,results,sync};
+          try{
+            const response=await fetch(base+'api/review-notes',{signal:AbortSignal.timeout(15000)});
+            const data=await response.json();
+            notes={status:response.status,schema:data.schema,count:Array.isArray(data.notes)?data.notes.length:null};
+          }catch(error){notes={error:String(error)}}
+          const report={commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),assetsMatch:matched,results,sync,notes};
           fs.writeFileSync('/tmp/odyssey-production-check/production.json',JSON.stringify(report,null,2));
           console.log(JSON.stringify(report,null,2));
-          if(!matched||sync.anonymousStatus!==401||sync.isolatedWorkspaceStatus!==200)process.exitCode=1;
+          if(!matched||sync.anonymousStatus!==401||sync.isolatedWorkspaceStatus!==200||notes.status!==200||notes.schema!=='odyssey-review-notes/v1')process.exitCode=1;
           NODE
       - uses: actions/setup-python@v5
         with:
