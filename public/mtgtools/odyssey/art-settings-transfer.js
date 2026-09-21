@@ -1,8 +1,8 @@
-/* Odyssey Studio v3.15: copy art direction, never card design, between datasets. */
+/* Odyssey Studio v3.25: isolate and inherit art direction across Current and named candidate datasets. */
 (function (root) {
   'use strict';
   const VERSION = 'art-transfer/v1';
-  const CANDIDATE = 'analysis-candidate-v1';
+  const CANDIDATES = new Set(['analysis-candidate-v1','analysis-candidate-v2']);
   const PREFIX = 'odyssey-art-transfer-v1';
   const BASE = {
     overrides: 'odyssey-layout-overrides-v02',
@@ -138,10 +138,11 @@
     return { overrides: targetOverrides, crops: targetProfiles, meta, report };
   }
   function prepare(baseline, active, storage) {
-    const candidate = active.datasetVersion === CANDIDATE;
-    const keys = Object.fromEntries(Object.entries(BASE).map(([k, v]) => [k, candidate ? `${v}::${CANDIDATE}` : v]));
-    const metaKey = `${PREFIX}::${CANDIDATE}`;
-    const state = { candidate, keys, baseline, active, storage, metaKey, report: null };
+    const candidateVersion = CANDIDATES.has(active.datasetVersion) ? active.datasetVersion : '';
+    const candidate = !!candidateVersion;
+    const keys = Object.fromEntries(Object.entries(BASE).map(([k, v]) => [k, candidate ? `${v}::${candidateVersion}` : v]));
+    const metaKey = `${PREFIX}::${candidateVersion || 'current'}`;
+    const state = { candidate, candidateVersion, keys, baseline, active, storage, metaKey, report: null };
     if (!candidate) {
       // Records that the legacy shared store now belongs to Current set only.
       try { storage.setItem(`${PREFIX}-source-ready`, 'true'); } catch (_) { /* No migration needed. */ }
@@ -150,7 +151,7 @@
     const meta = read(storage, metaKey);
     if (meta.initialized) { state.report = meta.report; return state; }
     const sourceOverrides = read(storage, BASE.overrides), sourceProfiles = read(storage, BASE.crops);
-    const legacyCandidate = storage.getItem(`${PREFIX}-source-ready`) !== 'true';
+    const legacyCandidate = candidateVersion === 'analysis-candidate-v1' && storage.getItem(`${PREFIX}-source-ready`) !== 'true';
     const existed = storage.getItem(keys.overrides) !== null;
     // Older builds shared one store. When first opened on the candidate, retain
     // its existing overrides rather than trying to infer which set created them.
