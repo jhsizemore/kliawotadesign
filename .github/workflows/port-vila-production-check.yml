@@ -29,7 +29,9 @@ jobs:
           set -euo pipefail
           base='https://kliawota.design/portvilasandbox/'
           local_sha="$(sha256sum public/portvilasandbox/index.html | awk '{print $1}')"
+          local_header_sha="$(sha256sum public/portvilasandbox/assets/loader-header.jpg | awk '{print $1}')"
           echo "Local index SHA: $local_sha"
+          echo "Local header SHA: $local_header_sha"
 
           for attempt in $(seq 1 36); do
             url="${base}?verify=${GITHUB_SHA}-${attempt}"
@@ -46,14 +48,17 @@ jobs:
               if curl --fail --silent --show-error --location                 -H 'Cache-Control: no-cache'                 -o "$header" "${base}assets/loader-header.jpg?verify=${GITHUB_SHA}-${attempt}"; then
                 header_bytes="$(wc -c < "$header" | tr -d ' ')"
                 header_sig="$(od -An -tx1 -N3 "$header" | tr -d ' \n')"
-                if [ "$header_bytes" -gt 30000 ] && [ "$header_sig" = "ffd8ff" ]; then
+                live_header_sha="$(sha256sum "$header" | awk '{print $1}')"
+                if [ "$header_sig" = "ffd8ff" ] && [ "$live_header_sha" = "$local_header_sha" ]; then
                   header_ok=true
-                  echo "Live supplied loader header: ${header_bytes} bytes."
+                  echo "Live supplied loader header matches repository: ${header_bytes} bytes."
+                else
+                  echo "Header mismatch: signature=$header_sig live=$live_header_sha"
                 fi
               fi
 
               if grep -q 'Explore Port Vila' "$body"                 && grep -q 'Downtown in 3D.' "$body"                 && grep -q 'Welcome to the Port Vila Sandbox' "$body"                 && grep -q 'Leave Port Vila Sandbox?' "$body"                 && grep -q 'mobile-onboarding-3' "$body"                 && grep -q 'loader-header.jpg' "$body"                 && [ "$header_ok" = true ]; then
-                echo "Live onboarding, navigation and supplied loader-header markers are present."
+                echo "Live onboarding, navigation and supplied loader header are present."
                 if [ "$live_sha" = "$local_sha" ]; then
                   echo "Live index exactly matches repository index."
                 else
