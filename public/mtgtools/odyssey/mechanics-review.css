@@ -1,0 +1,75 @@
+/* Odyssey mechanics verification v1.0 */
+.mechanics-review-dialog{
+  width:min(1180px,calc(100vw - 18px));height:min(920px,calc(100dvh - 18px));
+  max-width:none;max-height:none;margin:auto;padding:0;border:1px solid rgba(214,190,128,.42);
+  border-radius:18px;background:#11140f;color:#f3ead7;box-shadow:0 30px 90px rgba(0,0,0,.68);overflow:hidden
+}
+.mechanics-review-dialog::backdrop{background:rgba(4,6,4,.82);backdrop-filter:blur(8px)}
+.mechanics-review-shell{height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;position:relative;overflow:hidden}
+.mechanics-review-head{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(25,29,22,.96)}
+.mechanics-review-head h2{margin:0;font:700 24px/1.05 Georgia,serif;color:#e1c680}
+#mechanicsProgress{margin-top:4px;font-size:12px;color:#bfc4b5}
+.mechanics-head-actions{display:flex;align-items:center;justify-content:flex-end;gap:7px;flex-wrap:wrap}
+.mechanics-review-copy{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(240px,.8fr);gap:12px 24px;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.08);background:#151912}
+.mechanics-review-copy h3{margin:0 0 4px;font:700 20px/1.1 Georgia,serif}
+#mechanicsMeta{font-size:12px;color:#c4c8bb}
+#mechanicsStory{margin:0;font-size:13px;line-height:1.35;color:#d3d4cb;align-self:center}
+.mechanics-instruction{grid-column:1/-1!important;margin:0!important;padding-top:2px;font-size:12px!important;color:#d9c894!important}
+.mechanics-review-main{min-height:0;display:grid;grid-template-columns:minmax(340px,.9fr) minmax(420px,1.1fr);gap:18px;padding:16px 18px;overflow:auto;background:
+  radial-gradient(circle at 30% 30%,rgba(186,157,90,.09),transparent 30%),
+  linear-gradient(180deg,#10130f,#0d100c)}
+.mechanics-card-host{min-height:0;display:grid;place-items:center;position:relative;padding:8px}
+.mechanics-drag-card{width:min(378px,100%);cursor:grab;touch-action:none;user-select:none;will-change:transform;transition:transform .18s ease,filter .18s ease;transform-origin:center;z-index:4}
+.mechanics-drag-card.dragging{cursor:grabbing;transition:none;filter:drop-shadow(0 20px 25px rgba(0,0,0,.5));z-index:20}
+.mechanics-drag-card .render-card{pointer-events:none}
+.mechanics-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-content:center}
+.mechanics-option{appearance:none;text-align:left;min-height:112px;padding:14px;border-radius:15px;border:1px solid rgba(231,220,186,.17);background:rgba(28,34,25,.9);color:#f0eadb;box-shadow:inset 0 1px rgba(255,255,255,.035);transition:border-color .13s ease,background .13s ease,transform .13s ease}
+.mechanics-option:hover,.mechanics-option:focus-visible{border-color:rgba(224,194,117,.6);outline:none;background:#20271c}
+.mechanics-option.hot{border-color:#e2c36f;background:#28311f;transform:scale(1.025);box-shadow:0 0 0 2px rgba(226,195,111,.16)}
+.mechanics-option.selected{border-color:#9fc281;background:#1e2b1b}
+.mechanics-option strong{display:block;font:700 16px/1.15 Georgia,serif;color:#e4ca87;margin-bottom:7px}
+.mechanics-option span{display:block;font:12px/1.38 system-ui,sans-serif;color:#c9ccbf}
+.mechanics-decision-status{padding:8px 18px;border-top:1px solid rgba(255,255,255,.08);font-size:12px;color:#c8ccbf;background:#151912}
+.mechanics-wording-panel{position:absolute;inset:0;z-index:50;overflow:auto;background:#10130f;padding:18px}
+.mechanics-wording-panel[hidden]{display:none}
+.mechanics-wording-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:16px}
+.mechanics-wording-head h3{margin:0 0 5px;font:700 24px/1.1 Georgia,serif;color:#e1c680}
+.mechanics-wording-head p{margin:0;max-width:720px;color:#c8ccbf;font-size:13px;line-height:1.4}
+.mechanics-wording-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mechanics-wording-grid label,.mechanics-note-label{display:block;margin:0 0 6px;font-size:12px;font-weight:700;color:#d8c995}
+.mechanics-wording-grid pre,.mechanics-wording-grid textarea,.mechanics-note{box-sizing:border-box;width:100%;min-height:270px;margin:0;border:1px solid rgba(255,255,255,.14);border-radius:12px;background:#181d15;color:#f2ecdf;padding:14px;font:15px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre-wrap}
+.mechanics-wording-grid textarea:focus,.mechanics-note:focus{outline:2px solid rgba(224,194,117,.55);outline-offset:1px}
+.mechanics-note-label{margin-top:14px}.mechanics-note{min-height:92px;font-family:system-ui,sans-serif}
+.mechanics-wording-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:12px}
+body.mechanics-review-open{overflow:hidden}
+@media(max-width:760px){
+  .mechanics-review-dialog{width:100vw;height:100dvh;border:0;border-radius:0}
+  .mechanics-review-shell{grid-template-rows:auto auto minmax(0,1fr) auto}
+  .mechanics-review-head{padding:10px 12px;align-items:flex-start}
+  .mechanics-review-head h2{font-size:20px}
+  .mechanics-head-actions{gap:5px;max-width:60%;justify-content:flex-end}
+  .mechanics-head-actions .btn{font-size:11px;padding:6px 8px}
+  #mechanicsBack,#mechanicsClear{display:none}
+  .mechanics-review-copy{grid-template-columns:1fr;padding:9px 12px;gap:5px}
+  .mechanics-review-copy h3{font-size:17px}
+  #mechanicsStory{display:none}
+  .mechanics-review-main{grid-template-columns:1fr;grid-template-rows:minmax(280px,.95fr) auto;gap:8px;padding:8px 10px 12px;overflow:auto}
+  .mechanics-card-host{padding:0;min-height:280px}
+  .mechanics-drag-card{width:min(330px,86vw)}
+  .mechanics-options{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .mechanics-option{min-height:88px;padding:10px;border-radius:12px}
+  .mechanics-option strong{font-size:14px;margin-bottom:4px}
+  .mechanics-option span{font-size:11px;line-height:1.3}
+  .mechanics-decision-status{padding:7px 12px}
+  .mechanics-wording-panel{padding:12px}
+  .mechanics-wording-grid{grid-template-columns:1fr}
+  .mechanics-wording-grid pre{min-height:150px;max-height:190px;overflow:auto}
+  .mechanics-wording-grid textarea{min-height:240px}
+  .mechanics-wording-actions{position:sticky;bottom:0;padding-top:10px;background:#10130f}
+}
+@media(max-width:430px){
+  .mechanics-head-actions #mechanicsExport{display:none}
+  .mechanics-review-main{grid-template-rows:minmax(260px,.8fr) auto}
+  .mechanics-drag-card{width:min(305px,82vw)}
+  .mechanics-option{min-height:82px}
+}
