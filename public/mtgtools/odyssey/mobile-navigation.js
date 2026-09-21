@@ -1,7 +1,7 @@
 /* Odyssey v3.16: mobile navigation only. Card/art storage and rendering stay owned by Studio. */
 (function (root) {
   'use strict';
-  const VERSION = '3.16';
+  const VERSION = '3.17';
   function neighbour(numbers, current, direction) {
     if (!numbers.length) return null;
     const i = numbers.indexOf(current);
@@ -30,8 +30,12 @@
     const dialog = document.createElement('dialog');
     dialog.id = 'odysseyCardBrowser'; dialog.className = 'odyssey-card-browser';
     dialog.setAttribute('aria-labelledby', 'odysseyBrowserTitle');
-    dialog.innerHTML = '<div class="odyssey-browser-head"><div><h2 id="odysseyBrowserTitle">Cards</h2><small>Odyssey · v3.16</small></div><button type="button" class="btn secondary" id="odysseyBrowserClose" autofocus>Done</button></div>';
+    dialog.innerHTML = '<div class="odyssey-browser-head"><div><h2 id="odysseyBrowserTitle">Cards</h2><small id="odysseyBrowserDatasetLabel">Odyssey</small></div><button type="button" class="btn secondary" id="odysseyBrowserClose" autofocus>Done</button></div>';
     document.body.appendChild(dialog);
+    const datasetBanner = document.createElement('div');
+    datasetBanner.className = 'odyssey-dataset-banner';
+    datasetBanner.innerHTML = '<div><strong id="odysseyDatasetBannerTitle"></strong><small id="odysseyDatasetBannerMeta"></small></div><button type="button" class="btn secondary small" id="odysseyUseLive">Use current live set</button>';
+    dialog.appendChild(datasetBanner);
     const nav = document.createElement('nav');
     nav.id = 'odysseyMobileNav'; nav.className = 'odyssey-mobile-nav'; nav.setAttribute('aria-label', 'Card navigation');
     nav.innerHTML = '<button type="button" id="odysseyPrev" aria-label="Previous card in this list">←<small>Prev</small></button><button type="button" id="odysseyBrowse" aria-haspopup="dialog" aria-controls="odysseyCardBrowser" aria-expanded="false"><strong>Browse cards</strong><small id="odysseyPosition" role="status" aria-live="polite"></small></button><button type="button" id="odysseyNext" aria-label="Next card in this list">→<small>Next</small></button><button type="button" id="odysseyEdit" aria-controls="inspector" aria-expanded="false">✎<small>Edit</small></button>';
@@ -58,8 +62,26 @@
     }
     const observer = new MutationObserver(queueSync);
     function observeList() { observer.observe(list, { childList: true }); }
+    function datasetIdentity() {
+      const active = typeof ODYSSEY_DATASET !== 'undefined' ? String(ODYSSEY_DATASET.datasetVersion || '') : '';
+      const live = String(root.ODYSSEY_DATA?.datasetVersion || '');
+      const isLive = !!active && active === live;
+      return { active, live, isLive };
+    }
+    function updateDatasetBanner() {
+      const d = datasetIdentity();
+      const title = $('odysseyDatasetBannerTitle'), meta = $('odysseyDatasetBannerMeta'), label = $('odysseyBrowserDatasetLabel'), liveButton = $('odysseyUseLive');
+      if (title) title.textContent = d.isLive ? 'Current live set' : d.active === 'analysis-candidate-v1' ? 'Older analysis candidate' : d.active === 'analysis-candidate-v2' ? 'Candidate 2 snapshot' : 'Custom dataset';
+      if (meta) meta.textContent = (d.active || 'unversioned') + ' · ' + CARDS.length + ' cards';
+      if (label) label.textContent = d.isLive ? 'Current · ' + d.active : 'Not current · ' + (d.active || 'custom');
+      if (liveButton) {
+        liveButton.hidden = d.isLive;
+        liveButton.textContent = d.live ? 'Use live ' + d.live : 'Use current live set';
+      }
+    }
     function sync() {
       if (!mobile) return;
+      updateDatasetBanner();
       const before = rows();
       const ordered = orderedRows(before.map(node => ({ node, number: Number(node.dataset.n), name: node.querySelector('.row-name')?.textContent || '' })), sort);
       if (ordered.some((row, i) => row.node !== before[i])) {
@@ -156,6 +178,13 @@
       }
     }
     $('odysseyBrowse').onclick = openBrowser; $('odysseyBrowserClose').onclick = () => closeBrowser();
+    $('odysseyUseLive').onclick = () => {
+      if (typeof root.resetBundledDataset === 'function') root.resetBundledDataset();
+      else {
+        try { localStorage.removeItem('odyssey-studio-dataset-v4'); } catch (_) {}
+        location.reload();
+      }
+    };
     $('odysseyPrev').onclick = () => navigate(-1); $('odysseyNext').onclick = () => navigate(1);
     $('odysseyEdit').onclick = () => { inspector.classList.toggle('open'); sync(); };
     // Controls in bar are detached until the first mobile breakpoint.
@@ -185,7 +214,10 @@
     new ResizeObserver(resize).observe(topbar);
     root.addEventListener('beforeprint', () => closeBrowser());
     const label = document.querySelector('.topbar .version');
-    if (label) label.textContent = 'v' + VERSION + ' · mobile card browser';
+    if (label) {
+      const d = datasetIdentity();
+      label.textContent = 'v' + VERSION + (d.isLive ? ' · Current ' + d.active : ' · ' + (d.active || 'custom dataset'));
+    }
     applyBreakpoint();
   }
   const api = { VERSION, neighbour, orderedRows, install };
