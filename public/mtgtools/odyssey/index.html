@@ -24,13 +24,13 @@
         window.OdysseyIncomingSyncKey = location.hash.slice(14);
         history.replaceState(null, '', location.pathname + location.search);
       }
-      const response = await fetch('./app.html?v=20260921-1', { cache: 'no-store' });
+      const response = await fetch('./app.html?v=20260921-2', { cache: 'no-store' });
       if (!response.ok) throw new Error('Studio source returned ' + response.status);
       let markup = await response.text();
       const transferScript = '<script src="./art-settings-transfer.js?v=20260918-4"><' + '/script>';
       const mobileStyle = '<link rel="stylesheet" href="./mobile-navigation.css?v=20260918-5">';
       const polishStyle = '<link rel="stylesheet" href="./studio-polish.css?v=20260919-8">';
-      markup = markup.replace('</head>', '<meta name="referrer" content="no-referrer"><link rel="stylesheet" href="./frame-system.css?v=20260918-2">' + transferScript + mobileStyle + polishStyle + '</head>');
+      markup = markup.replace('</head>', '<meta name="referrer" content="no-referrer"><link rel="stylesheet" href="./frame-system.css?v=20260921-2">' + transferScript + mobileStyle + polishStyle + '</head>');
       // Keep the canonical app/data intact. Scope only the four per-set state stores.
       const statePatches = [
         ["const STORAGE='odyssey-layout-overrides-v02';",
@@ -42,7 +42,7 @@
         if (!markup.includes(before)) throw new Error('Studio art-settings integration needs an update; saved settings have not been changed.');
         markup = markup.replace(before, after);
       }
-      const frameScript = '<script src="./frame-system.js?v=20260918-2"><' + '/script>';
+      const frameScript = '<script src="./frame-system.js?v=20260921-2"><' + '/script>';
       const artworkScript = '<script src="./artwork-tools.js?v=20260919-1"><' + '/script>';
       const transferMount = '<script>OdysseyArtTransfer.mount(ODYSSEY_ART_STATE);<' + '/script>';
       const mobileScript = '<script src="./mobile-navigation.js?v=20260918-5"><' + '/script>';
