@@ -1,9 +1,8 @@
 (function(root){
 "use strict";
-const VERSION="2.0";
+const VERSION="2.1";
 const API="/mtgtools/odyssey/api/review-notes";
 const CACHE_PREFIX="odyssey-studio-notes-v2";
-const KEY_STORE="odyssey-studio-notes-key-v1";
 let records={},loaded=false,queueDialog=null,composeDialog=null,activeContext="";
 
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
@@ -27,36 +26,8 @@ function appendEntry(existing,text,context,when){
   if(!body)return norm(existing);
   return [norm(existing),stamp+" — "+body].filter(Boolean).join("\n");
 }
-function randomKey(){
-  const bytes=crypto.getRandomValues(new Uint8Array(32));
-  return [...bytes].map(n=>n.toString(16).padStart(2,"0")).join("");
-}
-function acceptIncomingKey(){
-  try{
-    if(!location.hash.startsWith("#odyssey-notes="))return false;
-    const key=location.hash.slice(15);
-    if(!/^[a-f0-9]{64}$/.test(key))return false;
-    localStorage.setItem(KEY_STORE,key);
-    history.replaceState(null,"",location.pathname+location.search);
-    return true;
-  }catch(_){return false}
-}
-function writeKey(){
-  try{
-    let key=String(localStorage.getItem(KEY_STORE)||"").trim();
-    if(/^[a-f0-9]{64}$/.test(key))return key;
-    try{
-      const sync=JSON.parse(localStorage.getItem("odyssey-art-sync-v1")||"null");
-      if(sync&&/^[a-f0-9]{64}$/.test(String(sync.token||"")))key=sync.token;
-    }catch(_){}
-    if(!/^[a-f0-9]{64}$/.test(key))key=randomKey();
-    localStorage.setItem(KEY_STORE,key);
-    return key;
-  }catch(_){return randomKey()}
-}
 async function request(method,body){
-  const headers={};
-  if(body){headers["Content-Type"]="application/json";headers["X-Odyssey-Notes-Key"]=writeKey()}
+  const headers=body?{"Content-Type":"application/json"}:{};
   const response=await fetch(API,{method:method||"GET",cache:"no-store",credentials:"same-origin",referrerPolicy:"no-referrer",headers,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(16000)});
   const data=await response.json().catch(()=>({}));
   if(!response.ok)throw Error(data.error||("Notes service returned HTTP "+response.status+"."));
@@ -158,7 +129,11 @@ function renderQueue(){
   queueDialog.querySelectorAll("[data-note-open-card]").forEach(b=>b.onclick=()=>{queueDialog.close();selectCard(+b.dataset.noteOpenCard)});
 }
 function paintAll(){renderCurrent();updateRows();paintTop();renderQueue()}
-function message(text){if(root.toast)root.toast(text)}
+function message(text){
+  const status=document.getElementById("odNoteSaveStatus");
+  if(status)status.textContent=text;
+  if(root.toast)root.toast(text);
+}
 async function refreshNotes(button){
   setBusy(button,true,"Refreshing…");
   try{await refresh();message("Studio notes refreshed")}
@@ -169,8 +144,8 @@ async function saveSectionNote(){
   const input=document.getElementById("odNoteInput"),b=document.getElementById("odSaveNote");if(!input)return;
   const text=norm(input.value);if(!text)return message("Write a note first");
   setBusy(b,true,"Saving…");
-  try{await addNote(selected,text,"");input.value="";message("Note saved on Odyssey Studio")}
-  catch(error){message("Note not saved: "+(error.message||error))}
+  try{await addNote(selected,text,"");input.value="";message("Saved ✓ This note is now in the shared Odyssey queue.")}
+  catch(error){message("Save failed: "+(error.message||error))}
   finally{setBusy(b,false)}
 }
 async function resolveCurrent(){
@@ -178,11 +153,6 @@ async function resolveCurrent(){
   try{await resolveNote(selected);message("Card note marked resolved")}
   catch(error){message("Could not resolve note: "+(error.message||error))}
   finally{setBusy(b,false)}
-}
-async function pairDevice(){
-  const link=location.origin+location.pathname+"#odyssey-notes="+writeKey();
-  try{await navigator.clipboard.writeText(link);message("Private notes pairing link copied")}
-  catch(_){prompt("Copy this private notes pairing link:",link)}
 }
 function openQueue(){
   if(!queueDialog)return;queueDialog.showModal();renderQueue();
@@ -205,7 +175,7 @@ async function saveComposer(){
 }
 function mount(){
   if(root.OdysseyReviewNotesMounted||typeof document==="undefined"||typeof model!=="function")return;
-  root.OdysseyReviewNotesMounted=true;style();acceptIncomingKey();loadCache();
+  root.OdysseyReviewNotesMounted=true;style();loadCache();
 
   const top=document.querySelector(".top-actions")||document.querySelector(".topbar");
   if(top){const q=document.createElement("button");q.type="button";q.className="btn secondary";q.id="odNotesQueue";q.onclick=openQueue;top.appendChild(q)}
@@ -215,7 +185,7 @@ function mount(){
   const pane=document.getElementById("pane-card");
   if(pane){
     const section=document.createElement("div");section.className="section od-note-section";
-    section.innerHTML='<h3>Studio review notes</h3><div id="odNoteCurrent"></div><textarea id="odNoteInput" maxlength="4000" placeholder="Leave a note for the next design pass…"></textarea><div class="od-note-actions"><button class="btn small" id="odSaveNote">Save note</button><button class="btn secondary small" id="odResolveNote">Resolve</button><button class="btn secondary small" id="odRefreshNotes">Refresh notes</button></div><div class="od-note-sync-state">Notes are stored directly by Odyssey Studio. No Google authorization is required.</div>';
+    section.innerHTML='<h3>Studio review notes</h3><div id="odNoteCurrent"></div><textarea id="odNoteInput" maxlength="4000" placeholder="Leave a note for the next design pass…"></textarea><div class="od-note-actions"><button class="btn small" id="odSaveNote">Save note</button><button class="btn secondary small" id="odResolveNote">Resolve</button><button class="btn secondary small" id="odRefreshNotes">Refresh</button></div><div id="odNoteSaveStatus" class="od-note-sync-state">Type a note and press Save note. It is stored on Odyssey Studio immediately — no Google login, OAuth ID, or pairing step.</div>';
     pane.appendChild(section);
     document.getElementById("odSaveNote").onclick=saveSectionNote;
     document.getElementById("odResolveNote").onclick=resolveCurrent;
@@ -223,10 +193,9 @@ function mount(){
   }
 
   queueDialog=document.createElement("dialog");queueDialog.className="od-note-dialog";
-  queueDialog.innerHTML='<div class="od-note-head"><h2>Open Studio notes</h2><div class="grow"></div><button class="btn secondary small" data-note-pair>Pair device</button><button class="btn secondary small" data-note-refresh>Refresh</button><button class="btn secondary small" data-note-close>Close</button></div><div class="od-note-body" data-note-list></div>';
+  queueDialog.innerHTML='<div class="od-note-head"><h2>Open Studio notes</h2><div class="grow"></div><button class="btn secondary small" data-note-refresh>Refresh</button><button class="btn secondary small" data-note-close>Close</button></div><div class="od-note-body"><div class="od-note-sync-state">Shared project queue. Notes saved from phone or desktop appear here automatically.</div><div data-note-list></div></div>';
   document.body.appendChild(queueDialog);
   queueDialog.querySelector("[data-note-close]").onclick=()=>queueDialog.close();
-  queueDialog.querySelector("[data-note-pair]").onclick=pairDevice;
   queueDialog.querySelector("[data-note-refresh]").onclick=e=>refreshNotes(e.currentTarget);
 
   composeDialog=document.createElement("dialog");composeDialog.className="od-note-dialog od-note-compose";
@@ -241,7 +210,7 @@ function mount(){
   refresh().catch(()=>{});
   root.addEventListener("focus",()=>refresh().catch(()=>{}));
 }
-const apiObject={VERSION,API,appendEntry,openCount:()=>openCount(),noteFor,refresh,addNote,resolveNote,openQueue,compose:openComposer,acceptIncomingKey,mount};
+const apiObject={VERSION,API,appendEntry,openCount:()=>openCount(),noteFor,refresh,addNote,resolveNote,openQueue,compose:openComposer,mount};
 if(typeof module!=="undefined"&&module.exports)module.exports=apiObject;
 root.OdysseyReviewNotes=apiObject;
 if(typeof document!=="undefined"){if(document.readyState==="complete")setTimeout(mount,0);else root.addEventListener("load",()=>setTimeout(mount,0),{once:true})}
