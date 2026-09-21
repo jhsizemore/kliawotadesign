@@ -72,8 +72,8 @@ test('Studio loads site-backed notes and large media previews without Sheet OAut
  const fs=require('node:fs'),path=require('node:path');
  const app=fs.readFileSync(path.join(__dirname,'..','public/mtgtools/odyssey/app.html'),'utf8');
  const notes=fs.readFileSync(path.join(__dirname,'..','public/mtgtools/odyssey/review-notes.js'),'utf8');
- assert.match(app,/review-notes\.js\?v=20260921-3/);assert.match(app,/media-preview\.js/);
- assert.match(notes,/api\/review-notes/);assert.doesNotMatch(notes,/OdysseySheetEditor|sheets\.googleapis|Studio Notes.*AK/);
+ assert.match(app,/review-notes\.js\?v=20260921-4/);assert.match(app,/media-preview\.js/);
+ assert.match(notes,/api\/review-notes/);assert.doesNotMatch(notes,/OdysseySheetEditor|sheets\.googleapis|Studio Notes.*AK|Pair device|X-Odyssey-Notes-Key/);
 });
 test('large preview can resolve Scryfall-backed reference records',()=>{
  const media=require('../public/mtgtools/odyssey/media-preview.js');
@@ -82,16 +82,16 @@ test('large preview can resolve Scryfall-backed reference records',()=>{
  delete global.ODYSSEY_CARD_REFERENCES;
 });
 
-test('site-backed review notes persist without Google OAuth and keep writes private',async()=>{
+test('site-backed review notes persist without Google OAuth, keys or pairing',async()=>{
  const {handleSync,OdysseyArtWorkspace}=await import('../src/odyssey-sync.mjs');
  const map=new Map(),env={ODYSSEY_ART_SYNC:{idFromName:x=>x,get(id){if(!map.has(id))map.set(id,new OdysseyArtWorkspace({storage:new Storage()}));return map.get(id)}}};
- const url='https://example.com/mtgtools/odyssey/api/review-notes',key='c'.repeat(64),wrong='d'.repeat(64);
+ const url='https://example.com/mtgtools/odyssey/api/review-notes';
  const get=()=>handleSync(new Request(url),env);
- const post=(k,body)=>handleSync(new Request(url,{method:'POST',headers:{'Content-Type':'application/json','X-Odyssey-Notes-Key':k},body:JSON.stringify(body)}),env);
+ const post=body=>handleSync(new Request(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),env);
  let r=await get();assert.equal(r.status,200);assert.deepEqual((await r.json()).notes,[]);
- r=await post(key,{action:'append',datasetVersion:'analysis-candidate-v2',cardId:'ODY-001',number:1,name:'Card 1',text:'Tune this card',context:'Mechanics'});
+ r=await post({action:'append',datasetVersion:'analysis-candidate-v2',cardId:'ODY-001',number:1,name:'Card 1',text:'Tune this card',context:'Mechanics'});
  assert.equal(r.status,200);let body=await r.json();assert.equal(body.note.status,'OPEN');assert.equal(body.note.entries[0].text,'Tune this card');
  r=await get();body=await r.json();assert.equal(body.notes.length,1);assert.equal(body.notes[0].entries[0].context,'Mechanics');
- r=await post(wrong,{action:'status',datasetVersion:'analysis-candidate-v2',cardId:'ODY-001',number:1,name:'Card 1',status:'RESOLVED'});assert.equal(r.status,403);
- r=await post(key,{action:'status',datasetVersion:'analysis-candidate-v2',cardId:'ODY-001',number:1,name:'Card 1',status:'RESOLVED'});assert.equal(r.status,200);assert.equal((await r.json()).note.status,'RESOLVED');
+ r=await post({action:'status',datasetVersion:'analysis-candidate-v2',cardId:'ODY-001',number:1,name:'Card 1',status:'RESOLVED'});assert.equal(r.status,200);assert.equal((await r.json()).note.status,'RESOLVED');
+ assert.equal((await handleSync(new Request(url,{method:'POST',headers:{Origin:'https://evil.test','Content-Type':'application/json'},body:JSON.stringify({action:'append',datasetVersion:'analysis-candidate-v2',cardId:'ODY-001',number:1,name:'Card 1',text:'bad'})}),env)).status,403);
 });
