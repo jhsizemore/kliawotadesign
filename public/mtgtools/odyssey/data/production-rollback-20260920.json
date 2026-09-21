@@ -1,0 +1,8 @@
+{
+  "schema": "odyssey-production-rollback/v1",
+  "capturedAt": "2026-09-21T04:25:00Z",
+  "priorDatasetVersion": "2026-09-20.1",
+  "priorBlobSha": "ac893d9424df8e0fef738a4412b18ffc8aa43b88",
+  "productionPath": "public/mtgtools/odyssey/data/odyssey-data.js",
+  "note": "Rollback marker for Candidate 2 production cutover. Restore this blob at the production path if needed."
+}
