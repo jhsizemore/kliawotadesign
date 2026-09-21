@@ -53,7 +53,7 @@ jobs:
 
       - name: Commit refreshed preview
         run: |
-          if git diff --quiet -- public/portvilasandbox/assets/loader-preview.png; then
+          if [ -z "$(git status --porcelain -- public/portvilasandbox/assets/loader-preview.png)" ]; then
             echo "Preview unchanged."
             exit 0
           fi
