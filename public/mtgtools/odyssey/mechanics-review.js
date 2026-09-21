@@ -9,6 +9,13 @@
   const storageKey=()=>`odyssey-mechanics-verification-v1:${datasetId()}`;
   let state={schema:'odyssey-mechanics-verification/v1',datasetVersion:datasetId(),startedAt:null,updatedAt:null,decisions:{}};
   let currentNumber=null, drag=null, lastOption=null;
+  const ORDEAL_PLAN={
+    93:{name:'Ordeal of the Bow',cost:'{1}{W}',payoff:'Create two 1/1 white Human Sailor creature tokens.',theme:'loyal household / crew'},
+    17:{name:'Ordeal of the Sirens',cost:'{1}{U}',payoff:'Manifest fate.',theme:'Manifest Fate / exile'},
+    280:{name:'Ordeal of the Dead',cost:'{1}{B}',payoff:'Return up to two target creature cards from your graveyard to your hand.',theme:'graveyard / cards leaving graveyards'},
+    282:{name:'Ordeal of the Narrow Sea',cost:'{1}{R}',payoff:'Exile the top two cards of your library. You may play them until the end of your next turn.',theme:'cast from exile'},
+    166:{name:'Ordeal of the Cyclops',cost:'{1}{G}',payoff:'Search your library for a basic land card, put it onto the battlefield tapped, then shuffle. Create a Food token.',theme:'Food / journey ramp'}
+  };
 
   function load(){
     try{
@@ -78,7 +85,7 @@
     return {label:'set theme',direction:'give it a clearer set-theme job',id:'theme'};
   }
   function optionsFor(n){
-    const m=model(n), theme=detectTheme(m), role=String(m.archetypes||'').trim();
+    const m=model(n), theme=detectTheme(m), role=String(m.archetypes||'').trim(), ordeal=ORDEAL_PLAN[n];
     const out=[
       {id:'keep',title:'Keep',detail:'Mechanics read correctly as written.'},
       {id:'wording',title:'Exact wording',detail:'Keep the design; specify the rules text directly.',editor:true},
@@ -87,8 +94,12 @@
       {id:'push-'+theme.id,title:'Push '+theme.label,detail:'Keep the slot and '+theme.direction+'.',dynamic:true},
       {id:'rebuild',title:'Rebuild',detail:role?'Rebuild while preserving its draft role: '+role+'.':'The slot is useful, but this mechanical execution should be replaced.'}
     ];
-    if(String(m.origin||'').toUpperCase().includes('REPRINT')){
+    if(ordeal){
+      out[4]={id:'replace-ordeal',title:'Replace → '+ordeal.name,detail:ordeal.cost+' Aura · three Survival-timing trials · payoff: '+ordeal.payoff+' Theme: '+ordeal.theme+'.',dynamic:true};
+    }else if(String(m.origin||'').toUpperCase().includes('REPRINT')){
       out[4]={id:'preserve-reprint',title:'Preserve reprint',detail:'Keep Oracle function intact; solve flavour through name, art or treatment.',dynamic:true};
+    }else if(/\bsurvival\b/i.test((m.mechanics||'')+' '+(m.rules||''))&&!/\bSurvivor\b/.test(m.type||'')){
+      out[4]={id:'survivor-identity',title:'Survivor identity',detail:'Keep Survival, but add Survivor to the creature type and make the payoff the card’s clearest job.',dynamic:true};
     }
     return out;
   }
