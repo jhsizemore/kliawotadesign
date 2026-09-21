@@ -23,7 +23,7 @@ test('edit during upload remains pending after exact acknowledgement',()=>{const
 test('independent cards and dataset scopes merge',()=>{const other='analysis-candidate-v1:card:ODY-001';const r=core.reconcile({}, {[key]:{zoom:2}},{[other]:{revision:1,value:{zoom:3}}});assert.equal(r.pending.length,1);assert.equal(r.local[other].zoom,3);assert.equal(r.conflicts.length,0)});
 test('duplicate or oversized batches fail atomically',()=>{const change={key,baseRevision:0,value:{zoom:2}};assert.throws(()=>core.applyChanges({},[change,change]));assert.throws(()=>core.applyChanges({},Array(65).fill(change)))});
 test('storage failure rolls back all previously written stores',()=>{let data={a:'1',b:'2'},failed=false;const storage={getItem:k=>data[k]??null,removeItem:k=>delete data[k],setItem(k,v){if(k==='b'&&!failed){failed=true;throw new Error('full')}data[k]=v}};assert.throws(()=>sync.writeBatch(storage,{a:3,b:4}));assert.deepEqual(data,{a:'1',b:'2'})});
-class Storage{constructor(){this.map=new Map()}async get(k){return this.map.get(k)}async put(k,v){this.map.set(k,structuredClone(v))}async list({prefix}){return new Map([...this.map].filter(([k])=>k.startsWith(prefix)))}async transaction(fn){const old=structuredClone(this.map);try{return await fn(this)}catch(e){this.map=old;throw e}}}
+class Storage{constructor(){this.map=new Map()}async get(k){return this.map.get(k)}async put(k,v){this.map.set(k,structuredClone(v))}async delete(k){this.map.delete(k)}async list({prefix}){return new Map([...this.map].filter(([k])=>k.startsWith(prefix)))}async transaction(fn){const old=structuredClone(this.map);try{return await fn(this)}catch(e){this.map=old;throw e}}}
 const endpoint='https://example.com/mtgtools/odyssey/api/art-sync';
 test('backend persistence, auth, isolation and validation',async()=>{
  const {handleSync,OdysseyArtWorkspace}=await import('../src/odyssey-sync.mjs');const map=new Map();const env={ODYSSEY_ART_SYNC:{idFromName:x=>x,get(id){if(!map.has(id))map.set(id,new OdysseyArtWorkspace({storage:new Storage()}));return map.get(id)}}};
@@ -72,8 +72,8 @@ test('Studio loads site-backed notes and large media previews without Sheet OAut
  const fs=require('node:fs'),path=require('node:path');
  const app=fs.readFileSync(path.join(__dirname,'..','public/mtgtools/odyssey/app.html'),'utf8');
  const notes=fs.readFileSync(path.join(__dirname,'..','public/mtgtools/odyssey/review-notes.js'),'utf8');
- assert.match(app,/review-notes\.js\?v=20260921-5/);assert.match(app,/media-preview\.js/);
- assert.match(notes,/api\/review-notes/);assert.doesNotMatch(notes,/OdysseySheetEditor|sheets\.googleapis|Studio Notes.*AK|Pair device|X-Odyssey-Notes-Key/);
+ assert.match(app,/review-notes\.js\?v=20260921-7/);assert.match(app,/media-preview\.js/);
+ assert.match(notes,/api\/review-notes/);assert.match(notes,/data-note-add-current/);assert.match(notes,/Saved ✓ This note is now in the shared Odyssey queue/);assert.doesNotMatch(notes,/OdysseySheetEditor|sheets\.googleapis|Studio Notes.*AK|Pair device|X-Odyssey-Notes-Key/);
 });
 test('large preview can resolve Scryfall-backed reference records',()=>{
  const media=require('../public/mtgtools/odyssey/media-preview.js');
@@ -93,5 +93,6 @@ test('site-backed review notes persist without Google OAuth, keys or pairing',as
  assert.equal(r.status,200);let body=await r.json();assert.equal(body.note.status,'OPEN');assert.equal(body.note.entries[0].text,'Tune this card');
  r=await get();body=await r.json();assert.equal(body.notes.length,1);assert.equal(body.notes[0].entries[0].context,'Mechanics');
  r=await post({action:'status',datasetVersion:'analysis-candidate-v2',cardId:'ODY-001',number:1,name:'Card 1',status:'RESOLVED'});assert.equal(r.status,200);assert.equal((await r.json()).note.status,'RESOLVED');
+ r=await post({action:'probe'});assert.equal(r.status,200);assert.equal((await r.json()).probe,true);
  assert.equal((await handleSync(new Request(url,{method:'POST',headers:{Origin:'https://evil.test','Content-Type':'application/json'},body:JSON.stringify({action:'append',datasetVersion:'analysis-candidate-v2',cardId:'ODY-001',number:1,name:'Card 1',text:'bad'})}),env)).status,403);
 });
