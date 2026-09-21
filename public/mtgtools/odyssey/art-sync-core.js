@@ -9,7 +9,7 @@
   const canonical = o => Array.isArray(o) ? o.map(canonical) : object(o) ? Object.fromEntries(Object.keys(o).sort().map(k => [k,canonical(o[k])])) : o ?? null;
   const stable = o => JSON.stringify(canonical(o));
   const equal = (a,b) => stable(a) === stable(b);
-  function validKey(key) { return typeof key === 'string' && /^(?:current|analysis-candidate-v1):(?:card:[A-Za-z0-9_.-]{1,100}|crop:[A-Za-z0-9_.| -]{1,180})$/.test(key); }
+  function validKey(key) { return typeof key === 'string' && /^(?:current|analysis-candidate-v1|analysis-candidate-v2):(?:card:[A-Za-z0-9_.-]{1,100}|crop:[A-Za-z0-9_.| -]{1,180})$/.test(key); }
   function validValue(key, value) {
     if (!validKey(key)) return false;
     if (value === null) return true;
