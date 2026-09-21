@@ -88,40 +88,6 @@ jobs:
           fs.writeFileSync('/tmp/odyssey-production-check/review-notes.json',JSON.stringify({capturedAt:new Date().toISOString(),notes:data.notes},null,2));
           console.log('Captured '+data.notes.length+' Odyssey review-note record(s).');
           NODE
-      - name: Resolve actioned Odyssey Studio notes
-        run: |
-          node --input-type=module <<'NODE'
-          const url='https://kliawota.design/mtgtools/odyssey/api/review-notes';
-          const target=new Set(['ODY-001','ODY-004','ODY-005','ODY-006','ODY-008','ODY-009','ODY-010','ODY-013','ODY-014','ODY-015']);
-          const get=async()=>{
-            const response=await fetch(url,{signal:AbortSignal.timeout(15000)});
-            if(!response.ok)throw new Error('Review notes returned HTTP '+response.status);
-            return response.json();
-          };
-          const before=await get();
-          const rows=(before.notes||[]).filter(n=>target.has(n.cardId)&&n.datasetVersion==='2026-09-21.2');
-          for(const note of rows.filter(n=>n.status==='OPEN')){
-            const response=await fetch(url,{
-              method:'POST',
-              headers:{'Content-Type':'application/json'},
-              body:JSON.stringify({
-                action:'status',status:'RESOLVED',
-                datasetVersion:note.datasetVersion,
-                cardId:note.cardId,
-                number:note.number,
-                name:note.name
-              }),
-              signal:AbortSignal.timeout(15000)
-            });
-            if(!response.ok)throw new Error('Could not resolve '+note.cardId+': HTTP '+response.status);
-          }
-          const after=await get();
-          const remaining=(after.notes||[]).filter(n=>target.has(n.cardId)&&n.datasetVersion==='2026-09-21.2'&&n.status==='OPEN');
-          const seen=new Set((after.notes||[]).filter(n=>target.has(n.cardId)&&n.datasetVersion==='2026-09-21.2').map(n=>n.cardId));
-          const missing=[...target].filter(id=>!seen.has(id));
-          console.log(JSON.stringify({matched:seen.size,resolved:rows.filter(n=>n.status==='OPEN').length,remaining:remaining.map(n=>n.cardId),missing},null,2));
-          if(remaining.length||missing.length)process.exitCode=1;
-          NODE
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
