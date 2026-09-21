@@ -1,6 +1,6 @@
 (function(root){
 "use strict";
-var SHEET_ID="1RtYrpZq3NuBZz4jbalJSYZysNN_bHQyqMPfqb4AV66Q",SHEET_NAME="Card File v1.0 Candidate",CLIENT_KEY="odyssey-google-oauth-client-v1",BASELINE_KEY="odyssey-sheet-push-baseline-v1";
+var SHEET_ID="1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE",SHEET_NAME="Card File v1.0 Candidate",CLIENT_KEY="odyssey-google-oauth-client-v1",BASELINE_KEY="odyssey-sheet-push-baseline-v2-14A2";
 var HEADERS=["#","Name","Mana Cost","MV","Color","Type","P/T","Rarity","Origin","Mechanics","Rules / Playtest Text","Archetypes","Story / Book","Status","Odyssey Display Name","Underlying Oracle Name","Treatment","Primary Art ID","Art Credit","Art Source URL","Skeleton Class","Cycle IDs","Showcase Programs","Product Layer","Single-Face Special Plan","Signpost Pair","Functional Words","Change Status","Narrative Era","Story Target","Retheme Required","Story Source Band","Art Review Required","Flavour Story Element","Flavour Match /5","Flavour Rationale"];
 var FIELDS=[
 ["Name","name","Identity","text"],["Mana Cost","mana","Identity","text"],["MV","mv","Identity","number"],["Color","color","Identity","text"],["Type","type","Identity","text"],["P/T","pt","Identity","text"],["Rarity","rarity","Identity","select:C,U,R,M"],["Origin","originFull","Identity","select:New,Reprint"],["Status","status","Identity","select:PROTOTYPE,REPRINT TEST,KEEP,CUT,REVISE"],["Odyssey Display Name","displayName","Identity","text"],["Underlying Oracle Name","underlyingName","Identity","text"],["Treatment","treatment","Identity","text"],
