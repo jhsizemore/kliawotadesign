@@ -27,7 +27,7 @@
       const response = await fetch('./app.html?v=20260921-3', { cache: 'no-store' });
       if (!response.ok) throw new Error('Studio source returned ' + response.status);
       let markup = await response.text();
-      const transferScript = '<script src="./art-settings-transfer.js?v=20260921-1"><' + '/script>';
+      const transferScript = '<script src="./art-settings-transfer.js?v=20260921-2"><' + '/script>';
       const mobileStyle = '<link rel="stylesheet" href="./mobile-navigation.css?v=20260918-5">';
       const polishStyle = '<link rel="stylesheet" href="./studio-polish.css?v=20260919-8">';
       markup = markup.replace('</head>', '<meta name="referrer" content="no-referrer"><link rel="stylesheet" href="./frame-system.css?v=20260921-2">' + transferScript + mobileStyle + polishStyle + '</head>');
