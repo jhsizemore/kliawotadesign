@@ -9,7 +9,7 @@
     'kind-enchantment-creature', 'kind-planeswalker', 'kind-token',
     'kind-adventure', 'kind-prepare', 'kind-battle', 'kind-saga',
     'kind-vehicle', 'trait-equipment', 'trait-food', 'trait-god',
-    'trait-aura', 'trait-legendary'
+    'trait-aura', 'trait-legendary', 'trait-transform'
   ];
 
   function frontType(model) {
@@ -44,8 +44,10 @@
 
   function frameTraits(model) {
     const type = frontType(model);
+    const layout = String(model.layout || 'standard').toLowerCase();
     const traits = [];
     if (isLegendary(model)) traits.push('legendary');
+    if (layout === 'transform') traits.push('transform');
     if (/\bEquipment\b/i.test(type)) traits.push('equipment');
     if (/\bFood\b/i.test(type)) traits.push('food');
     if (/\bGod\b/i.test(type)) traits.push('god');
@@ -85,7 +87,7 @@
     const rules = card.querySelector('.rules');
     const main = rules?.querySelector('.rule-main');
     if (!main || main.querySelector('.saga-chapters')) return;
-    const source = String(model.rules || '').trim();
+    const source = String(model.rules || '').split('//BACK//')[0].trim();
     const markers = [...source.matchAll(/(?:^|\s)(IV|V|III|II|I)\s*[—-]\s*/g)];
     if (!markers.length) return;
     const chapters = markers.map((match, index) => {
@@ -114,7 +116,7 @@
     const mark = document.createElement('span');
     mark.className = 'special-kind-mark';
     mark.setAttribute('aria-hidden', 'true');
-    mark.textContent = family === 'adventure' ? 'A' : family === 'prepare' ? 'P' : family === 'battle' ? '↻' : '';
+    mark.textContent = family === 'adventure' ? 'A' : family === 'prepare' ? 'P' : family === 'battle' ? '↻' : family === 'transform' ? '↺' : '';
     box.prepend(mark);
   }
 
@@ -132,6 +134,7 @@
     if (family === 'adventure' || family === 'prepare' || family === 'battle') {
       decorateSpecialInset(card, family);
     }
+    if (traits.includes('transform')) decorateSpecialInset(card, 'transform');
     return card;
   }
 
@@ -180,6 +183,7 @@
       prepare: 'Prepared split frame',
       battle: 'Battle — landscape',
       saga: 'Saga — story panel',
+      transform: 'Transform — front/back proxy',
       vehicle: 'Vehicle — artifact frame'
     };
     const select = document.getElementById('fLayout');
