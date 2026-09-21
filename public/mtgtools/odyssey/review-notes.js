@@ -11,6 +11,9 @@ function datasetTag(){try{return String(ODYSSEY_DATASET&&ODYSSEY_DATASET.dataset
 function cacheKey(){return CACHE_PREFIX+"::"+datasetTag()}
 function saveCache(){try{localStorage.setItem(cacheKey(),JSON.stringify({savedAt:new Date().toISOString(),records}))}catch(_){}}
 function loadCache(){try{const x=JSON.parse(localStorage.getItem(cacheKey())||"null");if(x&&x.records&&typeof x.records==="object")records=x.records}catch(_){}}
+function clearLegacyPairingHash(){
+  try{if(location.hash.startsWith("#odyssey-notes="))history.replaceState(null,"",location.pathname+location.search)}catch(_){}
+}
 function cardBase(n){try{return baseCard(n)||{}}catch(_){return{}}}
 function cardId(n){const b=cardBase(n);return String(b.id||("ODY-"+String(n).padStart(3,"0")))}
 function cardName(n){try{return model(n).displayName||cardBase(n).name||("Card "+n)}catch(_){return cardBase(n).name||("Card "+n)}}
@@ -175,7 +178,7 @@ async function saveComposer(){
 }
 function mount(){
   if(root.OdysseyReviewNotesMounted||typeof document==="undefined"||typeof model!=="function")return;
-  root.OdysseyReviewNotesMounted=true;style();loadCache();
+  root.OdysseyReviewNotesMounted=true;style();clearLegacyPairingHash();loadCache();
 
   const top=document.querySelector(".top-actions")||document.querySelector(".topbar");
   if(top){const q=document.createElement("button");q.type="button";q.className="btn secondary";q.id="odNotesQueue";q.onclick=openQueue;top.appendChild(q)}
@@ -210,7 +213,7 @@ function mount(){
   refresh().catch(()=>{});
   root.addEventListener("focus",()=>refresh().catch(()=>{}));
 }
-const apiObject={VERSION,API,appendEntry,openCount:()=>openCount(),noteFor,refresh,addNote,resolveNote,openQueue,compose:openComposer,mount};
+const apiObject={VERSION,API,appendEntry,openCount:()=>openCount(),noteFor,refresh,addNote,resolveNote,openQueue,compose:openComposer,clearLegacyPairingHash,mount};
 if(typeof module!=="undefined"&&module.exports)module.exports=apiObject;
 root.OdysseyReviewNotes=apiObject;
 if(typeof document!=="undefined"){if(document.readyState==="complete")setTimeout(mount,0);else root.addEventListener("load",()=>setTimeout(mount,0),{once:true})}
