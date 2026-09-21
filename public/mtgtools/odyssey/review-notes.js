@@ -1,10 +1,10 @@
 (function(root){
 "use strict";
-const VERSION="1.0";
-const NOTE_COL="AK",STATUS_COL="AL",UPDATED_COL="AM";
-const NOTE_HEADER="Studio Notes",STATUS_HEADER="Studio Note Status",UPDATED_HEADER="Studio Note Updated";
-const CACHE_PREFIX="odyssey-studio-notes-v1";
-let records={},loaded=false,token="",queueDialog=null,composeDialog=null,activeContext="";
+const VERSION="2.0";
+const API="/mtgtools/odyssey/api/review-notes";
+const CACHE_PREFIX="odyssey-studio-notes-v2";
+const KEY_STORE="odyssey-studio-notes-key-v1";
+let records={},loaded=false,queueDialog=null,composeDialog=null,activeContext="";
 
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function norm(s){return String(s==null?"":s).replace(/\r\n?/g,"\n").trim()}
@@ -12,81 +12,83 @@ function datasetTag(){try{return String(ODYSSEY_DATASET&&ODYSSEY_DATASET.dataset
 function cacheKey(){return CACHE_PREFIX+"::"+datasetTag()}
 function saveCache(){try{localStorage.setItem(cacheKey(),JSON.stringify({savedAt:new Date().toISOString(),records}))}catch(_){}}
 function loadCache(){try{const x=JSON.parse(localStorage.getItem(cacheKey())||"null");if(x&&x.records&&typeof x.records==="object")records=x.records}catch(_){}}
-function editor(){return root.OdysseySheetEditor}
-function quoted(name){return "'"+String(name||"").replace(/'/g,"''")+"'"}
-function a1(range){return quoted(editor().SHEET_NAME)+"!"+range}
-function openCount(){return Object.values(records).filter(r=>r&&r.status==="OPEN"&&norm(r.note)).length}
-function cardName(n){try{return model(n).displayName||baseCard(n).name||("Card "+n)}catch(_){return"Card "+n}}
-function sourceName(n){try{return baseCard(n).name||""}catch(_){return""}}
-function rowMatches(n,r){return !!r&&norm(r.sheetName).toLowerCase()===norm(sourceName(n)).toLowerCase()}
+function cardBase(n){try{return baseCard(n)||{}}catch(_){return{}}}
+function cardId(n){const b=cardBase(n);return String(b.id||("ODY-"+String(n).padStart(3,"0")))}
+function cardName(n){try{return model(n).displayName||cardBase(n).name||("Card "+n)}catch(_){return cardBase(n).name||("Card "+n)}}
+function openCount(){return Object.values(records).filter(r=>r&&r.status==="OPEN"&&Array.isArray(r.entries)&&r.entries.length).length}
+function noteFor(n){return records[n]||null}
+function noteText(r){
+  if(!r||!Array.isArray(r.entries))return"";
+  return r.entries.map(e=>[norm(e.at),[norm(e.context),norm(e.text)].filter(Boolean).join(" — ")].filter(Boolean).join(" — ")).join("\n");
+}
 function appendEntry(existing,text,context,when){
   const stamp=(when||new Date()).toISOString();
   const body=[norm(context),norm(text)].filter(Boolean).join(" — ");
   if(!body)return norm(existing);
   return [norm(existing),stamp+" — "+body].filter(Boolean).join("\n");
 }
-function noteFor(n){return records[n]||null}
-
-async function getToken(){
-  if(token)return token;
-  const e=editor();
-  if(!e||typeof e.auth!=="function")throw Error("Odyssey Sheet connection is unavailable.");
-  token=await e.auth();
-  return token;
+function randomKey(){
+  const bytes=crypto.getRandomValues(new Uint8Array(32));
+  return [...bytes].map(n=>n.toString(16).padStart(2,"0")).join("");
 }
-async function sheetApi(path,opt){
-  const e=editor();
-  if(!e||typeof e.api!=="function")throw Error("Odyssey Sheet connection is unavailable.");
-  try{return await e.api(path,opt||{},await getToken())}
-  catch(error){if(/expired|401|authoriz/i.test(String(error&&error.message||error)))token="";throw error}
+function writeKey(){
+  try{
+    let key=String(localStorage.getItem(KEY_STORE)||"").trim();
+    if(/^[a-f0-9]{64}$/.test(key))return key;
+    try{
+      const sync=JSON.parse(localStorage.getItem("odyssey-art-sync-v1")||"null");
+      if(sync&&/^[a-f0-9]{64}$/.test(String(sync.token||"")))key=sync.token;
+    }catch(_){}
+    if(!/^[a-f0-9]{64}$/.test(key))key=randomKey();
+    localStorage.setItem(KEY_STORE,key);
+    return key;
+  }catch(_){return randomKey()}
 }
-function validateHeaders(values){
-  const h=(values&&values[0])||[];
-  if(norm(h[0])!==NOTE_HEADER||norm(h[1])!==STATUS_HEADER||norm(h[2])!==UPDATED_HEADER)throw Error("Studio note columns on 14A2 no longer match the expected layout.");
+async function request(method,body){
+  const headers={};
+  if(body){headers["Content-Type"]="application/json";headers["X-Odyssey-Notes-Key"]=writeKey()}
+  const response=await fetch(API,{method:method||"GET",cache:"no-store",credentials:"same-origin",referrerPolicy:"no-referrer",headers,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(16000)});
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok)throw Error(data.error||("Notes service returned HTTP "+response.status+"."));
+  if(data.schema!=="odyssey-review-notes/v1")throw Error("Unexpected notes response.");
+  return data;
+}
+function normalizeRecord(r){
+  return {
+    datasetVersion:norm(r.datasetVersion),
+    cardId:norm(r.cardId),
+    number:Number(r.number)||0,
+    name:norm(r.name),
+    status:r.status==="RESOLVED"?"RESOLVED":"OPEN",
+    entries:Array.isArray(r.entries)?r.entries.map(e=>({at:norm(e.at),text:norm(e.text),context:norm(e.context)})).filter(e=>e.text):[],
+    createdAt:norm(r.createdAt),
+    updatedAt:norm(r.updatedAt)
+  };
 }
 async function refresh(){
-  const e=editor();
-  if(!e||!e.SHEET_NAME)throw Error("Odyssey Sheet connection is unavailable.");
-  const idRange=a1("A1:B310"),noteRange=a1(NOTE_COL+"1:"+UPDATED_COL+"310");
-  const path="/values:batchGet?majorDimension=ROWS&valueRenderOption=UNFORMATTED_VALUE&ranges="+encodeURIComponent(idRange)+"&ranges="+encodeURIComponent(noteRange);
-  const data=await sheetApi(path,{method:"GET"});
-  const identity=data.valueRanges&&data.valueRanges[0]&&data.valueRanges[0].values||[];
-  const noteRows=data.valueRanges&&data.valueRanges[1]&&data.valueRanges[1].values||[];
-  validateHeaders(noteRows);
-  const next={};
-  for(let i=1;i<identity.length;i++){
-    const row=identity[i]||[],n=Number(row[0]);
-    if(!Number.isInteger(n)||n<1)continue;
-    const nr=noteRows[i]||[];
-    next[n]={row:i+1,sheetName:norm(row[1]),note:norm(nr[0]),status:norm(nr[1]),updated:norm(nr[2])};
-  }
+  const data=await request("GET");
+  const tag=datasetTag(),next={};
+  (data.notes||[]).forEach(raw=>{
+    const r=normalizeRecord(raw);
+    if(r.datasetVersion!==tag||!r.number)return;
+    next[r.number]=r;
+  });
   records=next;loaded=true;saveCache();paintAll();return records;
 }
-async function ensureRow(n){
-  if(!loaded||!records[n]||!records[n].row)await refresh();
-  const r=records[n];
-  if(!r||!r.row)throw Error("Could not locate card "+n+" in 14A2.");
-  if(!rowMatches(n,r))throw Error("Card "+String(n).padStart(3,"0")+" does not match the 14A2 row identity. Nothing was written.");
-  return r;
-}
-async function write(n,note,status){
-  const r=await ensureRow(n),updated=new Date().toISOString(),range=a1(NOTE_COL+r.row+":"+UPDATED_COL+r.row);
-  const body={valueInputOption:"RAW",includeValuesInResponse:true,data:[{range:range,majorDimension:"ROWS",values:[[note,status,updated]]}]};
-  await sheetApi("/values:batchUpdate",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-  const check=await sheetApi("/values/"+encodeURIComponent(range)+"?majorDimension=ROWS&valueRenderOption=UNFORMATTED_VALUE",{method:"GET"});
-  const row=(check.values&&check.values[0])||[];
-  if(norm(row[0])!==norm(note)||norm(row[1])!==norm(status)||norm(row[2])!==norm(updated))throw Error("The note write could not be verified.");
-  records[n]=Object.assign({},r,{note:norm(note),status:norm(status),updated:updated});saveCache();paintAll();return records[n];
+function actionBase(n){
+  return {datasetVersion:datasetTag(),cardId:cardId(n),number:Number(n),name:cardName(n)};
 }
 async function addNote(n,text,context){
-  const r=await ensureRow(n),next=appendEntry(r.note,text,context,new Date());
-  if(next===norm(r.note))throw Error("Write a note first.");
-  return write(n,next,"OPEN");
+  text=norm(text);context=norm(context);
+  if(!text)throw Error("Write a note first.");
+  const data=await request("POST",Object.assign(actionBase(n),{action:"append",text,context}));
+  records[n]=normalizeRecord(data.note);loaded=true;saveCache();paintAll();return records[n];
 }
 async function resolveNote(n){
-  const r=await ensureRow(n);
-  if(!norm(r.note))throw Error("This card has no note to resolve.");
-  return write(n,r.note,"RESOLVED");
+  const r=records[n]||await (async()=>{await refresh();return records[n]})();
+  if(!r||!r.entries.length)throw Error("This card has no note to resolve.");
+  const data=await request("POST",Object.assign(actionBase(n),{action:"status",status:"RESOLVED"}));
+  records[n]=normalizeRecord(data.note);loaded=true;saveCache();paintAll();return records[n];
 }
 
 function style(){
@@ -115,13 +117,13 @@ function setBusy(button,busy,label){
 }
 function renderCurrent(){
   const host=document.getElementById("odNoteCurrent");if(!host)return;
-  const r=noteFor(selected),has=!!(r&&norm(r.note)),open=has&&r.status==="OPEN";
-  host.innerHTML=(has?'<div class="od-note-status"><span class="od-note-pill '+(open?"open":"resolved")+'">'+(open?"OPEN":"RESOLVED")+'</span><span>'+(r.updated?esc(r.updated):"")+'</span></div><div class="od-note-history">'+esc(r.note)+'</div>':'<div class="od-note-empty">No stored review note for this card.</div>') + (!loaded?'<div class="od-note-sync-state">Showing the last local cache. Use Sync notes to read the live 14A2 note columns.</div>':"");
+  const r=noteFor(selected),has=!!(r&&r.entries&&r.entries.length),open=has&&r.status==="OPEN";
+  host.innerHTML=(has?'<div class="od-note-status"><span class="od-note-pill '+(open?"open":"resolved")+'">'+(open?"OPEN":"RESOLVED")+'</span><span>'+(r.updatedAt?esc(r.updatedAt):"")+'</span></div><div class="od-note-history">'+esc(noteText(r))+'</div>':'<div class="od-note-empty">No stored review note for this card.</div>') + (!loaded?'<div class="od-note-sync-state">Showing the last browser cache while the site note queue loads.</div>':"");
   const resolve=document.getElementById("odResolveNote");if(resolve)resolve.disabled=!has||!open;
 }
 function updateRows(){
   document.querySelectorAll(".card-row[data-n]").forEach(row=>{
-    const n=Number(row.dataset.n),r=noteFor(n),open=!!(r&&r.status==="OPEN"&&norm(r.note));
+    const n=Number(row.dataset.n),r=noteFor(n),open=!!(r&&r.status==="OPEN"&&r.entries&&r.entries.length);
     row.classList.toggle("has-studio-note",open);
     const dots=row.querySelector(".dots");if(!dots)return;
     let dot=dots.querySelector(".dot.note");
@@ -134,11 +136,11 @@ function paintTop(){
   if(b)b.textContent="Notes · "+n;if(s)s.textContent=n+" open Studio note"+(n===1?"":"s");
 }
 function queueHTML(){
-  const rows=Object.entries(records).filter(pair=>pair[1]&&pair[1].status==="OPEN"&&norm(pair[1].note)).sort((a,b)=>Number(a[0])-Number(b[0]));
+  const rows=Object.entries(records).filter(pair=>pair[1]&&pair[1].status==="OPEN"&&pair[1].entries&&pair[1].entries.length).sort((a,b)=>Number(a[0])-Number(b[0]));
   if(!rows.length)return '<div class="od-note-empty">No open Studio notes.</div>';
   return '<div class="od-note-list">'+rows.map(pair=>{
     const n=pair[0],r=pair[1];
-    return '<div class="od-note-row"><div class="od-note-row-head"><strong>'+String(n).padStart(3,"0")+' · '+esc(cardName(+n))+'</strong><div class="grow"></div><button class="btn secondary small" data-note-open-card="'+n+'">Open card</button></div><pre>'+esc(r.note)+'</pre></div>';
+    return '<div class="od-note-row"><div class="od-note-row-head"><strong>'+String(n).padStart(3,"0")+' · '+esc(cardName(+n))+'</strong><div class="grow"></div><button class="btn secondary small" data-note-open-card="'+n+'">Open card</button></div><pre>'+esc(noteText(r))+'</pre></div>';
   }).join("")+'</div>';
 }
 function renderQueue(){
@@ -147,17 +149,17 @@ function renderQueue(){
 }
 function paintAll(){renderCurrent();updateRows();paintTop();renderQueue()}
 function message(text){if(root.toast)root.toast(text)}
-async function syncFromSheet(button){
-  setBusy(button,true,"Syncing…");
-  try{await refresh();message("Studio notes synced from 14A2")}
-  catch(error){message("Notes sync failed: "+(error.message||error))}
+async function refreshNotes(button){
+  setBusy(button,true,"Refreshing…");
+  try{await refresh();message("Studio notes refreshed")}
+  catch(error){message("Notes refresh failed: "+(error.message||error))}
   finally{setBusy(button,false)}
 }
 async function saveSectionNote(){
   const input=document.getElementById("odNoteInput"),b=document.getElementById("odSaveNote");if(!input)return;
   const text=norm(input.value);if(!text)return message("Write a note first");
   setBusy(b,true,"Saving…");
-  try{await addNote(selected,text,"");input.value="";message("Note saved to 14A2")}
+  try{await addNote(selected,text,"");input.value="";message("Note saved on Odyssey Studio")}
   catch(error){message("Note not saved: "+(error.message||error))}
   finally{setBusy(b,false)}
 }
@@ -169,8 +171,7 @@ async function resolveCurrent(){
 }
 function openQueue(){
   if(!queueDialog)return;queueDialog.showModal();renderQueue();
-  const refreshButton=queueDialog.querySelector("[data-note-refresh]");
-  syncFromSheet(refreshButton);
+  refreshNotes(queueDialog.querySelector("[data-note-refresh]"));
 }
 function openComposer(context){
   activeContext=norm(context);
@@ -183,7 +184,7 @@ async function saveComposer(){
   const ta=composeDialog.querySelector("textarea"),b=composeDialog.querySelector("[data-compose-save]"),text=norm(ta.value);
   if(!text)return message("Write a note first");
   setBusy(b,true,"Saving…");
-  try{await addNote(selected,text,activeContext);composeDialog.close();message("Note saved to 14A2")}
+  try{await addNote(selected,text,activeContext);composeDialog.close();message("Note saved on Odyssey Studio")}
   catch(error){message("Note not saved: "+(error.message||error))}
   finally{setBusy(b,false)}
 }
@@ -199,18 +200,18 @@ function mount(){
   const pane=document.getElementById("pane-card");
   if(pane){
     const section=document.createElement("div");section.className="section od-note-section";
-    section.innerHTML='<h3>Studio review notes</h3><div id="odNoteCurrent"></div><textarea id="odNoteInput" maxlength="4000" placeholder="Leave a note for the next design pass…"></textarea><div class="od-note-actions"><button class="btn small" id="odSaveNote">Save note</button><button class="btn secondary small" id="odResolveNote">Resolve</button><button class="btn secondary small" id="odSyncNotes">Sync notes</button></div><div class="od-note-sync-state">Notes are stored in columns AK–AM of the 14A2 Card File, separate from card-design edits.</div>';
+    section.innerHTML='<h3>Studio review notes</h3><div id="odNoteCurrent"></div><textarea id="odNoteInput" maxlength="4000" placeholder="Leave a note for the next design pass…"></textarea><div class="od-note-actions"><button class="btn small" id="odSaveNote">Save note</button><button class="btn secondary small" id="odResolveNote">Resolve</button><button class="btn secondary small" id="odRefreshNotes">Refresh notes</button></div><div class="od-note-sync-state">Notes are stored directly by Odyssey Studio. No Google authorization is required.</div>';
     pane.appendChild(section);
     document.getElementById("odSaveNote").onclick=saveSectionNote;
     document.getElementById("odResolveNote").onclick=resolveCurrent;
-    document.getElementById("odSyncNotes").onclick=e=>syncFromSheet(e.currentTarget);
+    document.getElementById("odRefreshNotes").onclick=e=>refreshNotes(e.currentTarget);
   }
 
   queueDialog=document.createElement("dialog");queueDialog.className="od-note-dialog";
-  queueDialog.innerHTML='<div class="od-note-head"><h2>Open Studio notes</h2><div class="grow"></div><button class="btn secondary small" data-note-refresh>Sync notes</button><button class="btn secondary small" data-note-close>Close</button></div><div class="od-note-body" data-note-list></div>';
+  queueDialog.innerHTML='<div class="od-note-head"><h2>Open Studio notes</h2><div class="grow"></div><button class="btn secondary small" data-note-refresh>Refresh</button><button class="btn secondary small" data-note-close>Close</button></div><div class="od-note-body" data-note-list></div>';
   document.body.appendChild(queueDialog);
   queueDialog.querySelector("[data-note-close]").onclick=()=>queueDialog.close();
-  queueDialog.querySelector("[data-note-refresh]").onclick=e=>syncFromSheet(e.currentTarget);
+  queueDialog.querySelector("[data-note-refresh]").onclick=e=>refreshNotes(e.currentTarget);
 
   composeDialog=document.createElement("dialog");composeDialog.className="od-note-dialog od-note-compose";
   composeDialog.innerHTML='<div class="od-note-head"><h2 data-compose-title>Add note</h2><div class="grow"></div><button class="btn secondary small" data-compose-close>Close</button></div><div class="od-note-body"><div class="od-note-compose-context" data-compose-context></div><textarea maxlength="4000" placeholder="What should change, be checked, or be reconsidered?"></textarea><div class="od-note-actions"><button class="btn" data-compose-save>Save note</button></div></div>';
@@ -221,9 +222,11 @@ function mount(){
   const oldPreview=root.renderPreview;root.renderPreview=function(){const x=oldPreview.apply(this,arguments);renderCurrent();updateRows();paintTop();return x};
   const oldList=root.renderList;root.renderList=function(){const x=oldList.apply(this,arguments);updateRows();return x};
   paintAll();
+  refresh().catch(()=>{});
+  root.addEventListener("focus",()=>refresh().catch(()=>{}));
 }
-const api={VERSION,NOTE_COL,STATUS_COL,UPDATED_COL,appendEntry,openCount:()=>openCount(),noteFor,refresh,addNote,resolveNote,openQueue,compose:openComposer,mount};
-if(typeof module!=="undefined"&&module.exports)module.exports=api;
-root.OdysseyReviewNotes=api;
+const apiObject={VERSION,API,appendEntry,openCount:()=>openCount(),noteFor,refresh,addNote,resolveNote,openQueue,compose:openComposer,mount};
+if(typeof module!=="undefined"&&module.exports)module.exports=apiObject;
+root.OdysseyReviewNotes=apiObject;
 if(typeof document!=="undefined"){if(document.readyState==="complete")setTimeout(mount,0);else root.addEventListener("load",()=>setTimeout(mount,0),{once:true})}
 })(typeof window!=="undefined"?window:globalThis);
