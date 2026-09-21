@@ -1,6 +1,6 @@
 (function(root){
 "use strict";
-const VERSION="2.2";
+const VERSION="2.3";
 const API="/mtgtools/odyssey/api/review-notes";
 const CACHE_PREFIX="odyssey-studio-notes-v2";
 let records={},loaded=false,queueDialog=null,composeDialog=null,activeContext="";
@@ -52,13 +52,37 @@ function normalizeRecord(r){
     updatedAt:norm(r.updatedAt)
   };
 }
+function actionForRecord(r,n){
+  return {
+    datasetVersion:norm(r&&r.datasetVersion)||datasetTag(),
+    cardId:norm(r&&r.cardId)||cardId(n),
+    number:Number(r&&r.number)||Number(n),
+    name:norm(r&&r.name)||cardName(n)
+  };
+}
+function sameStableCard(r,n){
+  if(!r||!r.number)return false;
+  try{return Number(r.number)===Number(n)&&r.cardId===cardId(n)}catch(_){return Number(r.number)===Number(n)}
+}
+function chooseRecord(a,b,tag){
+  if(!a)return b;
+  const aOpen=a.status==="OPEN"&&a.entries&&a.entries.length;
+  const bOpen=b.status==="OPEN"&&b.entries&&b.entries.length;
+  if(!!aOpen!==!!bOpen)return bOpen?b:a;
+  const aCurrent=a.datasetVersion===tag,bCurrent=b.datasetVersion===tag;
+  if(aCurrent!==bCurrent)return bCurrent?b:a;
+  return String(b.updatedAt||"")>String(a.updatedAt||"")?b:a;
+}
 async function refresh(){
   const data=await request("GET");
   const tag=datasetTag(),next={};
   (data.notes||[]).forEach(raw=>{
     const r=normalizeRecord(raw);
-    if(r.datasetVersion!==tag||!r.number)return;
-    next[r.number]=r;
+    if(!r.number)return;
+    const exact=r.datasetVersion===tag;
+    const carried=r.status==="OPEN"&&r.entries&&r.entries.length&&sameStableCard(r,r.number);
+    if(!exact&&!carried)return;
+    next[r.number]=chooseRecord(next[r.number],r,tag);
   });
   records=next;loaded=true;saveCache();paintAll();return records;
 }
@@ -68,13 +92,15 @@ function actionBase(n){
 async function addNote(n,text,context){
   text=norm(text);context=norm(context);
   if(!text)throw Error("Write a note first.");
-  const data=await request("POST",Object.assign(actionBase(n),{action:"append",text,context}));
+  const existing=records[n];
+  const base=existing&&existing.status==="OPEN"&&existing.entries&&existing.entries.length?actionForRecord(existing,n):actionBase(n);
+  const data=await request("POST",Object.assign(base,{action:"append",text,context}));
   records[n]=normalizeRecord(data.note);loaded=true;saveCache();paintAll();return records[n];
 }
 async function resolveNote(n){
   const r=records[n]||await (async()=>{await refresh();return records[n]})();
   if(!r||!r.entries.length)throw Error("This card has no note to resolve.");
-  const data=await request("POST",Object.assign(actionBase(n),{action:"status",status:"RESOLVED"}));
+  const data=await request("POST",Object.assign(actionForRecord(r,n),{action:"status",status:"RESOLVED"}));
   records[n]=normalizeRecord(data.note);loaded=true;saveCache();paintAll();return records[n];
 }
 
@@ -104,8 +130,8 @@ function setBusy(button,busy,label){
 }
 function renderCurrent(){
   const host=document.getElementById("odNoteCurrent");if(!host)return;
-  const r=noteFor(selected),has=!!(r&&r.entries&&r.entries.length),open=has&&r.status==="OPEN";
-  host.innerHTML=(has?'<div class="od-note-status"><span class="od-note-pill '+(open?"open":"resolved")+'">'+(open?"OPEN":"RESOLVED")+'</span><span>'+(r.updatedAt?esc(r.updatedAt):"")+'</span></div><div class="od-note-history">'+esc(noteText(r))+'</div>':'<div class="od-note-empty">No stored review note for this card.</div>') + (!loaded?'<div class="od-note-sync-state">Showing the last browser cache while the site note queue loads.</div>':"");
+  const r=noteFor(selected),has=!!(r&&r.entries&&r.entries.length),open=has&&r.status==="OPEN",carried=has&&r.datasetVersion&&r.datasetVersion!==datasetTag();
+  host.innerHTML=(has?'<div class="od-note-status"><span class="od-note-pill '+(open?"open":"resolved")+'">'+(open?"OPEN":"RESOLVED")+'</span><span>'+(r.updatedAt?esc(r.updatedAt):"")+(carried?' · carried forward from '+esc(r.datasetVersion):'')+'</span></div><div class="od-note-history">'+esc(noteText(r))+'</div>':'<div class="od-note-empty">No stored review note for this card.</div>') + (!loaded?'<div class="od-note-sync-state">Showing the last browser cache while the site note queue loads.</div>':"");
   const resolve=document.getElementById("odResolveNote");if(resolve)resolve.disabled=!has||!open;
 }
 function updateRows(){
