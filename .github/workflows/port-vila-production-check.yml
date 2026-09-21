@@ -35,13 +35,25 @@ jobs:
             url="${base}?verify=${GITHUB_SHA}-${attempt}"
             body="$(mktemp)"
             headers="$(mktemp)"
+            preview="$(mktemp)"
+
             if curl --fail --silent --show-error --location               -H 'Cache-Control: no-cache'               -D "$headers"               -o "$body" "$url"; then
               live_sha="$(sha256sum "$body" | awk '{print $1}')"
               echo "Attempt $attempt live SHA: $live_sha"
               grep -iE '^(cf-cache-status|cache-control|etag|age|last-modified):' "$headers" || true
 
-              if grep -q 'Explore Port Vila' "$body"                 && grep -q 'Downtown in 3D.' "$body"                 && grep -q 'Welcome to the Port Vila Sandbox' "$body"                 && grep -q 'Leave Port Vila Sandbox?' "$body"                 && grep -q 'mobile-onboarding-2' "$body"; then
-                echo "Live onboarding and in-app navigation markers are present."
+              preview_ok=false
+              if curl --fail --silent --show-error --location                 -H 'Cache-Control: no-cache'                 -o "$preview" "${base}assets/loader-preview.png?verify=${GITHUB_SHA}-${attempt}"; then
+                preview_bytes="$(wc -c < "$preview" | tr -d ' ')"
+                preview_sig="$(od -An -tx1 -N8 "$preview" | tr -d ' \n')"
+                if [ "$preview_bytes" -gt 100000 ] && [ "$preview_sig" = "89504e470d0a1a0a" ]; then
+                  preview_ok=true
+                  echo "Live loader preview: ${preview_bytes} bytes."
+                fi
+              fi
+
+              if grep -q 'Explore Port Vila' "$body"                 && grep -q 'Downtown in 3D.' "$body"                 && grep -q 'Welcome to the Port Vila Sandbox' "$body"                 && grep -q 'Leave Port Vila Sandbox?' "$body"                 && grep -q 'mobile-onboarding-2' "$body"                 && [ "$preview_ok" = true ]; then
+                echo "Live onboarding, navigation and app-preview markers are present."
                 if [ "$live_sha" = "$local_sha" ]; then
                   echo "Live index exactly matches repository index."
                 else
@@ -53,5 +65,5 @@ jobs:
             sleep 10
           done
 
-          echo 'Live Port Vila index never exposed the current onboarding/navigation markers.'
+          echo 'Live Port Vila build never exposed the current onboarding/navigation/preview assets.'
           exit 1
