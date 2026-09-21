@@ -43,7 +43,7 @@ test('Studio loads reference data before the review browser and keeps it separat
  const app=fs.readFileSync(path.join(dir,'app.html'),'utf8');
  const a=app.indexOf('card-references.js?v=20260919-1'),b=app.indexOf('card-reference-browser.js?v=20260919-1');
  assert.ok(a>0&&b>a);
- assert.match(app,/odyssey-data\.js\?v=20260920-empty1/);
+ assert.match(app,/odyssey-data\.js\?v=20260921-live2/);
  const index=fs.readFileSync(path.join(dir,'index.html'),'utf8');assert.match(index,/app\.html\?v=\d{8}-\d+/);
  const browser=fs.readFileSync(path.join(dir,'card-reference-browser.js'),'utf8');
  for(const phrase of ['Real card references','Mark reviewed + next','Open on Scryfall','Oracle text','odyssey-reference-review-v1'])assert.ok(browser.includes(phrase),phrase);
