@@ -8,8 +8,175 @@
     <title>Port Vila Sandbox</title>
     <script type="module" crossorigin src="/portvilasandbox/assets/index-DKcirIOB.js"></script>
     <link rel="stylesheet" crossorigin href="/portvilasandbox/assets/index-gwXGNLWK.css">
+    <style>
+      #loading .pv-loading-explainer {
+        width: min(520px, calc(100vw - 42px));
+        margin: 4px auto 0;
+        text-align: center;
+      }
+      #loading .pv-loading-explainer p {
+        max-width: none;
+        margin: 8px 0;
+        padding: 0;
+        color: #536b59;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+      #loading .pv-loading-explainer strong {
+        color: #24483f;
+        font-weight: 700;
+      }
+      #loading #loading-text.pv-loading-status {
+        margin: 14px 0 0;
+        color: #24483f;
+        font-weight: 700;
+      }
+      #loading .pv-loading-wait {
+        margin-top: 7px;
+        color: #70816e;
+        font-size: 10px;
+      }
+      .pv-welcome-nudge {
+        z-index: 30;
+        pointer-events: none;
+        position: fixed;
+        left: 26px;
+        bottom: 96px;
+        width: min(270px, calc(100vw - 40px));
+        box-sizing: border-box;
+        padding: 12px 14px;
+        border: 1px solid rgba(54, 79, 65, .18);
+        border-radius: 10px;
+        background: rgba(250, 248, 237, .94);
+        color: #29443c;
+        box-shadow: 0 8px 30px rgba(24, 56, 46, .16);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        opacity: 0;
+        transform: translateY(6px);
+        transition: opacity .22s ease, transform .22s ease;
+      }
+      .pv-welcome-nudge.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .pv-welcome-nudge strong {
+        display: block;
+        margin-bottom: 4px;
+        font: 600 13px/1.2 system-ui, sans-serif;
+      }
+      .pv-welcome-nudge span {
+        display: block;
+        color: #617267;
+        font: 500 10px/1.45 system-ui, sans-serif;
+      }
+      @media (max-width: 760px) {
+        #loading {
+          padding: max(22px, env(safe-area-inset-top)) 21px max(22px, env(safe-area-inset-bottom));
+          box-sizing: border-box;
+        }
+        #loading .loading-line {
+          margin-top: 25px;
+        }
+        #loading h2 {
+          margin-top: 16px;
+          font-size: 27px;
+        }
+        #loading .pv-loading-explainer p {
+          font-size: 11px;
+          line-height: 1.5;
+        }
+        .pv-welcome-nudge {
+          left: 14px;
+          bottom: max(94px, calc(env(safe-area-inset-bottom) + 82px));
+          width: min(265px, calc(100vw - 84px));
+        }
+        body.pv-welcome-active #district-card {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .pv-welcome-nudge {
+          transition: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="app"></div>
+    <script>
+      (() => {
+        let welcomeShown = false;
+
+        function enhanceLoading() {
+          const loading = document.getElementById('loading');
+          if (!loading || loading.dataset.pvExplained === 'true') return;
+          const status = loading.querySelector('#loading-text');
+          const heading = loading.querySelector('h2');
+          if (!status || !heading) return;
+
+          loading.dataset.pvExplained = 'true';
+          heading.textContent = 'Explore downtown Port Vila in 3D.';
+
+          const explainer = document.createElement('div');
+          explainer.className = 'pv-loading-explainer';
+          explainer.innerHTML =
+            '<p><strong>This is an interactive prototype of central Port Vila.</strong> Drag to move around the 3D city, pinch to zoom, and tap buildings to inspect them — much like exploring a map.</p>' +
+            '<p><strong>Plan layers</strong> and <strong>DUAP Vision</strong> show a rough interactive implementation of information from the July 2025 Port Vila Downtown Renewal Project design booklet launched by DUAP.</p>';
+          status.before(explainer);
+          status.classList.add('pv-loading-status');
+          status.textContent = 'Loading the 3D city model…';
+
+          const wait = document.createElement('p');
+          wait.className = 'pv-loading-wait';
+          wait.textContent = 'On a phone, the first load can take up to a minute.';
+          status.after(wait);
+        }
+
+        function dismissWelcome() {
+          const nudge = document.getElementById('pv-welcome-nudge');
+          if (!nudge) return;
+          nudge.classList.remove('show');
+          document.body.classList.remove('pv-welcome-active');
+          document.removeEventListener('pointerdown', dismissWelcome, true);
+          document.removeEventListener('wheel', dismissWelcome, true);
+          document.removeEventListener('keydown', dismissWelcome, true);
+          setTimeout(() => nudge.remove(), 220);
+        }
+
+        function showWelcome() {
+          if (welcomeShown || document.getElementById('load-error')) return;
+          welcomeShown = true;
+          const nudge = document.createElement('div');
+          nudge.id = 'pv-welcome-nudge';
+          nudge.className = 'pv-welcome-nudge';
+          nudge.setAttribute('role', 'status');
+          nudge.innerHTML =
+            '<strong>Welcome to the Port Vila Sandbox</strong>' +
+            '<span>Drag to look around · pinch to zoom · tap buildings. Try Plan layers or DUAP Vision.</span>';
+          document.body.append(nudge);
+          document.body.classList.add('pv-welcome-active');
+          requestAnimationFrame(() => nudge.classList.add('show'));
+          setTimeout(() => {
+            document.addEventListener('pointerdown', dismissWelcome, true);
+            document.addEventListener('wheel', dismissWelcome, true);
+            document.addEventListener('keydown', dismissWelcome, true);
+          }, 250);
+        }
+
+        function inspectState() {
+          enhanceLoading();
+          const loading = document.getElementById('loading');
+          if (document.getElementById('world') && (!loading || loading.classList.contains('done'))) {
+            showWelcome();
+          }
+        }
+
+        const observer = new MutationObserver(inspectState);
+        observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+        inspectState();
+      })();
+    </script>
   </body>
 </html>
