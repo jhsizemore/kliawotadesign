@@ -72,7 +72,7 @@ test('Studio loads site-backed notes and large media previews without Sheet OAut
  const fs=require('node:fs'),path=require('node:path');
  const app=fs.readFileSync(path.join(__dirname,'..','public/mtgtools/odyssey/app.html'),'utf8');
  const notes=fs.readFileSync(path.join(__dirname,'..','public/mtgtools/odyssey/review-notes.js'),'utf8');
- assert.match(app,/review-notes\.js\?v=20260921-7/);assert.match(app,/media-preview\.js/);
+ assert.match(app,/review-notes\.js\?v=20260921-8/);assert.match(app,/media-preview\.js/);
  assert.match(notes,/api\/review-notes/);assert.match(notes,/data-note-add-current/);assert.match(notes,/Saved ✓ This note is now in the shared Odyssey queue/);assert.doesNotMatch(notes,/OdysseySheetEditor|sheets\.googleapis|Studio Notes.*AK|Pair device|X-Odyssey-Notes-Key/);
 });
 test('large preview can resolve Scryfall-backed reference records',()=>{
