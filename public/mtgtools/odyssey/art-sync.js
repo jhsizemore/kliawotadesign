@@ -1,4 +1,4 @@
-/* Private, opt-in art-direction sync. Card design and uploaded image bytes stay local. */
+/* Private, opt-in art-direction sync. Current and named candidates use isolated scopes; card design and uploaded image bytes stay local. */
 (function (root) {
   'use strict';
   const KEY = 'odyssey-art-sync-v1', BACKUP = KEY + '-before-pull';
@@ -25,9 +25,10 @@
     const core = root.OdysseySyncCore, storage = state.storage;
     const read = k => { const o = JSON.parse(storage.getItem(k) || '{}'); if (!o || Array.isArray(o) || typeof o !== 'object') throw new Error('Invalid local art settings.'); return o; };
     const scopes = [{name:'current',keys:root.OdysseyArtTransfer.BASE,cards:state.baseline.cards}];
-    if (state.candidate) scopes.push({name:'analysis-candidate-v1',keys:state.keys,cards:state.active.cards});
+    const candidateScope = state.candidate ? (state.candidateVersion || state.active?.datasetVersion || '') : '';
+    if (candidateScope) scopes.push({name:candidateScope,keys:state.keys,cards:state.active.cards});
     // Unknown custom datasets must not share a production workspace by collector number.
-    const supported = state.candidate || state.active === state.baseline;
+    const supported = state.active === state.baseline || /^analysis-candidate-v[12]$/.test(candidateScope);
     scopes.forEach(s => {
       s.byId = new Map(); s.byNumber = new Map();
       s.cards.forEach(c => { if (c.id) s.byId.set(c.id,s.byId.has(c.id)?null:c); s.byNumber.set(String(c.number),c); });
@@ -40,7 +41,7 @@
     button.id = 'odysseySyncDevices'; button.type = 'button'; button.className = 'btn secondary small od-sync-button'; button.textContent = 'Sync devices';
     (document.querySelector('.top-actions') || document.querySelector('.topbar') || document.body).appendChild(button);
     const dialog = document.createElement('dialog'); dialog.className = 'od-sync-dialog'; dialog.id = 'odysseySyncDialog';
-    dialog.innerHTML = `<h2>Artwork across devices</h2><p>Sync artwork choices, hosted image links, positioning, zoom, frame treatment and shared crops. Current set and Analysis candidate remain separate. Rules, names, mana costs and structural layouts are not shared.</p><p class="od-sync-warning">The pairing link is an editing key. Anyone with it can edit this workspace. Keep it private. Uploaded image files are not transferred; use a hosted image link for those.</p><p id="odSyncStatus" class="od-sync-status" role="status" aria-live="polite"></p><div class="od-sync-actions"><button type="button" class="btn" id="odSyncCreate">Enable device sync</button><button type="button" class="btn secondary" id="odSyncNow">Sync now</button><button type="button" class="btn secondary" id="odSyncPair">Pair another device</button><button type="button" class="btn secondary" id="odSyncBackup">Export local art backup</button></div><div id="odSyncPairing" hidden><label for="odSyncLink">Private pairing link</label><input id="odSyncLink" readonly autocomplete="off" spellcheck="false"><button type="button" class="btn secondary" id="odSyncCopy">Copy private link</button></div><details id="odSyncJoinDetails"><summary>Connect using a pairing link</summary><label for="odSyncJoinInput">Paste the private link from your other device</label><input id="odSyncJoinInput" type="password" autocomplete="off" spellcheck="false"><button type="button" class="btn secondary" id="odSyncJoin">Connect this device</button></details><div id="odSyncConflicts"></div><div class="od-sync-actions"><button type="button" class="btn secondary" id="odSyncDisconnect">Disconnect this device</button><button type="button" class="btn" id="odSyncClose">Close</button></div>`;
+    dialog.innerHTML = `<h2>Artwork across devices</h2><p>Sync artwork choices, hosted image links, positioning, zoom, frame treatment and shared crops. Current set, Analysis candidate v1 and Candidate 2 remain separate. Rules, names, mana costs and structural layouts are not shared.</p><p class="od-sync-warning">The pairing link is an editing key. Anyone with it can edit this workspace. Keep it private. Uploaded image files are not transferred; use a hosted image link for those.</p><p id="odSyncStatus" class="od-sync-status" role="status" aria-live="polite"></p><div class="od-sync-actions"><button type="button" class="btn" id="odSyncCreate">Enable device sync</button><button type="button" class="btn secondary" id="odSyncNow">Sync now</button><button type="button" class="btn secondary" id="odSyncPair">Pair another device</button><button type="button" class="btn secondary" id="odSyncBackup">Export local art backup</button></div><div id="odSyncPairing" hidden><label for="odSyncLink">Private pairing link</label><input id="odSyncLink" readonly autocomplete="off" spellcheck="false"><button type="button" class="btn secondary" id="odSyncCopy">Copy private link</button></div><details id="odSyncJoinDetails"><summary>Connect using a pairing link</summary><label for="odSyncJoinInput">Paste the private link from your other device</label><input id="odSyncJoinInput" type="password" autocomplete="off" spellcheck="false"><button type="button" class="btn secondary" id="odSyncJoin">Connect this device</button></details><div id="odSyncConflicts"></div><div class="od-sync-actions"><button type="button" class="btn secondary" id="odSyncDisconnect">Disconnect this device</button><button type="button" class="btn" id="odSyncClose">Close</button></div>`;
     document.body.appendChild(dialog);
     const el = id => document.getElementById(id);
     function show() { if (!dialog.open) dialog.showModal(); paint(); }
@@ -48,7 +49,8 @@
     function label(key) {
       const [scope,kind,...parts] = key.split(':');
       const id = parts.join(':'), c = scopes.find(s=>s.name===scope)?.byId.get(id);
-      return (scope==='current'?'Current set':'Analysis candidate')+' · '+(kind==='card'?(c?.displayName||c?.name||id):id);
+      const scopeLabel=scope==='current'?'Current set':scope==='analysis-candidate-v2'?'Candidate 2':'Analysis candidate v1';
+      return scopeLabel+' · '+(kind==='card'?(c?.displayName||c?.name||id):id);
     }
     function paint() {
       button.textContent = conflicts.length ? `Sync · ${conflicts.length} conflicts` : running ? 'Syncing…' : config.token ? 'Sync devices · on' : 'Sync devices';
@@ -167,7 +169,7 @@
       }catch(error){setStatus('Choice was not applied: '+error.message)}
     }
     function connect(token){
-      if(!supported)return setStatus('Device sync is supported for Current set and Analysis candidate v1 only.');
+      if(!supported)return setStatus('Device sync is supported for Current set, Analysis candidate v1 and Candidate 2 only.');
       if(!token)return setStatus('Paste a complete private pairing link.');
       if(config.token && config.token!==token && !confirm('Switch shared workspaces? Local art is kept and conflicts will need a decision.'))return;
       try{
