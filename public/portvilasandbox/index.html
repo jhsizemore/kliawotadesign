@@ -4,50 +4,120 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#132b2c" />
-    <meta name="description" content="Explore Port Vila's waterfront and imagine a different future. A 3D city sandbox grounded in real geography." />
+    <meta name="description" content="Explore downtown Port Vila as an interactive 3D city prototype, including rough DUAP July 2025 plan layers." />
     <title>Port Vila Sandbox</title>
-    <script type="module" crossorigin src="/portvilasandbox/assets/index-DKcirIOB.js?v=mobile-onboarding-1"></script>
+    <script type="module" crossorigin src="/portvilasandbox/assets/index-DKcirIOB.js?v=mobile-onboarding-2"></script>
     <link rel="stylesheet" crossorigin href="/portvilasandbox/assets/index-gwXGNLWK.css">
     <style>
+      /* The introductory district card duplicates the onboarding. Keep the map clear. */
+      #district-card { display: none !important; }
+
+      /* Keep persistent controls out of the lower-left interaction zone. */
+      .bottom-left {
+        top: 142px !important;
+        bottom: auto !important;
+        left: 26px !important;
+      }
+      body[data-city-view="vision"] .bottom-left,
+      body.research-open .bottom-left {
+        display: none !important;
+      }
+
+      /* Loading screen: loading first, explanation second. */
+      #loading {
+        text-align: center;
+        overflow: auto;
+        justify-content: flex-start !important;
+        padding: max(44px, env(safe-area-inset-top)) 24px max(34px, env(safe-area-inset-bottom));
+        box-sizing: border-box;
+      }
+      #loading .loading-brand { margin-top: auto; }
+      #loading .loading-line {
+        flex: 0 0 auto;
+        margin: 28px 0 10px;
+      }
+      #loading .pv-loading-state {
+        width: min(540px, calc(100vw - 42px));
+        margin: 0 auto;
+        text-align: center;
+      }
+      #loading .pv-loading-label {
+        color: #29483f;
+        letter-spacing: .11em;
+        font: 750 9px/1.35 system-ui, sans-serif;
+        text-transform: uppercase;
+      }
+      #loading #loading-text.pv-loading-status {
+        max-width: none;
+        margin: 5px 0 0;
+        padding: 0;
+        color: #617467;
+        font: 550 10px/1.45 system-ui, sans-serif;
+      }
+      #loading .pv-loading-wait {
+        margin: 4px 0 0;
+        color: #7a897b;
+        font: 500 9px/1.4 system-ui, sans-serif;
+      }
+      #loading h2.pv-loader-title {
+        width: min(560px, calc(100vw - 38px));
+        margin: 21px auto 17px;
+        color: #1f4038;
+        letter-spacing: -.025em;
+        font: 400 clamp(34px, 7vw, 48px)/.98 Georgia, serif;
+      }
+      #loading h2.pv-loader-title span { display: block; }
       #loading .pv-loading-explainer {
         width: min(520px, calc(100vw - 42px));
-        margin: 4px auto 0;
+        margin: 0 auto;
         text-align: center;
       }
       #loading .pv-loading-explainer p {
         max-width: none;
-        margin: 8px 0;
+        margin: 0;
         padding: 0;
-        color: #536b59;
-        font-size: 12px;
-        line-height: 1.55;
+        color: #5f7064;
+        font: 500 11px/1.55 system-ui, sans-serif;
       }
+      #loading .pv-loading-explainer p + p { margin-top: 14px; }
       #loading .pv-loading-explainer strong {
-        color: #24483f;
-        font-weight: 700;
+        display: block;
+        margin-bottom: 3px;
+        color: #29483f;
+        font-size: 12px;
+        font-weight: 750;
       }
-      #loading #loading-text.pv-loading-status {
-        margin: 14px 0 0;
-        color: #24483f;
-        font-weight: 700;
+      #loading .pv-loader-preview {
+        width: min(520px, calc(100vw - 42px));
+        height: 132px;
+        margin: 19px auto auto;
+        border: 1px solid rgba(41, 72, 63, .15);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #b8cbbb;
+        box-shadow: 0 8px 28px rgba(27, 65, 54, .12);
       }
-      #loading .pv-loading-wait {
-        margin-top: 7px;
-        color: #70816e;
-        font-size: 10px;
+      #loading .pv-loader-preview img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center 42%;
       }
+
+      /* The only thing that temporarily occupies the lower-left corner. */
       .pv-welcome-nudge {
         z-index: 30;
         pointer-events: none;
         position: fixed;
         left: 26px;
-        bottom: 96px;
-        width: min(270px, calc(100vw - 40px));
+        bottom: 35px;
+        width: min(286px, calc(100vw - 42px));
         box-sizing: border-box;
-        padding: 12px 14px;
+        padding: 13px 15px;
         border: 1px solid rgba(54, 79, 65, .18);
         border-radius: 10px;
-        background: rgba(250, 248, 237, .94);
+        background: rgba(250, 248, 237, .95);
         color: #29443c;
         box-shadow: 0 8px 30px rgba(24, 56, 46, .16);
         backdrop-filter: blur(8px);
@@ -56,82 +126,158 @@
         transform: translateY(6px);
         transition: opacity .22s ease, transform .22s ease;
       }
-      .pv-welcome-nudge.show {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      .pv-welcome-nudge.show { opacity: 1; transform: translateY(0); }
       .pv-welcome-nudge strong {
         display: block;
         margin-bottom: 4px;
-        font: 600 13px/1.2 system-ui, sans-serif;
+        font: 700 13px/1.2 system-ui, sans-serif;
       }
       .pv-welcome-nudge span {
         display: block;
         color: #617267;
         font: 500 10px/1.45 system-ui, sans-serif;
       }
+
+      /* In-app Back / leave confirmation. */
+      .pv-exit-overlay {
+        z-index: 140;
+        position: fixed;
+        inset: 0;
+        display: none;
+        place-items: center;
+        padding: 22px;
+        background: rgba(19, 43, 44, .32);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+      }
+      .pv-exit-overlay.show { display: grid; }
+      .pv-exit-card {
+        width: min(360px, calc(100vw - 38px));
+        padding: 25px;
+        border-radius: 13px;
+        background: #faf8ed;
+        color: #29443c;
+        text-align: center;
+        box-shadow: 0 18px 60px rgba(18, 44, 38, .25);
+      }
+      .pv-exit-card h2 {
+        margin: 0 0 9px;
+        font: 400 27px/1.08 Georgia, serif;
+      }
+      .pv-exit-card p {
+        margin: 0 0 19px;
+        color: #66766b;
+        font: 500 11px/1.55 system-ui, sans-serif;
+      }
+      .pv-exit-actions { display: flex; gap: 8px; }
+      .pv-exit-actions button {
+        flex: 1;
+        min-height: 42px;
+        border-radius: 8px;
+        font: 650 11px system-ui, sans-serif;
+      }
+      .pv-exit-stay { background: #214c40; color: #fffdf4; }
+      .pv-exit-leave { border: 1px solid #aebcad; background: transparent; color: #496257; }
+
       @media (max-width: 760px) {
+        .bottom-left {
+          top: max(118px, calc(env(safe-area-inset-top) + 92px)) !important;
+          left: 14px !important;
+        }
         #loading {
-          padding: max(22px, env(safe-area-inset-top)) 21px max(22px, env(safe-area-inset-bottom));
-          box-sizing: border-box;
+          padding: max(26px, env(safe-area-inset-top)) 18px max(22px, env(safe-area-inset-bottom));
         }
-        #loading .loading-line {
-          margin-top: 25px;
-        }
-        #loading h2 {
-          margin-top: 16px;
-          font-size: 27px;
+        #loading .loading-brand { margin-top: auto; }
+        #loading .loading-line { margin: 22px 0 9px; }
+        #loading h2.pv-loader-title {
+          margin: 18px auto 15px;
+          font-size: clamp(32px, 10.5vw, 42px);
         }
         #loading .pv-loading-explainer p {
-          font-size: 11px;
+          font-size: 10.5px;
           line-height: 1.5;
+        }
+        #loading .pv-loading-explainer strong { font-size: 11.5px; }
+        #loading .pv-loading-explainer p + p { margin-top: 12px; }
+        #loading .pv-loader-preview {
+          height: 118px;
+          margin-top: 16px;
         }
         .pv-welcome-nudge {
           left: 14px;
-          bottom: max(94px, calc(env(safe-area-inset-bottom) + 82px));
-          width: min(265px, calc(100vw - 84px));
-        }
-        body.pv-welcome-active #district-card {
-          opacity: 0;
-          pointer-events: none;
+          bottom: max(30px, calc(env(safe-area-inset-bottom) + 20px));
+          width: min(282px, calc(100vw - 82px));
         }
       }
+      @media (max-height: 680px) and (max-width: 760px) {
+        #loading .loading-brand { margin-top: 0; }
+        #loading .loading-line { margin-top: 17px; }
+        #loading h2.pv-loader-title { font-size: 31px; margin: 14px auto 12px; }
+        #loading .pv-loading-explainer p + p { margin-top: 9px; }
+        #loading .pv-loader-preview { height: 92px; margin-top: 12px; }
+      }
       @media (prefers-reduced-motion: reduce) {
-        .pv-welcome-nudge {
-          transition: none;
-        }
+        .pv-welcome-nudge { transition: none; }
       }
     </style>
   </head>
   <body>
     <div id="app"></div>
+    <div id="pv-exit-overlay" class="pv-exit-overlay" role="dialog" aria-modal="true" aria-labelledby="pv-exit-title">
+      <div class="pv-exit-card">
+        <h2 id="pv-exit-title">Leave Port Vila Sandbox?</h2>
+        <p>There’s nothing else to step back through inside the app.</p>
+        <div class="pv-exit-actions">
+          <button id="pv-exit-stay" class="pv-exit-stay">Stay here</button>
+          <button id="pv-exit-leave" class="pv-exit-leave">Leave app</button>
+        </div>
+      </div>
+    </div>
     <script>
       (() => {
         let welcomeShown = false;
+        let allowLeave = false;
+        let restoringSelection = false;
+        let lastSelected = null;
+        const selectionHistory = [];
 
         function enhanceLoading() {
           const loading = document.getElementById('loading');
           if (!loading || loading.dataset.pvExplained === 'true') return;
           const status = loading.querySelector('#loading-text');
           const heading = loading.querySelector('h2');
-          if (!status || !heading) return;
+          const line = loading.querySelector('.loading-line');
+          if (!status || !heading || !line) return;
 
           loading.dataset.pvExplained = 'true';
-          heading.textContent = 'Explore downtown Port Vila in 3D.';
+
+          const state = document.createElement('div');
+          state.className = 'pv-loading-state';
+          const label = document.createElement('div');
+          label.className = 'pv-loading-label';
+          label.textContent = 'Loading the interactive 3D city';
+          const wait = document.createElement('p');
+          wait.className = 'pv-loading-wait';
+          wait.textContent = 'The first load on a phone can take up to a minute.';
+          status.classList.add('pv-loading-status');
+          state.append(label, status, wait);
+          line.after(state);
+
+          heading.className = 'pv-loader-title';
+          heading.innerHTML = 'Explore Port Vila<span>Downtown in 3D.</span>';
+          state.after(heading);
 
           const explainer = document.createElement('div');
           explainer.className = 'pv-loading-explainer';
           explainer.innerHTML =
-            '<p><strong>This is an interactive prototype of central Port Vila.</strong> Drag to move around the 3D city, pinch to zoom, and tap buildings to inspect them — much like exploring a map.</p>' +
-            '<p><strong>Plan layers</strong> and <strong>DUAP Vision</strong> show a rough interactive implementation of information from the July 2025 Port Vila Downtown Renewal Project design booklet launched by DUAP.</p>';
-          status.before(explainer);
-          status.classList.add('pv-loading-status');
-          status.textContent = 'Loading the 3D city model…';
+            '<p><strong>Move through the city like a map.</strong>Drag to explore central Port Vila, pinch to zoom, and tap buildings to inspect them. This is an interactive prototype of the downtown city centre.</p>' +
+            '<p><strong>Explore the July 2025 DUAP vision.</strong>Plan Layers and DUAP Vision give a rough interactive implementation of information from the Port Vila Downtown Renewal Project design booklet launched by DUAP.</p>';
+          heading.after(explainer);
 
-          const wait = document.createElement('p');
-          wait.className = 'pv-loading-wait';
-          wait.textContent = 'On a phone, the first load can take up to a minute.';
-          status.after(wait);
+          const preview = document.createElement('figure');
+          preview.className = 'pv-loader-preview';
+          preview.innerHTML = '<img src="/portvilasandbox/assets/loader-preview.png?v=1" alt="Preview of the Port Vila 3D city model" onerror="this.closest(\'.pv-loader-preview\').hidden=true">';
+          explainer.after(preview);
         }
 
         function dismissWelcome() {
@@ -154,7 +300,7 @@
           nudge.setAttribute('role', 'status');
           nudge.innerHTML =
             '<strong>Welcome to the Port Vila Sandbox</strong>' +
-            '<span>Drag to look around · pinch to zoom · tap buildings. Try Plan layers or DUAP Vision.</span>';
+            '<span>Drag to look around · pinch to zoom · tap buildings. Try Plan Layers or DUAP Vision.</span>';
           document.body.append(nudge);
           document.body.classList.add('pv-welcome-active');
           requestAnimationFrame(() => nudge.classList.add('show'));
@@ -172,6 +318,141 @@
             showWelcome();
           }
         }
+
+        function sampleSelection() {
+          const api = window.sandbox;
+          if (!api) return;
+          const selected = api.selected ?? null;
+          if (restoringSelection) {
+            lastSelected = selected;
+            return;
+          }
+          if (selected === lastSelected) return;
+          if (selected == null) {
+            if (lastSelected != null) selectionHistory.length = 0;
+          } else if (selectionHistory[selectionHistory.length - 1] !== selected) {
+            selectionHistory.push(selected);
+          }
+          lastSelected = selected;
+        }
+
+        function restorePreviousSelection() {
+          const api = window.sandbox;
+          if (!api || api.selected == null) return false;
+          restoringSelection = true;
+          if (selectionHistory.length > 1) {
+            selectionHistory.pop();
+            const previous = selectionHistory[selectionHistory.length - 1];
+            api.select(previous);
+            lastSelected = previous;
+          } else {
+            selectionHistory.length = 0;
+            api.clearSelection();
+            lastSelected = null;
+          }
+          setTimeout(() => { restoringSelection = false; }, 0);
+          return true;
+        }
+
+        function closeOneInAppStep() {
+          const exitOverlay = document.getElementById('pv-exit-overlay');
+          if (exitOverlay.classList.contains('show')) {
+            exitOverlay.classList.remove('show');
+            return true;
+          }
+
+          const dialog = document.getElementById('dialog');
+          if (dialog?.open) {
+            document.getElementById('dialog-close')?.click();
+            return true;
+          }
+
+          if (document.body.classList.contains('research-open')) {
+            const close = document.getElementById('research-close');
+            if (close) close.click();
+            else document.getElementById('research-toggle')?.click();
+            return true;
+          }
+
+          if (restorePreviousSelection()) return true;
+
+          if (document.body.classList.contains('vision-selected')) {
+            document.getElementById('close-inspector')?.click();
+            return true;
+          }
+
+          const vision = document.getElementById('vision');
+          if (vision?.classList.contains('active') || document.body.dataset.cityView === 'vision') {
+            document.getElementById('baseline')?.click();
+            return true;
+          }
+
+          const activeTool = document.querySelector('[data-tool].active');
+          if (activeTool && activeTool.dataset.tool !== 'select') {
+            document.querySelector('[data-tool="select"]')?.click();
+            return true;
+          }
+
+          const proposal = document.getElementById('proposal');
+          if (proposal?.classList.contains('active')) {
+            document.getElementById('baseline')?.click();
+            return true;
+          }
+
+          if (document.body.dataset.view === 'plan') {
+            document.getElementById('return-3d')?.click();
+            return true;
+          }
+
+          return false;
+        }
+
+        function armHistory() {
+          const url = location.href;
+          if (!history.state?.pvSandboxRoot && !history.state?.pvSandboxActive) {
+            history.replaceState({ ...(history.state || {}), pvSandboxRoot: true }, '', url);
+            history.pushState({ pvSandboxActive: true }, '', url);
+          } else if (history.state?.pvSandboxRoot) {
+            history.pushState({ pvSandboxActive: true }, '', url);
+          }
+        }
+
+        function rearmHistory() {
+          history.pushState({ pvSandboxActive: true }, '', location.href);
+        }
+
+        function showExitConfirm() {
+          document.getElementById('pv-exit-overlay').classList.add('show');
+        }
+
+        window.addEventListener('popstate', (event) => {
+          if (allowLeave) return;
+          if (event.state?.pvSandboxRoot) {
+            if (closeOneInAppStep()) {
+              rearmHistory();
+            } else {
+              rearmHistory();
+              showExitConfirm();
+            }
+          }
+        });
+
+        document.getElementById('pv-exit-stay').addEventListener('click', () => {
+          document.getElementById('pv-exit-overlay').classList.remove('show');
+        });
+        document.getElementById('pv-exit-leave').addEventListener('click', () => {
+          allowLeave = true;
+          document.getElementById('pv-exit-overlay').classList.remove('show');
+          const fallback = document.referrer || 'https://kliawota.design/';
+          const start = location.href;
+          history.go(-2);
+          setTimeout(() => {
+            if (location.href === start) location.href = fallback;
+          }, 350);
+        });
+
+        armHistory();
+        setInterval(sampleSelection, 180);
 
         const observer = new MutationObserver(inspectState);
         observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
