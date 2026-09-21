@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { neighbour, orderedRows, VERSION } = require('../public/mtgtools/odyssey/mobile-navigation.js');
-test('version', () => assert.equal(VERSION, '3.16'));
+test('version', () => assert.equal(VERSION, '3.17'));
 test('empty queue has no next', () => assert.equal(neighbour([], 1, 1), null));
 test('empty queue has no previous', () => assert.equal(neighbour([], 1, -1), null));
 test('next follows filtered sequence, not collector number', () => assert.equal(neighbour([3, 8, 21], 3, 1), 8));
@@ -32,7 +32,7 @@ test('loader retains inherited-art patches and mounts mobile last', async () => 
   assert.equal(error, '');
   assert.ok(output.includes('OdysseyArtTransfer.prepare('));
   assert.ok(output.includes('CROP_PROFILE_STORAGE=ODYSSEY_ART_STATE.keys.crops'));
-  assert.ok(output.includes('mobile-navigation.css?v=20260918-5'));
+  assert.ok(output.includes('mobile-navigation.css?v=20260921-1'));
   assert.ok(output.indexOf('mobile-navigation.js') > output.indexOf('OdysseyArtTransfer.mount('));
 });
 test('loader fails safely when art-storage integration has changed', async () => {
