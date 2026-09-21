@@ -67,12 +67,14 @@ jobs:
           try{
             const response=await fetch(base+'api/review-notes',{signal:AbortSignal.timeout(15000)});
             const data=await response.json();
-            notes={status:response.status,schema:data.schema,count:Array.isArray(data.notes)?data.notes.length:null};
+            const probeResponse=await fetch(base+'api/review-notes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'probe'}),signal:AbortSignal.timeout(15000)});
+            const probeData=await probeResponse.json();
+            notes={status:response.status,schema:data.schema,count:Array.isArray(data.notes)?data.notes.length:null,probeStatus:probeResponse.status,probe:probeData.probe===true};
           }catch(error){notes={error:String(error)}}
           const report={commit:process.env.GITHUB_SHA,checkedAt:new Date().toISOString(),assetsMatch:matched,results,sync,notes};
           fs.writeFileSync('/tmp/odyssey-production-check/production.json',JSON.stringify(report,null,2));
           console.log(JSON.stringify(report,null,2));
-          if(!matched||sync.anonymousStatus!==401||sync.isolatedWorkspaceStatus!==200||notes.status!==200||notes.schema!=='odyssey-review-notes/v1')process.exitCode=1;
+          if(!matched||sync.anonymousStatus!==401||sync.isolatedWorkspaceStatus!==200||notes.status!==200||notes.schema!=='odyssey-review-notes/v1'||notes.probeStatus!==200||notes.probe!==true)process.exitCode=1;
           NODE
       - uses: actions/setup-python@v5
         with:
@@ -81,6 +83,33 @@ jobs:
         run: |
           pip install requests pillow playwright
           python -m playwright install --with-deps chromium
+      - name: Verify live Odyssey notes UI and same-origin write path
+        run: |
+          python - <<'PY'
+          from playwright.sync_api import sync_playwright
+          url='https://kliawota.design/mtgtools/odyssey/'
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              page=browser.new_page(viewport={'width':390,'height':844})
+              page.goto(url,wait_until='domcontentloaded',timeout=60000)
+              page.wait_for_selector('#odNotesQueue',timeout=60000)
+              page.click('#odNotesQueue')
+              page.wait_for_selector('[data-note-add-current]',state='visible',timeout=10000)
+              label=page.locator('[data-note-add-current]').inner_text()
+              assert label.startswith('Add note to '), label
+              page.wait_for_function("""() => {
+                const el=document.querySelector('[data-note-queue-state]');
+                return el && (/Connected/.test(el.textContent) || /Could not reach/.test(el.textContent));
+              }""",timeout=15000)
+              state=page.locator('[data-note-queue-state]').inner_text()
+              assert state.startswith('Connected'), state
+              probe=page.evaluate("""async () => {
+                const r=await fetch('/mtgtools/odyssey/api/review-notes',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'probe'})});
+                return {status:r.status,data:await r.json()};
+              }""")
+              assert probe['status']==200 and probe['data'].get('probe') is True, probe
+              browser.close()
+          PY
       - name: Verify deployed artwork and general editing
         run: python scripts/odyssey-production-artwork.py
       - name: Verify live text, locale art and Remove/Recast controls
