@@ -34,7 +34,7 @@ async function getToken(){
   token=await e.auth();
   return token;
 }
-async function api(path,opt){
+async function sheetApi(path,opt){
   const e=editor();
   if(!e||typeof e.api!=="function")throw Error("Odyssey Sheet connection is unavailable.");
   try{return await e.api(path,opt||{},await getToken())}
@@ -49,7 +49,7 @@ async function refresh(){
   if(!e||!e.SHEET_NAME)throw Error("Odyssey Sheet connection is unavailable.");
   const idRange=a1("A1:B310"),noteRange=a1(NOTE_COL+"1:"+UPDATED_COL+"310");
   const path="/values:batchGet?majorDimension=ROWS&valueRenderOption=UNFORMATTED_VALUE&ranges="+encodeURIComponent(idRange)+"&ranges="+encodeURIComponent(noteRange);
-  const data=await api(path,{method:"GET"});
+  const data=await sheetApi(path,{method:"GET"});
   const identity=data.valueRanges&&data.valueRanges[0]&&data.valueRanges[0].values||[];
   const noteRows=data.valueRanges&&data.valueRanges[1]&&data.valueRanges[1].values||[];
   validateHeaders(noteRows);
@@ -72,8 +72,8 @@ async function ensureRow(n){
 async function write(n,note,status){
   const r=await ensureRow(n),updated=new Date().toISOString(),range=a1(NOTE_COL+r.row+":"+UPDATED_COL+r.row);
   const body={valueInputOption:"RAW",includeValuesInResponse:true,data:[{range:range,majorDimension:"ROWS",values:[[note,status,updated]]}]};
-  await api("/values:batchUpdate",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
-  const check=await api("/values/"+encodeURIComponent(range)+"?majorDimension=ROWS&valueRenderOption=UNFORMATTED_VALUE",{method:"GET"});
+  await sheetApi("/values:batchUpdate",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});
+  const check=await sheetApi("/values/"+encodeURIComponent(range)+"?majorDimension=ROWS&valueRenderOption=UNFORMATTED_VALUE",{method:"GET"});
   const row=(check.values&&check.values[0])||[];
   if(norm(row[0])!==norm(note)||norm(row[1])!==norm(status)||norm(row[2])!==norm(updated))throw Error("The note write could not be verified.");
   records[n]=Object.assign({},r,{note:norm(note),status:norm(status),updated:updated});saveCache();paintAll();return records[n];
