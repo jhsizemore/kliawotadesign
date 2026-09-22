@@ -143,24 +143,23 @@
     },
     "ODY-055": {
       "flavour": {
-        "status": "candidate-verified",
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
         "candidate": {
           "cardId": "ODY-055",
-          "pair": "GW",
-          "text": "Eat, my good fellow, and enjoy your supper, such as it is.",
-          "location": "Book 14, Eumaeus feeds the disguised Odysseus",
-          "speaker": "Eumaeus",
+          "kind": "adaptation",
+          "text": "Loyalty fed the stranger long before recognition could reward it.",
           "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
-          "context": "Eumaeus offers the stranger what food he has before knowing his identity.",
-          "fit": "Directly expresses Eumaeus's hospitality and Food-centered design.",
-          "author": "Homer",
-          "translator": "Samuel Butler",
-          "work": "Odyssey",
-          "verification": "exact excerpt checked",
-          "selection": "candidate; final card-space check pending",
-          "wordCount": 12,
-          "characters": 58
+          "basis": "Eumaeus's generosity and grief for Odysseus precede knowledge that his master has returned.",
+          "fit": "Keeps the uncommon about durable loyalty rather than one meal.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
         }
+      },
+      "brief": {
+        "sourceReview": "Book XIV checked: Eumaeus's work, hospitality and grief for his absent master all precede recognition.",
+        "attributes": "Loyalty with no audience: he behaves rightly when he believes his master may never return.",
+        "sourceClass": "direct-or-explicit-composite"
       }
     },
     "ODY-056": {
@@ -373,6 +372,10 @@
           "wordCount": 12,
           "characters": 57
         }
+      },
+      "brief": {
+        "sourceReview": "Book XV checked: a hawk carrying a dove crosses at Telemachus's right and Theoclymenus reads it as a sign that Odysseus's house will remain royal.",
+        "sourceClass": "direct-or-explicit-composite"
       }
     },
     "ODY-148": {
@@ -3653,6 +3656,411 @@
       "brief": {
         "sourceClass": "deferred-later-reception",
         "sourceReview": "Deferred to later reception: production metadata treats 'Nobody' as constructed-identity reception, not simply the Book IX episode."
+      }
+    },
+    "ODY-005": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-005",
+          "text": "I will begin by disguising you so that no human being shall know you",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 13, Athena lays out the disguise",
+          "speaker": "Athena",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "context": "Athena tells Odysseus she will alter him beyond recognition before he enters his own household.",
+          "fit": "This is the exact action behind the intervention/appearance reset.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 14,
+          "characters": 68,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIII checked: Athena disperses the mist, reveals Ithaca, plans with Odysseus, then deliberately disguises him so no one will recognise him.",
+        "attributes": "Athena controls visibility, appearance and the order in which knowledge becomes safe.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-019": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-019",
+          "text": "lay him down upon the sand still fast asleep",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 13, the Phaeacians deliver Odysseus home",
+          "speaker": "Narrator",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "context": "The Phaeacians carry the sleeping Odysseus from the ship and leave him safely on Ithaca.",
+          "fit": "A precise homecoming that feels like arrival without immediate awareness.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 9,
+          "characters": 44,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIII checked: the Phaeacians deliver Odysseus to Ithaca in a deathlike sleep, unload him, and depart before he wakes.",
+        "attributes": "Homecoming without recognition: the journey is physically complete before the traveller understands it.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-099": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-099",
+          "text": "Minerva had made it a foggy day",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 13, Ithaca is hidden from Odysseus",
+          "speaker": "Narrator",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "context": "Athena covers Ithaca in fog so Odysseus is not recognised and can be briefed before acting.",
+          "fit": "Short, exact atmospheric source for concealment.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 7,
+          "characters": 31,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIII checked: Athena deliberately makes Ithaca foggy to conceal Odysseus's arrival and control recognition.",
+        "attributes": "Concealment as strategic delay: the land is present, but context is withheld until action can be planned.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-196": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-196",
+          "text": "let us rather set about stowing your things at once in the cave",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 13, Athena secures the Phaeacian gifts",
+          "speaker": "Athena",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "context": "Athena directs Odysseus to hide his treasures in the cave of the Naiads.",
+          "fit": "The cave's gameplay identity is security and preserved future value.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 13,
+          "characters": 63,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIII checked: the Naiads' cave is a sacred, two-entrance place where Athena and Odysseus hide the Phaeacian treasures.",
+        "attributes": "A liminal storehouse: part sanctuary, part secret cache, with mortal and divine routes.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-308": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-308",
+          "text": "we can both of us deceive upon occasion",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 13, Athena recognises Odysseus's kindred cunning",
+          "speaker": "Athena",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "context": "Athena explicitly frames herself and Odysseus as peers in craft and deception.",
+          "fit": "The cleanest possible source line for Minds Alike.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 8,
+          "characters": 39,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIII checked: Athena explicitly identifies herself and Odysseus as unmatched in subtlety, then the pair sit together and plan the suitors' destruction.",
+        "attributes": "Intellectual kinship: each delights in the other's craft because neither needs the other to pretend to be simple.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-012": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-012",
+          "kind": "adaptation",
+          "text": "The house had survived twenty years because ordinary people kept doing the next necessary thing.",
+          "source": "https://classics.mit.edu/Homer/odyssey.16.xvi.html",
+          "basis": "Books XIV–XVI show loyal servants maintaining work and hospitality while the household's political centre is absent.",
+          "fit": "Anonymous household loyalty rather than another named hero.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XIV–XVI checked as household composite: loyal servants maintain ordinary work, food and shelter while the king remains hidden.",
+        "attributes": "Anonymous loyalty expressed as continued competence under a damaged household order.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-031": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-031",
+          "kind": "adaptation",
+          "text": "He shared the meal before he believed a word of the stranger's story.",
+          "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+          "basis": "Eumaeus feeds the disguised Odysseus before accepting his claims about identity or return.",
+          "fit": "Gift/hospitality without requiring recognition.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIV checked: Eumaeus seats, feeds and protects the unknown beggar before hearing or believing his story.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-041": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-041",
+          "kind": "adaptation",
+          "text": "The story was false. The kindness it tested was not.",
+          "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+          "basis": "Odysseus tells the cold-night cloak story to see whether Eumaeus will care for him; Eumaeus supplies cloak and bedding.",
+          "fit": "The card is about testing character through an invented story.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIV checked: Odysseus deliberately tells a cold-night cloak story to test whether Eumaeus will continue caring for him; Eumaeus provides clothing and bedding.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-062": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-062",
+          "kind": "adaptation",
+          "text": "Athena did not reveal the plan; she made every revelation happen at the useful moment.",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "basis": "Across XIII–XVI Athena controls mist, disguise, timing and who can see her or recognise Odysseus.",
+          "fit": "A mythic making-of line for managed identity rather than a single disguise event.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XIII–XVI checked: Athena manages fog, disguise, Telemachus's return, private revelation and the timing of the counterplot.",
+        "attributes": "Strategic divinity: she wins by deciding who knows what, when, and in what visible form.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-068": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-068",
+          "kind": "adaptation",
+          "text": "The journey home ended with gifts heavy enough to require hiding.",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "basis": "The Phaeacians land Odysseus with substantial guest-gifts, which Athena helps conceal in the Naiads' cave.",
+          "fit": "Portable value that becomes delayed resource.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIII checked: Odysseus returns loaded with Phaeacian guest-gifts, which are then hidden for safekeeping.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-069": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-069",
+          "kind": "adaptation",
+          "text": "The smallest loyal house became the safest room in Ithaca.",
+          "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+          "basis": "Eumaeus's hut shelters Odysseus and later Telemachus while the counterplot forms.",
+          "fit": "Makes the land a base of hidden organisation.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XIV and XVI checked: Eumaeus's hut shelters the disguised Odysseus, then becomes the private meeting place for father, son and the emerging counterplot.",
+        "attributes": "A small working refuge whose loyalty makes secrecy possible.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-070": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-070",
+          "kind": "adaptation",
+          "text": "Home was finally close enough to touch and strange enough not to recognise.",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "basis": "Odysseus arrives in Ithaca but Athena's fog leaves the familiar landscape unrecognisable.",
+          "fit": "Homecoming as disorientation before recognition.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIII checked: Phorcys harbour safely receives the Phaeacian ship, but Athena's fog prevents Odysseus from recognising Ithaca at first.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-077": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-077",
+          "kind": "adaptation",
+          "text": "They rowed so swiftly that their sleeping passenger never felt the distance disappear.",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "basis": "The Phaeacian crew carries sleeping Odysseus to Ithaca at extraordinary speed.",
+          "fit": "Collective skill rather than individual heroism.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIII checked: the Phaeacian crew rows with extraordinary speed, carries the sleeping Odysseus ashore, and protects his gifts.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-084": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-084",
+          "kind": "adaptation",
+          "text": "A modest fire could still make a meal while the great house consumed itself.",
+          "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+          "basis": "Eumaeus's hut provides ordinary cooked food while the suitors deplete the palace stores.",
+          "fit": "Household warmth set against exploitative abundance.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIV checked as household composite: Eumaeus and his men butcher, cook and share modest food while the suitors consume the best livestock elsewhere.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-110": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-110",
+          "kind": "adaptation",
+          "text": "He welcomed the beggar because hospitality did not need proof of identity.",
+          "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+          "basis": "Eumaeus explicitly says strangers and beggars come from Zeus and welcomes Odysseus without recognising him.",
+          "fit": "Common version of Eumaeus as unconditional host.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIV checked: Eumaeus welcomes the beggar because guest-right applies before identity, status or truth is known.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-145": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-145",
+          "kind": "adaptation",
+          "text": "The passenger slept because everyone else agreed to carry the danger for him.",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "basis": "The Phaeacians escort Odysseus home asleep, handling ship, gifts and landing collectively.",
+          "fit": "Protective Vehicle flavour rather than supernatural speed.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIII checked: the Phaeacians transport Odysseus while he sleeps and land him safely with his goods.",
+        "attributes": "Collective protection: the passenger's vulnerability is covered by the crew's competence.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-264": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-264",
+          "kind": "adaptation",
+          "text": "Pasture, pigs, fences, spring water: loyalty had a landscape before it had a battle.",
+          "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+          "basis": "Eumaeus's farm is carefully described as productive, built and maintained during Odysseus's absence.",
+          "fit": "If later basic-land layout requires silence, this can be dropped.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIV checked: Eumaeus's productive pig farm, fences, pasture and spring-fed setting are directly described.",
+        "sourceClass": "direct-or-explicit-composite"
+      }
+    },
+    "ODY-291": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-291",
+          "kind": "adaptation",
+          "text": "Absence tests an oath by removing every immediate reward for keeping it.",
+          "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+          "basis": "Eumaeus remains devoted to Odysseus despite years without proof of return or personal gain.",
+          "fit": "Oath interpretation grounded in loyalty rather than a literal formal oath scene.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XIV checked as oath/loyalty interpretation: Eumaeus remains faithful through years of absence despite no proof or reward. No formal oath scene is claimed.",
+        "attributes": "Fidelity measured by behaviour during absence, not by the ceremony of making the promise.",
+        "sourceClass": "direct-or-explicit-composite"
       }
     }
   }
