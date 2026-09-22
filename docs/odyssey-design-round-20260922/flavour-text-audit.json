@@ -74,9 +74,25 @@
     {
       "id": "ODY-005",
       "name": "Athena's Intervention",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-005",
+        "text": "I will begin by disguising you so that no human being shall know you",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 13, Athena lays out the disguise",
+        "speaker": "Athena",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "context": "Athena tells Odysseus she will alter him beyond recognition before he enters his own household.",
+        "fit": "This is the exact action behind the intervention/appearance reset.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 14,
+        "characters": 68,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -208,9 +224,18 @@
     {
       "id": "ODY-012",
       "name": "Loyal Householder",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-012",
+        "kind": "adaptation",
+        "text": "The house had survived twenty years because ordinary people kept doing the next necessary thing.",
+        "source": "https://classics.mit.edu/Homer/odyssey.16.xvi.html",
+        "basis": "Books XIV–XVI show loyal servants maintaining work and hospitality while the household's political centre is absent.",
+        "fit": "Anonymous household loyalty rather than another named hero.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -307,9 +332,25 @@
     {
       "id": "ODY-019",
       "name": "Voyage's End",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-019",
+        "text": "lay him down upon the sand still fast asleep",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 13, the Phaeacians deliver Odysseus home",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "context": "The Phaeacians carry the sleeping Odysseus from the ship and leave him safely on Ithaca.",
+        "fit": "A precise homecoming that feels like arrival without immediate awareness.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 44,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -475,9 +516,18 @@
     {
       "id": "ODY-031",
       "name": "Eumaeus Shares His Supper",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-031",
+        "kind": "adaptation",
+        "text": "He shared the meal before he believed a word of the stranger's story.",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "basis": "Eumaeus feeds the disguised Odysseus before accepting his claims about identity or return.",
+        "fit": "Gift/hospitality without requiring recognition.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -616,9 +666,18 @@
     {
       "id": "ODY-041",
       "name": "Test the Swineherd",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-041",
+        "kind": "adaptation",
+        "text": "The story was false. The kindness it tested was not.",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "basis": "Odysseus tells the cold-night cloak story to see whether Eumaeus will care for him; Eumaeus supplies cloak and bedding.",
+        "fit": "The card is about testing character through an invented story.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -877,24 +936,17 @@
     {
       "id": "ODY-055",
       "name": "Eumaeus, Loyal Swineherd",
-      "status": "candidate-verified",
-      "kind": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
       "candidate": {
         "cardId": "ODY-055",
-        "pair": "GW",
-        "text": "Eat, my good fellow, and enjoy your supper, such as it is.",
-        "location": "Book 14, Eumaeus feeds the disguised Odysseus",
-        "speaker": "Eumaeus",
+        "kind": "adaptation",
+        "text": "Loyalty fed the stranger long before recognition could reward it.",
         "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
-        "context": "Eumaeus offers the stranger what food he has before knowing his identity.",
-        "fit": "Directly expresses Eumaeus's hospitality and Food-centered design.",
-        "author": "Homer",
-        "translator": "Samuel Butler",
-        "work": "Odyssey",
-        "verification": "exact excerpt checked",
-        "selection": "candidate; final card-space check pending",
-        "wordCount": 12,
-        "characters": 58
+        "basis": "Eumaeus's generosity and grief for Odysseus precede knowledge that his master has returned.",
+        "fit": "Keeps the uncommon about durable loyalty rather than one meal.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
       },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
@@ -1022,9 +1074,18 @@
     {
       "id": "ODY-062",
       "name": "Athena, Far-Seeing Guide",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-062",
+        "kind": "adaptation",
+        "text": "Athena did not reveal the plan; she made every revelation happen at the useful moment.",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "basis": "Across XIII–XVI Athena controls mist, disguise, timing and who can see her or recognise Odysseus.",
+        "fit": "A mythic making-of line for managed identity rather than a single disguise event.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1103,27 +1164,54 @@
     {
       "id": "ODY-068",
       "name": "Guest-Gift Amphora",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-068",
+        "kind": "adaptation",
+        "text": "The journey home ended with gifts heavy enough to require hiding.",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "basis": "The Phaeacians land Odysseus with substantial guest-gifts, which Athena helps conceal in the Naiads' cave.",
+        "fit": "Portable value that becomes delayed resource.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-069",
       "name": "Eumaeus's Hut",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-069",
+        "kind": "adaptation",
+        "text": "The smallest loyal house became the safest room in Ithaca.",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "basis": "Eumaeus's hut shelters Odysseus and later Telemachus while the counterplot forms.",
+        "fit": "Makes the land a base of hidden organisation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-070",
       "name": "Homeward Harbor",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-070",
+        "kind": "adaptation",
+        "text": "Home was finally close enough to touch and strange enough not to recognise.",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "basis": "Odysseus arrives in Ithaca but Athena's fog leaves the familiar landscape unrecognisable.",
+        "fit": "Homecoming as disorientation before recognition.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1211,9 +1299,18 @@
     {
       "id": "ODY-077",
       "name": "Phaeacian Oarsman",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-077",
+        "kind": "adaptation",
+        "text": "They rowed so swiftly that their sleeping passenger never felt the distance disappear.",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "basis": "The Phaeacian crew carries sleeping Odysseus to Ithaca at extraordinary speed.",
+        "fit": "Collective skill rather than individual heroism.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1314,9 +1411,18 @@
     {
       "id": "ODY-084",
       "name": "Hearthfire Cook",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-084",
+        "kind": "adaptation",
+        "text": "A modest fire could still make a meal while the great house consumed itself.",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "basis": "Eumaeus's hut provides ordinary cooked food while the suitors deplete the palace stores.",
+        "fit": "Household warmth set against exploitative abundance.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1572,9 +1678,25 @@
     {
       "id": "ODY-099",
       "name": "Fogbank over Open Water",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-099",
+        "text": "Minerva had made it a foggy day",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 13, Ithaca is hidden from Odysseus",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "context": "Athena covers Ithaca in fog so Odysseus is not recognised and can be briefed before acting.",
+        "fit": "Short, exact atmospheric source for concealment.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 31,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1770,9 +1892,18 @@
     {
       "id": "ODY-110",
       "name": "Hospitable Swineherd",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-110",
+        "kind": "adaptation",
+        "text": "He welcomed the beggar because hospitality did not need proof of identity.",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "basis": "Eumaeus explicitly says strangers and beggars come from Zeus and welcomes Odysseus without recognising him.",
+        "fit": "Common version of Eumaeus as unconditional host.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -2355,9 +2486,18 @@
     {
       "id": "ODY-145",
       "name": "Broad-Beamed Ferry",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-145",
+        "kind": "adaptation",
+        "text": "The passenger slept because everyone else agreed to carry the danger for him.",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "basis": "The Phaeacians escort Odysseus home asleep, handling ship, gifts and landing collectively.",
+        "fit": "Protective Vehicle flavour rather than supernatural speed.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -3200,9 +3340,25 @@
     {
       "id": "ODY-196",
       "name": "Cave of the Naiads",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-196",
+        "text": "let us rather set about stowing your things at once in the cave",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 13, Athena secures the Phaeacian gifts",
+        "speaker": "Athena",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "context": "Athena directs Odysseus to hide his treasures in the cave of the Naiads.",
+        "fit": "The cave's gameplay identity is security and preserved future value.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 63,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4033,9 +4189,18 @@
     {
       "id": "ODY-264",
       "name": "Forest",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-264",
+        "kind": "adaptation",
+        "text": "Pasture, pigs, fences, spring water: loyalty had a landscape before it had a battle.",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "basis": "Eumaeus's farm is carefully described as productive, built and maintained during Odysseus's absence.",
+        "fit": "If later basic-land layout requires silence, this can be dropped.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4391,9 +4556,18 @@
     {
       "id": "ODY-291",
       "name": "Oaths Outlive Absence",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-291",
+        "kind": "adaptation",
+        "text": "Absence tests an oath by removing every immediate reward for keeping it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "basis": "Eumaeus remains devoted to Odysseus despite years without proof of return or personal gain.",
+        "fit": "Oath interpretation grounded in loyalty rather than a literal formal oath scene.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4586,9 +4760,25 @@
     {
       "id": "ODY-308",
       "name": "Athena and Odysseus, Minds Alike",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-308",
+        "text": "we can both of us deceive upon occasion",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 13, Athena recognises Odysseus's kindred cunning",
+        "speaker": "Athena",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "context": "Athena explicitly frames herself and Odysseus as peers in craft and deception.",
+        "fit": "The cleanest possible source line for Minds Alike.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 39,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4604,11 +4794,11 @@
   ],
   "summary": {
     "totalCards": 309,
-    "exactQuoteCandidates": 54,
-    "adaptationCandidates": 109,
+    "exactQuoteCandidates": 58,
+    "adaptationCandidates": 123,
     "noFlavourSelected": 9,
     "noDirectQuoteStillNeedsFlavourDecision": 0,
-    "pending": 137,
-    "resolvedFlavourOutcomes": 172
+    "pending": 119,
+    "resolvedFlavourOutcomes": 190
   }
 }
