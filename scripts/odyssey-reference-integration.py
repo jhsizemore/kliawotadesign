@@ -8,9 +8,10 @@ assert refs['cards'] and refs['totalCards']==len(refs['cards'])
 
 app=APP/'app.html'
 s=app.read_text()
-needle='<script src="/mtgtools/odyssey/data/odyssey-data.js?v=20260919-live3"></script>'
-assert needle in s
+data_script=re.search(r'<script src="/mtgtools/odyssey/data/odyssey-data\.js\?v=[^"]+"></script>',s)
+assert data_script, 'Odyssey data script tag not found'
 if 'card-references.js' not in s:
+    needle=data_script.group(0)
     s=s.replace(needle,needle+'\n<script src="/mtgtools/odyssey/data/card-references.js?v=20260922-ref2"></script>\n<script src="/mtgtools/odyssey/card-reference-browser.js?v=20260922-ref2"></script>',1)
 s=re.sub(r'card-references\.js\?v=[^"\']+','card-references.js?v=20260922-ref2',s)
 s=re.sub(r'card-reference-browser\.js\?v=[^"\']+','card-reference-browser.js?v=20260922-ref2',s)
