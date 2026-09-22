@@ -132,3 +132,16 @@ Four are intentionally not represented as literal Homeric actions:
 This closes the **changed-common passage-verification gate** without claiming that extension material appears in Homer. The report generator now preserves those classifications on rebuild.
 
 Production data, 14A2 and live Studio remain unchanged. Next contract gate: settle booster/collation assumptions and use them to test whether the common mechanical foundation is actually reachable in Limited, then refresh candidate references before played games.
+
+
+## Eighth checkpoint: Limited collation locked
+
+The Odyssey candidate's rarity skeleton is now reconciled to the actual FIN product structure: the 106 records marked common comprise **80 ordinary commons + 10 common dual lands + 16 basics**, exactly matching FIN's 309-card main-set lattice.
+
+For analytical Limited work, lock **odyssey-core-fin-playbooster-v1**: seven ordinary commons, three uncommons, a FIN-ratio wildcard, guaranteed rare/mythic, FIN-ratio foil wildcard and a 55/45 common-dual/basic land slot. Odyssey has no external Through the Ages-style sheet, so the FIN one-third replacement of a common remains a sensitivity case rather than a fabricated Odyssey product feature.
+
+The core model averages **7.7515 ordinary commons per pack** and **2.325 copies of each specific common across a 24-pack table**. The strict FIN bonus-sheet sensitivity falls only to 7.4182 commons per pack, so earlier theme-density concerns are not artifacts of using the wrong common-slot count.
+
+Common infrastructure under this model: enchantments, Food and Survival are visible; Omens recur strongly. Escape and the single common Constellation payoff are accents. Gift and Foretell are support. GU Manifest remains the clearest density watch and should be tested through supply/pick simulation before another common slot is changed.
+
+No draft picks or played games are claimed. Next: run the locked pack/table supply audit, then a conservative pick-behaviour simulation focused on GU Manifest, WU recognition, WB exploitation and signpost availability. After that, refresh printed-card references.
