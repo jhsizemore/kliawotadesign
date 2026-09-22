@@ -346,8 +346,8 @@
     {
       "id": "ODY-024",
       "name": "Trace the Omen",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -457,8 +457,8 @@
     {
       "id": "ODY-032",
       "name": "Loyal Cowherd",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -847,8 +847,8 @@
     {
       "id": "ODY-061",
       "name": "Odysseus, Cunning Voyager",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -879,8 +879,8 @@
     {
       "id": "ODY-065",
       "name": "Phaeacian Swiftship",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1859,8 +1859,8 @@
     {
       "id": "ODY-143",
       "name": "Great Hall",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1954,9 +1954,25 @@
     {
       "id": "ODY-151",
       "name": "Theoclymenus, Omen Reader",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-151",
+        "text": "I see mischief overhanging you",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 20, Theoclymenus leaves the doomed feast",
+        "speaker": "Theoclymenus",
+        "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+        "context": "Theoclymenus refuses to stay among people who mock the doom he can see clearly.",
+        "fit": "A compact prophetic voice distinct from the visual Veiled Hall omen.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 5,
+        "characters": 30,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2169,8 +2185,8 @@
     {
       "id": "ODY-168",
       "name": "Nostos, The Long Road Home",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2407,8 +2423,8 @@
     {
       "id": "ODY-184",
       "name": "Penelope's Shroud",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2478,8 +2494,8 @@
     {
       "id": "ODY-189",
       "name": "Scheria, Harbor of Wonders",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2558,24 +2574,24 @@
     {
       "id": "ODY-197",
       "name": "Homeward Path",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-198",
       "name": "Poseidon, Earth-Shaker",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-199",
       "name": "Penelope, Weaver of Fate",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2598,8 +2614,8 @@
     {
       "id": "ODY-202",
       "name": "Alcinous, Hospitable King",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2702,8 +2718,8 @@
     {
       "id": "ODY-211",
       "name": "Hermes, Guide of Wanderers",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2774,24 +2790,24 @@
     {
       "id": "ODY-216",
       "name": "Lay of the Hidden King",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-217",
       "name": "Metis, Cunning Counsel",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-218",
       "name": "Moira, Inescapable Fate",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2846,25 +2862,41 @@
     {
       "id": "ODY-223",
       "name": "Odysseus, Beggar-King",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-224",
       "name": "Eumaeus and Philoetius",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-225",
       "name": "Telemachus and Odysseus, Reunited",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-225",
+        "text": "I am your father, on whose account you grieve and suffer so much",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 16, Odysseus reveals himself to Telemachus",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.16.xvi.html",
+        "context": "Odysseus identifies himself after Athena restores his appearance.",
+        "fit": "The reunion pair begins with the direct disclosure the son cannot initially believe.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 64,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2934,9 +2966,25 @@
     {
       "id": "ODY-230",
       "name": "Xenia, Sacred Guest-Right",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-230",
+        "text": "all strangers and beggars are from Jove",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 14, Eumaeus states the rule of hospitality",
+        "speaker": "Eumaeus",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "context": "Eumaeus explains why even a poor stranger must be welcomed.",
+        "fit": "The set's xenia concept receives its cleanest direct formulation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 39,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2998,8 +3046,8 @@
     {
       "id": "ODY-238",
       "name": "Recognition in Plain Sight",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3022,8 +3070,8 @@
     {
       "id": "ODY-241",
       "name": "A Name Kept Hidden",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3046,16 +3094,16 @@
     {
       "id": "ODY-244",
       "name": "Hermes's Golden Wand",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-245",
       "name": "Song of the Faithful Queen",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3086,24 +3134,24 @@
     {
       "id": "ODY-249",
       "name": "The Long Way Home",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-250",
       "name": "The Black-Hulled Ship, Homeward Bound",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-251",
       "name": "Plains",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Plains. Reserve the Ithaca basic-land treatment without flavour text.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3158,16 +3206,16 @@
     {
       "id": "ODY-258",
       "name": "Swamp",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Swamp. Reserve the Underworld basic-land treatment without flavour text.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-259",
       "name": "Swamp",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Swamp. Reserve the palace-foreboding basic-land treatment without flavour text.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3238,8 +3286,8 @@
     {
       "id": "ODY-268",
       "name": "Olive Pasture",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3262,8 +3310,8 @@
     {
       "id": "ODY-271",
       "name": "Asphodel Meadow",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3310,8 +3358,8 @@
     {
       "id": "ODY-275",
       "name": "Penelope's Unending Loom",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3459,8 +3507,8 @@
     {
       "id": "ODY-288",
       "name": "Feast Beyond Measure",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3546,8 +3594,8 @@
     {
       "id": "ODY-297",
       "name": "Memory Beneath the Earth",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3674,18 +3722,18 @@
     {
       "id": "ODY-309",
       "name": "Zeus, Keeper of Oaths",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     }
   ],
   "summary": {
     "totalCards": 309,
-    "verifiedCandidates": 77,
-    "noDirectQuoteSelected": 151,
-    "noFlavourSelected": 11,
-    "pending": 70,
+    "verifiedCandidates": 80,
+    "noDirectQuoteSelected": 181,
+    "noFlavourSelected": 14,
+    "pending": 34,
     "finalSelections": 0
   }
 }
