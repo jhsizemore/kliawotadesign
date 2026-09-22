@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-09-22T09:47:30.688533+00:00",
+  "retrievedAt": "2026-09-23",
   "cards": {
     "Satsuki, the Living Lore": {
       "name": "Satsuki, the Living Lore",
@@ -248,6 +248,61 @@
       "toughness": null,
       "scryfall_uri": "https://scryfall.com/card/thb/30/omen-of-the-sun?utm_source=api",
       "released_at": "2020-01-24"
+    },
+    "Altar's Reap": {
+      "name": "Altar's Reap",
+      "mana_cost": "{1}{B}",
+      "type_line": "Instant",
+      "oracle_text": "As an additional cost to cast this spell, sacrifice a creature.\nDraw two cards.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/m14/84/altars-reap",
+      "released_at": "2013-07-19",
+      "source": "Printed-card benchmark; Scryfall card page. Additional-cost sacrifice cleanly isolates the Iphigenia cost/draw component."
+    },
+    "Flotsam": {
+      "name": "Flotsam",
+      "mana_cost": "{1}{G/U}",
+      "type_line": "Instant",
+      "oracle_text": "Mill three cards. Investigate.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://magic.wizards.com/en/news/feature/murders-at-karlov-manor-release-notes",
+      "released_at": "2024-02-09",
+      "source": "Wizards Murders at Karlov Manor release notes; hybrid GU self-mill/investigate precedent."
+    },
+    "Tough Cookie": {
+      "name": "Tough Cookie",
+      "mana_cost": "{1}{G}",
+      "type_line": "Artifact Creature — Food Golem",
+      "oracle_text": "When Tough Cookie enters the battlefield, create a Food token.\n{2}{G}: Target noncreature artifact you control becomes a 4/4 artifact creature until end of turn.\n{2}, {T}, Sacrifice Tough Cookie: You gain 3 life.",
+      "power": "2",
+      "toughness": "2",
+      "scryfall_uri": "https://magic.wizards.com/en/news/feature/wilds-of-eldraine-release-notes",
+      "released_at": "2023-09-08",
+      "source": "Wizards Wilds of Eldraine release notes; green Food infrastructure precedent."
+    },
+    "Shore Up": {
+      "name": "Shore Up",
+      "mana_cost": "{U}",
+      "type_line": "Instant",
+      "oracle_text": "Target creature you control gets +1/+1 and gains hexproof until end of turn. Untap it.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/dmu/64/shore-up",
+      "released_at": "2022-09-09",
+      "source": "Printed blue untap-plus-hexproof component benchmark."
+    },
+    "Tamiyo's Safekeeping": {
+      "name": "Tamiyo's Safekeeping",
+      "mana_cost": "{G}",
+      "type_line": "Instant",
+      "oracle_text": "Target permanent you control gains hexproof and indestructible until end of turn. You gain 2 life.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/neo/211/tamiyos-safekeeping",
+      "released_at": "2022-02-18",
+      "source": "Printed green hexproof-on-permanent component benchmark."
     }
   },
   "elderGiantsWithEscape": [
