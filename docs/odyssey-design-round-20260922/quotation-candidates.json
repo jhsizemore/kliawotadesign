@@ -33,6 +33,23 @@
     "kind": "quote"
   },
   {
+    "cardId": "ODY-007",
+    "text": "no one ever yet came who was so like Ulysses in figure, voice, and feet as you are",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 19, Eurycleia before the scar is exposed",
+    "speaker": "Eurycleia",
+    "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+    "context": "Before she even touches the scar, Eurycleia is struck by the stranger's resemblance to Odysseus.",
+    "fit": "The line makes washing a recognition scene before the decisive physical proof.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 18,
+    "characters": 82,
+    "kind": "quote"
+  },
+  {
     "cardId": "ODY-008",
     "text": "he took Ulysses by the hand, raised him from the hearth",
     "author": "Homer",
@@ -132,6 +149,23 @@
     "characters": 48
   },
   {
+    "cardId": "ODY-028",
+    "text": "Now, stranger, I shall put you to the test",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 19, Penelope tests the beggar's story",
+    "speaker": "Penelope",
+    "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+    "context": "Penelope asks for remembered details of Odysseus's clothing and companions.",
+    "fit": "This is the card's action in Penelope's own words.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 9,
+    "characters": 42,
+    "kind": "quote"
+  },
+  {
     "cardId": "ODY-035",
     "text": "Tell me, O muse",
     "author": "Homer",
@@ -146,6 +180,23 @@
     "wordCount": 4,
     "characters": 15,
     "selection": "candidate; final card-space check pending"
+  },
+  {
+    "cardId": "ODY-036",
+    "text": "she recognized it and dropped the foot at once",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 19, the basin recognition",
+    "speaker": "Narrator",
+    "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+    "context": "The scar is felt during the foot-washing; Eurycleia's recognition physically upsets the basin.",
+    "fit": "The artifact is the setting where hidden identity becomes undeniable.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 9,
+    "characters": 46,
+    "kind": "quote"
   },
   {
     "cardId": "ODY-049",
@@ -281,6 +332,40 @@
     "selection": "candidate; final card-space check pending",
     "wordCount": 10,
     "characters": 45
+  },
+  {
+    "cardId": "ODY-076",
+    "text": "I am sure you must be Ulysses himself",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 19, Eurycleia recognises the scar",
+    "speaker": "Eurycleia",
+    "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+    "context": "Eurycleia identifies Odysseus after handling the scarred leg.",
+    "fit": "A direct recognition line for the legendary character version.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 8,
+    "characters": 37,
+    "kind": "quote"
+  },
+  {
+    "cardId": "ODY-078",
+    "text": "It was I who gave Ulysses the clothes you speak of",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 19, Penelope confirms the cloak and brooch",
+    "speaker": "Penelope",
+    "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+    "context": "Penelope recognises that the beggar's detailed description of Odysseus's clothing is genuine.",
+    "fit": "The remembered object itself becomes proof.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 11,
+    "characters": 50,
+    "kind": "quote"
   },
   {
     "cardId": "ODY-079",
@@ -430,6 +515,23 @@
     "selection": "candidate; final card-space check pending",
     "wordCount": 6,
     "characters": 38
+  },
+  {
+    "cardId": "ODY-104",
+    "text": "I want to take it down where the smoke cannot reach it",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 19, Telemachus gives the cover story for removing the armour",
+    "speaker": "Telemachus",
+    "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+    "context": "Odysseus and Telemachus secretly move the weapons while Telemachus gives Eurycleia a harmless explanation.",
+    "fit": "The card's concealment plan in source-text wording.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 12,
+    "characters": 54,
+    "kind": "quote"
   },
   {
     "cardId": "ODY-107",
@@ -957,6 +1059,23 @@
     "wordCount": 6,
     "characters": 27,
     "selection": "candidate; final card-space check pending"
+  },
+  {
+    "cardId": "ODY-303",
+    "text": "the most accomplished thief and perjurer in the whole world",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 19, Autolycus is introduced",
+    "speaker": "Narrator",
+    "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+    "context": "Autolycus is explicitly characterised by exceptional theft and false oaths.",
+    "fit": "A source-specific identity line that prevents the Rogue from feeling generic.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 10,
+    "characters": 59,
+    "kind": "quote"
   },
   {
     "cardId": "ODY-308",
