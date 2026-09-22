@@ -60,10 +60,10 @@
   "method": "Independent uniform slots from 90 nonbasic commons. Sensitivity analysis for 6, 7 or 10 commons per pack. Not a draft simulator, chosen booster collation, deck model or played match.",
   "playedMatches": 0,
   "remainingRisks": [
-    "Odyssey Limited test collation is locked to core FIN-style Play Booster v1, but pick competition and actual draft behaviour are not yet modelled.",
-    "Draft competition and playable-card selection are not modelled.",
+    "Odyssey Limited collation and a conservative fixed-intent passing stress model are locked; real draft signalling, pick evaluation and gameplay remain untested.",
+    "The stress model treats relevant support as automatic high picks; real card power, signals, pivots and playable-card selection remain unmodelled.",
     "Common creature rates, removal and Omen repetition need games.",
-    "Three Manifest Fate commons do not guarantee adequate density in every colour pair.",
+    "GU meets the minimum common/uncommon/gold support skeleton but is the most competition-sensitive tested lane; confirm in actual drafts before adding another common Manifest source.",
     "WU Penelope is approved; Iphigenia uses actual sacrifice and retains UB. Rates and interactions remain provisional.",
     "Hybrid Saga overlap is now mechanically audited; BG and GU received narrow repairs, but their Limited rates still need played games."
   ],
@@ -78,5 +78,15 @@
       "basic": 0.45
     },
     "expectedOrdinaryCommonsPerPack": 7.7515
+  },
+  "pickStress": {
+    "seed": 20260923,
+    "runsPerScenario": 5000,
+    "guOneEach": {
+      "meanDirectEnablers": 2.4876,
+      "pAtLeast2": 0.7266,
+      "pAtLeast3": 0.454
+    },
+    "decision": "No new GU common before real draft evidence."
   }
 }
