@@ -226,3 +226,16 @@ Calypso's three portrayals are differentiated: the uncommon is an accessible exi
 The flavour-completion rule is also tightened. Exact quotations are not mandatory: a source-led adaptation counts as a valid candidate. Conversely, “no direct quote” alone is not complete unless the card has an adaptation or a deliberate no-flavour/layout decision.
 
 Production, 14A2 and live Studio remain unchanged. Next narrative cluster: **Books IX–XII — the wanderings, monsters and crew failures**.
+
+
+## Fifteenth checkpoint: Books IX–XII editorial pass
+
+The wanderings/monsters/crew-failure cluster is substantially complete. **71 source-led flavour adaptations** and **5 deliberate no-flavour basic-land decisions** are added. Existing exact quotation candidates for Tiresias, Eurylochus, Anticleia, the Deck-Captain, the cattle omen, Aeolus, Polites and Circe are retained.
+
+Source classification is now explicit across the cluster: direct Homeric episodes are separated from funerary composites, ancient-Mediterranean seamanship extensions, natural-world extensions, imagined songs and set-level voyage metaphors. Two misplaced cards are deferred rather than falsely verified here: **ODY-180 Black-Hulled Achaean Galley** belongs to Trojan/pre-Odyssey material, and **ODY-182 Nobody, Self-Invented** belongs to later reception.
+
+A genuine source-placement error is corrected: **ODY-194 Circe's Enchanted Garden** is Book X/Aeaea material, not Book XI.
+
+The making layer is sharpened around the actual emotional engines of the wanderings: hospitality inverted into predation; anonymity undone by pride; temptation as relief; memory as a paid cost; restraint as precommitment; unavoidable loss between Scylla and Charybdis; and crew failure as short-term reasoning repeatedly defeating long-term homecoming.
+
+Production, 14A2 and live Studio remain unchanged. Next narrative cluster: **Books XIII–XVI — return, disguise and reconnaissance**.
