@@ -156,3 +156,14 @@ GU remains the thin lane, but it clears the current structural threshold without
 Decision: **do not spend another common slot on Manifest Fate before real draft evidence.** WU recognition and the narrow WB exploitation resource package are more robust under the same stress assumptions. GU remains the first archetype to watch in actual drafts, especially Voyage into Unknown Shores's four-cards-in-exile threshold.
 
 Production data, 14A2 and live Studio remain unchanged. Next contract gate: refresh printed-card/reference comparisons for the now-stable 42-card candidate, then move into actual draft/game testing before integration.
+
+
+## Tenth checkpoint: printed-reference gate complete
+
+Printed component comparisons are now reconciled for all **42 candidate changes**. Thirteen changed cards requested fresh benchmarks and all requested references are present; 28 retain existing production benchmarks; ODY-097 is naming-only and requires no rate refresh. Missing requested comparisons: **0**.
+
+The final missing research inputs were Altar's Reap for Iphigenia's additional-cost sacrifice/draw-two component; Flotsam and Tough Cookie for the repaired BG hybrid Saga; and Shore Up/Tamiyo's Safekeeping as protection-component checks for the repaired GU Saga. These are component precedents only. **No candidate rate is certified by this pass.**
+
+The report generator is also repaired so a future rebuild preserves the locked collation/pick-stress validation instead of reviving the obsolete 90-common placeholder model.
+
+Production data, 14A2 and live Studio remain unchanged. The next contract gate is gameplay evidence: build reproducible Draft/Sealed test pools and matchup decks under the locked collation, then test the specific unresolved questions (GU Manifest acquisition and four-card exile threshold; WU recognition repeatability; WB Antinous consumption; Omen repetition; hybrid Saga rates; Penelope/Iphigenia/bed/wind-bag rates). Final quotation/layout decisions and integration follow gameplay.
