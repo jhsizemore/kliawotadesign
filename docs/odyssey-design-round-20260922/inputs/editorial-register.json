@@ -239,6 +239,10 @@
           "wordCount": 11,
           "characters": 48
         }
+      },
+      "brief": {
+        "sourceReview": "Books VI and VIII checked: Nausicaa stands firm, provides food/clothes and guidance, witnesses Odysseus's transformed appearance, and later asks to be remembered.",
+        "attributes": "Courageous hospitality before recognition: she helps the frightening stranger become legible as a person."
       }
     },
     "ODY-091": {
@@ -389,6 +393,9 @@
           "wordCount": 10,
           "characters": 48
         }
+      },
+      "brief": {
+        "sourceReview": "Book VIII checked: Odysseus explicitly asks Demodocus to change songs and tell the wooden-horse story; the performance triggers his grief."
       }
     },
     "ODY-157": {
@@ -520,6 +527,10 @@
           "wordCount": 11,
           "characters": 54
         }
+      },
+      "brief": {
+        "sourceReview": "Book V checked: Calypso shelters Odysseus, offers immortality, and wants him to remain while he longs for home.",
+        "attributes": "Care that becomes possession: safety and abundance gain weight precisely because the guest wants to leave."
       }
     },
     "ODY-177": {
@@ -564,6 +575,10 @@
           "wordCount": 14,
           "characters": 68
         }
+      },
+      "brief": {
+        "sourceReview": "Book VIII checked: Euryalus excels in wrestling, insults Odysseus, sees himself disproved, then apologises with a valuable gift.",
+        "attributes": "Competitive pride capable of restitution once evidence destroys the insult."
       }
     },
     "ODY-287": {
@@ -629,10 +644,44 @@
       "sourceReview": "passages checked: Books IX and XII directly show boarding, oar-work, ship handling and dangerous passage; the delayed untap is mechanical abstraction."
     },
     "ODY-074": {
-      "sourceReview": "passage checked: Book VII directly seats the stranger and serves bread and household food before further questioning."
+      "sourceReview": "passage checked: Book VII directly seats the stranger and serves bread and household food before further questioning.",
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-074",
+          "kind": "adaptation",
+          "text": "Questions could wait until the stranger had eaten.",
+          "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+          "basis": "The Phaeacians seat and feed Odysseus before requiring his full identity.",
+          "fit": "Hospitality-before-interrogation in one line.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VII checked: food and a proper seat come before Odysseus is required to explain who he is."
+      }
     },
     "ODY-087": {
-      "sourceReview": "passage checked with extension: Book V uses cormorant and sea-gull imagery around sea travel; a mortal lookout reading birds for navigation is not narrated by Homer."
+      "sourceReview": "passage checked with extension: Book V uses cormorant and sea-gull imagery around sea travel; a mortal lookout reading birds for navigation is not narrated by Homer.",
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-087",
+          "kind": "adaptation",
+          "text": "Over empty water, even a bird can feel like evidence.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Book V repeatedly uses sea-bird imagery; the mortal lookout who reads it is invented.",
+          "fit": "Keeps the navigational extension explicit.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked with extension: cormorant/sea-gull imagery is explicit, but a mortal lookout reading birds for navigation is invented."
+      }
     },
     "ODY-103": {
       "sourceReview": "passage checked: Book III directly shows the cup, prayer and drink-offering being passed in ritual order.",
@@ -1100,6 +1149,919 @@
     "ODY-072": {
       "brief": {
         "sourceReview": "Deferred to the Trojan/pre-Odyssey cluster: the current source is Iliad II / Aulis rather than the Telemachy."
+      }
+    },
+    "ODY-008": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-008",
+          "text": "he took Ulysses by the hand, raised him from the hearth",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 7, Alcinous raises the suppliant",
+          "speaker": "Narrator",
+          "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+          "context": "The stranger is physically raised from the ashes and seated before being fed.",
+          "fit": "The exact hospitality action behind the restraint-and-Food card.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 11,
+          "characters": 55,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VII checked: Alcinous raises the suppliant from the hearth, seats him, washes and feeds him. Ability suppression is a gameplay abstraction of protected guest-right.",
+        "attributes": "Guest-right forces the household to treat an unknown outsider as a person before treating him as a threat."
+      }
+    },
+    "ODY-011": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-011",
+          "text": "alone never dipping into the stream of Oceanus",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 5, Odysseus steers by the Bear",
+          "speaker": "Narrator",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "context": "Calypso tells Odysseus to keep the Bear on his left while navigating.",
+          "fit": "A compact navigational image specific to the constellation used for steering.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 8,
+          "characters": 46,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked: Odysseus explicitly steers by the Pleiades, Boötes and the Bear under Calypso's instructions."
+      }
+    },
+    "ODY-079": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-079",
+          "text": "she had endowed him with a divine gift of song",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 8, Demodocus enters the feast",
+          "speaker": "Narrator",
+          "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+          "context": "The Muse gives Demodocus his extraordinary singing gift while taking his sight.",
+          "fit": "Specific to the blind singer and his authority over remembered stories.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 10,
+          "characters": 46,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VIII checked: Demodocus is Muse-gifted, blind, repeatedly requested, and his songs expose Odysseus's grief.",
+        "attributes": "A performer whose accuracy is so strong that hidden identity becomes emotionally unsustainable."
+      }
+    },
+    "ODY-097": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-097",
+          "text": "the weak confound the strong",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 8, the gods react to Hephaestus's trap",
+          "speaker": "Gods at the doorway",
+          "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+          "context": "The gods admire the cunning trap that catches swift Ares.",
+          "fit": "The shortest clean statement of the song's reversal-through-craft theme.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 5,
+          "characters": 28,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VIII checked: Demodocus explicitly performs the Hephaestus/Ares/Aphrodite story and the gods praise cunning reversal. Final candidate name is Song of Hephaestus's Net.",
+        "name": "Song of Hephaestus's Net",
+        "attributes": "A performed lesson in preparation: Hephaestus wins not by strength but by making the trap before his rivals notice."
+      }
+    },
+    "ODY-167": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-167",
+          "text": "He looked like some lion of the wilderness",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 6, Odysseus emerges before Nausicaa",
+          "speaker": "Narrator",
+          "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+          "context": "The naked, salt-caked Odysseus is compared to a famished lion as the maids scatter.",
+          "fit": "The card is the simile itself, so the direct line is preferable to an adaptation.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 8,
+          "characters": 42,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VI checked: the emerging Odysseus is directly compared to a famished lion approaching a fenced homestead.",
+        "attributes": "A simile of desperate majesty: the stranger is both vulnerable and frightening before anyone knows who he is."
+      }
+    },
+    "ODY-187": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-187",
+          "text": "settled them in Scheria, far from all other people",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 6, the Phaeacians' settlement",
+          "speaker": "Narrator",
+          "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+          "context": "Nausithous establishes the Phaeacians in remote Scheria.",
+          "fit": "Directly supports the renamed Uncharted Haven treatment.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 9,
+          "characters": 50,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books VI–VII checked: Scheria is a remote Phaeacian settlement and Odysseus enters it as an unknown outsider seeking safe passage.",
+        "attributes": "A refuge defined by distance: strange enough to be uncertain, orderly enough to become safe."
+      }
+    },
+    "ODY-203": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-203",
+          "text": "a thoroughly good woman both in head and heart",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 7, Athena describes Arete",
+          "speaker": "Athena",
+          "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+          "context": "Athena tells Odysseus that Arete's judgement can secure his homeward passage.",
+          "fit": "A concise portrait of Arete's respected discernment.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 9,
+          "characters": 46,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VII checked: Athena identifies Arete as unusually respected, discerning and capable of securing Odysseus's return.",
+        "attributes": "Social authority through judgement rather than command: recognition by Arete turns a stranger into someone the household will act for."
+      }
+    },
+    "ODY-229": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-229",
+          "text": "the city was doomed when it took in that horse",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 8, Demodocus sings the wooden horse",
+          "speaker": "Narrator",
+          "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+          "context": "Demodocus recounts the Trojan decision to bring the wooden horse into the city.",
+          "fit": "Exact fatal hinge for the Saga-to-Vehicle transformation.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 10,
+          "characters": 46,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VIII checked: Demodocus recounts the wooden horse entering Troy, the city becoming doomed, and the Greeks emerging from concealment.",
+        "attributes": "A victory assembled in two stages: public object first, hidden attackers second."
+      }
+    },
+    "ODY-274": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-274",
+          "text": "it was she, not he, that would have it so",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 5, Odysseus's life with Calypso",
+          "speaker": "Narrator",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "context": "The narration distinguishes Calypso's desire from Odysseus's unwilling captivity.",
+          "fit": "Essential corrective against romanticising this portrayal as freely chosen refuge.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 10,
+          "characters": 41,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked: the narration explicitly states that Odysseus's sexual cohabitation with Calypso is not his choice. Keep refuge and captivity in tension without romanticising coercion.",
+        "attributes": "A captor capable of care: comfort is real, but so is the unequal power to prevent departure."
+      }
+    },
+    "ODY-014": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-014",
+          "kind": "adaptation",
+          "text": "The sea had waited for Poseidon to notice him.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Poseidon spots Odysseus after his apparent escape and deliberately raises the storm.",
+          "fit": "Condenses divine pursuit into foreboding without inventing a spoken prophecy.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked: Poseidon spots Odysseus at sea and deliberately raises the storm. Foretell remains player anticipation, not a prophecy spoken in the episode."
+      }
+    },
+    "ODY-016": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-016",
+          "kind": "adaptation",
+          "text": "A good singer chooses the story. A great one discovers what the listener cannot hide.",
+          "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+          "basis": "Book VIII repeatedly shows song selecting, shaping and exposing emotional memory.",
+          "fit": "An original line for an ordinary bard without stealing Demodocus's specific quotations.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VIII checked: Phaeacian feasts treat song as skilled communal work. This anonymous Bard is a structural extension, deliberately less specific than Demodocus.",
+        "attributes": "A working singer reads the room, selects a story and turns a repertoire into shared attention."
+      }
+    },
+    "ODY-018": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-018",
+          "kind": "adaptation",
+          "text": "Every road not taken left a mark on the one that remained.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Odysseus repeatedly chooses among dangerous courses and uncertain divine advice.",
+          "fit": "Source-led interpretation for the set's exile/face-up journey mechanic.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked as interpretive basis: route choice, divine advice and uncertain landfall are explicit; a hidden-course quest is a mechanical journey metaphor.",
+        "attributes": "Navigation as accumulated inference: each revealed or exiled possibility narrows the course."
+      }
+    },
+    "ODY-021": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-021",
+          "kind": "adaptation",
+          "text": "Freedom began as timber, measured and cut by hand.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Odysseus personally selects, cuts, smooths and joins the timber for his raft.",
+          "fit": "Keeps the emphasis on earned agency rather than miraculous rescue.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked: Odysseus personally selects trees, cuts them, adzes them smooth, joins the timbers and launches the raft.",
+        "attributes": "Self-rescue through competent labour; no god carries him away for free."
+      }
+    },
+    "ODY-033": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-033",
+          "kind": "adaptation",
+          "text": "Each crossing taught the crew what the next storm would demand.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Book V treats sea travel as repeated endurance and adaptation; this card generalises that voyage pattern.",
+          "fit": "Composite voyage flavour rather than a claim of one specific gale-rowing scene.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked as voyage composite: repeated endurance at sea is explicit, but quest counters, Treasure and card access are gameplay abstractions.",
+        "attributes": "Persistence converts repeated dangerous passage into preparedness and options."
+      }
+    },
+    "ODY-038": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-038",
+          "kind": "adaptation",
+          "text": "Before a ship can brave the sea, someone must master fire beside it.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Book V directly supplies shipbuilding craft but not a shipyard spark incident.",
+          "fit": "Explicit material-world extension.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked for shipbuilding craft; the spark incident and dedicated shipyard setting are explicit material-world extensions."
+      }
+    },
+    "ODY-040": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-040",
+          "kind": "adaptation",
+          "text": "The tool that shaped the raft made every later mile possible.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Calypso gives Odysseus an adze, which he uses in the raft construction.",
+          "fit": "Source-led object flavour without quoting another Book V line.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked: Calypso gives Odysseus a sharp adze and he uses it to shape the raft.",
+        "attributes": "A practical tool whose value comes from the worker and the vessel it helps create."
+      }
+    },
+    "ODY-043": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-043",
+          "kind": "adaptation",
+          "text": "Songs survive because memory changes them just enough to sing again.",
+          "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+          "basis": "Demodocus performs multiple stories and listeners repeatedly ask for more.",
+          "fit": "Original oral-performance interpretation for the refrain/enchantment engine.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VIII checked: songs are repeated, requested and heard differently by listeners. 'Refrain' plus Constellation is an oral-performance interpretation.",
+        "attributes": "Memory becomes usable when a familiar story returns in a new context."
+      }
+    },
+    "ODY-045": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-045",
+          "kind": "adaptation",
+          "text": "The horizon vanished before the sailor had time to name the weather.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Poseidon's storm rapidly covers earth, sea and sky with cloud.",
+          "fit": "Keeps this common squall below the named divine-storm card.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked: Poseidon's storm violently stops progress. This common is intentionally a smaller generic squall rather than another divine named event."
+      }
+    },
+    "ODY-048": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-048",
+          "kind": "adaptation",
+          "text": "A house stands because something bears its weight.",
+          "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+          "basis": "The Phaeacian palace is described through elaborate architecture and crafted supports; a living Caryatid remains a Theros visual borrowing.",
+          "fit": "Original visual-world flavour, not a claim of a Homeric plant-person.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VII checked for lavish Phaeacian architecture and crafted supports. A living Caryatid is a Theros/reprint visual borrowing, not a Homeric creature."
+      }
+    },
+    "ODY-057": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-057",
+          "kind": "adaptation",
+          "text": "Every stronger hull remembers the hands that worked it.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Odysseus's raft construction supplies the craft vocabulary; the dedicated shipboard carpenter is invented.",
+          "fit": "Makes the extension feel ordinary rather than legendary.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked for hands-on raft construction. A dedicated shipboard carpenter is an ordinary craft composite, not a named companion.",
+        "attributes": "The unnoticed specialist whose work becomes visible only when the vessel performs better."
+      }
+    },
+    "ODY-067": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-067",
+          "kind": "adaptation",
+          "text": "A flawed vessel is not wasted if the next one is better.",
+          "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+          "basis": "Scheria is rich in household craft, but no specific potter is narrated.",
+          "fit": "Original craft flavour for the discard-and-replace mechanic.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VII checked for a craft-rich household; no specific potter or kiln scene is narrated. Keep this as material-world extension."
+      }
+    },
+    "ODY-083": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-083",
+          "kind": "adaptation",
+          "text": "Craft begins with what the household already has.",
+          "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+          "basis": "Book VII emphasises bronze, gold, silver and skilled household manufacture but names no bowl-smith.",
+          "fit": "Original extension tied to the artifact condition.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VII checked for bronze, gold, silver and exceptional household craft; the specialist bowl-smith is an invented material-world worker."
+      }
+    },
+    "ODY-106": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-106",
+          "kind": "adaptation",
+          "text": "Four days of careful work met one angry sea.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Odysseus completes the raft in four days before Poseidon later destroys it.",
+          "fit": "Captures the raft's vulnerability without another direct quotation.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked: the raft is carefully constructed over four days, then battered and finally broken by Poseidon's storm.",
+        "attributes": "Improvised mobility: enough craft to leave captivity, never enough durability to feel safe."
+      }
+    },
+    "ODY-109": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-109",
+          "kind": "adaptation",
+          "text": "Hospitality does not end when the feast does.",
+          "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+          "basis": "Arete orders a proper bed prepared for Odysseus after the meal.",
+          "fit": "Turns bedding into continuation of guest-right.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VII checked: after supper Arete has a proper bed made for the stranger in the gatehouse."
+      }
+    },
+    "ODY-119": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-119",
+          "kind": "adaptation",
+          "text": "The sea returned him alive, but not untouched.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Odysseus reaches shore exhausted, swollen and full of seawater.",
+          "fit": "A general mariner line grounded in the storm aftermath.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked as composite: Odysseus reaches shore physically ruined by sea travel. This anonymous mariner generalises that survivor image."
+      }
+    },
+    "ODY-120": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-120",
+          "kind": "adaptation",
+          "text": "A sailor who reads the water acts before the wave decides for him.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Odysseus studies surf, rocks, current and shelter while trying to land.",
+          "fit": "Explicit seamanship interpretation rather than a named Homeric technique.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked with seamanship extension: Odysseus reads surf, rocks, current and shelter while seeking a landing; 'read the swell' is the card's compressed technique."
+      }
+    },
+    "ODY-132": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-132",
+          "kind": "adaptation",
+          "text": "The crew trusted the sailor who knew when motion should become patience.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "The voyage repeatedly alternates action with waiting for usable conditions.",
+          "fit": "Original weatherwise-sailor composite.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked as seamanship composite: wind, stars, rudder and changing conditions are explicit; the dedicated weatherwise sailor is invented."
+      }
+    },
+    "ODY-134": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-134",
+          "kind": "adaptation",
+          "text": "Poseidon broke in moments what patience had built in days.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "The storm smashes the raft Odysseus had spent days constructing.",
+          "fit": "The Elemental is a game personification of the destructive sea.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked: Poseidon's storm breaks the raft. The Elemental is a game personification of destructive weather, not a creature in Homer."
+      }
+    },
+    "ODY-150": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-150",
+          "kind": "adaptation",
+          "text": "Hospitality begins by raising the stranger from the ashes.",
+          "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+          "basis": "Alcinous raises the suppliant from the hearth before seating him.",
+          "fit": "Source-led adaptation distinct from the exact quote used on Seat the Guest.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VII checked: Alcinous physically raises Odysseus from the hearth and moves him from ash-covered supplication into the household's protected space."
+      }
+    },
+    "ODY-152": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-152",
+          "kind": "adaptation",
+          "text": "Their ships seemed to know the destination before the sailors spoke it.",
+          "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+          "basis": "Alcinous says Phaeacian ships understand their passengers' intended destination.",
+          "fit": "The shipwright is invented; the impossible craft is directly Homeric.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VIII checked: Phaeacian ships are described as knowing destinations and needing no pilots. The individual shipwright is an extension built from that impossible craft culture.",
+        "attributes": "A maker whose workmanship is so advanced that the finished ship seems to possess intention."
+      }
+    },
+    "ODY-160": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-160",
+          "kind": "adaptation",
+          "text": "On a bare coast, weather has nowhere to hide its violence.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Odysseus's landfall is exposed to storm, surf and rock.",
+          "fit": "Landscape extension rather than a distinct named storm.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked for storm, surf and exposed rock. 'Storm over Limestone' is a landscape extension rather than a separately narrated event."
+      }
+    },
+    "ODY-164": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-164",
+          "kind": "adaptation",
+          "text": "A useful thing often begins with discarding the failed one.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Book V supplies intensive practical making; the iterative bench-work engine is an extension.",
+          "fit": "Original craft-process flavour.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked for practical construction; iterative bench-crafting and artifact filtering are explicit design extensions.",
+        "attributes": "Craft as revision: useful work comes from recognizing which version to abandon."
+      }
+    },
+    "ODY-181": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-181",
+          "kind": "adaptation",
+          "text": "No sea was wide enough to delay the messenger of Zeus.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Hermes crosses land and sea in divine sandals to deliver Zeus's order.",
+          "fit": "Specific to Hermes while remaining an adaptation of the narration.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked: Hermes crosses land and sea in golden sandals to deliver Zeus's command. The reprint is a direct visual analogy, not gear Odysseus receives.",
+        "attributes": "Divine speed made portable: the equipment evokes the messenger, not ownership by the hero."
+      }
+    },
+    "ODY-186": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-186",
+          "kind": "adaptation",
+          "text": "Speed is another kind of shelter when the sea turns hostile.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Ordinary fast-galley play is a seamanship extension distinct from supernatural Phaeacian ships.",
+          "fit": "Original extension for evasive Vehicle play.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked for sea-speed and danger; this ordinary evasive galley is a seamanship extension distinct from the self-knowing Phaeacian ships.",
+        "attributes": "A fast mortal vessel that survives by staying ahead of small obstacles rather than ignoring the sea."
+      }
+    },
+    "ODY-201": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-201",
+          "kind": "adaptation",
+          "text": "Immortality was only another name for never leaving.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Calypso offers immortality if Odysseus remains, while he longs for home.",
+          "fit": "Separates the mythic shelter fantasy from a freely chosen happy ending.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked: Calypso's beautiful island and immortality offer make staying genuinely tempting, while Odysseus's homesickness makes the same safety a captivity.",
+        "attributes": "The mythic version magnifies the seductive stasis: hidden futures grow stronger the longer departure is postponed."
+      }
+    },
+    "ODY-214": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-214",
+          "kind": "adaptation",
+          "text": "Every thread carried the patience of a household built to last.",
+          "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+          "basis": "Book VII explicitly praises Phaeacian weaving; dyeing is an invented textile extension.",
+          "fit": "Original flavour avoids inventing a named dyer.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VII checked: Phaeacian women are explicitly renowned for weaving; dyeing and this specific courtyard worker are textile-world extensions."
+      }
+    },
+    "ODY-237": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-237",
+          "kind": "adaptation",
+          "text": "A deed ends. The song decides how long it lives.",
+          "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+          "basis": "Book VIII repeatedly turns heroic action into performed memory and future song.",
+          "fit": "Original articulation of kleos through performance.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VIII checked for heroic deeds becoming song, reputation and future memory. Kleos is a Greek conceptual frame rather than Butler's English terminology.",
+        "attributes": "Renown exists after the action: the hero supplies the deed, but other people decide whether it becomes story."
+      }
+    },
+    "ODY-247": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-247",
+          "kind": "adaptation",
+          "text": "Seven years can feel like one long afternoon when nothing is allowed to change.",
+          "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+          "basis": "Odysseus recounts seven years on Ogygia; literal time distortion is not in Homer.",
+          "fit": "Makes the time metaphor explicit without claiming time travel.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books V and VII checked: Odysseus stays on Ogygia for seven years amid comfort and tears. Literal altered time is an interpretive metaphor, not a Homeric phenomenon.",
+        "attributes": "Stasis made seductive: a place can be beautiful enough to hide how much life is being postponed."
+      }
+    },
+    "ODY-270": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-270",
+          "kind": "adaptation",
+          "text": "Every exposed shore taught the wind a different voice.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Book V is saturated with shifting wind and exposed sea travel; the named isle is invented.",
+          "fit": "Landscape-composite flavour.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked for exposed island/sea weather. Windswept Isle is an invented unnamed landscape composite."
+      }
+    },
+    "ODY-272": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-272",
+          "kind": "adaptation",
+          "text": "Pride entered the games before any athlete did.",
+          "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+          "basis": "The Phaeacian games turn hospitality into competition, insult and restitution.",
+          "fit": "Original line for a later-laurel visual shorthand.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VIII checked for the Phaeacian public games. Laurel is later visual shorthand rather than an Odyssey prize detail."
+      }
+    },
+    "ODY-273": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-273",
+          "kind": "adaptation",
+          "text": "A strange shore can resemble home for exactly as long as the shade lasts.",
+          "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+          "basis": "The palm imagery comes from Odysseus's speech to Nausicaa; Palmshade Cove itself is invented.",
+          "fit": "Source-led landscape interpretation without relocating the Delos palm literally.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book VI checked: Odysseus compares Nausicaa to a young palm at Delos. Palmshade Cove is an invented landscape treatment, not that literal palm's location."
+      }
+    },
+    "ODY-295": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-295",
+          "kind": "adaptation",
+          "text": "The best course is the one the sea has already begun to reveal.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Book V shows navigation through stars, winds, coast and current; the unified system is a composite.",
+          "fit": "Original UR navigation flavour.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book V checked as seamanship composite: navigation by stars, wind, coast and current is explicit; the unified exile/Vehicle reading engine is a set-level abstraction.",
+        "attributes": "Experience turned into prediction: spells and ships are two ways of learning the same dangerous sea."
+      }
+    },
+    "ODY-254": {
+      "flavour": {
+        "status": "no-flavour-selected",
+        "rationale": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected."
+      },
+      "brief": {
+        "sourceReview": "Books VI–VIII checked for Scheria's harbour and coast. Basic land treatment selected with no flavour text."
+      }
+    },
+    "ODY-255": {
+      "flavour": {
+        "status": "no-flavour-selected",
+        "rationale": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected."
+      },
+      "brief": {
+        "sourceReview": "Book V checked for the long open-sea crossing. Basic land treatment selected with no flavour text."
+      }
+    },
+    "ODY-256": {
+      "flavour": {
+        "status": "no-flavour-selected",
+        "rationale": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected."
+      },
+      "brief": {
+        "sourceReview": "Book V checked for Ogygia's shore and surrounding sea. Basic land treatment selected with no flavour text."
       }
     }
   }
