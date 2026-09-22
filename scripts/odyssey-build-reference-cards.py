@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build real-card references for every original Odyssey design from one Scryfall bulk snapshot.
+"""Build current-card design and costing references for the complete Odyssey set from one Scryfall bulk snapshot.
 
 The generator intentionally downloads Scryfall's Oracle Cards bulk file once rather than issuing
 hundreds of API searches. It chooses up to three distinct paper cards per original Odyssey card:
