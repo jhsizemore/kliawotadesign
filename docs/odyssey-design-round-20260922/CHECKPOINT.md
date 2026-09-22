@@ -92,3 +92,12 @@ Recovered the exact published branch after workspace maintenance. Revised ODY-00
 ## Fourth checkpoint: bed and opened wind bag
 
 ODY-213 now binds its protection and two-legend reunion draw to a chosen land; ODY-235 now sequences impulse access, red mana and land sacrifice. The candidate changes 39 slots, still 24 commons, and preserves all structural totals. `bed-and-wind-bag.md` records the source interpretations, printed comparisons and twelve manual cases, including Penelope before/after the final chapter triggers. The wind bag’s existing boar-hunt art is flagged for separate review. No played games or deployment are claimed. These designs supersede the earlier bed/wind-bag mismatch backlog. Next contract gates: remaining source/quotation work, architecture and collation, final references, gameplay testing and production integration.
+
+
+## Fifth checkpoint: architecture and Omen sources
+
+The architecture review resolves two provisional discrepancies without changing any card slots. Keep 16 Saga-bearing physical cards: the skeleton has 15 Saga-layout cards plus the Saga face of the single permitted DFC. Keep all four nonlegendary signposts because each carries an intentional mechanical bridge: ODY-153 UR spells, ODY-059 RW Vehicles/Survival, ODY-179 BG graveyard departures and ODY-060 GU Manifest Fate/exile. The stale signpost cycle register omitted ODY-153 and now records the same 20 signposts as the card data.
+
+Passage-level review of the five common Omens verified their intended Homeric scenes. Three candidate records still carried pre-Omen source prose and are corrected: ODY-127 now uses Theoclymenus's darkened-hall vision in Book XX; ODY-135 uses the bellowing slaughtered cattle in Book XII; ODY-139 uses the hawk carrying a dove in Book XV. The white clear-sky thunder and blue dream of the geese remain correctly mapped. Five short exact Butler-translation quotation candidates are added to the candidate bank; none is yet final flavour text or written into production card records.
+
+Production data, the 14A2 authoring Sheet and live Studio remain unchanged. Next concrete gate: audit all five enemy-hybrid Sagas under the hybrid colour-pie rule, then continue changed-common passage verification and collation before any integration.
