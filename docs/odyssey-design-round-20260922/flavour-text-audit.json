@@ -47,10 +47,19 @@
     {
       "id": "ODY-004",
       "name": "Keep the Long Watch",
-      "status": "no-direct-quote-selected",
-      "kind": null,
-      "candidate": null,
-      "rationale": "Household endurance is an intentional composite rather than one narrated Book II moment; a single quotation would falsely pin the card to Penelope or Telemachus.",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-004",
+        "kind": "adaptation",
+        "text": "A house survives an absence by turning every new duty into another day endured.",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "basis": "Book II supplies the household under prolonged pressure; the three-step enchantment progression is a deliberate composite.",
+        "fit": "Turns the household-composite making brief into usable flavour without falsely quoting one character.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
@@ -869,10 +878,19 @@
     {
       "id": "ODY-060",
       "name": "Voyage into Unknown Shores",
-      "status": "no-direct-quote-selected",
-      "kind": null,
-      "candidate": null,
-      "rationale": "Whole-poem voyage composite. No single Homeric line is selected because doing so would falsely localize the card to one shore or episode.",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-060",
+        "kind": "adaptation",
+        "text": "Every shore answered one question and opened another.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "The voyage repeatedly converts arrival into another uncertain departure; no single shore represents the whole signpost.",
+        "fit": "Whole-poem voyage flavour without falsely localising the card.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
@@ -2530,10 +2548,19 @@
     {
       "id": "ODY-179",
       "name": "Keeper of Ancestral Graves",
-      "status": "no-direct-quote-selected",
-      "kind": null,
-      "candidate": null,
-      "rationale": "Ordinary funerary/social-world composite. Book XXIV supports ghosts and family memory, but no single narrated grave-tending scene matches this invented role closely enough for a direct quotation.",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-179",
+        "kind": "adaptation",
+        "text": "The dead remain part of a house as long as someone still tends their memory.",
+        "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+        "basis": "Book XXIV supplies named ghosts and family memory; the ordinary grave-keeper remains a funerary/social-world composite.",
+        "fit": "Gives the composite a source-led line without inventing a literal grave-tending scene.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
@@ -3304,10 +3331,10 @@
     {
       "id": "ODY-252",
       "name": "Pylos Before the War",
-      "status": "no-direct-quote-selected",
+      "status": "no-flavour-selected",
       "kind": null,
       "candidate": null,
-      "rationale": "The card deliberately imagines Pylos before the war, while Odyssey III depicts Telemachus's postwar visit. A direct Odyssey quotation would misstate the time layer.",
+      "rationale": "Basic Land — Plains renamed Pylos Before the War. The time layer is explicitly interpretive and the basic-land treatment is reserved without flavour text.",
       "finalSelection": "pending-card-space-and-layout"
     },
     {
@@ -3939,10 +3966,10 @@
   "summary": {
     "totalCards": 309,
     "exactQuoteCandidates": 54,
-    "adaptationCandidates": 35,
-    "noFlavourSelected": 3,
-    "noDirectQuoteStillNeedsFlavourDecision": 4,
+    "adaptationCandidates": 38,
+    "noFlavourSelected": 4,
+    "noDirectQuoteStillNeedsFlavourDecision": 0,
     "pending": 213,
-    "resolvedFlavourOutcomes": 92
+    "resolvedFlavourOutcomes": 96
   }
 }
