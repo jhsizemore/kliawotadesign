@@ -239,3 +239,14 @@ A genuine source-placement error is corrected: **ODY-194 Circe's Enchanted Garde
 The making layer is sharpened around the actual emotional engines of the wanderings: hospitality inverted into predation; anonymity undone by pride; temptation as relief; memory as a paid cost; restraint as precommitment; unavoidable loss between Scylla and Charybdis; and crew failure as short-term reasoning repeatedly defeating long-term homecoming.
 
 Production, 14A2 and live Studio remain unchanged. Next narrative cluster: **Books XIII–XVI — return, disguise and reconnaissance**.
+
+
+## Sixteenth checkpoint: Books XIII–XVI editorial pass
+
+The return/disguise/reconnaissance cluster is substantially complete. This pass adds **5 exact Butler quotation candidates** and **14 source-led adaptations**; the existing hawk Omen quotation remains in place.
+
+The making layer now distinguishes four related but different homecoming emotions: **Book XIII** is physical arrival without recognition, followed by Athena restoring context and imposing disguise; **Book XIV** tests loyalty before identity is disclosed; **Book XV** makes Telemachus's return urgent and threatened; **Book XVI** converts private recognition into coordinated conspiracy.
+
+Athena's cards are differentiated accordingly: Athena's Intervention is a specific disguise/appearance intervention; Athena, Far-Seeing Guide is the larger manager of visibility and timing; Athena and Odysseus, Minds Alike centres their explicit delight in shared cunning. Eumaeus likewise splits cleanly across common hospitality, the cloak test, the uncommon loyalty engine and the hut as operational refuge.
+
+Production, 14A2 and live Studio remain unchanged. Next narrative cluster: **Books XVII–XX — palace recognition, suitors, Penelope's interrogation and omens**.
