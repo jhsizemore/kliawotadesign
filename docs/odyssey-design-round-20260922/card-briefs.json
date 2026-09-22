@@ -1308,12 +1308,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 12; composite",
-      "sequence": "Give the rowing command; coordinate strokes; recover together after danger.",
+      "sourceLabel": "Odyssey 12; crew-work composite",
+      "sequence": "Odysseus orders the crew to row with might and main; the coxswain holds the ship on the commanded course past danger.",
       "emotions": "Solidarity / mounting pressure",
-      "attributes": "The crew succeeds through rhythm.",
-      "hooks": "Help two creatures; recover readiness after their work.",
-      "assessment": "Prefer end-step untap so the effect does not erase Survival before the second main phase.",
+      "attributes": "The crew succeeds through coordinated labour under command.",
+      "hooks": "Help two creatures; preserve the sense that rowers have worked; recover readiness later.",
+      "assessment": "Book XII directly supplies the rowing order and coxswain command. Delayed untap is gameplay recovery, not a narrated rest beat.",
       "id": "ODY-044",
       "number": 44,
       "name": "Row in Unison",
@@ -1331,7 +1331,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "passage checked: Book XII directly has Odysseus order the crew to row with might and main and command the coxswain; delayed recovery is gameplay abstraction.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -1927,12 +1927,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 9–12; composite",
-      "sequence": "Crew the ship; travel into danger; release a sailor from the task.",
+      "sourceLabel": "Odyssey 9–12; ship-labour composite",
+      "sequence": "Board the ship; take places at the oars; drive the vessel through successive dangers.",
       "emotions": "Shared effort / advancing threat",
-      "attributes": "The basic voyage vehicle.",
-      "hooks": "Tap helpers for motion; return one helper to another job.",
-      "assessment": "Immediate attack-trigger untap can switch off Survival; delayed recovery is a clearer cooperative pattern.",
+      "attributes": "The voyage depends on repeated ordinary crew labour.",
+      "hooks": "Tap helpers for motion; return one helper to another job after the attack.",
+      "assessment": "Books IX and XII directly show men boarding, taking places and rowing. The attack-trigger recovery is a gameplay abstraction.",
       "id": "ODY-064",
       "number": 64,
       "name": "Black-Hulled Ship",
@@ -1954,7 +1954,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "passages checked: Books IX and XII directly show boarding, oar-work, ship handling and dangerous passage; the delayed untap is mechanical abstraction.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -2224,12 +2224,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 7; composite",
-      "sequence": "Seat the stranger; lay bread before them; strengthen the recent arrival.",
+      "sourceLabel": "Odyssey 7; hospitality scene",
+      "sequence": "Raise the stranger from the hearth; seat him; set bread and the household's good things before him before pressing his story.",
       "emotions": "Acceptance / growing resistance",
       "attributes": "Hospitality precedes interrogation.",
       "hooks": "Make Food; mark a newcomer with a counter.",
-      "assessment": "The arrival restriction is a clean mechanical expression of welcoming.",
+      "assessment": "Book VII directly gives Odysseus a seat, bread and household food before his identity is pursued.",
       "id": "ODY-074",
       "number": 74,
       "name": "Set Bread Before the Guest",
@@ -2247,7 +2247,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "passage checked: Book VII directly seats the stranger and serves bread and household food before further questioning.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -2601,12 +2601,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 5; natural-world extension",
-      "sequence": "Watch birds above the water; infer land or danger; choose a course.",
+      "sourceLabel": "Odyssey 5; seabird-imagery extension",
+      "sequence": "Book V repeatedly compares divine travellers over the sea to a cormorant or sea-gull; this card extends that imagery into a mortal lookout reading seabirds.",
       "emotions": "Alertness / uncertainty",
-      "attributes": "Invented lookout using plausible observation.",
-      "hooks": "Small creature plus foresight; possible enchantment-entry trigger if framed as reading signs.",
-      "assessment": "A common Constellation payoff could live here without turning the sailor into a supernatural being.",
+      "attributes": "Invented lookout using Homeric sea-bird imagery; not a narrated navigation technique.",
+      "hooks": "Small creature plus foresight; enchantment-entry trigger framed as reading signs.",
+      "assessment": "Keep the extension explicit: Homer supplies the sea-bird imagery, not a sailor inferring land or course from birds.",
       "id": "ODY-087",
       "number": 87,
       "name": "Seabird Lookout",
@@ -2624,7 +2624,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "passage checked with extension: Book V uses cormorant and sea-gull imagery around sea travel; a mortal lookout reading birds for navigation is not narrated by Homer.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -3065,12 +3065,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 3; composite",
-      "sequence": "Prepare a cup; pour to the god; begin the undertaking properly.",
+      "sourceLabel": "Odyssey 3; libation scene",
+      "sequence": "Receive the cup; make the drink-offering and prayer; pass the cup onward so the undertaking begins in proper ritual order.",
       "emotions": "Reassurance / patience",
-      "attributes": "Ritual observance by an ordinary attendant.",
+      "attributes": "Ordinary service enables ritual observance.",
       "hooks": "Life and foresight; a small body can make the ritual useful to the crew.",
-      "assessment": "Current one-shot life spell is expendable; test a ritual attendant carrying the same action.",
+      "assessment": "Book III directly shows the cup being poured, offered for prayer and drink-offering, then passed on.",
       "id": "ODY-103",
       "number": 103,
       "name": "Pour the Libation",
@@ -3088,7 +3088,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.3.iii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "passage checked: Book III directly shows the cup, prayer and drink-offering being passed in ritual order.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -3210,12 +3210,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 3; composite",
-      "sequence": "Mix wine with water; serve the assembled guests; support shared work.",
+      "sourceLabel": "Odyssey 3; household-service scene",
+      "sequence": "Pages fill mixing bowls with wine and water, hand the drink around and keep the gathering supplied.",
       "emotions": "Conviviality / growing company",
       "attributes": "A cupbearer's work rather than magical healing.",
       "hooks": "Food provision; small creature available for crewing.",
-      "assessment": "A cupbearer body would help white's thin common creature base while preserving the scene.",
+      "assessment": "Book III directly describes pages mixing wine with water and serving it around the gathering.",
       "id": "ODY-108",
       "number": 108,
       "name": "Mix the Wine",
@@ -3233,7 +3233,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.3.iii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "passage checked: Book III directly describes pages filling mixing bowls with wine and water and serving the gathering.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -3326,12 +3326,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 12; natural-world extension",
-      "sequence": "Surface alongside a moving bow; indicate living water; guide the eye onward.",
+      "sourceLabel": "Odyssey 12; dolphin-fauna extension",
+      "sequence": "Book XII names dolphins among the sea creatures Scylla hunts; this card moves ordinary dolphins beside a travelling ship as an explicit natural-world extension.",
       "emotions": "Wonder / open-water unease",
-      "attributes": "Dolphins are environmental life, not an invented named adventure.",
+      "attributes": "Dolphins are Homeric sea fauna here, but bow-running alongside the ship is invented rather than a narrated episode.",
       "hooks": "Large blue body; ship-conditioned foresight.",
-      "assessment": "Retain ordinary fauna; do not add magic solely to inflate enchantment density.",
+      "assessment": "Retain the ordinary-fauna framing and do not imply that Homer narrates dolphins pacing Odysseus's bow.",
       "id": "ODY-112",
       "number": 112,
       "name": "Dolphins Beside the Bow",
@@ -3349,7 +3349,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "passage checked with extension: Book XII explicitly names dolphins among Scylla's prey; dolphins pacing a ship's bow are an explicit natural-world extension, not a narrated event.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -3413,12 +3413,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 9; seamanship extension",
-      "sequence": "Lower a line; measure depth; choose safe water for the hull.",
+      "sourceLabel": "Odyssey 9; ancient-Mediterranean seamanship extension",
+      "sequence": "Book IX shows sailors boarding, taking their places at the oars and navigating an unfamiliar harbour; the card extends that practical seamanship with historically attested depth sounding.",
       "emotions": "Careful confidence / delayed pursuit",
-      "attributes": "An ordinary mariner reads practical conditions.",
+      "attributes": "An ordinary mariner uses a practical navigational technique; the sounding action is not stated in Homer.",
       "hooks": "Scry on arrival; a Vehicle upgrades selection.",
-      "assessment": "A sounding sailor can preserve this function and add a needed blue common body.",
+      "assessment": "Treat depth sounding as an external ancient-Mediterranean seamanship extension, not as an Odyssey IX event.",
       "id": "ODY-115",
       "number": 115,
       "name": "Sound the Depths",
@@ -3434,9 +3434,13 @@
         {
           "label": "Homer, Odyssey 9 — Butler",
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
+        },
+        {
+          "label": "Kemp & D'Olier, ancient lead-line navigation — Journal of Navigation",
+          "url": "https://www.cambridge.org/core/journals/journal-of-navigation/article/early-navigation-in-the-north-sea-the-use-of-the-lead-and-line-and-other-navigation-methods/EDA8012AE267C583E8F2EA14EE36E145"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "passage checked with external extension: Odyssey IX supplies ship and oar work but not depth sounding; sounding is treated as historically attested ancient-Mediterranean seamanship, not a Homeric event.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -3660,12 +3664,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 24; funerary composite",
-      "sequence": "Mourn the missing; tend remembrance; recover fragments of a life.",
-      "emotions": "Grief / patient accumulation",
-      "attributes": "A living mourner carries memory.",
-      "hooks": "Fill the graveyard; soften the cost with life.",
-      "assessment": "A future shade version could be enchanted, but do not relabel a mundane mourner without changing the portrayal.",
+      "sourceLabel": "Odyssey 24; explicit fantasy extension",
+      "sequence": "Mercury leads the newly dead suitors into the dark abode, where named ghosts retain identity and memory; the candidate imagines a household shade persisting beyond that scene.",
+      "emotions": "Grief / persistence / uncanny return",
+      "attributes": "A supernatural memory of the household, explicitly extended beyond Homer's action.",
+      "hooks": "Fill the graveyard; recur through Escape; enchantment type expresses a lingering supernatural state.",
+      "assessment": "Book XXIV supplies the ghosts and Hades setting. Bodily Escape back to the battlefield is deliberate fantasy extension, not a Homeric event.",
       "id": "ODY-123",
       "number": 123,
       "name": "Veiled Mourner",
@@ -3683,7 +3687,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "passage checked with fantasy extension: Book XXIV opens with the suitors' ghosts in Hades; a shade escaping bodily back into play is explicitly non-Homeric fantasy.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -4260,12 +4264,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 11; ritual composite",
-      "sequence": "Pour the libation; make contact with memory; recover a small presence.",
+      "sourceLabel": "Odyssey 11; necromantic ritual scene",
+      "sequence": "Pour the drink-offering to the dead; blood and prayer draw the ghosts near; recover a small presence only as a gameplay symbol of contact.",
       "emotions": "Reverence / returning pressure",
-      "attributes": "Remembering the dead rather than conquering Hades.",
+      "attributes": "Contact with the dead rather than conquest of Hades.",
       "hooks": "Mill first; return a small creature; tapped arrival if testing stronger common support.",
-      "assessment": "A modest battlefield return would connect black's commons to existing return payoffs; label it symbolic.",
+      "assessment": "Book XI directly supplies the drink-offering and approaching ghosts. Battlefield reanimation remains a symbolic game abstraction.",
       "id": "ODY-142",
       "number": 142,
       "name": "Pour to the Dead",
@@ -4283,7 +4287,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "passage checked: Book XI directly gives the drink-offering to the dead and the ghosts approaching; battlefield return is symbolic game abstraction.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
