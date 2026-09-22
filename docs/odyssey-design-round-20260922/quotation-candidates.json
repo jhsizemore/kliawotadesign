@@ -797,6 +797,23 @@
     "characters": 36
   },
   {
+    "cardId": "ODY-151",
+    "text": "I see mischief overhanging you",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 20, Theoclymenus leaves the doomed feast",
+    "speaker": "Theoclymenus",
+    "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+    "context": "Theoclymenus refuses to stay among people who mock the doom he can see clearly.",
+    "fit": "A compact prophetic voice distinct from the visual Veiled Hall omen.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 5,
+    "characters": 30,
+    "kind": "quote"
+  },
+  {
     "cardId": "ODY-153",
     "pair": "UR",
     "text": "change your song and tell us of the wooden horse",
@@ -1133,6 +1150,23 @@
     "kind": "quote"
   },
   {
+    "cardId": "ODY-225",
+    "text": "I am your father, on whose account you grieve and suffer so much",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 16, Odysseus reveals himself to Telemachus",
+    "speaker": "Odysseus",
+    "source": "https://classics.mit.edu/Homer/odyssey.16.xvi.html",
+    "context": "Odysseus identifies himself after Athena restores his appearance.",
+    "fit": "The reunion pair begins with the direct disclosure the son cannot initially believe.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 13,
+    "characters": 64,
+    "kind": "quote"
+  },
+  {
     "cardId": "ODY-228",
     "text": "let peace and plenty reign",
     "author": "Homer",
@@ -1164,6 +1198,23 @@
     "selection": "candidate; final card-space check pending",
     "wordCount": 10,
     "characters": 46,
+    "kind": "quote"
+  },
+  {
+    "cardId": "ODY-230",
+    "text": "all strangers and beggars are from Jove",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 14, Eumaeus states the rule of hospitality",
+    "speaker": "Eumaeus",
+    "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+    "context": "Eumaeus explains why even a poor stranger must be welcomed.",
+    "fit": "The set's xenia concept receives its cleanest direct formulation.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 7,
+    "characters": 39,
     "kind": "quote"
   },
   {
