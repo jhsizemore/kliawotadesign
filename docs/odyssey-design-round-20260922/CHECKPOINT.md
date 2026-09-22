@@ -250,3 +250,14 @@ The making layer now distinguishes four related but different homecoming emotion
 Athena's cards are differentiated accordingly: Athena's Intervention is a specific disguise/appearance intervention; Athena, Far-Seeing Guide is the larger manager of visibility and timing; Athena and Odysseus, Minds Alike centres their explicit delight in shared cunning. Eumaeus likewise splits cleanly across common hospitality, the cloak test, the uncommon loyalty engine and the hut as operational refuge.
 
 Production, 14A2 and live Studio remain unchanged. Next narrative cluster: **Books XVII–XX — palace recognition, suitors, Penelope's interrogation and omens**.
+
+
+## Seventeenth checkpoint: Books XVII–XX editorial pass
+
+The palace-recognition/omen cluster is substantially complete. This pass adds **7 exact Butler quotation candidates**, **11 source-led adaptations**, and **1 deliberate no-flavour basic-land decision**. Existing exact candidates for Argos, the clear-sky thunder, Penelope's geese dream and the veiled-hall omen are retained.
+
+The recognition vertical is now differentiated rather than repetitive: **Wash the Stranger's Feet** is care approaching recognition; **Eurycleia's Basin** is the object where touch makes identity undeniable; **Eurycleia, Keeper of the Scar** is recognition disciplined into secrecy; **Odysseus's Cloak and Brooch** is remembered private evidence; **Penelope Questions the Beggar** is active evidentiary testing rather than passive hope. Argos likewise splits between the legendary recognition/death moment and the common fidelity treatment without repeating the same line twice.
+
+One source-placement problem is corrected by deferral: **ODY-172 Mother Lion's Charge** is not supported as a Book XX scene and moves to the later Homeric-simile audit.
+
+Production, 14A2 and live Studio remain unchanged. Next narrative cluster: **Books XXI–XXIV — bow test, slaughter, Penelope reunion, Laertes and peace**.
