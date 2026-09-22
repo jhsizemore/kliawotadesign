@@ -199,3 +199,15 @@ Starting audit:
 Completion rule for this phase: every card must end with current reference coverage, a source-grounded emotional brief, and a verified flavour-text candidate or explicit no-text/no-direct-quote outcome before final layout selection and integration.
 
 Next work order: clear source verification and flavour outcomes by narrative cluster rather than rarity—Telemachy (Books I–IV), Calypso/Phaeacia (V–VIII), wanderings (IX–XII), return/reconnaissance (XIII–XVI), palace recognition/conflict (XVII–XX), bow/battle/reconciliation (XXI–XXIV), then Trojan/pre-Odyssey, post-Odyssey and modern reception.
+
+## Thirteenth checkpoint: Books I–IV editorial pass
+
+The first narrative content cluster is substantially complete. Books I–IV material was reviewed as a unit rather than card-by-card in isolation.
+
+This pass adds **17 verified quotation candidates**, bringing the bank to **45**, and records two further deliberate no-direct-quote outcomes. **ODY-004 Keep the Long Watch** remains a household endurance composite rather than being falsely pinned to Penelope or Telemachus; **ODY-252 Pylos Before the War** is explicitly an earlier-period interpretation rather than the Pylos of Telemachus's visit.
+
+Key making-of corrections: Telemachus's young version now centres on learning to act under Athena's pressure; Nestor on intergenerational reassurance; Storeroom Keeper on continuous custodianship; Storeroom Hunger and Empty the Storeroom on deliberate household predation; Seals on the Sunlit Rocks is explicitly Menelaus's Proteus setting, not an Odysseus adventure. **Rosy-Fingered Dawn** is relabelled as a recurring epic formula rather than Book I-specific. **Winged Words** is treated as translation-sensitive: A. T. Murray preserves the formula literally, while Butler generally naturalizes it.
+
+Two cards remain intentionally open from this cluster: **ODY-072 Aulis, Harbor of Omens** belongs to the Trojan/pre-Odyssey source pass, and **ODY-294 Helen, Remembered and Rewritten** still needs its specific later-reception source before flavour text can be completed.
+
+The new inputs/editorial-register.json is authoritative for incremental source-review, making-of and flavour outcomes. Generator wiring is updated separately so future regeneration cannot erase researched quotation states.
