@@ -180,3 +180,22 @@ For WB, conditional on casting the single Antinous on turn three, the diagnostic
 A reproducible playtest packet now defines GU core/engine, WU recognition, WB Antinous, UB Iphigenia, WU Penelope/Saga, hybrid-Saga and Bag tests plus a nine-match matrix and game-record fields.
 
 No candidate rules changed in this checkpoint. Production, 14A2 and live Studio remain unchanged. The next honest gate is **played gameplay evidence**. Analytical work may still prepare pools and records, but it must not be reported as matches.
+
+
+## Twelfth checkpoint: structural phase rolled up
+
+The mechanics/reference-preparation phase is closed for now. The 42-card isolated candidate, architecture decisions, FIN-style collation, pick-stress model, component-reference refresh and gameplay packet are all preserved. Actual played matches remain outstanding and are deferred rather than fabricated.
+
+The project now moves to **full-set editorial completion**.
+
+Starting audit:
+- **309/309** cards have first-pass emotional making-of briefs with sequence, emotion, attributes, hooks and distinction/assessment.
+- **62/309** briefs had passage-level source review before the signpost batch; the remaining source-verification backlog is the primary making-of task.
+- Production printed-card references cover **309 cards / 912 references** under reference-quality-v3; the 42 changed cards have no missing requested benchmark.
+- The flavour-text audit initially still showed all 309 as missing because research candidates had not been folded back into the audit. The signpost pass now fixes that state.
+- The verified quotation bank grows from **10 to 28 cards** in this checkpoint.
+- **ODY-060 Voyage into Unknown Shores** and **ODY-179 Keeper of Ancestral Graves** receive explicit no-direct-quote outcomes because they are composites; forcing a single Homeric line would misrepresent them.
+
+Completion rule for this phase: every card must end with current reference coverage, a source-grounded emotional brief, and a verified flavour-text candidate or explicit no-text/no-direct-quote outcome before final layout selection and integration.
+
+Next work order: clear source verification and flavour outcomes by narrative cluster rather than rarity—Telemachy (Books I–IV), Calypso/Phaeacia (V–VIII), wanderings (IX–XII), return/reconnaissance (XIII–XVI), palace recognition/conflict (XVII–XX), bow/battle/reconciliation (XXI–XXIV), then Trojan/pre-Odyssey, post-Odyssey and modern reception.
