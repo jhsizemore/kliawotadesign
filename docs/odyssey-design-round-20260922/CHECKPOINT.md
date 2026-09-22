@@ -261,3 +261,14 @@ The recognition vertical is now differentiated rather than repetitive: **Wash th
 One source-placement problem is corrected by deferral: **ODY-172 Mother Lion's Charge** is not supported as a Book XX scene and moves to the later Homeric-simile audit.
 
 Production, 14A2 and live Studio remain unchanged. Next narrative cluster: **Books XXI–XXIV — bow test, slaughter, Penelope reunion, Laertes and peace**.
+
+
+## Eighteenth checkpoint: Books XXI–XXIV editorial pass
+
+The final-Odyssey cluster is substantially complete. This pass adds **11 exact Butler quotation candidates**, **19 source-led adaptations**, and **1 deliberate no-flavour basic-land decision**. Existing exact candidates for Laertes and Medon and the Keeper-of-Graves adaptation are retained.
+
+The emotional ending is now explicitly staged rather than collapsed into generic victory: the bow contest exposes rightful mastery; the hall battle is violent, coordinated household recovery; Penelope's reunion requires private proof and preserves her caution as intelligence; Laertes is recognised through land-memory and briefly regains martial agency; the poem's final political act is **Athena stopping renewed retaliation and making a covenant of peace**.
+
+The olive vertical is separated by scale: The Olive-Wood Test is private proof; Olive-Wood Bed is the rooted marriage object; Olive Tree of Ithaca is a broader continuity symbol; Roots Beneath the House connects land and labour; House of Odysseus is system-level restoration of people, objects and relationships.
+
+Production, 14A2 and live Studio remain unchanged. The six-book Odyssey narrative sweep is now complete enough to move into the remaining non-core source bands: **Trojan/pre-Odyssey, post-Odyssey/later ancient tradition, modern reception, Homeric-simile/material-world extensions, and residual source anomalies**.
