@@ -77,6 +77,22 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 11,
         "characters": 58
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-002",
+        "text": "show your mettle, then, and make yourself a name in story.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 1, Athena urges Telemachus to act",
+        "speaker": "Athena as Mentes",
+        "source": "https://classics.mit.edu/Homer/odyssey.1.i.html",
+        "context": "Athena tells Telemachus he is old enough to act and win a name.",
+        "fit": "Directly captures the Young Heir's growth-through-guidance identity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 58
       }
     },
     {
@@ -134,7 +150,7 @@
       ],
       "sourceReview": "Book II checked: prolonged household resistance and Penelope's long-running work support the endurance frame, but this three-step Constellation challenge is a deliberate household composite.",
       "briefStatus": "first-pass",
-      "quoteStatus": "no direct quote selected; composite/interpretive portrayal",
+      "quoteStatus": "no direct quote selected; adaptation still pending",
       "quotationCandidate": null,
       "quotationAuditOutcome": "Household endurance is an intentional composite rather than one narrated Book II moment; a single quotation would falsely pin the card to Penelope or Telemachus."
     },
@@ -229,7 +245,7 @@
       "sourceLabel": "Odyssey 7; interpretation",
       "sequence": "Raise a stranger from the hearth; seat and feed them; suspend hostility.",
       "emotions": "Shelter / enforced restraint",
-      "attributes": "Guest-right interrupts violence.",
+      "attributes": "Guest-right forces the household to treat an unknown outsider as a person before treating him as a threat.",
       "hooks": "Prevent attacking and blocking; create Food; negotiate a later consequence.",
       "assessment": "Pacifism works as an imposed truce. Eating two Foods to exile a guest reverses hospitality and needs an explicit hostile reading.",
       "id": "ODY-008",
@@ -249,10 +265,43 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Book VII checked: Alcinous raises the suppliant from the hearth, seats him, washes and feeds him. Ability suppression is a gameplay abstraction of protected guest-right.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-008",
+        "text": "he took Ulysses by the hand, raised him from the hearth",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 7, Alcinous raises the suppliant",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "context": "The stranger is physically raised from the ashes and seated before being fed.",
+        "fit": "The exact hospitality action behind the restraint-and-Food card.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 55,
+        "kind": "quote"
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-008",
+        "text": "he took Ulysses by the hand, raised him from the hearth",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 7, Alcinous raises the suppliant",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "context": "The stranger is physically raised from the ashes and seated before being fed.",
+        "fit": "The exact hospitality action behind the restraint-and-Food card.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 55,
+        "kind": "quote"
+      }
     },
     {
       "sourceLabel": "Odyssey 17",
@@ -282,6 +331,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-009",
+        "text": "he dropped his ears and wagged his tail",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 17, Argos recognises the arriving Odysseus",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "context": "A physical sign of recognition despite the master's disguise.",
+        "fit": "A tender bodily action, more specific than a generic quotation about loyalty.",
+        "verification": "exact excerpt checked",
+        "wordCount": 8,
+        "characters": 39,
+        "selection": "candidate; final card-space check pending"
+      },
+      "flavourCandidate": {
         "cardId": "ODY-009",
         "text": "he dropped his ears and wagged his tail",
         "author": "Homer",
@@ -340,6 +405,22 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 12,
         "characters": 57
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-010",
+        "text": "it is I, as you will shortly learn, who have convened you",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus opens the assembly",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus publicly claims responsibility for calling the first assembly since Odysseus left.",
+        "fit": "The line is the action of the card, not merely commentary on leadership.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 57
       }
     },
     {
@@ -366,10 +447,43 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Book V checked: Odysseus explicitly steers by the Pleiades, Boötes and the Bear under Calypso's instructions.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-011",
+        "text": "alone never dipping into the stream of Oceanus",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 5, Odysseus steers by the Bear",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "context": "Calypso tells Odysseus to keep the Bear on his left while navigating.",
+        "fit": "A compact navigational image specific to the constellation used for steering.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 46,
+        "kind": "quote"
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-011",
+        "text": "alone never dipping into the stream of Oceanus",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 5, Odysseus steers by the Bear",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "context": "Calypso tells Odysseus to keep the Bear on his left while navigating.",
+        "fit": "A compact navigational image specific to the constellation used for steering.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 46,
+        "kind": "quote"
+      }
     },
     {
       "sourceLabel": "Odyssey 16; composite",
@@ -453,10 +567,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Book V checked: Poseidon spots Odysseus at sea and deliberately raises the storm. Foretell remains player anticipation, not a prophecy spoken in the episode.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-014",
+        "kind": "adaptation",
+        "text": "The sea had waited for Poseidon to notice him.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Poseidon spots Odysseus after his apparent escape and deliberately raises the storm.",
+        "fit": "Condenses divine pursuit into foreboding without inventing a spoken prophecy.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Aeschylus, Agamemnon; sacrifice at Aulis",
@@ -491,7 +615,7 @@
       "sourceLabel": "Odyssey 8",
       "sequence": "Take the lyre; select a story; move the listeners.",
       "emotions": "Creative command / emotional exposure",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A working singer reads the room, selects a story and turns a repertoire into shared attention.",
       "hooks": "Find an action or enchantment from a repertoire; reward a song later.",
       "assessment": "An ordinary performer, distinct from Demodocus's Saga-specific authority.",
       "id": "ODY-016",
@@ -511,10 +635,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VIII checked: Phaeacian feasts treat song as skilled communal work. This anonymous Bard is a structural extension, deliberately less specific than Demodocus.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-016",
+        "kind": "adaptation",
+        "text": "A good singer chooses the story. A great one discovers what the listener cannot hide.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "Book VIII repeatedly shows song selecting, shaping and exposing emotional memory.",
+        "fit": "An original line for an ordinary bard without stealing Demodocus's specific quotations.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12",
@@ -549,7 +683,7 @@
       "sourceLabel": "Odyssey 5; navigation interpretation",
       "sequence": "Choose a hidden route; follow evidence; establish a course.",
       "emotions": "Curiosity / evasive opponent",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Navigation as accumulated inference: each revealed or exiled possibility narrows the course.",
       "hooks": "Repeated exile play or turning face up earns knowledge.",
       "assessment": "One of the progression challenges; do not invent another journey-counter vocabulary.",
       "id": "ODY-018",
@@ -569,10 +703,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked as interpretive basis: route choice, divine advice and uncertain landfall are explicit; a hidden-course quest is a mechanical journey metaphor.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-018",
+        "kind": "adaptation",
+        "text": "Every road not taken left a mark on the one that remained.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus repeatedly chooses among dangerous courses and uncertain divine advice.",
+        "fit": "Source-led interpretation for the set's exile/face-up journey mechanic.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 13",
@@ -636,7 +780,7 @@
       "sourceLabel": "Odyssey 5",
       "sequence": "Select trees; cut and join timbers; launch a raft.",
       "emotions": "Earned autonomy / resumed pursuit",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Self-rescue through competent labour; no god carries him away for free.",
       "hooks": "Gain a land; recover a Vehicle.",
       "assessment": "Craft restores the means to travel; keep separate from an immediate blink rescue.",
       "id": "ODY-021",
@@ -656,10 +800,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked: Odysseus personally selects trees, cuts them, adzes them smooth, joins the timbers and launches the raft.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-021",
+        "kind": "adaptation",
+        "text": "Freedom began as timber, measured and cut by hand.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus personally selects, cuts, smooths and joins the timber for his raft.",
+        "fit": "Keeps the emphasis on earned agency rather than miraculous rescue.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12; funeral composite",
@@ -788,6 +942,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-025",
+        "text": "if I am to be eaten out of house and home at all",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus condemns the suitors' consumption",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus describes the suitors consuming his estate without recourse.",
+        "fit": "A concise statement of extortion through household depletion.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 48
+      },
+      "flavourCandidate": {
         "cardId": "ODY-025",
         "text": "if I am to be eaten out of house and home at all",
         "author": "Homer",
@@ -1019,7 +1189,7 @@
       "sourceLabel": "Odyssey 5; voyage composite",
       "sequence": "Set out repeatedly; withstand weather; gain supplies and options.",
       "emotions": "Persistence / relentless approach",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Persistence converts repeated dangerous passage into preparedness and options.",
       "hooks": "Count Vehicle attacks; convert completed work into resources.",
       "assessment": "Quest counters already provide the vocabulary.",
       "id": "ODY-033",
@@ -1039,10 +1209,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked as voyage composite: repeated endurance at sea is explicit, but quest counters, Treasure and card access are gameplay abstractions.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-033",
+        "kind": "adaptation",
+        "text": "Each crossing taught the crew what the next storm would demand.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V treats sea travel as repeated endurance and adaptation; this card generalises that voyage pattern.",
+        "fit": "Composite voyage flavour rather than a claim of one specific gale-rowing scene.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 10",
@@ -1101,6 +1281,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-035",
+        "text": "Tell me, O muse",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 1, opening invocation",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.1.i.html",
+        "context": "The singer invokes divine assistance to tell the journey.",
+        "fit": "Short opening phrase fits the selection spell without pretending to be rules text.",
+        "verification": "exact excerpt checked",
+        "wordCount": 4,
+        "characters": 15,
+        "selection": "candidate; final card-space check pending"
+      },
+      "flavourCandidate": {
         "cardId": "ODY-035",
         "text": "Tell me, O muse",
         "author": "Homer",
@@ -1199,10 +1395,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked for shipbuilding craft; the spark incident and dedicated shipyard setting are explicit material-world extensions.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-038",
+        "kind": "adaptation",
+        "text": "Before a ship can brave the sea, someone must master fire beside it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V directly supplies shipbuilding craft but not a shipyard spark incident.",
+        "fit": "Explicit material-world extension.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 20",
@@ -1237,7 +1443,7 @@
       "sourceLabel": "Odyssey 5",
       "sequence": "Grip the tool; shape timber; improve the vessel.",
       "emotions": "Competence / efficient opposition",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A practical tool whose value comes from the worker and the vessel it helps create.",
       "hooks": "Equip a worker; crewing transfers some benefit to the ship.",
       "assessment": "Worker and ship should both matter, without an unlimited untap loop.",
       "id": "ODY-040",
@@ -1257,10 +1463,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked: Calypso gives Odysseus a sharp adze and he uses it to shape the raft.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-040",
+        "kind": "adaptation",
+        "text": "The tool that shaped the raft made every later mile possible.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Calypso gives Odysseus an adze, which he uses in the raft construction.",
+        "fit": "Source-led object flavour without quoting another Book V line.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 14",
@@ -1328,7 +1544,7 @@
       "sourceLabel": "Odyssey 8; oral-performance interpretation",
       "sequence": "Repeat a phrase; recall a story; turn memory into a new telling.",
       "emotions": "Recognition / accumulating knowledge",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Memory becomes usable when a familiar story returns in a new context.",
       "hooks": "Enchantment entry gives foresight; sacrifice for a final draw.",
       "assessment": "Current ability-word template is valid; support it with common enchantments.",
       "id": "ODY-043",
@@ -1348,10 +1564,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VIII checked: songs are repeated, requested and heard differently by listeners. 'Refrain' plus Constellation is an oral-performance interpretation.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-043",
+        "kind": "adaptation",
+        "text": "Songs survive because memory changes them just enough to sing again.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "Demodocus performs multiple stories and listeners repeatedly ask for more.",
+        "fit": "Original oral-performance interpretation for the refrain/enchantment engine.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12; crew-work composite",
@@ -1406,10 +1632,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked: Poseidon's storm violently stops progress. This common is intentionally a smaller generic squall rather than another divine named event.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-045",
+        "kind": "adaptation",
+        "text": "The horizon vanished before the sailor had time to name the weather.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Poseidon's storm rapidly covers earth, sea and sky with cloud.",
+        "fit": "Keeps this common squall below the named divine-storm card.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 17",
@@ -1493,10 +1729,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VII checked for lavish Phaeacian architecture and crafted supports. A living Caryatid is a Theros/reprint visual borrowing, not a Homeric creature.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-048",
+        "kind": "adaptation",
+        "text": "A house stands because something bears its weight.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "The Phaeacian palace is described through elaborate architecture and crafted supports; a living Caryatid remains a Theros visual borrowing.",
+        "fit": "Original visual-world flavour, not a claim of a Homeric plant-person.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 20",
@@ -1526,6 +1772,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-049",
+        "text": "you have thundered from a clear sky",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 20, Zeus's confirming thunder",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+        "context": "Odysseus asks for a sign and recognizes thunder under a clear sky as confirmation.",
+        "fit": "The impossible weather sign is the card's exact subject and remains short enough for a common.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 35
+      },
+      "flavourCandidate": {
         "cardId": "ODY-049",
         "text": "you have thundered from a clear sky",
         "author": "Homer",
@@ -1614,6 +1876,23 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 12,
         "characters": 54
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-051",
+        "pair": "WU",
+        "text": "I will find you a ship, and will come with you myself.",
+        "location": "Book 2, Athena in Mentor's likeness prepares Telemachus's voyage",
+        "speaker": "Athena in Mentor's likeness",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Athena, appearing as Mentor, promises to secure the ship and accompany Telemachus.",
+        "fit": "The line makes Mentor's practical counsel and voyage-readiness concrete.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 54
       }
     },
     {
@@ -1644,6 +1923,23 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-052",
+        "pair": "UB",
+        "text": "I may drink of the blood and answer your questions truly.",
+        "location": "Book 11, Tiresias at the blood trench",
+        "speaker": "Tiresias",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "context": "Tiresias asks to drink from the trench so he can speak truthfully to Odysseus.",
+        "fit": "It joins graveyard ritual to the knowledge Tiresias supplies.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 57
+      },
+      "flavourCandidate": {
         "cardId": "ODY-052",
         "pair": "UB",
         "text": "I may drink of the blood and answer your questions truly.",
@@ -1693,6 +1989,23 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-053",
+        "pair": "BR",
+        "text": "All deaths are bad enough but there is none so bad as famine.",
+        "location": "Book 12, Eurylochus argues for killing Helios's cattle",
+        "speaker": "Eurylochus",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "context": "Hunger drives Eurylochus to argue for the forbidden slaughter.",
+        "fit": "The line captures the desperate reasoning behind sacrificing long-term safety for immediate survival.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 61
+      },
+      "flavourCandidate": {
         "cardId": "ODY-053",
         "pair": "BR",
         "text": "All deaths are bad enough but there is none so bad as famine.",
@@ -1782,6 +2095,23 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 12,
         "characters": 58
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-055",
+        "pair": "GW",
+        "text": "Eat, my good fellow, and enjoy your supper, such as it is.",
+        "location": "Book 14, Eumaeus feeds the disguised Odysseus",
+        "speaker": "Eumaeus",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "context": "Eumaeus offers the stranger what food he has before knowing his identity.",
+        "fit": "Directly expresses Eumaeus's hospitality and Food-centered design.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 58
       }
     },
     {
@@ -1831,13 +2161,30 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 15,
         "characters": 80
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-056",
+        "pair": "WB",
+        "text": "you are more fond of eating things yourself than of giving them to other people.",
+        "location": "Book 17, Telemachus rebukes Antinous",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "context": "Telemachus condemns Antinous for consuming rather than sharing the household's resources.",
+        "fit": "A sharp source-text statement of the consumption engine.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 80
       }
     },
     {
       "sourceLabel": "Odyssey 5; craft composite",
       "sequence": "Repair the vessel; take a place aboard; improve its next run.",
       "emotions": "Practical pride / stronger passage",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The unnoticed specialist whose work becomes visible only when the vessel performs better.",
       "hooks": "Crewing increases the Vehicle's power.",
       "assessment": "Do not restore obsolete multicolour signpost metadata to this red craftsman.",
       "id": "ODY-057",
@@ -1857,10 +2204,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked for hands-on raft construction. A dedicated shipboard carpenter is an ordinary craft composite, not a named companion.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-057",
+        "kind": "adaptation",
+        "text": "Every stronger hull remembers the hands that worked it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus's raft construction supplies the craft vocabulary; the dedicated shipboard carpenter is invented.",
+        "fit": "Makes the extension feel ordinary rather than legendary.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 11",
@@ -1890,6 +2247,23 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-058",
+        "pair": "BG",
+        "text": "Thrice I sprang towards her and tried to clasp her in my arms",
+        "location": "Book 11, Odysseus tries to embrace Anticleia",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "context": "Odysseus repeatedly tries and fails to embrace his mother's shade.",
+        "fit": "The failed embrace makes Anticleia's graveyard/return identity emotionally specific.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 61
+      },
+      "flavourCandidate": {
         "cardId": "ODY-058",
         "pair": "BG",
         "text": "Thrice I sprang towards her and tried to clasp her in my arms",
@@ -1950,6 +2324,23 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 10,
         "characters": 45
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-059",
+        "pair": "RW",
+        "text": "trust in Jove and row on with might and main.",
+        "location": "Book 12, Odysseus commands the crew",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "context": "Odysseus rallies the crew to keep rowing through danger.",
+        "fit": "The ordinary Deck-Captain is composite, but this line cleanly represents coordinated rowing under command.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 45
       }
     },
     {
@@ -1982,7 +2373,7 @@
       ],
       "sourceReview": "passages checked; whole-voyage composite; no direct quote selected to avoid false localization.",
       "briefStatus": "first-pass",
-      "quoteStatus": "no direct quote selected; composite/interpretive portrayal",
+      "quoteStatus": "no direct quote selected; adaptation still pending",
       "quotationCandidate": null,
       "quotationAuditOutcome": "Whole-poem voyage composite. No single Homeric line is selected because doing so would falsely localize the card to one shore or episode."
     },
@@ -2204,10 +2595,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VII checked for a craft-rich household; no specific potter or kiln scene is narrated. Keep this as material-world extension.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-067",
+        "kind": "adaptation",
+        "text": "A flawed vessel is not wasted if the next one is better.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Scheria is rich in household craft, but no specific potter is narrated.",
+        "fit": "Original craft flavour for the discard-and-replace mechanic.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 13",
@@ -2406,10 +2807,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "passage checked: Book VII directly seats the stranger and serves bread and household food before further questioning.",
+      "sourceReview": "Book VII checked: food and a proper seat come before Odysseus is required to explain who he is.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-074",
+        "kind": "adaptation",
+        "text": "Questions could wait until the stranger had eaten.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "The Phaeacians seat and feed Odysseus before requiring his full identity.",
+        "fit": "Hospitality-before-interrogation in one line.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9; material-world extension",
@@ -2531,7 +2942,7 @@
       "sourceLabel": "Odyssey 8",
       "sequence": "Sing at the feast; watch the listener's tears; bring a story to its end.",
       "emotions": "Artistic command / emotional revelation",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A performer whose accuracy is so strong that hidden identity becomes emotionally unsustainable.",
       "hooks": "Saga progress restrains listeners; final chapters produce knowledge.",
       "assessment": "A lore counter can be added without triggering a chapter; check the current trigger's final-chapter condition.",
       "id": "ODY-079",
@@ -2551,10 +2962,43 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VIII checked: Demodocus is Muse-gifted, blind, repeatedly requested, and his songs expose Odysseus's grief.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-079",
+        "text": "she had endowed him with a divine gift of song",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, Demodocus enters the feast",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "The Muse gives Demodocus his extraordinary singing gift while taking his sight.",
+        "fit": "Specific to the blind singer and his authority over remembered stories.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 46,
+        "kind": "quote"
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-079",
+        "text": "she had endowed him with a divine gift of song",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, Demodocus enters the feast",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "The Muse gives Demodocus his extraordinary singing gift while taking his sight.",
+        "fit": "Specific to the blind singer and his authority over remembered stories.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 46,
+        "kind": "quote"
+      }
     },
     {
       "sourceLabel": "Odyssey 17",
@@ -2656,6 +3100,22 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 7,
         "characters": 32
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-082",
+        "text": "his words set them all a weeping",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 4, Menelaus recalls Odysseus",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "context": "Menelaus's recollection causes Helen, Telemachus, Menelaus and Pisistratus to weep.",
+        "fit": "The card's veil remains a social/visual composite, while the quotation supplies the actual shared grief.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 32
       }
     },
     {
@@ -2682,10 +3142,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VII checked for bronze, gold, silver and exceptional household craft; the specialist bowl-smith is an invented material-world worker.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-083",
+        "kind": "adaptation",
+        "text": "Craft begins with what the household already has.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Book VII emphasises bronze, gold, silver and skilled household manufacture but names no bowl-smith.",
+        "fit": "Original extension tied to the artifact condition.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 14; composite",
@@ -2787,6 +3257,22 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 5,
         "characters": 25
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-086",
+        "text": "spoke to him winged words",
+        "author": "Homer",
+        "translator": "A. T. Murray",
+        "work": "Odyssey",
+        "location": "Book 17, recurring Homeric speech formula",
+        "speaker": "Narrator",
+        "source": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0136%3Abook%3D17%3Acard%3D424",
+        "context": "Murray preserves the recurring Homeric formula literally; Butler generally naturalizes it.",
+        "fit": "A translation-aware quotation that justifies the reprint name without pretending Butler uses the phrase.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 5,
+        "characters": 25
       }
     },
     {
@@ -2813,10 +3299,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "passage checked with extension: Book V uses cormorant and sea-gull imagery around sea travel; a mortal lookout reading birds for navigation is not narrated by Homer.",
+      "sourceReview": "Book V checked with extension: cormorant/sea-gull imagery is explicit, but a mortal lookout reading birds for navigation is invented.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-087",
+        "kind": "adaptation",
+        "text": "Over empty water, even a bird can feel like evidence.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V repeatedly uses sea-bird imagery; the mortal lookout who reads it is invented.",
+        "fit": "Keeps the navigational extension explicit.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9",
@@ -2889,13 +3385,29 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 13,
         "characters": 52
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-089",
+        "text": "I see that you are going to be a great hero some day",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, Nestor recognises Athena's favour toward Telemachus",
+        "speaker": "Nestor",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Nestor encourages Telemachus after Athena reveals herself.",
+        "fit": "Specific intergenerational reassurance suits the counsellor rather than a generic old-warrior quote.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 52
       }
     },
     {
       "sourceLabel": "Odyssey 6",
       "sequence": "Stand firm before the castaway; provide washing and clothing; see his altered appearance; guide him onward.",
       "emotions": "Courage / welcome / wonder",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Courageous hospitality before recognition: she helps the frightening stranger become legible as a person.",
       "hooks": "Discover an unknown traveller; reward revelation; restore and strengthen the guest.",
       "assessment": "Nausicaa welcomes the stranger before knowing his identity. The Adventure discovers; turning face up or returning supplies the later recognition event.",
       "id": "ODY-090",
@@ -2915,10 +3427,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.6.vi.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books VI and VIII checked: Nausicaa stands firm, provides food/clothes and guidance, witnesses Odysseus's transformed appearance, and later asks to be remembered.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-090",
+        "pair": "WU",
+        "text": "do not forget me when you are safe at home again",
+        "location": "Book 8, Nausicaa asks to be remembered",
+        "speaker": "Nausicaa",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "As Odysseus prepares to leave Scheria, Nausicaa asks that he remember the one who helped him.",
+        "fit": "A concise expression of recognition, care, and successful onward return.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 48
+      },
+      "flavourCandidate": {
         "cardId": "ODY-090",
         "pair": "WU",
         "text": "do not forget me when you are safe at home again",
@@ -2964,6 +3493,23 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-091",
+        "pair": "GW",
+        "text": "I will point out to you the trees in the vineyard which you gave me",
+        "location": "Book 24, Odysseus proves himself to Laertes",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+        "context": "Odysseus recalls the trees Laertes gave him as a child to prove their shared history.",
+        "fit": "The remembered trees are the most specific source hook for Laertes's rooted recovery identity.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 67
+      },
+      "flavourCandidate": {
         "cardId": "ODY-091",
         "pair": "GW",
         "text": "I will point out to you the trees in the vineyard which you gave me",
@@ -3130,12 +3676,12 @@
       "sourceLabel": "Odyssey 8",
       "sequence": "Hephaestus anticipates betrayal; builds the net; exposes the trapped lovers in song.",
       "emotions": "Clever satisfaction / public embarrassment",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A performed lesson in preparation: Hephaestus wins not by strength but by making the trap before his rivals notice.",
       "hooks": "Foresight; crafted resource; efficient prepared action.",
       "assessment": "Actually sung by Demodocus. UR listeners can hear technical ingenuity or gleeful reversal; current chapters never trap anything.",
       "id": "ODY-097",
       "number": 97,
-      "name": "Caught in Hephaestus's Net",
+      "name": "Song of Hephaestus's Net",
       "rarity": "U",
       "color": "UR",
       "currentType": "Enchantment — Saga",
@@ -3150,10 +3696,43 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VIII checked: Demodocus explicitly performs the Hephaestus/Ares/Aphrodite story and the gods praise cunning reversal. Final candidate name is Song of Hephaestus's Net.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-097",
+        "text": "the weak confound the strong",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, the gods react to Hephaestus's trap",
+        "speaker": "Gods at the doorway",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "The gods admire the cunning trap that catches swift Ares.",
+        "fit": "The shortest clean statement of the song's reversal-through-craft theme.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 5,
+        "characters": 28,
+        "kind": "quote"
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-097",
+        "text": "the weak confound the strong",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, the gods react to Hephaestus's trap",
+        "speaker": "Gods at the doorway",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "The gods admire the cunning trap that catches swift Ares.",
+        "fit": "The shortest clean statement of the song's reversal-through-craft theme.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 5,
+        "characters": 28,
+        "kind": "quote"
+      }
     },
     {
       "sourceLabel": "Odyssey 19",
@@ -3342,6 +3921,22 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 6,
         "characters": 38
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-103",
+        "text": "stood up to make their drink-offerings",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, the Pylian gathering",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "The gathered company makes formal drink-offerings before Telemachus departs.",
+        "fit": "Direct ritual action for Pour the Libation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 6,
+        "characters": 38
       }
     },
     {
@@ -3406,7 +4001,7 @@
       "sourceLabel": "Odyssey 5",
       "sequence": "Build from timber; commit labour; survive the first launch.",
       "emotions": "Fragile hope / vulnerability",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Improvised mobility: enough craft to leave captivity, never enough durability to feel safe.",
       "hooks": "Tap a worker to improve a small Vehicle.",
       "assessment": "An improvised raft should feel less durable than miraculous Phaeacian craft.",
       "id": "ODY-106",
@@ -3426,10 +4021,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked: the raft is carefully constructed over four days, then battered and finally broken by Poseidon's storm.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-106",
+        "kind": "adaptation",
+        "text": "Four days of careful work met one angry sea.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus completes the raft in four days before Poseidon later destroys it.",
+        "fit": "Captures the raft's vulnerability without another direct quotation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 2",
@@ -3459,6 +4064,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-107",
+        "text": "Jove sent two eagles from the top of the mountain",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, the eagle omen over the assembly",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Two eagles wheel over the assembly and are interpreted as a warning of Odysseus's return.",
+        "fit": "The sign itself is the card's subject.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 49
+      },
+      "flavourCandidate": {
         "cardId": "ODY-107",
         "text": "Jove sent two eagles from the top of the mountain",
         "author": "Homer",
@@ -3517,6 +4138,22 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 8,
         "characters": 49
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-108",
+        "text": "pages filled the mixing-bowls with wine and water",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, household service at Pylos",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Pages mix wine and water and serve the gathering.",
+        "fit": "Exact ordinary labour for Mix the Wine.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 49
       }
     },
     {
@@ -3543,10 +4180,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VII checked: after supper Arete has a proper bed made for the stranger in the gatehouse.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-109",
+        "kind": "adaptation",
+        "text": "Hospitality does not end when the feast does.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Arete orders a proper bed prepared for Odysseus after the meal.",
+        "fit": "Turns bedding into continuation of guest-right.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 14",
@@ -3768,6 +4415,22 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 10,
         "characters": 43
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-116",
+        "text": "this is no dream, but a vision of good omen",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, the eagle interprets Penelope's dream",
+        "speaker": "Eagle in Penelope's dream",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "The eagle declares the geese dream a true omen of Odysseus's return and the suitors' destruction.",
+        "fit": "Directly names the dream as an omen while preserving Penelope's surrounding uncertainty.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 43
       }
     },
     {
@@ -3852,10 +4515,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked as composite: Odysseus reaches shore physically ruined by sea travel. This anonymous mariner generalises that survivor image.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-119",
+        "kind": "adaptation",
+        "text": "The sea returned him alive, but not untouched.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus reaches shore exhausted, swollen and full of seawater.",
+        "fit": "A general mariner line grounded in the storm aftermath.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; seamanship extension",
@@ -3881,10 +4554,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked with seamanship extension: Odysseus reads surf, rocks, current and shelter while seeking a landing; 'read the swell' is the card's compressed technique.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-120",
+        "kind": "adaptation",
+        "text": "A sailor who reads the water acts before the wave decides for him.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus studies surf, rocks, current and shelter while trying to land.",
+        "fit": "Explicit seamanship interpretation rather than a named Homeric technique.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12; funeral composite",
@@ -3943,6 +4626,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-122",
+        "text": "he had been to beg poison for his arrows from Ilus",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 1, Odysseus's visit to Ephyra",
+        "speaker": "Athena as Mentes",
+        "source": "https://classics.mit.edu/Homer/odyssey.1.i.html",
+        "context": "Athena recalls Odysseus seeking poison for his arrows at Ephyra.",
+        "fit": "The poem supports poisoned arrows, while the exact poison remains unidentified.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 50
+      },
+      "flavourCandidate": {
         "cardId": "ODY-122",
         "text": "he had been to beg poison for his arrows from Ilus",
         "author": "Homer",
@@ -4016,6 +4715,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-124",
+        "text": "was in charge of everything both night and day",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Eurycleia guards the storeroom",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Eurycleia is described as responsible for the household stores continuously.",
+        "fit": "A precise source hook for the anonymous keeper role.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 46
+      },
+      "flavourCandidate": {
         "cardId": "ODY-124",
         "text": "was in charge of everything both night and day",
         "author": "Homer",
@@ -4118,6 +4833,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-127",
+        "text": "the sun is blotted out of heaven",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 20, Theoclymenus's vision",
+        "speaker": "Theoclymenus",
+        "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+        "context": "The prophet sees blood, ghosts and darkness over the hall and announces the suitors' doom.",
+        "fit": "A compact image from the exact vision gives the black Omen dread without explaining the whole prophecy.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 32
+      },
+      "flavourCandidate": {
         "cardId": "ODY-127",
         "text": "the sun is blotted out of heaven",
         "author": "Homer",
@@ -4274,10 +5005,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked as seamanship composite: wind, stars, rudder and changing conditions are explicit; the dedicated weatherwise sailor is invented.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-132",
+        "kind": "adaptation",
+        "text": "The crew trusted the sailor who knew when motion should become patience.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "The voyage repeatedly alternates action with waiting for usable conditions.",
+        "fit": "Original weatherwise-sailor composite.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 10",
@@ -4332,10 +5073,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked: Poseidon's storm breaks the raft. The Elemental is a game personification of destructive weather, not a creature in Homer.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-134",
+        "kind": "adaptation",
+        "text": "Poseidon broke in moments what patience had built in days.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "The storm smashes the raft Odysseus had spent days constructing.",
+        "fit": "The Elemental is a game personification of the destructive sea.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12",
@@ -4365,6 +5116,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-135",
+        "text": "the joints upon the spits began to low like cows",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 12, omen after Helios's cattle are slaughtered",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "context": "After the crew violates the taboo, the hides crawl and the roasting meat bellows before punishment follows.",
+        "fit": "The uncanny physical sign is the card's exact image and carries the horror of the violated oath.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 48
+      },
+      "flavourCandidate": {
         "cardId": "ODY-135",
         "text": "the joints upon the spits began to low like cows",
         "author": "Homer",
@@ -4496,6 +5263,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-139",
+        "text": "there will be no house in Ithaca more royal than your own",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 15, Theoclymenus interprets the hawk",
+        "speaker": "Theoclymenus",
+        "source": "https://classics.mit.edu/Homer/odyssey.15.xv.html",
+        "context": "A hawk carrying a dove crosses on the right and is read as a sign of the enduring rule of Odysseus's house.",
+        "fit": "It states the interpretation of the bird omen rather than merely describing the animal.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 57
+      },
+      "flavourCandidate": {
         "cardId": "ODY-139",
         "text": "there will be no house in Ithaca more royal than your own",
         "author": "Homer",
@@ -4768,6 +5551,22 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 7,
         "characters": 50
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-147",
+        "text": "the child of morning, rosy-fingered Dawn, appeared",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, recurring dawn formula",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "The repeated formula marks a new day and renewed action.",
+        "fit": "The exact formula is the card's identity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 50
       }
     },
     {
@@ -4798,6 +5597,23 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-148",
+        "pair": "WB",
+        "text": "the man is guiltless, do him no hurt",
+        "location": "Book 22, Telemachus defends Medon",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+        "context": "Telemachus intervenes so the innocent herald Medon is spared.",
+        "fit": "The line exactly captures Medon's survival amid the household deaths.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 36
+      },
+      "flavourCandidate": {
         "cardId": "ODY-148",
         "pair": "WB",
         "text": "the man is guiltless, do him no hurt",
@@ -4863,10 +5679,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VII checked: Alcinous physically raises Odysseus from the hearth and moves him from ash-covered supplication into the household's protected space.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-150",
+        "kind": "adaptation",
+        "text": "Hospitality begins by raising the stranger from the ashes.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Alcinous raises the suppliant from the hearth before seating him.",
+        "fit": "Source-led adaptation distinct from the exact quote used on Seat the Guest.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 15 and 20",
@@ -4905,7 +5731,7 @@
       "sourceLabel": "Odyssey 8; Phaeacian extension",
       "sequence": "Build the knowing ship; ready it; send it across impossible water.",
       "emotions": "Craft wonder / inability to contain",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A maker whose workmanship is so advanced that the finished ship seems to possess intention.",
       "hooks": "Untapping readies an artifact; ships gain evasion.",
       "assessment": "Untap chains can loop with other workers; test actual costs and targets.",
       "id": "ODY-152",
@@ -4925,10 +5751,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VIII checked: Phaeacian ships are described as knowing destinations and needing no pilots. The individual shipwright is an extension built from that impossible craft culture.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-152",
+        "kind": "adaptation",
+        "text": "Their ships seemed to know the destination before the sailors spoke it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "Alcinous says Phaeacian ships understand their passengers' intended destination.",
+        "fit": "The shipwright is invented; the impossible craft is directly Homeric.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 8",
@@ -4954,10 +5790,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Book VIII checked: Odysseus explicitly asks Demodocus to change songs and tell the wooden-horse story; the performance triggers his grief.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-153",
+        "pair": "UR",
+        "text": "change your song and tell us of the wooden horse",
+        "location": "Book 8, Odysseus requests Demodocus's Trojan Horse song",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "Odysseus asks Demodocus to sing the story of the wooden horse.",
+        "fit": "It makes the card's status as an actual performed song explicit.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 48
+      },
+      "flavourCandidate": {
         "cardId": "ODY-153",
         "pair": "UR",
         "text": "change your song and tell us of the wooden horse",
@@ -5079,6 +5932,22 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 10,
         "characters": 44
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-156",
+        "text": "so long shall we go on eating up your estate",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Antinous defends the suitors' consumption",
+        "speaker": "Antinous",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Antinous openly states that the suitors will continue consuming Telemachus's estate.",
+        "fit": "The line turns hunger into deliberate predation rather than abstract scarcity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 44
       }
     },
     {
@@ -5113,6 +5982,23 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-157",
+        "pair": "BR",
+        "text": "I will bring you arms from the store room",
+        "location": "Book 22, Melanthius arms the suitors",
+        "speaker": "Melanthius",
+        "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+        "context": "Melanthius volunteers to fetch weapons for the suitors during the hall battle.",
+        "fit": "A direct statement of his active betrayal and resource conversion.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 41
+      },
+      "flavourCandidate": {
         "cardId": "ODY-157",
         "pair": "BR",
         "text": "I will bring you arms from the store room",
@@ -5202,6 +6088,23 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 14,
         "characters": 69
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-159",
+        "pair": "UR",
+        "text": "he could stir or still each one of them according to his own pleasure",
+        "location": "Book 10, Aeolus controls the winds",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "context": "Aeolus is described as able to rouse or quiet the winds at will.",
+        "fit": "The line maps directly onto his Vehicle acceleration and wind-bottling Adventure.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 14,
+        "characters": 69
       }
     },
     {
@@ -5228,10 +6131,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked for storm, surf and exposed rock. 'Storm over Limestone' is a landscape extension rather than a separately narrated event.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-160",
+        "kind": "adaptation",
+        "text": "On a bare coast, weather has nowhere to hide its violence.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus's landfall is exposed to storm, surf and rock.",
+        "fit": "Landscape extension rather than a distinct named storm.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Homeric simile; extension",
@@ -5323,7 +6236,7 @@
       "sourceLabel": "Odyssey 5; craft extension",
       "sequence": "Assemble materials; try a form; discard the failed version.",
       "emotions": "Experimentation / accumulating options",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Craft as revision: useful work comes from recognizing which version to abandon.",
       "hooks": "Artifact entry permits looting.",
       "assessment": "Make the crafted object the trigger; avoid a generic spell engine.",
       "id": "ODY-164",
@@ -5343,10 +6256,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked for practical construction; iterative bench-crafting and artifact filtering are explicit design extensions.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-164",
+        "kind": "adaptation",
+        "text": "A useful thing often begins with discarding the failed one.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V supplies intensive practical making; the iterative bench-work engine is an extension.",
+        "fit": "Original craft-process flavour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Mediterranean setting; extension",
@@ -5405,7 +6328,7 @@
       "sourceLabel": "Odyssey 6; simile",
       "sequence": "A hungry lion approaches; vulnerable onlookers scatter.",
       "emotions": "Desperate dignity / fear",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A simile of desperate majesty: the stranger is both vulnerable and frightening before anyone knows who he is.",
       "hooks": "Large trampling body.",
       "assessment": "A simile for the castaway's emergence, not a new lion encounter on Scheria.",
       "id": "ODY-167",
@@ -5425,10 +6348,43 @@
           "url": "https://classics.mit.edu/Homer/odyssey.6.vi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VI checked: the emerging Odysseus is directly compared to a famished lion approaching a fenced homestead.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-167",
+        "text": "He looked like some lion of the wilderness",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 6, Odysseus emerges before Nausicaa",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+        "context": "The naked, salt-caked Odysseus is compared to a famished lion as the maids scatter.",
+        "fit": "The card is the simile itself, so the direct line is preferable to an adaptation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 42,
+        "kind": "quote"
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-167",
+        "text": "He looked like some lion of the wilderness",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 6, Odysseus emerges before Nausicaa",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+        "context": "The naked, salt-caked Odysseus is compared to a famished lion as the maids scatter.",
+        "fit": "The card is the simile itself, so the direct line is preferable to an adaptation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 42,
+        "kind": "quote"
+      }
     },
     {
       "sourceLabel": "Odyssey 13–24; concept",
@@ -5520,6 +6476,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-170",
+        "text": "watching the seals come up in hundreds to bask upon the sea shore",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 4, Menelaus waits for Proteus",
+        "speaker": "Menelaus",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "context": "Menelaus describes waiting among the seals during the Proteus episode.",
+        "fit": "The card is a setting/fauna treatment and must stay attached to Menelaus's story, not Odysseus's.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 65
+      },
+      "flavourCandidate": {
         "cardId": "ODY-170",
         "text": "watching the seals come up in hundreds to bask upon the sea shore",
         "author": "Homer",
@@ -5637,6 +6609,23 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 12,
         "characters": 56
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-173",
+        "pair": "RG",
+        "text": "let us call her and see whether she is woman or goddess.",
+        "location": "Book 10, Polites urges the crew toward Circe's house",
+        "speaker": "Polites",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "context": "Polites persuades the scouting party to call to the singer inside Circe's house.",
+        "fit": "It captures the decisive first-through-the-door impulse behind the card.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 56
       }
     },
     {
@@ -5671,6 +6660,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-174",
+        "text": "at night I would unpick the stitches",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Penelope recounts the shroud deception",
+        "speaker": "Penelope",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "She explains to the disguised Odysseus how she postponed the marriage.",
+        "fit": "The action is exactly the rare proposal's unweaving hook.",
+        "verification": "exact excerpt checked",
+        "wordCount": 7,
+        "characters": 36,
+        "selection": "candidate; final card-space check pending"
+      },
+      "flavourCandidate": {
         "cardId": "ODY-174",
         "text": "at night I would unpick the stitches",
         "author": "Homer",
@@ -5730,13 +6735,30 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 15,
         "characters": 69
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-175",
+        "pair": "UB",
+        "text": "when they had drunk she turned them into pigs by a stroke of her wand",
+        "location": "Book 10, Circe transforms the crew",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "context": "Circe drugs and transforms Odysseus's companions.",
+        "fit": "The exact transformation scene grounds the face-down/enchantment-death identity.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 69
       }
     },
     {
       "sourceLabel": "Odyssey 5",
       "sequence": "Shelter the traveller; prolong the stay; make departure harder.",
       "emotions": "Comfort becoming captivity / temptation",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Care that becomes possession: safety and abundance gain weight precisely because the guest wants to leave.",
       "hooks": "Hidden options grow; a sheltered creature becomes substantial.",
       "assessment": "Common Manifest Fate density must make this a workable GU signpost.",
       "id": "ODY-176",
@@ -5756,10 +6778,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Book V checked: Calypso shelters Odysseus, offers immortality, and wants him to remain while he longs for home.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-176",
+        "pair": "GU",
+        "text": "you would stay where you are, keep house along with me",
+        "location": "Book 5, Calypso urges Odysseus to remain",
+        "speaker": "Calypso",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "context": "Calypso offers continued life with her on Ogygia instead of departure.",
+        "fit": "The line directly expresses comfort becoming captivity and delayed homecoming.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 54
+      },
+      "flavourCandidate": {
         "cardId": "ODY-176",
         "pair": "GU",
         "text": "you would stay where you are, keep house along with me",
@@ -5824,13 +6863,30 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 15,
         "characters": 75
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-177",
+        "pair": "RW",
+        "text": "Father, I have always heard of your renown both in the field and in council",
+        "location": "Book 16, Telemachus recognises Odysseus",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.16.xvi.html",
+        "context": "After the reunion, Telemachus addresses the father whose reputation he has inherited.",
+        "fit": "It bridges returned son, inherited identity, and the coming coordinated fight.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 75
       }
     },
     {
       "sourceLabel": "Odyssey 8",
       "sequence": "Insult the stranger; witness the discus throw; offer an apology and gift.",
       "emotions": "Pride checked / vindication",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Competitive pride capable of restitution once evidence destroys the insult.",
       "hooks": "Commit to competition; gain temporary force; work creates mana.",
       "assessment": "Pure aggression omits the apology; consider gift or restitution in later refinement.",
       "id": "ODY-178",
@@ -5850,10 +6906,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Book VIII checked: Euryalus excels in wrestling, insults Odysseus, sees himself disproved, then apologises with a valuable gift.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-178",
+        "pair": "RG",
+        "text": "if anything has been said amiss may the winds blow it away with them",
+        "location": "Book 8, Euryalus apologises to Odysseus",
+        "speaker": "Euryalus",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "After insulting Odysseus and seeing his athletic prowess, Euryalus apologises and offers a gift.",
+        "fit": "It completes Euryalus's sequence from challenge to recognition and reconciliation.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 14,
+        "characters": 68
+      },
+      "flavourCandidate": {
         "cardId": "ODY-178",
         "pair": "RG",
         "text": "if anything has been said amiss may the winds blow it away with them",
@@ -5897,7 +6970,7 @@
       ],
       "sourceReview": "Book XXIV checked; funerary/social-world composite; no direct quote selected.",
       "briefStatus": "first-pass",
-      "quoteStatus": "no direct quote selected; composite/interpretive portrayal",
+      "quoteStatus": "no direct quote selected; adaptation still pending",
       "quotationCandidate": null,
       "quotationAuditOutcome": "Ordinary funerary/social-world composite. Book XXIV supports ghosts and family memory, but no single narrated grave-tending scene matches this invented role closely enough for a direct quotation."
     },
@@ -5934,7 +7007,7 @@
       "sourceLabel": "Odyssey 5",
       "sequence": "Put on divine sandals; cross sea and land; deliver the message.",
       "emotions": "Speed / unavoidable arrival",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Divine speed made portable: the equipment evokes the messenger, not ownership by the hero.",
       "hooks": "Equipment grants flight and haste.",
       "assessment": "Straight reprint as visual analogy for Hermes; not footwear loaned to Odysseus in this scene.",
       "id": "ODY-181",
@@ -5954,10 +7027,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked: Hermes crosses land and sea in golden sandals to deliver Zeus's command. The reprint is a direct visual analogy, not gear Odysseus receives.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-181",
+        "kind": "adaptation",
+        "text": "No sea was wide enough to delay the messenger of Zeus.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Hermes crosses land and sea in divine sandals to deliver Zeus's order.",
+        "fit": "Specific to Hermes while remaining an adaptation of the narration.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9; later interpretation",
@@ -6092,13 +7175,29 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 8,
         "characters": 41
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-185",
+        "text": "my mother does not know anything about it",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus secretly loads the ship",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus tells the crew that Penelope does not know about the stores or departure.",
+        "fit": "A concise expression of the secret voyage.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 41
       }
     },
     {
       "sourceLabel": "Odyssey 5; seamanship extension",
       "sequence": "Keep speed over the waves; evade small obstacles; learn the route.",
       "emotions": "Daring / frustration",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A fast mortal vessel that survives by staying ahead of small obstacles rather than ignoring the sea.",
       "hooks": "Small blockers cannot stop it; successful travel filters cards.",
       "assessment": "An ordinary fast galley, distinct from the supernatural Phaeacian ship.",
       "id": "ODY-186",
@@ -6118,16 +7217,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked for sea-speed and danger; this ordinary evasive galley is a seamanship extension distinct from the self-knowing Phaeacian ships.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-186",
+        "kind": "adaptation",
+        "text": "Speed is another kind of shelter when the sea turns hostile.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Ordinary fast-galley play is a seamanship extension distinct from supernatural Phaeacian ships.",
+        "fit": "Original extension for evasive Vehicle play.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 6–7",
       "sequence": "Reach an unknown shore; seek welcome; find a usable refuge.",
       "emotions": "Uncertainty becoming safety / stabilisation",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A refuge defined by distance: strange enough to be uncertain, orderly enough to become safe.",
       "hooks": "Choose needed fixing on arrival.",
       "assessment": "Keep the straight reprint and Scheria treatment.",
       "id": "ODY-187",
@@ -6151,10 +7260,43 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books VI–VII checked: Scheria is a remote Phaeacian settlement and Odysseus enters it as an unknown outsider seeking safe passage.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-187",
+        "text": "settled them in Scheria, far from all other people",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 6, the Phaeacians' settlement",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+        "context": "Nausithous establishes the Phaeacians in remote Scheria.",
+        "fit": "Directly supports the renamed Uncharted Haven treatment.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 50,
+        "kind": "quote"
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-187",
+        "text": "settled them in Scheria, far from all other people",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 6, the Phaeacians' settlement",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+        "context": "Nausithous establishes the Phaeacians in remote Scheria.",
+        "fit": "Directly supports the renamed Uncharted Haven treatment.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 50,
+        "kind": "quote"
+      }
     },
     {
       "sourceLabel": "Apollodorus Epitome 3.6–7; prewar setting",
@@ -6557,7 +7699,7 @@
       "sourceLabel": "Odyssey 5; mythic interpretation",
       "sequence": "Conceal the traveller; sustain him outside ordinary life; magnify a sheltered future.",
       "emotions": "Seductive safety / captivity",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The mythic version magnifies the seductive stasis: hidden futures grow stronger the longer departure is postponed.",
       "hooks": "Enhance hidden bodies; exiled possibilities create growth.",
       "assessment": "Distinct from the uncommon's accessible engine and the island's slow time investment.",
       "id": "ODY-201",
@@ -6577,10 +7719,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked: Calypso's beautiful island and immortality offer make staying genuinely tempting, while Odysseus's homesickness makes the same safety a captivity.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-201",
+        "kind": "adaptation",
+        "text": "Immortality was only another name for never leaving.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Calypso offers immortality if Odysseus remains, while he longs for home.",
+        "fit": "Separates the mythic shelter fantasy from a freely chosen happy ending.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 7–13",
@@ -6619,7 +7771,7 @@
       "sourceLabel": "Odyssey 7",
       "sequence": "Recognise the clothing; question the visitor; decide whether to help.",
       "emotions": "Discernment / scrutiny",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Social authority through judgement rather than command: recognition by Arete turns a stranger into someone the household will act for.",
       "hooks": "Protect known people; control tempo when legends arrive.",
       "assessment": "Queen's judgment differs from the king's material provision.",
       "id": "ODY-203",
@@ -6639,10 +7791,43 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VII checked: Athena identifies Arete as unusually respected, discerning and capable of securing Odysseus's return.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-203",
+        "text": "a thoroughly good woman both in head and heart",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 7, Athena describes Arete",
+        "speaker": "Athena",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "context": "Athena tells Odysseus that Arete's judgement can secure his homeward passage.",
+        "fit": "A concise portrait of Arete's respected discernment.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 46,
+        "kind": "quote"
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-203",
+        "text": "a thoroughly good woman both in head and heart",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 7, Athena describes Arete",
+        "speaker": "Athena",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "context": "Athena tells Odysseus that Arete's judgement can secure his homeward passage.",
+        "fit": "A concise portrait of Arete's respected discernment.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 46,
+        "kind": "quote"
+      }
     },
     {
       "sourceLabel": "Madeline Miller, The Song of Achilles; adaptation brief",
@@ -6970,10 +8155,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VII checked: Phaeacian women are explicitly renowned for weaving; dyeing and this specific courtyard worker are textile-world extensions.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-214",
+        "kind": "adaptation",
+        "text": "Every thread carried the patience of a household built to last.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Book VII explicitly praises Phaeacian weaving; dyeing is an invented textile extension.",
+        "fit": "Original flavour avoids inventing a named dyer.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 21",
@@ -7417,7 +8612,7 @@
       "sourceLabel": "Odyssey 8; Trojan-war tradition",
       "sequence": "Besiege the city; conceal warriors; enter by the horse.",
       "emotions": "Cunning triumph / disastrous trust",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A victory assembled in two stages: public object first, hidden attackers second.",
       "hooks": "Saga preparation; transform into a Vehicle carrying another attacker.",
       "assessment": "Retain the sole DFC. The front is a Saga even if old layout metadata calls it a battle.",
       "id": "ODY-229",
@@ -7437,10 +8632,43 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VIII checked: Demodocus recounts the wooden horse entering Troy, the city becoming doomed, and the Greeks emerging from concealment.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-229",
+        "text": "the city was doomed when it took in that horse",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, Demodocus sings the wooden horse",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "Demodocus recounts the Trojan decision to bring the wooden horse into the city.",
+        "fit": "Exact fatal hinge for the Saga-to-Vehicle transformation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 46,
+        "kind": "quote"
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-229",
+        "text": "the city was doomed when it took in that horse",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, Demodocus sings the wooden horse",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "Demodocus recounts the Trojan decision to bring the wooden horse into the city.",
+        "fit": "Exact fatal hinge for the Saga-to-Vehicle transformation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 46,
+        "kind": "quote"
+      }
     },
     {
       "sourceLabel": "Odyssey 7 and 14; concept",
@@ -7653,7 +8881,7 @@
       "sourceLabel": "Odyssey 8; concept",
       "sequence": "Perform a brave act; have it sung; let renown outlast the moment.",
       "emotions": "Pride / pressure",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Renown exists after the action: the hero supplies the deed, but other people decide whether it becomes story.",
       "hooks": "Legendary attacks create temporary options.",
       "assessment": "Kleos is reputation earned through action, distinct from the storyteller's preservation of memory.",
       "id": "ODY-237",
@@ -7673,10 +8901,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VIII checked for heroic deeds becoming song, reputation and future memory. Kleos is a Greek conceptual frame rather than Butler's English terminology.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-237",
+        "kind": "adaptation",
+        "text": "A deed ends. The song decides how long it lives.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "Book VIII repeatedly turns heroic action into performed memory and future song.",
+        "fit": "Original articulation of kleos through performance.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 19 and 23; recognition pattern",
@@ -7971,7 +9209,7 @@
       "sourceLabel": "Odyssey 5; time interpretation",
       "sequence": "Hide on the island; accept prolonged comfort; postpone the next life.",
       "emotions": "Temptation / suspension",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Stasis made seductive: a place can be beautiful enough to hide how much life is being postponed.",
       "hooks": "Commit a creature to waiting; earn an unknown future card.",
       "assessment": "Original time metaphor; do not claim literal time travel in Homer.",
       "id": "ODY-247",
@@ -7991,10 +9229,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books V and VII checked: Odysseus stays on Ogygia for seven years amid comfort and tears. Literal altered time is an interpretive metaphor, not a Homeric phenomenon.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-247",
+        "kind": "adaptation",
+        "text": "Seven years can feel like one long afternoon when nothing is allowed to change.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Odysseus recounts seven years on Ogygia; literal time distortion is not in Homer.",
+        "fit": "Makes the time metaphor explicit without claiming time travel.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Later Siren reception; interpretation",
@@ -8145,7 +9393,7 @@
       ],
       "sourceReview": "Book III checked only as Pylos of Telemachus's postwar visit. 'Before the War' is intentionally an earlier-period visual interpretation, so no direct Odyssey quotation is selected.",
       "briefStatus": "first-pass",
-      "quoteStatus": "no direct quote selected; composite/interpretive portrayal",
+      "quoteStatus": "no direct quote selected; adaptation still pending",
       "quotationCandidate": null,
       "quotationAuditOutcome": "The card deliberately imagines Pylos before the war, while Odyssey III depicts Telemachus's postwar visit. A direct Odyssey quotation would misstate the time layer."
     },
@@ -8206,10 +9454,12 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books VI–VIII checked for Scheria's harbour and coast. Basic land treatment selected with no flavour text.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no flavour text selected",
+      "quotationCandidate": null,
+      "flavourCandidate": null,
+      "quotationAuditOutcome": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected."
     },
     {
       "sourceLabel": "Odyssey 5",
@@ -8235,10 +9485,12 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked for the long open-sea crossing. Basic land treatment selected with no flavour text.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no flavour text selected",
+      "quotationCandidate": null,
+      "flavourCandidate": null,
+      "quotationAuditOutcome": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected."
     },
     {
       "sourceLabel": "Odyssey 5",
@@ -8264,10 +9516,12 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked for Ogygia's shore and surrounding sea. Basic land treatment selected with no flavour text.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no flavour text selected",
+      "quotationCandidate": null,
+      "flavourCandidate": null,
+      "quotationAuditOutcome": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected."
     },
     {
       "sourceLabel": "Odyssey 11",
@@ -8686,10 +9940,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked for exposed island/sea weather. Windswept Isle is an invented unnamed landscape composite.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-270",
+        "kind": "adaptation",
+        "text": "Every exposed shore taught the wind a different voice.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V is saturated with shifting wind and exposed sea travel; the named isle is invented.",
+        "fit": "Landscape-composite flavour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 11 and 24",
@@ -8748,10 +10012,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VIII checked for the Phaeacian public games. Laurel is later visual shorthand rather than an Odyssey prize detail.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-272",
+        "kind": "adaptation",
+        "text": "Pride entered the games before any athlete did.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "The Phaeacian games turn hospitality into competition, insult and restitution.",
+        "fit": "Original line for a later-laurel visual shorthand.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 6; landscape interpretation",
@@ -8777,16 +10051,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.6.vi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book VI checked: Odysseus compares Nausicaa to a young palm at Delos. Palmshade Cove is an invented landscape treatment, not that literal palm's location.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-273",
+        "kind": "adaptation",
+        "text": "A strange shore can resemble home for exactly as long as the shade lasts.",
+        "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+        "basis": "The palm imagery comes from Odysseus's speech to Nausicaa; Palmshade Cove itself is invented.",
+        "fit": "Source-led landscape interpretation without relocating the Delos palm literally.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; reception interpretation",
       "sequence": "Offer refuge; reward staying; make leaving emotionally costly.",
       "emotions": "Comfort / captivity",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A captor capable of care: comfort is real, but so is the unequal power to prevent departure.",
       "hooks": "Nonattack reward; return another creature to strengthen the keeper.",
       "assessment": "Do not present the captive's compliance as freely chosen romance in Homer's version.",
       "id": "ODY-274",
@@ -8806,10 +10090,43 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked: the narration explicitly states that Odysseus's sexual cohabitation with Calypso is not his choice. Keep refuge and captivity in tension without romanticising coercion.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-274",
+        "text": "it was she, not he, that would have it so",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 5, Odysseus's life with Calypso",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "context": "The narration distinguishes Calypso's desire from Odysseus's unwilling captivity.",
+        "fit": "Essential corrective against romanticising this portrayal as freely chosen refuge.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 41,
+        "kind": "quote"
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-274",
+        "text": "it was she, not he, that would have it so",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 5, Odysseus's life with Calypso",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "context": "The narration distinguishes Calypso's desire from Odysseus's unwilling captivity.",
+        "fit": "Essential corrective against romanticising this portrayal as freely chosen refuge.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 41,
+        "kind": "quote"
+      }
     },
     {
       "sourceLabel": "Odyssey 2 and 19; object interpretation",
@@ -8963,6 +10280,22 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 8,
         "characters": 34
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-279",
+        "text": "he mixed them a bowl of sweet wine",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, Nestor hosts Telemachus",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Nestor mixes a bowl of aged wine for the household gathering.",
+        "fit": "Specific material-world flavour distinct from the common service action.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 34
       }
     },
     {
@@ -9030,6 +10363,22 @@
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
+        "cardId": "ODY-281",
+        "text": "No estate can stand such recklessness",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus on the suitors' banquets",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus says the constant banquets will ruin the household.",
+        "fit": "A clean summary of depleted stores without duplicating Suitor's Extortion's wording.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 6,
+        "characters": 37
+      },
+      "flavourCandidate": {
         "cardId": "ODY-281",
         "text": "No estate can stand such recklessness",
         "author": "Homer",
@@ -9218,6 +10567,22 @@
         "wordCount": 10,
         "characters": 46,
         "selection": "candidate; final card-space check pending"
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-287",
+        "text": "To strive, to seek, to find, and not to yield.",
+        "author": "Alfred, Lord Tennyson",
+        "translator": null,
+        "work": "Ulysses",
+        "location": "Final line",
+        "speaker": "Tennyson's Ulysses",
+        "source": "https://poets.org/poem/ulysses",
+        "context": "The later poem ends with resolve to continue voyaging.",
+        "fit": "Matches the deliberately restless reception version rather than Homeric homecoming.",
+        "verification": "exact excerpt checked",
+        "wordCount": 10,
+        "characters": 46,
+        "selection": "candidate; final card-space check pending"
       }
     },
     {
@@ -9385,6 +10750,22 @@
         "wordCount": 6,
         "characters": 27,
         "selection": "candidate; final card-space check pending"
+      },
+      "flavourCandidate": {
+        "cardId": "ODY-292",
+        "text": "So I’ll spin my own thread.",
+        "author": "Margaret Atwood",
+        "translator": null,
+        "work": "The Penelopiad",
+        "location": "Excerpt on author's book page; edition pagination not verified",
+        "speaker": "Penelope",
+        "source": "https://margaretatwood.ca/books/the-penelopiad/",
+        "context": "Penelope claims the right to tell her own story.",
+        "fit": "Directly fits the Teller of Her Own Tale version.",
+        "verification": "exact excerpt checked",
+        "wordCount": 6,
+        "characters": 27,
+        "selection": "candidate; final card-space check pending"
       }
     },
     {
@@ -9444,7 +10825,7 @@
       "sourceLabel": "Odyssey 5; seamanship composite",
       "sequence": "Watch conditions; choose a route; learn through passage.",
       "emotions": "Competence / uncertainty",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Experience turned into prediction: spells and ships are two ways of learning the same dangerous sea.",
       "hooks": "Exile spells scry; successful ship attacks loot.",
       "assessment": "The UR rare connects navigation systems rather than adding a seventh mechanic.",
       "id": "ODY-295",
@@ -9464,10 +10845,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book V checked as seamanship composite: navigation by stars, wind, coast and current is explicit; the unified exile/Vehicle reading engine is a set-level abstraction.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourCandidate": {
+        "cardId": "ODY-295",
+        "kind": "adaptation",
+        "text": "The best course is the one the sea has already begun to reveal.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V shows navigation through stars, winds, coast and current; the unified system is a composite.",
+        "fit": "Original UR navigation flavour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Apollodorus Epitome 7.35",
