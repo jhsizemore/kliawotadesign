@@ -980,7 +980,7 @@
   },
   {
     "id": "ff-analog-gold-signposts",
-    "count": 19,
+    "count": 20,
     "members": [
       {
         "id": "ODY-051",
@@ -1058,6 +1058,13 @@
         "mana": "{1}{W}{B}",
         "rarity": "U",
         "type": "Legendary Creature — Human Advisor"
+      },
+      {
+        "id": "ODY-153",
+        "name": "Song of the Wooden Horse",
+        "mana": "{1}{U}{R}",
+        "rarity": "U",
+        "type": "Enchantment — Saga"
       },
       {
         "id": "ODY-157",
