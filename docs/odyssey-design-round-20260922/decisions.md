@@ -93,6 +93,18 @@ The review records now distinguish three states: requested benchmarks verified; 
 
 The report generator now preserves the locked FIN-style collation, pick-stress and validation state instead of regenerating the obsolete 90-common placeholder analysis.
 
+### Gameplay preflight resolution — 23 September 2026
+
+No card changes are authorised from pre-playtest math alone.
+
+- **Voyage into Unknown Shores:** keep the four-card exile threshold for first games. Goldfish modelling confirms the draw clause is late even in a purpose-built engine; the card's primary Limited function is its first-Manifest ramp trigger. If long real games never activate the draw clause, test three rather than adding more Manifest commons.
+- **Antinous:** keep 3/3 for first games. An on-curve Antinous has Food ready roughly 42% of the time in the WB diagnostic model and some sacrifice material roughly 75% of the time. That is high enough to watch, but the sacrificed resource is real. First fallback is 2/3 with unchanged rules.
+- **Penelope:** test in-colour WU Sagas and Omens first. The red Bag cannot be played in a WU Penelope Commander deck, so do not balance Penelope around that three-colour interaction before it causes a problem.
+- **Hybrid Sagas:** Song of the Faithless Crew is the upward rate watch; Song of the Faithful Queen is the downward rate watch.
+- **Iphigenia, Bed and Bag:** further inventory math will not answer their core rate questions. They move directly to played-game testing.
+
+See `gameplay-preflight.md` and `playtest-packet-v1.md`.
+
 ## Common foundation
 
 Three primary experiences should be apparent in ordinary games: **work together to survive and travel; conceal and recognise identity; keep or violate the duties of home**. Enchantments carry signs, transformations, stories and ritual across those experiences. Food, graveyard recovery, scry and exile are resources within them, not six separate promises of equal prominence.
