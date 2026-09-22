@@ -4,11 +4,17 @@
 
 - Preserve 309 physical cards, the 106/109/74/20 rarity allocation, 40 lands and one DFC. Both source and candidate meet these constraints.
 - The actual five hybrid Sagas are **ODY-097 UR, ODY-162 BG, ODY-163 RW, ODY-232 WB and ODY-245 GU**. The older membership list is stale. The other song Sagas remain separate cards.
-- Keep the current 16 Saga-bearing cards in the experimental candidate. The historical allocation describes 15 Saga-layout slots plus the one Saga-front DFC. This explains the count without inventing or removing a card. Retaining this interpretation in the final skeleton is an explicit review item.
-- There are 20 signpost-designated cards and **16 legendary signposts**, not 20 legendary signposts. The nonlegendary UR, RW, BG and GU members remain in place for this candidate. The historical all-legendary goal remains an unresolved architecture choice, not a reason to restore old cards.
+- **Lock the current 16 Saga-bearing cards.** The skeleton contains 15 cards using the Saga layout plus the Saga face of the single permitted DFC. The historical allocation of fifteen therefore describes the Saga-layout slots, not every physical card with a Saga face. No card is added or removed for this discrepancy.
+- There are 20 signpost-designated cards and **16 legendary signposts**, not 20 legendary signposts. **Retain the four nonlegendary signposts as deliberate structural exceptions:** ODY-153 Song of the Wooden Horse (UR spells), ODY-059 Ithacan Deck-Captain (RW Vehicles/Survival), ODY-179 Keeper of Ancestral Graves (BG graveyard departures) and ODY-060 Voyage into Unknown Shores (GU Manifest Fate/exile). Each is a cleaner mechanical bridge than forcing an unrelated named legend into the slot. The stale cycle register omitted ODY-153 and is corrected to 20 members.
 - The Penelope vertical family includes **Unending Loom as an object**. Do not count it as an uncommon character. The rare proposal uses ODY-174; the mythic and modern-retelling portrayals remain distinct.
 - Actual legendary total is 84. The embedded 88 is stale; the historical 105 is a target gap, not a current count. This round does not manufacture 21 legends to satisfy it.
 - Preserve all artwork assignments and crops. Changed names or types flag artwork for review rather than silently replacing images.
+
+### Architecture resolution — 23 September 2026
+
+The two provisional structural gates above are now resolved for this round: retain 16 Saga-bearing physical cards because one is the Saga face of the permitted DFC, and retain the four mechanically purposeful nonlegendary signposts. These are intentional exceptions to older checklist language, not deficits to repair. The signpost cycle metadata now follows the actual 20 card records.
+
+The five enemy-hybrid Saga membership remains ODY-097 UR, ODY-162 BG, ODY-163 RW, ODY-232 WB and ODY-245 GU. A separate hybrid colour-pie pass remains required before integration.
 
 ## Common foundation
 
