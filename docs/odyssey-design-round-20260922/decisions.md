@@ -77,6 +77,22 @@ That is enough to justify **testing the existing skeleton before consuming anoth
 
 See `limited-pick-stress-model.md` and JSON for the exact scenarios and limitations.
 
+### Printed-reference resolution — 23 September 2026
+
+The **component-reference gate is closed** for the isolated 42-card candidate. This is not a balance approval.
+
+- **13 changed cards** explicitly requested fresh printed comparisons; every requested comparison is now present.
+- **28 changed cards** retain their existing production component benchmarks because the edited component is already covered.
+- **ODY-097** is a naming-only revision, so no rate benchmark is required.
+- Missing requested benchmarks: **0**.
+- Every nontrivial rate remains gameplay-gated.
+
+Newly filled gaps include **Altar's Reap** for Iphigenia's sacrifice-as-additional-cost/draw-two component; **Flotsam** and **Tough Cookie** for the repaired BG hybrid Saga; and **Shore Up** plus **Tamiyo's Safekeeping** as blue/green protection-component checks for the repaired GU Saga. Existing requested references such as Cloudshift/Ephemerate, the five Theros Omens, Satsuki/Power Conduit/Scholar, Flowering/Tome and Reckless Impulse/Seething Song remain in the verified cache.
+
+The review records now distinguish three states: requested benchmarks verified; existing production benchmarks retained; or naming-only/no rate refresh. None of those labels means a card has passed draft or game testing.
+
+The report generator now preserves the locked FIN-style collation, pick-stress and validation state instead of regenerating the obsolete 90-common placeholder analysis.
+
 ## Common foundation
 
 Three primary experiences should be apparent in ordinary games: **work together to survive and travel; conceal and recognise identity; keep or violate the duties of home**. Enchantments carry signs, transformations, stories and ritual across those experiences. Food, graveyard recovery, scry and exile are resources within them, not six separate promises of equal prominence.
