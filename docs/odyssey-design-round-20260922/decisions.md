@@ -57,6 +57,26 @@ Official FIN collation reference: https://magic.wizards.com/en/news/feature/coll
 
 This is a **test-model lock**, not a claim that Odyssey has a manufactured Play Booster product. No draft picks or played games are represented by it.
 
+### Limited pick-stress resolution — 23 September 2026
+
+Do **not** add another common Manifest Fate source yet.
+
+A deliberately conservative fixed-intent passing model was run under `odyssey-core-fin-playbooster-v1`: a target GU, WU or WB drafter always high-picks the relevant package, and any competing drafter whose locked colours can use one of those cards also high-picks it. Packs pass left/right/left. This is a stress test for supply under colour competition, not a draft bot or game result.
+
+For GU, the direct Manifest package tested is ODY-088 and ODY-116 at common plus ODY-017 Ordeal of the Sirens at uncommon. In an open lane the target averages **5.36** direct enablers. With exactly one competing blue seat and one competing green seat it averages **2.49**, gets at least two in **72.7%** of runs and at least three in **45.4%**. With two competitors in each colour it falls to **1.66**. WU and the narrow WB direct-resource package remain materially more robust in the same model.
+
+Modern Play Booster skeleton guidance says each two-colour archetype should have at least two monocolour commons, two monocolour uncommons and two multicolour cards supporting it. GU meets that floor:
+- common G: ODY-088 Lotus-Fed Wanderer — Manifest Fate;
+- common U: ODY-116 Omen of the Dreaming Queen — Manifest Fate;
+- uncommon U: ODY-017 Ordeal of the Sirens — direct Manifest Fate;
+- uncommon G: ODY-042 Find the Next Shore — voyage/land/tapped-creature bridge;
+- additional U bridge: ODY-018 Read the Hidden Course — exile/face-up progress;
+- multicolour: ODY-060 Voyage into Unknown Shores and ODY-176 Calypso, Keeper of Ogygia.
+
+That is enough to justify **testing the existing skeleton before consuming another common slot**. It is not enough to certify the archetype. Reopen common density if actual drafts show that a plausibly open GU seat cannot acquire meaningful Manifest play or sustain Voyage's four-cards-in-exile threshold.
+
+See `limited-pick-stress-model.md` and JSON for the exact scenarios and limitations.
+
 ## Common foundation
 
 Three primary experiences should be apparent in ordinary games: **work together to survive and travel; conceal and recognise identity; keep or violate the duties of home**. Enchantments carry signs, transformations, stories and ritual across those experiences. Food, graveyard recovery, scry and exile are resources within them, not six separate promises of equal prominence.
