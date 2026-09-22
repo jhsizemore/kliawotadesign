@@ -1,0 +1,2478 @@
+{
+  "schema": "odyssey-quotation-audit/v1",
+  "scope": "Published card records and authoring columns; artwork text and old external documents are not audited quotations.",
+  "cards": [
+    {
+      "id": "ODY-001",
+      "name": "The Olive-Wood Test",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-002",
+      "name": "Telemachus, Young Heir",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-003",
+      "name": "Traveler's Amulet",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-004",
+      "name": "Keep the Long Watch",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-005",
+      "name": "Athena's Intervention",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-006",
+      "name": "Row Past the Sirens",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-007",
+      "name": "Wash the Stranger's Feet",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-008",
+      "name": "Seat the Guest by the Hearth",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-009",
+      "name": "Argos, Who Waited",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-010",
+      "name": "Telemachus Calls the Assembly",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-011",
+      "name": "Steer by the Great Bear",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-012",
+      "name": "Loyal Householder",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-013",
+      "name": "Feign Madness",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-014",
+      "name": "Poseidon's Storm Foretold",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-015",
+      "name": "Calchas Reads the Omen",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-016",
+      "name": "Singer at the Hearth",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-017",
+      "name": "Ordeal of the Sirens",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-018",
+      "name": "Read the Hidden Course",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-019",
+      "name": "Voyage's End",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-020",
+      "name": "Hubris",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-021",
+      "name": "Cut the Raft Timbers",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-022",
+      "name": "Keeper of Funeral Fires",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-023",
+      "name": "Bolt the Doors",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-024",
+      "name": "Trace the Omen",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-025",
+      "name": "Suitor's Extortion",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-026",
+      "name": "Elpenor's Funeral Due",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-027",
+      "name": "Call the Shades Forward",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-028",
+      "name": "Penelope Questions the Beggar",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-029",
+      "name": "Betray the Hidden Armory",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-030",
+      "name": "Asphyxiate",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-031",
+      "name": "Eumaeus Shares His Supper",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-032",
+      "name": "Loyal Cowherd",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-033",
+      "name": "Row Through the Gale",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-034",
+      "name": "Laestrygonian Glutton",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-035",
+      "name": "Invoke the Muse",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-036",
+      "name": "Eurycleia's Basin",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-037",
+      "name": "Treacherous Maidservant",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-038",
+      "name": "Shipyard Sparks",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-039",
+      "name": "Blood on the Walls",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-040",
+      "name": "Shipwright's Adze",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-041",
+      "name": "Test the Swineherd",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-042",
+      "name": "Find the Next Shore",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-043",
+      "name": "Recall the Refrain",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-044",
+      "name": "Row in Unison",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-045",
+      "name": "Sudden Squall",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-046",
+      "name": "Test the Goatherd",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-047",
+      "name": "Fig Tree Above Charybdis",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-048",
+      "name": "Ilysian Caryatid",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-049",
+      "name": "Clear-Sky Thunder",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-050",
+      "name": "Hermes Gives the Moly",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-051",
+      "name": "Mentor, Trusted Counselor",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-052",
+      "name": "Tiresias, Voice Below",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-053",
+      "name": "Eurylochus, Voice of Doubt",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-054",
+      "name": "Polyphemus, Eater of Men",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-055",
+      "name": "Eumaeus, Loyal Swineherd",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-056",
+      "name": "Antinous, First Suitor",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-057",
+      "name": "Shipboard Carpenter",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-058",
+      "name": "Anticleia, Shade of Home",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-059",
+      "name": "Ithacan Deck-Captain",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-060",
+      "name": "Voyage into Unknown Shores",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-061",
+      "name": "Odysseus, Cunning Voyager",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-062",
+      "name": "Athena, Far-Seeing Guide",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-063",
+      "name": "Odysseus, Named Nobody",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-064",
+      "name": "Black-Hulled Ship",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-065",
+      "name": "Phaeacian Swiftship",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-066",
+      "name": "Bow of Iphitus",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-067",
+      "name": "Potter at the Kiln",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-068",
+      "name": "Guest-Gift Amphora",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-069",
+      "name": "Survivors' Encampment",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-070",
+      "name": "Homeward Harbor",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-071",
+      "name": "Cimmerian Crossing",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-072",
+      "name": "Temple of Epiphany",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-073",
+      "name": "Olive-Oil Lamp",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-074",
+      "name": "Set Bread Before the Guest",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-075",
+      "name": "Mooring Rope",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-076",
+      "name": "Eurycleia, Keeper of the Scar",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-077",
+      "name": "Phaeacian Oarsman",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-078",
+      "name": "Odysseus's Cloak and Brooch",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-079",
+      "name": "Demodocus, Blind Singer",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-080",
+      "name": "Disguised Palace Beggar",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-081",
+      "name": "A Dawn Worth Twenty Years",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-082",
+      "name": "Mourning Veil",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-083",
+      "name": "Bronze-Bowl Smith",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-084",
+      "name": "Hearthfire Cook",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-085",
+      "name": "Beach-Drawn Longship",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-086",
+      "name": "Winged Words",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-087",
+      "name": "Seabird Lookout",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-088",
+      "name": "Lotus-Fed Wanderer",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-089",
+      "name": "Nestor, Counselor of the Achaeans",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-090",
+      "name": "Nausicaa, Princess of Scheria",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-091",
+      "name": "Laertes, Rooted Patriarch",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-092",
+      "name": "Vengeance in the Great Hall",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-093",
+      "name": "Ordeal of the Bow",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-094",
+      "name": "Divine Verdict",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-095",
+      "name": "Carry the Dead Home",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-096",
+      "name": "The Price of Memory",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-097",
+      "name": "Caught in Hephaestus's Net",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-098",
+      "name": "Boar Hunt on Parnassus",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-099",
+      "name": "Fogbank over Open Water",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-100",
+      "name": "Siren of the Bone-Strewn Shore",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-101",
+      "name": "Secret Laid Bare",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-102",
+      "name": "Polyphemus's Great Ram",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-103",
+      "name": "Pour the Libation",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-104",
+      "name": "Hide the Weapons",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-105",
+      "name": "Neighboring Cyclops",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-106",
+      "name": "Storm-Battered Raft",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-107",
+      "name": "Eagle Omen over Ithaca",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-108",
+      "name": "Mix the Wine",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-109",
+      "name": "Spread Guest Bedding",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-110",
+      "name": "Hospitable Swineherd",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-111",
+      "name": "Faithful Old Hound",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-112",
+      "name": "Dolphins Beside the Bow",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-113",
+      "name": "Griptide",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-114",
+      "name": "Annul",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-115",
+      "name": "Sound the Depths",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-116",
+      "name": "Dream of the Geese",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-117",
+      "name": "Salt-Sprayed Oarsman",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-118",
+      "name": "Beach the Ship",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-119",
+      "name": "Sea-Swallowed Mariner",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-120",
+      "name": "Read the Swell",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-121",
+      "name": "Rites Before Sunset",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-122",
+      "name": "Sip of Hemlock",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-123",
+      "name": "Veiled Mourner",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-124",
+      "name": "Storeroom Keeper",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-125",
+      "name": "Spellbound Swine",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-126",
+      "name": "Ash Gatherer",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-127",
+      "name": "Household Debt",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-128",
+      "name": "Funeral-Bier Bearer",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-129",
+      "name": "Funeral Pyre",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-130",
+      "name": "Team of Oxen",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-131",
+      "name": "Rowing Chant",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-132",
+      "name": "Weatherwise Sailor",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-133",
+      "name": "Laestrygonian Stone-Hurler",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-134",
+      "name": "Breaker of the Raft",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-135",
+      "name": "Saltwind Opening",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-136",
+      "name": "Salt-Cured Fish",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-137",
+      "name": "Limestone Goat",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-138",
+      "name": "Farmer at the Furrow",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-139",
+      "name": "Gather Figs",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-140",
+      "name": "Olivewood Carpenter",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-141",
+      "name": "Goat of the Empty Isle",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-142",
+      "name": "Pour to the Dead",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-143",
+      "name": "Great Hall",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-144",
+      "name": "Soul-Guide Lantern",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-145",
+      "name": "Broad-Beamed Ferry",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-146",
+      "name": "Weavers of the Waiting House",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-147",
+      "name": "Rosy-Fingered Dawn",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-148",
+      "name": "Medon, Herald Who Endured",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-149",
+      "name": "Favored Hoplite",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-150",
+      "name": "Take the Stranger's Hand",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-151",
+      "name": "Theoclymenus, Omen Reader",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-152",
+      "name": "Phaeacian Shipwright",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-153",
+      "name": "Song of the Wooden Horse",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-154",
+      "name": "Saw It Coming",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-155",
+      "name": "Bind Him to the Mast",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-156",
+      "name": "Storeroom Hunger",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-157",
+      "name": "Melanthius, Treacherous Goatherd",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-158",
+      "name": "Nightmare at the Threshold",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-159",
+      "name": "Aeolus, Lord of the Winds",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-160",
+      "name": "Storm over Limestone",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-161",
+      "name": "Wildfire Through Dry Scrub",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-162",
+      "name": "Song of the Faithless Crew",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-163",
+      "name": "Song of Achilles",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-164",
+      "name": "Craft at the Bench",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-165",
+      "name": "Summer Heat on Stone",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-166",
+      "name": "Ordeal of the Cyclops",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-167",
+      "name": "Lion Among the Flock",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-168",
+      "name": "Nostos, The Long Road Home",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-169",
+      "name": "Olive Harvest",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-170",
+      "name": "Seals on the Sunlit Rocks",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-171",
+      "name": "Laertes Names the Trees",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-172",
+      "name": "Mother Lion's Charge",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-173",
+      "name": "Polites, First Through the Door",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-174",
+      "name": "Penelope, Patient Queen",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-175",
+      "name": "Circe, Witch of Aeaea",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-176",
+      "name": "Calypso, Keeper of Ogygia",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-177",
+      "name": "Telemachus, Returned Son",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-178",
+      "name": "Euryalus, Phaeacian Champion",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-179",
+      "name": "Keeper of Ancestral Graves",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-180",
+      "name": "Raiders' Karve",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-181",
+      "name": "Fleetfeather Sandals",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-182",
+      "name": "Nobody, Self-Invented",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-183",
+      "name": "Prophetic Prism",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-184",
+      "name": "Penelope's Shroud",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-185",
+      "name": "Telemachus's Secret Ship",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-186",
+      "name": "Storm-Skimming Galley",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-187",
+      "name": "Uncharted Haven",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-188",
+      "name": "Ithaca, Before the War",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-189",
+      "name": "Scheria, Harbor of Wonders",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-190",
+      "name": "Scylla's Lair",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-191",
+      "name": "Aeaea, Isle of Circe",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-192",
+      "name": "Polyphemus's Cave",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-193",
+      "name": "Temple of Silence",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-194",
+      "name": "Temple of Malady",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-195",
+      "name": "Temple of Triumph",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-196",
+      "name": "Temple of Mystery",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-197",
+      "name": "Homeward Path",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-198",
+      "name": "Poseidon, Earth-Shaker",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-199",
+      "name": "Penelope, Weaver of Fate",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-200",
+      "name": "Circe, Mistress of Aeaea",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-201",
+      "name": "Calypso, Keeper Beyond Time",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-202",
+      "name": "Alcinous, Hospitable King",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-203",
+      "name": "Arete, Wise Queen",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-204",
+      "name": "Patroclus, Beloved Companion",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-205",
+      "name": "Helen, Face of the War",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-206",
+      "name": "The Sea Remembers Every Wake",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-207",
+      "name": "Odysseus and Penelope, Reunited",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-208",
+      "name": "Charybdis, Devouring Whirlpool",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-209",
+      "name": "Scylla, Six-Mawed Horror",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-210",
+      "name": "Helios, All-Seeing Sun",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-211",
+      "name": "Hermes, Guide of Wanderers",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-212",
+      "name": "Descent to Hades",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-213",
+      "name": "Olive-Wood Bed of Ithaca",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-214",
+      "name": "Wool Dyer at the Courtyard",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-215",
+      "name": "The Contest of the Bow",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-216",
+      "name": "Lay of the Hidden King",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-217",
+      "name": "Metis, Cunning Counsel",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-218",
+      "name": "Moira, Inescapable Fate",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-219",
+      "name": "Eurymachus, Honey-Tongued Suitor",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-220",
+      "name": "Threshing-Floor Worker",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-221",
+      "name": "Slaughter of Helios's Cattle",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-222",
+      "name": "Lotus-Eater Grove",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-223",
+      "name": "Odysseus, Beggar-King",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-224",
+      "name": "Eumaeus and Philoetius",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-225",
+      "name": "Telemachus and Odysseus, Reunited",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-226",
+      "name": "The Sirens, Voices Beyond Shore",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-227",
+      "name": "Scrubland Hare",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-228",
+      "name": "Peace Restored to Ithaca",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-229",
+      "name": "The Siege of Troy // The Wooden Horse",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-230",
+      "name": "Xenia, Sacred Guest-Right",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-231",
+      "name": "Agamemnon, King Among Shades",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-232",
+      "name": "Lament at the Blood-Trench",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-233",
+      "name": "Chained to the Rocks",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-234",
+      "name": "Antiphates, Laestrygonian King",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-235",
+      "name": "The Bag Is Opened",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-236",
+      "name": "Scylla Takes Six",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-237",
+      "name": "Kleos, Deathless Renown",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-238",
+      "name": "Recognition in Plain Sight",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-239",
+      "name": "The Olive Tree of Ithaca",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-240",
+      "name": "Circe, Self-Made Witch",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-241",
+      "name": "A Name Kept Hidden",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-242",
+      "name": "The House of Odysseus",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-243",
+      "name": "The Sealed Winds of Aeolus",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-244",
+      "name": "Hermes's Golden Wand",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-245",
+      "name": "Song of the Faithful Queen",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-246",
+      "name": "Helios's Vengeance",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-247",
+      "name": "Ogygia, Island Beyond Time",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-248",
+      "name": "Sirens, Dream of Fatal Beauty",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-249",
+      "name": "The Long Way Home",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-250",
+      "name": "The Black-Hulled Ship, Homeward Bound",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-251",
+      "name": "Plains",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-252",
+      "name": "Pylos Before the War",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-253",
+      "name": "Sparta, Hall of Oaths",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-254",
+      "name": "Island",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-255",
+      "name": "Island",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-256",
+      "name": "Island",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-257",
+      "name": "Swamp",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-258",
+      "name": "Swamp",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-259",
+      "name": "Swamp",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-260",
+      "name": "Mountain",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-261",
+      "name": "Mountain",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-262",
+      "name": "Mountain",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-263",
+      "name": "Forest",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-264",
+      "name": "Forest",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-265",
+      "name": "Forest",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-266",
+      "name": "Parnassus, Hunting Slopes",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-267",
+      "name": "Rugged Headland",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-268",
+      "name": "Olive Pasture",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-269",
+      "name": "Silent Courtyard",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-270",
+      "name": "Windswept Isle",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-271",
+      "name": "Asphodel Meadow",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-272",
+      "name": "Laurel Grounds",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-273",
+      "name": "Palmshade Cove",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-274",
+      "name": "Calypso, Refuge or Captivity",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-275",
+      "name": "Penelope's Unending Loom",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-276",
+      "name": "Odysseus's Beggar Staff",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-277",
+      "name": "Potter's Firing",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-278",
+      "name": "Signal Fire on the Headland",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-279",
+      "name": "Communal Mixing Bowl",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-280",
+      "name": "Ordeal of the Dead",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-281",
+      "name": "Empty the Storeroom",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-282",
+      "name": "Ordeal of the Narrow Sea",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-283",
+      "name": "Leatherworker's Awl",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-284",
+      "name": "Reefwise Pilot",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-285",
+      "name": "Stone-Terrace Builder",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-286",
+      "name": "Achilles, Doomed to Glory",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-287",
+      "name": "Odysseus, Never Done Wandering",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-288",
+      "name": "Feast Beyond Measure",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-289",
+      "name": "Fury Like Wildfire",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-290",
+      "name": "The House Endures",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-291",
+      "name": "Oaths Outlive Absence",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-292",
+      "name": "Penelope, Teller of Her Own Tale",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-293",
+      "name": "Hector, Defender of Troy",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-294",
+      "name": "Helen, Remembered and Rewritten",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-295",
+      "name": "Read Wind and Wave",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-296",
+      "name": "Callidice, Last Queen",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-297",
+      "name": "Memory Beneath the Earth",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-298",
+      "name": "All Hands as One",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-299",
+      "name": "The Shore Beyond Sight",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-300",
+      "name": "No Debt Goes Unpaid",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-301",
+      "name": "Every Oar in Rhythm",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-302",
+      "name": "Roots Beneath the House",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-303",
+      "name": "Autolycus, Master of Cunning",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-304",
+      "name": "Telegonus Searches for His Father",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-305",
+      "name": "Telegonus Ravages Ithaca",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-306",
+      "name": "The Song Outlives the Singer",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-307",
+      "name": "Terraced Olive Grove",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-308",
+      "name": "Athena and Odysseus, Minds Alike",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    },
+    {
+      "id": "ODY-309",
+      "name": "Zeus, Keeper of Oaths",
+      "status": "missing",
+      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "candidate": null,
+      "finalSelection": "pending-mechanics-and-layout"
+    }
+  ]
+}

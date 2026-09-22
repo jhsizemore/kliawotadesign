@@ -1,0 +1,67 @@
+{
+  "status": "isolated-playtest-candidate-not-live",
+  "baseDatasetVersion": "2026-09-22.3",
+  "changedCards": 33,
+  "before": {
+    "cards": 309,
+    "rarity": {
+      "C": 106,
+      "U": 109,
+      "R": 74,
+      "M": 20
+    },
+    "lands": 40,
+    "doubleFaced": 1,
+    "commonCreatures": 33,
+    "commonEnchantmentCreatures": 0,
+    "commonEnchantments": 2,
+    "commonFoodSources": 8,
+    "commonManifestFate": 1,
+    "commonForetell": 1,
+    "commonEscape": 0,
+    "commonGift": 0,
+    "commonConstellation": 0,
+    "commonCreatureByColor": {
+      "W": 4,
+      "G": 9,
+      "B": 8,
+      "R": 8,
+      "U": 4
+    }
+  },
+  "after": {
+    "cards": 309,
+    "rarity": {
+      "C": 106,
+      "U": 109,
+      "R": 74,
+      "M": 20
+    },
+    "lands": 40,
+    "doubleFaced": 1,
+    "commonCreatures": 36,
+    "commonEnchantmentCreatures": 2,
+    "commonEnchantments": 9,
+    "commonFoodSources": 8,
+    "commonManifestFate": 3,
+    "commonForetell": 2,
+    "commonEscape": 1,
+    "commonGift": 2,
+    "commonConstellation": 1,
+    "commonCreatureByColor": {
+      "W": 6,
+      "G": 9,
+      "B": 8,
+      "R": 8,
+      "U": 5
+    }
+  },
+  "warnings": [
+    "No played matches have been performed.",
+    "Source briefs are a first pass; unresolved passage verification remains labelled.",
+    "Hunter approved WU Penelope and explicitly selected actual sacrifice for Iphigenia. Slot 015 now remains UB; its proposed rate still needs testing.",
+    "The Ordeals still grant Survival to their enchanted creatures; source names remain where self-reference would change meaning.",
+    "The seven Studio notes remain open until actual implementation is verified.",
+    "Candidate references need a production refresh before integration."
+  ]
+}

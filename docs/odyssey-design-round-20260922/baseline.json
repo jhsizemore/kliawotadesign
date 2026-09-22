@@ -1,0 +1,323 @@
+{
+  "retrievedAt": "2026-09-22T09:47:30.688533+00:00",
+  "auditGeneratedAt": "2026-09-22T10:20:07.163709+00:00",
+  "commit": "7d8828cd15ecc92a0de7eb1d577a8ad6bcbde03d",
+  "release": "2026-09-22.5",
+  "datasetVersion": "2026-09-22.3",
+  "datasetSha256": "c154522b4c447b280a2caef005741cd64f9787554a6fbf47457ecd0703c49b8e",
+  "liveMatchesRepository": true,
+  "sheet": {
+    "id": "1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE",
+    "sheet": "Card File v1.0 Candidate",
+    "title": "14A2 — The Odyssey MTG — Analysis Candidate Card File v2 — FF Lattice Rebuild"
+  },
+  "sheetRows": 309,
+  "comparedFields": {
+    "#": "number",
+    "Name": "name",
+    "Mana Cost": "mana",
+    "MV": "mv",
+    "Color": "color",
+    "Type": "type",
+    "P/T": "pt",
+    "Rarity": "rarity",
+    "Rules / Playtest Text": "rules",
+    "Primary Art ID": "primaryArt",
+    "Flavour Story Element": "flavorStoryElement",
+    "Flavour Match /5": "flavorMatchScore",
+    "Flavour Rationale": "flavorMatchRationale"
+  },
+  "normalizedSheetDifferences": [],
+  "actual": {
+    "physicalCards": 309,
+    "rarity": {
+      "C": 106,
+      "U": 109,
+      "R": 74,
+      "M": 20
+    },
+    "lands": 40,
+    "legendaryCards": 84,
+    "sagaFaces": 16,
+    "layouts": {
+      "standard": 276,
+      "vehicle": 9,
+      "adventure": 7,
+      "saga": 15,
+      "prepare": 1,
+      "transform": 1
+    },
+    "legendarySignposts": 16
+  },
+  "commonMetrics": {
+    "commonCards": 106,
+    "nonlandCards": 80,
+    "creatures": 33,
+    "vehicles": 3,
+    "enchantments": 2,
+    "enchantmentCreatures": 0,
+    "byColor": {
+      "W": {
+        "cards": 14,
+        "creatures": 4,
+        "curve": {
+          "1": 2,
+          "2": 5,
+          "3": 4,
+          "4": 2,
+          "5": 1
+        }
+      },
+      "U": {
+        "cards": 13,
+        "creatures": 4,
+        "curve": {
+          "1": 1,
+          "2": 6,
+          "3": 3,
+          "4": 1,
+          "5": 1,
+          "6": 1
+        }
+      },
+      "B": {
+        "cards": 16,
+        "creatures": 8,
+        "curve": {
+          "2": 7,
+          "3": 6,
+          "6": 3
+        }
+      },
+      "R": {
+        "cards": 14,
+        "creatures": 8,
+        "curve": {
+          "1": 1,
+          "2": 6,
+          "3": 4,
+          "4": 1,
+          "6": 2
+        }
+      },
+      "G": {
+        "cards": 14,
+        "creatures": 9,
+        "curve": {
+          "2": 6,
+          "3": 4,
+          "4": 2,
+          "6": 2
+        }
+      },
+      "C": {
+        "cards": 9,
+        "creatures": 0,
+        "curve": {
+          "1": 2,
+          "2": 3,
+          "3": 3,
+          "4": 1
+        }
+      }
+    },
+    "mechanics": {
+      "survival": {
+        "count": 6,
+        "ids": [
+          "ODY-012",
+          "ODY-032",
+          "ODY-117",
+          "ODY-132",
+          "ODY-140",
+          "ODY-220"
+        ]
+      },
+      "manifestFate": {
+        "count": 1,
+        "ids": [
+          "ODY-116"
+        ]
+      },
+      "foretell": {
+        "count": 1,
+        "ids": [
+          "ODY-014"
+        ]
+      },
+      "escape": {
+        "count": 0,
+        "ids": []
+      },
+      "constellation": {
+        "count": 0,
+        "ids": []
+      },
+      "gift": {
+        "count": 0,
+        "ids": []
+      },
+      "scry": {
+        "count": 14,
+        "ids": [
+          "ODY-001",
+          "ODY-005",
+          "ODY-011",
+          "ODY-035",
+          "ODY-049",
+          "ODY-073",
+          "ODY-087",
+          "ODY-103",
+          "ODY-107",
+          "ODY-112",
+          "ODY-115",
+          "ODY-116",
+          "ODY-120",
+          "ODY-136"
+        ]
+      },
+      "foodSources": {
+        "count": 7,
+        "ids": [
+          "ODY-008",
+          "ODY-031",
+          "ODY-074",
+          "ODY-108",
+          "ODY-137",
+          "ODY-139",
+          "ODY-141"
+        ]
+      },
+      "graveyardText": {
+        "count": 11,
+        "ids": [
+          "ODY-026",
+          "ODY-037",
+          "ODY-080",
+          "ODY-110",
+          "ODY-123",
+          "ODY-125",
+          "ODY-126",
+          "ODY-128",
+          "ODY-142",
+          "ODY-214",
+          "ODY-220"
+        ]
+      }
+    }
+  },
+  "openNotes": [
+    {
+      "datasetVersion": "2026-09-22.3",
+      "cardId": "ODY-008",
+      "number": 8,
+      "name": "Seat the Guest by the Hearth",
+      "status": "OPEN",
+      "entries": [
+        {
+          "at": "2026-09-21T23:51:49.688Z",
+          "text": "Or use activated abilities",
+          "context": ""
+        }
+      ],
+      "createdAt": "2026-09-21T23:51:49.688Z",
+      "updatedAt": "2026-09-21T23:51:49.688Z"
+    },
+    {
+      "datasetVersion": "2026-09-22.3",
+      "cardId": "ODY-015",
+      "number": 15,
+      "name": "Calchas Reads the Omen",
+      "status": "OPEN",
+      "entries": [
+        {
+          "at": "2026-09-22T00:08:56.241Z",
+          "text": "This moment needs to centre on Iphigenia",
+          "context": ""
+        }
+      ],
+      "createdAt": "2026-09-22T00:08:56.241Z",
+      "updatedAt": "2026-09-22T00:08:56.241Z"
+    },
+    {
+      "datasetVersion": "2026-09-22.3",
+      "cardId": "ODY-017",
+      "number": 17,
+      "name": "Ordeal of the Sirens",
+      "status": "OPEN",
+      "entries": [
+        {
+          "at": "2026-09-22T00:10:48.889Z",
+          "text": "Our style guide should take the least wordy route that had be allowed in magic syntax, so this enchantment, for instance",
+          "context": ""
+        }
+      ],
+      "createdAt": "2026-09-22T00:10:48.889Z",
+      "updatedAt": "2026-09-22T00:10:48.889Z"
+    },
+    {
+      "datasetVersion": "2026-09-22.3",
+      "cardId": "ODY-020",
+      "number": 20,
+      "name": "Tell the Cyclops Your Name",
+      "status": "OPEN",
+      "entries": [
+        {
+          "at": "2026-09-22T00:12:24.006Z",
+          "text": "Just to straight reprint here",
+          "context": ""
+        }
+      ],
+      "createdAt": "2026-09-22T00:12:24.006Z",
+      "updatedAt": "2026-09-22T00:12:24.006Z"
+    },
+    {
+      "datasetVersion": "2026-09-22.3",
+      "cardId": "ODY-023",
+      "number": 23,
+      "name": "Bolt the Doors",
+      "status": "OPEN",
+      "entries": [
+        {
+          "at": "2026-09-22T00:13:30.400Z",
+          "text": "I think this is \"creatures you control\"",
+          "context": ""
+        }
+      ],
+      "createdAt": "2026-09-22T00:13:30.400Z",
+      "updatedAt": "2026-09-22T00:13:30.400Z"
+    },
+    {
+      "datasetVersion": "2026-09-22.3",
+      "cardId": "ODY-036",
+      "number": 36,
+      "name": "Eurycleia's Basin",
+      "status": "OPEN",
+      "entries": [
+        {
+          "at": "2026-09-22T00:18:09.746Z",
+          "text": "I either want to add in support for this or make sure the payoff matches stuff we're really supporting. Maybe this should link into turns face up?",
+          "context": ""
+        }
+      ],
+      "createdAt": "2026-09-22T00:18:09.746Z",
+      "updatedAt": "2026-09-22T00:18:09.746Z"
+    },
+    {
+      "datasetVersion": "2026-09-22.3",
+      "cardId": "ODY-037",
+      "number": 37,
+      "name": "Treacherous Maidservant",
+      "status": "OPEN",
+      "entries": [
+        {
+          "at": "2026-09-22T00:20:18.563Z",
+          "text": "This should be maidservants, and should suggest the group, they clean up a whole slaughter worth of bodies and they're are six of them, can be a higher mana, not great rate for body",
+          "context": ""
+        }
+      ],
+      "createdAt": "2026-09-22T00:20:18.563Z",
+      "updatedAt": "2026-09-22T00:20:18.563Z"
+    }
+  ]
+}

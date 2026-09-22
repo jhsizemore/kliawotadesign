@@ -1,0 +1,140 @@
+{
+  "Satsuki, the Living Lore": {
+    "name": "Satsuki, the Living Lore",
+    "mana_cost": "{G}{W}",
+    "type_line": "Legendary Creature — Human Druid",
+    "oracle_text": "{T}: Put a lore counter on each Saga you control. Activate only as a sorcery.\nWhen Satsuki dies, choose up to one —\n• Return target Saga or enchantment creature you control to its owner's hand.\n• Return target Saga card from your graveyard to your hand.",
+    "power": "1",
+    "toughness": "3",
+    "scryfall_uri": "https://scryfall.com/card/neo/235/satsuki-the-living-lore?utm_source=api",
+    "released_at": "2022-02-18"
+  },
+  "Power Conduit": {
+    "name": "Power Conduit",
+    "mana_cost": "{2}",
+    "type_line": "Artifact",
+    "oracle_text": "{T}, Remove a counter from a permanent you control: Choose one —\n• Put a charge counter on target artifact.\n• Put a +1/+1 counter on target creature.",
+    "power": null,
+    "toughness": null,
+    "scryfall_uri": "https://scryfall.com/card/ncc/376/power-conduit?utm_source=api",
+    "released_at": "2022-04-29"
+  },
+  "Scholar of New Horizons": {
+    "name": "Scholar of New Horizons",
+    "mana_cost": "{1}{W}",
+    "type_line": "Creature — Human Scout",
+    "oracle_text": "This creature enters with a +1/+1 counter on it.\n{T}, Remove a counter from a permanent you control: Search your library for a Plains card and reveal it. If an opponent controls more lands than you, you may put that card onto the battlefield tapped. If you don't put the card onto the battlefield, put it into your hand. Then shuffle.",
+    "power": "1",
+    "toughness": "1",
+    "scryfall_uri": "https://scryfall.com/card/brc/6/scholar-of-new-horizons?utm_source=api",
+    "released_at": "2022-11-18"
+  },
+  "Mire's Grasp": {
+    "name": "Mire's Grasp",
+    "mana_cost": "{1}{B}",
+    "type_line": "Enchantment — Aura",
+    "oracle_text": "Enchant creature\nEnchanted creature gets -3/-3.",
+    "power": null,
+    "toughness": null,
+    "scryfall_uri": "https://scryfall.com/card/thb/106/mires-grasp?utm_source=api",
+    "released_at": "2020-01-24"
+  },
+  "Arashin Cleric": {
+    "name": "Arashin Cleric",
+    "mana_cost": "{1}{W}",
+    "type_line": "Creature — Human Cleric",
+    "oracle_text": "When this creature enters, you gain 3 life.",
+    "power": "1",
+    "toughness": "3",
+    "scryfall_uri": "https://scryfall.com/card/frf/5/arashin-cleric?utm_source=api",
+    "released_at": "2015-01-23"
+  },
+  "Novice Inspector": {
+    "name": "Novice Inspector",
+    "mana_cost": "{W}",
+    "type_line": "Creature — Human Detective",
+    "oracle_text": "When this creature enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+    "power": "1",
+    "toughness": "2",
+    "scryfall_uri": "https://scryfall.com/card/mkm/29/novice-inspector?utm_source=api",
+    "released_at": "2024-02-09"
+  },
+  "Soul of the Rapids": {
+    "name": "Soul of the Rapids",
+    "mana_cost": "{3}{U}{U}",
+    "type_line": "Creature — Elemental",
+    "oracle_text": "Flying\nHexproof (This creature can't be the target of spells or abilities your opponents control.)",
+    "power": "3",
+    "toughness": "2",
+    "scryfall_uri": "https://scryfall.com/card/rix/56/soul-of-the-rapids?utm_source=api",
+    "released_at": "2018-01-19"
+  },
+  "Cloudshift": {
+    "name": "Cloudshift",
+    "mana_cost": "{W}",
+    "type_line": "Instant",
+    "oracle_text": "Exile target creature you control, then return that card to the battlefield under your control.",
+    "power": null,
+    "toughness": null,
+    "scryfall_uri": "https://scryfall.com/card/tle/152/cloudshift?utm_source=api",
+    "released_at": "2025-11-21"
+  },
+  "Ephemerate": {
+    "name": "Ephemerate",
+    "mana_cost": "{W}",
+    "type_line": "Instant",
+    "oracle_text": "Exile target creature you control, then return it to the battlefield under its owner's control.\nRebound (If you cast this spell from your hand, exile it as it resolves. At the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.)",
+    "power": null,
+    "toughness": null,
+    "scryfall_uri": "https://scryfall.com/card/mh1/7/ephemerate?utm_source=api",
+    "released_at": "2019-06-14"
+  },
+  "Long Road Home": {
+    "name": "Long Road Home",
+    "mana_cost": "{1}{W}",
+    "type_line": "Instant",
+    "oracle_text": "Exile target creature. At the beginning of the next end step, return that card to the battlefield under its owner's control with a +1/+1 counter on it.",
+    "power": null,
+    "toughness": null,
+    "scryfall_uri": "https://scryfall.com/card/jmp/120/long-road-home?utm_source=api",
+    "released_at": "2020-07-17"
+  },
+  "Jewel Thief": {
+    "name": "Jewel Thief",
+    "mana_cost": "{2}{G}",
+    "type_line": "Creature — Cat Rogue",
+    "oracle_text": "Vigilance, trample\nWhen this creature enters, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+    "power": "3",
+    "toughness": "3",
+    "scryfall_uri": "https://scryfall.com/card/snc/151/jewel-thief?utm_source=api",
+    "released_at": "2022-04-29"
+  },
+  "Soulherder": {
+    "name": "Soulherder",
+    "mana_cost": "{1}{W}{U}",
+    "type_line": "Creature — Spirit",
+    "oracle_text": "Whenever a creature is exiled from the battlefield, put a +1/+1 counter on this creature.\nAt the beginning of your end step, you may exile another target creature you control, then return that card to the battlefield under its owner's control.",
+    "power": "1",
+    "toughness": "1",
+    "scryfall_uri": "https://scryfall.com/card/khc/93/soulherder?utm_source=api",
+    "released_at": "2021-02-05"
+  },
+  "Soul-Guide Lantern": {
+    "name": "Soul-Guide Lantern",
+    "mana_cost": "{1}",
+    "type_line": "Artifact",
+    "oracle_text": "When this artifact enters, exile target card from a graveyard.\n{T}, Sacrifice this artifact: Exile each opponent's graveyard.\n{1}, {T}, Sacrifice this artifact: Draw a card.",
+    "power": null,
+    "toughness": null,
+    "scryfall_uri": "https://scryfall.com/card/eoc/143/soul-guide-lantern?utm_source=api",
+    "released_at": "2025-08-01"
+  },
+  "Sleep": {
+    "name": "Sleep",
+    "mana_cost": "{2}{U}{U}",
+    "type_line": "Sorcery",
+    "oracle_text": "Tap all creatures target player controls. Those creatures don't untap during that player's next untap step.",
+    "scryfall_uri": "https://magic.wizards.com/en/news/feature/core-set-2019-release-notes-2018-06-22",
+    "source": "Wizards Core Set 2019 release notes; fetched 2026-09-22"
+  }
+}

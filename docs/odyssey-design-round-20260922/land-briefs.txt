@@ -1,0 +1,27 @@
+# number | source | setting action | emotion | distinction
+70|Odyssey 13|Carry the sleeping traveller into Ithaca's harbour.|Relief and unfamiliar familiarity.|WU fixing joins passage and recognition; arrival takes a turn through entering tapped.
+71|Odyssey 11|Cross toward the sunless Cimmerian shore.|Dread and uncertainty.|UB fixing at the boundary of knowledge and death; current name is Cimmerian Crossing, not stale Mistbound Crossing.
+143|Odyssey 1–2 and 22|Gather to feast; compete for power; face the reckoning.|Appetite becoming danger.|BR fixing for household consumption and violence; a room, not another coast.
+251|Odyssey 13 and 23|See Ithaca's palace above the cultivated land.|Belonging.|White basic setting; preserve artwork as the distinguishing feature.
+252|Odyssey 3; earlier-period interpretation|Imagine Pylos before the later homecomings.|Established order.|Prewar treatment is an interpretation; Telemachus's visit itself is after the war.
+253|Apollodorus Epitome 3.6; prewar interpretation|Bind the suitors to the defence of Helen's marriage.|Obligation.|White basic treatment; verify the oath's wider ancient source before selecting an exact quote.
+254|Odyssey 6–8|Approach the Phaeacian harbour.|Welcome after exposure.|Blue basic distinguishes safe harbour from open ocean.
+255|Odyssey 5|Cross open sea at dawn.|Scale and solitude.|Blue basic for the journey itself, not a named island.
+256|Odyssey 5|Look outward from Calypso's concealed shore.|Beauty and confinement.|Blue basic for Ogygia's shore; avoid granting rare island mechanics to the basic.
+257|Odyssey 11|Stand beside the blood trench at Ocean's edge.|Dread.|Black basic is a symbolic landscape treatment; the hero performs the rite at the boundary rather than entering a city of Hades.
+258|Odyssey 11 and 24|Watch the shades in the asphodel meadow.|Loss and stillness.|Black basic for the dead's landscape rather than the ritual site.
+259|Odyssey 20–22|Wait in the hall before vengeance.|Foreboding.|Black basic uses an interior as a mood treatment; it is not literally a swamp in the poem.
+260|Odyssey 10|Approach Circe's island cliffs.|Temptation and hidden danger.|Red basic landscape; distinct from the rare enchantment land.
+261|Odyssey 10|Enter the enclosed Laestrygonian harbour.|False shelter.|Red basic for the trap's geography, distinct from individual giants.
+262|Odyssey 12|Pass below Scylla's towering cliff.|Exposure.|Red basic for the physical threat above the ship.
+263|Odyssey 24|Work the orchard and remember each tree.|Continuity.|Green basic for Laertes's land; the named recovery spell supplies the recognition event.
+264|Odyssey 14|Keep the swineherd's pasture productive.|Modest sufficiency.|Green basic for ordinary loyalty and provision.
+265|Odyssey 12|See the Sun's cattle on their pasture.|Abundance forbidden.|Green basic landscape; the taboo belongs to Helios and the cattle Saga.
+266|Odyssey 19|Climb Parnassus for the hunt that leaves the scar.|Youthful danger.|Green basic treatment preserves the early-life source and later recognition link.
+267|Odyssey 9–12; landscape composite|Round a rocky coast under heavy surf.|Wild force.|RG tapped dual joins weather and untamed land; invented unnamed location.
+268|Odyssey 14 and 24; landscape composite|Graze herds among worked olive slopes.|Stability.|GW tapped dual for shared labour; invented unnamed location.
+269|Odyssey 23; landscape interpretation|Enter a courtyard marked by absence.|Quiet grief.|WB tapped dual for household memory; invented unnamed location.
+270|Odyssey 5; landscape composite|Read changing wind on an exposed island.|Restlessness.|UR tapped dual for weather and navigation; invented unnamed location.
+271|Odyssey 11 and 24|Cross the meadow where shades gather.|Mournful continuity.|BG tapped dual for life remembered among the dead; distinguish it visually from the black basic.
+272|Odyssey 8; games interpretation|Gather for public contests and honour.|Competitive pride.|RW tapped dual; laurel is a later visual shorthand, not proof of an Odyssey prize ceremony.
+273|Odyssey 6; landscape interpretation|Find shade and shelter beside the water.|Enticing safety.|GU tapped dual; the palm evokes Odysseus's comparison at Delos, not a literal named Palmshade Cove.

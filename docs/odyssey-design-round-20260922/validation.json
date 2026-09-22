@@ -1,0 +1,69 @@
+{
+  "structuralChecks": {
+    "unique309Ids": true,
+    "all309Authored": true,
+    "commons106": true,
+    "changedCards": 33,
+    "fixedCountsPreserved": true,
+    "exactButlerQuotes": true
+  },
+  "analyticalPackAccess": [
+    {
+      "commonEnchantments": 2,
+      "commonPoolExcludingBasics": 90,
+      "commonSlotsPerPackAssumption": 6,
+      "packsPerPlayer": 3,
+      "expectedEnchantmentsInThreeUnselectedPacks": 0.4,
+      "probabilityAtLeastOneWithIndependentSlots": 0.3327
+    },
+    {
+      "commonEnchantments": 2,
+      "commonPoolExcludingBasics": 90,
+      "commonSlotsPerPackAssumption": 7,
+      "packsPerPlayer": 3,
+      "expectedEnchantmentsInThreeUnselectedPacks": 0.47,
+      "probabilityAtLeastOneWithIndependentSlots": 0.3762
+    },
+    {
+      "commonEnchantments": 2,
+      "commonPoolExcludingBasics": 90,
+      "commonSlotsPerPackAssumption": 10,
+      "packsPerPlayer": 3,
+      "expectedEnchantmentsInThreeUnselectedPacks": 0.67,
+      "probabilityAtLeastOneWithIndependentSlots": 0.4904
+    },
+    {
+      "commonEnchantments": 9,
+      "commonPoolExcludingBasics": 90,
+      "commonSlotsPerPackAssumption": 6,
+      "packsPerPlayer": 3,
+      "expectedEnchantmentsInThreeUnselectedPacks": 1.8,
+      "probabilityAtLeastOneWithIndependentSlots": 0.8499
+    },
+    {
+      "commonEnchantments": 9,
+      "commonPoolExcludingBasics": 90,
+      "commonSlotsPerPackAssumption": 7,
+      "packsPerPlayer": 3,
+      "expectedEnchantmentsInThreeUnselectedPacks": 2.1,
+      "probabilityAtLeastOneWithIndependentSlots": 0.8906
+    },
+    {
+      "commonEnchantments": 9,
+      "commonPoolExcludingBasics": 90,
+      "commonSlotsPerPackAssumption": 10,
+      "packsPerPlayer": 3,
+      "expectedEnchantmentsInThreeUnselectedPacks": 3.0,
+      "probabilityAtLeastOneWithIndependentSlots": 0.9576
+    }
+  ],
+  "method": "Independent uniform slots from 90 nonbasic commons. Sensitivity analysis for 6, 7 or 10 commons per pack. Not a draft simulator, chosen booster collation, deck model or played match.",
+  "playedMatches": 0,
+  "remainingRisks": [
+    "Actual booster distribution is not locked.",
+    "Draft competition and playable-card selection are not modelled.",
+    "Common creature rates, removal and Omen repetition need games.",
+    "Three Manifest Fate commons do not guarantee adequate density in every colour pair.",
+    "WU Penelope is approved; Iphigenia uses actual sacrifice and retains UB. Rates and interactions remain provisional."
+  ]
+}
