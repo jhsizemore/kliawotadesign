@@ -16,6 +16,20 @@ The two provisional structural gates above are now resolved for this round: reta
 
 The five enemy-hybrid Saga membership remains ODY-097 UR, ODY-162 BG, ODY-163 RW, ODY-232 WB and ODY-245 GU. A separate hybrid colour-pie pass remains required before integration.
 
+### Hybrid Saga colour-pie resolution — 23 September 2026
+
+The five uncommon hybrid Sagas remain an **enemy-pair cycle**: UR ODY-097, BG ODY-162, RW ODY-163, WB ODY-232 and GU ODY-245. Apply the normal hybrid rule strictly: the card must function as a design either colour could cast alone, not as a gold card split across two colours.
+
+- **UR — ODY-097:** mechanics pass. Rename **Caught in Hephaestus's Net** to **Song of Hephaestus's Net** because Odyssey VIII explicitly presents the story as a Demodocus performance.
+- **BG — ODY-162:** replace the creature/artifact sacrifice chapter with **“Create a Food token and a Treasure token.”** Generic creature/artifact sacrifice is not clean green overlap.
+- **RW — ODY-163:** pass. Creature-token production, +N/+N combat pumping, first strike and double strike all have red-white overlap.
+- **WB — ODY-232:** pass. Small flying creature tokens, graveyard exile/life gain and small-creature reanimation sit in white-black overlap.
+- **GU — ODY-245:** replace arbitrary-permanent untapping with **“Untap up to two target creatures and/or lands you control. Those permanents gain hexproof until end of turn.”**
+
+Performance/source identity is explicit: ODY-097 is a source-text song sung by Demodocus; ODY-162 is an invented composite cautionary song; ODY-163 is modern reception; ODY-232 is an invented/adaptive lament; ODY-245 is an invented/adaptive Penelope song.
+
+This closes the **mechanical colour-pie gate**, not the rate gate. BG chapter-II value and GU chapter-III usefulness still require games.
+
 ## Common foundation
 
 Three primary experiences should be apparent in ordinary games: **work together to survive and travel; conceal and recognise identity; keep or violate the duties of home**. Enchantments carry signs, transformations, stories and ritual across those experiences. Food, graveyard recovery, scry and exile are resources within them, not six separate promises of equal prominence.
