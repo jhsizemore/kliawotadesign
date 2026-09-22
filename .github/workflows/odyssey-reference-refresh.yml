@@ -22,7 +22,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: odyssey-reference-refresh
+  group: odyssey-reference-refresh-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 defaults:
   run:
