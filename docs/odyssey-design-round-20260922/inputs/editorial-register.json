@@ -3684,7 +3684,7 @@
     "ODY-180": {
       "brief": {
         "sourceClass": "deferred-trojan-pre-odyssey",
-        "sourceReview": "Deferred to Trojan/pre-Odyssey: production story metadata identifies this as Achaean expedition transport, not Odysseus's Book IX homeward ship."
+        "sourceReview": "Deferred to Trojan/pre-Odyssey source band; production metadata identifies Achaean expedition transport rather than Book IX homeward voyage."
       }
     },
     "ODY-182": {
@@ -4493,8 +4493,9 @@
     },
     "ODY-172": {
       "brief": {
-        "sourceReview": "Deferred to Homeric-simile audit. The older Book XX placement is not supported; relevant lion imagery occurs elsewhere in the Odyssey.",
-        "sourceClass": "deferred-homeric-simile"
+        "sourceReview": "Deferred to Homeric-simile audit; old Book XX placement removed.",
+        "sourceClass": "deferred-homeric-simile",
+        "sourceLabel": "Homeric lion simile; source audit pending"
       }
     },
     "ODY-001": {
@@ -5155,6 +5156,711 @@
       },
       "brief": {
         "sourceReview": "Book XXIV checked: Laertes's orchard/vineyard is central to recognition and the closing farm setting. Basic-land treatment receives no flavour text."
+      }
+    },
+    "ODY-151": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-151",
+          "text": "I see mischief overhanging you",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 20, Theoclymenus leaves the doomed feast",
+          "speaker": "Theoclymenus",
+          "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+          "context": "Theoclymenus refuses to stay among people who mock the doom he can see clearly.",
+          "fit": "A compact prophetic voice distinct from the visual Veiled Hall omen.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 5,
+          "characters": 30,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XV and XX checked: Theoclymenus joins Telemachus as a fugitive seer, interprets bird omens and later names the doom visible in the hall.",
+        "attributes": "Certainty without social power: seeing correctly does not make the doomed listen."
+      }
+    },
+    "ODY-225": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-225",
+          "text": "I am your father, on whose account you grieve and suffer so much",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 16, Odysseus reveals himself to Telemachus",
+          "speaker": "Odysseus",
+          "source": "https://classics.mit.edu/Homer/odyssey.16.xvi.html",
+          "context": "Odysseus identifies himself after Athena restores his appearance.",
+          "fit": "The reunion pair begins with the direct disclosure the son cannot initially believe.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 13,
+          "characters": 64,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XVI and XXII checked: private father-son recognition becomes operational planning and shared combat.",
+        "attributes": "Kinship becoming teamwork: reunion matters because each can finally act with the other."
+      }
+    },
+    "ODY-230": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-230",
+          "text": "all strangers and beggars are from Jove",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 14, Eumaeus states the rule of hospitality",
+          "speaker": "Eumaeus",
+          "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+          "context": "Eumaeus explains why even a poor stranger must be welcomed.",
+          "fit": "The set's xenia concept receives its cleanest direct formulation.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 7,
+          "characters": 39,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books VII and XIV checked: hospitality explicitly precedes identity, questions and social judgement; Eumaeus directly states that strangers and beggars are from Zeus.",
+        "attributes": "Guest-right as obligation before knowledge: generosity cannot depend on knowing the guest deserves it."
+      }
+    },
+    "ODY-024": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-024",
+          "kind": "adaptation",
+          "text": "An omen is only useful after someone decides what it means.",
+          "source": "https://classics.mit.edu/Homer/odyssey.15.xv.html",
+          "basis": "Books XV and XX repeatedly show signs requiring interpretation rather than acting by themselves.",
+          "fit": "Makes selection/exile the cost of interpretation.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XV and XX checked as omen-interpretation pattern: signs require a human interpreter and do not mechanically explain themselves.",
+        "attributes": "Interpretation is choice under uncertainty: the observer creates a usable course from ambiguous evidence."
+      }
+    },
+    "ODY-032": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-032",
+          "kind": "adaptation",
+          "text": "He kept the cattle for a master he had almost stopped expecting to see.",
+          "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+          "basis": "Philoetius's loyalty provides the model for an anonymous loyal cowherd common.",
+          "fit": "Ordinary duty echoing a named loyal servant without replacing him.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XX–XXII checked as Philoetius-adjacent composite: a loyal cowherd keeps working, hopes for Odysseus's return and later joins him.",
+        "attributes": "Ordinary loyalty strengthened through work rather than rank."
+      }
+    },
+    "ODY-061": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-061",
+          "kind": "adaptation",
+          "text": "The right identity was another tool, chosen for the obstacle in front of him.",
+          "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+          "basis": "Across the poem Odysseus alternates anonymity, disguise, open authority and tactical self-revelation.",
+          "fit": "Mythic synthesis of adaptive identity rather than a single episode.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Cross-book synthesis checked: Nobody, the beggar disguise, Athena's transformations and timed self-revelation all support identity as a tactical tool.",
+        "attributes": "Odysseus succeeds by becoming the version of himself the current obstacle cannot answer."
+      }
+    },
+    "ODY-065": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-065",
+          "kind": "adaptation",
+          "text": "The Phaeacians made distance feel like a problem their ships had already solved.",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "basis": "Their ships know destinations and deliver Odysseus home with supernatural speed.",
+          "fit": "Vehicle wonder rather than one named crew member.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books VIII and XIII checked: Phaeacian ships know destinations, move with exceptional speed and deliver Odysseus home asleep.",
+        "attributes": "Supernatural navigation presented as effortless public infrastructure."
+      }
+    },
+    "ODY-143": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-143",
+          "kind": "adaptation",
+          "text": "The feast became a siege long before anyone drew a weapon.",
+          "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+          "basis": "The palace hall accumulates consumption, insults, surveillance and finally violence across the poem.",
+          "fit": "Cross-book setting synthesis.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books I–II, XVII–XXII checked as hall synthesis: feast, depletion, insult, surveillance and battle all accumulate in the same household space."
+      }
+    },
+    "ODY-168": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-168",
+          "kind": "adaptation",
+          "text": "Homecoming is not arrival. It is everything that must become yours again after arrival.",
+          "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+          "basis": "The Odyssey's return requires recovery of identity, spouse, father, servants, household and civic peace.",
+          "fit": "A set-level definition of nostos rather than a single quotation.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XIII–XXIV checked as nostos concept: return expands from physical arrival into recognition, relational recovery and political settlement.",
+        "attributes": "Homecoming as restored belonging rather than mere movement to a coordinate."
+      }
+    },
+    "ODY-184": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-184",
+          "kind": "adaptation",
+          "text": "By day the shroud promised an ending; by night it postponed one.",
+          "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+          "basis": "Penelope's weaving/unweaving stratagem delays remarriage through repetitive labour.",
+          "fit": "Keeps the object version distinct from rare Penelope's exact unpicking quotation.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books II and XIX checked: Penelope's shroud stratagem explicitly combines daytime weaving and nighttime undoing to defer remarriage.",
+        "attributes": "A work object transformed into temporal resistance: completion itself is the threat."
+      }
+    },
+    "ODY-189": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-189",
+          "kind": "adaptation",
+          "text": "Scheria was the rare shore where telling the whole story made departure possible.",
+          "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+          "basis": "The Phaeacian episode turns narrative disclosure into gifts, recognition and transport home.",
+          "fit": "Rare location synthesis across VI–XIII.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books VI–XIII checked as Scheria synthesis: unknown arrival, hospitality, narrative disclosure, gifts and supernatural passage home.",
+        "attributes": "A safe foreign harbour whose greatest wonder is that welcome produces onward movement."
+      }
+    },
+    "ODY-197": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-197",
+          "kind": "adaptation",
+          "text": "Every road home is a claim that belonging can survive absence.",
+          "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+          "basis": "The poem repeatedly distinguishes possession, captivity and rightful home.",
+          "fit": "Fits Homeward Path's restoration of ownership.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XIII–XXIV checked as homeward/belonging concept; the exact Homeward Path rules are a broader Magic ownership metaphor.",
+        "attributes": "Home as rightful relationship between person and place, not simple possession."
+      }
+    },
+    "ODY-198": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-198",
+          "kind": "adaptation",
+          "text": "The sea-god could delay the return long after he could no longer prevent it.",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "basis": "Poseidon's anger persists from the Cyclops through the Phaeacian escort and punishment.",
+          "fit": "Mythic pursuit as obstruction rather than random storm.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books V, IX and XIII checked: Poseidon's wrath follows Polyphemus's curse, drives storms and punishes Phaeacian assistance.",
+        "attributes": "Divine obstruction sustained over years: he turns movement itself into a vulnerable state."
+      }
+    },
+    "ODY-199": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-199",
+          "kind": "adaptation",
+          "text": "Waiting was Penelope's way of continuing to act when every obvious action served the suitors.",
+          "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+          "basis": "Weaving, questioning, omens and tests make her delay active rather than passive.",
+          "fit": "Mythic agency-under-pressure framing.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books II and XIX checked: Penelope's weaving, questioning, dream interpretation and tests all present waiting as active strategic labour.",
+        "attributes": "Agency through delay: she protects choice by refusing conclusions other people demand."
+      }
+    },
+    "ODY-202": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-202",
+          "kind": "adaptation",
+          "text": "A king proved his greatness by how safely a stranger could leave his table.",
+          "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+          "basis": "Alcinous raises, feeds, gifts and ultimately transports Odysseus home.",
+          "fit": "Hospitality as royal capability.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books VII–XIII checked: Alcinous raises, feeds and honours Odysseus, convenes gifts and orders the escort home.",
+        "attributes": "Hospitality scaled to kingship: authority is measured by the safety and dignity it can extend to a stranger."
+      }
+    },
+    "ODY-211": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-211",
+          "kind": "adaptation",
+          "text": "He crossed the boundary, delivered the answer, and made movement possible again.",
+          "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+          "basis": "Hermes carries Zeus's order to Calypso and gives Odysseus moly before Circe.",
+          "fit": "Mythic guide role synthesized from Books V and X.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books V and X checked: Hermes delivers Zeus's release order to Calypso and supplies moly/instructions before Circe.",
+        "attributes": "A divine boundary-crosser whose interventions reopen blocked movement."
+      }
+    },
+    "ODY-216": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-216",
+          "kind": "adaptation",
+          "text": "The king returned first as a rumour, then a beggar, then a fact no one could survive ignoring.",
+          "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+          "basis": "The imagined song compresses the disguised return and revelation arc.",
+          "fit": "Adaptive song, not a performed Homeric song.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XIII–XXII checked as imagined song: the hidden-return arc is real, but no Homeric bard performs this exact lay.",
+        "attributes": "Dramatic irony as song structure: listeners know a powerless stranger is accumulating the power to reveal himself."
+      }
+    },
+    "ODY-217": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-217",
+          "kind": "adaptation",
+          "text": "Cunning is the patience to let the other person believe they chose the opening.",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "basis": "Odysseus and Athena repeatedly conceal intent, manage appearances and wait for leverage.",
+          "fit": "Metis as concept, not a separate person in the Odyssey.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books IX and XIII checked as metis concept. This is an abstract Homeric quality, not the goddess Metis acting in the Odyssey.",
+        "attributes": "Cunning as timing, concealment and leverage rather than intelligence in the abstract."
+      }
+    },
+    "ODY-218": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-218",
+          "kind": "adaptation",
+          "text": "Fate fixes the boundary; character decides what happens inside it.",
+          "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+          "basis": "Prophecy and allotted outcomes constrain but do not erase choice throughout the poem.",
+          "fit": "Moira as abstract conceptual card.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books I and XI checked as fate/allotment concept: prophecy constrains outcomes while characters remain responsible for choices inside them.",
+        "attributes": "Inevitability that still leaves room for culpability."
+      }
+    },
+    "ODY-223": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-223",
+          "kind": "adaptation",
+          "text": "He learned more in his own hall by being beneath notice than he ever could as king.",
+          "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+          "basis": "The beggar disguise lets Odysseus inspect suitors and servants before revealing power.",
+          "fit": "Specific Beggar-King identity.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XVII–XXII checked: the beggar disguise grants access, information and patience before Odysseus resumes open kingship.",
+        "attributes": "Kingship hidden inside deliberate social powerlessness."
+      }
+    },
+    "ODY-224": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-224",
+          "kind": "adaptation",
+          "text": "One kept the pigs, one kept the cattle, and both kept faith with the same absent house.",
+          "source": "https://classics.mit.edu/Homer/odyssey.21.xxi.html",
+          "basis": "Eumaeus and Philoetius independently remain loyal and then join the counterplot.",
+          "fit": "Paired loyalty through ordinary labour.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XIV, XX–XXII checked: Eumaeus and Philoetius independently keep faith, then are tested, recognised and armed as allies.",
+        "attributes": "Parallel loyalty from different forms of household labour."
+      }
+    },
+    "ODY-238": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-238",
+          "kind": "adaptation",
+          "text": "Recognition is the instant when all the old evidence rearranges itself around one truth.",
+          "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+          "basis": "Scar, cloak, bed, trees and transformed appearance create repeated recognition structures.",
+          "fit": "Set-level recognition pattern.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XIX and XXIII checked as recognition pattern: scar, clothing, bed and private tokens convert hidden identity into certainty.",
+        "attributes": "Recognition as evidence reaching a threshold rather than an arbitrary reveal."
+      }
+    },
+    "ODY-241": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-241",
+          "kind": "adaptation",
+          "text": "A hidden name can be armour, a weapon, or a debt waiting to be collected.",
+          "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+          "basis": "Nobody protects Odysseus, while the beggar identity later enables reconnaissance; true names also create consequences.",
+          "fit": "Identity interpretation spanning Cyclops and palace.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books IX and XVII checked as hidden-name interpretation: Nobody and the beggar role turn obscured identity into protection and information.",
+        "attributes": "A name withheld changes what opponents are able to infer, target and remember."
+      }
+    },
+    "ODY-244": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-244",
+          "kind": "adaptation",
+          "text": "The same wand could close one road of consciousness and open another.",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "basis": "Hermes's wand is repeatedly associated with sleep/waking and guiding souls.",
+          "fit": "Artifact interpretation of boundary-crossing authority.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books V and XXIV checked: Hermes's golden wand is tied to sleep/waking and the movement of souls; phasing is a Magic abstraction.",
+        "attributes": "Authority over thresholds of consciousness and presence."
+      }
+    },
+    "ODY-245": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-245",
+          "kind": "adaptation",
+          "text": "Her faithfulness was not stillness; it was the work of keeping choices open.",
+          "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+          "basis": "The imagined Penelope song reads waiting, weaving and testing as sustained agency.",
+          "fit": "Adaptive song rather than source-text performance.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books II, XIX and XXIV checked as imagined Penelope song: faithfulness is active delay, testing and preservation rather than passivity.",
+        "attributes": "Endurance through maintained optionality."
+      }
+    },
+    "ODY-249": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-249",
+          "kind": "adaptation",
+          "text": "Every shortcut failed. Home was the accumulation of all the routes that did not.",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "basis": "The Long Way Home synthesizes exile, travel, Vehicles and repeated false starts.",
+          "fit": "Mythic whole-voyage interpretation.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books V–XIII checked as whole-voyage synthesis: repeated exile, departure, Vehicles and false endings build the long-return pattern.",
+        "attributes": "Home is approached through accumulated failed routes rather than one clean quest line."
+      }
+    },
+    "ODY-250": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-250",
+          "kind": "adaptation",
+          "text": "The ship carried more than bodies: each landing returned someone changed by the last one.",
+          "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+          "basis": "The mythic ship synthesizes crewing, uncertain shores and transformed return.",
+          "fit": "Whole-voyage Vehicle rather than one historical hull.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books IX–XIII checked as mythic ship synthesis. It represents the recurring homeward vessel role rather than a single surviving historical ship.",
+        "attributes": "The moving household of the voyage: crew labour and transformed arrivals linked by one hull."
+      }
+    },
+    "ODY-268": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-268",
+          "kind": "adaptation",
+          "text": "Work, animals, trees and shelter made a home long before kingship did.",
+          "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+          "basis": "Eumaeus's farm and Laertes's later farm make cultivated landscape part of household continuity.",
+          "fit": "GW landscape composite.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XIV and XXIV checked as cultivated Ithacan landscape composite: herds, worked slopes, orchard and household provisioning."
+      }
+    },
+    "ODY-271": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-271",
+          "kind": "adaptation",
+          "text": "The dead gathered in a landscape where memory was almost the only motion left.",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "basis": "Asphodel and shades recur in the underworld frame.",
+          "fit": "BG land as mournful continuity.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XI and XXIV checked: asphodel/shades form a recurring underworld landscape of remembered persons."
+      }
+    },
+    "ODY-275": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-275",
+          "kind": "adaptation",
+          "text": "The loom kept time by refusing to finish it.",
+          "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+          "basis": "Penelope's weaving delays an imposed future through repetitive work.",
+          "fit": "Object interpretation without reusing the exact unpicking quote.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books II and XIX checked: the loom/shroud counterplot makes repeated textile labour the mechanism of delay.",
+        "attributes": "An object that stores unfinished time."
+      }
+    },
+    "ODY-288": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-288",
+          "kind": "adaptation",
+          "text": "Appetite looks like advantage until the cost survives the meal.",
+          "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+          "basis": "Suitor excess and the cattle episode both turn immediate consumption into later consequence.",
+          "fit": "Cross-episode appetite pattern.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books I–II and XII checked as appetite pattern: suitor consumption and the cattle taboo both turn present advantage into delayed social/divine cost.",
+        "attributes": "Excess that generates options now and liabilities later."
+      }
+    },
+    "ODY-297": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-297",
+          "kind": "adaptation",
+          "text": "Memory becomes power only when something is willing to carry it back into use.",
+          "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+          "basis": "Underworld memory and later family recognition treat the past as retrievable but costly.",
+          "fit": "BG memory-cycle concept.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XI and XXIV checked as memory pattern: knowledge of the dead and remembered kinship make the past actionable again.",
+        "attributes": "The past as a resource that must leave the graveyard of memory to matter."
+      }
+    },
+    "ODY-309": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-309",
+          "kind": "adaptation",
+          "text": "The god of oaths matters most when people act as though no one is watching.",
+          "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+          "basis": "Zeus is repeatedly invoked in guest-right, oaths and punishment for violated social order.",
+          "fit": "Divine-social synthesis rather than guaranteed immediate intervention.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books I, IX and XIV checked as Zeus/social-order concept: guest-right, supplication and accountability repeatedly invoke Zeus without promising instant rescue.",
+        "attributes": "Authority as witness and sanction behind social obligations people can still choose to violate."
+      }
+    },
+    "ODY-251": {
+      "flavour": {
+        "status": "no-flavour-selected",
+        "rationale": "Basic Land — Plains. Reserve the Ithaca basic-land treatment without flavour text."
+      },
+      "brief": {
+        "sourceReview": "Books XIII and XXIII checked for Ithaca's cultivated/home setting. Basic land receives no flavour text."
+      }
+    },
+    "ODY-258": {
+      "flavour": {
+        "status": "no-flavour-selected",
+        "rationale": "Basic Land — Swamp. Reserve the Underworld basic-land treatment without flavour text."
+      },
+      "brief": {
+        "sourceReview": "Books XI and XXIV checked for shades/asphodel atmosphere. Basic land receives no flavour text."
+      }
+    },
+    "ODY-259": {
+      "flavour": {
+        "status": "no-flavour-selected",
+        "rationale": "Basic Land — Swamp. Reserve the palace-foreboding basic-land treatment without flavour text."
+      },
+      "brief": {
+        "sourceReview": "Books XX–XXII checked for the hall's foreboding and violent threshold. Basic land receives no flavour text."
       }
     }
   }
