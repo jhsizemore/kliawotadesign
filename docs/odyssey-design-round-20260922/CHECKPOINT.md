@@ -167,3 +167,16 @@ The final missing research inputs were Altar's Reap for Iphigenia's additional-c
 The report generator is also repaired so a future rebuild preserves the locked collation/pick-stress validation instead of reviving the obsolete 90-common placeholder model.
 
 Production data, 14A2 and live Studio remain unchanged. The next contract gate is gameplay evidence: build reproducible Draft/Sealed test pools and matchup decks under the locked collation, then test the specific unresolved questions (GU Manifest acquisition and four-card exile threshold; WU recognition repeatability; WB Antinous consumption; Omen repetition; hybrid Saga rates; Penelope/Iphigenia/bed/wind-bag rates). Final quotation/layout decisions and integration follow gameplay.
+
+
+## Eleventh checkpoint: gameplay preflight and packet
+
+The structural/reference phase is complete enough to enter gameplay. A deterministic goldfish preflight was run only to set expectations; it is explicitly not recorded as played Magic.
+
+For GU, the current core diagnostic deck reaches Voyage into Unknown Shores's four-card exile draw threshold by turn ten in only about 2.3% of all runs, or 5.6% of runs where Voyage itself has been seen. An intentionally engine-heavy version reaches 7.0% / 17.4%. Keep the threshold at four for now because Voyage already ramps on its first Manifest; treat the draw as a late bonus. If real long games never reach it, test three before changing common density.
+
+For WB, conditional on casting the single Antinous on turn three, the diagnostic model has Food preloaded about 42.1% of the time and some Food/cheap-creature sacrifice material about 75.2%. Keep the 3/3 for first games, with 2/3 recorded as the first fallback if the Food line proves too automatic.
+
+A reproducible playtest packet now defines GU core/engine, WU recognition, WB Antinous, UB Iphigenia, WU Penelope/Saga, hybrid-Saga and Bag tests plus a nine-match matrix and game-record fields.
+
+No candidate rules changed in this checkpoint. Production, 14A2 and live Studio remain unchanged. The next honest gate is **played gameplay evidence**. Analytical work may still prepare pools and records, but it must not be reported as matches.
