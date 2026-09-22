@@ -276,6 +276,20 @@ def main():
                     if c:return c,label
         return None,None
 
+    def classic_quest_anchor(o):
+        hay=((o.get('rules') or '')+' '+flat(o.get('mechanics'))).lower()
+        if 'quest counter' not in hay:return None
+        colors=set(re.findall(r'[WUBRG]',flat(o.get('color'))+' '+flat(o.get('frame'))))
+        names={'W':'Quest for the Holy Relic','U':'Quest for Ancient Secrets','B':'Quest for the Gravelord','R':'Quest for Pure Flame','G':'Quest for Renewal'}
+        for color in 'WUBRG':
+            if color in colors:
+                c=find_named(names[color])
+                if c:return c
+        for name in names.values():
+            c=find_named(name)
+            if c:return c
+        return None
+
     def ref_obj(role,score,o,c,shared_mech=(),shared_shapes=(),note=''):
         return {
           'role':role,'score':round(max(0,min(1,float(score))),3),'annotation':note,
@@ -373,6 +387,11 @@ def main():
             am=omech&anchor['_mech'];ash=oshape&anchor['_shape']
             add(chosen,used,ref_obj('tech',1,o,anchor,am,ash,'Mechanic / set-tech precedent: '+label+'. This is included deliberately even when a different card is closer on raw text or mana rate.'),limit)
 
+        classic_quest=classic_quest_anchor(o)
+        if classic_quest:
+            qm=omech&classic_quest['_mech'];qsh=oshape&classic_quest['_shape']
+            add(chosen,used,ref_obj('tech',1,o,classic_quest,qm,qsh,'Mechanic / set-tech precedent: matching-color Zendikar Quest enchantment from the original quest-counter family; compare how repeated game actions accumulate counters and convert them into a completion payoff.'),limit)
+
         for x in sorted(scores,key=lambda x:(x[2],x[4],x[0]),reverse=True):
             if x[2]<.28 or not (x[6] or x[7]):continue
             c=pool[x[5]];phrase=''
@@ -416,7 +435,9 @@ def main():
     for o in quest_cards:
         q=refs[o['id']]['references']
         if not any(x['role']=='tech' and x['card']['name']=="Last Light of Durin's Day" for x in q):
-            raise RuntimeError('Quest-tech anchor missing for '+o['id'])
+            raise RuntimeError('Modern quest-tech anchor missing for '+o['id'])
+        if not any(x['role']=='tech' and x['card']['name'].startswith('Quest for ') for x in q):
+            raise RuntimeError('Zendikar quest-cycle anchor missing for '+o['id'])
     payload={'schema':'odyssey-reference-cards/v2','generatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'datasetVersion':DATA['datasetVersion'],'scryfallBulk':{'type':meta.get('type'),'updatedAt':meta.get('updated_at'),'downloadUri':uri,'format':'jsonl.gz' if uri.endswith('.gz') else 'json','releasedOnOrBefore':cutoff},'method':'full-set reference rebuild from current Odyssey rules text and the current Scryfall Oracle bulk snapshot; roles separate pushed-rate ceiling, normal-rate baseline, mechanic/set-tech precedent, rules template, and splashy build-around precedent','totalCards':len(cards),'cards':refs}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':'))+'\n')
     OUTJS.write_text('window.ODYSSEY_CARD_REFERENCES='+json.dumps(payload,ensure_ascii=False,separators=(',',':'))+';\n')
