@@ -16,6 +16,23 @@
     "characters": 58
   },
   {
+    "cardId": "ODY-005",
+    "text": "I will begin by disguising you so that no human being shall know you",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 13, Athena lays out the disguise",
+    "speaker": "Athena",
+    "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+    "context": "Athena tells Odysseus she will alter him beyond recognition before he enters his own household.",
+    "fit": "This is the exact action behind the intervention/appearance reset.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 14,
+    "characters": 68,
+    "kind": "quote"
+  },
+  {
     "cardId": "ODY-008",
     "text": "he took Ulysses by the hand, raised him from the hearth",
     "author": "Homer",
@@ -79,6 +96,23 @@
     "selection": "candidate; final card-space check pending",
     "wordCount": 8,
     "characters": 46,
+    "kind": "quote"
+  },
+  {
+    "cardId": "ODY-019",
+    "text": "lay him down upon the sand still fast asleep",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 13, the Phaeacians deliver Odysseus home",
+    "speaker": "Narrator",
+    "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+    "context": "The Phaeacians carry the sleeping Odysseus from the ship and leave him safely on Ithaca.",
+    "fit": "A precise homecoming that feels like arrival without immediate awareness.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 9,
+    "characters": 44,
     "kind": "quote"
   },
   {
@@ -362,6 +396,23 @@
     "selection": "candidate; final card-space check pending",
     "wordCount": 5,
     "characters": 28,
+    "kind": "quote"
+  },
+  {
+    "cardId": "ODY-099",
+    "text": "Minerva had made it a foggy day",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 13, Ithaca is hidden from Odysseus",
+    "speaker": "Narrator",
+    "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+    "context": "Athena covers Ithaca in fog so Odysseus is not recognised and can be briefed before acting.",
+    "fit": "Short, exact atmospheric source for concealment.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 7,
+    "characters": 31,
     "kind": "quote"
   },
   {
@@ -776,6 +827,23 @@
     "kind": "quote"
   },
   {
+    "cardId": "ODY-196",
+    "text": "let us rather set about stowing your things at once in the cave",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 13, Athena secures the Phaeacian gifts",
+    "speaker": "Athena",
+    "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+    "context": "Athena directs Odysseus to hide his treasures in the cave of the Naiads.",
+    "fit": "The cave's gameplay identity is security and preserved future value.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 13,
+    "characters": 63,
+    "kind": "quote"
+  },
+  {
     "cardId": "ODY-203",
     "text": "a thoroughly good woman both in head and heart",
     "author": "Homer",
@@ -889,5 +957,22 @@
     "wordCount": 6,
     "characters": 27,
     "selection": "candidate; final card-space check pending"
+  },
+  {
+    "cardId": "ODY-308",
+    "text": "we can both of us deceive upon occasion",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Odyssey",
+    "location": "Book 13, Athena recognises Odysseus's kindred cunning",
+    "speaker": "Athena",
+    "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+    "context": "Athena explicitly frames herself and Odysseus as peers in craft and deception.",
+    "fit": "The cleanest possible source line for Minds Alike.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 8,
+    "characters": 39,
+    "kind": "quote"
   }
 ]
