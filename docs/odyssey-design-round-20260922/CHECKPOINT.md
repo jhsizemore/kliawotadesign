@@ -145,3 +145,14 @@ The core model averages **7.7515 ordinary commons per pack** and **2.325 copies 
 Common infrastructure under this model: enchantments, Food and Survival are visible; Omens recur strongly. Escape and the single common Constellation payoff are accents. Gift and Foretell are support. GU Manifest remains the clearest density watch and should be tested through supply/pick simulation before another common slot is changed.
 
 No draft picks or played games are claimed. Next: run the locked pack/table supply audit, then a conservative pick-behaviour simulation focused on GU Manifest, WU recognition, WB exploitation and signpost availability. After that, refresh printed-card references.
+
+
+## Ninth checkpoint: pick-stress model
+
+A fixed-intent 8-seat passing stress model now tests the locked FIN-style collation without pretending to be a real draft. Relevant support is treated as a high pick by any compatible competitor; no card ratings, signalling, pivots, deck construction or gameplay are simulated. Each scenario uses 5,000 seeded runs.
+
+GU remains the thin lane, but it clears the current structural threshold without another common. Its direct package is ODY-088 G and ODY-116 U at common plus ODY-017 U at uncommon. In an open lane the GU seat averages 5.36 direct enablers; with one blue and one green competitor it averages 2.49, with a 72.7% chance of at least two and 45.4% chance of at least three. Two competitors in each colour reduce the mean to 1.66. The green uncommon ODY-042 and blue uncommon ODY-018 provide additional voyage/exile bridges, while ODY-060 and ODY-176 are the two GU signposts.
+
+Decision: **do not spend another common slot on Manifest Fate before real draft evidence.** WU recognition and the narrow WB exploitation resource package are more robust under the same stress assumptions. GU remains the first archetype to watch in actual drafts, especially Voyage into Unknown Shores's four-cards-in-exile threshold.
+
+Production data, 14A2 and live Studio remain unchanged. Next contract gate: refresh printed-card/reference comparisons for the now-stable 42-card candidate, then move into actual draft/game testing before integration.
