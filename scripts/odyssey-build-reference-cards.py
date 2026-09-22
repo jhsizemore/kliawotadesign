@@ -7,7 +7,7 @@ a rules-template analogue, a mechanics/play-pattern analogue, and a rate/role be
 Annotations are generated only from objective overlaps (rules skeleton, keywords, mana/type/rate).
 """
 from __future__ import annotations
-import collections, datetime as dt, gzip, hashlib, json, math, os, re, sys, time
+import collections, datetime as dt, gzip, hashlib, json, math, os, re, statistics, sys, time
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -36,7 +36,7 @@ MECH_TERMS={
 'disturb','embalm','eternalize','unearth','rebound','convoke','delve','improvise','affinity','kicker',
 'multikicker','buyback','madness','spectacle','riot','adapt','evolve','proliferate','populate',
 'treasure','food','clue','blood','map','sacrifice','discard','draw','untap','tap','counter','counters',
-'exile','graveyard','equipment','vehicle','aura','saga','battle','token','tokens','transform','face-down','faceup'
+'exile','graveyard','equipment','vehicle','aura','saga','battle','token','tokens','transform','face-down','faceup','survival','monstrosity','strive','constellation','devotion','heroic','foretell','gift','landfall','plot','bargain','boast','miracle','hideaway','suspend','aftermath'
 }
 TRIGGER_PHRASES=[
 'when ~ enters','whenever ~ attacks','whenever one or more','at the beginning of combat',
@@ -195,7 +195,6 @@ def main():
         if c.get('released_at') and c.get('released_at')>cutoff:continue
         if c.get('security_stamp')=='acorn' or c.get('border_color')=='silver':continue
         tl=c.get('type_line','')
-        if 'Basic Land' in tl:continue
         if any(x in tl for x in ['Token','Emblem','Dungeon','Card —']):continue
         text=face_oracle(c)
         if not text and broad_type(tl)!='Land':continue
@@ -207,18 +206,100 @@ def main():
         for t in c['_tokens']:df[t]+=1;inv[t].append(i)
     N=len(pool)
     def idf(t):return math.log((N+1)/(df[t]+1))+1
-    originals=[c for c in DATA['cards'] if str(c.get('originFull','New')).lower()=='new' and str(c.get('origin','')).upper()!='RPR' and 'Basic Land' not in str(c.get('type',''))]
+    # v2 reference policy: cover every current card, with explicit costing lanes and
+    # additional mechanic/build-around precedents for the cards that need them most.
+    cards=list(DATA['cards'])
+    type_index=collections.defaultdict(list)
+    by_name={}
+    for i,c in enumerate(pool):
+        type_index[c['_type']].append(i)
+        key=c.get('name','').strip().lower()
+        if key:
+            by_name.setdefault(key,i)
+            if ' // ' in key: by_name.setdefault(key.split(' // ',1)[0],i)
+
+    TECH_ANCHORS=[
+      ('cycle.progression-challenges',["Last Light of Durin's Day"],'recent quest-counter progression technology'),
+      ('quest counter',["Last Light of Durin's Day"],'recent quest-counter progression technology'),
+      ('cycle.survivor-ordeals-v1',['Ordeal of Heliod','Ordeal of Thassa','Ordeal of Nylea'],'Theros Ordeal cycle technology'),
+      ('ordeal /',['Ordeal of Heliod','Ordeal of Thassa','Ordeal of Nylea'],'Theros Ordeal cycle technology'),
+      ('manifest fate',['Mastery of the Unseen','Whisperwood Elemental','Abhorrent Oculus'],'manifest / face-down build technology'),
+      ('survival',['Cautious Survivor','House Cartographer','Rip, Spawn Hunter'],'Duskmourn Survival technology'),
+      ('heroic',['Favored Hoplite','Akroan Crusader'],'Theros Heroic technology'),
+      ('constellation',['Eidolon of Blossoms','Setessan Champion'],'Constellation technology'),
+      ('strive',["Ajani's Presence",'Launch the Fleet'],'Journey into Nyx Strive technology'),
+      ('foretell',['Saw It Coming','Behold the Multiverse'],'Kaldheim Foretell technology'),
+      ('monstrosity',['Polukranos, World Eater','Nessian Asp'],'Theros Monstrosity technology'),
+      ('devotion',['Thassa, God of the Sea','Heliod, Sun-Crowned'],'Theros devotion / God technology'),
+      ('gift a ',["Bilbo's Gambit",'Dawn’s Truce',"Dawn's Truce"],'Gift additional-cost technology'),
+      (' adventure',['Bonecrusher Giant','Mosswood Dreadknight'],'Adventure technology'),
+      ('cycle.hybrid-sagas-uncommon',['Fable of the Mirror-Breaker'],'Saga pacing / chapter technology'),
+      ('prepare /',['Valki, God of Lies'],'modal / transformation-adjacent technology'),
+      ('storm',['Grapeshot'],'Storm technology'),
+      ('plot',['Slickshot Show-Off'],'Plot technology'),
+      ('bargain',['Torch the Tower'],'Bargain technology'),
+      ('flashback',['Think Twice'],'Flashback technology'),
+      ('hideaway',['Windbrisk Heights'],'Hideaway technology'),
+      ('miracle',['Terminus'],'Miracle technology'),
+      ('boast',['Usher of the Fallen'],'Boast technology'),
+      ('battle',['Invasion of Zendikar'],'Battle / transforming permanent technology'),
+    ]
+
+    def flat(v):
+        if isinstance(v,list):return ' '.join(str(x) for x in v)
+        if isinstance(v,dict):return ' '.join(str(x) for x in v.values())
+        return str(v or '')
+
+    def find_named(name):
+        i=by_name.get(name.strip().lower())
+        return pool[i] if i is not None else None
+
+    def explicit_oracle_names(o):
+        names=[]
+        for k in ('underlyingOracleName','underlyingOracle','oracleName','sourceOracleName','reprintName','printedOracleName'):
+            v=o.get(k)
+            if isinstance(v,str) and v.strip():names.append(v.strip())
+        origin=(str(o.get('originFull',''))+' '+str(o.get('origin',''))).lower()
+        if ('reprint' in origin or re.search(r'\brpr\b',origin)) and o.get('name'):names.append(str(o['name']).strip())
+        out=[]
+        for n in names:
+            if n and n not in out:out.append(n)
+        return out
+
+    def tech_anchor(o):
+        hay=' '.join([flat(o.get('mechanics')),flat(o.get('rules')),flat(o.get('cycleIds')),flat(o.get('cycles')),flat(o.get('type'))]).lower()
+        for needle,names,label in TECH_ANCHORS:
+            if needle in hay:
+                for name in names:
+                    c=find_named(name)
+                    if c:return c,label
+        return None,None
+
+    def ref_obj(role,score,o,c,shared_mech=(),shared_shapes=(),note=''):
+        return {
+          'role':role,'score':round(max(0,min(1,float(score))),3),'annotation':note,
+          'sharedMechanics':sorted(shared_mech),'sharedPatterns':sorted(shared_shapes),'card':scry_row(c)
+        }
+
+    def add(chosen,used,ref,limit):
+        if not ref or len(chosen)>=limit:return False
+        c=ref['card'];key=c.get('oracleId') or c.get('id')
+        if not key or key in used:return False
+        used.add(key);chosen.append(ref);return True
+
     refs={}
     audit=[]
-    for pos,o in enumerate(originals,1):
-        onorm=norm_text((o.get('rules') or '')+' '+(o.get('mechanics') or ''),o.get('name',''))
-        otokens=set(feature_tokens(onorm));omech=mechanisms((o.get('rules') or '')+' '+(o.get('mechanics') or ''));oshape=trigger_shapes(onorm);otype=broad_type(o.get('type',''));ocol=set(re.findall(r'[WUBRG]',o.get('color','') or o.get('frame','') or ''))
-        ranked_tokens=sorted(otokens,key=lambda t:idf(t),reverse=True)[:16]
+    for pos,o in enumerate(cards,1):
+        onorm=norm_text((o.get('rules') or '')+' '+flat(o.get('mechanics')),o.get('name',''))
+        otokens=set(feature_tokens(onorm));omech=mechanisms((o.get('rules') or '')+' '+flat(o.get('mechanics')))
+        oshape=trigger_shapes(onorm);otype=broad_type(o.get('type',''))
+        ocol=set(re.findall(r'[WUBRG]',flat(o.get('color'))+' '+flat(o.get('frame'))))
+        ranked_tokens=sorted(otokens,key=lambda t:idf(t),reverse=True)[:18]
         cand=set()
         for t in ranked_tokens:cand.update(inv.get(t,[])[:4000])
-        # Always admit a modest same-type/rate pool, crucial for vanilla-ish creatures and lands.
-        if len(cand)<500:
-            cand.update(i for i,c in enumerate(pool) if c['_type']==otype and abs(float(c.get('cmc') or 0)-float(o.get('mv') or 0))<=2)
+        omv=float(o.get('mv') or 0)
+        cand.update(i for i in type_index.get(otype,[]) if abs(float(pool[i].get('cmc') or 0)-omv)<=3)
+        if not cand:cand.update(type_index.get(otype,[])[:5000])
         scores=[]
         for i in cand:
             c=pool[i];ct=c['_tokens'];inter=otokens&ct;union=otokens|ct
@@ -228,47 +309,114 @@ def main():
             template=min(1,0.48*j+0.37*weighted+0.07*len(shared_shape)+(0.13 if phrase else 0))
             mech=min(1,0.18*len(shared_mech)+0.12*len(shared_shape)+0.30*weighted)
             same_type=1 if c['_type']==otype else 0
-            cmv=float(c.get('cmc') or 0);omv=float(o.get('mv') or 0);mv=max(0,1-abs(cmv-omv)/4)
+            cmv=float(c.get('cmc') or 0);mv=max(0,1-abs(cmv-omv)/4)
             cc=colors_of(c);color=(len(ocol&cc)/max(1,len(ocol|cc))) if (ocol or cc) else 1
             stats=.5
             op,ot=power_num(o.get('power')),power_num(o.get('toughness'));cp,ctough=power_num(c.get('power')),power_num(c.get('toughness'))
             if op is not None and ot is not None and cp is not None and ctough is not None:stats=max(0,1-(abs(op-cp)+abs(ot-ctough))/8)
             rate=.38*same_type+.28*mv+.22*color+.12*stats
-            total=.55*template+.30*mech+.15*rate
-            # Prefer cards with images and modern/current Oracle presentation for review.
+            effect=min(1,.40*weighted+.20*j+.14*len(shared_mech)+.08*len(shared_shape)+(.10 if phrase else 0)+.08*same_type)
+            total=.48*template+.30*mech+.12*rate+.10*effect
             if image_urls(c):total+=.03
-            scores.append((total,template,mech,rate,i,shared_mech,shared_shape))
-        if not scores:
-            raise RuntimeError('No Scryfall candidates for '+o['id'])
+            scores.append((total,template,mech,rate,effect,i,shared_mech,shared_shape,j,weighted,stats))
+        if not scores:raise RuntimeError('No Scryfall candidates for '+o['id'])
+
+        rarity=str(o.get('rarity') or '').upper()
+        is_basic='Basic Land' in str(o.get('type') or '')
+        splashy=rarity in {'R','M'} or len(str(o.get('rules') or ''))>=220 or len(omech)>=3 or 'rare.pair-buildarounds' in flat(o.get('cycleIds'))+' '+flat(o.get('cycles'))
+        limit=1 if is_basic else (7 if splashy else (6 if rarity=='U' else 5))
         chosen=[];used=set()
-        for role,si,threshold in [('template',1,.34),('mechanic',2,.45),('rate',3,.55)]:
-            for item in sorted(scores,key=lambda x:(x[si],x[0]),reverse=True):
-                c=pool[item[4]]
-                oid=c.get('oracle_id') or c['id']
-                if oid in used or item[si]<threshold:continue
-                # Mechanics references need a substantive shared mechanic/trigger, not merely the same card type.
-                if role=='mechanic' and not (item[5] or item[6]):continue
-                phrase=overlap_phrase(onorm,c['_norm']) if role=='template' else ''
-                # A weaker template is admitted only when it has concrete shared wording or multiple matching trigger shapes.
-                if role=='template' and item[si]<.42 and not phrase and len(item[6])<2:continue
-                used.add(oid)
-                chosen.append({
-                  'role':role,'score':round(item[si],3),'annotation':annotation(role,o,c,item[5],item[6],phrase),
-                  'sharedMechanics':sorted(item[5]),'sharedPatterns':sorted(item[6]),'card':scry_row(c)
-                });break
-        # Do not pad weak designs. “Up to a few” means one strong benchmark is better than a vague analogue.
+
+        # Exact Oracle identity for reprints/reskins and basics.
+        exact=None
+        for n in explicit_oracle_names(o)+([str(o.get('name') or '')] if is_basic else []):
+            exact=find_named(n)
+            if exact:break
+        if exact:
+            add(chosen,used,ref_obj('identity',1,o,exact,note='Oracle identity: exact printed card for this reprint, reskin, or basic-land slot.'),limit)
+        if is_basic:
+            refs[o['id']]={'id':o['id'],'number':o['number'],'name':o['name'],'references':chosen}
+            audit.append({'id':o['id'],'number':o['number'],'name':o['name'],'count':len(chosen),'references':[{'name':x['card']['name'],'role':x['role'],'score':x['score'],'annotation':x['annotation']} for x in chosen]})
+            continue
+
+        same=[x for x in scores if pool[x[5]]['_type']==otype]
+        base_pool=same or scores
+        top_effect=max(x[4] for x in base_pool)
+        close=[x for x in base_pool if x[4]>=max(.16,top_effect*.58)]
+        if len(close)<4:close=sorted(base_pool,key=lambda x:(x[4],x[0]),reverse=True)[:24]
+
+        def pushed_value(x):
+            c=pool[x[5]];cmv=float(c.get('cmc') or 0)
+            cp,ct=power_num(c.get('power')),power_num(c.get('toughness'))
+            efficiency=((cp+ct)/(2*max(1,cmv))) if cp is not None and ct is not None else (1/(1+cmv))
+            rarity_bonus={'mythic':1,'rare':.8,'uncommon':.35,'common':0}.get(c.get('rarity',''),.15)
+            return .48*x[4]+.18*x[2]+.12*x[3]+.14*min(1,efficiency)+.08*rarity_bonus
+        for x in sorted(close,key=pushed_value,reverse=True):
+            c=pool[x[5]]
+            note='Best-rate benchmark: a close same-type real-card match selected toward the efficient/pushed end of printed mana and stat rates. Use it as a ceiling check, not as the default baseline.'
+            if add(chosen,used,ref_obj('rate-best',pushed_value(x),o,c,x[6],x[7],note),limit):break
+
+        normal_pool=[x for x in close if pool[x[5]].get('rarity') in {'common','uncommon'}] or close
+        mvs=sorted(float(pool[x[5]].get('cmc') or 0) for x in normal_pool)
+        median_mv=statistics.median(mvs) if mvs else omv
+        def normal_value(x):
+            c=pool[x[5]];cmv=float(c.get('cmc') or 0)
+            return .58*x[4]+.27*x[3]+.15*max(0,1-abs(cmv-median_mv)/4)
+        for x in sorted(normal_pool,key=normal_value,reverse=True):
+            c=pool[x[5]]
+            note='Normal-rate benchmark: representative common/uncommon or median-rate printing among close same-type matches. Treat this as the ordinary baseline for costing the effect.'
+            if add(chosen,used,ref_obj('rate-normal',normal_value(x),o,c,x[6],x[7],note),limit):break
+
+        anchor,label=tech_anchor(o)
+        if anchor:
+            am=omech&anchor['_mech'];ash=oshape&anchor['_shape']
+            add(chosen,used,ref_obj('tech',1,o,anchor,am,ash,'Mechanic / set-tech precedent: '+label+'. This is included deliberately even when a different card is closer on raw text or mana rate.'),limit)
+
+        for x in sorted(scores,key=lambda x:(x[2],x[4],x[0]),reverse=True):
+            if x[2]<.28 or not (x[6] or x[7]):continue
+            c=pool[x[5]];phrase=''
+            if add(chosen,used,ref_obj('mechanic',x[2],o,c,x[6],x[7],annotation('mechanic',o,c,x[6],x[7],phrase)),limit):break
+
+        for x in sorted(scores,key=lambda x:(x[1],x[4],x[0]),reverse=True):
+            if x[1]<.30:continue
+            c=pool[x[5]];phrase=overlap_phrase(onorm,c['_norm'])
+            if x[1]<.40 and not phrase and len(x[7])<2:continue
+            if add(chosen,used,ref_obj('template',x[1],o,c,x[6],x[7],annotation('template',o,c,x[6],x[7],phrase)),limit):break
+
+        if splashy and len(chosen)<limit:
+            spins=[]
+            for x in scores:
+                c=pool[x[5]]
+                if not (x[6] or x[7]) or c.get('rarity') not in {'rare','mythic'}:continue
+                novelty=max(0,1-x[8])
+                score=.42*x[2]+.24*x[4]+.20*novelty+.14*(1 if c.get('rarity')=='mythic' else .8)
+                spins.append((score,x))
+            for score,x in sorted(spins,key=lambda z:z[0],reverse=True):
+                c=pool[x[5]]
+                shared=', '.join(sorted(x[6])[:4] or sorted(x[7])[:2]) or 'the same mechanical space'
+                note='Build-around / interesting spin: shares '+shared+' but deliberately favors a different, higher-complexity implementation. Use it to test whether a splashy Odyssey card has enough payoff, tension, and deck-building identity.'
+                if add(chosen,used,ref_obj('buildaround',score,o,c,x[6],x[7],note),limit):break
+
         if not chosen:
-            item=max(scores,key=lambda x:x[3]);c=pool[item[4]]
-            chosen.append({'role':'rate','score':round(item[3],3),'annotation':annotation('rate',o,c,item[5],item[6],''),'sharedMechanics':sorted(item[5]),'sharedPatterns':sorted(item[6]),'card':scry_row(c)})
-        refs[o['id']]={'id':o['id'],'number':o['number'],'name':o['name'],'references':chosen[:3]}
-        audit.append({'id':o['id'],'number':o['number'],'name':o['name'],'count':len(chosen[:3]),'references':[{'name':x['card']['name'],'role':x['role'],'score':x['score'],'annotation':x['annotation']} for x in chosen[:3]]})
-        if pos%25==0:print('curated',pos,'/',len(originals),flush=True)
-    missing=[o['id'] for o in originals if not refs[o['id']]['references']]
-    if missing:raise RuntimeError('Original cards without reference cards: '+', '.join(missing))
-    payload={'schema':'odyssey-reference-cards/v1','generatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'datasetVersion':DATA['datasetVersion'],'scryfallBulk':{'type':meta.get('type'),'updatedAt':meta.get('updated_at'),'downloadUri':uri,'format':'jsonl.gz' if uri.endswith('.gz') else 'json','releasedOnOrBefore':cutoff},'method':'automated design-reference curation from Scryfall Oracle bulk data; each role chosen independently and annotated from objective shared rules/mechanics/rate features','originalCards':len(originals),'cards':refs}
+            x=max(scores,key=lambda x:x[3]);c=pool[x[5]]
+            add(chosen,used,ref_obj('rate-normal',x[3],o,c,x[6],x[7],'Normal-rate benchmark: closest available same-role printed card.'),limit)
+
+        refs[o['id']]={'id':o['id'],'number':o['number'],'name':o['name'],'references':chosen}
+        audit.append({'id':o['id'],'number':o['number'],'name':o['name'],'count':len(chosen),'references':[{'name':x['card']['name'],'role':x['role'],'score':x['score'],'annotation':x['annotation']} for x in chosen]})
+        if pos%25==0:print('curated',pos,'/',len(cards),flush=True)
+
+    missing=[o['id'] for o in cards if not refs.get(o['id'],{}).get('references')]
+    if missing:raise RuntimeError('Cards without reference cards: '+', '.join(missing))
+    quest_cards=[o for o in cards if 'quest counter' in ((o.get('rules') or '')+' '+flat(o.get('mechanics'))).lower()]
+    for o in quest_cards:
+        q=refs[o['id']]['references']
+        if not any(x['role']=='tech' and x['card']['name']=="Last Light of Durin's Day" for x in q):
+            raise RuntimeError('Quest-tech anchor missing for '+o['id'])
+    payload={'schema':'odyssey-reference-cards/v2','generatedAt':dt.datetime.now(dt.timezone.utc).isoformat(),'datasetVersion':DATA['datasetVersion'],'scryfallBulk':{'type':meta.get('type'),'updatedAt':meta.get('updated_at'),'downloadUri':uri,'format':'jsonl.gz' if uri.endswith('.gz') else 'json','releasedOnOrBefore':cutoff},'method':'full-set reference rebuild from current Odyssey rules text and the current Scryfall Oracle bulk snapshot; roles separate pushed-rate ceiling, normal-rate baseline, mechanic/set-tech precedent, rules template, and splashy build-around precedent','totalCards':len(cards),'cards':refs}
     OUT.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':'))+'\n')
     OUTJS.write_text('window.ODYSSEY_CARD_REFERENCES='+json.dumps(payload,ensure_ascii=False,separators=(',',':'))+';\n')
-    summary={'originalCards':len(originals),'referencedCards':len(refs),'totalReferences':sum(len(x['references']) for x in refs.values()),'oneRef':sum(len(x['references'])==1 for x in refs.values()),'twoRefs':sum(len(x['references'])==2 for x in refs.values()),'threeRefs':sum(len(x['references'])==3 for x in refs.values()),'missing':missing,'scryfallUpdatedAt':meta.get('updated_at')}
+    role_counts=collections.Counter(r['role'] for e in refs.values() for r in e['references'])
+    summary={'totalCards':len(cards),'referencedCards':len(refs),'totalReferences':sum(len(x['references']) for x in refs.values()),'minRefs':min(len(x['references']) for x in refs.values()),'maxRefs':max(len(x['references']) for x in refs.values()),'missing':missing,'roles':dict(sorted(role_counts.items())),'questCards':len(quest_cards),'scryfallUpdatedAt':meta.get('updated_at')}
     (REPORT/'summary.json').write_text(json.dumps(summary,indent=2))
     (REPORT/'audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2))
     print(json.dumps(summary,indent=2))
