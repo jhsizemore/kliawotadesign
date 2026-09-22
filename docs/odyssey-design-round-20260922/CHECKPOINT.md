@@ -77,3 +77,5 @@ The standalone review report and a complete checkpoint ZIP were prepared for
 private delivery. Resume from the ZIP if the transient checkout is unavailable.
 
 Hunter subsequently authorized the checkpoint push and WU Penelope, then explicitly rejected the Iphigenia rescue tradition. The current candidate reflects actual sacrifice. The earlier push blocker was authorization; the authorized shell retry then failed for missing Git credentials. The connected GitHub route is being used to publish the checkpoint.
+
+Publication completed through the connected GitHub account: branch `odyssey/flavour-foundation-20260922`, draft PR https://github.com/jhsizemore/kliawotadesign/pull/4, initial remote checkpoint commit `1d367e4028553365c934b13859e7d48e226c12b3`. Production remains unchanged.
