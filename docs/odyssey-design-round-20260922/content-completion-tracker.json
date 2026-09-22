@@ -37,12 +37,12 @@
     "status": "structurally-complete-quality-and-source-verification-in-progress"
   },
   "flavourLayer": {
-    "exactQuoteCandidates": 75,
-    "sourceLedAdaptationCandidates": 153,
-    "noFlavourSelected": 11,
+    "exactQuoteCandidates": 78,
+    "sourceLedAdaptationCandidates": 183,
+    "noFlavourSelected": 14,
     "noDirectQuoteStillNeedsFlavourDecision": 0,
-    "pending": 70,
-    "resolvedFlavourOutcomes": 239,
+    "pending": 34,
+    "resolvedFlavourOutcomes": 275,
     "finalSelections": 0
   },
   "gameplay": {
@@ -63,15 +63,18 @@
     "modern reception"
   ],
   "currentCluster": {
-    "name": "Books XXI–XXIV — bow, battle, reunion, Laertes and peace",
+    "name": "Cross-book Odyssey synthesis cleanup",
     "status": "substantially complete",
-    "exactQuotesAdded": 11,
-    "adaptationsAdded": 19,
-    "noFlavourDecisionsAdded": 1,
+    "exactQuotesAdded": 3,
+    "adaptationsAdded": 30,
+    "noFlavourDecisionsAdded": 3,
+    "deferred": [
+      "ODY-172 Homeric lion-simile audit",
+      "ODY-180 Trojan/pre-Odyssey"
+    ],
     "notes": [
-      "Reconciliation and peace treated as distinct from vengeance.",
-      "Bed/tree cards distinguish private proof from broader rooted-home symbolism.",
-      "Agricultural extensions explicitly labelled rather than passed off as narrated scenes."
+      "Concept cards receive source-led synthesis rather than false single-scene attribution.",
+      "Basic lands continue to use deliberate no-flavour decisions."
     ]
   }
 }
