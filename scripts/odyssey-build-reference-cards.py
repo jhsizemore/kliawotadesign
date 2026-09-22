@@ -255,6 +255,21 @@ def main():
         i=by_name.get(name.strip().lower())
         return pool[i] if i is not None else None
 
+    released_basic_cache={}
+    def find_released_basic(name):
+        key=name.strip().title()
+        if key in released_basic_cache:return released_basic_cache[key]
+        q='!"'+key+'" game:paper date<='+cutoff
+        url='https://api.scryfall.com/cards/search?q='+quote(q)+'&unique=prints&order=released&dir=desc'
+        try:
+            result=fetch_json(url)
+            card=next((x for x in (result.get('data') or []) if x.get('name','').lower()==key.lower() and x.get('released_at','')<=cutoff and broad_type(x.get('type_line',''))=='Land'),None)
+        except Exception:
+            card=None
+        released_basic_cache[key]=card
+        time.sleep(.12)
+        return card
+
     def explicit_oracle_names(o):
         names=[]
         for k in ('underlyingOracleName','underlyingOracle','oracleName','sourceOracleName','reprintName','printedOracleName'):
@@ -352,6 +367,8 @@ def main():
         for n in exact_names:
             exact=find_named(n)
             if exact:break
+        if is_basic and not exact and subtype:
+            exact=find_released_basic(subtype.group(1))
         if exact:
             add(chosen,used,ref_obj('identity',1,o,exact,note='Oracle identity: exact printed card for this reprint, reskin, or basic-land slot.'),limit)
         if is_basic:
