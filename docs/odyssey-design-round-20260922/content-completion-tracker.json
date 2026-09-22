@@ -37,12 +37,12 @@
     "status": "structurally-complete-quality-and-source-verification-in-progress"
   },
   "flavourLayer": {
-    "exactQuoteCandidates": 58,
-    "sourceLedAdaptationCandidates": 123,
-    "noFlavourSelected": 9,
+    "exactQuoteCandidates": 64,
+    "sourceLedAdaptationCandidates": 134,
+    "noFlavourSelected": 10,
     "noDirectQuoteStillNeedsFlavourDecision": 0,
-    "pending": 119,
-    "resolvedFlavourOutcomes": 190,
+    "pending": 101,
+    "resolvedFlavourOutcomes": 208,
     "finalSelections": 0
   },
   "gameplay": {
@@ -63,15 +63,16 @@
     "modern reception"
   ],
   "currentCluster": {
-    "name": "Books XIII–XVI — return, disguise and reconnaissance",
+    "name": "Books XVII–XX — palace recognition, suitors and omens",
     "status": "substantially complete",
-    "exactQuotesAdded": 5,
-    "adaptationsAdded": 14,
-    "notes": [
-      "Book XIII separates physical homecoming from recognition.",
-      "Book XIV tests loyalty before identity.",
-      "Book XV makes return urgent and threatened.",
-      "Book XVI turns recognition into a private operational alliance."
+    "exactQuotesAdded": 7,
+    "adaptationsAdded": 11,
+    "noFlavourDecisionsAdded": 1,
+    "deferred": [
+      "ODY-172 Mother Lion's Charge — Homeric-simile audit"
+    ],
+    "sourceCorrections": [
+      "Mother Lion's Charge removed from unsupported Book XX placement"
     ]
   }
 }
