@@ -7,57 +7,7 @@
     "fixedCountsPreserved": true,
     "exactButlerQuotes": true
   },
-  "analyticalPackAccess": [
-    {
-      "commonEnchantments": 2,
-      "commonPoolExcludingBasics": 90,
-      "commonSlotsPerPackAssumption": 6,
-      "packsPerPlayer": 3,
-      "expectedEnchantmentsInThreeUnselectedPacks": 0.4,
-      "probabilityAtLeastOneWithIndependentSlots": 0.3327
-    },
-    {
-      "commonEnchantments": 2,
-      "commonPoolExcludingBasics": 90,
-      "commonSlotsPerPackAssumption": 7,
-      "packsPerPlayer": 3,
-      "expectedEnchantmentsInThreeUnselectedPacks": 0.47,
-      "probabilityAtLeastOneWithIndependentSlots": 0.3762
-    },
-    {
-      "commonEnchantments": 2,
-      "commonPoolExcludingBasics": 90,
-      "commonSlotsPerPackAssumption": 10,
-      "packsPerPlayer": 3,
-      "expectedEnchantmentsInThreeUnselectedPacks": 0.67,
-      "probabilityAtLeastOneWithIndependentSlots": 0.4904
-    },
-    {
-      "commonEnchantments": 9,
-      "commonPoolExcludingBasics": 90,
-      "commonSlotsPerPackAssumption": 6,
-      "packsPerPlayer": 3,
-      "expectedEnchantmentsInThreeUnselectedPacks": 1.8,
-      "probabilityAtLeastOneWithIndependentSlots": 0.8499
-    },
-    {
-      "commonEnchantments": 9,
-      "commonPoolExcludingBasics": 90,
-      "commonSlotsPerPackAssumption": 7,
-      "packsPerPlayer": 3,
-      "expectedEnchantmentsInThreeUnselectedPacks": 2.1,
-      "probabilityAtLeastOneWithIndependentSlots": 0.8906
-    },
-    {
-      "commonEnchantments": 9,
-      "commonPoolExcludingBasics": 90,
-      "commonSlotsPerPackAssumption": 10,
-      "packsPerPlayer": 3,
-      "expectedEnchantmentsInThreeUnselectedPacks": 3,
-      "probabilityAtLeastOneWithIndependentSlots": 0.9576
-    }
-  ],
-  "method": "Independent uniform slots from 90 nonbasic commons. Sensitivity analysis for 6, 7 or 10 commons per pack. Not a draft simulator, chosen booster collation, deck model or played match.",
+  "method": "Structural checks plus locked FIN-style Play Booster collation, fixed-intent passing stress tests, source audits and printed component-reference review. No played matches or human drafts are represented.",
   "playedMatches": 0,
   "remainingRisks": [
     "Odyssey Limited collation and a conservative fixed-intent passing stress model are locked; real draft signalling, pick evaluation and gameplay remain untested.",
@@ -88,5 +38,14 @@
       "pAtLeast3": 0.454
     },
     "decision": "No new GU common before real draft evidence."
+  },
+  "referenceRefresh": {
+    "completedAt": "2026-09-23",
+    "changedCards": 42,
+    "namingOnlyNoRateRefresh": 1,
+    "requestedRefreshCards": 13,
+    "retainedExistingBenchmarkCards": 28,
+    "missingRequestedBenchmarks": 0,
+    "balanceStatus": "component precedents verified; rates remain gameplay-gated"
   }
 }
