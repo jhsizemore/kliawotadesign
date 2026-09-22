@@ -35,7 +35,7 @@
       "sourceLabel": "Odyssey 1–4",
       "sequence": "Receive counsel; speak publicly; venture abroad.",
       "emotions": "Growing confidence / underestimated youth",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A young heir learning to act under Athena's pressure and the weight of his father's reputation.",
       "hooks": "Targeted help produces lasting growth; small early body.",
       "assessment": "The youthful version grows through help, unlike the returned warrior who leads others.",
       "id": "ODY-002",
@@ -59,10 +59,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.4.iv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books I–IV checked: Athena's counsel, the assembly and the journey all support a young heir becoming willing to act; mechanics remain an abstraction of growth through guidance.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-002",
+        "text": "show your mettle, then, and make yourself a name in story.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 1, Athena urges Telemachus to act",
+        "speaker": "Athena as Mentes",
+        "source": "https://classics.mit.edu/Homer/odyssey.1.i.html",
+        "context": "Athena tells Telemachus he is old enough to act and win a name.",
+        "fit": "Directly captures the Young Heir's growth-through-guidance identity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 58
+      }
     },
     {
       "sourceLabel": "Odyssey 11; interpretation",
@@ -97,9 +112,9 @@
       "sourceLabel": "Odyssey 2; household composite",
       "sequence": "Keep the household occupied; gather allies; endure another day.",
       "emotions": "Resolve / frustration at resistance",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Anonymous household endurance: each new sign, ritual or person helps the house continue through absence.",
       "hooks": "Enchantment arrivals sustain a watch; gradual communal reward.",
-      "assessment": "Existing rationale incorrectly describes tapping rather than Constellation and must be corrected.",
+      "assessment": "Keep as a household composite. The progression challenge should feel like days of functioning under pressure, not like a literal episode with three enchantments.",
       "id": "ODY-004",
       "number": 4,
       "name": "Keep the Long Watch",
@@ -117,10 +132,11 @@
           "url": "https://classics.mit.edu/Homer/odyssey.2.ii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book II checked: prolonged household resistance and Penelope's long-running work support the endurance frame, but this three-step Constellation challenge is a deliberate household composite.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no direct quote selected; composite/interpretive portrayal",
+      "quotationCandidate": null,
+      "quotationAuditOutcome": "Household endurance is an intentional composite rather than one narrated Book II moment; a single quotation would falsely pin the card to Penelope or Telemachus."
     },
     {
       "sourceLabel": "Odyssey 13",
@@ -286,7 +302,7 @@
       "sourceLabel": "Odyssey 2",
       "sequence": "Summon the assembly; accuse the suitors; meet public hesitation.",
       "emotions": "Courage / threatened entitlement",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Telemachus risks public failure by speaking as the young master of a house everyone has learned to exploit.",
       "hooks": "Create a public gathering; leadership produces restraint.",
       "assessment": "A useful token spell should convey speaking before collective action, not an instant successful coup.",
       "id": "ODY-010",
@@ -306,10 +322,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.2.ii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book II checked: Telemachus explicitly calls the assembly, states his grievance and confronts public hesitation.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-010",
+        "text": "it is I, as you will shortly learn, who have convened you",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus opens the assembly",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus publicly claims responsibility for calling the first assembly since Odysseus left.",
+        "fit": "The line is the action of the card, not merely commentary on leadership.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 57
+      }
     },
     {
       "sourceLabel": "Odyssey 5",
@@ -753,10 +784,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.2.ii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books I–II checked: the suitors repeatedly consume Odysseus's livestock, wine and estate while refusing to supply their own provisions.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-025",
+        "text": "if I am to be eaten out of house and home at all",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus condemns the suitors' consumption",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus describes the suitors consuming his estate without recourse.",
+        "fit": "A concise statement of extortion through household depletion.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 48
+      }
     },
     {
       "sourceLabel": "Odyssey 11–12",
@@ -1936,7 +1982,7 @@
       ],
       "sourceReview": "passages checked; whole-voyage composite; no direct quote selected to avoid false localization.",
       "briefStatus": "first-pass",
-      "quoteStatus": "no direct quote selected; composite portrayal",
+      "quoteStatus": "no direct quote selected; composite/interpretive portrayal",
       "quotationCandidate": null,
       "quotationAuditOutcome": "Whole-poem voyage composite. No single Homeric line is selected because doing so would falsely localize the card to one shore or episode."
     },
@@ -2302,7 +2348,7 @@
       "baselineScore": 5,
       "baselineRationale": "Excellent match: A land that enters slowly but immediately scries makes the waiting harbor itself the place where the future is read.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Deferred to the Trojan/pre-Odyssey cluster: the current source is Iliad II / Aulis rather than the Telemachy.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -2572,7 +2618,7 @@
       "sourceLabel": "Odyssey 4; mourning composite",
       "sequence": "Cover the head; carry visible grief; preserve remembrance.",
       "emotions": "Burden / vulnerability",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Mourning made socially visible; grief changes posture and attention rather than acting as a literal curse.",
       "hooks": "Aura weakens; a death leads to memory and life.",
       "assessment": "Distinguish mourning's social sign from a literal lethal veil.",
       "id": "ODY-082",
@@ -2592,10 +2638,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.4.iv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book IV checked: the household at Sparta shares visible grief when Odysseus is remembered. The veil itself is a mourning composite rather than a specific Book IV prop.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-082",
+        "text": "his words set them all a weeping",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 4, Menelaus recalls Odysseus",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "context": "Menelaus's recollection causes Helen, Telemachus, Menelaus and Pisistratus to weep.",
+        "fit": "The card's veil remains a social/visual composite, while the quotation supplies the actual shared grief.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 32
+      }
     },
     {
       "sourceLabel": "Odyssey 7; material-world extension",
@@ -2685,12 +2746,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 1; epic diction",
+      "sourceLabel": "Homeric formula / translation tradition",
       "sequence": "Speak; let words travel; convey knowledge to listeners.",
       "emotions": "Fluency / gathering information",
-      "attributes": "A Homeric metaphor, not literal avian speech.",
+      "attributes": "A recurring epic speech formula: words launched with emphasis, not literal avian speech.",
       "hooks": "Affordable card draw; existing flyer condition creates a deck-building link.",
-      "assessment": "Keep the straight reprint, but do not claim Homeric words physically fly.",
+      "assessment": "Keep the straight reprint. Treat the title as translation tradition, not as a phrase quoted from Butler.",
       "id": "ODY-086",
       "number": 86,
       "name": "Winged Words",
@@ -2708,10 +2769,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.1.i.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Translation note checked: 'winged words' is a recurring Homeric formula preserved literally by A. T. Murray; Butler usually naturalizes the formula instead of printing those exact English words.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-086",
+        "text": "spoke to him winged words",
+        "author": "Homer",
+        "translator": "A. T. Murray",
+        "work": "Odyssey",
+        "location": "Book 17, recurring Homeric speech formula",
+        "speaker": "Narrator",
+        "source": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0136%3Abook%3D17%3Acard%3D424",
+        "context": "Murray preserves the recurring Homeric formula literally; Butler generally naturalizes it.",
+        "fit": "A translation-aware quotation that justifies the reprint name without pretending Butler uses the phrase.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 5,
+        "characters": 25
+      }
     },
     {
       "sourceLabel": "Odyssey 5; seabird-imagery extension",
@@ -2775,7 +2851,7 @@
       "sourceLabel": "Odyssey 3; Trojan-war background",
       "sequence": "Receive Telemachus; recall the war; advise the next journey.",
       "emotions": "Authority / reassurance",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Age and memory turned into reassurance: Nestor makes younger heroes feel connected to a longer story.",
       "hooks": "Protect other legends; recover an old figure late.",
       "assessment": "The adviser supports heroes rather than being the main attacking threat.",
       "id": "ODY-089",
@@ -2795,10 +2871,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.3.iii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book III checked: Nestor receives Telemachus hospitably, remembers the war, gives counsel and recognises Athena's favour toward the young man.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-089",
+        "text": "I see that you are going to be a great hero some day",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, Nestor recognises Athena's favour toward Telemachus",
+        "speaker": "Nestor",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Nestor encourages Telemachus after Athena reveals herself.",
+        "fit": "Specific intergenerational reassurance suits the counsellor rather than a generic old-warrior quote.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 52
+      }
     },
     {
       "sourceLabel": "Odyssey 6",
@@ -3233,10 +3324,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.3.iii.html"
         }
       ],
-      "sourceReview": "passage checked: Book III directly shows the cup, prayer and drink-offering being passed in ritual order.",
+      "sourceReview": "Book III checked: the gathering explicitly makes drink-offerings before Telemachus's onward journey.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-103",
+        "text": "stood up to make their drink-offerings",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, the Pylian gathering",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "The gathered company makes formal drink-offerings before Telemachus departs.",
+        "fit": "Direct ritual action for Pour the Libation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 6,
+        "characters": 38
+      }
     },
     {
       "sourceLabel": "Odyssey 19",
@@ -3349,10 +3455,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.2.ii.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Book II checked: two eagles wheel over the assembly and Halitherses reads them as a warning of Odysseus's return.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-107",
+        "text": "Jove sent two eagles from the top of the mountain",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, the eagle omen over the assembly",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Two eagles wheel over the assembly and are interpreted as a warning of Odysseus's return.",
+        "fit": "The sign itself is the card's subject.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 49
+      }
     },
     {
       "sourceLabel": "Odyssey 3; household-service scene",
@@ -3378,10 +3499,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.3.iii.html"
         }
       ],
-      "sourceReview": "passage checked: Book III directly describes pages filling mixing bowls with wine and water and serving the gathering.",
+      "sourceReview": "Book III checked: pages explicitly fill mixing-bowls with wine and water and hand the drink around.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-108",
+        "text": "pages filled the mixing-bowls with wine and water",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, household service at Pylos",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Pages mix wine and water and serve the gathering.",
+        "fit": "Exact ordinary labour for Mix the Wine.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 49
+      }
     },
     {
       "sourceLabel": "Odyssey 7",
@@ -3803,10 +3939,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.1.i.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book I checked: Odysseus is recalled as seeking poison for his arrows at Ephyra; the poem does not identify the substance as hemlock.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-122",
+        "text": "he had been to beg poison for his arrows from Ilus",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 1, Odysseus's visit to Ephyra",
+        "speaker": "Athena as Mentes",
+        "source": "https://classics.mit.edu/Homer/odyssey.1.i.html",
+        "context": "Athena recalls Odysseus seeking poison for his arrows at Ephyra.",
+        "fit": "The poem supports poisoned arrows, while the exact poison remains unidentified.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 50
+      }
     },
     {
       "sourceLabel": "Odyssey 24; explicit fantasy extension",
@@ -3841,7 +3992,7 @@
       "sourceLabel": "Odyssey 2; household composite",
       "sequence": "Count stores; distribute supplies; endure depletion.",
       "emotions": "Care / attrition",
-      "attributes": "Practical household stewardship.",
+      "attributes": "Quiet custodianship of finite household stores while other people consume them.",
       "hooks": "Gain life when artifacts are spent; retain a modest blocking body.",
       "assessment": "Food and ordinary objects both matter; distinguish this from the aggressive cook.",
       "id": "ODY-124",
@@ -3861,10 +4012,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.2.ii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book II checked: Eurycleia guards the storeroom and household wealth both night and day; this anonymous common abstracts that stewardship.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-124",
+        "text": "was in charge of everything both night and day",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Eurycleia guards the storeroom",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Eurycleia is described as responsible for the household stores continuously.",
+        "fit": "A precise source hook for the anonymous keeper role.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 46
+      }
     },
     {
       "sourceLabel": "Odyssey 10",
@@ -4561,10 +4727,10 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 1; epic formula",
+      "sourceLabel": "Odyssey 2; recurring epic formula",
       "sequence": "Night yields; work resumes; a fresh day invites action.",
       "emotions": "Renewal / renewed pressure",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The poem's recurring reset: after grief, plotting or travel, daylight starts the next obligation.",
       "hooks": "Ready one worker before combat; add vigilance and strength.",
       "assessment": "This repeated image is a temporal rhythm, not a new goddess episode.",
       "id": "ODY-147",
@@ -4584,10 +4750,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.1.i.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Recurring formula checked in Book II: Butler prints the rosy-fingered Dawn formula. The source label is broadened from Book I to the repeated epic formula.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-147",
+        "text": "the child of morning, rosy-fingered Dawn, appeared",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, recurring dawn formula",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "The repeated formula marks a new day and renewed action.",
+        "fit": "The exact formula is the card's identity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 50
+      }
     },
     {
       "sourceLabel": "Odyssey 22",
@@ -4856,7 +5037,7 @@
       "sourceLabel": "Odyssey 1–2; household interpretation",
       "sequence": "Open stores; consume another's wealth; make scarcity hurt.",
       "emotions": "Predation / dwindling resources",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Appetite weaponised into pressure: someone else's stored wealth becomes the engine of control.",
       "hooks": "Artifact sacrifice drains opponents.",
       "assessment": "Differentiate from the caretaker's self-preservation and the cook's temporary power.",
       "id": "ODY-156",
@@ -4880,10 +5061,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.2.ii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books I–II checked: Antinous openly defends continued consumption of Telemachus's estate; this is deliberate predation, not accidental scarcity.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-156",
+        "text": "so long shall we go on eating up your estate",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Antinous defends the suitors' consumption",
+        "speaker": "Antinous",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Antinous openly states that the suitors will continue consuming Telemachus's estate.",
+        "fit": "The line turns hunger into deliberate predation rather than abstract scarcity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 44
+      }
     },
     {
       "sourceLabel": "Odyssey 17 and 22",
@@ -5300,7 +5496,7 @@
       "sourceLabel": "Odyssey 4; setting interpretation",
       "sequence": "Watch seals gather; wait on the shore; find a stable rhythm.",
       "emotions": "Stillness / patience",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Patience in an uncanny but natural coastal scene; the card borrows the setting, not Proteus's shapeshifting.",
       "hooks": "Landfall life; resilient ordinary creature.",
       "assessment": "Menelaus's Proteus episode supplies context; do not misattribute his adventure to Odysseus.",
       "id": "ODY-170",
@@ -5320,10 +5516,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.4.iv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book IV checked: seals gather around Proteus while Menelaus waits on the shore. This is Menelaus's episode, not an Odysseus adventure.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-170",
+        "text": "watching the seals come up in hundreds to bask upon the sea shore",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 4, Menelaus waits for Proteus",
+        "speaker": "Menelaus",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "context": "Menelaus describes waiting among the seals during the Proteus episode.",
+        "fit": "The card is a setting/fauna treatment and must stay attached to Menelaus's story, not Odysseus's.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 65
+      }
     },
     {
       "sourceLabel": "Odyssey 24",
@@ -5686,7 +5897,7 @@
       ],
       "sourceReview": "Book XXIV checked; funerary/social-world composite; no direct quote selected.",
       "briefStatus": "first-pass",
-      "quoteStatus": "no direct quote selected; composite portrayal",
+      "quoteStatus": "no direct quote selected; composite/interpretive portrayal",
       "quotationCandidate": null,
       "quotationAuditOutcome": "Ordinary funerary/social-world composite. Book XXIV supports ghosts and family memory, but no single narrated grave-tending scene matches this invented role closely enough for a direct quotation."
     },
@@ -5843,7 +6054,7 @@
       "sourceLabel": "Odyssey 2",
       "sequence": "Recruit quietly; borrow the ship; leave at night.",
       "emotions": "Initiative / secrecy",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Telemachus becomes operational: recruiting, provisioning and leaving before the household can stop him.",
       "hooks": "Ship arrives with crew; attack mobilises a helper.",
       "assessment": "Avoid immediate untapping that undermines a Survival crew unless chosen as an intentional tradeoff.",
       "id": "ODY-185",
@@ -5863,10 +6074,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.2.ii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book II checked: Athena secures the ship and crew, Telemachus secretly loads stores and sails at night without Penelope's knowledge.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-185",
+        "text": "my mother does not know anything about it",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus secretly loads the ship",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus tells the crew that Penelope does not know about the stores or departure.",
+        "fit": "A concise expression of the secret voyage.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 41
+      }
     },
     {
       "sourceLabel": "Odyssey 5; seamanship extension",
@@ -7897,7 +8123,7 @@
       "sourceLabel": "Odyssey 3; earlier-period interpretation",
       "sequence": "Imagine Pylos before the later homecomings.",
       "emotions": "Established order.",
-      "attributes": "Setting portrayal; no invented character action.",
+      "attributes": "A historical-imaginative view of ordered Pylos before the later homecoming stories.",
       "hooks": "Establish place and mood through the existing land function; preserve fixing and pacing.",
       "assessment": "Prewar treatment is an interpretation; Telemachus's visit itself is after the war.",
       "id": "ODY-252",
@@ -7917,10 +8143,11 @@
           "url": "https://classics.mit.edu/Homer/odyssey.3.iii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book III checked only as Pylos of Telemachus's postwar visit. 'Before the War' is intentionally an earlier-period visual interpretation, so no direct Odyssey quotation is selected.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no direct quote selected; composite/interpretive portrayal",
+      "quotationCandidate": null,
+      "quotationAuditOutcome": "The card deliberately imagines Pylos before the war, while Odyssey III depicts Telemachus's postwar visit. A direct Odyssey quotation would misstate the time layer."
     },
     {
       "sourceLabel": "Apollodorus Epitome 3.6; prewar interpretation",
@@ -8718,10 +8945,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.3.iii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book III checked: mixing-bowls, wine service and drink-offerings are explicit parts of the Pylian gathering.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-279",
+        "text": "he mixed them a bowl of sweet wine",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, Nestor hosts Telemachus",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Nestor mixes a bowl of aged wine for the household gathering.",
+        "fit": "Specific material-world flavour distinct from the common service action.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 34
+      }
     },
     {
       "sourceLabel": "Odyssey 11–12",
@@ -8760,7 +9002,7 @@
       "sourceLabel": "Odyssey 1–2; household interpretation",
       "sequence": "Consume reserves; remove choices; leave a depleted house.",
       "emotions": "Entitlement / scarcity",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Scarcity created by entitlement: stores disappear because powerful guests refuse to stop taking.",
       "hooks": "Discard two; existing material wealth softens the cost.",
       "assessment": "Keep distinct from the targeted coercion of Suitor's Extortion.",
       "id": "ODY-281",
@@ -8784,10 +9026,25 @@
           "url": "https://classics.mit.edu/Homer/odyssey.2.ii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books I–II checked: Telemachus repeatedly describes the suitors' consumption as ruinous to the estate.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-281",
+        "text": "No estate can stand such recklessness",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus on the suitors' banquets",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus says the constant banquets will ruin the household.",
+        "fit": "A clean summary of depleted stores without duplicating Suitor's Extortion's wording.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 6,
+        "characters": 37
+      }
     },
     {
       "sourceLabel": "Odyssey 12",
@@ -9158,7 +9415,7 @@
       "sourceLabel": "Odyssey 4; later reception synthesis",
       "sequence": "Tell a memory; have it contested; let repeated versions alter judgment.",
       "emotions": "Ambiguity / fascination",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Helen is both narrator and subject; every retelling alters how the listener judges her.",
       "hooks": "Legends prompt foresight; repeated scrutiny yields a card.",
       "assessment": "Exact later reception source remains to be chosen; avoid claiming one canonical motive.",
       "id": "ODY-294",
@@ -9178,7 +9435,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.4.iv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book IV baseline checked: Helen and Menelaus offer competing memories of Odysseus and shared grief. The card's later-reception synthesis still needs a specific modern/later source before flavour text can be completed.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
