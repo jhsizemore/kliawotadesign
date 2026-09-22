@@ -403,7 +403,7 @@
         "comparison": "Normal-rate benchmark: Printed front: {3}{W}{W}, 1/4. Odyssey: {1}{B}, 2/2. Recursion body; Odyssey's enchantment-only recovery is delayed until death and comes with self-mill. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
       }
     ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: type, mechanics, artReviewRequired. The swine are people held in Circe's ongoing enchantment.",
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: type, mechanics, rules, artReviewRequired. The swine are people held in Circe's ongoing enchantment.",
     "newBenchmark": null,
     "status": "first-pass component comparison; production reference refresh pending"
   },

@@ -2859,7 +2859,7 @@
       "origin": "NEW",
       "originFull": "New",
       "mechanics": "Enchantment creature; mill; enchantment recovery",
-      "rules": "When this creature dies, mill two cards, then you may return an enchantment card from your graveyard to your hand.",
+      "rules": "When this creature dies, mill two cards, then you may return another enchantment card from your graveyard to your hand.",
       "rulesSource": "14A2-live-sheet-snapshot",
       "archetypes": "BG/BR",
       "story": "Book X / Circe",
@@ -2897,6 +2897,10 @@
       "mechanics": {
         "before": "Mill / graveyard",
         "after": "Enchantment creature; mill; enchantment recovery"
+      },
+      "rules": {
+        "before": "When this creature dies, mill two cards, then you may return an enchantment card from your graveyard to your hand.",
+        "after": "When this creature dies, mill two cards, then you may return another enchantment card from your graveyard to your hand."
       },
       "artReviewRequired": {
         "before": false,
@@ -3553,7 +3557,7 @@
       "origin": "NEW",
       "originFull": "New",
       "mechanics": "Mill; small reanimation",
-      "rules": "Mill two cards, then return up to one target creature card with mana value 2 or less from your graveyard to the battlefield tapped.",
+      "rules": "Mill two cards. You may return a creature card with mana value 2 or less from your graveyard to the battlefield tapped.",
       "rulesSource": "14A2-live-sheet-snapshot",
       "archetypes": "WB/BG/UB — graveyard / rites",
       "story": "Funerary practice / libation can be directed toward the dead as remembrance and obligation without requiring a literal journey to Hades.",
@@ -3573,7 +3577,7 @@
       "productLayer": "main",
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
-      "functionalWords": 24,
+      "functionalWords": 22,
       "changeStatus": "candidate2-common-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1",
       "narrativeEra": "Homeric world",
       "storyTarget": "Funerary practice / libation can be directed toward the dead as remembrance and obligation without requiring a literal journey to Hades.",
@@ -3591,11 +3595,11 @@
       },
       "rules": {
         "before": "Mill two cards, then return up to one target creature card with mana value 2 or less from your graveyard to your hand.",
-        "after": "Mill two cards, then return up to one target creature card with mana value 2 or less from your graveyard to the battlefield tapped."
+        "after": "Mill two cards. You may return a creature card with mana value 2 or less from your graveyard to the battlefield tapped."
       },
       "functionalWords": {
         "before": 23,
-        "after": 24
+        "after": 22
       }
     },
     "existingReferenceFacts": [

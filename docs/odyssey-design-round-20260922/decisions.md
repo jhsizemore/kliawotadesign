@@ -93,3 +93,13 @@ Hunter explicitly selected actual sacrifice for the war effort and rejected the 
 Aeschylus’s *Agamemnon*, translated by E. D. A. Morshead, supports this chosen tradition: the opening chorus recounts the father’s decision, and Clytemnestra later identifies the killed daughter as grounds for vengeance. [Verified primary text](https://classics.mit.edu/Aeschylus/agamemnon.html). The spell abstracts the fleet’s advance as an attack opening and supplies; it does not claim those effects are literal story events. Art remains assigned but flagged for review.
 
 Rejected: the GW blink-and-Elk design and its Long Road Home comparison. Retained as historical evidence only in the earlier checkpoint. The new rules are a playtest proposal within the selected story direction; they are not live.
+
+## Common mechanics pass — 22 September 2026
+
+Reviewed all ten pairs against actual common rules; see `common-mechanics-audit.md` and the corresponding JSON for exact IDs and ten diagnostic 40-card lists. These lists are hand-built, not drafted or played. Exact draw probabilities measure access to early creatures only and ignore mana colours, mulligans and sequencing.
+
+Corrected two candidate defects: ODY-142 selects its small creature after milling; ODY-125 recovers another enchantment card, excluding itself after the new type change. Seventeen manual timing traces are recorded in `timing-review.md`, with source links and explicit limits.
+
+Priorities exposed by the audit: WU has only one common direct blink; manifest, turning face up and casting a foretold creature do not themselves satisfy direct enters-from-exile triggers. UB Circe does not treat enchantment creatures as enchanted. UR Omens do not feed instant/sorcery-only rewards. Blue has no common flyer for Winged Words; its discount is cross-colour or higher-rarity support. BR has only one colourless common Food source. Do not report all ten themes as sufficiently supported from counts alone.
+
+Next design actions are the WU signpost/recognition bridge and Antinous’s exploitation engine, followed by actual deck testing. Booster collation and a visible canonical Manifest Fate definition remain prerequisites for reliable draft testing.

@@ -58,6 +58,7 @@ From the repository root, run these scripts in order:
 ```sh
 python3 scripts/odyssey-design-round-audit.py
 python3 scripts/odyssey-design-round-candidate.py
+python3 scripts/odyssey-common-mechanics-audit.py
 python3 scripts/odyssey-design-round-report.py
 ```
 
@@ -79,3 +80,7 @@ private delivery. Resume from the ZIP if the transient checkout is unavailable.
 Hunter subsequently authorized the checkpoint push and WU Penelope, then explicitly rejected the Iphigenia rescue tradition. The current candidate reflects actual sacrifice. The earlier push blocker was authorization; the authorized shell retry then failed for missing Git credentials. The connected GitHub route is being used to publish the checkpoint.
 
 Publication completed through the connected GitHub account: branch `odyssey/flavour-foundation-20260922`, draft PR https://github.com/jhsizemore/kliawotadesign/pull/4, initial remote checkpoint commit `1d367e4028553365c934b13859e7d48e226c12b3`. Production remains unchanged.
+
+## Second checkpoint: common mechanics
+
+All ten pairs have a rules-based allocation and a hand-built 40-card diagnostic list. Seventeen manual timing traces distinguish analytical conclusions from played games. Candidate fixes affect ODY-125 and ODY-142; 33 changed slots and all structural totals remain fixed. Re-run the mechanics audit before the report generator. The next priority is WU recognition support and the Antinous story mismatch; see the new audit and timing documents.
