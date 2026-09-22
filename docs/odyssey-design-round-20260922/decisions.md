@@ -107,3 +107,7 @@ Next design actions are the WU signpost/recognition bridge and Antinous’s expl
 ## Recognition and Antinous pass
 
 Slots 007, 051, 090 and 056 now implement the two next priorities. The candidate has 37 changed cards (24 commons): a second common blink, face-up recognition on both WU signposts, and end-step consumption on Antinous. All 309 slots, rarity/land/layout totals and nine common enchantments remain. The new source-specific briefs, alternatives, benchmark comparisons and eleven manual interaction cases are in `recognition-and-antinous.md`. They supersede the earlier unresolved WU/Antinous items. Rates remain provisional. Next: bed and wind-bag flavour mismatches; then actual gameplay and final reference/quotation integration.
+
+## Fourth checkpoint: bed and opened wind bag
+
+ODY-213 now binds its protection and two-legend reunion draw to a chosen land; ODY-235 now sequences impulse access, red mana and land sacrifice. The candidate changes 39 slots, still 24 commons, and preserves all structural totals. `bed-and-wind-bag.md` records the source interpretations, printed comparisons and twelve manual cases, including Penelope before/after the final chapter triggers. The wind bag’s existing boar-hunt art is flagged for separate review. No played games or deployment are claimed. These designs supersede the earlier bed/wind-bag mismatch backlog. Next contract gates: remaining source/quotation work, architecture and collation, final references, gameplay testing and production integration.

@@ -88,3 +88,7 @@ All ten pairs have a rules-based allocation and a hand-built 40-card diagnostic 
 ## Third checkpoint: recognition and Antinous
 
 Recovered the exact published branch after workspace maintenance. Revised ODY-007, ODY-051, ODY-090 and ODY-056; 37 total changed slots, 24 commons. WU has two common direct-blink sources and both signposts explicitly reward face-up events. Antinous consumes household resources at the end step. Updated four briefs, comparisons, WU diagnostic deck and timing traces; no production integration or games claimed. Resume with `recognition-and-antinous.md`. The next specific redesigns are ODY-213 (immovable bed) and ODY-235 (opened wind bag).
+
+## Fourth checkpoint: bed and opened wind bag
+
+ODY-213 now binds its protection and two-legend reunion draw to a chosen land; ODY-235 now sequences impulse access, red mana and land sacrifice. The candidate changes 39 slots, still 24 commons, and preserves all structural totals. `bed-and-wind-bag.md` records the source interpretations, printed comparisons and twelve manual cases, including Penelope before/after the final chapter triggers. The wind bag’s existing boar-hunt art is flagged for separate review. No played games or deployment are claimed. These designs supersede the earlier bed/wind-bag mismatch backlog. Next contract gates: remaining source/quotation work, architecture and collation, final references, gameplay testing and production integration.

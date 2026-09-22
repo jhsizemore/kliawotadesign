@@ -159,6 +159,46 @@
       "scryfall_uri": "https://scryfall.com/card/mh2/211/ravenous-squirrel?utm_source=api",
       "released_at": "2021-06-18"
     },
+    "Flowering of the White Tree": {
+      "name": "Flowering of the White Tree",
+      "mana_cost": "{W}{W}",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "Legendary creatures you control get +2/+1 and have ward {1}.\nNonlegendary creatures you control get +1/+1.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/ltr/15/flowering-of-the-white-tree?utm_source=api",
+      "released_at": "2023-06-23"
+    },
+    "Tome of Legends": {
+      "name": "Tome of Legends",
+      "mana_cost": "{2}",
+      "type_line": "Artifact — Book",
+      "oracle_text": "This artifact enters with a page counter on it.\nWhenever your commander enters or attacks, put a page counter on this artifact.\n{1}, {T}, Remove a page counter from this artifact: Draw a card.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/msc/223/tome-of-legends?utm_source=api",
+      "released_at": "2026-06-26"
+    },
+    "Reckless Impulse": {
+      "name": "Reckless Impulse",
+      "mana_cost": "{1}{R}",
+      "type_line": "Sorcery",
+      "oracle_text": "Exile the top two cards of your library. Until the end of your next turn, you may play those cards.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/vow/174/reckless-impulse?utm_source=api",
+      "released_at": "2021-11-19"
+    },
+    "Seething Song": {
+      "name": "Seething Song",
+      "mana_cost": "{2}{R}",
+      "type_line": "Instant",
+      "oracle_text": "Add {R}{R}{R}{R}{R}.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/c21/179/seething-song?utm_source=api",
+      "released_at": "2021-04-23"
+    },
     "Omen of the Dead": {
       "name": "Omen of the Dead",
       "mana_cost": "{B}",

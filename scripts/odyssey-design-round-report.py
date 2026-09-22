@@ -26,7 +26,7 @@ def sources(label):
  return []
 verified={1,5,7,8,11,13,14,15,23,26,31,35,36,37,41,49,50,77,80,88,107,110,111,116,125,129,144,153,174,184,199,215,221,223,232,235,243,244,245,246,275,287,292,296,304,305}
 verified.remove(144)
-verified.update({51,56,90})
+verified.update({51,56,90,213})
 briefs=[]
 for c in cards:
  b=authored[c['number']];b.update({'id':c['id'],'number':c['number'],'name':c['displayName'] or c['name'],'rarity':c['rarity'],'color':c['color'],'currentType':c['type'],'currentMana':c['mana'],'currentRules':c['rules'],'baselineStoryElement':c.get('flavorStoryElement',''),'baselineScore':c.get('flavorMatchScore'),'baselineRationale':c.get('flavorMatchRationale',''),'sources':sources(b['sourceLabel']),'sourceReview':'key passage checked; mechanical interpretation remains editorial' if c['number'] in verified else 'source mapped; detailed passage review pending','briefStatus':'first-pass','quoteStatus':'missing'});briefs.append(b)
@@ -48,6 +48,8 @@ factsrc=OUT/'inputs/new-reference-facts.json'; extra=json.loads(factsrc.read_tex
 omens=json.loads((OUT/'inputs/omens.json').read_text())['data']
 for c in omens:extra[c['name']]={k:c.get(k) for k in ['name','mana_cost','type_line','oracle_text','power','toughness','scryfall_uri','released_at']}
 comparisons={
+213:('Flowering of the White Tree','One more generic mana than the two-white enchantment; retains ward {1} for legendary creatures but gives no power/toughness boost. Instead, the artifact protects itself and draws at your end step with two legendary creatures, all conditional on retaining one chosen land. Tome of Legends provides a cheaper but counter- and activation-limited draw comparison. Test colourless access and repeated free draws; the old blink benchmarks no longer describe this design.'),
+235:('Reckless Impulse','One more mana than Reckless Impulse for the same initial two-card access window, followed next turn by three red mana and then a land sacrifice. Seething Song gives five red mana immediately at the same mana value; this Saga exchanges that immediacy for card access and a delayed liability. Counter removal or early sacrifice can avoid chapter III, so the land loss is not a guaranteed balancing cost.'),
 7:('Cloudshift','Costs one mana more, returns tapped rather than untapped, and adds two life. The rest condition limits immediate combat use; repeated enter effects and revealing manifested permanents remain important. Ephemerate offers a stronger repeated-blink ceiling without life gain.'),
 51:('Secret Plans','A three-mana 2/3 with two tempo triggers, compared with a two-mana enchantment that draws on face-up events. The candidate exchanges cards and passive toughness for a body, library-exile tapping and a recognition untap capped once each turn.'),
 90:('Secret Plans','A two-mana 2/2 with an additional paid Adventure. Face-up or direct-return events give an untap and counter once each turn instead of Secret Plans’ unrestricted face-up draw. Do not count the Adventure’s manifest action itself as turning face up.'),

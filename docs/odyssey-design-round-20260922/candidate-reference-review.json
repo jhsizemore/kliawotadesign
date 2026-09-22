@@ -1181,5 +1181,79 @@
       "released_at": "2021-06-18"
     },
     "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-213",
+    "currentComparison": [
+      {
+        "name": "Conjurer's Closet",
+        "mana": "{5}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/inr/259/conjurers-closet?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {5}. Odyssey: {3}. Repeatable blink engine; Odyssey requires legendary targets and mana but adds card draw and ward. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Golden Argosy",
+        "mana": "{4}",
+        "pt": "3/6",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/dmu/230/golden-argosy?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {4}, 3/6. Odyssey: {3}. Repeatable blink engine; Odyssey requires legendary targets and mana but adds card draw and ward. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "One more generic mana than the two-white enchantment; retains ward {1} for legendary creatures but gives no power/toughness boost. Instead, the artifact protects itself and draws at your end step with two legendary creatures, all conditional on retaining one chosen land. Tome of Legends provides a cheaper but counter- and activation-limited draw comparison. Test colourless access and repeated free draws; the old blink benchmarks no longer describe this design.",
+    "newBenchmark": {
+      "name": "Flowering of the White Tree",
+      "mana_cost": "{W}{W}",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "Legendary creatures you control get +2/+1 and have ward {1}.\nNonlegendary creatures you control get +1/+1.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/ltr/15/flowering-of-the-white-tree?utm_source=api",
+      "released_at": "2023-06-23"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-235",
+    "currentComparison": [
+      {
+        "name": "Fable of the Mirror-Breaker // Reflection of Kiki-Jiki",
+        "mana": "{2}{R}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/neo/141/fable-of-the-mirror-breaker-reflection-of-kiki-jiki?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {2}{R}. Odyssey: {2}{R}. Three-mana red Saga resource pacing; Odyssey's first chapter has no permission to play the exiled cards, so do not count those as cards drawn. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "The Flame of Keld",
+        "mana": "{1}{R}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/dom/123/the-flame-of-keld?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {1}{R}. Odyssey: {2}{R}. Three-mana red Saga resource pacing; Odyssey's first chapter has no permission to play the exiled cards, so do not count those as cards drawn. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "One more mana than Reckless Impulse for the same initial two-card access window, followed next turn by three red mana and then a land sacrifice. Seething Song gives five red mana immediately at the same mana value; this Saga exchanges that immediacy for card access and a delayed liability. Counter removal or early sacrifice can avoid chapter III, so the land loss is not a guaranteed balancing cost.",
+    "newBenchmark": {
+      "name": "Reckless Impulse",
+      "mana_cost": "{1}{R}",
+      "type_line": "Sorcery",
+      "oracle_text": "Exile the top two cards of your library. Until the end of your next turn, you may play those cards.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/vow/174/reckless-impulse?utm_source=api",
+      "released_at": "2021-11-19"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
   }
 ]

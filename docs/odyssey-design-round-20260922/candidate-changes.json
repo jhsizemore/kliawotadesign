@@ -10129,5 +10129,777 @@
       "Ravenous Squirrel"
     ],
     "referenceStatus": "Current-design references preserved as baseline evidence; updated candidate comparisons are provisional."
+  },
+  {
+    "id": "ODY-213",
+    "slot": 213,
+    "reason": "Replace repeated disappearance with a bond to the household ground and a reward for reunion.",
+    "playtestQuestion": "Is three mana too efficient for a protected draw engine in legend-dense Commander decks? Test chosen-land tracking, removal windows and the two-creature threshold.",
+    "before": {
+      "id": "ODY-213",
+      "number": 213,
+      "name": "Olive-Wood Bed of Ithaca",
+      "displayName": "Olive-Wood Bed of Ithaca",
+      "underlyingName": "",
+      "mana": "{3}",
+      "mv": 3,
+      "color": "C",
+      "frame": "C",
+      "type": "Legendary Artifact",
+      "pt": "",
+      "rarity": "M",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Recognition / home / blink",
+      "rules": "Legendary creatures you control have ward {1}. {3}, {T}: Exile another legendary permanent you control, then return it to the battlefield under its owner's control at the beginning of the next end step. When it returns this way, draw a card.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "WUR/WU/WB",
+      "story": "Book XXIII / the immovable marriage bed",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "standard",
+      "primaryArt": "ART-435",
+      "credit": "Art: Theodoor van Thulden, after Primaticcio · Rijksmuseum",
+      "source": "https://commons.wikimedia.org/wiki/File:Odysseus_en_Penelope_op_weg_naar_bed_De_werken_van_Odysseus_(serietitel),_RP-P-OB-66.778.jpg",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Odysseus_en_Penelope_op_weg_naar_bed_De_werken_van_Odysseus_(serietitel),_RP-P-OB-66.778.jpg",
+      "skeletonClass": "standard",
+      "cycleIds": [
+        "story.reconciliation"
+      ],
+      "showcase": [
+        "extended-art-legend"
+      ],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "",
+      "functionalWords": 39,
+      "changeStatus": "carried-from-analysis-candidate-v1 · art-sweep-v2 · art-p2-direct-v2 · text-locale-refinement-v1 · reference-qa-v1 · template-cleanup-v1",
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Book XXIII / the immovable marriage bed",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey Books I–XXIV",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Book XXIII / the immovable marriage bed",
+      "flavorMatchScore": 5,
+      "flavorMatchRationale": "Excellent match: Recognition / home / blink directly dramatizes a defining feature of Book XXIII / the immovable marriage bed."
+    },
+    "after": {
+      "id": "ODY-213",
+      "number": 213,
+      "name": "Olive-Wood Bed of Ithaca",
+      "displayName": "Olive-Wood Bed of Ithaca",
+      "underlyingName": "",
+      "mana": "{3}",
+      "mv": 3,
+      "color": "C",
+      "frame": "C",
+      "type": "Legendary Artifact",
+      "pt": "",
+      "rarity": "M",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Chosen land; hexproof; legendary ward; reunion draw",
+      "rules": "As this artifact enters, choose a land you control.\nAs long as you control the chosen land, this artifact has hexproof and legendary creatures you control have ward {1}.\nAt the beginning of your end step, if you control the chosen land and two or more legendary creatures, draw a card.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "WUR/WU/WB",
+      "story": "Book XXIII / the immovable marriage bed",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "standard",
+      "primaryArt": "ART-435",
+      "credit": "Art: Theodoor van Thulden, after Primaticcio · Rijksmuseum",
+      "source": "https://commons.wikimedia.org/wiki/File:Odysseus_en_Penelope_op_weg_naar_bed_De_werken_van_Odysseus_(serietitel),_RP-P-OB-66.778.jpg",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Odysseus_en_Penelope_op_weg_naar_bed_De_werken_van_Odysseus_(serietitel),_RP-P-OB-66.778.jpg",
+      "skeletonClass": "standard",
+      "cycleIds": [
+        "story.reconciliation"
+      ],
+      "showcase": [
+        "extended-art-legend"
+      ],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "",
+      "functionalWords": 51,
+      "changeStatus": "carried-from-analysis-candidate-v1 · art-sweep-v2 · art-p2-direct-v2 · text-locale-refinement-v1 · reference-qa-v1 · template-cleanup-v1",
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Book XXIII / the immovable marriage bed",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey Book XXIII / the rooted bed and recognition test",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Odysseus built the marriage bed around an olive trunk. Penelope tests his identity by ordering it moved; his knowledge of its construction proves their shared history.",
+      "flavorMatchScore": 4,
+      "flavorMatchRationale": "A particular land anchors the protection and reunion reward; losing that land disables them. Two legendary creatures stand for the reunited couple. Hexproof and card draw are gameplay abstractions; the design does not prohibit all movement or require the specific spouses."
+    },
+    "changedFields": {
+      "mechanics": {
+        "before": "Recognition / home / blink",
+        "after": "Chosen land; hexproof; legendary ward; reunion draw"
+      },
+      "rules": {
+        "before": "Legendary creatures you control have ward {1}. {3}, {T}: Exile another legendary permanent you control, then return it to the battlefield under its owner's control at the beginning of the next end step. When it returns this way, draw a card.",
+        "after": "As this artifact enters, choose a land you control.\nAs long as you control the chosen land, this artifact has hexproof and legendary creatures you control have ward {1}.\nAt the beginning of your end step, if you control the chosen land and two or more legendary creatures, draw a card."
+      },
+      "functionalWords": {
+        "before": 39,
+        "after": 51
+      },
+      "storySourceBand": {
+        "before": "Odyssey Books I–XXIV",
+        "after": "Odyssey Book XXIII / the rooted bed and recognition test"
+      },
+      "flavorStoryElement": {
+        "before": "Book XXIII / the immovable marriage bed",
+        "after": "Odysseus built the marriage bed around an olive trunk. Penelope tests his identity by ordering it moved; his knowledge of its construction proves their shared history."
+      },
+      "flavorMatchScore": {
+        "before": 5,
+        "after": 4
+      },
+      "flavorMatchRationale": {
+        "before": "Excellent match: Recognition / home / blink directly dramatizes a defining feature of Book XXIII / the immovable marriage bed.",
+        "after": "A particular land anchors the protection and reunion reward; losing that land disables them. Two legendary creatures stand for the reunited couple. Hexproof and card draw are gameplay abstractions; the design does not prohibit all movement or require the specific spouses."
+      }
+    },
+    "existingReferenceFacts": [
+      {
+        "role": "rate-best",
+        "roles": [
+          "rate-best"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Best-rate benchmark: Printed front: {5}. Odyssey: {3}. Repeatable blink engine; Odyssey requires legendary targets and mana but adds card draw and ward. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent.",
+        "notes": [
+          {
+            "role": "rate-best",
+            "text": "Best-rate benchmark: Printed front: {5}. Odyssey: {3}. Repeatable blink engine; Odyssey requires legendary targets and mana but adds card draw and ward. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "af2115e4-009e-4432-99bb-05e844bc18b6",
+          "oracleId": "cd1eda60-53e4-44d0-9b2c-7a57395e291f",
+          "name": "Conjurer's Closet",
+          "manaCost": "{5}",
+          "manaValue": 5.0,
+          "type": "Artifact",
+          "oracleText": "At the beginning of your end step, you may exile target creature you control, then return that card to the battlefield under your control.",
+          "power": "",
+          "toughness": "",
+          "colors": [],
+          "colorIdentity": [],
+          "keywords": [],
+          "rarity": "rare",
+          "set": "inr",
+          "setName": "Innistrad Remastered",
+          "collectorNumber": "259",
+          "releasedAt": "2025-01-24",
+          "scryfallUri": "https://scryfall.com/card/inr/259/conjurers-closet?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/a/f/af2115e4-009e-4432-99bb-05e844bc18b6.jpg?1783908066",
+            "normal": "https://cards.scryfall.io/normal/front/a/f/af2115e4-009e-4432-99bb-05e844bc18b6.jpg?1783908066",
+            "large": "https://cards.scryfall.io/large/front/a/f/af2115e4-009e-4432-99bb-05e844bc18b6.jpg?1783908066",
+            "png": "https://cards.scryfall.io/png/front/a/f/af2115e4-009e-4432-99bb-05e844bc18b6.png?1783908066",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/a/f/af2115e4-009e-4432-99bb-05e844bc18b6.jpg?1783908066"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "rate-normal",
+        "roles": [
+          "rate-normal"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Normal-rate benchmark: Printed front: {4}, 3/6. Odyssey: {3}. Repeatable blink engine; Odyssey requires legendary targets and mana but adds card draw and ward. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone.",
+        "notes": [
+          {
+            "role": "rate-normal",
+            "text": "Normal-rate benchmark: Printed front: {4}, 3/6. Odyssey: {3}. Repeatable blink engine; Odyssey requires legendary targets and mana but adds card draw and ward. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "f8611a53-e54e-4625-8e28-03511f1550e8",
+          "oracleId": "b636a16d-f5ca-443d-8e6f-a2c240700c36",
+          "name": "Golden Argosy",
+          "manaCost": "{4}",
+          "manaValue": 4.0,
+          "type": "Legendary Artifact — Vehicle",
+          "oracleText": "Whenever Golden Argosy attacks, exile each creature that crewed it this turn. Return them to the battlefield tapped under their owner's control at the beginning of the next end step.\nCrew 1 (Tap any number of creatures you control with total power 1 or more: This Vehicle becomes an artifact creature until end of turn.)",
+          "power": "3",
+          "toughness": "6",
+          "colors": [],
+          "colorIdentity": [],
+          "keywords": [
+            "Crew"
+          ],
+          "rarity": "rare",
+          "set": "dmu",
+          "setName": "Dominaria United",
+          "collectorNumber": "230",
+          "releasedAt": "2022-09-09",
+          "scryfallUri": "https://scryfall.com/card/dmu/230/golden-argosy?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/f/8/f8611a53-e54e-4625-8e28-03511f1550e8.jpg?1783921270",
+            "normal": "https://cards.scryfall.io/normal/front/f/8/f8611a53-e54e-4625-8e28-03511f1550e8.jpg?1783921270",
+            "large": "https://cards.scryfall.io/large/front/f/8/f8611a53-e54e-4625-8e28-03511f1550e8.jpg?1783921270",
+            "png": "https://cards.scryfall.io/png/front/f/8/f8611a53-e54e-4625-8e28-03511f1550e8.png?1783921270",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/f/8/f8611a53-e54e-4625-8e28-03511f1550e8.jpg?1783921270"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "buildaround",
+        "roles": [
+          "buildaround"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Build-around / interesting spin: Repeatable blink on casting can create loops; compare its trigger freedom with Odyssey's timing and mana restrictions.",
+        "notes": [
+          {
+            "role": "buildaround",
+            "text": "Build-around / interesting spin: Repeatable blink on casting can create loops; compare its trigger freedom with Odyssey's timing and mana restrictions."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "c7a401b8-29fb-46ef-a663-427f66724d5c",
+          "oracleId": "09ef446c-a13d-49d9-a94c-cd5f5a2d440b",
+          "name": "Displacer Kitten",
+          "manaCost": "{3}{U}",
+          "manaValue": 4.0,
+          "type": "Creature — Cat Beast",
+          "oracleText": "Avoidance — Whenever you cast a noncreature spell, exile up to one target nonland permanent you control, then return that card to the battlefield under its owner's control.",
+          "power": "2",
+          "toughness": "2",
+          "colors": [
+            "U"
+          ],
+          "colorIdentity": [
+            "U"
+          ],
+          "keywords": [
+            "Avoidance"
+          ],
+          "rarity": "rare",
+          "set": "clb",
+          "setName": "Commander Legends: Battle for Baldur's Gate",
+          "collectorNumber": "63",
+          "releasedAt": "2022-06-10",
+          "scryfallUri": "https://scryfall.com/card/clb/63/displacer-kitten?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/c/7/c7a401b8-29fb-46ef-a663-427f66724d5c.jpg?1783922795",
+            "normal": "https://cards.scryfall.io/normal/front/c/7/c7a401b8-29fb-46ef-a663-427f66724d5c.jpg?1783922795",
+            "large": "https://cards.scryfall.io/large/front/c/7/c7a401b8-29fb-46ef-a663-427f66724d5c.jpg?1783922795",
+            "png": "https://cards.scryfall.io/png/front/c/7/c7a401b8-29fb-46ef-a663-427f66724d5c.png?1783922795",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/c/7/c7a401b8-29fb-46ef-a663-427f66724d5c.jpg?1783922795"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "buildaround",
+        "roles": [
+          "buildaround"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Build-around / interesting spin: Blink-linked exile and temporary tokens show a more elaborate return engine and associated loop risk.",
+        "notes": [
+          {
+            "role": "buildaround",
+            "text": "Build-around / interesting spin: Blink-linked exile and temporary tokens show a more elaborate return engine and associated loop risk."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "396f9198-67b6-45d8-91b4-dc853bff9623",
+          "oracleId": "cab092f9-b7ff-43b9-935f-310869a4daf8",
+          "name": "Abdel Adrian, Gorion's Ward",
+          "manaCost": "{4}{W}",
+          "manaValue": 5.0,
+          "type": "Legendary Creature — Human Warrior",
+          "oracleText": "When Abdel Adrian enters, exile any number of other nonland permanents you control until Abdel Adrian leaves the battlefield. Create a 1/1 white Soldier creature token for each permanent exiled this way.\nChoose a Background (You can have a Background as a second commander.)",
+          "power": "4",
+          "toughness": "4",
+          "colors": [
+            "W"
+          ],
+          "colorIdentity": [
+            "W"
+          ],
+          "keywords": [
+            "Choose a background"
+          ],
+          "rarity": "uncommon",
+          "set": "clb",
+          "setName": "Commander Legends: Battle for Baldur's Gate",
+          "collectorNumber": "2",
+          "releasedAt": "2022-06-10",
+          "scryfallUri": "https://scryfall.com/card/clb/2/abdel-adrian-gorions-ward?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/3/9/396f9198-67b6-45d8-91b4-dc853bff9623.jpg?1783922823",
+            "normal": "https://cards.scryfall.io/normal/front/3/9/396f9198-67b6-45d8-91b4-dc853bff9623.jpg?1783922823",
+            "large": "https://cards.scryfall.io/large/front/3/9/396f9198-67b6-45d8-91b4-dc853bff9623.jpg?1783922823",
+            "png": "https://cards.scryfall.io/png/front/3/9/396f9198-67b6-45d8-91b4-dc853bff9623.png?1783922823",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/3/9/396f9198-67b6-45d8-91b4-dc853bff9623.jpg?1783922823"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      }
+    ],
+    "newReferencesToVerify": [
+      "Flowering of the White Tree",
+      "Tome of Legends"
+    ],
+    "referenceStatus": "Current-design references preserved as baseline evidence; updated candidate comparisons are provisional."
+  },
+  {
+    "id": "ODY-235",
+    "slot": 235,
+    "reason": "Give the opened bag an actual cost in enduring progress, and depict its contents as wind rather than real treasure.",
+    "playtestQuestion": "Does the delayed land loss make this unattractive without counter manipulation, or too efficient when chapter III is avoided? Test Penelope and other ways to repeat chapter II.",
+    "before": {
+      "id": "ODY-235",
+      "number": 235,
+      "name": "The Bag Is Opened",
+      "displayName": "The Bag Is Opened",
+      "underlyingName": "",
+      "mana": "{2}{R}",
+      "mv": 3,
+      "color": "R",
+      "frame": "R",
+      "type": "Enchantment — Saga",
+      "pt": "",
+      "rarity": "R",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Saga",
+      "rules": "I — Exile the top two cards of your library.\nII — Create two Treasure tokens.\nIII — Sacrifice any number of Treasures. This enchantment deals that much damage to any target.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "BR/UR/RW",
+      "story": "Book X / the crew opens Aeolus's bag",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "saga",
+      "primaryArt": "ART-057",
+      "credit": "Art: “River Landscape with Boar Hunt” · Joos de Momper II · Rijksmuseum",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/River-Landscape-with-Boar-Hunt--fcf7271fc6ffc268c9222562a101b183",
+      "imageUrl": "",
+      "skeletonClass": "saga",
+      "cycleIds": [
+        "ff-analog-saga-fifteen",
+        "story.aeolus"
+      ],
+      "showcase": [
+        "greek-vase-showcase"
+      ],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "",
+      "functionalWords": 29,
+      "changeStatus": "rebuilt-ff-saga-structure · templating-v1 · reference-qa-v1 · template-cleanup-v1",
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Book X / the crew opens Aeolus's bag",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey Books I–XXIV",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Book X / the crew opens Aeolus's bag",
+      "flavorMatchScore": 5,
+      "flavorMatchRationale": "Excellent match: Saga directly dramatizes a defining feature of Book X / the crew opens Aeolus's bag."
+    },
+    "after": {
+      "id": "ODY-235",
+      "number": 235,
+      "name": "The Bag Is Opened",
+      "displayName": "The Bag Is Opened",
+      "underlyingName": "",
+      "mana": "{2}{R}",
+      "mv": 3,
+      "color": "R",
+      "frame": "R",
+      "type": "Enchantment — Saga",
+      "pt": "",
+      "rarity": "R",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Saga; impulse access; ritual mana; land sacrifice",
+      "rules": "I — Exile the top two cards of your library. Until the end of your next turn, you may play those cards.\nII — Add {R}{R}{R}.\nIII — Sacrifice a land.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "BR/UR/RW",
+      "story": "Book X / the crew opens Aeolus's bag",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "saga",
+      "primaryArt": "ART-057",
+      "credit": "Art: “River Landscape with Boar Hunt” · Joos de Momper II · Rijksmuseum",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/River-Landscape-with-Boar-Hunt--fcf7271fc6ffc268c9222562a101b183",
+      "imageUrl": "",
+      "skeletonClass": "saga",
+      "cycleIds": [
+        "ff-analog-saga-fifteen",
+        "story.aeolus"
+      ],
+      "showcase": [
+        "greek-vase-showcase"
+      ],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "",
+      "functionalWords": 31,
+      "changeStatus": "rebuilt-ff-saga-structure · templating-v1 · reference-qa-v1 · template-cleanup-v1",
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Book X / the crew opens Aeolus's bag",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey Book X / Aeolus and the opened bag",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Within sight of home, the crew mistakes Aeolus’s bag of winds for hidden wealth. Opening it releases a storm that drives the ships back to Aeolus, who refuses further help.",
+      "flavorMatchScore": 4,
+      "flavorMatchRationale": "Temporary access tempts the player, a mana burst represents released force, and land sacrifice removes durable progress. These are game abstractions: the crew finds no actual treasure and no literal island is destroyed. Counter manipulation can postpone the price, so catastrophe is not guaranteed by this text."
+    },
+    "changedFields": {
+      "mechanics": {
+        "before": "Saga",
+        "after": "Saga; impulse access; ritual mana; land sacrifice"
+      },
+      "rules": {
+        "before": "I — Exile the top two cards of your library.\nII — Create two Treasure tokens.\nIII — Sacrifice any number of Treasures. This enchantment deals that much damage to any target.",
+        "after": "I — Exile the top two cards of your library. Until the end of your next turn, you may play those cards.\nII — Add {R}{R}{R}.\nIII — Sacrifice a land."
+      },
+      "functionalWords": {
+        "before": 29,
+        "after": 31
+      },
+      "storySourceBand": {
+        "before": "Odyssey Books I–XXIV",
+        "after": "Odyssey Book X / Aeolus and the opened bag"
+      },
+      "flavorStoryElement": {
+        "before": "Book X / the crew opens Aeolus's bag",
+        "after": "Within sight of home, the crew mistakes Aeolus’s bag of winds for hidden wealth. Opening it releases a storm that drives the ships back to Aeolus, who refuses further help."
+      },
+      "flavorMatchScore": {
+        "before": 5,
+        "after": 4
+      },
+      "flavorMatchRationale": {
+        "before": "Excellent match: Saga directly dramatizes a defining feature of Book X / the crew opens Aeolus's bag.",
+        "after": "Temporary access tempts the player, a mana burst represents released force, and land sacrifice removes durable progress. These are game abstractions: the crew finds no actual treasure and no literal island is destroyed. Counter manipulation can postpone the price, so catastrophe is not guaranteed by this text."
+      }
+    },
+    "existingReferenceFacts": [
+      {
+        "role": "rate-best",
+        "roles": [
+          "rate-best"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Best-rate benchmark: Printed front: {2}{R}. Odyssey: {2}{R}. Three-mana red Saga resource pacing; Odyssey's first chapter has no permission to play the exiled cards, so do not count those as cards drawn. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent.",
+        "notes": [
+          {
+            "role": "rate-best",
+            "text": "Best-rate benchmark: Printed front: {2}{R}. Odyssey: {2}{R}. Three-mana red Saga resource pacing; Odyssey's first chapter has no permission to play the exiled cards, so do not count those as cards drawn. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "24c0d87b-0049-4beb-b9cb-6f813b7aa7dc",
+          "oracleId": "c0957e5e-c71b-439c-931c-9f55d2f76ace",
+          "name": "Fable of the Mirror-Breaker // Reflection of Kiki-Jiki",
+          "manaCost": "{2}{R}",
+          "manaValue": 3.0,
+          "type": "Enchantment — Saga // Enchantment Creature — Goblin Shaman",
+          "oracleText": "Fable of the Mirror-Breaker\n(As this Saga enters and after your draw step, add a lore counter.)\nI — Create a 2/2 red Goblin Shaman creature token with \"Whenever this token attacks, create a Treasure token.\"\nII — You may discard up to two cards. If you do, draw that many cards.\nIII — Exile this Saga, then return it to the battlefield transformed under your control.\n//\nReflection of Kiki-Jiki\n{1}, {T}: Create a token that's a copy of another target nonlegendary creature you control, except it has haste. Sacrifice it at the beginning of the next end step.",
+          "power": "",
+          "toughness": "",
+          "colors": [
+            "R"
+          ],
+          "colorIdentity": [
+            "R"
+          ],
+          "keywords": [
+            "Transform",
+            "Treasure"
+          ],
+          "rarity": "rare",
+          "set": "neo",
+          "setName": "Kamigawa: Neon Dynasty",
+          "collectorNumber": "141",
+          "releasedAt": "2022-02-18",
+          "scryfallUri": "https://scryfall.com/card/neo/141/fable-of-the-mirror-breaker-reflection-of-kiki-jiki?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+            "normal": "https://cards.scryfall.io/normal/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+            "large": "https://cards.scryfall.io/large/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+            "png": "https://cards.scryfall.io/png/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.png?1783923875",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875"
+          },
+          "layout": "transform",
+          "faces": [
+            {
+              "name": "Fable of the Mirror-Breaker",
+              "manaCost": "{2}{R}",
+              "type": "Enchantment — Saga",
+              "oracleText": "(As this Saga enters and after your draw step, add a lore counter.)\nI — Create a 2/2 red Goblin Shaman creature token with \"Whenever this token attacks, create a Treasure token.\"\nII — You may discard up to two cards. If you do, draw that many cards.\nIII — Exile this Saga, then return it to the battlefield transformed under your control.",
+              "power": "",
+              "toughness": "",
+              "images": {
+                "small": "https://cards.scryfall.io/small/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+                "normal": "https://cards.scryfall.io/normal/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+                "large": "https://cards.scryfall.io/large/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+                "png": "https://cards.scryfall.io/png/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.png?1783923875",
+                "art_crop": "https://cards.scryfall.io/art_crop/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+                "border_crop": "https://cards.scryfall.io/border_crop/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+                "thumb": "https://cards.scryfall.io/thumb/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.webp?1783923875",
+                "grid": "https://cards.scryfall.io/grid/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.webp?1783923875",
+                "display": "https://cards.scryfall.io/display/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.webp?1783923875",
+                "art": "https://cards.scryfall.io/art/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.webp?1783923875",
+                "crop": "https://cards.scryfall.io/crop/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.webp?1783923875"
+              }
+            },
+            {
+              "name": "Reflection of Kiki-Jiki",
+              "manaCost": "",
+              "type": "Enchantment Creature — Goblin Shaman",
+              "oracleText": "{1}, {T}: Create a token that's a copy of another target nonlegendary creature you control, except it has haste. Sacrifice it at the beginning of the next end step.",
+              "power": "2",
+              "toughness": "2",
+              "images": {
+                "small": "https://cards.scryfall.io/small/back/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+                "normal": "https://cards.scryfall.io/normal/back/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+                "large": "https://cards.scryfall.io/large/back/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+                "png": "https://cards.scryfall.io/png/back/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.png?1783923875",
+                "art_crop": "https://cards.scryfall.io/art_crop/back/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+                "border_crop": "https://cards.scryfall.io/border_crop/back/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1783923875",
+                "thumb": "https://cards.scryfall.io/thumb/back/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.webp?1783923875",
+                "grid": "https://cards.scryfall.io/grid/back/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.webp?1783923875",
+                "display": "https://cards.scryfall.io/display/back/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.webp?1783923875",
+                "art": "https://cards.scryfall.io/art/back/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.webp?1783923875",
+                "crop": "https://cards.scryfall.io/crop/back/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.webp?1783923875"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "role": "rate-normal",
+        "roles": [
+          "rate-normal"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Normal-rate benchmark: Printed front: {1}{R}. Odyssey: {2}{R}. Three-mana red Saga resource pacing; Odyssey's first chapter has no permission to play the exiled cards, so do not count those as cards drawn. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone.",
+        "notes": [
+          {
+            "role": "rate-normal",
+            "text": "Normal-rate benchmark: Printed front: {1}{R}. Odyssey: {2}{R}. Three-mana red Saga resource pacing; Odyssey's first chapter has no permission to play the exiled cards, so do not count those as cards drawn. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "324399ed-3d6e-4b4c-8f3d-b7802e2ecadf",
+          "oracleId": "26b41c78-c5ee-4c50-93be-e3acc35ab355",
+          "name": "The Flame of Keld",
+          "manaCost": "{1}{R}",
+          "manaValue": 2.0,
+          "type": "Enchantment — Saga",
+          "oracleText": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Discard your hand.\nII — Draw two cards.\nIII — If a red source you control would deal damage to a permanent or player this turn, it deals that much damage plus 2 to that permanent or player instead.",
+          "power": "",
+          "toughness": "",
+          "colors": [
+            "R"
+          ],
+          "colorIdentity": [
+            "R"
+          ],
+          "keywords": [],
+          "rarity": "uncommon",
+          "set": "dom",
+          "setName": "Dominaria",
+          "collectorNumber": "123",
+          "releasedAt": "2018-04-27",
+          "scryfallUri": "https://scryfall.com/card/dom/123/the-flame-of-keld?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/3/2/324399ed-3d6e-4b4c-8f3d-b7802e2ecadf.jpg?1783934995",
+            "normal": "https://cards.scryfall.io/normal/front/3/2/324399ed-3d6e-4b4c-8f3d-b7802e2ecadf.jpg?1783934995",
+            "large": "https://cards.scryfall.io/large/front/3/2/324399ed-3d6e-4b4c-8f3d-b7802e2ecadf.jpg?1783934995",
+            "png": "https://cards.scryfall.io/png/front/3/2/324399ed-3d6e-4b4c-8f3d-b7802e2ecadf.png?1783934995",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/3/2/324399ed-3d6e-4b4c-8f3d-b7802e2ecadf.jpg?1783934995"
+          },
+          "layout": "saga",
+          "faces": []
+        }
+      },
+      {
+        "role": "tech",
+        "roles": [
+          "tech"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Mechanic / set-tech precedent: Saga chapter timing, lore counters and sacrifice after the final chapter. Compare each chapter separately from the aggregate mana rate.",
+        "notes": [
+          {
+            "role": "tech",
+            "text": "Mechanic / set-tech precedent: Saga chapter timing, lore counters and sacrifice after the final chapter. Compare each chapter separately from the aggregate mana rate."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "4d29351e-5608-40e8-8220-6c9635d48ad4",
+          "oracleId": "44ed4c0c-a012-4895-a547-b04150553bba",
+          "name": "The Eldest Reborn",
+          "manaCost": "{4}{B}",
+          "manaValue": 5.0,
+          "type": "Enchantment — Saga",
+          "oracleText": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI — Each opponent sacrifices a creature or planeswalker of their choice.\nII — Each opponent discards a card.\nIII — Put target creature or planeswalker card from a graveyard onto the battlefield under your control.",
+          "power": "",
+          "toughness": "",
+          "colors": [
+            "B"
+          ],
+          "colorIdentity": [
+            "B"
+          ],
+          "keywords": [],
+          "rarity": "uncommon",
+          "set": "dsc",
+          "setName": "Duskmourn: House of Horror Commander",
+          "collectorNumber": "139",
+          "releasedAt": "2024-09-27",
+          "scryfallUri": "https://scryfall.com/card/dsc/139/the-eldest-reborn?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/4/d/4d29351e-5608-40e8-8220-6c9635d48ad4.jpg?1783909619",
+            "normal": "https://cards.scryfall.io/normal/front/4/d/4d29351e-5608-40e8-8220-6c9635d48ad4.jpg?1783909619",
+            "large": "https://cards.scryfall.io/large/front/4/d/4d29351e-5608-40e8-8220-6c9635d48ad4.jpg?1783909619",
+            "png": "https://cards.scryfall.io/png/front/4/d/4d29351e-5608-40e8-8220-6c9635d48ad4.png?1783909619",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/4/d/4d29351e-5608-40e8-8220-6c9635d48ad4.jpg?1783909619"
+          },
+          "layout": "saga",
+          "faces": []
+        }
+      },
+      {
+        "role": "buildaround",
+        "roles": [
+          "buildaround"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Build-around / interesting spin: Removing a lore counter can delay Saga completion and repeat chapters; check the payoff for doing so.",
+        "notes": [
+          {
+            "role": "buildaround",
+            "text": "Build-around / interesting spin: Removing a lore counter can delay Saga completion and repeat chapters; check the payoff for doing so."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "6c359b1a-d441-4763-96c7-e5c010eae53f",
+          "oracleId": "f91407fe-3c3b-4ffc-81de-cb8c5b0fe526",
+          "name": "Chisei, Heart of Oceans",
+          "manaCost": "{2}{U}{U}",
+          "manaValue": 4.0,
+          "type": "Legendary Creature — Spirit",
+          "oracleText": "Flying\nAt the beginning of your upkeep, sacrifice Chisei unless you remove a counter from a permanent you control.",
+          "power": "4",
+          "toughness": "4",
+          "colors": [
+            "U"
+          ],
+          "colorIdentity": [
+            "U"
+          ],
+          "keywords": [
+            "Flying"
+          ],
+          "rarity": "rare",
+          "set": "bok",
+          "setName": "Betrayers of Kamigawa",
+          "collectorNumber": "32",
+          "releasedAt": "2005-02-04",
+          "scryfallUri": "https://scryfall.com/card/bok/32/chisei-heart-of-oceans?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/6/c/6c359b1a-d441-4763-96c7-e5c010eae53f.jpg?1783944209",
+            "normal": "https://cards.scryfall.io/normal/front/6/c/6c359b1a-d441-4763-96c7-e5c010eae53f.jpg?1783944209",
+            "large": "https://cards.scryfall.io/large/front/6/c/6c359b1a-d441-4763-96c7-e5c010eae53f.jpg?1783944209",
+            "png": "https://cards.scryfall.io/png/front/6/c/6c359b1a-d441-4763-96c7-e5c010eae53f.png?1783944209",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/6/c/6c359b1a-d441-4763-96c7-e5c010eae53f.jpg?1783944209"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "buildaround",
+        "roles": [
+          "buildaround"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Build-around / interesting spin: Moving counters off Sagas offers a concrete engine and tests whether a repeated chapter becomes too efficient.",
+        "notes": [
+          {
+            "role": "buildaround",
+            "text": "Build-around / interesting spin: Moving counters off Sagas offers a concrete engine and tests whether a repeated chapter becomes too efficient."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "b4634637-ba33-4849-b647-d33018a02f39",
+          "oracleId": "2e358f7e-c282-4b92-8255-1436c99cda49",
+          "name": "Power Conduit",
+          "manaCost": "{2}",
+          "manaValue": 2.0,
+          "type": "Artifact",
+          "oracleText": "{T}, Remove a counter from a permanent you control: Choose one —\n• Put a charge counter on target artifact.\n• Put a +1/+1 counter on target creature.",
+          "power": "",
+          "toughness": "",
+          "colors": [],
+          "colorIdentity": [],
+          "keywords": [],
+          "rarity": "uncommon",
+          "set": "ncc",
+          "setName": "New Capenna Commander",
+          "collectorNumber": "376",
+          "releasedAt": "2022-04-29",
+          "scryfallUri": "https://scryfall.com/card/ncc/376/power-conduit?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/b/4/b4634637-ba33-4849-b647-d33018a02f39.jpg?1783923211",
+            "normal": "https://cards.scryfall.io/normal/front/b/4/b4634637-ba33-4849-b647-d33018a02f39.jpg?1783923211",
+            "large": "https://cards.scryfall.io/large/front/b/4/b4634637-ba33-4849-b647-d33018a02f39.jpg?1783923211",
+            "png": "https://cards.scryfall.io/png/front/b/4/b4634637-ba33-4849-b647-d33018a02f39.png?1783923211",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/b/4/b4634637-ba33-4849-b647-d33018a02f39.jpg?1783923211"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      }
+    ],
+    "newReferencesToVerify": [
+      "Reckless Impulse",
+      "Seething Song"
+    ],
+    "referenceStatus": "Current-design references preserved as baseline evidence; updated candidate comparisons are provisional."
   }
 ]

@@ -1,7 +1,7 @@
 {
   "status": "isolated-playtest-candidate-not-live",
   "baseDatasetVersion": "2026-09-22.3",
-  "changedCards": 37,
+  "changedCards": 39,
   "before": {
     "cards": 309,
     "rarity": {

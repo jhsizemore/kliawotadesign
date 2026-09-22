@@ -6328,11 +6328,11 @@
     },
     {
       "sourceLabel": "Odyssey 23",
-      "sequence": "Root the bed in a living tree; test its immovability; recognise the marriage.",
-      "emotions": "Intimacy / certainty",
+      "sequence": "Build around an olive trunk; test the bed’s movement; recognise the spouse through shared knowledge.",
+      "emotions": "Intimacy / rooted certainty",
       "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
-      "hooks": "Protect a named bond; reward restored presence.",
-      "assessment": "Current repeated blink contradicts immovability more than the old score admits; flag for redesign.",
+      "hooks": "Bind protection to the household ground; reward two legendary creatures reunited there.",
+      "assessment": "Candidate replaces blink with a chosen-land bond and conditional reunion draw. It abstracts the couple rather than naming them; moving the land breaks the link.",
       "id": "ODY-213",
       "number": 213,
       "name": "Olive-Wood Bed of Ithaca",
@@ -6350,7 +6350,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -7002,11 +7002,11 @@
     },
     {
       "sourceLabel": "Odyssey 10",
-      "sequence": "Near home; suspect hidden treasure; open the bag and lose the route.",
-      "emotions": "Envy / catastrophe",
+      "sequence": "Near home; suspect hidden wealth; open the wind bag; lose the route already won.",
+      "emotions": "Envy / temptation / catastrophe",
       "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
-      "hooks": "Tempt with apparent wealth; release stored force; displace progress.",
-      "assessment": "Current chapters reward Treasure damage and never show the disastrous setback: major flavour mismatch.",
+      "hooks": "Offer temporary opportunity; release a burst of force; pay with enduring progress.",
+      "assessment": "Candidate grants impulse access, then red mana, then land sacrifice. No real Treasure or crew-death wipe; Penelope can postpone the final cost. Land loss is an abstraction of the setback.",
       "id": "ODY-235",
       "number": 235,
       "name": "The Bag Is Opened",
