@@ -115,3 +115,20 @@ The enemy-hybrid Saga cycle has been audited under the actual hybrid “or” ru
 The generator/report inputs are also updated so the earlier Omen source corrections and expanded ten-card quotation bank survive a rebuild rather than being overwritten.
 
 No played matches have been performed. Production data, the 14A2 authoring Sheet and live Studio remain unchanged. Next gate: continue passage verification across the remaining changed commons, then collation/reference refresh before integration.
+
+
+## Seventh checkpoint: changed-common source pass complete
+
+All **24 changed commons** now have passage-level review or an explicit extension classification. The final ten pending common briefs were checked against Odyssey III, V, VII, IX, XI, XII and XXIV.
+
+Six are directly grounded in the narrated action: ODY-044 rowing under command, ODY-064 ordinary ship/oar labour, ODY-074 bread set before the stranger, ODY-103 libation service, ODY-108 mixed wine service, and ODY-142 the drink-offering to the dead.
+
+Four are intentionally not represented as literal Homeric actions:
+- **ODY-087 Seabird Lookout:** Book V supplies cormorant and sea-gull imagery; mortal bird-reading navigation is an explicit seamanship/natural-world extension.
+- **ODY-112 Dolphins Beside the Bow:** Book XII explicitly contains dolphins as Scylla's prey; dolphins pacing a ship are an explicit fauna extension.
+- **ODY-115 Depth-Sounding Sailor:** Book IX supplies practical ship/oar work but no sounding. Historical sounding practice is separately sourced as an ancient-Mediterranean seamanship extension.
+- **ODY-123 Shade of the Waiting House:** Book XXIV supplies named ghosts in Hades; Escape back into play is explicitly fantasy extension.
+
+This closes the **changed-common passage-verification gate** without claiming that extension material appears in Homer. The report generator now preserves those classifications on rebuild.
+
+Production data, 14A2 and live Studio remain unchanged. Next contract gate: settle booster/collation assumptions and use them to test whether the common mechanical foundation is actually reachable in Limited, then refresh candidate references before played games.
