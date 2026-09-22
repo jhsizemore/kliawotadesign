@@ -38,11 +38,11 @@
   },
   "flavourLayer": {
     "exactQuoteCandidates": 54,
-    "sourceLedAdaptationCandidates": 35,
-    "noFlavourSelected": 3,
-    "noDirectQuoteStillNeedsFlavourDecision": 4,
+    "sourceLedAdaptationCandidates": 38,
+    "noFlavourSelected": 4,
+    "noDirectQuoteStillNeedsFlavourDecision": 0,
     "pending": 213,
-    "resolvedFlavourOutcomes": 92,
+    "resolvedFlavourOutcomes": 96,
     "finalSelections": 0
   },
   "gameplay": {
