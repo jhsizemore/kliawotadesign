@@ -105,6 +105,19 @@ No card changes are authorised from pre-playtest math alone.
 
 See `gameplay-preflight.md` and `playtest-packet-v1.md`.
 
+### Phase roll-up — content completion
+
+The structural/mechanical candidate phase is now **rolled up**. Gameplay preparation is complete enough to defer real matches without blocking independent editorial work. No analytical model is to be described as played Magic.
+
+The active phase is now **full-set content completion**. A card is not complete merely because mechanics are plausible. Every one of the 309 physical cards must finish four editorial layers:
+
+1. **MTG reference integrity** — current printed comparisons or identity/tech precedents appropriate to the final mechanics. Production coverage currently spans all 309 cards with 912 references; the 42 changed candidate cards have completed the dedicated refresh gate. Re-run fingerprints only after any further rules change.
+2. **Emotional making-of brief** — specific action/sequence, intended controller and opponent feeling, defining character/object attribute, mechanical hooks, and a distinction from other portrayals. Structural coverage is 309/309; passage/source verification remains the major gap.
+3. **Source grounding** — exact episode/tradition/adaptation classification. Do not let composites, interpretations, historical extensions or modern reception silently masquerade as Homer.
+4. **Flavour-text outcome** — either a verified quotation candidate with attribution/provenance or an explicit no-flavour/no-direct-quote decision. Final selection still waits for mechanics and card-space checks.
+
+Gameplay remains a later validation gate. Do not reopen common density, hybrid structure, Penelope, Iphigenia, Bed or Bag merely because games have not yet been played.
+
 ## Common foundation
 
 Three primary experiences should be apparent in ordinary games: **work together to survive and travel; conceal and recognise identity; keep or violate the duties of home**. Enchantments carry signs, transformations, stories and ritual across those experiences. Food, graveyard recovery, scry and exile are resources within them, not six separate promises of equal prominence.
