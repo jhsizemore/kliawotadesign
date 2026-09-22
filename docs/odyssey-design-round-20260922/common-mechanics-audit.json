@@ -1265,8 +1265,8 @@
     {
       "pair": "GU",
       "theme": "Manifest / uncertain voyage",
-      "status": "density watch",
-      "assessment": "Two common Manifest sources feed both signposts. Four owned cards in exile is a separate, demanding threshold: foretold cards stop contributing after being cast. Plan: measure sustained exile counts; do not infer four cards in exile from four past exile events.",
+      "status": "minimum support skeleton met; competition-sensitive; needs real draft",
+      "assessment": "Two common Manifest sources (ODY-088 G, ODY-116 U) feed both signposts. ODY-017 Ordeal of the Sirens is a direct blue uncommon Manifest source; ODY-042 Find the Next Shore is the green voyage/land bridge; ODY-018 Read the Hidden Course adds blue exile/face-up support. This meets the Play Booster minimum support skeleton without spending another common slot. In the conservative one-blue/one-green competitor stress model, a GU seat averages 2.49 direct Manifest enablers including Ordeal; 72.7% of runs acquire at least two and 45.4% acquire at least three. Keep the lane under real-draft watch, especially the four-cards-in-exile threshold.",
       "commonPool": [
         "ODY-003",
         "ODY-011",
@@ -2669,7 +2669,7 @@
     }
   ],
   "remainingGates": [
-    "Run pack/table supply and then pick-behaviour simulations under the locked collation before making draft-access claims.",
+    "Run actual draft/pool tests under odyssey-core-fin-playbooster-v1; reopen GU common density only if the lane fails while plausibly open.",
     "Expose the canonical Manifest Fate reminder; published card records use the custom action without defining it. Audit uses existing reference notes: top two, manifest one, exile the other.",
     "WU recognition and WB exploitation now have revised cards; rates, repeatability and draft access still need games.",
     "Play these lists; these calculations are not results of played games."
@@ -2765,5 +2765,12 @@
       "chanceAtLeastOneInThreeOpenedBoosters": 0.60165,
       "expectedAcross24PackTable": 6.97635
     }
+  },
+  "pickStress": {
+    "document": "docs/odyssey-design-round-20260922/limited-pick-stress-model.md",
+    "json": "docs/odyssey-design-round-20260922/limited-pick-stress-model.json",
+    "runsPerScenario": 5000,
+    "seed": 20260923,
+    "decision": "Do not add a third GU common Manifest source yet. GU meets the Play Booster support skeleton: two monocolour commons, at least two useful monocolour uncommons across the pair (including direct Manifest and voyage/exile bridges), and two multicolour signposts. The stress model shows GU is substantially more competition-sensitive than WU/WB, so actual draft/pool testing remains mandatory. A new common is reopened only if real drafts cannot assemble the lane when GU is plausibly open."
   }
 }
