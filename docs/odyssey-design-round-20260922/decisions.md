@@ -30,6 +30,33 @@ Performance/source identity is explicit: ODY-097 is a source-text song sung by D
 
 This closes the **mechanical colour-pie gate**, not the rate gate. BG chapter-II value and GU chapter-III usefulness still require games.
 
+### Limited collation resolution — 23 September 2026
+
+Lock **odyssey-core-fin-playbooster-v1** for analytical Limited work. The 309-card skeleton already matches FIN's main-set structure exactly: 80 ordinary commons, 10 common two-colour lands, 16 basic lands, 109 uncommons, 74 rares and 20 mythic rares. FIN's published Play Booster uses 6–7 commons, 3 uncommons, a wildcard, a guaranteed rare/mythic, a foil wildcard and a land slot. Its seventh common is replaced by the external Through the Ages sheet in one third of packs.
+
+Odyssey currently has no external bonus sheet. Therefore the default test pack keeps **seven ordinary common slots** rather than inventing a reception/reprint sheet merely to imitate product packaging. Collapse FIN's Booster Fun variants back onto their base rarities for Limited modelling:
+
+- 7 ordinary commons from the 80-card common sheet.
+- 3 uncommons from 109.
+- 1 wildcard: 19.3% common, 64.0% uncommon, 16.7% rare/mythic.
+- 1 guaranteed rare/mythic.
+- 1 foil wildcard: 55.85% common, 36.65% uncommon, 7.5% rare/mythic.
+- 1 land: 55% one of the 10 common two-colour lands, 45% one of the 16 basics.
+
+This yields **7.7515 ordinary commons per pack on average**. A 24-pack eight-player draft table therefore exposes about 186 ordinary-common cards, or **2.325 copies of each specific common on average** before draft picks. The strict FIN product sensitivity case, including the one-third external-sheet replacement, yields 7.4182 ordinary commons per pack and does not materially change the density diagnosis.
+
+Mechanic interpretation under this model:
+- **Food, Survival and enchantments** are sufficiently visible at common to serve as draft infrastructure.
+- **Omens** are a clearly recurring cycle.
+- **Escape and Constellation are accents**, not archetype backbones. Do not make a signpost require seeing the sole common Escape card or sole common Constellation payoff.
+- **Gift and Foretell are supporting mechanics**, not independent pair identities at common.
+- **GU Manifest remains a density watch.** There are only two common Manifest sources in GU (three set-wide); run supply/pick simulation before adding a fourth set-wide source or rewriting a slot.
+- **WU direct return remains a bridge rather than a mass mechanic.** It has two direct common blink/return cards plus other exile/face-up enablers, so test the whole package rather than judging the two cards alone.
+
+Official FIN collation reference: https://magic.wizards.com/en/news/feature/collecting-final-fantasy
+
+This is a **test-model lock**, not a claim that Odyssey has a manufactured Play Booster product. No draft picks or played games are represented by it.
+
 ## Common foundation
 
 Three primary experiences should be apparent in ordinary games: **work together to survive and travel; conceal and recognise identity; keep or violate the duties of home**. Enchantments carry signs, transformations, stories and ritual across those experiences. Food, graveyard recovery, scry and exile are resources within them, not six separate promises of equal prominence.
