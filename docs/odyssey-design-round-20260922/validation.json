@@ -60,11 +60,23 @@
   "method": "Independent uniform slots from 90 nonbasic commons. Sensitivity analysis for 6, 7 or 10 commons per pack. Not a draft simulator, chosen booster collation, deck model or played match.",
   "playedMatches": 0,
   "remainingRisks": [
-    "Actual booster distribution is not locked.",
+    "Odyssey Limited test collation is locked to core FIN-style Play Booster v1, but pick competition and actual draft behaviour are not yet modelled.",
     "Draft competition and playable-card selection are not modelled.",
     "Common creature rates, removal and Omen repetition need games.",
     "Three Manifest Fate commons do not guarantee adequate density in every colour pair.",
     "WU Penelope is approved; Iphigenia uses actual sacrifice and retains UB. Rates and interactions remain provisional.",
     "Hybrid Saga overlap is now mechanically audited; BG and GU received narrow repairs, but their Limited rates still need played games."
-  ]
+  ],
+  "collationModel": {
+    "id": "odyssey-core-fin-playbooster-v1",
+    "ordinaryCommons": 80,
+    "ordinaryCommonSlots": 7,
+    "wildcardCommonProbability": 0.193,
+    "foilCommonProbability": 0.5585,
+    "landSlot": {
+      "commonDual": 0.55,
+      "basic": 0.45
+    },
+    "expectedOrdinaryCommonsPerPack": 7.7515
+  }
 }
