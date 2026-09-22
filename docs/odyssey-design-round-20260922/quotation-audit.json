@@ -45,7 +45,7 @@
       "id": "ODY-004",
       "name": "Keep the Long Watch",
       "status": "no-direct-quote-selected",
-      "reason": "Household endurance is an intentional composite rather than one narrated Book II moment; a single quotation would falsely pin the card to Penelope or Telemachus.",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -712,7 +712,7 @@
       "id": "ODY-060",
       "name": "Voyage into Unknown Shores",
       "status": "no-direct-quote-selected",
-      "reason": "Whole-poem voyage composite. No single Homeric line is selected because doing so would falsely localize the card to one shore or episode.",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2128,7 +2128,7 @@
       "id": "ODY-179",
       "name": "Keeper of Ancestral Graves",
       "status": "no-direct-quote-selected",
-      "reason": "Ordinary funerary/social-world composite. Book XXIV supports ghosts and family memory, but no single narrated grave-tending scene matches this invented role closely enough for a direct quotation.",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2774,8 +2774,8 @@
     {
       "id": "ODY-252",
       "name": "Pylos Before the War",
-      "status": "no-direct-quote-selected",
-      "reason": "The card deliberately imagines Pylos before the war, while Odyssey III depicts Telemachus's postwar visit. A direct Odyssey quotation would misstate the time layer.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Plains renamed Pylos Before the War. The time layer is explicitly interpretive and the basic-land treatment is reserved without flavour text.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3315,8 +3315,8 @@
   "summary": {
     "totalCards": 309,
     "verifiedCandidates": 54,
-    "noDirectQuoteSelected": 39,
-    "noFlavourSelected": 3,
+    "noDirectQuoteSelected": 38,
+    "noFlavourSelected": 4,
     "pending": 213,
     "finalSelections": 0
   }
