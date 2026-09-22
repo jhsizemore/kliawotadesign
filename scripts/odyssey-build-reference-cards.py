@@ -344,7 +344,12 @@ def main():
 
         # Exact Oracle identity for reprints/reskins and basics.
         exact=None
-        for n in explicit_oracle_names(o)+([str(o.get('name') or '')] if is_basic else []):
+        exact_names=explicit_oracle_names(o)
+        if is_basic:
+            subtype=re.search(r'Basic Land\s+[—-]\s+(Plains|Island|Swamp|Mountain|Forest|Wastes)',str(o.get('type') or ''),re.I)
+            if subtype:exact_names.append(subtype.group(1).title())
+            exact_names.append(str(o.get('name') or ''))
+        for n in exact_names:
             exact=find_named(n)
             if exact:break
         if exact:
