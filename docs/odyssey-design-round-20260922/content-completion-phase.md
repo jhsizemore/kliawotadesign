@@ -39,3 +39,18 @@ Work by source cluster so repeated characters/scenes are checked together:
 9. Modern reception and adaptations
 
 At each cluster: verify the making brief first, then choose quotation candidates, then check repeated quotations and card-space risk. Do not wait for gameplay unless the wording itself depends on a mechanical redesign.
+
+## Quality counters
+
+The phase is not judged complete by field presence alone.
+
+- Source/passage reviewed: **95 / 309**
+- Source review still pending: **213**
+- Generic character/object attribute placeholders remaining: **192**
+- Generic land-setting attribute frames: **25**
+- Weak or underspecified emotion fields: **18**
+- Verified flavour candidates: **45**
+- Explicit no-direct-quote outcomes: **4**
+- Flavour outcomes still pending: **260**
+
+Reference coverage is not the current bottleneck: reference-quality-v3 covers all 309 cards with 912 printed-card references, including 293 best-rate and 293 normal-rate comparisons for nonbasic cards. Any future rules-text change reopens only that card's reference fingerprint.
