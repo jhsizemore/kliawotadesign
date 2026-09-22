@@ -235,7 +235,7 @@ def main():
       ('ff-analog-adventure-lands',['Jidoor, Aristocratic Capital','Lindblum, Industrial Regency'],'FINAL FANTASY rare Adventure-land cycle technology'),
       ('adventure',['Bonecrusher Giant','Mosswood Dreadknight'],'Adventure technology'),
       ('cycle.hybrid-sagas-uncommon',['Fable of the Mirror-Breaker'],'Saga pacing / chapter technology'),
-      ('prepare /',['Valki, God of Lies'],'modal / transformation-adjacent technology'),
+      ('prepare /',['Emeritus of Ideation','Bloodline Recollector','Goblin Glasswright'],'Secrets of Strixhaven / Reality Fracture Prepare technology'),
       ('storm',['Grapeshot'],'Storm technology'),
       ('plot',['Slickshot Show-Off'],'Plot technology'),
       ('bargain',['Torch the Tower'],'Bargain technology'),
