@@ -38,11 +38,11 @@
   },
   "flavourLayer": {
     "exactQuoteCandidates": 54,
-    "sourceLedAdaptationCandidates": 38,
-    "noFlavourSelected": 4,
+    "sourceLedAdaptationCandidates": 109,
+    "noFlavourSelected": 9,
     "noDirectQuoteStillNeedsFlavourDecision": 0,
-    "pending": 213,
-    "resolvedFlavourOutcomes": 96,
+    "pending": 137,
+    "resolvedFlavourOutcomes": 172,
     "finalSelections": 0
   },
   "gameplay": {
@@ -63,16 +63,16 @@
     "modern reception"
   ],
   "currentCluster": {
-    "name": "Books V–VIII — Calypso, Scheria and the Phaeacians",
+    "name": "Books IX–XII — wanderings, monsters and crew failures",
     "status": "substantially complete",
-    "exactQuotesAdded": 9,
-    "adaptationsAdded": 35,
-    "noFlavourDecisionsAdded": 3,
-    "notes": [
-      "Direct Homeric action separated from craft/seamanship/landscape extensions.",
-      "Calypso portrayals retain the source's coercion rather than romanticising captivity.",
-      "Three Island basics explicitly receive no flavour text.",
-      "Final card-space/layout selection remains pending."
+    "adaptationsAdded": 71,
+    "noFlavourDecisionsAdded": 5,
+    "deferred": [
+      "ODY-180 Black-Hulled Achaean Galley — Trojan/pre-Odyssey",
+      "ODY-182 Nobody, Self-Invented — later reception"
+    ],
+    "sourceCorrections": [
+      "ODY-194 Circe's Enchanted Garden moved from Book XI to Book X/Aeaea"
     ]
   }
 }
