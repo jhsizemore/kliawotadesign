@@ -27,9 +27,28 @@ def sources(label):
 verified={1,5,7,8,11,13,14,15,23,26,31,35,36,37,41,49,50,77,80,88,107,110,111,116,125,129,144,153,174,184,199,215,221,223,232,235,243,244,245,246,275,287,292,296,304,305}
 verified.remove(144)
 verified.update({51,56,90,127,135,139,213})
+verified.update({44,64,74,87,103,108,112,115,123,142})
+source_review_overrides={
+ "44": "passage checked: Book XII directly has Odysseus order the crew to row with might and main and command the coxswain; delayed recovery is gameplay abstraction.",
+ "64": "passages checked: Books IX and XII directly show boarding, oar-work, ship handling and dangerous passage; the delayed untap is mechanical abstraction.",
+ "74": "passage checked: Book VII directly seats the stranger and serves bread and household food before further questioning.",
+ "87": "passage checked with extension: Book V uses cormorant and sea-gull imagery around sea travel; a mortal lookout reading birds for navigation is not narrated by Homer.",
+ "103": "passage checked: Book III directly shows the cup, prayer and drink-offering being passed in ritual order.",
+ "108": "passage checked: Book III directly describes pages filling mixing bowls with wine and water and serving the gathering.",
+ "112": "passage checked with extension: Book XII explicitly names dolphins among Scylla's prey; dolphins pacing a ship's bow are an explicit natural-world extension, not a narrated event.",
+ "115": "passage checked with external extension: Odyssey IX supplies ship and oar work but not depth sounding; sounding is treated as historically attested ancient-Mediterranean seamanship, not a Homeric event.",
+ "123": "passage checked with fantasy extension: Book XXIV opens with the suitors' ghosts in Hades; a shade escaping bodily back into play is explicitly non-Homeric fantasy.",
+ "142": "passage checked: Book XI directly gives the drink-offering to the dead and the ghosts approaching; battlefield return is symbolic game abstraction."
+}
+extra_sources={
+ 115:[{'label':'Kemp & D\'Olier, ancient lead-line navigation — Journal of Navigation','url':'https://www.cambridge.org/core/journals/journal-of-navigation/article/early-navigation-in-the-north-sea-the-use-of-the-lead-and-line-and-other-navigation-methods/EDA8012AE267C583E8F2EA14EE36E145'}]
+}
 briefs=[]
 for c in cards:
- b=authored[c['number']];b.update({'id':c['id'],'number':c['number'],'name':c['displayName'] or c['name'],'rarity':c['rarity'],'color':c['color'],'currentType':c['type'],'currentMana':c['mana'],'currentRules':c['rules'],'baselineStoryElement':c.get('flavorStoryElement',''),'baselineScore':c.get('flavorMatchScore'),'baselineRationale':c.get('flavorMatchRationale',''),'sources':sources(b['sourceLabel']),'sourceReview':'key passage checked; mechanical interpretation remains editorial' if c['number'] in verified else 'source mapped; detailed passage review pending','briefStatus':'first-pass','quoteStatus':'missing'});briefs.append(b)
+ b=authored[c['number']]
+ src=sources(b['sourceLabel'])+extra_sources.get(c['number'],[])
+ review=source_review_overrides.get(c['number'],'key passage checked; mechanical interpretation remains editorial' if c['number'] in verified else 'source mapped; detailed passage review pending')
+ b.update({'id':c['id'],'number':c['number'],'name':c['displayName'] or c['name'],'rarity':c['rarity'],'color':c['color'],'currentType':c['type'],'currentMana':c['mana'],'currentRules':c['rules'],'baselineStoryElement':c.get('flavorStoryElement',''),'baselineScore':c.get('flavorMatchScore'),'baselineRationale':c.get('flavorMatchRationale',''),'sources':src,'sourceReview':review,'briefStatus':'first-pass','quoteStatus':'missing'});briefs.append(b)
 quotes=[
  {'cardId':'ODY-035','text':'Tell me, O muse','author':'Homer','translator':'Samuel Butler','work':'Odyssey','location':'Book 1, opening invocation','speaker':'Narrator','source':'https://classics.mit.edu/Homer/odyssey.1.i.html','context':'The singer invokes divine assistance to tell the journey.','fit':'Short opening phrase fits the selection spell without pretending to be rules text.'},
  {'cardId':'ODY-174','text':'at night I would unpick the stitches','author':'Homer','translator':'Samuel Butler','work':'Odyssey','location':'Book 19, Penelope recounts the shroud deception','speaker':'Penelope','source':'https://classics.mit.edu/Homer/odyssey.19.xix.html','context':'She explains to the disguised Odysseus how she postponed the marriage.','fit':'The action is exactly the rare proposal\'s unweaving hook.'},
