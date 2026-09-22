@@ -211,3 +211,18 @@ Key making-of corrections: Telemachus's young version now centres on learning to
 Two cards remain intentionally open from this cluster: **ODY-072 Aulis, Harbor of Omens** belongs to the Trojan/pre-Odyssey source pass, and **ODY-294 Helen, Remembered and Rewritten** still needs its specific later-reception source before flavour text can be completed.
 
 The new inputs/editorial-register.json is authoritative for incremental source-review, making-of and flavour outcomes. Generator wiring is updated separately so future regeneration cannot erase researched quotation states.
+
+
+## Fourteenth checkpoint: Books V–VIII editorial pass
+
+The Calypso/Scheria/Phaeacian cluster is substantially complete. All 51 Odyssey V–VIII cards in this source band now have explicit passage or extension review in the making layer.
+
+This pass adds **9 exact quotation candidates**, **35 source-led adaptation candidates**, and **3 deliberate no-flavour decisions** for the three Island basics. Existing Nausicaa, Calypso, Euryalus and Wooden Horse quotation candidates are retained.
+
+The key editorial distinction is now explicit: direct episodes (raft construction, the storm, Nausicaa's welcome, Arete's judgement, Demodocus, the games, the wooden horse) are separated from deliberate world-building extensions such as Shipyard Sparks, Potter at the Kiln, Weatherwise Sailor, Phaeacian Shipwright, invented landscape names and the living Caryatid treatment.
+
+Calypso's three portrayals are differentiated: the uncommon is an accessible exile/face-down engine, the mythic magnifies seductive stasis, and Refuge or Captivity now explicitly preserves the source's unequal power and non-consensual cohabitation rather than drifting into romance.
+
+The flavour-completion rule is also tightened. Exact quotations are not mandatory: a source-led adaptation counts as a valid candidate. Conversely, “no direct quote” alone is not complete unless the card has an adaptation or a deliberate no-flavour/layout decision.
+
+Production, 14A2 and live Studio remain unchanged. Next narrative cluster: **Books IX–XII — the wanderings, monsters and crew failures**.
