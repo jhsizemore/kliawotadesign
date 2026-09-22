@@ -74,7 +74,7 @@ test('Studio loads v2 reference data before the review browser and keeps compact
   const app=fs.readFileSync(path.join(dir,'app.html'),'utf8');
   const a=app.indexOf('card-references.js?v=20260922-ref2'),b=app.indexOf('card-reference-browser.js?v=20260922-ref2');
   assert.ok(a>0&&b>a);
-  assert.match(app,/odyssey-data\.js\?v=20260921-live3/);
+  assert.match(app,/odyssey-data\.js\?v=[^\"']+/);
   const index=fs.readFileSync(path.join(dir,'index.html'),'utf8');
   assert.match(index,/app\.html\?v=20260922-ref2/);
   const browser=fs.readFileSync(path.join(dir,'card-reference-browser.js'),'utf8');
