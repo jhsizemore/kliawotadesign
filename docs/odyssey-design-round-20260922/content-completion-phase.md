@@ -20,7 +20,9 @@ A quotation is not accepted merely because it sounds good. A source label is not
 - Production MTG references: **309 cards / 912 references**
 - Changed-candidate reference refresh: **42 / 42 changes covered; 0 requested benchmark gaps**
 - Verified quotation candidates after signpost batch: **28**
-- Explicit no-direct-quote outcomes: **2**
+- Source-led adaptation candidates: **35**
+- Deliberate no-flavour selections: **3**
+- No-direct-quote cards still awaiting another flavour decision: **4**
 - Remaining flavour outcomes: **279**
 - Final card-layout flavour selections: **0**
 
@@ -49,8 +51,20 @@ The phase is not judged complete by field presence alone.
 - Generic character/object attribute placeholders remaining: **192**
 - Generic land-setting attribute frames: **25**
 - Weak or underspecified emotion fields: **18**
-- Verified flavour candidates: **45**
-- Explicit no-direct-quote outcomes: **4**
-- Flavour outcomes still pending: **260**
+- Verified exact quotation candidates: **54**
+- Source-led adaptation candidates: **35**
+- Deliberate no-flavour selections: **3**
+- No-direct-quote cards still awaiting another flavour decision: **4**
+- Flavour outcomes still pending: **213**
 
 Reference coverage is not the current bottleneck: reference-quality-v3 covers all 309 cards with 912 printed-card references, including 293 best-rate and 293 normal-rate comparisons for nonbasic cards. Any future rules-text change reopens only that card's reference fingerprint.
+
+## Flavour outcome types
+
+A completed flavour **outcome** may be one of three things:
+
+- **Verified quotation candidate** — exact wording checked against a named source/translation.
+- **Source-led adaptation candidate** — original Odyssey Studio wording grounded in a checked passage or explicitly labelled extension; never attributed to Homer.
+- **No flavour selected** — deliberate layout/editorial decision, such as a basic land treatment.
+
+“No direct quote selected” by itself is now an intermediate classification, not a completed flavour outcome. Composite cards should normally receive a source-led adaptation unless silence is the better layout choice.
