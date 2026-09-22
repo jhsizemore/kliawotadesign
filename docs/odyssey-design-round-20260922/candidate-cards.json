@@ -6167,7 +6167,7 @@
       "rules": "Flash\nWhen this enchantment enters, up to one target creature gets -2/-2 until end of turn.\n{2}{B}, Sacrifice this enchantment: Scry 2.",
       "rulesSource": "14A2-live-sheet-snapshot",
       "archetypes": "WB/BR — attrition / sacrifice",
-      "story": "Household economy / consumption, unpaid obligation and depleted stores turn social disorder into material harm.",
+      "story": "Book XX / Theoclymenus sees blood, ghosts and a shroud of darkness over the suitors and declares that doom is upon them.",
       "status": "KEEP",
       "treatment": "",
       "layout": "standard",
@@ -6188,13 +6188,13 @@
       "functionalWords": 22,
       "changeStatus": "candidate2-common-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1",
       "narrativeEra": "Homeric world",
-      "storyTarget": "Household economy / consumption, unpaid obligation and depleted stores turn social disorder into material harm.",
+      "storyTarget": "Book XX / Theoclymenus's vision of the darkened hall and the suitors' doom.",
       "storyRethemeRequired": false,
       "storySourceBand": "Odyssey Book XX",
       "artReviewRequired": true,
-      "flavorStoryElement": "Household economy / consumption, unpaid obligation and depleted stores turn social disorder into material harm.",
+      "flavorStoryElement": "A prophet sees the hall already overtaken by blood, ghosts and darkness while the doomed suitors refuse to understand the warning.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "Common rebuild: simple structural glue grounded in ordinary Homeric-world material rather than a restored obscure identity."
+      "flavorMatchRationale": "The black Omen turns an explicit vision of imminent death into a temporary weakening effect, then remains as a sign that can later be sacrificed for foresight. The mechanical debuff is an abstraction of the prophecy, not a claim that the vision itself physically harms a suitor."
     },
     {
       "id": "ODY-128",
@@ -6546,7 +6546,7 @@
       "rules": "Flash\nWhen this enchantment enters, it deals 2 damage to target creature.\n{2}{R}, Sacrifice this enchantment: Scry 2.",
       "rulesSource": "14A2-live-sheet-snapshot",
       "archetypes": "RW/UR — Vehicles / tempo",
-      "story": "Sailor knowledge / a brief shift in wind can open the route a crew needs before the chance closes again.",
+      "story": "Book XII / After the crew slaughters Helios's cattle, the hides crawl and the meat on the spits bellows like living cattle before divine punishment follows.",
       "status": "KEEP",
       "treatment": "",
       "layout": "standard",
@@ -6567,13 +6567,13 @@
       "functionalWords": 18,
       "changeStatus": "candidate2-common-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1",
       "narrativeEra": "Homeric world",
-      "storyTarget": "Sailor knowledge / a brief shift in wind can open the route a crew needs before the chance closes again.",
+      "storyTarget": "Book XII / the slaughtered cattle give a supernatural bellowing omen after the crew violates Helios's taboo.",
       "storyRethemeRequired": false,
       "storySourceBand": "Odyssey Book XII",
       "artReviewRequired": true,
-      "flavorStoryElement": "Sailor knowledge / a brief shift in wind can open the route a crew needs before the chance closes again.",
+      "flavorStoryElement": "The crew's forbidden slaughter is answered by an impossible bodily sign: dead hides move and roasting meat bellows like cattle.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "Common rebuild: simple structural glue grounded in ordinary Homeric-world material rather than a restored obscure identity."
+      "flavorMatchRationale": "The red Omen uses immediate damage to express the violent consequence surrounding the broken taboo, while its lingering enchantment and later scry preserve the scene's function as a supernatural warning. The damage is gameplay abstraction rather than a literal effect of the bellowing meat."
     },
     {
       "id": "ODY-136",
@@ -6735,7 +6735,7 @@
       "rules": "Flash\nWhen this enchantment enters, create a Food token and put a +1/+1 counter on up to one target creature you control.\n{2}{G}, Sacrifice this enchantment: Scry 2.",
       "rulesSource": "14A2-live-sheet-snapshot",
       "archetypes": "GW/BG — Food / endurance",
-      "story": "Mediterranean natural world / figs are ordinary cultivated food, carried, stored and eaten rather than a magical reward.",
+      "story": "Book XV / A hawk, Apollo's messenger, crosses on Telemachus's right carrying a dove; Theoclymenus reads it as a sign that Odysseus's house will remain royal.",
       "status": "KEEP",
       "treatment": "",
       "layout": "standard",
@@ -6756,13 +6756,13 @@
       "functionalWords": 28,
       "changeStatus": "candidate2-common-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1",
       "narrativeEra": "Homeric world",
-      "storyTarget": "Mediterranean natural world / figs are ordinary cultivated food, carried, stored and eaten rather than a magical reward.",
+      "storyTarget": "Book XV / the hawk carrying a dove as an omen of the enduring power of Odysseus's household.",
       "storyRethemeRequired": false,
       "storySourceBand": "Odyssey Book XV",
       "artReviewRequired": true,
-      "flavorStoryElement": "Mediterranean natural world / figs are ordinary cultivated food, carried, stored and eaten rather than a magical reward.",
+      "flavorStoryElement": "A predatory bird sign is interpreted as proof that the returning household will endure and hold power in Ithaca.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "Common rebuild: simple structural glue grounded in ordinary Homeric-world material rather than a restored obscure identity."
+      "flavorMatchRationale": "The green Omen converts the hawk's captured prey into a Food token and its dominance into a +1/+1 counter, then leaves a sign that can later be sacrificed for foresight. Food is a gameplay abstraction of prey, not a hospitality scene."
     },
     {
       "id": "ODY-140",
