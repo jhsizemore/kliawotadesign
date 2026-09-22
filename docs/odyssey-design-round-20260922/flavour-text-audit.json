@@ -1,0 +1,3948 @@
+{
+  "schema": "odyssey-flavour-text-audit/v1",
+  "updatedAt": "2026-09-23",
+  "cards": [
+    {
+      "id": "ODY-001",
+      "name": "The Olive-Wood Test",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-002",
+      "name": "Telemachus, Young Heir",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-002",
+        "text": "show your mettle, then, and make yourself a name in story.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 1, Athena urges Telemachus to act",
+        "speaker": "Athena as Mentes",
+        "source": "https://classics.mit.edu/Homer/odyssey.1.i.html",
+        "context": "Athena tells Telemachus he is old enough to act and win a name.",
+        "fit": "Directly captures the Young Heir's growth-through-guidance identity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 58
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-003",
+      "name": "Inland Shrine",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-004",
+      "name": "Keep the Long Watch",
+      "status": "no-direct-quote-selected",
+      "kind": null,
+      "candidate": null,
+      "rationale": "Household endurance is an intentional composite rather than one narrated Book II moment; a single quotation would falsely pin the card to Penelope or Telemachus.",
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-005",
+      "name": "Athena's Intervention",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-006",
+      "name": "Row Past the Sirens",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-007",
+      "name": "Wash the Stranger's Feet",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-008",
+      "name": "Seat the Guest by the Hearth",
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-008",
+        "text": "he took Ulysses by the hand, raised him from the hearth",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 7, Alcinous raises the suppliant",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "context": "The stranger is physically raised from the ashes and seated before being fed.",
+        "fit": "The exact hospitality action behind the restraint-and-Food card.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 55,
+        "kind": "quote"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-009",
+      "name": "Argos, Who Waited",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-009",
+        "text": "he dropped his ears and wagged his tail",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 17, Argos recognises the arriving Odysseus",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "context": "A physical sign of recognition despite the master's disguise.",
+        "fit": "A tender bodily action, more specific than a generic quotation about loyalty.",
+        "verification": "exact excerpt checked",
+        "wordCount": 8,
+        "characters": 39,
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-010",
+      "name": "Telemachus Calls the Assembly",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-010",
+        "text": "it is I, as you will shortly learn, who have convened you",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus opens the assembly",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus publicly claims responsibility for calling the first assembly since Odysseus left.",
+        "fit": "The line is the action of the card, not merely commentary on leadership.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 57
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-011",
+      "name": "Steer by the Great Bear",
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-011",
+        "text": "alone never dipping into the stream of Oceanus",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 5, Odysseus steers by the Bear",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "context": "Calypso tells Odysseus to keep the Bear on his left while navigating.",
+        "fit": "A compact navigational image specific to the constellation used for steering.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 46,
+        "kind": "quote"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-012",
+      "name": "Loyal Householder",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-013",
+      "name": "Feign Madness",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-014",
+      "name": "Poseidon's Storm Foretold",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-014",
+        "kind": "adaptation",
+        "text": "The sea had waited for Poseidon to notice him.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Poseidon spots Odysseus after his apparent escape and deliberately raises the storm.",
+        "fit": "Condenses divine pursuit into foreboding without inventing a spoken prophecy.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-015",
+      "name": "Calchas Reads the Omen",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-016",
+      "name": "Singer at the Hearth",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-016",
+        "kind": "adaptation",
+        "text": "A good singer chooses the story. A great one discovers what the listener cannot hide.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "Book VIII repeatedly shows song selecting, shaping and exposing emotional memory.",
+        "fit": "An original line for an ordinary bard without stealing Demodocus's specific quotations.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-017",
+      "name": "Ordeal of the Sirens",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-018",
+      "name": "Read the Hidden Course",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-018",
+        "kind": "adaptation",
+        "text": "Every road not taken left a mark on the one that remained.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus repeatedly chooses among dangerous courses and uncertain divine advice.",
+        "fit": "Source-led interpretation for the set's exile/face-up journey mechanic.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-019",
+      "name": "Voyage's End",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-020",
+      "name": "Tell the Cyclops Your Name",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-021",
+      "name": "Cut the Raft Timbers",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-021",
+        "kind": "adaptation",
+        "text": "Freedom began as timber, measured and cut by hand.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus personally selects, cuts, smooths and joins the timber for his raft.",
+        "fit": "Keeps the emphasis on earned agency rather than miraculous rescue.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-022",
+      "name": "Keeper of Funeral Fires",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-023",
+      "name": "Bolt the Doors",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-024",
+      "name": "Trace the Omen",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-025",
+      "name": "Suitor's Extortion",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-025",
+        "text": "if I am to be eaten out of house and home at all",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus condemns the suitors' consumption",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus describes the suitors consuming his estate without recourse.",
+        "fit": "A concise statement of extortion through household depletion.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 48
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-026",
+      "name": "Elpenor's Funeral Due",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-027",
+      "name": "Call the Shades Forward",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-028",
+      "name": "Penelope Questions the Beggar",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-029",
+      "name": "Betray the Hidden Armory",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-030",
+      "name": "Neck Shot",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-031",
+      "name": "Eumaeus Shares His Supper",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-032",
+      "name": "Loyal Cowherd",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-033",
+      "name": "Row Through the Gale",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-033",
+        "kind": "adaptation",
+        "text": "Each crossing taught the crew what the next storm would demand.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V treats sea travel as repeated endurance and adaptation; this card generalises that voyage pattern.",
+        "fit": "Composite voyage flavour rather than a claim of one specific gale-rowing scene.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-034",
+      "name": "Laestrygonian Glutton",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-035",
+      "name": "Invoke the Muse",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-035",
+        "text": "Tell me, O muse",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 1, opening invocation",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.1.i.html",
+        "context": "The singer invokes divine assistance to tell the journey.",
+        "fit": "Short opening phrase fits the selection spell without pretending to be rules text.",
+        "verification": "exact excerpt checked",
+        "wordCount": 4,
+        "characters": 15,
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-036",
+      "name": "Eurycleia's Basin",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-037",
+      "name": "Treacherous Maidservant",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-038",
+      "name": "Shipyard Sparks",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-038",
+        "kind": "adaptation",
+        "text": "Before a ship can brave the sea, someone must master fire beside it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V directly supplies shipbuilding craft but not a shipyard spark incident.",
+        "fit": "Explicit material-world extension.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-039",
+      "name": "Blood on the Walls",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-040",
+      "name": "Shipwright's Adze",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-040",
+        "kind": "adaptation",
+        "text": "The tool that shaped the raft made every later mile possible.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Calypso gives Odysseus an adze, which he uses in the raft construction.",
+        "fit": "Source-led object flavour without quoting another Book V line.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-041",
+      "name": "Test the Swineherd",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-042",
+      "name": "Find the Next Shore",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-043",
+      "name": "Recall the Refrain",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-043",
+        "kind": "adaptation",
+        "text": "Songs survive because memory changes them just enough to sing again.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "Demodocus performs multiple stories and listeners repeatedly ask for more.",
+        "fit": "Original oral-performance interpretation for the refrain/enchantment engine.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-044",
+      "name": "Row in Unison",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-045",
+      "name": "Sudden Squall",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-045",
+        "kind": "adaptation",
+        "text": "The horizon vanished before the sailor had time to name the weather.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Poseidon's storm rapidly covers earth, sea and sky with cloud.",
+        "fit": "Keeps this common squall below the named divine-storm card.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-046",
+      "name": "Test the Goatherd",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-047",
+      "name": "Fig Tree Above Charybdis",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-048",
+      "name": "Ithacan Caryatid",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-048",
+        "kind": "adaptation",
+        "text": "A house stands because something bears its weight.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "The Phaeacian palace is described through elaborate architecture and crafted supports; a living Caryatid remains a Theros visual borrowing.",
+        "fit": "Original visual-world flavour, not a claim of a Homeric plant-person.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-049",
+      "name": "Clear-Sky Thunder",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-049",
+        "text": "you have thundered from a clear sky",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 20, Zeus's confirming thunder",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+        "context": "Odysseus asks for a sign and recognizes thunder under a clear sky as confirmation.",
+        "fit": "The impossible weather sign is the card's exact subject and remains short enough for a common.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 35
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-050",
+      "name": "Hermes Gives the Moly",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-051",
+      "name": "Mentor, Trusted Counselor",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-051",
+        "pair": "WU",
+        "text": "I will find you a ship, and will come with you myself.",
+        "location": "Book 2, Athena in Mentor's likeness prepares Telemachus's voyage",
+        "speaker": "Athena in Mentor's likeness",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Athena, appearing as Mentor, promises to secure the ship and accompany Telemachus.",
+        "fit": "The line makes Mentor's practical counsel and voyage-readiness concrete.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 54
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-052",
+      "name": "Tiresias, Voice Below",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-052",
+        "pair": "UB",
+        "text": "I may drink of the blood and answer your questions truly.",
+        "location": "Book 11, Tiresias at the blood trench",
+        "speaker": "Tiresias",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "context": "Tiresias asks to drink from the trench so he can speak truthfully to Odysseus.",
+        "fit": "It joins graveyard ritual to the knowledge Tiresias supplies.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 57
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-053",
+      "name": "Eurylochus, Voice of Doubt",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-053",
+        "pair": "BR",
+        "text": "All deaths are bad enough but there is none so bad as famine.",
+        "location": "Book 12, Eurylochus argues for killing Helios's cattle",
+        "speaker": "Eurylochus",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "context": "Hunger drives Eurylochus to argue for the forbidden slaughter.",
+        "fit": "The line captures the desperate reasoning behind sacrificing long-term safety for immediate survival.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 61
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-054",
+      "name": "Polyphemus, Eater of Men",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-055",
+      "name": "Eumaeus, Loyal Swineherd",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-055",
+        "pair": "GW",
+        "text": "Eat, my good fellow, and enjoy your supper, such as it is.",
+        "location": "Book 14, Eumaeus feeds the disguised Odysseus",
+        "speaker": "Eumaeus",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "context": "Eumaeus offers the stranger what food he has before knowing his identity.",
+        "fit": "Directly expresses Eumaeus's hospitality and Food-centered design.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 58
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-056",
+      "name": "Antinous, First Suitor",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-056",
+        "pair": "WB",
+        "text": "you are more fond of eating things yourself than of giving them to other people.",
+        "location": "Book 17, Telemachus rebukes Antinous",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "context": "Telemachus condemns Antinous for consuming rather than sharing the household's resources.",
+        "fit": "A sharp source-text statement of the consumption engine.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 80
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-057",
+      "name": "Shipboard Carpenter",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-057",
+        "kind": "adaptation",
+        "text": "Every stronger hull remembers the hands that worked it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus's raft construction supplies the craft vocabulary; the dedicated shipboard carpenter is invented.",
+        "fit": "Makes the extension feel ordinary rather than legendary.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-058",
+      "name": "Anticleia, Shade of Home",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-058",
+        "pair": "BG",
+        "text": "Thrice I sprang towards her and tried to clasp her in my arms",
+        "location": "Book 11, Odysseus tries to embrace Anticleia",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "context": "Odysseus repeatedly tries and fails to embrace his mother's shade.",
+        "fit": "The failed embrace makes Anticleia's graveyard/return identity emotionally specific.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 61
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-059",
+      "name": "Ithacan Deck-Captain",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-059",
+        "pair": "RW",
+        "text": "trust in Jove and row on with might and main.",
+        "location": "Book 12, Odysseus commands the crew",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "context": "Odysseus rallies the crew to keep rowing through danger.",
+        "fit": "The ordinary Deck-Captain is composite, but this line cleanly represents coordinated rowing under command.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 45
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-060",
+      "name": "Voyage into Unknown Shores",
+      "status": "no-direct-quote-selected",
+      "kind": null,
+      "candidate": null,
+      "rationale": "Whole-poem voyage composite. No single Homeric line is selected because doing so would falsely localize the card to one shore or episode.",
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-061",
+      "name": "Odysseus, Cunning Voyager",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-062",
+      "name": "Athena, Far-Seeing Guide",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-063",
+      "name": "Odysseus, Named Nobody",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-064",
+      "name": "Black-Hulled Ship",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-065",
+      "name": "Phaeacian Swiftship",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-066",
+      "name": "Bow of Iphitus",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-067",
+      "name": "Potter at the Kiln",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-067",
+        "kind": "adaptation",
+        "text": "A flawed vessel is not wasted if the next one is better.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Scheria is rich in household craft, but no specific potter is narrated.",
+        "fit": "Original craft flavour for the discard-and-replace mechanic.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-068",
+      "name": "Guest-Gift Amphora",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-069",
+      "name": "Eumaeus's Hut",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-070",
+      "name": "Homeward Harbor",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-071",
+      "name": "Cimmerian Crossing",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-072",
+      "name": "Aulis, Harbor of Omens",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-073",
+      "name": "Olive-Oil Lamp",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-074",
+      "name": "Set Bread Before the Guest",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-074",
+        "kind": "adaptation",
+        "text": "Questions could wait until the stranger had eaten.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "The Phaeacians seat and feed Odysseus before requiring his full identity.",
+        "fit": "Hospitality-before-interrogation in one line.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-075",
+      "name": "Mooring Rope",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-076",
+      "name": "Eurycleia, Keeper of the Scar",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-077",
+      "name": "Phaeacian Oarsman",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-078",
+      "name": "Odysseus's Cloak and Brooch",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-079",
+      "name": "Demodocus, Blind Singer",
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-079",
+        "text": "she had endowed him with a divine gift of song",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, Demodocus enters the feast",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "The Muse gives Demodocus his extraordinary singing gift while taking his sight.",
+        "fit": "Specific to the blind singer and his authority over remembered stories.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 46,
+        "kind": "quote"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-080",
+      "name": "Disguised Palace Beggar",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-081",
+      "name": "A Dawn Worth Twenty Years",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-082",
+      "name": "Mourning Veil",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-082",
+        "text": "his words set them all a weeping",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 4, Menelaus recalls Odysseus",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "context": "Menelaus's recollection causes Helen, Telemachus, Menelaus and Pisistratus to weep.",
+        "fit": "The card's veil remains a social/visual composite, while the quotation supplies the actual shared grief.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 32
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-083",
+      "name": "Bronze-Bowl Smith",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-083",
+        "kind": "adaptation",
+        "text": "Craft begins with what the household already has.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Book VII emphasises bronze, gold, silver and skilled household manufacture but names no bowl-smith.",
+        "fit": "Original extension tied to the artifact condition.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-084",
+      "name": "Hearthfire Cook",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-085",
+      "name": "Beach-Drawn Longship",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-086",
+      "name": "Winged Words",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-086",
+        "text": "spoke to him winged words",
+        "author": "Homer",
+        "translator": "A. T. Murray",
+        "work": "Odyssey",
+        "location": "Book 17, recurring Homeric speech formula",
+        "speaker": "Narrator",
+        "source": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0136%3Abook%3D17%3Acard%3D424",
+        "context": "Murray preserves the recurring Homeric formula literally; Butler generally naturalizes it.",
+        "fit": "A translation-aware quotation that justifies the reprint name without pretending Butler uses the phrase.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 5,
+        "characters": 25
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-087",
+      "name": "Seabird Lookout",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-087",
+        "kind": "adaptation",
+        "text": "Over empty water, even a bird can feel like evidence.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V repeatedly uses sea-bird imagery; the mortal lookout who reads it is invented.",
+        "fit": "Keeps the navigational extension explicit.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-088",
+      "name": "Lotus-Fed Wanderer",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-089",
+      "name": "Nestor, Counselor of the Achaeans",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-089",
+        "text": "I see that you are going to be a great hero some day",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, Nestor recognises Athena's favour toward Telemachus",
+        "speaker": "Nestor",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Nestor encourages Telemachus after Athena reveals herself.",
+        "fit": "Specific intergenerational reassurance suits the counsellor rather than a generic old-warrior quote.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 52
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-090",
+      "name": "Nausicaa, Princess of Scheria",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-090",
+        "pair": "WU",
+        "text": "do not forget me when you are safe at home again",
+        "location": "Book 8, Nausicaa asks to be remembered",
+        "speaker": "Nausicaa",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "As Odysseus prepares to leave Scheria, Nausicaa asks that he remember the one who helped him.",
+        "fit": "A concise expression of recognition, care, and successful onward return.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 48
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-091",
+      "name": "Laertes, Rooted Patriarch",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-091",
+        "pair": "GW",
+        "text": "I will point out to you the trees in the vineyard which you gave me",
+        "location": "Book 24, Odysseus proves himself to Laertes",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+        "context": "Odysseus recalls the trees Laertes gave him as a child to prove their shared history.",
+        "fit": "The remembered trees are the most specific source hook for Laertes's rooted recovery identity.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 67
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-092",
+      "name": "Vengeance in the Great Hall",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-093",
+      "name": "Ordeal of the Bow",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-094",
+      "name": "Laertes' Final Spear",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-095",
+      "name": "Carry the Dead Home",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-096",
+      "name": "The Price of Memory",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-097",
+      "name": "Song of Hephaestus's Net",
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-097",
+        "text": "the weak confound the strong",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, the gods react to Hephaestus's trap",
+        "speaker": "Gods at the doorway",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "The gods admire the cunning trap that catches swift Ares.",
+        "fit": "The shortest clean statement of the song's reversal-through-craft theme.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 5,
+        "characters": 28,
+        "kind": "quote"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-098",
+      "name": "Boar Hunt on Parnassus",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-099",
+      "name": "Fogbank over Open Water",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-100",
+      "name": "Siren of the Bone-Strewn Shore",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-101",
+      "name": "Secret Laid Bare",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-102",
+      "name": "Polyphemus's Great Ram",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-103",
+      "name": "Pour the Libation",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-103",
+        "text": "stood up to make their drink-offerings",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, the Pylian gathering",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "The gathered company makes formal drink-offerings before Telemachus departs.",
+        "fit": "Direct ritual action for Pour the Libation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 6,
+        "characters": 38
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-104",
+      "name": "Hide the Weapons",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-105",
+      "name": "Neighboring Cyclops",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-106",
+      "name": "Storm-Battered Raft",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-106",
+        "kind": "adaptation",
+        "text": "Four days of careful work met one angry sea.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus completes the raft in four days before Poseidon later destroys it.",
+        "fit": "Captures the raft's vulnerability without another direct quotation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-107",
+      "name": "Eagle Omen over Ithaca",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-107",
+        "text": "Jove sent two eagles from the top of the mountain",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, the eagle omen over the assembly",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Two eagles wheel over the assembly and are interpreted as a warning of Odysseus's return.",
+        "fit": "The sign itself is the card's subject.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 49
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-108",
+      "name": "Mix the Wine",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-108",
+        "text": "pages filled the mixing-bowls with wine and water",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, household service at Pylos",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Pages mix wine and water and serve the gathering.",
+        "fit": "Exact ordinary labour for Mix the Wine.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 49
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-109",
+      "name": "Spread Guest Bedding",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-109",
+        "kind": "adaptation",
+        "text": "Hospitality does not end when the feast does.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Arete orders a proper bed prepared for Odysseus after the meal.",
+        "fit": "Turns bedding into continuation of guest-right.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-110",
+      "name": "Hospitable Swineherd",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-111",
+      "name": "Faithful Old Hound",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-112",
+      "name": "Dolphins Beside the Bow",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-113",
+      "name": "Charybdis Draws Them Back",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-114",
+      "name": "Moly Breaks Circe's Spell",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-115",
+      "name": "Sound the Depths",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-116",
+      "name": "Dream of the Geese",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-116",
+        "text": "this is no dream, but a vision of good omen",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, the eagle interprets Penelope's dream",
+        "speaker": "Eagle in Penelope's dream",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "The eagle declares the geese dream a true omen of Odysseus's return and the suitors' destruction.",
+        "fit": "Directly names the dream as an omen while preserving Penelope's surrounding uncertainty.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 43
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-117",
+      "name": "Salt-Sprayed Oarsman",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-118",
+      "name": "Beach the Ship",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-119",
+      "name": "Sea-Swallowed Mariner",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-119",
+        "kind": "adaptation",
+        "text": "The sea returned him alive, but not untouched.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus reaches shore exhausted, swollen and full of seawater.",
+        "fit": "A general mariner line grounded in the storm aftermath.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-120",
+      "name": "Read the Swell",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-120",
+        "kind": "adaptation",
+        "text": "A sailor who reads the water acts before the wave decides for him.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus studies surf, rocks, current and shelter while trying to land.",
+        "fit": "Explicit seamanship interpretation rather than a named Homeric technique.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-121",
+      "name": "Rites Before Sunset",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-122",
+      "name": "Poison from Ephyra",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-122",
+        "text": "he had been to beg poison for his arrows from Ilus",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 1, Odysseus's visit to Ephyra",
+        "speaker": "Athena as Mentes",
+        "source": "https://classics.mit.edu/Homer/odyssey.1.i.html",
+        "context": "Athena recalls Odysseus seeking poison for his arrows at Ephyra.",
+        "fit": "The poem supports poisoned arrows, while the exact poison remains unidentified.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 50
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-123",
+      "name": "Veiled Mourner",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-124",
+      "name": "Storeroom Keeper",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-124",
+        "text": "was in charge of everything both night and day",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Eurycleia guards the storeroom",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Eurycleia is described as responsible for the household stores continuously.",
+        "fit": "A precise source hook for the anonymous keeper role.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 46
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-125",
+      "name": "Spellbound Swine",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-126",
+      "name": "Ash Gatherer",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-127",
+      "name": "Household Debt",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-127",
+        "text": "the sun is blotted out of heaven",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 20, Theoclymenus's vision",
+        "speaker": "Theoclymenus",
+        "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+        "context": "The prophet sees blood, ghosts and darkness over the hall and announces the suitors' doom.",
+        "fit": "A compact image from the exact vision gives the black Omen dread without explaining the whole prophecy.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 32
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-128",
+      "name": "Funeral-Bier Bearer",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-129",
+      "name": "Funeral Pyre",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-130",
+      "name": "Team of Oxen",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-131",
+      "name": "Rowing Chant",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-132",
+      "name": "Weatherwise Sailor",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-132",
+        "kind": "adaptation",
+        "text": "The crew trusted the sailor who knew when motion should become patience.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "The voyage repeatedly alternates action with waiting for usable conditions.",
+        "fit": "Original weatherwise-sailor composite.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-133",
+      "name": "Laestrygonian Stone-Hurler",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-134",
+      "name": "Breaker of the Raft",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-134",
+        "kind": "adaptation",
+        "text": "Poseidon broke in moments what patience had built in days.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "The storm smashes the raft Odysseus had spent days constructing.",
+        "fit": "The Elemental is a game personification of the destructive sea.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-135",
+      "name": "Saltwind Opening",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-135",
+        "text": "the joints upon the spits began to low like cows",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 12, omen after Helios's cattle are slaughtered",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "context": "After the crew violates the taboo, the hides crawl and the roasting meat bellows before punishment follows.",
+        "fit": "The uncanny physical sign is the card's exact image and carries the horror of the violated oath.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 48
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-136",
+      "name": "Salt-Cured Fish",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-137",
+      "name": "Limestone Goat",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-138",
+      "name": "Farmer at the Furrow",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-139",
+      "name": "Gather Figs",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-139",
+        "text": "there will be no house in Ithaca more royal than your own",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 15, Theoclymenus interprets the hawk",
+        "speaker": "Theoclymenus",
+        "source": "https://classics.mit.edu/Homer/odyssey.15.xv.html",
+        "context": "A hawk carrying a dove crosses on the right and is read as a sign of the enduring rule of Odysseus's house.",
+        "fit": "It states the interpretation of the bird omen rather than merely describing the animal.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 57
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-140",
+      "name": "Olivewood Carpenter",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-141",
+      "name": "Goat of the Empty Isle",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-142",
+      "name": "Pour to the Dead",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-143",
+      "name": "Great Hall",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-144",
+      "name": "Obol for the Dead",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-145",
+      "name": "Broad-Beamed Ferry",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-146",
+      "name": "Weavers of the Waiting House",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-147",
+      "name": "Rosy-Fingered Dawn",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-147",
+        "text": "the child of morning, rosy-fingered Dawn, appeared",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, recurring dawn formula",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "The repeated formula marks a new day and renewed action.",
+        "fit": "The exact formula is the card's identity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 50
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-148",
+      "name": "Medon, Herald Who Endured",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-148",
+        "pair": "WB",
+        "text": "the man is guiltless, do him no hurt",
+        "location": "Book 22, Telemachus defends Medon",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+        "context": "Telemachus intervenes so the innocent herald Medon is spared.",
+        "fit": "The line exactly captures Medon's survival amid the household deaths.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 36
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-149",
+      "name": "Athena-Favored Night Raider",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-150",
+      "name": "Take the Stranger's Hand",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-150",
+        "kind": "adaptation",
+        "text": "Hospitality begins by raising the stranger from the ashes.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Alcinous raises the suppliant from the hearth before seating him.",
+        "fit": "Source-led adaptation distinct from the exact quote used on Seat the Guest.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-151",
+      "name": "Theoclymenus, Omen Reader",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-152",
+      "name": "Phaeacian Shipwright",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-152",
+        "kind": "adaptation",
+        "text": "Their ships seemed to know the destination before the sailors spoke it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "Alcinous says Phaeacian ships understand their passengers' intended destination.",
+        "fit": "The shipwright is invented; the impossible craft is directly Homeric.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-153",
+      "name": "Song of the Wooden Horse",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-153",
+        "pair": "UR",
+        "text": "change your song and tell us of the wooden horse",
+        "location": "Book 8, Odysseus requests Demodocus's Trojan Horse song",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "Odysseus asks Demodocus to sing the story of the wooden horse.",
+        "fit": "It makes the card's status as an actual performed song explicit.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 48
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-154",
+      "name": "Circe Foretells Scylla",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-155",
+      "name": "Bind Him to the Mast",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-156",
+      "name": "Storeroom Hunger",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-156",
+        "text": "so long shall we go on eating up your estate",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Antinous defends the suitors' consumption",
+        "speaker": "Antinous",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Antinous openly states that the suitors will continue consuming Telemachus's estate.",
+        "fit": "The line turns hunger into deliberate predation rather than abstract scarcity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 44
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-157",
+      "name": "Melanthius, Treacherous Goatherd",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-157",
+        "pair": "BR",
+        "text": "I will bring you arms from the store room",
+        "location": "Book 22, Melanthius arms the suitors",
+        "speaker": "Melanthius",
+        "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+        "context": "Melanthius volunteers to fetch weapons for the suitors during the hall battle.",
+        "fit": "A direct statement of his active betrayal and resource conversion.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 41
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-158",
+      "name": "Nightmare at the Threshold",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-159",
+      "name": "Aeolus, Lord of the Winds",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-159",
+        "pair": "UR",
+        "text": "he could stir or still each one of them according to his own pleasure",
+        "location": "Book 10, Aeolus controls the winds",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "context": "Aeolus is described as able to rouse or quiet the winds at will.",
+        "fit": "The line maps directly onto his Vehicle acceleration and wind-bottling Adventure.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 14,
+        "characters": 69
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-160",
+      "name": "Storm over Limestone",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-160",
+        "kind": "adaptation",
+        "text": "On a bare coast, weather has nowhere to hide its violence.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Odysseus's landfall is exposed to storm, surf and rock.",
+        "fit": "Landscape extension rather than a distinct named storm.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-161",
+      "name": "Wildfire Through Dry Scrub",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-162",
+      "name": "Song of the Faithless Crew",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-163",
+      "name": "Song of Achilles",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-164",
+      "name": "Craft at the Bench",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-164",
+        "kind": "adaptation",
+        "text": "A useful thing often begins with discarding the failed one.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V supplies intensive practical making; the iterative bench-work engine is an extension.",
+        "fit": "Original craft-process flavour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-165",
+      "name": "Summer Heat on Stone",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-166",
+      "name": "Ordeal of the Cyclops",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-167",
+      "name": "Lion Among the Flock",
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-167",
+        "text": "He looked like some lion of the wilderness",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 6, Odysseus emerges before Nausicaa",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+        "context": "The naked, salt-caked Odysseus is compared to a famished lion as the maids scatter.",
+        "fit": "The card is the simile itself, so the direct line is preferable to an adaptation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 42,
+        "kind": "quote"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-168",
+      "name": "Nostos, The Long Road Home",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-169",
+      "name": "Olive Harvest",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-170",
+      "name": "Seals on the Sunlit Rocks",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-170",
+        "text": "watching the seals come up in hundreds to bask upon the sea shore",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 4, Menelaus waits for Proteus",
+        "speaker": "Menelaus",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "context": "Menelaus describes waiting among the seals during the Proteus episode.",
+        "fit": "The card is a setting/fauna treatment and must stay attached to Menelaus's story, not Odysseus's.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 65
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-171",
+      "name": "Laertes Names the Trees",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-172",
+      "name": "Mother Lion's Charge",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-173",
+      "name": "Polites, First Through the Door",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-173",
+        "pair": "RG",
+        "text": "let us call her and see whether she is woman or goddess.",
+        "location": "Book 10, Polites urges the crew toward Circe's house",
+        "speaker": "Polites",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "context": "Polites persuades the scouting party to call to the singer inside Circe's house.",
+        "fit": "It captures the decisive first-through-the-door impulse behind the card.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 56
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-174",
+      "name": "Penelope, Patient Queen",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-174",
+        "text": "at night I would unpick the stitches",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Penelope recounts the shroud deception",
+        "speaker": "Penelope",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "She explains to the disguised Odysseus how she postponed the marriage.",
+        "fit": "The action is exactly the rare proposal's unweaving hook.",
+        "verification": "exact excerpt checked",
+        "wordCount": 7,
+        "characters": 36,
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-175",
+      "name": "Circe, Witch of Aeaea",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-175",
+        "pair": "UB",
+        "text": "when they had drunk she turned them into pigs by a stroke of her wand",
+        "location": "Book 10, Circe transforms the crew",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "context": "Circe drugs and transforms Odysseus's companions.",
+        "fit": "The exact transformation scene grounds the face-down/enchantment-death identity.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 69
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-176",
+      "name": "Calypso, Keeper of Ogygia",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-176",
+        "pair": "GU",
+        "text": "you would stay where you are, keep house along with me",
+        "location": "Book 5, Calypso urges Odysseus to remain",
+        "speaker": "Calypso",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "context": "Calypso offers continued life with her on Ogygia instead of departure.",
+        "fit": "The line directly expresses comfort becoming captivity and delayed homecoming.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 54
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-177",
+      "name": "Telemachus, Returned Son",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-177",
+        "pair": "RW",
+        "text": "Father, I have always heard of your renown both in the field and in council",
+        "location": "Book 16, Telemachus recognises Odysseus",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.16.xvi.html",
+        "context": "After the reunion, Telemachus addresses the father whose reputation he has inherited.",
+        "fit": "It bridges returned son, inherited identity, and the coming coordinated fight.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 75
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-178",
+      "name": "Euryalus, Phaeacian Champion",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-178",
+        "pair": "RG",
+        "text": "if anything has been said amiss may the winds blow it away with them",
+        "location": "Book 8, Euryalus apologises to Odysseus",
+        "speaker": "Euryalus",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "After insulting Odysseus and seeing his athletic prowess, Euryalus apologises and offers a gift.",
+        "fit": "It completes Euryalus's sequence from challenge to recognition and reconciliation.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 14,
+        "characters": 68
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-179",
+      "name": "Keeper of Ancestral Graves",
+      "status": "no-direct-quote-selected",
+      "kind": null,
+      "candidate": null,
+      "rationale": "Ordinary funerary/social-world composite. Book XXIV supports ghosts and family memory, but no single narrated grave-tending scene matches this invented role closely enough for a direct quotation.",
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-180",
+      "name": "Black-Hulled Achaean Galley",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-181",
+      "name": "Hermes's Winged Sandals",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-181",
+        "kind": "adaptation",
+        "text": "No sea was wide enough to delay the messenger of Zeus.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Hermes crosses land and sea in divine sandals to deliver Zeus's order.",
+        "fit": "Specific to Hermes while remaining an adaptation of the narration.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-182",
+      "name": "Nobody, Self-Invented",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-183",
+      "name": "Athena's Golden Lamp",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-184",
+      "name": "Penelope's Shroud",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-185",
+      "name": "Telemachus's Secret Ship",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-185",
+        "text": "my mother does not know anything about it",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus secretly loads the ship",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus tells the crew that Penelope does not know about the stores or departure.",
+        "fit": "A concise expression of the secret voyage.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 41
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-186",
+      "name": "Storm-Skimming Galley",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-186",
+        "kind": "adaptation",
+        "text": "Speed is another kind of shelter when the sea turns hostile.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Ordinary fast-galley play is a seamanship extension distinct from supernatural Phaeacian ships.",
+        "fit": "Original extension for evasive Vehicle play.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-187",
+      "name": "Scheria, Harbor of Strangers",
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-187",
+        "text": "settled them in Scheria, far from all other people",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 6, the Phaeacians' settlement",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+        "context": "Nausithous establishes the Phaeacians in remote Scheria.",
+        "fit": "Directly supports the renamed Uncharted Haven treatment.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 50,
+        "kind": "quote"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-188",
+      "name": "Ithaca, Before the War",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-189",
+      "name": "Scheria, Harbor of Wonders",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-190",
+      "name": "Scylla's Lair",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-191",
+      "name": "Aeaea, Isle of Circe",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-192",
+      "name": "Polyphemus's Cave",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-193",
+      "name": "Hall of Recognition",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-194",
+      "name": "Circe's Enchanted Garden",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-195",
+      "name": "Hall of Vengeance",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-196",
+      "name": "Cave of the Naiads",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-197",
+      "name": "Homeward Path",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-198",
+      "name": "Poseidon, Earth-Shaker",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-199",
+      "name": "Penelope, Weaver of Fate",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-200",
+      "name": "Circe, Mistress of Aeaea",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-201",
+      "name": "Calypso, Keeper Beyond Time",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-201",
+        "kind": "adaptation",
+        "text": "Immortality was only another name for never leaving.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Calypso offers immortality if Odysseus remains, while he longs for home.",
+        "fit": "Separates the mythic shelter fantasy from a freely chosen happy ending.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-202",
+      "name": "Alcinous, Hospitable King",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-203",
+      "name": "Arete, Wise Queen",
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-203",
+        "text": "a thoroughly good woman both in head and heart",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 7, Athena describes Arete",
+        "speaker": "Athena",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "context": "Athena tells Odysseus that Arete's judgement can secure his homeward passage.",
+        "fit": "A concise portrait of Arete's respected discernment.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 46,
+        "kind": "quote"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-204",
+      "name": "Patroclus, Beloved Companion",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-205",
+      "name": "Helen, Face of the War",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-206",
+      "name": "The Sea Remembers Every Wake",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-207",
+      "name": "Odysseus and Penelope, Reunited",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-208",
+      "name": "Charybdis, Devouring Whirlpool",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-209",
+      "name": "Scylla, Six-Mawed Horror",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-210",
+      "name": "Helios, All-Seeing Sun",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-211",
+      "name": "Hermes, Guide of Wanderers",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-212",
+      "name": "Descent to Hades",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-213",
+      "name": "Olive-Wood Bed of Ithaca",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-214",
+      "name": "Wool Dyer at the Courtyard",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-214",
+        "kind": "adaptation",
+        "text": "Every thread carried the patience of a household built to last.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Book VII explicitly praises Phaeacian weaving; dyeing is an invented textile extension.",
+        "fit": "Original flavour avoids inventing a named dyer.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-215",
+      "name": "The Contest of the Bow",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-216",
+      "name": "Lay of the Hidden King",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-217",
+      "name": "Metis, Cunning Counsel",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-218",
+      "name": "Moira, Inescapable Fate",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-219",
+      "name": "Eurymachus, Honey-Tongued Suitor",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-220",
+      "name": "Threshing-Floor Worker",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-221",
+      "name": "Slaughter of Helios's Cattle",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-222",
+      "name": "Lotus-Eater Grove",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-223",
+      "name": "Odysseus, Beggar-King",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-224",
+      "name": "Eumaeus and Philoetius",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-225",
+      "name": "Telemachus and Odysseus, Reunited",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-226",
+      "name": "The Sirens, Voices Beyond Shore",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-227",
+      "name": "Scrubland Hare",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-228",
+      "name": "Peace Restored to Ithaca",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-229",
+      "name": "The Siege of Troy // The Wooden Horse",
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-229",
+        "text": "the city was doomed when it took in that horse",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, Demodocus sings the wooden horse",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "Demodocus recounts the Trojan decision to bring the wooden horse into the city.",
+        "fit": "Exact fatal hinge for the Saga-to-Vehicle transformation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 46,
+        "kind": "quote"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-230",
+      "name": "Xenia, Sacred Guest-Right",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-231",
+      "name": "Agamemnon, King Among Shades",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-232",
+      "name": "Lament at the Blood-Trench",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-233",
+      "name": "Tityus, Ever-Tormented",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-234",
+      "name": "Antiphates, Laestrygonian King",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-235",
+      "name": "The Bag Is Opened",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-236",
+      "name": "Scylla Takes Six",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-237",
+      "name": "Kleos, Deathless Renown",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-237",
+        "kind": "adaptation",
+        "text": "A deed ends. The song decides how long it lives.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "Book VIII repeatedly turns heroic action into performed memory and future song.",
+        "fit": "Original articulation of kleos through performance.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-238",
+      "name": "Recognition in Plain Sight",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-239",
+      "name": "The Olive Tree of Ithaca",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-240",
+      "name": "Circe, Self-Made Witch",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-241",
+      "name": "A Name Kept Hidden",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-242",
+      "name": "The House of Odysseus",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-243",
+      "name": "The Sealed Winds of Aeolus",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-244",
+      "name": "Hermes's Golden Wand",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-245",
+      "name": "Song of the Faithful Queen",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-246",
+      "name": "Helios's Vengeance",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-247",
+      "name": "Ogygia, Island Beyond Time",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-247",
+        "kind": "adaptation",
+        "text": "Seven years can feel like one long afternoon when nothing is allowed to change.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Odysseus recounts seven years on Ogygia; literal time distortion is not in Homer.",
+        "fit": "Makes the time metaphor explicit without claiming time travel.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-248",
+      "name": "Sirens, Dream of Fatal Beauty",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-249",
+      "name": "The Long Way Home",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-250",
+      "name": "The Black-Hulled Ship, Homeward Bound",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-251",
+      "name": "Plains",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-252",
+      "name": "Pylos Before the War",
+      "status": "no-direct-quote-selected",
+      "kind": null,
+      "candidate": null,
+      "rationale": "The card deliberately imagines Pylos before the war, while Odyssey III depicts Telemachus's postwar visit. A direct Odyssey quotation would misstate the time layer.",
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-253",
+      "name": "Sparta, Hall of Oaths",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-254",
+      "name": "Island",
+      "status": "no-flavour-selected",
+      "kind": null,
+      "candidate": null,
+      "rationale": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected.",
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-255",
+      "name": "Island",
+      "status": "no-flavour-selected",
+      "kind": null,
+      "candidate": null,
+      "rationale": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected.",
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-256",
+      "name": "Island",
+      "status": "no-flavour-selected",
+      "kind": null,
+      "candidate": null,
+      "rationale": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected.",
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-257",
+      "name": "Swamp",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-258",
+      "name": "Swamp",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-259",
+      "name": "Swamp",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-260",
+      "name": "Mountain",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-261",
+      "name": "Mountain",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-262",
+      "name": "Mountain",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-263",
+      "name": "Forest",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-264",
+      "name": "Forest",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-265",
+      "name": "Forest",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-266",
+      "name": "Parnassus, Hunting Slopes",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-267",
+      "name": "Rugged Headland",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-268",
+      "name": "Olive Pasture",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-269",
+      "name": "Silent Courtyard",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-270",
+      "name": "Windswept Isle",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-270",
+        "kind": "adaptation",
+        "text": "Every exposed shore taught the wind a different voice.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V is saturated with shifting wind and exposed sea travel; the named isle is invented.",
+        "fit": "Landscape-composite flavour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-271",
+      "name": "Asphodel Meadow",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-272",
+      "name": "Laurel Grounds",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-272",
+        "kind": "adaptation",
+        "text": "Pride entered the games before any athlete did.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "The Phaeacian games turn hospitality into competition, insult and restitution.",
+        "fit": "Original line for a later-laurel visual shorthand.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-273",
+      "name": "Palmshade Cove",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-273",
+        "kind": "adaptation",
+        "text": "A strange shore can resemble home for exactly as long as the shade lasts.",
+        "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+        "basis": "The palm imagery comes from Odysseus's speech to Nausicaa; Palmshade Cove itself is invented.",
+        "fit": "Source-led landscape interpretation without relocating the Delos palm literally.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-274",
+      "name": "Calypso, Refuge or Captivity",
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-274",
+        "text": "it was she, not he, that would have it so",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 5, Odysseus's life with Calypso",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "context": "The narration distinguishes Calypso's desire from Odysseus's unwilling captivity.",
+        "fit": "Essential corrective against romanticising this portrayal as freely chosen refuge.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 41,
+        "kind": "quote"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-275",
+      "name": "Penelope's Unending Loom",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-276",
+      "name": "Odysseus's Beggar Staff",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-277",
+      "name": "Potter's Firing",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-278",
+      "name": "Signal Fire on the Headland",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-279",
+      "name": "Communal Mixing Bowl",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-279",
+        "text": "he mixed them a bowl of sweet wine",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, Nestor hosts Telemachus",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Nestor mixes a bowl of aged wine for the household gathering.",
+        "fit": "Specific material-world flavour distinct from the common service action.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 34
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-280",
+      "name": "Ordeal of the Dead",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-281",
+      "name": "Empty the Storeroom",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-281",
+        "text": "No estate can stand such recklessness",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus on the suitors' banquets",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus says the constant banquets will ruin the household.",
+        "fit": "A clean summary of depleted stores without duplicating Suitor's Extortion's wording.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 6,
+        "characters": 37
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-282",
+      "name": "Ordeal of the Narrow Sea",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-283",
+      "name": "Leatherworker's Awl",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-284",
+      "name": "Reefwise Pilot",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-285",
+      "name": "Stone-Terrace Builder",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-286",
+      "name": "Achilles, Doomed to Glory",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-287",
+      "name": "Odysseus, Never Done Wandering",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-287",
+        "text": "To strive, to seek, to find, and not to yield.",
+        "author": "Alfred, Lord Tennyson",
+        "translator": null,
+        "work": "Ulysses",
+        "location": "Final line",
+        "speaker": "Tennyson's Ulysses",
+        "source": "https://poets.org/poem/ulysses",
+        "context": "The later poem ends with resolve to continue voyaging.",
+        "fit": "Matches the deliberately restless reception version rather than Homeric homecoming.",
+        "verification": "exact excerpt checked",
+        "wordCount": 10,
+        "characters": 46,
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-288",
+      "name": "Feast Beyond Measure",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-289",
+      "name": "Fury Like Wildfire",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-290",
+      "name": "The House Endures",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-291",
+      "name": "Oaths Outlive Absence",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-292",
+      "name": "Penelope, Teller of Her Own Tale",
+      "status": "candidate-verified",
+      "kind": null,
+      "candidate": {
+        "cardId": "ODY-292",
+        "text": "So I’ll spin my own thread.",
+        "author": "Margaret Atwood",
+        "translator": null,
+        "work": "The Penelopiad",
+        "location": "Excerpt on author's book page; edition pagination not verified",
+        "speaker": "Penelope",
+        "source": "https://margaretatwood.ca/books/the-penelopiad/",
+        "context": "Penelope claims the right to tell her own story.",
+        "fit": "Directly fits the Teller of Her Own Tale version.",
+        "verification": "exact excerpt checked",
+        "wordCount": 6,
+        "characters": 27,
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-293",
+      "name": "Hector, Defender of Troy",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-294",
+      "name": "Helen, Remembered and Rewritten",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-295",
+      "name": "Read Wind and Wave",
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-295",
+        "kind": "adaptation",
+        "text": "The best course is the one the sea has already begun to reveal.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Book V shows navigation through stars, winds, coast and current; the unified system is a composite.",
+        "fit": "Original UR navigation flavour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-296",
+      "name": "Callidice, Last Queen",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-297",
+      "name": "Memory Beneath the Earth",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-298",
+      "name": "All Hands as One",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-299",
+      "name": "The Shore Beyond Sight",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-300",
+      "name": "No Debt Goes Unpaid",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-301",
+      "name": "Every Oar in Rhythm",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-302",
+      "name": "Roots Beneath the House",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-303",
+      "name": "Autolycus, Master of Cunning",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-304",
+      "name": "Telegonus Searches for His Father",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-305",
+      "name": "Telegonus Ravages Ithaca",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-306",
+      "name": "The Song Outlives the Singer",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-307",
+      "name": "Terraced Olive Grove",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-308",
+      "name": "Athena and Odysseus, Minds Alike",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    },
+    {
+      "id": "ODY-309",
+      "name": "Zeus, Keeper of Oaths",
+      "status": "pending",
+      "kind": null,
+      "candidate": null,
+      "rationale": null,
+      "finalSelection": "pending-card-space-and-layout"
+    }
+  ],
+  "summary": {
+    "totalCards": 309,
+    "exactQuoteCandidates": 54,
+    "adaptationCandidates": 35,
+    "noFlavourSelected": 3,
+    "noDirectQuoteStillNeedsFlavourDecision": 4,
+    "pending": 213,
+    "resolvedFlavourOutcomes": 92
+  }
+}
