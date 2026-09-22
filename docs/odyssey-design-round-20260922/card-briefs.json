@@ -1478,8 +1478,8 @@
       ],
       "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": "you have thundered from a clear sky"
     },
     {
       "sourceLabel": "Odyssey 10",
@@ -3452,8 +3452,8 @@
       ],
       "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": "this is no dream, but a vision of good omen"
     },
     {
       "sourceLabel": "Odyssey 12; composite",
@@ -3746,12 +3746,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 1–2; interpretation",
-      "sequence": "The household is consumed; obligations are ignored; the cost becomes bodily.",
-      "emotions": "Resentment / depletion",
-      "attributes": "Economic and moral debt.",
-      "hooks": "Small removal; being harmed enables a stronger answer.",
-      "assessment": "Possible black Omen replacement slot: retain useful removal while changing the scene explicitly.",
+      "sourceLabel": "Odyssey 20",
+      "sequence": "The feast turns uncanny; blood, tears, ghosts and darkness fill Theoclymenus's vision; he names the doom the suitors refuse to see.",
+      "emotions": "Dread / inevitability / denial",
+      "attributes": "A prophet perceives the household's approaching destruction before its victims accept it.",
+      "hooks": "Temporarily weaken a creature; leave a warning on the battlefield; sacrifice the warning later for foresight.",
+      "assessment": "Direct black Omen scene. The debuff preserves the old common removal role while replacing the stale household-debt justification with the actual prophetic vision.",
       "id": "ODY-127",
       "number": 127,
       "name": "Household Debt",
@@ -3765,18 +3765,14 @@
       "baselineRationale": "Common rebuild: simple structural glue grounded in ordinary Homeric-world material rather than a restored obscure identity.",
       "sources": [
         {
-          "label": "Homer, Odyssey 1 — Butler",
-          "url": "https://classics.mit.edu/Homer/odyssey.1.i.html"
-        },
-        {
-          "label": "Homer, Odyssey 2 — Butler",
-          "url": "https://classics.mit.edu/Homer/odyssey.2.ii.html"
+          "label": "Homer, Odyssey 20 — Butler",
+          "url": "https://classics.mit.edu/Homer/odyssey.20.xx.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": "the sun is blotted out of heaven"
     },
     {
       "sourceLabel": "Odyssey 24; funerary composite",
@@ -3982,12 +3978,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 5; seamanship extension",
-      "sequence": "A wind changes; a route opens; the crew exploits the moment.",
-      "emotions": "Opportunity / vulnerability",
-      "attributes": "A fleeting maritime advantage.",
-      "hooks": "Remove a blocker; ship-conditioned resources.",
-      "assessment": "Possible red Omen slot; preserve the common passage-opening function if the scene changes.",
+      "sourceLabel": "Odyssey 12",
+      "sequence": "The crew kills Helios's cattle; the hides crawl and the meat bellows; divine punishment follows.",
+      "emotions": "Violation / supernatural horror / impending ruin",
+      "attributes": "A broken taboo produces an unmistakable omen before the voyage collapses.",
+      "hooks": "Deal immediate damage; leave a supernatural warning; sacrifice it later for foresight.",
+      "assessment": "Strong red Omen scene. Damage expresses violent consequence while the lingering enchantment keeps the event legible as an omen rather than a generic burn spell.",
       "id": "ODY-135",
       "number": 135,
       "name": "Saltwind Opening",
@@ -4001,14 +3997,14 @@
       "baselineRationale": "Common rebuild: simple structural glue grounded in ordinary Homeric-world material rather than a restored obscure identity.",
       "sources": [
         {
-          "label": "Homer, Odyssey 5 — Butler",
-          "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
+          "label": "Homer, Odyssey 12 — Butler",
+          "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": "the joints upon the spits began to low like cows"
     },
     {
       "sourceLabel": "Odyssey 12; material-world extension",
@@ -4098,12 +4094,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 24; agricultural composite",
-      "sequence": "Visit cultivated trees; gather fruit; sustain the household.",
-      "emotions": "Abundance / patience",
-      "attributes": "Everyday cultivation.",
-      "hooks": "Food and life; no extra named system.",
-      "assessment": "A redundant one-shot food spell can yield a slot to a green Omen while a revised omen retains Food provision.",
+      "sourceLabel": "Odyssey 15",
+      "sequence": "A hawk crosses at Telemachus's right carrying a dove; Theoclymenus identifies the divine sign; he predicts the enduring royal power of Odysseus's house.",
+      "emotions": "Confidence / predatory omen / restored authority",
+      "attributes": "A bird sign connects natural dominance with the future of the household.",
+      "hooks": "Turn prey into Food; strengthen a creature; cash in the sign later for foresight.",
+      "assessment": "Green Omen's prey and growth make the hawk scene mechanically distinct. Food is an abstraction of captured prey, not a literal feast.",
       "id": "ODY-139",
       "number": 139,
       "name": "Gather Figs",
@@ -4117,14 +4113,14 @@
       "baselineRationale": "Common rebuild: simple structural glue grounded in ordinary Homeric-world material rather than a restored obscure identity.",
       "sources": [
         {
-          "label": "Homer, Odyssey 24 — Butler",
-          "url": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html"
+          "label": "Homer, Odyssey 15 — Butler",
+          "url": "https://classics.mit.edu/Homer/odyssey.15.xv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": "there will be no house in Ithaca more royal than your own"
     },
     {
       "sourceLabel": "Odyssey 5 and 23; craft composite",
