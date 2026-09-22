@@ -3,7 +3,7 @@
     "unique309Ids": true,
     "all309Authored": true,
     "commons106": true,
-    "changedCards": 39,
+    "changedCards": 42,
     "fixedCountsPreserved": true,
     "exactButlerQuotes": true
   },
@@ -53,7 +53,7 @@
       "commonPoolExcludingBasics": 90,
       "commonSlotsPerPackAssumption": 10,
       "packsPerPlayer": 3,
-      "expectedEnchantmentsInThreeUnselectedPacks": 3.0,
+      "expectedEnchantmentsInThreeUnselectedPacks": 3,
       "probabilityAtLeastOneWithIndependentSlots": 0.9576
     }
   ],
@@ -64,6 +64,7 @@
     "Draft competition and playable-card selection are not modelled.",
     "Common creature rates, removal and Omen repetition need games.",
     "Three Manifest Fate commons do not guarantee adequate density in every colour pair.",
-    "WU Penelope is approved; Iphigenia uses actual sacrifice and retains UB. Rates and interactions remain provisional."
+    "WU Penelope is approved; Iphigenia uses actual sacrifice and retains UB. Rates and interactions remain provisional.",
+    "Hybrid Saga overlap is now mechanically audited; BG and GU received narrow repairs, but their Limited rates still need played games."
   ]
 }
