@@ -119,10 +119,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: interpretation-later-fulfillment. Carry a traveller's object inland; find the place where its meaning changes.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "interpretation-later-fulfillment",
+      "flavourCandidate": {
+        "cardId": "ODY-003",
+        "kind": "adaptation",
+        "text": "One day, the oar would be mistaken for a winnowing shovel.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "Tiresias's inland-oar prophecy gives the object a new meaning far from the sea.",
+        "fit": "Source-led interpretation of the future shrine rather than a literal amulet.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 2; household composite",
@@ -196,7 +207,7 @@
       "sourceLabel": "Odyssey 12",
       "sequence": "Stop the crew's ears; bind the captain; row past the song.",
       "emotions": "Discipline / denied temptation",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Collective discipline defeats temptation: the crew's job is to keep rowing even when their captain asks them to stop.",
       "hooks": "Pay for each participant; recover after the ordeal.",
       "assessment": "The established delayed untap preserves Survival and should be the timing model for crew recovery.",
       "id": "ODY-006",
@@ -216,10 +227,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Stop the crew's ears; bind the captain; row past the song.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-006",
+        "kind": "adaptation",
+        "text": "The crew survived by refusing the song they could not afford to hear.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "The crew stops its ears and rows while Odysseus listens bound to the mast.",
+        "fit": "Centers collective discipline rather than Odysseus's exceptional access.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 19",
@@ -663,7 +685,7 @@
       "sourceLabel": "Odyssey 12",
       "sequence": "Prepare the restraint; hear the dangerous song; survive with knowledge.",
       "emotions": "Temptation mastered / thwarted capture",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Precommitted restraint lets curiosity exist without surrendering control.",
       "hooks": "Survival grows the listener; completed endurance reveals an uncertain future.",
       "assessment": "Shorten without changing which object the granted ability calls this creature.",
       "id": "ODY-017",
@@ -683,10 +705,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Prepare the restraint; hear the dangerous song; survive with knowledge.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-017",
+        "kind": "adaptation",
+        "text": "Knowledge became safe only after temptation had spent itself against the ropes.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Odysseus can hear the Sirens only because restraint was arranged in advance.",
+        "fit": "Turns the Ordeal's repeated Survival checks into precommitted resistance.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; navigation interpretation",
@@ -760,7 +793,7 @@
       "sourceLabel": "Odyssey 9",
       "sequence": "Escape anonymously; boast the true name; invite the curse.",
       "emotions": "Pride / renewed leverage",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Odysseus's pride converts a successful anonymity trick into a new vulnerability.",
       "hooks": "Return a creature and its attachments; undo accumulated confidence.",
       "assessment": "Retain the requested straight Hubris reprint, including Oracle function.",
       "id": "ODY-020",
@@ -780,10 +813,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Escape anonymously; boast the true name; invite the curse.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-020",
+        "kind": "adaptation",
+        "text": "The perfect lie saved him. The truth nearly undid it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Nobody defeats the Cyclops's call for help; Odysseus later boasts his true name and enables the curse.",
+        "fit": "The emotional hinge is pride after successful cunning.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5",
@@ -828,7 +872,7 @@
       "sourceLabel": "Odyssey 12; funeral composite",
       "sequence": "Tend the burning; spend time and fuel; preserve remains.",
       "emotions": "Duty / attrition",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Anonymous funeral labour turns loss into completed social obligation.",
       "hooks": "Deaths offer paid self-mill; mana limits the engine.",
       "assessment": "This is a living attendant; avoid implying every death is literal necromancy.",
       "id": "ODY-022",
@@ -848,10 +892,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: funerary-composite. Tend the burning; spend time and fuel; preserve remains.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "funerary-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-022",
+        "kind": "adaptation",
+        "text": "The voyage could continue only after the dead were given their due.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Elpenor's burial shows funeral labour interrupting the voyage until obligation is completed.",
+        "fit": "Generalises direct funeral work into an anonymous attendant.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 21–22",
@@ -1011,16 +1066,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Hear an unburied companion; return; burn the body and raise the oar.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-026",
+        "kind": "adaptation",
+        "text": "Even the least glorious companion could not be left without a name and grave.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "Elpenor's shade demands burial and a memorial oar; Book XII fulfils the request.",
+        "fit": "Frames funeral duty as obligation rather than heroic reward.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 11",
       "sequence": "Dig the trench; pour blood; admit a particular shade.",
       "emotions": "Dread and attention / exposure",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Ritual order controls which dead voice may approach and when.",
       "hooks": "Self-mill then recovery; a rite makes an exhausted foe vulnerable.",
       "assessment": "The shades speak; broad resurrection would be a different portrayal.",
       "id": "ODY-027",
@@ -1040,10 +1106,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Dig the trench; pour blood; admit a particular shade.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-027",
+        "kind": "adaptation",
+        "text": "The blood did not raise the dead. It gave them permission to speak.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "The trench, blood and controlled access let particular shades answer Odysseus.",
+        "fit": "Distinguishes consultation from broad resurrection.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 19",
@@ -1237,7 +1314,7 @@
       "sourceLabel": "Odyssey 10",
       "sequence": "Receive the visitors; seize one; devour him.",
       "emotions": "Predation / panic",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Laestrygonian authority turns the forms of hospitality into immediate predation.",
       "hooks": "Offer an awful choice; a larger threat or immediate damage.",
       "assessment": "Opponent choice is game interpretation, not a negotiation in the poem.",
       "id": "ODY-034",
@@ -1257,10 +1334,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Receive the visitors; seize one; devour him.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-034",
+        "kind": "adaptation",
+        "text": "The embassy became a meal before anyone understood the welcome.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "Antiphates kills and eats one of the scouts immediately after they reach his house.",
+        "fit": "Captures Laestrygonian hospitality as predation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 1",
@@ -1520,7 +1608,7 @@
       "sourceLabel": "Odyssey 9–12; voyage composite",
       "sequence": "Work the vessel; reach new ground; secure further passage.",
       "emotions": "Discovery / encroachment",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Practical voyaging turns each unknown landing into information, supply and the next departure.",
       "hooks": "Land arrival plus tapped labour; complete a ramp quest.",
       "assessment": "Keep the two-part condition legible and achievable at common.",
       "id": "ODY-042",
@@ -1544,10 +1632,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: voyage-composite. Work the vessel; reach new ground; secure further passage.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "voyage-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-042",
+        "kind": "adaptation",
+        "text": "Every landing was a question disguised as land.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Books IX–XII repeatedly turn new shores into uncertain tests of people, food and danger.",
+        "fit": "Whole-voyage composite for exploration/ramp.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 8; oral-performance interpretation",
@@ -1612,10 +1711,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "passage checked: Book XII directly has Odysseus order the crew to row with might and main and command the coxswain; delayed recovery is gameplay abstraction.",
+      "sourceReview": "Books IX–XII source pass checked; classification: crew-composite. Odysseus orders the crew to row with might and main; the coxswain holds the ship on the commanded course past danger.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "crew-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-044",
+        "kind": "adaptation",
+        "text": "When one man's strength failed, rhythm carried the ship.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Odysseus repeatedly orders coordinated rowing through danger.",
+        "fit": "Original crew-work line grounded in the passage.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; composite",
@@ -1689,7 +1799,7 @@
       "sourceLabel": "Odyssey 12",
       "sequence": "Catch the fig tree; hang above the whirlpool; recover the returning wreckage.",
       "emotions": "Suspended fear / frustrated capture",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Survival through timing and endurance rather than dominance.",
       "hooks": "Reach; returning objects restore readiness and growth.",
       "assessment": "The tree saves by remaining in place, unlike the raft it helps recover.",
       "id": "ODY-047",
@@ -1709,10 +1819,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Catch the fig tree; hang above the whirlpool; recover the returning wreckage.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-047",
+        "kind": "adaptation",
+        "text": "He survived by holding still above a danger that never did.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Odysseus hangs from the fig tree while Charybdis cycles below and waits for wreckage to return.",
+        "fit": "Emphasises patience rather than combat.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 7; visual interpretation",
@@ -1837,10 +1958,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Hermes intercepts the hero; identifies moly; gives instructions against Circe.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-050",
+        "kind": "adaptation",
+        "text": "The god gave him a flower, a warning, and exactly enough courage to enter.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "Hermes gives moly and instructions before Odysseus confronts Circe.",
+        "fit": "Practical divine intervention rather than automatic victory.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 2",
@@ -1908,7 +2040,7 @@
       "sourceLabel": "Odyssey 11",
       "sequence": "Drink the blood; recognise the living visitor; reveal the difficult route.",
       "emotions": "Solemn knowledge / foreboding",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Knowledge among the dead has rules: Tiresias alone can map the return and its costs.",
       "hooks": "Graveyard movement and exile casting reveal information.",
       "assessment": "Opponent mill is indirect prophecy; ensure common enablers make this an actual UB signpost.",
       "id": "ODY-052",
@@ -1928,7 +2060,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Drink the blood; recognise the living visitor; reveal the difficult route.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
@@ -1964,13 +2096,14 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 11,
         "characters": 57
-      }
+      },
+      "sourceClass": "direct"
     },
     {
       "sourceLabel": "Odyssey 10 and 12",
       "sequence": "Question the leader; fear the witch; choose forbidden food under hunger.",
       "emotions": "Justified doubt becoming disaster / temptation",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Scepticism can be perceptive and still become disastrous when hunger makes short-term logic irresistible.",
       "hooks": "Sacrifice companions or resources for an urgent option.",
       "assessment": "Do not flatten every objection into stupidity; Book 10 caution saves him.",
       "id": "ODY-053",
@@ -1994,7 +2127,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-multi-episode. Question the leader; fear the witch; choose forbidden food under hunger.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
@@ -2030,13 +2163,14 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 13,
         "characters": 61
-      }
+      },
+      "sourceClass": "direct-multi-episode"
     },
     {
       "sourceLabel": "Odyssey 9",
       "sequence": "Seal the cave; devour guests; become the obstacle to escape.",
       "emotions": "Domination / terror",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Domestic routine without guest-right: Polyphemus is orderly with his flock and monstrous with people.",
       "hooks": "Huge body; monstrous escalation; fight a smaller creature.",
       "assessment": "A monster encounter, distinct from the common investigating neighbour.",
       "id": "ODY-054",
@@ -2056,10 +2190,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Seal the cave; devour guests; become the obstacle to escape.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-054",
+        "kind": "adaptation",
+        "text": "He treated guests as meat and laws as jokes.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Polyphemus rejects Zeus's guest-right and eats Odysseus's companions.",
+        "fit": "Sharp character summary for the hospitality inversion.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 14",
@@ -2232,7 +2377,7 @@
       "sourceLabel": "Odyssey 11",
       "sequence": "Approach the blood; tell of home; slip through three attempted embraces.",
       "emotions": "Grief / elusive memory",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Home survives as information and grief even when the body cannot be embraced.",
       "hooks": "Recover information from the graveyard; preserve land as a memory.",
       "assessment": "Counters imply lasting strength but the defining emotional action is inability to hold her.",
       "id": "ODY-058",
@@ -2252,7 +2397,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Approach the blood; tell of home; slip through three attempted embraces.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
@@ -2288,13 +2433,14 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 13,
         "characters": 61
-      }
+      },
+      "sourceClass": "direct"
     },
     {
       "sourceLabel": "Odyssey 12; crew composite",
       "sequence": "Muster rowers; launch immediately; recruit after a successful voyage.",
       "emotions": "Coordination / mounting pressure",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Anonymous crew leadership: synchronise workers, launch fast, make successful passage produce more capacity.",
       "hooks": "Vehicle haste; Survival yields a sailor.",
       "assessment": "A nonlegendary signpost by current design; record the exception rather than inventing a name.",
       "id": "ODY-059",
@@ -2314,7 +2460,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: crew-composite. Muster rowers; launch immediately; recruit after a successful voyage.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
@@ -2350,13 +2496,14 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 10,
         "characters": 45
-      }
+      },
+      "sourceClass": "crew-composite"
     },
     {
       "sourceLabel": "Odyssey 9–12; voyage interpretation",
       "sequence": "Choose an unknown shore; leave alternatives behind; accumulate discoveries.",
       "emotions": "Wonder / unpredictability",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Wandering itself is the subject; every chosen shore leaves unseen alternatives behind.",
       "hooks": "Manifest Fate links exile and land development.",
       "assessment": "A nonlegendary GU signpost; it should not require a rare to become functional.",
       "id": "ODY-060",
@@ -2380,7 +2527,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "passages checked; whole-voyage composite; no direct quote selected to avoid false localization.",
+      "sourceReview": "Books IX–XII source pass checked; classification: voyage-composite. Choose an unknown shore; leave alternatives behind; accumulate discoveries.",
       "briefStatus": "first-pass",
       "quoteStatus": "source-led adaptation candidate; final card-space check pending",
       "quotationCandidate": null,
@@ -2393,7 +2540,8 @@
         "fit": "Whole-poem voyage flavour without falsely localising the card.",
         "verification": "source-led adaptation checked",
         "selection": "candidate; final card-space check pending"
-      }
+      },
+      "sourceClass": "voyage-composite"
     },
     {
       "sourceLabel": "Odyssey 9 and 13–22; synthesis",
@@ -2469,7 +2617,7 @@
       "sourceLabel": "Odyssey 9",
       "sequence": "Give the name Nobody; blind the host; make the cry for help meaningless.",
       "emotions": "Wit under terror / confusion",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Cunning as identity control: a deliberately false self defeats a stronger opponent.",
       "hooks": "Protect anonymous creatures; let hidden attackers exploit confusion.",
       "assessment": "The cave wordplay differs from the later palace beggar's surveillance.",
       "id": "ODY-063",
@@ -2489,10 +2637,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Give the name Nobody; blind the host; make the cry for help meaningless.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-063",
+        "kind": "adaptation",
+        "text": "For one night, a false name was stronger than a spear.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "The Nobody ruse makes Polyphemus's cries useless to his neighbours.",
+        "fit": "Identity control is the weapon.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9–12; ship-labour composite",
@@ -2522,10 +2681,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "passages checked: Books IX and XII directly show boarding, oar-work, ship handling and dangerous passage; the delayed untap is mechanical abstraction.",
+      "sourceReview": "Books IX–XII source pass checked; classification: ship-labour-composite. Board the ship; take places at the oars; drive the vessel through successive dangers.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "ship-labour-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-064",
+        "kind": "adaptation",
+        "text": "The ship moved because exhausted men kept choosing the next stroke.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "The voyage repeatedly depends on ordinary rowers working through fear and exhaustion.",
+        "fit": "Makes labour the ship's real engine.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 8 and 13",
@@ -2743,10 +2913,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Cross toward the sunless Cimmerian shore.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct-setting",
+      "flavourCandidate": {
+        "cardId": "ODY-071",
+        "kind": "adaptation",
+        "text": "No sunrise reached the shore where the living came to question the dead.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "The Cimmerian land is described as misty darkness untouched by the sun.",
+        "fit": "Setting flavour for the dark threshold.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Iliad 2; Aulis setting",
@@ -2864,10 +3045,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: historical-seamanship-extension. Secure a ship; hold it at shore; release it for departure.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "historical-seamanship-extension",
+      "flavourCandidate": {
+        "cardId": "ODY-075",
+        "kind": "adaptation",
+        "text": "A ship is safest only until the crew decides to leave.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Mooring and beaching are ordinary practical transitions between danger ashore and danger at sea.",
+        "fit": "Material-world seamanship extension.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 19",
@@ -3228,10 +3420,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: maritime-composite. Launch from shore; crew lightly; support companions moving beside the ship.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "maritime-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-085",
+        "kind": "adaptation",
+        "text": "Every voyage begins twice: once in the mind, once when the hull leaves the sand.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Books IX–XII repeatedly beach and relaunch ships from temporary shores.",
+        "fit": "Composite coastal-ship flavour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Homeric formula / translation tradition",
@@ -3356,10 +3559,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Taste the lotus; accept pleasant oblivion; delay departure.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-088",
+        "kind": "adaptation",
+        "text": "The lotus asked for nothing except the desire to go home.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "The Lotus-eaters do no violence; the food removes the desire to return.",
+        "fit": "Captures temptation as relief rather than attack.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 3; Trojan-war background",
@@ -3636,7 +3850,7 @@
       "sourceLabel": "Odyssey 12; funeral interpretation",
       "sequence": "Recover remains; repeat the duty; complete the rite.",
       "emotions": "Responsibility / accumulating loss",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Funeral duty repeats even when travel and survival argue for moving on.",
       "hooks": "Count graveyard departures; a final recovery and drain.",
       "assessment": "Ritual family, not another Hades expedition.",
       "id": "ODY-095",
@@ -3656,16 +3870,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: funerary-composite. Recover remains; repeat the duty; complete the rite.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "funerary-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-095",
+        "kind": "adaptation",
+        "text": "The living carried what remained because memory was still a duty.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Elpenor's burial and other funeral obligations require the living to handle bodies and remains.",
+        "fit": "Funerary composite.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 11; interpretation",
       "sequence": "Call back a memory; suffer its cost; learn from it.",
       "emotions": "Painful knowledge / attrition",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Recovered memory wounds the person who retrieves it; value and grief arrive together.",
       "hooks": "Pay life for cards when the past returns.",
       "assessment": "A once-per-turn engine should show the price, not infinite free recollection.",
       "id": "ODY-096",
@@ -3685,10 +3910,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: theme-interpretation. Call back a memory; suffer its cost; learn from it.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "theme-interpretation",
+      "flavourCandidate": {
+        "cardId": "ODY-096",
+        "kind": "adaptation",
+        "text": "Every answer from the dead cost the living something.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "Knowledge from the shades requires journey, sacrifice, fear and grief.",
+        "fit": "Memory as paid resource rather than free recursion.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 8",
@@ -3814,7 +4050,7 @@
       "sourceLabel": "Odyssey 12",
       "sequence": "Hear the promise of knowledge; turn toward the song; need restraint to survive.",
       "emotions": "Allure / unwanted commitment",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The Siren is credible precisely because her promised knowledge is real enough to tempt.",
       "hooks": "Force one attacker; diminish its fighting effectiveness.",
       "assessment": "Bird-body art is reception; Homer does not supply an anatomical description.",
       "id": "ODY-100",
@@ -3834,10 +4070,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Hear the promise of knowledge; turn toward the song; need restraint to survive.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-100",
+        "kind": "adaptation",
+        "text": "Their promise was knowledge. Their proof was the bones around them.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Circe warns that the Sirens promise knowledge from a meadow surrounded by dead sailors.",
+        "fit": "Puts allure and consequence in the same line.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9; interpretation",
@@ -3863,16 +4110,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: mechanic-interpretation. Keep an identity hidden; spend the disguise; obtain knowledge at a cost.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "mechanic-interpretation",
+      "flavourCandidate": {
+        "cardId": "ODY-101",
+        "kind": "adaptation",
+        "text": "A disguise is useful until knowing costs more than hiding.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "The Nobody episode treats hidden identity as a strategic resource with a later cost.",
+        "fit": "Interpretive flavour for sacrificing concealment.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9",
       "sequence": "Bind companions beneath sheep; cling under the great ram; pass the blind hand.",
       "emotions": "Tense ingenuity / failure to detect",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The great ram is innocent cover; familiarity lets the animal pass where a hero could not.",
       "hooks": "A larger attacker carries a small companion through blockers.",
       "assessment": "One of the strongest story-to-combat hooks; preserve it.",
       "id": "ODY-102",
@@ -3892,10 +4150,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Bind companions beneath sheep; cling under the great ram; pass the blind hand.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-102",
+        "kind": "adaptation",
+        "text": "The blind hand searched the fleece and missed the man beneath it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Polyphemus feels the ram while Odysseus clings underneath.",
+        "fit": "Specific escape image without another quotation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 3; libation scene",
@@ -4010,10 +4279,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Hear Polyphemus cry; come to the cave; misunderstand Nobody.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-105",
+        "kind": "adaptation",
+        "text": "Nobody was killing him, so nobody came to help.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "The neighbouring Cyclopes misunderstand Polyphemus because of Odysseus's false name.",
+        "fit": "The wordplay is the whole mechanical joke.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5",
@@ -4295,10 +4575,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "passage checked with extension: Book XII explicitly names dolphins among Scylla's prey; dolphins pacing a ship's bow are an explicit natural-world extension, not a narrated event.",
+      "sourceReview": "Books IX–XII source pass checked; classification: natural-world-extension. Book XII names dolphins among the sea creatures Scylla hunts; this card moves ordinary dolphins beside a travelling ship as an explicit natural-world extension.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "natural-world-extension",
+      "flavourCandidate": {
+        "cardId": "ODY-112",
+        "kind": "adaptation",
+        "text": "Not every shape in the water was an omen; some were simply alive.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Book XII names dolphins as ordinary sea life around Scylla; bow-running is an extension.",
+        "fit": "Keeps natural-world texture distinct from prophecy.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12",
@@ -4324,16 +4615,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Water pulls down; wreckage disappears; the same danger returns.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-113",
+        "kind": "adaptation",
+        "text": "What she swallowed, she returned only to swallow again.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Charybdis repeatedly sucks down and disgorges the sea and later Odysseus's wreckage.",
+        "fit": "Captures recurrence rather than one-time removal.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 10",
       "sequence": "Take Hermes's herb; resist the drug; expose Circe's failed magic.",
       "emotions": "Prepared confidence / surprise",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Hermes's countermeasure turns magical helplessness into one narrow window for agency.",
       "hooks": "Counter an enchantment or artifact.",
       "assessment": "Keep the straight reprint; this is prevention, unlike later undoing of transformation.",
       "id": "ODY-114",
@@ -4353,10 +4655,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Take Hermes's herb; resist the drug; expose Circe's failed magic.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-114",
+        "kind": "adaptation",
+        "text": "Black root, white flower; one mortal suddenly stood outside the spell.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "Hermes identifies moly's black root and white flower; it lets Odysseus resist Circe.",
+        "fit": "Source-led image without quoting the botanical description.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9; ancient-Mediterranean seamanship extension",
@@ -4386,10 +4699,21 @@
           "url": "https://www.cambridge.org/core/journals/journal-of-navigation/article/early-navigation-in-the-north-sea-the-use-of-the-lead-and-line-and-other-navigation-methods/EDA8012AE267C583E8F2EA14EE36E145"
         }
       ],
-      "sourceReview": "passage checked with external extension: Odyssey IX supplies ship and oar work but not depth sounding; sounding is treated as historically attested ancient-Mediterranean seamanship, not a Homeric event.",
+      "sourceReview": "Books IX–XII source pass checked; classification: historical-seamanship-extension. Book IX shows sailors boarding, taking their places at the oars and navigating an unfamiliar harbour; the card extends that practical seamanship with historically attested depth sounding.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "historical-seamanship-extension",
+      "flavourCandidate": {
+        "cardId": "ODY-115",
+        "kind": "adaptation",
+        "text": "Before trusting the shore, he trusted the line.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Homer supplies practical seamanship but not depth sounding; the technique is a historical extension.",
+        "fit": "Keeps the extension grounded and modest.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 19",
@@ -4475,10 +4799,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: crew-composite. Pull through danger; remain exhausted; find a better next action.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "crew-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-117",
+        "kind": "adaptation",
+        "text": "Salt dried on his skin before the next danger was named.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Ordinary rowers face danger after danger with little recovery time.",
+        "fit": "Crew composite focused on grit.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9; seamanship extension",
@@ -4504,10 +4839,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: seamanship-extension. Drive the ship ashore; disembark; prepare for the next danger.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "seamanship-extension",
+      "flavourCandidate": {
+        "cardId": "ODY-118",
+        "kind": "adaptation",
+        "text": "Landfall was work, not relief.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Ships are repeatedly beached, secured and relaunched by hand.",
+        "fit": "Compressed seamanship extension.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; composite",
@@ -4591,7 +4937,7 @@
       "sourceLabel": "Odyssey 12; funeral composite",
       "sequence": "Attend the dead; finish before night; recover composure.",
       "emotions": "Duty / slow erosion",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Ritual closure is work done against the pressure of the next journey.",
       "hooks": "A death this turn enables end-step foresight and life.",
       "assessment": "A small funeral engine, not a physical journey below.",
       "id": "ODY-121",
@@ -4611,10 +4957,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: funerary-composite. Attend the dead; finish before night; recover composure.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "funerary-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-121",
+        "kind": "adaptation",
+        "text": "Before the next voyage, the dead had to be made present one last time.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Elpenor's rites are completed before the crew departs again.",
+        "fit": "Funerary composite about closure under time pressure.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 1",
@@ -4789,10 +5146,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Drink Circe's potion; lose human shape; retain the mind within.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-125",
+        "kind": "adaptation",
+        "text": "The bodies changed first. The minds had to wait.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "Circe turns the crew into swine while their human awareness remains part of the horror.",
+        "fit": "Identity trapped inside transformation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12; funerary composite",
@@ -4818,10 +5186,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: funerary-composite. Let the pyre burn; gather remains; preserve what can be carried.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "funerary-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-126",
+        "kind": "adaptation",
+        "text": "What the fire finished, someone still had to gather.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Cremation leaves practical funeral work to the living.",
+        "fit": "Anonymous funerary labour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 20",
@@ -4936,10 +5315,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-funeral. Build Elpenor's pyre; burn the body; mark the burial with his oar.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct-funeral",
+      "flavourCandidate": {
+        "cardId": "ODY-129",
+        "kind": "adaptation",
+        "text": "The flame marked the place where obligation became memory.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Elpenor's body and armour are burned before cairn and oar memorial are raised.",
+        "fit": "Direct funeral image generalised into the card.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 24; agricultural composite",
@@ -4994,10 +5384,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: historical-rowing-extension. Call the rhythm; match strokes; advance together.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "historical-rowing-extension",
+      "flavourCandidate": {
+        "cardId": "ODY-131",
+        "kind": "adaptation",
+        "text": "One voice kept time so many hands could become one motion.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Coordinated rowing is textual; a formal rowing chant is a historical seamanship extension.",
+        "fit": "Rhythm rather than a claimed Homeric song.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; seamanship composite",
@@ -5062,10 +5463,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Occupy the cliffs; hurl boulders; smash ships trapped below.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-133",
+        "kind": "adaptation",
+        "text": "The cliffs became weapons as soon as the harbor became a trap.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "Laestrygonians hurl rocks down onto ships trapped inside the landlocked harbour.",
+        "fit": "Direct environmental violence.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; divine personification",
@@ -5130,7 +5542,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-omen. The crew kills Helios's cattle; the hides crawl and the meat bellows; divine punishment follows.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
@@ -5164,7 +5576,8 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 10,
         "characters": 48
-      }
+      },
+      "sourceClass": "direct-omen"
     },
     {
       "sourceLabel": "Odyssey 12; material-world extension",
@@ -5190,10 +5603,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: food-practice-extension. Preserve provisions; inspect supplies; consume them when needed.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "food-practice-extension",
+      "flavourCandidate": {
+        "cardId": "ODY-136",
+        "kind": "adaptation",
+        "text": "A long voyage learns to make tomorrow's food out of today's catch.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Preserved fish is an ancient-Mediterranean food extension rather than a named Odyssey meal.",
+        "fit": "Material-world travel flavour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9; natural-world composite",
@@ -5219,10 +5643,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: natural-world-composite. Find goats on rough ground; hunt; provision the crew.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "natural-world-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-137",
+        "kind": "adaptation",
+        "text": "On the empty island, abundance waited for people who had not earned it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "The goat-rich island opposite the Cyclopes is untouched by farming or hunters.",
+        "fit": "Natural-world composite.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 24; agriculture composite",
@@ -5370,10 +5805,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Find the uninhabited island; hunt its abundant goats; prepare for the cave voyage.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-141",
+        "kind": "adaptation",
+        "text": "The goats had the island to themselves until hungry sailors arrived.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Odysseus's crew hunts the abundant wild goats on the uninhabited island.",
+        "fit": "Direct scene with ordinary fauna.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 11; necromantic ritual scene",
@@ -5399,10 +5845,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "passage checked: Book XI directly gives the drink-offering to the dead and the ghosts approaching; battlefield return is symbolic game abstraction.",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-ritual. Pour the drink-offering to the dead; blood and prayer draw the ghosts near; recover a small presence only as a gameplay symbol of contact.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct-ritual",
+      "flavourCandidate": {
+        "cardId": "ODY-142",
+        "kind": "adaptation",
+        "text": "The dead gathered where blood and promise met.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "Libation, sacrifice and vows draw the shades to the trench.",
+        "fit": "Ritual contact rather than generic resurrection.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 1–2 and 22",
@@ -5850,7 +6307,7 @@
       "sourceLabel": "Odyssey 12",
       "sequence": "Hear Circe's warning; prepare in advance; stop an approaching threat.",
       "emotions": "Foreknowledge / frustrated plan",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Foreknowledge does not erase unavoidable loss; it changes how the loss is approached.",
       "hooks": "Foretell an answer; counter a spell later.",
       "assessment": "Keep the reprint; Circe's warning about unavoidable Scylla is not literally a counterspell success.",
       "id": "ODY-154",
@@ -5870,16 +6327,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Hear Circe's warning; prepare in advance; stop an approaching threat.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-154",
+        "kind": "adaptation",
+        "text": "Knowing the monster was coming did not make it a fight he could win.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Circe warns that Scylla is invincible and instructs Odysseus to pass quickly.",
+        "fit": "Foreknowledge without mastery.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12",
       "sequence": "Bind Odysseus; secure the mast; free the crew to row.",
       "emotions": "Trust under temptation / denied control",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Trust means allowing companions to disobey the tempted version of you.",
       "hooks": "Tap and protect the legendary listener; ready helpers.",
       "assessment": "Do not untap the bound listener as part of the same safety plan.",
       "id": "ODY-155",
@@ -5899,10 +6367,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Bind Odysseus; secure the mast; free the crew to row.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-155",
+        "kind": "adaptation",
+        "text": "His crew obeyed him best by refusing his orders.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Odysseus orders the crew to bind him tighter if he begs to be released.",
+        "fit": "A paradox of trust and restraint.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 1–2; household interpretation",
@@ -6087,7 +6566,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Receive the traveller; bind the winds; release a favourable passage.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
@@ -6123,7 +6602,8 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 14,
         "characters": 69
-      }
+      },
+      "sourceClass": "direct"
     },
     {
       "sourceLabel": "Odyssey 5; landscape extension",
@@ -6192,7 +6672,7 @@
       "sourceLabel": "Odyssey 10 and 12; imagined song",
       "sequence": "Sing of squandered gifts and forbidden food; mourn the lost crew.",
       "emotions": "Regret / warning",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A cautionary performance about the crew's repeated preference for immediate explanation, appetite or wealth.",
       "hooks": "Spend a resource; create immediate provisions; recover a remnant.",
       "assessment": "Imagined performance. BG can hear survival necessity or the cost of appetite; not a recorded Demodocus song.",
       "id": "ODY-162",
@@ -6216,10 +6696,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: imagined-song-composite. Sing of squandered gifts and forbidden food; mourn the lost crew.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "imagined-song-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-162",
+        "kind": "adaptation",
+        "text": "Every gift they mistrusted and every warning they ignored became another verse.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "The wind bag and later cattle episode form a composite cautionary pattern.",
+        "fit": "Imagined song explicitly marked as composite.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Madeline Miller, The Song of Achilles; adaptation brief",
@@ -6317,7 +6808,7 @@
       "sourceLabel": "Odyssey 9",
       "sequence": "Enter the cave; endure confinement; escape beneath the flock.",
       "emotions": "Fear becoming resourcefulness / thwarted predation",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The trial is confinement followed by quiet ingenuity, not a fair fight with the Cyclops.",
       "hooks": "Survival growth; escape yields land and provisions.",
       "assessment": "Keep the ordeal about staying alive rather than killing the Cyclops.",
       "id": "ODY-166",
@@ -6337,10 +6828,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Enter the cave; endure confinement; escape beneath the flock.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-166",
+        "kind": "adaptation",
+        "text": "The cave taught them that escape could be quieter than victory.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "The surviving crew escapes under sheep rather than defeating Polyphemus outright.",
+        "fit": "Endurance and stealth over conquest.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 6; simile",
@@ -6588,7 +7090,7 @@
       "sourceLabel": "Odyssey 10",
       "sequence": "Hear Circe sing; urge the companions to call; lead them inside.",
       "emotions": "Open trust / foreboding",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Polites's openness makes him brave, likable and dangerously willing to enter before suspicion hardens.",
       "hooks": "Initiate an encounter; aid companions who follow.",
       "assessment": "Current compulsory-risk fighter is poorly matched to the trusted door-opener. Do not import EPIC's version without attribution.",
       "id": "ODY-173",
@@ -6608,7 +7110,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Hear Circe sing; urge the companions to call; lead them inside.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
@@ -6644,7 +7146,8 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 12,
         "characters": 56
-      }
+      },
+      "sourceClass": "direct"
     },
     {
       "sourceLabel": "Odyssey 2 and 19",
@@ -6714,7 +7217,7 @@
       "sourceLabel": "Odyssey 10",
       "sequence": "Offer a drink; obscure human identity; decide whether to restore it.",
       "emotions": "Power / helplessness",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Circe controls identity by making people physically legible as something other than themselves.",
       "hooks": "Enchanted and face-down creatures matter; loss yields knowledge.",
       "assessment": "The uncommon supports the transformation ecology; the mythic performs the transformation itself.",
       "id": "ODY-175",
@@ -6734,7 +7237,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Offer a drink; obscure human identity; decide whether to restore it.",
       "briefStatus": "first-pass",
       "quoteStatus": "candidate verified; final card-space check pending",
       "quotationCandidate": {
@@ -6770,7 +7273,8 @@
         "selection": "candidate; final card-space check pending",
         "wordCount": 15,
         "characters": 69
-      }
+      },
+      "sourceClass": "direct"
     },
     {
       "sourceLabel": "Odyssey 5",
@@ -7025,10 +7529,11 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Deferred to Trojan/pre-Odyssey: production story metadata identifies this as Achaean expedition transport, not Odysseus's Book IX homeward ship.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quotationCandidate": null,
+      "sourceClass": "deferred-trojan-pre-odyssey"
     },
     {
       "sourceLabel": "Odyssey 5",
@@ -7093,10 +7598,11 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Deferred to later reception: production metadata treats 'Nobody' as constructed-identity reception, not simply the Book IX episode.",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quotationCandidate": null,
+      "sourceClass": "deferred-later-reception"
     },
     {
       "sourceLabel": "Odyssey 19; visual interpretation",
@@ -7391,7 +7897,7 @@
       "sourceLabel": "Odyssey 12",
       "sequence": "Pass below the cliff; lose companions; continue despite the cost.",
       "emotions": "Dread / unavoidable loss",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The lair is a place where route choice becomes acceptance of loss.",
       "hooks": "An edict as the Adventure; ominous land afterward.",
       "assessment": "The card abstracts one cost, while the rare event can depict six victims.",
       "id": "ODY-190",
@@ -7411,16 +7917,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Pass below the cliff; lose companions; continue despite the cost.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct-setting",
+      "flavourCandidate": {
+        "cardId": "ODY-190",
+        "kind": "adaptation",
+        "text": "Every ship entered the passage knowing someone might not leave it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Circe says no ship passes Scylla without losing men.",
+        "fit": "Setting as unavoidable cost.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 10",
       "sequence": "Enter Circe's hall; encounter offered choices; remain on an enchanted island.",
       "emotions": "Temptation / uncertainty",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Aeaea makes hospitality and transformation impossible to separate at first glance.",
       "hooks": "Temporary access to cards; enchantment land supports the set.",
       "assessment": "Preserve the approved Enchantment Land identity; artwork and spell should reflect Circe, not generic red impulse.",
       "id": "ODY-191",
@@ -7440,16 +7957,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Enter Circe's hall; encounter offered choices; remain on an enchanted island.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct-setting",
+      "flavourCandidate": {
+        "cardId": "ODY-191",
+        "kind": "adaptation",
+        "text": "On Aeaea, welcome and transformation arrived in the same cup.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "Circe's house combines hospitality, food and transforming drugs.",
+        "fit": "Place flavour for seductive danger.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9",
       "sequence": "Endure the cave; hide beneath rams; leave with provisions.",
       "emotions": "Ingenuity / defeated detection",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The cave is the prison because the door-stone removes the obvious violent solution.",
       "hooks": "Strength plus Food on Adventure; cave land afterward.",
       "assessment": "Preserve the approved Cave subtype and imperfect cycle.",
       "id": "ODY-192",
@@ -7469,10 +7997,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Endure the cave; hide beneath rams; leave with provisions.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct-setting",
+      "flavourCandidate": {
+        "cardId": "ODY-192",
+        "kind": "adaptation",
+        "text": "The stone in the doorway mattered more than any weapon inside.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Polyphemus's immense door-stone makes killing him immediately impossible.",
+        "fit": "The cave itself is the prison.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 23; setting interpretation",
@@ -7504,10 +8043,10 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 11; setting interpretation",
+      "sourceLabel": "Odyssey 10; Aeaea setting",
       "sequence": "Approach the dead; pay the rite; listen to an old voice.",
       "emotions": "Reverence / melancholy",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The garden treatment turns Aeaea's beautiful abundance into visual camouflage for Circe's danger.",
       "hooks": "Scry fixing.",
       "assessment": "A graveyard-colour treatment; verify the card's exact assigned scene before a new quote is selected.",
       "id": "ODY-194",
@@ -7527,10 +8066,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book X checked: Aeaea is Circe's enchanted domain. The older Book XI label was a source-placement error and is corrected here.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct-setting",
+      "flavourCandidate": {
+        "cardId": "ODY-194",
+        "kind": "adaptation",
+        "text": "Beauty and danger grew from the same enchanted ground.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "Aeaea is Circe's dangerous domain; 'garden' is a treatment, not a named Book XI setting.",
+        "fit": "Corrects the old Book XI source drift.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 22; setting interpretation",
@@ -7697,7 +8247,7 @@
       "sourceLabel": "Odyssey 10",
       "sequence": "Prepare the draught; offer it; turn people into unrecognised creatures.",
       "emotions": "Command / loss of identity",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The mythic portrayal is Circe at maximum authorship over other bodies and identities.",
       "hooks": "Prepare a spell; turn a creature face down; subsequent attacks renew readiness.",
       "assessment": "Turning face down must respect card types and face-up permissions; test the custom Prepare implementation.",
       "id": "ODY-200",
@@ -7717,10 +8267,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Prepare the draught; offer it; turn people into unrecognised creatures.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-200",
+        "kind": "adaptation",
+        "text": "She changed bodies before she changed minds.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "Circe's draught and wand transform the crew while the story remains about identity and control.",
+        "fit": "Mythic portrayal centred on transformation power.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; mythic interpretation",
@@ -7922,7 +8483,7 @@
       "sourceLabel": "Odyssey 9–12; original metaphor",
       "sequence": "Cross again; accumulate routes; draw on remembered passage.",
       "emotions": "Experience / inevitability",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Experience accumulates even when locations vanish; the voyage leaves mental wakes.",
       "hooks": "Vehicle attacks and exile casting build a knowledge reserve.",
       "assessment": "Original poetic metaphor, not a sourced quotation.",
       "id": "ODY-206",
@@ -7946,10 +8507,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: original-metaphor. Cross again; accumulate routes; draw on remembered passage.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "original-metaphor",
+      "flavourCandidate": {
+        "cardId": "ODY-206",
+        "kind": "adaptation",
+        "text": "The sea forgets no crossing; sailors do.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "The whole voyage accumulates remembered routes and losses; the sea-memory premise is an original metaphor.",
+        "fit": "Odyssey-wide rather than one episode.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 23",
@@ -7984,7 +8556,7 @@
       "sourceLabel": "Odyssey 12",
       "sequence": "Draw the sea inward; swallow debris; disgorge it again.",
       "emotions": "Power / helpless recurrence",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Charybdis is recurrence made monstrous: swallowing and return are parts of the same cycle.",
       "hooks": "Force the return of exposed permanents; make passage dangerous.",
       "assessment": "A whirlpool's repeated pull should be distinguishable from Scylla's sudden losses.",
       "id": "ODY-208",
@@ -8004,16 +8576,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Draw the sea inward; swallow debris; disgorge it again.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-208",
+        "kind": "adaptation",
+        "text": "What the sea lost to her returned only when she chose.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Charybdis cyclically swallows and disgorges the sea.",
+        "fit": "Monster identity as recurrence.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12",
       "sequence": "Wait above the channel; strike with six heads; take sailors at once.",
       "emotions": "Predation / horror",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Scylla removes the illusion of tactical fairness by attacking six lives at once.",
       "hooks": "Large menace threat; a six-target monstrous attack.",
       "assessment": "Avoid a cost so high that the signature sixfold action never occurs in normal play.",
       "id": "ODY-209",
@@ -8033,16 +8616,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Wait above the channel; strike with six heads; take sailors at once.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-209",
+        "kind": "adaptation",
+        "text": "Six mouths made choice irrelevant.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Scylla strikes simultaneously with six heads and takes six sailors.",
+        "fit": "Abrupt predation, not a fair combat.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12",
       "sequence": "Keep the cattle sacred; observe the violation; demand retribution.",
       "emotions": "Temptation / punishment",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Helios is ownership backed by perfect awareness and the power to demand divine enforcement.",
       "hooks": "Create forbidden resources; punish consuming them.",
       "assessment": "The game offers the controller the same temptation as the crew; note Zeus executes the ship's destruction.",
       "id": "ODY-210",
@@ -8062,10 +8656,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Keep the cattle sacred; observe the violation; demand retribution.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-210",
+        "kind": "adaptation",
+        "text": "Nothing on Thrinacia escaped the sight of the Sun.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Helios's sacred cattle are protected by divine awareness and vengeance.",
+        "fit": "All-seeing ownership and taboo.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5 and 10",
@@ -8104,7 +8709,7 @@
       "sourceLabel": "Odyssey 11",
       "sequence": "Reach Ocean's edge; summon shades; hear the dead; leave in fear.",
       "emotions": "Awe / dread",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The descent is a deliberate consultation with fear, grief and obligations the living cannot answer alone.",
       "hooks": "Graveyard setup; recover counsel; limited temporary return.",
       "assessment": "Homeric shades do not rejoin life as an army. Resurrection chapters are an overt fantasy adaptation.",
       "id": "ODY-212",
@@ -8124,10 +8729,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Reach Ocean's edge; summon shades; hear the dead; leave in fear.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-212",
+        "kind": "adaptation",
+        "text": "He went to the dead because the living had run out of answers.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "Odysseus crosses to the shades specifically to obtain Tiresias's guidance.",
+        "fit": "Journey as desperate consultation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 23",
@@ -8391,7 +9007,7 @@
       "sourceLabel": "Odyssey 12",
       "sequence": "Find sacred cattle; eat despite warning; face destruction.",
       "emotions": "Hunger then regret / retribution",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The crew knowingly converts sacred property into immediate survival and transfers the cost into the future.",
       "hooks": "Create tempting Food; consume for immediate cards; pay a later price.",
       "assessment": "Current final chapter names Helios as a damage source without a defined object; fix the source to this Saga.",
       "id": "ODY-221",
@@ -8411,16 +9027,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Find sacred cattle; eat despite warning; face destruction.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-221",
+        "kind": "adaptation",
+        "text": "Hunger made the warning sound negotiable.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "The starving crew knowingly slaughters Helios's cattle despite repeated warnings.",
+        "fit": "Temptation becomes collective rationalisation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9",
       "sequence": "Taste the lotus; forget departure; be dragged back toward the voyage.",
       "emotions": "Comfort / lost agency",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The Lotus-Eater threat is relief so complete that purpose disappears voluntarily.",
       "hooks": "Food; temporary inability to attack; resumed possibilities.",
       "assessment": "Not a simple prison spell: the initial attraction matters.",
       "id": "ODY-222",
@@ -8440,10 +9067,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Taste the lotus; forget departure; be dragged back toward the voyage.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-222",
+        "kind": "adaptation",
+        "text": "They forgot home before they forgot their own names.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Lotus-eaters remove the desire to return, not identity by violence.",
+        "fit": "Comfort as loss of purpose.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 17–22",
@@ -8552,7 +9190,7 @@
       "sourceLabel": "Odyssey 12",
       "sequence": "Promise knowledge of Troy; draw the listener closer; feed on attention.",
       "emotions": "Allure / compulsion",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The Sirens weaponise the desire to know more, not simple physical force.",
       "hooks": "Force one attacker; gain foresight from the approach.",
       "assessment": "Homeric knowledge-lure is the centre, distinct from later erotic imagery.",
       "id": "ODY-226",
@@ -8572,10 +9210,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Promise knowledge of Troy; draw the listener closer; feed on attention.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-226",
+        "kind": "adaptation",
+        "text": "The song offered wisdom at the price of ever leaving.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "The Sirens promise knowledge while the bones around them reveal the true cost.",
+        "fit": "Knowledge as lethal compulsion.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 19; natural-world extension",
@@ -8734,7 +9383,7 @@
       "sourceLabel": "Odyssey 11",
       "sequence": "Approach the blood; tell of betrayal at home; warn the living.",
       "emotions": "Bitterness / foreboding",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Agamemnon's dead kingship is stripped to warning, resentment and failed homecoming.",
       "hooks": "Graveyard preparation; a return exacts a cost.",
       "assessment": "Current cast-versus-reanimated divide needs real recursion support and explicit fantasy framing.",
       "id": "ODY-231",
@@ -8754,16 +9403,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Approach the blood; tell of betrayal at home; warn the living.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-231",
+        "kind": "adaptation",
+        "text": "A king among the dead still spoke first of betrayal at home.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "Agamemnon's shade narrates his murder and warns Odysseus about homecoming.",
+        "fit": "Bitterness turned into counsel.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 11; imagined lament",
       "sequence": "Invite the dead; honour the rite; carry one memory into life.",
       "emotions": "Grief / uneasy recovery",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "An adaptive communal lament gives temporary form to the otherwise scattered voices at the trench.",
       "hooks": "Spirit; graveyard movement; small return.",
       "assessment": "Imagined performance. WB listeners can hear sacred duty or the price of communicating with death.",
       "id": "ODY-232",
@@ -8783,16 +9443,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: imagined-lament. Invite the dead; honour the rite; carry one memory into life.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "imagined-lament",
+      "flavourCandidate": {
+        "cardId": "ODY-232",
+        "kind": "adaptation",
+        "text": "Grief gave the dead shape long enough to be remembered.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "The blood-trench scene temporarily gives shades voice and identity; the lament is invented.",
+        "fit": "Adaptive lament grounded in ritual.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 11; visual analogy",
       "sequence": "Witness Tityus restrained; see the birds punish him; move on.",
       "emotions": "Horror / helplessness",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Tityus is punishment as static spectacle: movement is replaced by endless exposure.",
       "hooks": "Tie exile to a vulnerable land enchantment.",
       "assessment": "Keep Oracle function; the reprint's rock-chain image is not a literal account of all details in Homer.",
       "id": "ODY-233",
@@ -8812,16 +9483,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-visual. Witness Tityus restrained; see the birds punish him; move on.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct-visual",
+      "flavourCandidate": {
+        "cardId": "ODY-233",
+        "kind": "adaptation",
+        "text": "Punishment became landscape around Tityus.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "Odysseus sees Tityus stretched out under endless avian punishment.",
+        "fit": "Visual analogy for the reprint treatment.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 10",
       "sequence": "Receive an embassy; seize a man; turn a feast into an attack.",
       "emotions": "Predatory authority / panic",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Antiphates makes kingship indistinguishable from appetite and signals the harbour-wide attack.",
       "hooks": "Consume resources; direct their value as damage; trample onward.",
       "assessment": "The giant king's appetite differs from the ordinary glutton's one-time threat.",
       "id": "ODY-234",
@@ -8841,16 +9523,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Receive an embassy; seize a man; turn a feast into an attack.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-234",
+        "kind": "adaptation",
+        "text": "The king answered a question by eating the messenger.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "Antiphates kills and eats one scout before the Laestrygonian attack begins.",
+        "fit": "Predatory kingship in one action.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 10",
       "sequence": "Near home; suspect hidden wealth; open the wind bag; lose the route already won.",
       "emotions": "Envy / temptation / catastrophe",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The catastrophe begins in envy and suspicion, not ignorance of the bag's physical danger.",
       "hooks": "Offer temporary opportunity; release a burst of force; pay with enduring progress.",
       "assessment": "Candidate grants impulse access, then red mana, then land sacrifice. No real Treasure or crew-death wipe; Penelope can postpone the final cost. Land loss is an abstraction of the setback.",
       "id": "ODY-235",
@@ -8870,16 +9563,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Near home; suspect hidden wealth; open the wind bag; lose the route already won.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-235",
+        "kind": "adaptation",
+        "text": "They opened the bag for gold and found distance instead.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "The crew mistakes Aeolus's sealed winds for hidden wealth and loses the almost-completed voyage.",
+        "fit": "Temptation, force and lost progress.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12",
       "sequence": "Approach the narrow passage; heads strike; six companions disappear.",
       "emotions": "Dread / abrupt loss",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The emotional truth is instantaneous subtraction: six companions are simply gone.",
       "hooks": "Multiple exposed targets; limited damage divided across them.",
       "assessment": "Red tapping in chapter one needs a colour-pie check; repeated weak damage does not automatically feel like six losses.",
       "id": "ODY-236",
@@ -8899,10 +9603,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Approach the narrow passage; heads strike; six companions disappear.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-236",
+        "kind": "adaptation",
+        "text": "Six cries were gone before the oars could change rhythm.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Scylla takes six sailors at once during the passage.",
+        "fit": "Abrupt loss that the crew cannot meaningfully answer.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 8; concept",
@@ -9108,7 +9823,7 @@
       "sourceLabel": "Odyssey 10",
       "sequence": "Bind hostile winds; store their force; release them unwisely.",
       "emotions": "Control becoming regret / displacement",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Aeolus's gift is precise control whose safety depends entirely on trust after the giver is absent.",
       "hooks": "Accumulate counters; bounce many objects; self-setback at scale.",
       "assessment": "This object shows stored power; the Saga should show the crew's disastrous choice.",
       "id": "ODY-243",
@@ -9128,10 +9843,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Bind hostile winds; store their force; release them unwisely.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-243",
+        "kind": "adaptation",
+        "text": "Aeolus gave them the wind; envy decided when it would be released.",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "basis": "Aeolus carefully seals the winds; the crew opens the bag near home.",
+        "fit": "Control undone by mistrust.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5 and 24",
@@ -9207,7 +9933,7 @@
       "sourceLabel": "Odyssey 12",
       "sequence": "Eat sacred cattle; hear the demand for justice; lose the ship to Zeus's bolt.",
       "emotions": "Retribution / devastation",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Helios's vengeance is enforcement: sight becomes accusation, accusation becomes Zeus's destruction.",
       "hooks": "Board-clearing damage; ships destroyed; transgression amplifies punishment.",
       "assessment": "Name can invoke Helios's demand, but the source note must credit Zeus with the thunderbolt.",
       "id": "ODY-246",
@@ -9227,10 +9953,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct. Eat sacred cattle; hear the demand for justice; lose the ship to Zeus's bolt.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct",
+      "flavourCandidate": {
+        "cardId": "ODY-246",
+        "kind": "adaptation",
+        "text": "Helios did not need to strike them himself; he only needed Zeus to listen.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Helios demands punishment after the cattle are killed; Zeus destroys the ship.",
+        "fit": "Retribution through divine hierarchy.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; time interpretation",
@@ -9575,10 +10312,13 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Stand beside the blood trench at Ocean's edge.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no flavour text selected",
+      "quotationCandidate": null,
+      "sourceClass": "direct-setting",
+      "flavourCandidate": null,
+      "quotationAuditOutcome": "Basic Land — Swamp. Reserve the basic-land treatment without flavour text."
     },
     {
       "sourceLabel": "Odyssey 11 and 24",
@@ -9670,10 +10410,13 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Approach Circe's island cliffs.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no flavour text selected",
+      "quotationCandidate": null,
+      "sourceClass": "direct-setting",
+      "flavourCandidate": null,
+      "quotationAuditOutcome": "Basic Land — Mountain. Reserve the basic-land treatment without flavour text."
     },
     {
       "sourceLabel": "Odyssey 10",
@@ -9699,10 +10442,13 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Enter the enclosed Laestrygonian harbour.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no flavour text selected",
+      "quotationCandidate": null,
+      "sourceClass": "direct-setting",
+      "flavourCandidate": null,
+      "quotationAuditOutcome": "Basic Land — Mountain. Reserve the basic-land treatment without flavour text."
     },
     {
       "sourceLabel": "Odyssey 12",
@@ -9728,10 +10474,13 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Pass below Scylla's towering cliff.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no flavour text selected",
+      "quotationCandidate": null,
+      "sourceClass": "direct-setting",
+      "flavourCandidate": null,
+      "quotationAuditOutcome": "Basic Land — Mountain. Reserve the basic-land treatment without flavour text."
     },
     {
       "sourceLabel": "Odyssey 24",
@@ -9815,10 +10564,13 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. See the Sun's cattle on their pasture.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no flavour text selected",
+      "quotationCandidate": null,
+      "sourceClass": "direct-setting",
+      "flavourCandidate": null,
+      "quotationAuditOutcome": "Basic Land — Forest. Reserve the basic-land treatment without flavour text."
     },
     {
       "sourceLabel": "Odyssey 19",
@@ -9877,10 +10629,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: landscape-composite. Round a rocky coast under heavy surf.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "landscape-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-267",
+        "kind": "adaptation",
+        "text": "Every headland looked survivable from far enough away.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Rocky coasts and dangerous approaches recur throughout the wanderings; this land is a composite.",
+        "fit": "Landscape danger without false localization.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 14 and 24; landscape composite",
@@ -10330,7 +11093,7 @@
       "sourceLabel": "Odyssey 11–12",
       "sequence": "Approach the dead; hear the owed duty; return with memory.",
       "emotions": "Dread becoming obligation / persistence",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "The ordeal is listening to the dead and returning alive with obligations still attached.",
       "hooks": "Survival growth; surveil then recover a creature.",
       "assessment": "A trial of listening and return, not victory over Hades.",
       "id": "ODY-280",
@@ -10354,10 +11117,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-ordeal-adaptation. Approach the dead; hear the owed duty; return with memory.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct-ordeal-adaptation",
+      "flavourCandidate": {
+        "cardId": "ODY-280",
+        "kind": "adaptation",
+        "text": "The dead gave knowledge only to those willing to carry it back.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "The Hades journey is valuable because Odysseus returns with prophecy, obligation and memory.",
+        "fit": "Ordeal as listening and return.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 1–2; household interpretation",
@@ -10427,7 +11201,7 @@
       "sourceLabel": "Odyssey 12",
       "sequence": "Accept the lesser danger; keep rowing; reach water beyond the monsters.",
       "emotions": "Fear and resolve / narrow escape",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Success means choosing the loss that still leaves a voyage afterwards.",
       "hooks": "Survival growth; temporary access to a next action.",
       "assessment": "No implication that Odysseus defeats either monster in combat.",
       "id": "ODY-282",
@@ -10447,10 +11221,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: direct-ordeal-adaptation. Accept the lesser danger; keep rowing; reach water beyond the monsters.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "direct-ordeal-adaptation",
+      "flavourCandidate": {
+        "cardId": "ODY-282",
+        "kind": "adaptation",
+        "text": "The narrow sea offered no safe choice, only a survivable one.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Circe explicitly frames the passage as a choice between dangers, with Scylla the lesser loss.",
+        "fit": "Acceptance of necessary danger.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Ancient craft; extension",
@@ -10954,7 +11739,7 @@
       "sourceLabel": "Odyssey 12; crew composite",
       "sequence": "Take the benches; coordinate effort; welcome another hand aboard.",
       "emotions": "Solidarity / growing momentum",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A crew becomes heroic only as a coordinated body; no single rower is the story.",
       "hooks": "Crewing grows a worker; a completed attack recruits a sailor.",
       "assessment": "The RW rare must build on sufficient cheap bodies, not just more Vehicles.",
       "id": "ODY-298",
@@ -10974,16 +11759,27 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: crew-composite. Take the benches; coordinate effort; welcome another hand aboard.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "crew-composite",
+      "flavourCandidate": {
+        "cardId": "ODY-298",
+        "kind": "adaptation",
+        "text": "A crew becomes one body only after every hand accepts the rhythm.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Coordinated rowing repeatedly determines whether the ship clears danger.",
+        "fit": "Rare crew-composite payoff.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9–12; exploration metaphor",
       "sequence": "Leave a possible route behind; land somewhere unknown; make it productive.",
       "emotions": "Wonder / uncertainty",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Unrevealed possibility itself becomes a resource for the next landfall.",
       "hooks": "Hidden bodies provide mana; manifestation enables land deployment.",
       "assessment": "An original mechanical metaphor; do not claim the poem's strangers literally become mana sources.",
       "id": "ODY-299",
@@ -11007,10 +11803,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books IX–XII source pass checked; classification: exploration-metaphor. Leave a possible route behind; land somewhere unknown; make it productive.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "sourceClass": "exploration-metaphor",
+      "flavourCandidate": {
+        "cardId": "ODY-299",
+        "kind": "adaptation",
+        "text": "The shore beyond sight was already shaping the voyage before anyone could name it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Unknown shores structure the whole wandering sequence; the Manifest Fate engine is an original exploration metaphor.",
+        "fit": "Odyssey-wide GU interpretation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 22; moral reckoning",
