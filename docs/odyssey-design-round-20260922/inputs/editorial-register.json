@@ -286,6 +286,9 @@
           "wordCount": 15,
           "characters": 67
         }
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked: Laertes is found working his farm in grief, demands proof, recognises Odysseus through scar and trees, then regains vigour."
       }
     },
     "ODY-116": {
@@ -406,6 +409,9 @@
           "wordCount": 8,
           "characters": 36
         }
+      },
+      "brief": {
+        "sourceReview": "Book XXII checked: Medon hides beneath a chair and is spared after Telemachus testifies that he did not willingly aid the suitors."
       }
     },
     "ODY-153": {
@@ -709,7 +715,11 @@
           "selection": "candidate; final card-space check pending"
         }
       },
-      "sourceReview": "Book XXIV checked; funerary/social-world composite; no direct quote selected."
+      "sourceReview": "Book XXIV checked; funerary/social-world composite; no direct quote selected.",
+      "brief": {
+        "sourceReview": "Book XXIV checked as funerary/social-world composite: named dead remain part of family memory, but an ordinary grave keeper is invented.",
+        "attributes": "Care for the dead as maintenance of household continuity, not necromantic domination."
+      }
     },
     "ODY-044": {
       "sourceReview": "passage checked: Book XII directly has Odysseus order the crew to row with might and main and command the coxswain; delayed recovery is gameplay abstraction.",
@@ -886,7 +896,24 @@
       }
     },
     "ODY-123": {
-      "sourceReview": "passage checked with fantasy extension: Book XXIV opens with the suitors' ghosts in Hades; a shade escaping bodily back into play is explicitly non-Homeric fantasy."
+      "sourceReview": "passage checked with fantasy extension: Book XXIV opens with the suitors' ghosts in Hades; a shade escaping bodily back into play is explicitly non-Homeric fantasy.",
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-123",
+          "kind": "adaptation",
+          "text": "The dead carried their old names into a place where names could no longer save them.",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "basis": "Hermes leads the suitors' named shades into Hades; the escaping household Spirit remains explicit fantasy extension.",
+          "fit": "Keeps the fantasy extension tied to the post-battle dead.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked with explicit fantasy extension: Hermes leads the slain suitors' shades into Hades; this persistent returning household shade is not a literal event."
+      }
     },
     "ODY-142": {
       "sourceReview": "passage checked: Book XI directly gives the drink-offering to the dead and the ghosts approaching; battlefield return is symbolic game abstraction.",
@@ -4468,6 +4495,666 @@
       "brief": {
         "sourceReview": "Deferred to Homeric-simile audit. The older Book XX placement is not supported; relevant lion imagery occurs elsewhere in the Odyssey.",
         "sourceClass": "deferred-homeric-simile"
+      }
+    },
+    "ODY-001": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-001",
+          "text": "there are tokens with which we two are alone acquainted",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 23, Penelope explains why she withheld recognition",
+          "speaker": "Penelope",
+          "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+          "context": "Penelope says she and Odysseus share private tokens no impostor could know.",
+          "fit": "The Olive-Wood Test is about private proof, not simply indestructibility.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 10,
+          "characters": 55,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIII checked: Penelope withholds recognition until the immovable-bed secret supplies a token known only to the couple.",
+        "attributes": "A marriage survives through shared private knowledge that an impostor cannot reproduce."
+      }
+    },
+    "ODY-023": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-023",
+          "text": "make fast the doors of the outer court, and to bind them securely at once",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 21, Odysseus gives Philoetius his role in the trap",
+          "speaker": "Odysseus",
+          "source": "https://classics.mit.edu/Homer/odyssey.21.xxi.html",
+          "context": "Before the bow is handed over, Odysseus orders the outer gates secured.",
+          "fit": "The card's decisive coordination is direct source action.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 15,
+          "characters": 73,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXI checked: Philoetius fastens the outer gates while Eurycleia closes the women's doors, turning household logistics into the trap."
+      }
+    },
+    "ODY-030": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-030",
+          "text": "The arrow struck Antinous in the throat",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 22, the first shot of the slaughter",
+          "speaker": "Narrator",
+          "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+          "context": "Odysseus reveals the attack by shooting Antinous while he holds his drinking cup.",
+          "fit": "The reprint treatment is exactly the first lethal shot.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 7,
+          "characters": 39,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXII checked: Odysseus's first arrow kills Antinous while the suitor is raising a cup."
+      }
+    },
+    "ODY-066": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-066",
+          "text": "gave him the bow which mighty Eurytus had been used to carry",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 21, the bow's guest-friendship history",
+          "speaker": "Narrator",
+          "source": "https://classics.mit.edu/Homer/odyssey.21.xxi.html",
+          "context": "Iphitus gives Odysseus the bow during a youthful guest-friendship exchange.",
+          "fit": "The object's identity predates the contest and carries memory of friendship.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 12,
+          "characters": 60,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXI checked: the poem gives the bow's youthful guest-friendship exchange with Iphitus before it becomes Penelope's contest object.",
+        "attributes": "An heirloom of reciprocal friendship whose mastery later becomes proof of identity."
+      }
+    },
+    "ODY-093": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-093",
+          "text": "this bow shall take the life and soul out of many a chief among us",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 21, Leiodes fails the bow",
+          "speaker": "Leiodes",
+          "source": "https://classics.mit.edu/Homer/odyssey.21.xxi.html",
+          "context": "The first suitor to try the bow predicts that it will destroy many of them.",
+          "fit": "The Ordeal's apparent test already contains the coming reckoning.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 15,
+          "characters": 66,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXI checked: the bow contest tests strength and identity while the suitors increasingly understand their inferiority.",
+        "attributes": "A public test whose apparent prize is marriage but whose hidden function is identifying the rightful wielder."
+      }
+    },
+    "ODY-094": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-094",
+          "text": "then poise your spear and hurl it",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 24, Athena restores Laertes to action",
+          "speaker": "Athena",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "context": "Athena gives Laertes strength and directly prompts the spear throw that kills Eupeithes.",
+          "fit": "The reprint becomes a final flash of martial agency.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 7,
+          "characters": 33,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked: Athena restores Laertes' vigour and directs the spear throw that kills Eupeithes.",
+        "attributes": "A final borrowed moment of martial agency for an old man whose primary identity is otherwise rooted in land and family."
+      }
+    },
+    "ODY-207": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-207",
+          "text": "hard of belief though I have been I can mistrust no longer",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 23, Penelope accepts the bed proof",
+          "speaker": "Penelope",
+          "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+          "context": "Penelope finally accepts Odysseus after he demonstrates private knowledge of their bed.",
+          "fit": "The reunion is earned certainty after deliberate doubt.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 12,
+          "characters": 58,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIII checked: the reunion occurs only after Penelope tests the bed secret and can finally stop mistrusting the apparent return.",
+        "attributes": "Mutual recognition after equal suffering; reunion is not surrender of Penelope's caution but its successful conclusion."
+      }
+    },
+    "ODY-213": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-213",
+          "text": "There was a young olive growing within the precincts of the house",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 23, Odysseus explains the rooted bed",
+          "speaker": "Odysseus",
+          "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+          "context": "Odysseus begins the construction account that proves the bed cannot simply be moved.",
+          "fit": "The land-bound artifact design is rooted in this physical fact.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 12,
+          "characters": 65,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIII checked: Odysseus built the bed around a living olive trunk, and knowledge of that immovability proves identity.",
+        "attributes": "Marriage literally built into living ground; protection comes from rooted shared history."
+      }
+    },
+    "ODY-215": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-215",
+          "text": "I will bring out the mighty bow of Ulysses",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 21, Penelope announces the contest",
+          "speaker": "Penelope",
+          "source": "https://classics.mit.edu/Homer/odyssey.21.xxi.html",
+          "context": "Penelope presents Odysseus's bow as the test the suitors must pass.",
+          "fit": "The Saga begins with the object that only the rightful wielder can master.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 9,
+          "characters": 42,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXI checked: Penelope brings out Odysseus's bow, establishes the axe test and lets the pretenders reveal their inability.",
+        "attributes": "A public contest that unknowingly returns the household's defining tool to its rightful user."
+      }
+    },
+    "ODY-219": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-219",
+          "text": "We will make everything good among ourselves",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 22, Eurymachus tries to bargain after Antinous dies",
+          "speaker": "Eurymachus",
+          "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+          "context": "Eurymachus blames Antinous and offers restitution once persuasion is his only remaining defence.",
+          "fit": "Perfectly captures honeyed self-preservation after power shifts.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 7,
+          "characters": 44,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXII checked: after Antinous falls, Eurymachus blames him, offers restitution and pivots to violence when persuasion fails.",
+        "attributes": "Persuasion as self-preservation: he changes explanation faster than allegiance."
+      }
+    },
+    "ODY-228": {
+      "flavour": {
+        "status": "candidate-verified",
+        "kind": "quote",
+        "candidate": {
+          "cardId": "ODY-228",
+          "text": "let peace and plenty reign",
+          "author": "Homer",
+          "translator": "Samuel Butler",
+          "work": "Odyssey",
+          "location": "Book 24, Zeus defines the settlement",
+          "speaker": "Zeus",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "context": "Zeus tells Athena the reasonable conclusion is covenant, friendship, peace and plenty.",
+          "fit": "The final Saga is about ending retaliation, not winning one more fight.",
+          "verification": "exact excerpt checked",
+          "selection": "candidate; final card-space check pending",
+          "wordCount": 5,
+          "characters": 26,
+          "kind": "quote"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked: Zeus and Athena explicitly choose covenant, forgiveness, friendship, peace and plenty over another cycle of bloodshed.",
+        "attributes": "The true final victory is stopping retaliation after everyone still capable of fighting has reasons to continue."
+      }
+    },
+    "ODY-029": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-029",
+          "kind": "adaptation",
+          "text": "The armory mattered because betrayal still had a key.",
+          "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+          "basis": "Melanthius discovers access to the storeroom and secretly carries weapons to the suitors.",
+          "fit": "Resource advantage created by insider betrayal.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXII checked: Melanthius exploits his knowledge of the storeroom to carry armour to the suitors.",
+        "attributes": "Betrayal as privileged access: insider knowledge becomes enemy equipment."
+      }
+    },
+    "ODY-037": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-037",
+          "kind": "adaptation",
+          "text": "They cleaned the hall before judgment turned toward them.",
+          "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+          "basis": "The disloyal maidservants are forced to remove corpses and clean the hall before their execution.",
+          "fit": "Keeps the group/coercion discomfort visible instead of treating graveyard clearing as triumph.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXII checked: twelve disloyal maidservants are compelled to carry bodies and clean the hall before their own execution. Keep the group and coercion visible."
+      }
+    },
+    "ODY-081": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-081",
+          "kind": "adaptation",
+          "text": "After twenty years, dawn was no longer another day of waiting.",
+          "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+          "basis": "Athena holds Dawn back so Odysseus and Penelope can complete reunion, then ordinary morning resumes.",
+          "fit": "Homecoming payoff as changed meaning of an ordinary day.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIII checked as interpretation: Athena delays Dawn during the reunion, so the next ordinary morning can carry a changed household meaning.",
+        "attributes": "Time feels restored rather than altered: after reunion, dawn resumes as a beginning instead of another day of absence."
+      }
+    },
+    "ODY-092": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-092",
+          "kind": "adaptation",
+          "text": "The hall was reclaimed one doorway, one ally, and one exhausted weapon at a time.",
+          "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+          "basis": "The slaughter depends on sealed exits, hidden armour, loyal allies and changing weapons.",
+          "fit": "Battle as coordinated household retaking rather than abstract wrath.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXII checked: the hall battle relies on controlled entrances, weapon access, loyal allies and sequential combat rather than one undifferentiated act of vengeance.",
+        "attributes": "Violent restoration that should feel coordinated and costly, not celebratory mass removal."
+      }
+    },
+    "ODY-128": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-128",
+          "kind": "adaptation",
+          "text": "Even after violence ended, bodies still had to be carried by living hands.",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "basis": "Book XXIV begins with consequences among the dead while Ithaca still has ordinary funeral obligations.",
+          "fit": "Funerary labour, not another heroic kill.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked as aftermath/funerary composite: the narrative foregrounds the dead and renewed feud; the bearer remains ordinary burial labour."
+      }
+    },
+    "ODY-130": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-130",
+          "kind": "adaptation",
+          "text": "Peace depends on people strong enough to return to ordinary work.",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "basis": "Laertes's farm and worked land anchor the closing book in agriculture as well as feud.",
+          "fit": "Oxen as ordinary productive strength.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked as agricultural composite: Laertes's worked farm anchors the closing setting; the ox team is ordinary agricultural power."
+      }
+    },
+    "ODY-138": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-138",
+          "kind": "adaptation",
+          "text": "The furrow asks the same work whether a king is absent or home.",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "basis": "Laertes's well-worked farm supplies the agricultural frame; this farmer is composite.",
+          "fit": "Continuity through labour after epic disruption.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked as agricultural composite: Laertes's well-tilled farm supports the furrow/labour setting; this worker is invented.",
+        "attributes": "Patient productivity after epic absence: the land answers repeated work, not reputation."
+      }
+    },
+    "ODY-169": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-169",
+          "kind": "adaptation",
+          "text": "A harvest is homecoming measured in seasons instead of miles.",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "basis": "The orchard/vineyard recognition scene makes cultivated trees part of family continuity; olive harvest itself is an extension.",
+          "fit": "Seasonal abundance as rooted restoration.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked with agricultural extension: named orchard trees and vines support seasonal cultivation, but an olive-harvest scene is not directly narrated.",
+        "attributes": "Seasonal household abundance built from trees that outlast individual journeys."
+      }
+    },
+    "ODY-171": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-171",
+          "kind": "adaptation",
+          "text": "He proved he was a son by remembering what his father had once named for him.",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "basis": "Odysseus identifies the trees Laertes gave him in childhood as a second proof of identity.",
+          "fit": "Recognition through shared land-memory without repeating Laertes's exact quote.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked: Odysseus names the trees Laertes gave him as a boy, using shared agricultural memory as proof of kinship.",
+        "attributes": "Parent and child remember the same land at different ages; ownership becomes relationship rather than property."
+      }
+    },
+    "ODY-193": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-193",
+          "kind": "adaptation",
+          "text": "Recognition needed a room quiet enough for doubt to finish its work.",
+          "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+          "basis": "Penelope keeps distance until the bed test converts private memory into certainty.",
+          "fit": "Setting interpretation centred on reserve rather than coldness.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIII checked: Penelope's reserve is deliberate evidentiary caution until private tokens verify Odysseus.",
+        "attributes": "A room defined by withheld recognition: intimacy becomes possible only after deception is ruled out."
+      }
+    },
+    "ODY-195": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-195",
+          "kind": "adaptation",
+          "text": "The same hall that had fed the suitors became the place they could not escape.",
+          "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+          "basis": "The palace layout, sealed exits and hidden weapons turn abused hospitality space into the battleground.",
+          "fit": "Setting as reversal of occupied household power.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXII checked: the great hall's occupied feast-space is transformed into a sealed battleground when Odysseus reveals himself.",
+        "attributes": "The household turns against its occupiers because doors, weapons and loyal servants have been prepared in advance."
+      }
+    },
+    "ODY-239": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-239",
+          "kind": "adaptation",
+          "text": "The house endured because one living root had never been moved.",
+          "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+          "basis": "The rooted bed makes the olive tree a literal structural link between land, marriage and household continuity.",
+          "fit": "Set-level rooted-home symbol, broader than the bed artifact.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XXIII–XXIV checked as rooted-home interpretation: the marriage-bed olive and Laertes's cultivated trees make living plants carriers of household continuity.",
+        "attributes": "The living landscape remembers the household across human absence."
+      }
+    },
+    "ODY-242": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-242",
+          "kind": "adaptation",
+          "text": "Homecoming was not one person's return; it was the house becoming a house again.",
+          "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+          "basis": "Books XXIII–XXIV restore spouse, father, servants, property and political order in stages.",
+          "fit": "Mythic household synthesis rather than one scene.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XXIII–XXIV checked as household synthesis: spouse, father, servants, possessions, land and civic order are restored in separate recognitions.",
+        "attributes": "Homecoming as system repair: people and objects regain relationships, not merely locations."
+      }
+    },
+    "ODY-269": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-269",
+          "kind": "adaptation",
+          "text": "Silence feels different after the people who filled a courtyard are gone.",
+          "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+          "basis": "The quiet courtyard is a landscape interpretation of absence and aftermath, not a named source location.",
+          "fit": "Keeps the WB land emotionally about memory.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIII checked as landscape interpretation: the courtyard carries aftermath and absence rather than a separately named source location."
+      }
+    },
+    "ODY-285": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-285",
+          "kind": "adaptation",
+          "text": "Restoration is built into slopes one stone at a time.",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "basis": "Laertes's reclaimed farm supplies the worked-land context; terrace-building is an agricultural extension.",
+          "fit": "Labour literally makes difficult land usable again.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked with agriculture extension: Laertes's reclaimed worked farm supplies the context; stone terracing is inferred material practice, not narrated action.",
+        "attributes": "Restoration through cumulative physical work rather than one heroic act."
+      }
+    },
+    "ODY-300": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-300",
+          "kind": "adaptation",
+          "text": "Restitution sounded generous only after the people who owed it had lost the power to refuse.",
+          "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+          "basis": "Eurymachus offers to repay what the suitors consumed only after Antinous is dead and Odysseus controls the room.",
+          "fit": "Debt/reckoning without endorsing vengeance as abstract morality.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXII checked: Eurymachus offers material repayment for what the suitors consumed only after Odysseus has begun killing them.",
+        "attributes": "Obligation enforced too late: material debt becomes inseparable from the moral abuse that created it."
+      }
+    },
+    "ODY-302": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-302",
+          "kind": "adaptation",
+          "text": "A house is rooted by labour as surely as by timber.",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "basis": "The bed's olive root and Laertes's worked land support a set-level metaphor connecting land, labour and household continuity.",
+          "fit": "Broader rooted-home synthesis.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Books XXIII–XXIV checked as rooted-home metaphor linking the living bed-tree, cultivated land and household labour.",
+        "attributes": "Land and labour are reciprocal supports; rootedness is something maintained, not simply inherited."
+      }
+    },
+    "ODY-307": {
+      "flavour": {
+        "status": "candidate-adaptation",
+        "kind": "adaptation",
+        "candidate": {
+          "cardId": "ODY-307",
+          "kind": "adaptation",
+          "text": "The grove fed the house because somebody kept returning to the same trees.",
+          "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+          "basis": "Olive cultivation is an extension of the orchard/agricultural closing world.",
+          "fit": "Ordinary provisioning after heroic return.",
+          "verification": "source-led adaptation checked",
+          "selection": "candidate; final card-space check pending"
+        }
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked with agriculture extension: orchard/vineyard recognition supports enduring cultivation, while a terraced olive grove is an ordinary-world elaboration.",
+        "attributes": "Provisioning as patient repetition: the grove matters because people keep returning to work it."
+      }
+    },
+    "ODY-263": {
+      "flavour": {
+        "status": "no-flavour-selected",
+        "rationale": "Basic Land — Forest representing Laertes' orchard. Reserve the basic-land treatment without flavour text."
+      },
+      "brief": {
+        "sourceReview": "Book XXIV checked: Laertes's orchard/vineyard is central to recognition and the closing farm setting. Basic-land treatment receives no flavour text."
       }
     }
   }
