@@ -13,9 +13,24 @@
     {
       "id": "ODY-002",
       "name": "Telemachus, Young Heir",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-002",
+        "text": "show your mettle, then, and make yourself a name in story.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 1, Athena urges Telemachus to act",
+        "speaker": "Athena as Mentes",
+        "source": "https://classics.mit.edu/Homer/odyssey.1.i.html",
+        "context": "Athena tells Telemachus he is old enough to act and win a name.",
+        "fit": "Directly captures the Young Heir's growth-through-guidance identity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 58
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -29,8 +44,8 @@
     {
       "id": "ODY-004",
       "name": "Keep the Long Watch",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "Household endurance is an intentional composite rather than one narrated Book II moment; a single quotation would falsely pin the card to Penelope or Telemachus.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -92,9 +107,24 @@
     {
       "id": "ODY-010",
       "name": "Telemachus Calls the Assembly",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-010",
+        "text": "it is I, as you will shortly learn, who have convened you",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus opens the assembly",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus publicly claims responsibility for calling the first assembly since Odysseus left.",
+        "fit": "The line is the action of the card, not merely commentary on leadership.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 57
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -212,9 +242,24 @@
     {
       "id": "ODY-025",
       "name": "Suitor's Extortion",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-025",
+        "text": "if I am to be eaten out of house and home at all",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus condemns the suitors' consumption",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus describes the suitors consuming his estate without recourse.",
+        "fit": "A concise statement of extortion through household depletion.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 48
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -810,9 +855,24 @@
     {
       "id": "ODY-082",
       "name": "Mourning Veil",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-082",
+        "text": "his words set them all a weeping",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 4, Menelaus recalls Odysseus",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "context": "Menelaus's recollection causes Helen, Telemachus, Menelaus and Pisistratus to weep.",
+        "fit": "The card's veil remains a social/visual composite, while the quotation supplies the actual shared grief.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 32
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -842,9 +902,24 @@
     {
       "id": "ODY-086",
       "name": "Winged Words",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-086",
+        "text": "spoke to him winged words",
+        "author": "Homer",
+        "translator": "A. T. Murray",
+        "work": "Odyssey",
+        "location": "Book 17, recurring Homeric speech formula",
+        "speaker": "Narrator",
+        "source": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0136%3Abook%3D17%3Acard%3D424",
+        "context": "Murray preserves the recurring Homeric formula literally; Butler generally naturalizes it.",
+        "fit": "A translation-aware quotation that justifies the reprint name without pretending Butler uses the phrase.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 5,
+        "characters": 25
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -866,9 +941,24 @@
     {
       "id": "ODY-089",
       "name": "Nestor, Counselor of the Achaeans",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-089",
+        "text": "I see that you are going to be a great hero some day",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, Nestor recognises Athena's favour toward Telemachus",
+        "speaker": "Nestor",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Nestor encourages Telemachus after Athena reveals herself.",
+        "fit": "Specific intergenerational reassurance suits the counsellor rather than a generic old-warrior quote.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 52
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -1010,9 +1100,24 @@
     {
       "id": "ODY-103",
       "name": "Pour the Libation",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-103",
+        "text": "stood up to make their drink-offerings",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, the Pylian gathering",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "The gathered company makes formal drink-offerings before Telemachus departs.",
+        "fit": "Direct ritual action for Pour the Libation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 6,
+        "characters": 38
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -1042,17 +1147,47 @@
     {
       "id": "ODY-107",
       "name": "Eagle Omen over Ithaca",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-107",
+        "text": "Jove sent two eagles from the top of the mountain",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, the eagle omen over the assembly",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Two eagles wheel over the assembly and are interpreted as a warning of Odysseus's return.",
+        "fit": "The sign itself is the card's subject.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 49
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-108",
       "name": "Mix the Wine",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-108",
+        "text": "pages filled the mixing-bowls with wine and water",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, household service at Pylos",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Pages mix wine and water and serve the gathering.",
+        "fit": "Exact ordinary labour for Mix the Wine.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 49
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -1177,9 +1312,24 @@
     {
       "id": "ODY-122",
       "name": "Sip of Hemlock",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-122",
+        "text": "he had been to beg poison for his arrows from Ilus",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 1, Odysseus's visit to Ephyra",
+        "speaker": "Athena as Mentes",
+        "source": "https://classics.mit.edu/Homer/odyssey.1.i.html",
+        "context": "Athena recalls Odysseus seeking poison for his arrows at Ephyra.",
+        "fit": "The poem supports poisoned arrows, while the exact poison remains unidentified.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 50
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -1193,9 +1343,24 @@
     {
       "id": "ODY-124",
       "name": "Storeroom Keeper",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-124",
+        "text": "was in charge of everything both night and day",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Eurycleia guards the storeroom",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Eurycleia is described as responsible for the household stores continuously.",
+        "fit": "A precise source hook for the anonymous keeper role.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 46
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -1422,9 +1587,24 @@
     {
       "id": "ODY-147",
       "name": "Rosy-Fingered Dawn",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-147",
+        "text": "the child of morning, rosy-fingered Dawn, appeared",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, recurring dawn formula",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "The repeated formula marks a new day and renewed action.",
+        "fit": "The exact formula is the card's identity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 50
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -1526,9 +1706,24 @@
     {
       "id": "ODY-156",
       "name": "Storeroom Hunger",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-156",
+        "text": "so long shall we go on eating up your estate",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Antinous defends the suitors' consumption",
+        "speaker": "Antinous",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Antinous openly states that the suitors will continue consuming Telemachus's estate.",
+        "fit": "The line turns hunger into deliberate predation rather than abstract scarcity.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 44
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -1670,9 +1865,24 @@
     {
       "id": "ODY-170",
       "name": "Seals on the Sunlit Rocks",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-170",
+        "text": "watching the seals come up in hundreds to bask upon the sea shore",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 4, Menelaus waits for Proteus",
+        "speaker": "Menelaus",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "context": "Menelaus describes waiting among the seals during the Proteus episode.",
+        "fit": "The card is a setting/fauna treatment and must stay attached to Menelaus's story, not Odysseus's.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 65
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -1885,9 +2095,24 @@
     {
       "id": "ODY-185",
       "name": "Telemachus's Secret Ship",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-185",
+        "text": "my mother does not know anything about it",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus secretly loads the ship",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus tells the crew that Penelope does not know about the stores or departure.",
+        "fit": "A concise expression of the secret voyage.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 41
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2421,8 +2646,8 @@
     {
       "id": "ODY-252",
       "name": "Pylos Before the War",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "The card deliberately imagines Pylos before the war, while Odyssey III depicts Telemachus's postwar visit. A direct Odyssey quotation would misstate the time layer.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2637,9 +2862,24 @@
     {
       "id": "ODY-279",
       "name": "Communal Mixing Bowl",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-279",
+        "text": "he mixed them a bowl of sweet wine",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 3, Nestor hosts Telemachus",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.3.iii.html",
+        "context": "Nestor mixes a bowl of aged wine for the household gathering.",
+        "fit": "Specific material-world flavour distinct from the common service action.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 34
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2653,9 +2893,24 @@
     {
       "id": "ODY-281",
       "name": "Empty the Storeroom",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-281",
+        "text": "No estate can stand such recklessness",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 2, Telemachus on the suitors' banquets",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Telemachus says the constant banquets will ruin the household.",
+        "fit": "A clean summary of depleted stores without duplicating Suitor's Extortion's wording.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 6,
+        "characters": 37
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2915,9 +3170,9 @@
   ],
   "summary": {
     "totalCards": 309,
-    "verifiedCandidates": 28,
-    "noDirectQuoteSelected": 2,
-    "pending": 279,
+    "verifiedCandidates": 45,
+    "noDirectQuoteSelected": 4,
+    "pending": 260,
     "finalSelections": 0
   }
 }
