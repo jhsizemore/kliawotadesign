@@ -272,3 +272,12 @@ The emotional ending is now explicitly staged rather than collapsed into generic
 The olive vertical is separated by scale: The Olive-Wood Test is private proof; Olive-Wood Bed is the rooted marriage object; Olive Tree of Ithaca is a broader continuity symbol; Roots Beneath the House connects land and labour; House of Odysseus is system-level restoration of people, objects and relationships.
 
 Production, 14A2 and live Studio remain unchanged. The six-book Odyssey narrative sweep is now complete enough to move into the remaining non-core source bands: **Trojan/pre-Odyssey, post-Odyssey/later ancient tradition, modern reception, Homeric-simile/material-world extensions, and residual source anomalies**.
+
+
+## Nineteenth checkpoint: cross-book Odyssey synthesis cleanup
+
+The cross-book Odyssey residue is substantially complete. This pass resolves **3 new exact quotation candidates**, **30 source-led adaptations**, and **3 additional basic-land no-flavour decisions**. The remaining two Odyssey-labelled deferrals are intentional: Mother Lion's Charge moves to the Homeric-simile audit, and Black-Hulled Achaean Galley moves to Trojan/pre-Odyssey.
+
+The major set concepts now have explicit emotional definitions rather than placeholder prose: **nostos** is restoration of belonging beyond physical arrival; **xenia** is obligation before knowledge of the guest; **metis** is timing/concealment/leverage; **moira** fixes constraints without eliminating responsibility; **recognition** is accumulated evidence reaching certainty; hidden names change what opponents can infer and target; Zeus represents witness/sanction behind social obligation rather than guaranteed instant intervention.
+
+Production, 14A2 and live Studio remain unchanged. Remaining editorial work is now concentrated in genuinely external/non-core bands: Trojan/pre-Odyssey and post-Odyssey tradition, modern reception, and historical/material-world/simile extensions.
