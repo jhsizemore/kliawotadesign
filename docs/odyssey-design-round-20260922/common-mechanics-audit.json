@@ -1,6 +1,6 @@
 {
   "schema": "odyssey-common-mechanics-audit/v1",
-  "method": "Manual role classification with exact hypergeometric draw calculations. Probabilities ignore mulligans, casting colours and sequencing. Card counts are distinct IDs; deck counts include copies. No booster distribution, drafting, opponent decisions or actual games are simulated.",
+  "method": "Manual role classification with exact hypergeometric hand-draw calculations. Odyssey Limited test collation is now locked separately to the core FIN-style Play Booster v1 model. The diagnostic decks remain hand-built: no draft picks, opponent decisions or actual games are simulated.",
   "pairs": [
     {
       "pair": "WU",
@@ -2669,9 +2669,101 @@
     }
   ],
   "remainingGates": [
-    "Lock booster distribution before draft claims.",
+    "Run pack/table supply and then pick-behaviour simulations under the locked collation before making draft-access claims.",
     "Expose the canonical Manifest Fate reminder; published card records use the custom action without defining it. Audit uses existing reference notes: top two, manifest one, exile the other.",
     "WU recognition and WB exploitation now have revised cards; rates, repeatability and draft access still need games.",
     "Play these lists; these calculations are not results of played games."
-  ]
+  ],
+  "collationModel": {
+    "id": "odyssey-core-fin-playbooster-v1",
+    "document": "docs/odyssey-design-round-20260922/collation-model.md",
+    "ordinaryCommons": 80,
+    "commonDualLands": 10,
+    "basics": 16,
+    "dedicatedOrdinaryCommonSlots": 7,
+    "expectedOrdinaryCommonsPerPack": 7.7515,
+    "expectedSpecificCommonAcross24PackTable": 2.32545,
+    "strictFinBonusSheetSensitivityExpectedOrdinaryCommonsPerPack": 7.4181666667,
+    "note": "The Odyssey candidate has no external Through the Ages-style bonus sheet. Seven ordinary common slots are the default; FIN's one-third common replacement is retained only as a sensitivity case."
+  },
+  "commonExposure": {
+    "Enchantment card": {
+      "count": 9,
+      "expectedPerPack": 0.872044,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.943459,
+      "expectedAcross24PackTable": 20.92905
+    },
+    "Omen": {
+      "count": 5,
+      "expectedPerPack": 0.484469,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.788587,
+      "expectedAcross24PackTable": 11.62725
+    },
+    "Manifest Fate": {
+      "count": 3,
+      "expectedPerPack": 0.290681,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.60165,
+      "expectedAcross24PackTable": 6.97635
+    },
+    "Foretell": {
+      "count": 2,
+      "expectedPerPack": 0.193788,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.456508,
+      "expectedAcross24PackTable": 4.6509
+    },
+    "Gift": {
+      "count": 2,
+      "expectedPerPack": 0.193788,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.456508,
+      "expectedAcross24PackTable": 4.6509
+    },
+    "Escape": {
+      "count": 1,
+      "expectedPerPack": 0.096894,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.261375,
+      "expectedAcross24PackTable": 2.32545
+    },
+    "Constellation payoff": {
+      "count": 1,
+      "expectedPerPack": 0.096894,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.261375,
+      "expectedAcross24PackTable": 2.32545
+    },
+    "Survival": {
+      "count": 6,
+      "expectedPerPack": 0.581363,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.846951,
+      "expectedAcross24PackTable": 13.9527
+    },
+    "Food source": {
+      "count": 8,
+      "expectedPerPack": 0.77515,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.920841,
+      "expectedAcross24PackTable": 18.6036
+    },
+    "Vehicle": {
+      "count": 3,
+      "expectedPerPack": 0.290681,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.60165,
+      "expectedAcross24PackTable": 6.97635
+    },
+    "Direct blink": {
+      "count": 2,
+      "expectedPerPack": 0.193788,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.456508,
+      "expectedAcross24PackTable": 4.6509
+    },
+    "Self-mill": {
+      "count": 6,
+      "expectedPerPack": 0.581363,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.846951,
+      "expectedAcross24PackTable": 13.9527
+    },
+    "Graveyard return": {
+      "count": 3,
+      "expectedPerPack": 0.290681,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.60165,
+      "expectedAcross24PackTable": 6.97635
+    }
+  }
 }
