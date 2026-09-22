@@ -76,9 +76,25 @@
     {
       "id": "ODY-008",
       "name": "Seat the Guest by the Hearth",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-008",
+        "text": "he took Ulysses by the hand, raised him from the hearth",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 7, Alcinous raises the suppliant",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "context": "The stranger is physically raised from the ashes and seated before being fed.",
+        "fit": "The exact hospitality action behind the restraint-and-Food card.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 55,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -130,9 +146,25 @@
     {
       "id": "ODY-011",
       "name": "Steer by the Great Bear",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-011",
+        "text": "alone never dipping into the stream of Oceanus",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 5, Odysseus steers by the Bear",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "context": "Calypso tells Odysseus to keep the Bear on his left while navigating.",
+        "fit": "A compact navigational image specific to the constellation used for steering.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 46,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -154,8 +186,8 @@
     {
       "id": "ODY-014",
       "name": "Poseidon's Storm Foretold",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -170,8 +202,8 @@
     {
       "id": "ODY-016",
       "name": "Singer at the Hearth",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -186,8 +218,8 @@
     {
       "id": "ODY-018",
       "name": "Read the Hidden Course",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -210,8 +242,8 @@
     {
       "id": "ODY-021",
       "name": "Cut the Raft Timbers",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -321,8 +353,8 @@
     {
       "id": "ODY-033",
       "name": "Row Through the Gale",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -376,8 +408,8 @@
     {
       "id": "ODY-038",
       "name": "Shipyard Sparks",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -392,8 +424,8 @@
     {
       "id": "ODY-040",
       "name": "Shipwright's Adze",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -416,8 +448,8 @@
     {
       "id": "ODY-043",
       "name": "Recall the Refrain",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -432,8 +464,8 @@
     {
       "id": "ODY-045",
       "name": "Sudden Squall",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -456,8 +488,8 @@
     {
       "id": "ODY-048",
       "name": "Ilysian Caryatid",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -623,8 +655,8 @@
     {
       "id": "ODY-057",
       "name": "Shipboard Carpenter",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -735,8 +767,8 @@
     {
       "id": "ODY-067",
       "name": "Potter at the Kiln",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -791,8 +823,8 @@
     {
       "id": "ODY-074",
       "name": "Set Bread Before the Guest",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -831,9 +863,25 @@
     {
       "id": "ODY-079",
       "name": "Demodocus, Blind Singer",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-079",
+        "text": "she had endowed him with a divine gift of song",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, Demodocus enters the feast",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "The Muse gives Demodocus his extraordinary singing gift while taking his sight.",
+        "fit": "Specific to the blind singer and his authority over remembered stories.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 46,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -878,8 +926,8 @@
     {
       "id": "ODY-083",
       "name": "Bronze-Bowl Smith",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -925,8 +973,8 @@
     {
       "id": "ODY-087",
       "name": "Seabird Lookout",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1052,9 +1100,25 @@
     {
       "id": "ODY-097",
       "name": "Caught in Hephaestus's Net",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-097",
+        "text": "the weak confound the strong",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, the gods react to Hephaestus's trap",
+        "speaker": "Gods at the doorway",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "The gods admire the cunning trap that catches swift Ares.",
+        "fit": "The shortest clean statement of the song's reversal-through-craft theme.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 5,
+        "characters": 28,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -1139,8 +1203,8 @@
     {
       "id": "ODY-106",
       "name": "Storm-Battered Raft",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1193,8 +1257,8 @@
     {
       "id": "ODY-109",
       "name": "Spread Guest Bedding",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1288,16 +1352,16 @@
     {
       "id": "ODY-119",
       "name": "Sea-Swallowed Mariner",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-120",
       "name": "Read the Swell",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1437,8 +1501,8 @@
     {
       "id": "ODY-132",
       "name": "Weatherwise Sailor",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1453,8 +1517,8 @@
     {
       "id": "ODY-134",
       "name": "Breaker of the Raft",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1642,8 +1706,8 @@
     {
       "id": "ODY-150",
       "name": "Take the Stranger's Hand",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1658,8 +1722,8 @@
     {
       "id": "ODY-152",
       "name": "Phaeacian Shipwright",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1785,8 +1849,8 @@
     {
       "id": "ODY-160",
       "name": "Storm over Limestone",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1817,8 +1881,8 @@
     {
       "id": "ODY-164",
       "name": "Craft at the Bench",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1841,9 +1905,25 @@
     {
       "id": "ODY-167",
       "name": "Lion Among the Flock",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-167",
+        "text": "He looked like some lion of the wilderness",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 6, Odysseus emerges before Nausicaa",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+        "context": "The naked, salt-caked Odysseus is compared to a famished lion as the maids scatter.",
+        "fit": "The card is the simile itself, so the direct line is preferable to an adaptation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 42,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2063,8 +2143,8 @@
     {
       "id": "ODY-181",
       "name": "Fleetfeather Sandals",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2118,17 +2198,33 @@
     {
       "id": "ODY-186",
       "name": "Storm-Skimming Galley",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-187",
       "name": "Uncharted Haven",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-187",
+        "text": "settled them in Scheria, far from all other people",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 6, the Phaeacians' settlement",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.6.vi.html",
+        "context": "Nausithous establishes the Phaeacians in remote Scheria.",
+        "fit": "Directly supports the renamed Uncharted Haven treatment.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 50,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2238,8 +2334,8 @@
     {
       "id": "ODY-201",
       "name": "Calypso, Keeper Beyond Time",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2254,9 +2350,25 @@
     {
       "id": "ODY-203",
       "name": "Arete, Wise Queen",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-203",
+        "text": "a thoroughly good woman both in head and heart",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 7, Athena describes Arete",
+        "speaker": "Athena",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "context": "Athena tells Odysseus that Arete's judgement can secure his homeward passage.",
+        "fit": "A concise portrait of Arete's respected discernment.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 46,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2342,8 +2454,8 @@
     {
       "id": "ODY-214",
       "name": "Wool Dyer at the Courtyard",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2462,9 +2574,25 @@
     {
       "id": "ODY-229",
       "name": "The Siege of Troy // The Wooden Horse",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-229",
+        "text": "the city was doomed when it took in that horse",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 8, Demodocus sings the wooden horse",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "Demodocus recounts the Trojan decision to bring the wooden horse into the city.",
+        "fit": "Exact fatal hinge for the Saga-to-Vehicle transformation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 46,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2526,8 +2654,8 @@
     {
       "id": "ODY-237",
       "name": "Kleos, Deathless Renown",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2606,8 +2734,8 @@
     {
       "id": "ODY-247",
       "name": "Ogygia, Island Beyond Time",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2662,24 +2790,24 @@
     {
       "id": "ODY-254",
       "name": "Island",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-255",
       "name": "Island",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-256",
       "name": "Island",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2790,8 +2918,8 @@
     {
       "id": "ODY-270",
       "name": "Windswept Isle",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2806,25 +2934,41 @@
     {
       "id": "ODY-272",
       "name": "Laurel Grounds",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-273",
       "name": "Palmshade Cove",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-274",
       "name": "Calypso, Refuge or Captivity",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-274",
+        "text": "it was she, not he, that would have it so",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 5, Odysseus's life with Calypso",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "context": "The narration distinguishes Calypso's desire from Odysseus's unwilling captivity.",
+        "fit": "Essential corrective against romanticising this portrayal as freely chosen refuge.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 41,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -3050,8 +3194,8 @@
     {
       "id": "ODY-295",
       "name": "Read Wind and Wave",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3170,9 +3314,10 @@
   ],
   "summary": {
     "totalCards": 309,
-    "verifiedCandidates": 45,
-    "noDirectQuoteSelected": 4,
-    "pending": 260,
+    "verifiedCandidates": 54,
+    "noDirectQuoteSelected": 39,
+    "noFlavourSelected": 3,
+    "pending": 213,
     "finalSelections": 0
   }
 }
