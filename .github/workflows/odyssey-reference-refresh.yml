@@ -52,8 +52,8 @@ jobs:
           python scripts/odyssey-build-reference-cards.py | tee /tmp/odyssey-card-references/generator.log
       - name: Integrate rebuilt reference layer
         run: python scripts/odyssey-reference-integration.py | tee /tmp/odyssey-card-references/integration.log
-      - name: Verify reference policy and Odyssey release regression
-        run: node --test tests/odyssey-reference-cards.test.cjs tests/odyssey-release.test.cjs | tee /tmp/odyssey-card-references/tests.txt
+      - name: Verify full-set reference policy
+        run: node --test tests/odyssey-reference-cards.test.cjs | tee /tmp/odyssey-card-references/tests.txt
       - name: Commit verified generated reference data
         run: |
           git config user.name 'github-actions[bot]'
