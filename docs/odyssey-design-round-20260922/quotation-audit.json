@@ -84,9 +84,25 @@
     {
       "id": "ODY-007",
       "name": "Wash the Stranger's Feet",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-007",
+        "text": "no one ever yet came who was so like Ulysses in figure, voice, and feet as you are",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Eurycleia before the scar is exposed",
+        "speaker": "Eurycleia",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Before she even touches the scar, Eurycleia is struck by the stranger's resemblance to Odysseus.",
+        "fit": "The line makes washing a recognition scene before the decisive physical proof.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 18,
+        "characters": 82,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -345,9 +361,25 @@
     {
       "id": "ODY-028",
       "name": "Penelope Questions the Beggar",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-028",
+        "text": "Now, stranger, I shall put you to the test",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Penelope tests the beggar's story",
+        "speaker": "Penelope",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Penelope asks for remembered details of Odysseus's clothing and companions.",
+        "fit": "This is the card's action in Penelope's own words.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 42,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -424,9 +456,25 @@
     {
       "id": "ODY-036",
       "name": "Eurycleia's Basin",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-036",
+        "text": "she recognized it and dropped the foot at once",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, the basin recognition",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "The scar is felt during the foot-washing; Eurycleia's recognition physically upsets the basin.",
+        "fit": "The artifact is the setting where hidden identity becomes undeniable.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 46,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -448,8 +496,8 @@
     {
       "id": "ODY-039",
       "name": "Blood on the Walls",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -504,8 +552,8 @@
     {
       "id": "ODY-046",
       "name": "Test the Goatherd",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -847,8 +895,8 @@
     {
       "id": "ODY-073",
       "name": "Olive-Oil Lamp",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -871,9 +919,25 @@
     {
       "id": "ODY-076",
       "name": "Eurycleia, Keeper of the Scar",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-076",
+        "text": "I am sure you must be Ulysses himself",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Eurycleia recognises the scar",
+        "speaker": "Eurycleia",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Eurycleia identifies Odysseus after handling the scarred leg.",
+        "fit": "A direct recognition line for the legendary character version.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 37,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -887,9 +951,25 @@
     {
       "id": "ODY-078",
       "name": "Odysseus's Cloak and Brooch",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-078",
+        "text": "It was I who gave Ulysses the clothes you speak of",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Penelope confirms the cloak and brooch",
+        "speaker": "Penelope",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Penelope recognises that the beggar's detailed description of Odysseus's clothing is genuine.",
+        "fit": "The remembered object itself becomes proof.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 50,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -919,8 +999,8 @@
     {
       "id": "ODY-080",
       "name": "Disguised Palace Beggar",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1156,8 +1236,8 @@
     {
       "id": "ODY-098",
       "name": "Boar Hunt on Parnassus",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1235,9 +1315,25 @@
     {
       "id": "ODY-104",
       "name": "Hide the Weapons",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-104",
+        "text": "I want to take it down where the smoke cannot reach it",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Telemachus gives the cover story for removing the armour",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Odysseus and Telemachus secretly move the weapons while Telemachus gives Eurycleia a harmless explanation.",
+        "fit": "The card's concealment plan in source-text wording.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 54,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -1321,8 +1417,8 @@
     {
       "id": "ODY-111",
       "name": "Faithful Old Hound",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -1865,8 +1961,8 @@
     {
       "id": "ODY-158",
       "name": "Nightmare at the Threshold",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2207,8 +2303,8 @@
     {
       "id": "ODY-183",
       "name": "Prophetic Prism",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2622,8 +2718,8 @@
     {
       "id": "ODY-227",
       "name": "Scrubland Hare",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2878,8 +2974,8 @@
     {
       "id": "ODY-257",
       "name": "Swamp",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Swamp. Reserve the basic-land treatment without flavour text.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2902,24 +2998,24 @@
     {
       "id": "ODY-260",
       "name": "Mountain",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Mountain. Reserve the basic-land treatment without flavour text.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-261",
       "name": "Mountain",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Mountain. Reserve the basic-land treatment without flavour text.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-262",
       "name": "Mountain",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Mountain. Reserve the basic-land treatment without flavour text.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -2942,16 +3038,16 @@
     {
       "id": "ODY-265",
       "name": "Forest",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Forest. Reserve the basic-land treatment without flavour text.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-266",
       "name": "Parnassus, Hunting Slopes",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Forest renamed Parnassus, Hunting Slopes. Reserve the basic-land treatment without flavour text.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3046,8 +3142,8 @@
     {
       "id": "ODY-276",
       "name": "Odysseus's Beggar Staff",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
+      "status": "no-direct-quote-selected",
+      "reason": "A source-led adaptation candidate exists in the editorial register; no direct quotation is being claimed.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -3322,9 +3418,25 @@
     {
       "id": "ODY-303",
       "name": "Autolycus, Master of Cunning",
-      "status": "missing",
-      "reason": "No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-303",
+        "text": "the most accomplished thief and perjurer in the whole world",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Autolycus is introduced",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Autolycus is explicitly characterised by exceptional theft and false oaths.",
+        "fit": "A source-specific identity line that prevents the Rogue from feeling generic.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 59,
+        "kind": "quote"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -3394,10 +3506,10 @@
   ],
   "summary": {
     "totalCards": 309,
-    "verifiedCandidates": 59,
-    "noDirectQuoteSelected": 122,
-    "noFlavourSelected": 4,
-    "pending": 124,
+    "verifiedCandidates": 66,
+    "noDirectQuoteSelected": 132,
+    "noFlavourSelected": 10,
+    "pending": 101,
     "finalSelections": 0
   }
 }
