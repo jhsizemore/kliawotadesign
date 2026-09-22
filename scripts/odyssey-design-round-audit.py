@@ -37,5 +37,17 @@ retrieval=json.loads((OUT/'inputs/retrieval-metadata.json').read_text())
 canonical=hashlib.sha256(json.dumps(d,sort_keys=True,separators=(',',':'),ensure_ascii=False).encode()).hexdigest()
 write('baseline.json',{'retrievedAt':retrieval['retrievedAt'],'auditGeneratedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'commit':retrieval['baselineCommit'],'release':json.loads((DATA/'release.json').read_text())['version'],'datasetVersion':d['datasetVersion'],'datasetSha256':hashlib.sha256((DATA/'odyssey-data.json').read_bytes()).hexdigest(),'liveMatchesRepository':canonical==retrieval['liveCanonicalSha256'],'sheet':d['sources']['cardFile'],'sheetRows':len(rows)-1,'comparedFields':fields,'normalizedSheetDifferences':diffs,'actual':actual,'commonMetrics':common_metrics(cards),'openNotes':open_notes})
 write('cycle-register.json',register)
-write('quotation-audit.json',{'schema':'odyssey-quotation-audit/v1','scope':'Published card records and authoring columns; artwork text and old external documents are not audited quotations.','cards':[{'id':c['id'],'name':c['name'],'status':'missing','reason':'No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.','candidate':None,'finalSelection':'pending-mechanics-and-layout'} for c in cards]})
+editorial_path=OUT/'inputs/editorial-register.json'
+editorial=json.loads(editorial_path.read_text()) if editorial_path.exists() else {'cards':{}}
+editorial_cards=editorial.get('cards',{})
+quote_rows=[]
+for c in cards:
+ e=editorial_cards.get(c['id'],{}).get('flavour',{})
+ if e.get('status')=='candidate-verified':
+  quote_rows.append({'id':c['id'],'name':c['name'],'status':'candidate-verified','reason':'A source-verified quotation candidate exists; final selection remains pending mechanics and layout.','candidate':e.get('candidate'),'finalSelection':'pending-mechanics-and-layout'})
+ elif e.get('status')=='no-direct-quote-selected':
+  quote_rows.append({'id':c['id'],'name':c['name'],'status':'no-direct-quote-selected','reason':e.get('rationale',''),'candidate':None,'finalSelection':'pending-mechanics-and-layout'})
+ else:
+  quote_rows.append({'id':c['id'],'name':c['name'],'status':'missing','reason':'No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.','candidate':None,'finalSelection':'pending-mechanics-and-layout'})
+write('quotation-audit.json',{'schema':'odyssey-quotation-audit/v1','scope':'Published card records and authoring columns; artwork text and old external documents are not audited quotations.','cards':quote_rows,'summary':{'totalCards':len(quote_rows),'verifiedCandidates':sum(r['status']=='candidate-verified' for r in quote_rows),'noDirectQuoteSelected':sum(r['status']=='no-direct-quote-selected' for r in quote_rows),'pending':sum(r['status']=='missing' for r in quote_rows),'finalSelections':0}})
 print(json.dumps({'actual':actual,'sheetDifferences':len(diffs),'openNotes':len(open_notes),'common':common_metrics(cards)},indent=2))
