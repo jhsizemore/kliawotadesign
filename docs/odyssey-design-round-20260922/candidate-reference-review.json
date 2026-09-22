@@ -1,5 +1,292 @@
 [
   {
+    "id": "ODY-007",
+    "currentComparison": [
+      {
+        "name": "Refuse to Yield",
+        "mana": "{1}{W}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/snc/27/refuse-to-yield?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {W}. Untap combat trick; compare the smaller toughness boost and added life separately. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Veteran's Reflexes",
+        "mana": "{W}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/wwk/23/veterans-reflexes?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {W}. Odyssey: {W}. Untap combat trick; compare the smaller toughness boost and added life separately. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Costs one mana more, returns tapped rather than untapped, and adds two life. The rest condition limits immediate combat use; repeated enter effects and revealing manifested permanents remain important. Ephemerate offers a stronger repeated-blink ceiling without life gain.",
+    "newBenchmark": {
+      "name": "Cloudshift",
+      "mana_cost": "{W}",
+      "type_line": "Instant",
+      "oracle_text": "Exile target creature you control, then return that card to the battlefield under your control.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/tle/152/cloudshift?utm_source=api",
+      "released_at": "2025-11-21"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-008",
+    "currentComparison": [
+      {
+        "name": "Ossification",
+        "mana": "{1}{W}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/one/26/ossification?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {2}{W}. White enchantment-based removal; Odyssey adds Food and an expensive permanent-exile upgrade. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Pacifism",
+        "mana": "{1}{W}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/msc/575/pacifism?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {1}{W}. Odyssey: {2}{W}. White enchantment-based removal; Odyssey adds Food and an expensive permanent-exile upgrade. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Interpret the activated-ability note as a fuller enforced truce; avoid feeding guests in order to exile them.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-015",
+    "currentComparison": [
+      {
+        "name": "Sleep",
+        "mana": "{2}{U}{U}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/m19/74/sleep?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {2}{U}{U}. Odyssey: {4}{U}{B}. Mass tapping is only a component benchmark; opponent-choice sacrifice, scry and stun need separate review and have no exact rate analogue. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Blustersquall",
+        "mana": "{U}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/c15/89/blustersquall?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {U}. Odyssey: {4}{U}{B}. Mass tapping is only a component benchmark; opponent-choice sacrifice, scry and stun need separate review and have no exact rate analogue. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Same mana value as Sleep, with UB instead of UU. Trades the next-untap restriction for two cards and all-opponent scope, at the additional cost of a nontoken creature. The creature is lost during casting even if this spell is countered. Test multiplayer reach and recursion; no refund, blink or rescue is built into this spell.",
+    "newBenchmark": {
+      "name": "Sleep",
+      "mana_cost": "{2}{U}{U}",
+      "type_line": "Sorcery",
+      "oracle_text": "Tap all creatures target player controls. Those creatures don't untap during that player's next untap step.",
+      "scryfall_uri": "https://magic.wizards.com/en/news/feature/core-set-2019-release-notes-2018-06-22",
+      "source": "Wizards Core Set 2019 release notes; fetched 2026-09-22"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-017",
+    "currentComparison": [
+      {
+        "name": "Ordeal of Thassa",
+        "mana": "{1}{U}",
+        "pt": "",
+        "roles": [
+          "rate-best",
+          "tech"
+        ],
+        "url": "https://scryfall.com/card/ths/58/ordeal-of-thassa?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{U}. Odyssey: {1}{U}. Counter-growing Aura with a sacrifice reward; Survival replaces attacking and Manifest Fate replaces the printed payoff. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Ordeal of Nylea",
+        "mana": "{1}{G}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/fdn/641/ordeal-of-nylea?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {1}{G}. Odyssey: {1}{U}. Counter-growing Aura with a sacrifice reward; Survival replaces attacking and Manifest Fate replaces the printed payoff. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: rules, functionalWords. Use this Aura in the Aura's own reward ability; retain the necessary named source inside the granted creature ability.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-023",
+    "currentComparison": [
+      {
+        "name": "Feeling of Dread",
+        "mana": "{1}{W}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/isd/14/feeling-of-dread?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {2}{W}. Two-target tapping; the power boost differs from flashback or a freeze rider. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Frost Breath",
+        "mana": "{2}{U}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/m21/51/frost-breath?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {2}{U}. Odyssey: {2}{W}. Two-target tapping; the power boost differs from flashback or a freeze rider. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Apply the open note to the whole company preparing the attack.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-031",
+    "currentComparison": [
+      {
+        "name": "Giant Growth",
+        "mana": "{G}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/msh/167/giant-growth?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {G}. Odyssey: {1}{G}. Pump and Food are separate components; Odyssey combines a temporary boost with one Food at sorcery speed. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Giant Opportunity",
+        "mana": "{2}{G}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/eld/159/giant-opportunity?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {2}{G}. Odyssey: {1}{G}. Pump and Food are separate components; Odyssey combines a temporary boost with one Food at sorcery speed. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Test reciprocal hospitality where the flavour already fits.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-036",
+    "currentComparison": [
+      {
+        "name": "Panharmonicon",
+        "mana": "{4}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/2x2/310/panharmonicon?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {4}. Odyssey: {2}. Entry-driven value and a legendary draw engine; Odyssey requires an off-hand entry and has a once-per-turn cap. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Tome of Legends",
+        "mana": "{2}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/msc/223/tome-of-legends?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {2}. Odyssey: {2}. Entry-driven value and a legendary draw engine; Odyssey requires an off-hand entry and has a once-per-turn cap. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Both reward exile patterns, but Basin is an artifact that draws rather than grows and has no built-in blink. Face-up recognition adds a second distinct enabler path.",
+    "newBenchmark": {
+      "name": "Soulherder",
+      "mana_cost": "{1}{W}{U}",
+      "type_line": "Creature — Spirit",
+      "oracle_text": "Whenever a creature is exiled from the battlefield, put a +1/+1 counter on this creature.\nAt the beginning of your end step, you may exile another target creature you control, then return that card to the battlefield under its owner's control.",
+      "power": "1",
+      "toughness": "1",
+      "scryfall_uri": "https://scryfall.com/card/khc/93/soulherder?utm_source=api",
+      "released_at": "2021-02-05"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-037",
+    "currentComparison": [
+      {
+        "name": "Graveyard Trespasser // Graveyard Glutton",
+        "mana": "{2}{B}",
+        "pt": "3/3",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/mid/104/graveyard-trespasser-graveyard-glutton?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {2}{B}, 3/3. Odyssey: {1}{B}, 2/1. Creature plus graveyard exile/life; Odyssey is a small one-shot body without repeated attacks or transformation. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Deathgorge Scavenger",
+        "mana": "{2}{G}",
+        "pt": "3/2",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/lcc/236/deathgorge-scavenger?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {2}{G}, 3/2. Odyssey: {1}{B}, 2/1. Creature plus graveyard exile/life; Odyssey is a small one-shot body without repeated attacks or transformation. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Far more mana for a modest creature body and life. Narrowed to creature cards in one graveyard, but can clear many at once. Compare impact on Escape before increasing the rate.",
+    "newBenchmark": {
+      "name": "Soul-Guide Lantern",
+      "mana_cost": "{1}",
+      "type_line": "Artifact",
+      "oracle_text": "When this artifact enters, exile target card from a graveyard.\n{T}, Sacrifice this artifact: Exile each opponent's graveyard.\n{1}, {T}, Sacrifice this artifact: Draw a card.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/eoc/143/soul-guide-lantern?utm_source=api",
+      "released_at": "2025-08-01"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-044",
+    "currentComparison": [
+      {
+        "name": "Rally of Wings",
+        "mana": "{1}{W}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/war/27/rally-of-wings?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {1}{R}. Multi-creature untap/combat component; Odyssey targets only two and gives a small power boost. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Refuse to Yield",
+        "mana": "{1}{W}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/snc/27/refuse-to-yield?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {1}{W}. Odyssey: {1}{R}. Multi-creature untap/combat component; Odyssey targets only two and gives a small power boost. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Preserve the crew's tapped state through Survival and restore them afterward.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
     "id": "ODY-049",
     "currentComparison": [
       {
@@ -37,6 +324,460 @@
     "status": "first-pass component comparison; production reference refresh pending"
   },
   {
+    "id": "ODY-051",
+    "currentComparison": [
+      {
+        "name": "Hylda of the Icy Crown",
+        "mana": "{2}{W}{U}",
+        "pt": "3/4",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/woe/206/hylda-of-the-icy-crown?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {2}{W}{U}, 3/4. Odyssey: {1}{W}{U}, 2/3. Tap/untap engine; Odyssey keys off exile rather than mana payments or an activated tap ability. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Niblis of the Breath",
+        "mana": "{2}{U}",
+        "pt": "2/1",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/dka/44/niblis-of-the-breath?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {2}{U}, 2/1. Odyssey: {1}{W}{U}, 2/3. Tap/untap engine; Odyssey keys off exile rather than mana payments or an activated tap ability. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "A three-mana 2/3 with two tempo triggers, compared with a two-mana enchantment that draws on face-up events. The candidate exchanges cards and passive toughness for a body, library-exile tapping and a recognition untap capped once each turn.",
+    "newBenchmark": {
+      "name": "Secret Plans",
+      "mana_cost": "{G}{U}",
+      "type_line": "Enchantment",
+      "oracle_text": "Face-down creatures you control get +0/+1.\nWhenever a permanent you control is turned face up, draw a card.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/c19/201/secret-plans?utm_source=api",
+      "released_at": "2019-08-23"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-056",
+    "currentComparison": [
+      {
+        "name": "Athreos, God of Passage",
+        "mana": "{1}{W}{B}",
+        "pt": "5/4",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/jou/146/athreos-god-of-passage?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{W}{B}, 5/4. Odyssey: {1}{W}{B}, 3/3. Recurring death value on a creature; Odyssey's hand return is stronger than ordinary life-drain and has no opponent-payment escape. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Falkenrath Noble",
+        "mana": "{3}{B}",
+        "pt": "2/2",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/dsc/140/falkenrath-noble?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {3}{B}, 2/2. Odyssey: {1}{W}{B}, 3/3. Recurring death value on a creature; Odyssey's hand return is stronger than ordinary life-drain and has no opponent-payment escape. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Three mana for a 3/3 instead of one hybrid mana for a 1/1. Growth requires an end-step sacrifice of another creature or Food; it cannot grow from every sacrifice or arbitrary artifacts. Life loss replaces the Squirrel’s paid draw option. Test the immediate 4/4 with Food and multiplayer scaling.",
+    "newBenchmark": {
+      "name": "Ravenous Squirrel",
+      "mana_cost": "{B/G}",
+      "type_line": "Creature — Squirrel",
+      "oracle_text": "Whenever you sacrifice an artifact or creature, put a +1/+1 counter on this creature.\n{1}{B}{G}, Sacrifice an artifact or creature: You gain 1 life and draw a card.",
+      "power": "1",
+      "toughness": "1",
+      "scryfall_uri": "https://scryfall.com/card/mh2/211/ravenous-squirrel?utm_source=api",
+      "released_at": "2021-06-18"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-064",
+    "currentComparison": [
+      {
+        "name": "Smuggler's Copter",
+        "mana": "{2}",
+        "pt": "3/3",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/nec/160/smugglers-copter?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {2}, 3/3. Odyssey: {3}, 4/4. Vehicle body and crew requirement; Odyssey trades evasion/looting or attack growth for untapping a pilot. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Renegade Freighter",
+        "mana": "{3}",
+        "pt": "4/3",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/kld/230/renegade-freighter?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {3}, 4/3. Odyssey: {3}, 4/4. Vehicle body and crew requirement; Odyssey trades evasion/looting or attack growth for untapping a pilot. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Let the common ship demonstrate labour first and recovery afterward.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-074",
+    "currentComparison": [
+      {
+        "name": "Gilded Goose",
+        "mana": "{G}",
+        "pt": "0/2",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/soc/269/gilded-goose?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {G}, 0/2. Odyssey: {1}{G}. Food creation plus another benefit; Odyssey gives a counter to a newly entered creature and provides no mana engine. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Giant Opportunity",
+        "mana": "{2}{G}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/eld/159/giant-opportunity?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {2}{G}. Odyssey: {1}{G}. Food creation plus another benefit; Odyssey gives a counter to a newly entered creature and provides no mana engine. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Offer a second low-complexity Gift decision across the welcome package.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-080",
+    "currentComparison": [
+      {
+        "name": "Daring Saboteur",
+        "mana": "{1}{U}",
+        "pt": "2/1",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/lcc/151/daring-saboteur?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{U}, 2/1. Odyssey: {1}{B}, 2/1. Small selection creature; becoming tapped is easier than combat damage and does not require a tap activation. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Rummaging Goblin",
+        "mana": "{2}{R}",
+        "pt": "1/1",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/cmr/198/rummaging-goblin?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {2}{R}, 1/1. Odyssey: {1}{B}, 2/1. Small selection creature; becoming tapped is easier than combat damage and does not require a tap activation. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mana, mv, pt, mechanics, rules, functionalWords. Give the anonymous palace intruder an actual hidden companion rather than only generic surveillance.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-087",
+    "currentComparison": [
+      {
+        "name": "Faerie Seer",
+        "mana": "{U}",
+        "pt": "1/1",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/mh1/51/faerie-seer?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {U}, 1/1. Odyssey: {1}{U}, 1/3. Small creature plus scry; Odyssey offers only scry one on a defensive body. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Omenspeaker",
+        "mana": "{1}{U}",
+        "pt": "1/3",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/cmr/83/omenspeaker?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {1}{U}, 1/3. Odyssey: {1}{U}, 1/3. Small creature plus scry; Odyssey offers only scry one on a defensive body. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. A sailor reading signs is a common bridge to enchantment play.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-088",
+    "currentComparison": [
+      {
+        "name": "Llanowar Visionary",
+        "mana": "{2}{G}",
+        "pt": "2/2",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/m21/193/llanowar-visionary?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {2}{G}, 2/2. Odyssey: {2}{G}, 3/2. Creature with entry draw; Odyssey's optional stun is a real delay cost and it lacks a mana ability. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Elvish Visionary",
+        "mana": "{1}{G}",
+        "pt": "1/1",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/hoc/206/elvish-visionary?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {1}{G}, 1/1. Odyssey: {2}{G}, 3/2. Creature with entry draw; Odyssey's optional stun is a real delay cost and it lacks a mana ability. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Costs one more. The optional extra body leaves the main body tapped with a stun counter; lacks vigilance, trample and Treasure. Face-up potential is the variable upside.",
+    "newBenchmark": {
+      "name": "Jewel Thief",
+      "mana_cost": "{2}{G}",
+      "type_line": "Creature — Cat Rogue",
+      "oracle_text": "Vigilance, trample\nWhen this creature enters, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
+      "power": "3",
+      "toughness": "3",
+      "scryfall_uri": "https://scryfall.com/card/snc/151/jewel-thief?utm_source=api",
+      "released_at": "2022-04-29"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-090",
+    "currentComparison": [
+      {
+        "name": "Soulherder",
+        "mana": "{1}{W}{U}",
+        "pt": "1/1",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/khc/93/soulherder?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{W}{U}, 1/1. Odyssey: {W}{U}, 2/2. Blink payoff and Adventure utility are separate components; Odyssey's Adventure creates a face-down creature rather than blinking. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Pegasus Guardian // Rescue the Foal",
+        "mana": "{5}{W}",
+        "pt": "3/3",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/clb/36/pegasus-guardian-rescue-the-foal?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {5}{W}, 3/3. Odyssey: {W}{U}, 2/2. Blink payoff and Adventure utility are separate components; Odyssey's Adventure creates a face-down creature rather than blinking. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "A two-mana 2/2 with an additional paid Adventure. Face-up or direct-return events give an untap and counter once each turn instead of Secret Plans’ unrestricted face-up draw. Do not count the Adventure’s manifest action itself as turning face up.",
+    "newBenchmark": {
+      "name": "Secret Plans",
+      "mana_cost": "{G}{U}",
+      "type_line": "Enchantment",
+      "oracle_text": "Face-down creatures you control get +0/+1.\nWhenever a permanent you control is turned face up, draw a card.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/c19/201/secret-plans?utm_source=api",
+      "released_at": "2019-08-23"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-093",
+    "currentComparison": [
+      {
+        "name": "Ordeal of Heliod",
+        "mana": "{1}{W}",
+        "pt": "",
+        "roles": [
+          "rate-best",
+          "tech"
+        ],
+        "url": "https://scryfall.com/card/a25/27/ordeal-of-heliod?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {1}{W}. Ordeal counter clock; Odyssey grants Survival and pays out two tokens rather than life or cards. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Ordeal of Thassa",
+        "mana": "{1}{U}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/ths/58/ordeal-of-thassa?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {1}{U}. Odyssey: {1}{W}. Ordeal counter clock; Odyssey grants Survival and pays out two tokens rather than life or cards. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: rules, functionalWords. Use this Aura in the Aura's own reward ability; retain the necessary named source inside the granted creature ability.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-097",
+    "currentComparison": [],
+    "candidateComparison": "Naming-only revision: the existing Hephaestus-net mechanics remain unchanged; the title now exposes that this is Demodocus’s performed song.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-103",
+    "currentComparison": [
+      {
+        "name": "Healing Grace",
+        "mana": "{W}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/dom/20/healing-grace?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {W}. Odyssey: {W}. Life-gain component with an additional effect; scry does not replace a drawn card or damage prevention. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Ritual of Rejuvenation",
+        "mana": "{2}{W}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/xln/32/ritual-of-rejuvenation?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {2}{W}. Odyssey: {W}. Life-gain component with an additional effect; scry does not replace a drawn card or damage prevention. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "One mana cheaper, one less toughness and one less life. Provides an early crew body without card advantage.",
+    "newBenchmark": {
+      "name": "Arashin Cleric",
+      "mana_cost": "{1}{W}",
+      "type_line": "Creature — Human Cleric",
+      "oracle_text": "When this creature enters, you gain 3 life.",
+      "power": "1",
+      "toughness": "3",
+      "scryfall_uri": "https://scryfall.com/card/frf/5/arashin-cleric?utm_source=api",
+      "released_at": "2015-01-23"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-108",
+    "currentComparison": [
+      {
+        "name": "Gilded Goose",
+        "mana": "{G}",
+        "pt": "0/2",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/soc/269/gilded-goose?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {G}, 0/2. Odyssey: {1}{W}. Food/life package; these are component comparisons, since Revitalize replaces itself and Goose supplies a repeatable engine. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Revitalize",
+        "mana": "{1}{W}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/khm/23/revitalize?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {1}{W}. Odyssey: {1}{W}. Food/life package; these are component comparisons, since Revitalize replaces itself and Goose supplies a repeatable engine. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "One mana more, one more power and one less toughness; Food replaces a Clue and does not buy a card. Ordinary body-plus-resource comparison.",
+    "newBenchmark": {
+      "name": "Novice Inspector",
+      "mana_cost": "{W}",
+      "type_line": "Creature — Human Detective",
+      "oracle_text": "When this creature enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
+      "power": "1",
+      "toughness": "2",
+      "scryfall_uri": "https://scryfall.com/card/mkm/29/novice-inspector?utm_source=api",
+      "released_at": "2024-02-09"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-110",
+    "currentComparison": [
+      {
+        "name": "Stonebinder's Familiar",
+        "mana": "{W}",
+        "pt": "1/1",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/stx/31/stonebinders-familiar?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {W}, 1/1. Odyssey: {2}{W}, 2/3. Entry-from-exile growth versus ordinary white board value; Odyssey's boost is temporary and also counts graveyard entries. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Attended Knight",
+        "mana": "{2}{W}",
+        "pt": "2/2",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/mm3/1/attended-knight?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {2}{W}, 2/2. Odyssey: {2}{W}, 2/3. Entry-from-exile growth versus ordinary white board value; Odyssey's boost is temporary and also counts graveyard entries. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Let the common welcome reward the supported revelation action too.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-112",
+    "currentComparison": [
+      {
+        "name": "Cloudkin Seer",
+        "mana": "{2}{U}",
+        "pt": "2/1",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/clu/82/cloudkin-seer?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {2}{U}, 2/1. Odyssey: {4}{U}, 4/4. Blue value creature; Odyssey only scries with a Vehicle and offers a larger body without evasion. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Biblioplex Kraken",
+        "mana": "{4}{U}",
+        "pt": "4/5",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/j22/10/biblioplex-kraken?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {4}{U}, 4/5. Odyssey: {4}{U}, 4/4. Blue value creature; Odyssey only scries with a Vehicle and offers a larger body without evasion. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. The existing ship-conditioned creature can also introduce Foretell at common.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-115",
+    "currentComparison": [
+      {
+        "name": "Consider",
+        "mana": "{U}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/tle/157/consider?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {U}. Odyssey: {1}{U}. Cheap library selection; Odyssey's conditional loot is not the unconditional replacement card of either reference. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Deliberate",
+        "mana": "{1}{U}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/znr/56/deliberate?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {1}{U}. Odyssey: {1}{U}. Cheap library selection; Odyssey's conditional loot is not the unconditional replacement card of either reference. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: name, displayName, mana, mv, type, pt, mechanics, rules, functionalWords, artReviewRequired. Blue needs a common body which performs practical navigation.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
     "id": "ODY-116",
     "currentComparison": [
       {
@@ -71,6 +812,62 @@
       "scryfall_uri": "https://scryfall.com/card/thb/58/omen-of-the-sea?utm_source=api",
       "released_at": "2020-01-24"
     },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-123",
+    "currentComparison": [
+      {
+        "name": "Stitcher's Supplier",
+        "mana": "{B}",
+        "pt": "1/1",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/tdc/196/stitchers-supplier?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {B}, 1/1. Odyssey: {2}{B}, 2/3. Entry self-mill creature; Odyssey's defensive body and small life gain trade away mill volume or flying. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Crow of Dark Tidings",
+        "mana": "{2}{B}",
+        "pt": "2/1",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/fdn/519/crow-of-dark-tidings?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {2}{B}, 2/1. Odyssey: {2}{B}, 2/3. Entry self-mill creature; Odyssey's defensive body and small life gain trade away mill volume or flying. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: name, displayName, type, pt, mechanics, rules, functionalWords, storySourceBand, artReviewRequired, flavorStoryElement. Choose a visibly supernatural memory of the household instead of calling an ordinary mourner an enchantment.",
+    "newBenchmark": null,
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-125",
+    "currentComparison": [
+      {
+        "name": "Skullwinder",
+        "mana": "{2}{G}",
+        "pt": "1/3",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/otc/207/skullwinder?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {2}{G}, 1/3. Odyssey: {1}{B}, 2/2. Recursion body; Odyssey's enchantment-only recovery is delayed until death and comes with self-mill. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Griffin Dreamfinder",
+        "mana": "{3}{W}{W}",
+        "pt": "1/4",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/bng/16/griffin-dreamfinder?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {3}{W}{W}, 1/4. Odyssey: {1}{B}, 2/2. Recursion body; Odyssey's enchantment-only recovery is delayed until death and comes with self-mill. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: type, mechanics, rules, artReviewRequired. The swine are people held in Circe's ongoing enchantment.",
+    "newBenchmark": null,
     "status": "first-pass component comparison; production reference refresh pending"
   },
   {
@@ -185,285 +982,6 @@
     "status": "first-pass component comparison; production reference refresh pending"
   },
   {
-    "id": "ODY-103",
-    "currentComparison": [
-      {
-        "name": "Healing Grace",
-        "mana": "{W}",
-        "pt": "",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/dom/20/healing-grace?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {W}. Odyssey: {W}. Life-gain component with an additional effect; scry does not replace a drawn card or damage prevention. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Ritual of Rejuvenation",
-        "mana": "{2}{W}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/xln/32/ritual-of-rejuvenation?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {2}{W}. Odyssey: {W}. Life-gain component with an additional effect; scry does not replace a drawn card or damage prevention. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "One mana cheaper, one less toughness and one less life. Provides an early crew body without card advantage.",
-    "newBenchmark": {
-      "name": "Arashin Cleric",
-      "mana_cost": "{1}{W}",
-      "type_line": "Creature — Human Cleric",
-      "oracle_text": "When this creature enters, you gain 3 life.",
-      "power": "1",
-      "toughness": "3",
-      "scryfall_uri": "https://scryfall.com/card/frf/5/arashin-cleric?utm_source=api",
-      "released_at": "2015-01-23"
-    },
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-108",
-    "currentComparison": [
-      {
-        "name": "Gilded Goose",
-        "mana": "{G}",
-        "pt": "0/2",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/soc/269/gilded-goose?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {G}, 0/2. Odyssey: {1}{W}. Food/life package; these are component comparisons, since Revitalize replaces itself and Goose supplies a repeatable engine. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Revitalize",
-        "mana": "{1}{W}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/khm/23/revitalize?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {1}{W}. Odyssey: {1}{W}. Food/life package; these are component comparisons, since Revitalize replaces itself and Goose supplies a repeatable engine. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "One mana more, one more power and one less toughness; Food replaces a Clue and does not buy a card. Ordinary body-plus-resource comparison.",
-    "newBenchmark": {
-      "name": "Novice Inspector",
-      "mana_cost": "{W}",
-      "type_line": "Creature — Human Detective",
-      "oracle_text": "When this creature enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
-      "power": "1",
-      "toughness": "2",
-      "scryfall_uri": "https://scryfall.com/card/mkm/29/novice-inspector?utm_source=api",
-      "released_at": "2024-02-09"
-    },
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-115",
-    "currentComparison": [
-      {
-        "name": "Consider",
-        "mana": "{U}",
-        "pt": "",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/tle/157/consider?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {U}. Odyssey: {1}{U}. Cheap library selection; Odyssey's conditional loot is not the unconditional replacement card of either reference. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Deliberate",
-        "mana": "{1}{U}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/znr/56/deliberate?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {1}{U}. Odyssey: {1}{U}. Cheap library selection; Odyssey's conditional loot is not the unconditional replacement card of either reference. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: name, displayName, mana, mv, type, pt, mechanics, rules, functionalWords, artReviewRequired. Blue needs a common body which performs practical navigation.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-080",
-    "currentComparison": [
-      {
-        "name": "Daring Saboteur",
-        "mana": "{1}{U}",
-        "pt": "2/1",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/lcc/151/daring-saboteur?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {1}{U}, 2/1. Odyssey: {1}{B}, 2/1. Small selection creature; becoming tapped is easier than combat damage and does not require a tap activation. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Rummaging Goblin",
-        "mana": "{2}{R}",
-        "pt": "1/1",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/cmr/198/rummaging-goblin?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {2}{R}, 1/1. Odyssey: {1}{B}, 2/1. Small selection creature; becoming tapped is easier than combat damage and does not require a tap activation. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mana, mv, pt, mechanics, rules, functionalWords. Give the anonymous palace intruder an actual hidden companion rather than only generic surveillance.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-088",
-    "currentComparison": [
-      {
-        "name": "Llanowar Visionary",
-        "mana": "{2}{G}",
-        "pt": "2/2",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/m21/193/llanowar-visionary?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {2}{G}, 2/2. Odyssey: {2}{G}, 3/2. Creature with entry draw; Odyssey's optional stun is a real delay cost and it lacks a mana ability. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Elvish Visionary",
-        "mana": "{1}{G}",
-        "pt": "1/1",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/hoc/206/elvish-visionary?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {1}{G}, 1/1. Odyssey: {2}{G}, 3/2. Creature with entry draw; Odyssey's optional stun is a real delay cost and it lacks a mana ability. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Costs one more. The optional extra body leaves the main body tapped with a stun counter; lacks vigilance, trample and Treasure. Face-up potential is the variable upside.",
-    "newBenchmark": {
-      "name": "Jewel Thief",
-      "mana_cost": "{2}{G}",
-      "type_line": "Creature — Cat Rogue",
-      "oracle_text": "Vigilance, trample\nWhen this creature enters, create a Treasure token. (It's an artifact with \"{T}, Sacrifice this token: Add one mana of any color.\")",
-      "power": "3",
-      "toughness": "3",
-      "scryfall_uri": "https://scryfall.com/card/snc/151/jewel-thief?utm_source=api",
-      "released_at": "2022-04-29"
-    },
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-087",
-    "currentComparison": [
-      {
-        "name": "Faerie Seer",
-        "mana": "{U}",
-        "pt": "1/1",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/mh1/51/faerie-seer?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {U}, 1/1. Odyssey: {1}{U}, 1/3. Small creature plus scry; Odyssey offers only scry one on a defensive body. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Omenspeaker",
-        "mana": "{1}{U}",
-        "pt": "1/3",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/cmr/83/omenspeaker?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {1}{U}, 1/3. Odyssey: {1}{U}, 1/3. Small creature plus scry; Odyssey offers only scry one on a defensive body. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. A sailor reading signs is a common bridge to enchantment play.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-125",
-    "currentComparison": [
-      {
-        "name": "Skullwinder",
-        "mana": "{2}{G}",
-        "pt": "1/3",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/otc/207/skullwinder?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {2}{G}, 1/3. Odyssey: {1}{B}, 2/2. Recursion body; Odyssey's enchantment-only recovery is delayed until death and comes with self-mill. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Griffin Dreamfinder",
-        "mana": "{3}{W}{W}",
-        "pt": "1/4",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/bng/16/griffin-dreamfinder?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {3}{W}{W}, 1/4. Odyssey: {1}{B}, 2/2. Recursion body; Odyssey's enchantment-only recovery is delayed until death and comes with self-mill. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: type, mechanics, rules, artReviewRequired. The swine are people held in Circe's ongoing enchantment.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-112",
-    "currentComparison": [
-      {
-        "name": "Cloudkin Seer",
-        "mana": "{2}{U}",
-        "pt": "2/1",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/clu/82/cloudkin-seer?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {2}{U}, 2/1. Odyssey: {4}{U}, 4/4. Blue value creature; Odyssey only scries with a Vehicle and offers a larger body without evasion. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Biblioplex Kraken",
-        "mana": "{4}{U}",
-        "pt": "4/5",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/j22/10/biblioplex-kraken?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {4}{U}, 4/5. Odyssey: {4}{U}, 4/4. Blue value creature; Odyssey only scries with a Vehicle and offers a larger body without evasion. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. The existing ship-conditioned creature can also introduce Foretell at common.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-123",
-    "currentComparison": [
-      {
-        "name": "Stitcher's Supplier",
-        "mana": "{B}",
-        "pt": "1/1",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/tdc/196/stitchers-supplier?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {B}, 1/1. Odyssey: {2}{B}, 2/3. Entry self-mill creature; Odyssey's defensive body and small life gain trade away mill volume or flying. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Crow of Dark Tidings",
-        "mana": "{2}{B}",
-        "pt": "2/1",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/fdn/519/crow-of-dark-tidings?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {2}{B}, 2/1. Odyssey: {2}{B}, 2/3. Entry self-mill creature; Odyssey's defensive body and small life gain trade away mill volume or flying. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: name, displayName, type, pt, mechanics, rules, functionalWords, storySourceBand, artReviewRequired, flavorStoryElement. Choose a visibly supernatural memory of the household instead of calling an ordinary mourner an enchantment.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
     "id": "ODY-142",
     "currentComparison": [
       {
@@ -492,308 +1010,39 @@
     "status": "first-pass component comparison; production reference refresh pending"
   },
   {
-    "id": "ODY-031",
-    "currentComparison": [
-      {
-        "name": "Giant Growth",
-        "mana": "{G}",
-        "pt": "",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/msh/167/giant-growth?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {G}. Odyssey: {1}{G}. Pump and Food are separate components; Odyssey combines a temporary boost with one Food at sorcery speed. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Giant Opportunity",
-        "mana": "{2}{G}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/eld/159/giant-opportunity?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {2}{G}. Odyssey: {1}{G}. Pump and Food are separate components; Odyssey combines a temporary boost with one Food at sorcery speed. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Test reciprocal hospitality where the flavour already fits.",
+    "id": "ODY-162",
+    "currentComparison": [],
+    "candidateComparison": "Chapter II now uses only BG overlap: Food and Treasure are available to both colors, removing the prior creature/artifact sacrifice instruction that was not cleanly green. Chapter I self-mill has contemporary green-hybrid precedent; chapter III creature recursion is shared BG space.",
     "newBenchmark": null,
     "status": "first-pass component comparison; production reference refresh pending"
   },
   {
-    "id": "ODY-074",
+    "id": "ODY-166",
     "currentComparison": [
       {
-        "name": "Gilded Goose",
-        "mana": "{G}",
-        "pt": "0/2",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/soc/269/gilded-goose?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {G}, 0/2. Odyssey: {1}{G}. Food creation plus another benefit; Odyssey gives a counter to a newly entered creature and provides no mana engine. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Giant Opportunity",
-        "mana": "{2}{G}",
+        "name": "Ordeal of Nylea",
+        "mana": "{1}{G}",
         "pt": "",
         "roles": [
-          "rate-normal"
+          "rate-best",
+          "tech"
         ],
-        "url": "https://scryfall.com/card/eld/159/giant-opportunity?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {2}{G}. Odyssey: {1}{G}. Food creation plus another benefit; Odyssey gives a counter to a newly entered creature and provides no mana engine. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Offer a second low-complexity Gift decision across the welcome package.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-044",
-    "currentComparison": [
-      {
-        "name": "Rally of Wings",
-        "mana": "{1}{W}",
-        "pt": "",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/war/27/rally-of-wings?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {1}{R}. Multi-creature untap/combat component; Odyssey targets only two and gives a small power boost. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+        "url": "https://scryfall.com/card/fdn/641/ordeal-of-nylea?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{G}. Odyssey: {1}{G}. Ordeal growth clock; Odyssey replaces attacking with Survival and trades one ramped land for Food. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
       },
       {
-        "name": "Refuse to Yield",
+        "name": "Ordeal of Heliod",
         "mana": "{1}{W}",
         "pt": "",
         "roles": [
           "rate-normal"
         ],
-        "url": "https://scryfall.com/card/snc/27/refuse-to-yield?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {1}{W}. Odyssey: {1}{R}. Multi-creature untap/combat component; Odyssey targets only two and gives a small power boost. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+        "url": "https://scryfall.com/card/a25/27/ordeal-of-heliod?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {1}{W}. Odyssey: {1}{G}. Ordeal growth clock; Odyssey replaces attacking with Survival and trades one ramped land for Food. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
       }
     ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Preserve the crew's tapped state through Survival and restore them afterward.",
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: rules, functionalWords. Use this Aura in the Aura's own reward ability; retain the necessary named source inside the granted creature ability.",
     "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-064",
-    "currentComparison": [
-      {
-        "name": "Smuggler's Copter",
-        "mana": "{2}",
-        "pt": "3/3",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/nec/160/smugglers-copter?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {2}, 3/3. Odyssey: {3}, 4/4. Vehicle body and crew requirement; Odyssey trades evasion/looting or attack growth for untapping a pilot. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Renegade Freighter",
-        "mana": "{3}",
-        "pt": "4/3",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/kld/230/renegade-freighter?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {3}, 4/3. Odyssey: {3}, 4/4. Vehicle body and crew requirement; Odyssey trades evasion/looting or attack growth for untapping a pilot. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Let the common ship demonstrate labour first and recovery afterward.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-023",
-    "currentComparison": [
-      {
-        "name": "Feeling of Dread",
-        "mana": "{1}{W}",
-        "pt": "",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/isd/14/feeling-of-dread?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {2}{W}. Two-target tapping; the power boost differs from flashback or a freeze rider. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Frost Breath",
-        "mana": "{2}{U}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/m21/51/frost-breath?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {2}{U}. Odyssey: {2}{W}. Two-target tapping; the power boost differs from flashback or a freeze rider. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Apply the open note to the whole company preparing the attack.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-037",
-    "currentComparison": [
-      {
-        "name": "Graveyard Trespasser // Graveyard Glutton",
-        "mana": "{2}{B}",
-        "pt": "3/3",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/mid/104/graveyard-trespasser-graveyard-glutton?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {2}{B}, 3/3. Odyssey: {1}{B}, 2/1. Creature plus graveyard exile/life; Odyssey is a small one-shot body without repeated attacks or transformation. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Deathgorge Scavenger",
-        "mana": "{2}{G}",
-        "pt": "3/2",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/lcc/236/deathgorge-scavenger?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {2}{G}, 3/2. Odyssey: {1}{B}, 2/1. Creature plus graveyard exile/life; Odyssey is a small one-shot body without repeated attacks or transformation. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Far more mana for a modest creature body and life. Narrowed to creature cards in one graveyard, but can clear many at once. Compare impact on Escape before increasing the rate.",
-    "newBenchmark": {
-      "name": "Soul-Guide Lantern",
-      "mana_cost": "{1}",
-      "type_line": "Artifact",
-      "oracle_text": "When this artifact enters, exile target card from a graveyard.\n{T}, Sacrifice this artifact: Exile each opponent's graveyard.\n{1}, {T}, Sacrifice this artifact: Draw a card.",
-      "power": null,
-      "toughness": null,
-      "scryfall_uri": "https://scryfall.com/card/eoc/143/soul-guide-lantern?utm_source=api",
-      "released_at": "2025-08-01"
-    },
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-008",
-    "currentComparison": [
-      {
-        "name": "Ossification",
-        "mana": "{1}{W}",
-        "pt": "",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/one/26/ossification?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {2}{W}. White enchantment-based removal; Odyssey adds Food and an expensive permanent-exile upgrade. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Pacifism",
-        "mana": "{1}{W}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/msc/575/pacifism?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {1}{W}. Odyssey: {2}{W}. White enchantment-based removal; Odyssey adds Food and an expensive permanent-exile upgrade. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Interpret the activated-ability note as a fuller enforced truce; avoid feeding guests in order to exile them.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-110",
-    "currentComparison": [
-      {
-        "name": "Stonebinder's Familiar",
-        "mana": "{W}",
-        "pt": "1/1",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/stx/31/stonebinders-familiar?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {W}, 1/1. Odyssey: {2}{W}, 2/3. Entry-from-exile growth versus ordinary white board value; Odyssey's boost is temporary and also counts graveyard entries. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Attended Knight",
-        "mana": "{2}{W}",
-        "pt": "2/2",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/mm3/1/attended-knight?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {2}{W}, 2/2. Odyssey: {2}{W}, 2/3. Entry-from-exile growth versus ordinary white board value; Odyssey's boost is temporary and also counts graveyard entries. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: mechanics, rules, functionalWords. Let the common welcome reward the supported revelation action too.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-036",
-    "currentComparison": [
-      {
-        "name": "Panharmonicon",
-        "mana": "{4}",
-        "pt": "",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/2x2/310/panharmonicon?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {4}. Odyssey: {2}. Entry-driven value and a legendary draw engine; Odyssey requires an off-hand entry and has a once-per-turn cap. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Tome of Legends",
-        "mana": "{2}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/msc/223/tome-of-legends?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {2}. Odyssey: {2}. Entry-driven value and a legendary draw engine; Odyssey requires an off-hand entry and has a once-per-turn cap. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Both reward exile patterns, but Basin is an artifact that draws rather than grows and has no built-in blink. Face-up recognition adds a second distinct enabler path.",
-    "newBenchmark": {
-      "name": "Soulherder",
-      "mana_cost": "{1}{W}{U}",
-      "type_line": "Creature — Spirit",
-      "oracle_text": "Whenever a creature is exiled from the battlefield, put a +1/+1 counter on this creature.\nAt the beginning of your end step, you may exile another target creature you control, then return that card to the battlefield under its owner's control.",
-      "power": "1",
-      "toughness": "1",
-      "scryfall_uri": "https://scryfall.com/card/khc/93/soulherder?utm_source=api",
-      "released_at": "2021-02-05"
-    },
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-015",
-    "currentComparison": [
-      {
-        "name": "Sleep",
-        "mana": "{2}{U}{U}",
-        "pt": "",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/m19/74/sleep?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {2}{U}{U}. Odyssey: {4}{U}{B}. Mass tapping is only a component benchmark; opponent-choice sacrifice, scry and stun need separate review and have no exact rate analogue. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Blustersquall",
-        "mana": "{U}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/c15/89/blustersquall?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {U}. Odyssey: {4}{U}{B}. Mass tapping is only a component benchmark; opponent-choice sacrifice, scry and stun need separate review and have no exact rate analogue. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Same mana value as Sleep, with UB instead of UU. Trades the next-untap restriction for two cards and all-opponent scope, at the additional cost of a nontoken creature. The creature is lost during casting even if this spell is countered. Test multiplayer reach and recursion; no refund, blink or rescue is built into this spell.",
-    "newBenchmark": {
-      "name": "Sleep",
-      "mana_cost": "{2}{U}{U}",
-      "type_line": "Sorcery",
-      "oracle_text": "Tap all creatures target player controls. Those creatures don't untap during that player's next untap step.",
-      "scryfall_uri": "https://magic.wizards.com/en/news/feature/core-set-2019-release-notes-2018-06-22",
-      "source": "Wizards Core Set 2019 release notes; fetched 2026-09-22"
-    },
     "status": "first-pass component comparison; production reference refresh pending"
   },
   {
@@ -834,31 +1083,40 @@
     "status": "first-pass component comparison; production reference refresh pending"
   },
   {
-    "id": "ODY-238",
+    "id": "ODY-213",
     "currentComparison": [
       {
-        "name": "Soulherder",
-        "mana": "{1}{W}{U}",
-        "pt": "1/1",
+        "name": "Conjurer's Closet",
+        "mana": "{5}",
+        "pt": "",
         "roles": [
           "rate-best"
         ],
-        "url": "https://scryfall.com/card/khc/93/soulherder?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {1}{W}{U}, 1/1. Odyssey: {1}{W}{U}. Blink engine price; Odyssey adds draw on return/face-up but charges four mana for each blink. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+        "url": "https://scryfall.com/card/inr/259/conjurers-closet?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {5}. Odyssey: {3}. Repeatable blink engine; Odyssey requires legendary targets and mana but adds card draw and ward. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
       },
       {
-        "name": "Teleportation Circle",
-        "mana": "{3}{W}",
-        "pt": "",
+        "name": "Golden Argosy",
+        "mana": "{4}",
+        "pt": "3/6",
         "roles": [
           "rate-normal"
         ],
-        "url": "https://scryfall.com/card/afr/39/teleportation-circle?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {3}{W}. Odyssey: {1}{W}{U}. Blink engine price; Odyssey adds draw on return/face-up but charges four mana for each blink. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+        "url": "https://scryfall.com/card/dmu/230/golden-argosy?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {4}, 3/6. Odyssey: {3}. Repeatable blink engine; Odyssey requires legendary targets and mana but adds card draw and ward. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
       }
     ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: rules, functionalWords. Use ordinary event templates and include noncreatures without describing a vague return event.",
-    "newBenchmark": null,
+    "candidateComparison": "One more generic mana than the two-white enchantment; retains ward {1} for legendary creatures but gives no power/toughness boost. Instead, the artifact protects itself and draws at your end step with two legendary creatures, all conditional on retaining one chosen land. Tome of Legends provides a cheaper but counter- and activation-limited draw comparison. Test colourless access and repeated free draws; the old blink benchmarks no longer describe this design.",
+    "newBenchmark": {
+      "name": "Flowering of the White Tree",
+      "mana_cost": "{W}{W}",
+      "type_line": "Legendary Enchantment",
+      "oracle_text": "Legendary creatures you control get +2/+1 and have ward {1}.\nNonlegendary creatures you control get +1/+1.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/ltr/15/flowering-of-the-white-tree?utm_source=api",
+      "released_at": "2023-06-23"
+    },
     "status": "first-pass component comparison; production reference refresh pending"
   },
   {
@@ -890,89 +1148,74 @@
     "status": "first-pass component comparison; production reference refresh pending"
   },
   {
-    "id": "ODY-017",
+    "id": "ODY-235",
     "currentComparison": [
       {
-        "name": "Ordeal of Thassa",
-        "mana": "{1}{U}",
+        "name": "Fable of the Mirror-Breaker // Reflection of Kiki-Jiki",
+        "mana": "{2}{R}",
         "pt": "",
         "roles": [
-          "rate-best",
-          "tech"
+          "rate-best"
         ],
-        "url": "https://scryfall.com/card/ths/58/ordeal-of-thassa?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {1}{U}. Odyssey: {1}{U}. Counter-growing Aura with a sacrifice reward; Survival replaces attacking and Manifest Fate replaces the printed payoff. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+        "url": "https://scryfall.com/card/neo/141/fable-of-the-mirror-breaker-reflection-of-kiki-jiki?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {2}{R}. Odyssey: {2}{R}. Three-mana red Saga resource pacing; Odyssey's first chapter has no permission to play the exiled cards, so do not count those as cards drawn. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
       },
       {
-        "name": "Ordeal of Nylea",
-        "mana": "{1}{G}",
+        "name": "The Flame of Keld",
+        "mana": "{1}{R}",
         "pt": "",
         "roles": [
           "rate-normal"
         ],
-        "url": "https://scryfall.com/card/fdn/641/ordeal-of-nylea?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {1}{G}. Odyssey: {1}{U}. Counter-growing Aura with a sacrifice reward; Survival replaces attacking and Manifest Fate replaces the printed payoff. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+        "url": "https://scryfall.com/card/dom/123/the-flame-of-keld?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {1}{R}. Odyssey: {2}{R}. Three-mana red Saga resource pacing; Odyssey's first chapter has no permission to play the exiled cards, so do not count those as cards drawn. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
       }
     ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: rules, functionalWords. Use this Aura in the Aura's own reward ability; retain the necessary named source inside the granted creature ability.",
+    "candidateComparison": "One more mana than Reckless Impulse for the same initial two-card access window, followed next turn by three red mana and then a land sacrifice. Seething Song gives five red mana immediately at the same mana value; this Saga exchanges that immediacy for card access and a delayed liability. Counter removal or early sacrifice can avoid chapter III, so the land loss is not a guaranteed balancing cost.",
+    "newBenchmark": {
+      "name": "Reckless Impulse",
+      "mana_cost": "{1}{R}",
+      "type_line": "Sorcery",
+      "oracle_text": "Exile the top two cards of your library. Until the end of your next turn, you may play those cards.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/vow/174/reckless-impulse?utm_source=api",
+      "released_at": "2021-11-19"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-238",
+    "currentComparison": [
+      {
+        "name": "Soulherder",
+        "mana": "{1}{W}{U}",
+        "pt": "1/1",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/khc/93/soulherder?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{W}{U}, 1/1. Odyssey: {1}{W}{U}. Blink engine price; Odyssey adds draw on return/face-up but charges four mana for each blink. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Teleportation Circle",
+        "mana": "{3}{W}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/afr/39/teleportation-circle?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {3}{W}. Odyssey: {1}{W}{U}. Blink engine price; Odyssey adds draw on return/face-up but charges four mana for each blink. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: rules, functionalWords. Use ordinary event templates and include noncreatures without describing a vague return event.",
     "newBenchmark": null,
     "status": "first-pass component comparison; production reference refresh pending"
   },
   {
-    "id": "ODY-093",
-    "currentComparison": [
-      {
-        "name": "Ordeal of Heliod",
-        "mana": "{1}{W}",
-        "pt": "",
-        "roles": [
-          "rate-best",
-          "tech"
-        ],
-        "url": "https://scryfall.com/card/a25/27/ordeal-of-heliod?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {1}{W}. Ordeal counter clock; Odyssey grants Survival and pays out two tokens rather than life or cards. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Ordeal of Thassa",
-        "mana": "{1}{U}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/ths/58/ordeal-of-thassa?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {1}{U}. Odyssey: {1}{W}. Ordeal counter clock; Odyssey grants Survival and pays out two tokens rather than life or cards. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: rules, functionalWords. Use this Aura in the Aura's own reward ability; retain the necessary named source inside the granted creature ability.",
-    "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-166",
-    "currentComparison": [
-      {
-        "name": "Ordeal of Nylea",
-        "mana": "{1}{G}",
-        "pt": "",
-        "roles": [
-          "rate-best",
-          "tech"
-        ],
-        "url": "https://scryfall.com/card/fdn/641/ordeal-of-nylea?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {1}{G}. Odyssey: {1}{G}. Ordeal growth clock; Odyssey replaces attacking with Survival and trades one ramped land for Food. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Ordeal of Heliod",
-        "mana": "{1}{W}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/a25/27/ordeal-of-heliod?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {1}{W}. Odyssey: {1}{G}. Ordeal growth clock; Odyssey replaces attacking with Survival and trades one ramped land for Food. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Baseline comparison must be adjusted for these exact changes: rules, functionalWords. Use this Aura in the Aura's own reward ability; retain the necessary named source inside the granted creature ability.",
+    "id": "ODY-245",
+    "currentComparison": [],
+    "candidateComparison": "Chapter III now untaps only creatures and/or lands, matching green’s untap access while remaining fully blue. Scry, investigate and hexproof remain shared GU space.",
     "newBenchmark": null,
     "status": "first-pass component comparison; production reference refresh pending"
   },
@@ -1032,228 +1275,6 @@
     ],
     "candidateComparison": "Baseline comparison must be adjusted for these exact changes: rules, functionalWords. Use this Aura in the Aura's own reward ability; retain the necessary named source inside the granted creature ability.",
     "newBenchmark": null,
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-007",
-    "currentComparison": [
-      {
-        "name": "Refuse to Yield",
-        "mana": "{1}{W}",
-        "pt": "",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/snc/27/refuse-to-yield?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {W}. Untap combat trick; compare the smaller toughness boost and added life separately. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Veteran's Reflexes",
-        "mana": "{W}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/wwk/23/veterans-reflexes?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {W}. Odyssey: {W}. Untap combat trick; compare the smaller toughness boost and added life separately. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Costs one mana more, returns tapped rather than untapped, and adds two life. The rest condition limits immediate combat use; repeated enter effects and revealing manifested permanents remain important. Ephemerate offers a stronger repeated-blink ceiling without life gain.",
-    "newBenchmark": {
-      "name": "Cloudshift",
-      "mana_cost": "{W}",
-      "type_line": "Instant",
-      "oracle_text": "Exile target creature you control, then return that card to the battlefield under your control.",
-      "power": null,
-      "toughness": null,
-      "scryfall_uri": "https://scryfall.com/card/tle/152/cloudshift?utm_source=api",
-      "released_at": "2025-11-21"
-    },
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-051",
-    "currentComparison": [
-      {
-        "name": "Hylda of the Icy Crown",
-        "mana": "{2}{W}{U}",
-        "pt": "3/4",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/woe/206/hylda-of-the-icy-crown?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {2}{W}{U}, 3/4. Odyssey: {1}{W}{U}, 2/3. Tap/untap engine; Odyssey keys off exile rather than mana payments or an activated tap ability. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Niblis of the Breath",
-        "mana": "{2}{U}",
-        "pt": "2/1",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/dka/44/niblis-of-the-breath?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {2}{U}, 2/1. Odyssey: {1}{W}{U}, 2/3. Tap/untap engine; Odyssey keys off exile rather than mana payments or an activated tap ability. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "A three-mana 2/3 with two tempo triggers, compared with a two-mana enchantment that draws on face-up events. The candidate exchanges cards and passive toughness for a body, library-exile tapping and a recognition untap capped once each turn.",
-    "newBenchmark": {
-      "name": "Secret Plans",
-      "mana_cost": "{G}{U}",
-      "type_line": "Enchantment",
-      "oracle_text": "Face-down creatures you control get +0/+1.\nWhenever a permanent you control is turned face up, draw a card.",
-      "power": null,
-      "toughness": null,
-      "scryfall_uri": "https://scryfall.com/card/c19/201/secret-plans?utm_source=api",
-      "released_at": "2019-08-23"
-    },
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-090",
-    "currentComparison": [
-      {
-        "name": "Soulherder",
-        "mana": "{1}{W}{U}",
-        "pt": "1/1",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/khc/93/soulherder?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {1}{W}{U}, 1/1. Odyssey: {W}{U}, 2/2. Blink payoff and Adventure utility are separate components; Odyssey's Adventure creates a face-down creature rather than blinking. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Pegasus Guardian // Rescue the Foal",
-        "mana": "{5}{W}",
-        "pt": "3/3",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/clb/36/pegasus-guardian-rescue-the-foal?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {5}{W}, 3/3. Odyssey: {W}{U}, 2/2. Blink payoff and Adventure utility are separate components; Odyssey's Adventure creates a face-down creature rather than blinking. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "A two-mana 2/2 with an additional paid Adventure. Face-up or direct-return events give an untap and counter once each turn instead of Secret Plans’ unrestricted face-up draw. Do not count the Adventure’s manifest action itself as turning face up.",
-    "newBenchmark": {
-      "name": "Secret Plans",
-      "mana_cost": "{G}{U}",
-      "type_line": "Enchantment",
-      "oracle_text": "Face-down creatures you control get +0/+1.\nWhenever a permanent you control is turned face up, draw a card.",
-      "power": null,
-      "toughness": null,
-      "scryfall_uri": "https://scryfall.com/card/c19/201/secret-plans?utm_source=api",
-      "released_at": "2019-08-23"
-    },
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-056",
-    "currentComparison": [
-      {
-        "name": "Athreos, God of Passage",
-        "mana": "{1}{W}{B}",
-        "pt": "5/4",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/jou/146/athreos-god-of-passage?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {1}{W}{B}, 5/4. Odyssey: {1}{W}{B}, 3/3. Recurring death value on a creature; Odyssey's hand return is stronger than ordinary life-drain and has no opponent-payment escape. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Falkenrath Noble",
-        "mana": "{3}{B}",
-        "pt": "2/2",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/dsc/140/falkenrath-noble?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {3}{B}, 2/2. Odyssey: {1}{W}{B}, 3/3. Recurring death value on a creature; Odyssey's hand return is stronger than ordinary life-drain and has no opponent-payment escape. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "Three mana for a 3/3 instead of one hybrid mana for a 1/1. Growth requires an end-step sacrifice of another creature or Food; it cannot grow from every sacrifice or arbitrary artifacts. Life loss replaces the Squirrel’s paid draw option. Test the immediate 4/4 with Food and multiplayer scaling.",
-    "newBenchmark": {
-      "name": "Ravenous Squirrel",
-      "mana_cost": "{B/G}",
-      "type_line": "Creature — Squirrel",
-      "oracle_text": "Whenever you sacrifice an artifact or creature, put a +1/+1 counter on this creature.\n{1}{B}{G}, Sacrifice an artifact or creature: You gain 1 life and draw a card.",
-      "power": "1",
-      "toughness": "1",
-      "scryfall_uri": "https://scryfall.com/card/mh2/211/ravenous-squirrel?utm_source=api",
-      "released_at": "2021-06-18"
-    },
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-213",
-    "currentComparison": [
-      {
-        "name": "Conjurer's Closet",
-        "mana": "{5}",
-        "pt": "",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/inr/259/conjurers-closet?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {5}. Odyssey: {3}. Repeatable blink engine; Odyssey requires legendary targets and mana but adds card draw and ward. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "Golden Argosy",
-        "mana": "{4}",
-        "pt": "3/6",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/dmu/230/golden-argosy?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {4}, 3/6. Odyssey: {3}. Repeatable blink engine; Odyssey requires legendary targets and mana but adds card draw and ward. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "One more generic mana than the two-white enchantment; retains ward {1} for legendary creatures but gives no power/toughness boost. Instead, the artifact protects itself and draws at your end step with two legendary creatures, all conditional on retaining one chosen land. Tome of Legends provides a cheaper but counter- and activation-limited draw comparison. Test colourless access and repeated free draws; the old blink benchmarks no longer describe this design.",
-    "newBenchmark": {
-      "name": "Flowering of the White Tree",
-      "mana_cost": "{W}{W}",
-      "type_line": "Legendary Enchantment",
-      "oracle_text": "Legendary creatures you control get +2/+1 and have ward {1}.\nNonlegendary creatures you control get +1/+1.",
-      "power": null,
-      "toughness": null,
-      "scryfall_uri": "https://scryfall.com/card/ltr/15/flowering-of-the-white-tree?utm_source=api",
-      "released_at": "2023-06-23"
-    },
-    "status": "first-pass component comparison; production reference refresh pending"
-  },
-  {
-    "id": "ODY-235",
-    "currentComparison": [
-      {
-        "name": "Fable of the Mirror-Breaker // Reflection of Kiki-Jiki",
-        "mana": "{2}{R}",
-        "pt": "",
-        "roles": [
-          "rate-best"
-        ],
-        "url": "https://scryfall.com/card/neo/141/fable-of-the-mirror-breaker-reflection-of-kiki-jiki?utm_source=api",
-        "comparison": "Best-rate benchmark: Printed front: {2}{R}. Odyssey: {2}{R}. Three-mana red Saga resource pacing; Odyssey's first chapter has no permission to play the exiled cards, so do not count those as cards drawn. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
-      },
-      {
-        "name": "The Flame of Keld",
-        "mana": "{1}{R}",
-        "pt": "",
-        "roles": [
-          "rate-normal"
-        ],
-        "url": "https://scryfall.com/card/dom/123/the-flame-of-keld?utm_source=api",
-        "comparison": "Normal-rate benchmark: Printed front: {1}{R}. Odyssey: {2}{R}. Three-mana red Saga resource pacing; Odyssey's first chapter has no permission to play the exiled cards, so do not count those as cards drawn. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
-      }
-    ],
-    "candidateComparison": "One more mana than Reckless Impulse for the same initial two-card access window, followed next turn by three red mana and then a land sacrifice. Seething Song gives five red mana immediately at the same mana value; this Saga exchanges that immediacy for card access and a delayed liability. Counter removal or early sacrifice can avoid chapter III, so the land loss is not a guaranteed balancing cost.",
-    "newBenchmark": {
-      "name": "Reckless Impulse",
-      "mana_cost": "{1}{R}",
-      "type_line": "Sorcery",
-      "oracle_text": "Exile the top two cards of your library. Until the end of your next turn, you may play those cards.",
-      "power": null,
-      "toughness": null,
-      "scryfall_uri": "https://scryfall.com/card/vow/174/reckless-impulse?utm_source=api",
-      "released_at": "2021-11-19"
-    },
     "status": "first-pass component comparison; production reference refresh pending"
   }
 ]
