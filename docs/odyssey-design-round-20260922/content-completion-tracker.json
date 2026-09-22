@@ -1,0 +1,49 @@
+{
+  "schema": "odyssey-content-completion/v1",
+  "phase": "full-set-editorial-completion",
+  "startedAt": "2026-09-23",
+  "cards": 309,
+  "referenceLayer": {
+    "productionCardsCovered": 309,
+    "totalProductionReferences": 912,
+    "policy": "reference-quality-v3",
+    "changedCandidateCards": 42,
+    "missingRequestedCandidateBenchmarks": 0,
+    "status": "coverage-complete-refresh-on-rules-change"
+  },
+  "makingLayer": {
+    "briefsPresent": 309,
+    "requiredFields": [
+      "sequence",
+      "emotions",
+      "attributes",
+      "hooks",
+      "assessment",
+      "sourceReview"
+    ],
+    "status": "structurally-complete-source-verification-in-progress"
+  },
+  "flavourLayer": {
+    "verifiedCandidatesAfterThisCheckpoint": 28,
+    "noDirectQuoteSelected": 2,
+    "pending": 279,
+    "finalSelections": 0
+  },
+  "gameplay": {
+    "status": "prepared-deferred",
+    "playedMatches": 0,
+    "packet": "playtest-packet-v1.md"
+  },
+  "completionRule": "Every card has current reference coverage, source-grounded emotional brief, and verified quotation candidate or explicit no-text/no-direct-quote outcome; final flavour selection waits for card-space/layout review.",
+  "workOrder": [
+    "Books I–IV",
+    "Books V–VIII",
+    "Books IX–XII",
+    "Books XIII–XVI",
+    "Books XVII–XX",
+    "Books XXI–XXIV",
+    "Trojan/pre-Odyssey",
+    "post-Odyssey",
+    "modern reception"
+  ]
+}
