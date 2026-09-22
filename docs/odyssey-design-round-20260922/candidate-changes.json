@@ -8862,5 +8862,1272 @@
     ],
     "newReferencesToVerify": [],
     "referenceStatus": "Current-design references preserved as baseline evidence; updated candidate comparisons are provisional."
+  },
+  {
+    "id": "ODY-007",
+    "slot": 7,
+    "reason": "Make the foot-washing recognition scene a second common direct-return enabler; blink also reveals a manifested permanent.",
+    "playtestQuestion": "Does two mana and tapped return sufficiently constrain repeated ETB value? Compare lost untap combat utility.",
+    "before": {
+      "id": "ODY-007",
+      "number": 7,
+      "name": "Wash the Stranger's Feet",
+      "displayName": "Wash the Stranger's Feet",
+      "underlyingName": "",
+      "mana": "{W}",
+      "mv": 1,
+      "color": "W",
+      "frame": "W",
+      "type": "Instant",
+      "pt": "",
+      "rarity": "C",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Untap; toughness; life",
+      "rules": "Untap target creature. It gets +0/+2 until end of turn. You gain 2 life.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "WU/GW — xenia / Survival",
+      "story": "Hospitality ritual across the Odyssey / a guest is washed, refreshed and cared for before their full identity or story is demanded.",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "standard",
+      "primaryArt": "ART-008",
+      "credit": "Art: Greek, Melian, ca. 450 BCE · The Met",
+      "source": "https://www.metmuseum.org/art/collection/search/251812",
+      "imageUrl": "https://images.metmuseum.org/CRDImages/gr/original/DT5590.jpg",
+      "skeletonClass": "standard",
+      "cycleIds": [
+        "rebuild.xenia",
+        "flavor.gesture-social-ritual",
+        "flavor.odysseus-world"
+      ],
+      "showcase": [],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "",
+      "functionalWords": 18,
+      "changeStatus": "candidate2-major-story-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+      "narrativeEra": "Homeric world",
+      "storyTarget": "Foot-washing as a concrete hospitality ritual.",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey / Homeric hospitality practice",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Washing restores a traveller physically before questioning or recognition.",
+      "flavorMatchScore": 5,
+      "flavorMatchRationale": "Untapping directly refreshes a tired/tapped traveller, the toughness protects them, and life gain makes the ritual read as care. Existing household image may be reusable after review."
+    },
+    "after": {
+      "id": "ODY-007",
+      "number": 7,
+      "name": "Wash the Stranger's Feet",
+      "displayName": "Wash the Stranger's Feet",
+      "underlyingName": "",
+      "mana": "{1}{W}",
+      "mv": 2,
+      "color": "W",
+      "frame": "W",
+      "type": "Instant",
+      "pt": "",
+      "rarity": "C",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Blink; recognition; life",
+      "rules": "Exile target creature you control, then return that card to the battlefield tapped under its owner's control. You gain 2 life.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "WU/GW — xenia / Survival",
+      "story": "Hospitality ritual across the Odyssey / a guest is washed, refreshed and cared for before their full identity or story is demanded.",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "standard",
+      "primaryArt": "ART-008",
+      "credit": "Art: Greek, Melian, ca. 450 BCE · The Met",
+      "source": "https://www.metmuseum.org/art/collection/search/251812",
+      "imageUrl": "https://images.metmuseum.org/CRDImages/gr/original/DT5590.jpg",
+      "skeletonClass": "standard",
+      "cycleIds": [
+        "rebuild.xenia",
+        "flavor.gesture-social-ritual",
+        "flavor.odysseus-world"
+      ],
+      "showcase": [],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "",
+      "functionalWords": 21,
+      "changeStatus": "candidate2-major-story-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+      "narrativeEra": "Homeric world",
+      "storyTarget": "Foot-washing as a concrete hospitality ritual.",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey Book XIX / Eurycleia recognises the scar",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Eurycleia washes the disguised Odysseus and recognises his scar. The familiar person becomes visible through care.",
+      "flavorMatchScore": 4,
+      "flavorMatchRationale": "Blink removes the face-down presentation of a manifested permanent and renews entry effects; tapped return conveys rest. Disappearance is a gameplay abstraction, not a literal feature of the scene. A manifested instant or sorcery cannot return to the battlefield."
+    },
+    "changedFields": {
+      "mana": {
+        "before": "{W}",
+        "after": "{1}{W}"
+      },
+      "mv": {
+        "before": 1,
+        "after": 2
+      },
+      "mechanics": {
+        "before": "Untap; toughness; life",
+        "after": "Blink; recognition; life"
+      },
+      "rules": {
+        "before": "Untap target creature. It gets +0/+2 until end of turn. You gain 2 life.",
+        "after": "Exile target creature you control, then return that card to the battlefield tapped under its owner's control. You gain 2 life."
+      },
+      "functionalWords": {
+        "before": 18,
+        "after": 21
+      },
+      "storySourceBand": {
+        "before": "Odyssey / Homeric hospitality practice",
+        "after": "Odyssey Book XIX / Eurycleia recognises the scar"
+      },
+      "flavorStoryElement": {
+        "before": "Washing restores a traveller physically before questioning or recognition.",
+        "after": "Eurycleia washes the disguised Odysseus and recognises his scar. The familiar person becomes visible through care."
+      },
+      "flavorMatchScore": {
+        "before": 5,
+        "after": 4
+      },
+      "flavorMatchRationale": {
+        "before": "Untapping directly refreshes a tired/tapped traveller, the toughness protects them, and life gain makes the ritual read as care. Existing household image may be reusable after review.",
+        "after": "Blink removes the face-down presentation of a manifested permanent and renews entry effects; tapped return conveys rest. Disappearance is a gameplay abstraction, not a literal feature of the scene. A manifested instant or sorcery cannot return to the battlefield."
+      }
+    },
+    "existingReferenceFacts": [
+      {
+        "role": "rate-best",
+        "roles": [
+          "rate-best"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {W}. Untap combat trick; compare the smaller toughness boost and added life separately. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent.",
+        "notes": [
+          {
+            "role": "rate-best",
+            "text": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {W}. Untap combat trick; compare the smaller toughness boost and added life separately. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "a7b597b3-5792-49e4-9bcb-74012e4e9cb6",
+          "oracleId": "d05aeada-2a9f-464d-8a66-b6e90f43bae3",
+          "name": "Refuse to Yield",
+          "manaCost": "{1}{W}",
+          "manaValue": 2.0,
+          "type": "Instant",
+          "oracleText": "Target creature gets +2/+7 until end of turn. Untap it.",
+          "power": "",
+          "toughness": "",
+          "colors": [
+            "W"
+          ],
+          "colorIdentity": [
+            "W"
+          ],
+          "keywords": [],
+          "rarity": "uncommon",
+          "set": "snc",
+          "setName": "Streets of New Capenna",
+          "collectorNumber": "27",
+          "releasedAt": "2022-04-29",
+          "scryfallUri": "https://scryfall.com/card/snc/27/refuse-to-yield?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/a/7/a7b597b3-5792-49e4-9bcb-74012e4e9cb6.jpg?1783923152",
+            "normal": "https://cards.scryfall.io/normal/front/a/7/a7b597b3-5792-49e4-9bcb-74012e4e9cb6.jpg?1783923152",
+            "large": "https://cards.scryfall.io/large/front/a/7/a7b597b3-5792-49e4-9bcb-74012e4e9cb6.jpg?1783923152",
+            "png": "https://cards.scryfall.io/png/front/a/7/a7b597b3-5792-49e4-9bcb-74012e4e9cb6.png?1783923152",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/a/7/a7b597b3-5792-49e4-9bcb-74012e4e9cb6.jpg?1783923152"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "rate-normal",
+        "roles": [
+          "rate-normal"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Normal-rate benchmark: Printed front: {W}. Odyssey: {W}. Untap combat trick; compare the smaller toughness boost and added life separately. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone.",
+        "notes": [
+          {
+            "role": "rate-normal",
+            "text": "Normal-rate benchmark: Printed front: {W}. Odyssey: {W}. Untap combat trick; compare the smaller toughness boost and added life separately. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "783f220b-f860-4ebb-a424-22598bdd6fae",
+          "oracleId": "efee0ca0-0897-4972-99c4-432561b6e9f8",
+          "name": "Veteran's Reflexes",
+          "manaCost": "{W}",
+          "manaValue": 1.0,
+          "type": "Instant",
+          "oracleText": "Target creature gets +1/+1 until end of turn. Untap that creature.",
+          "power": "",
+          "toughness": "",
+          "colors": [
+            "W"
+          ],
+          "colorIdentity": [
+            "W"
+          ],
+          "keywords": [],
+          "rarity": "common",
+          "set": "wwk",
+          "setName": "Worldwake",
+          "collectorNumber": "23",
+          "releasedAt": "2010-02-05",
+          "scryfallUri": "https://scryfall.com/card/wwk/23/veterans-reflexes?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/7/8/783f220b-f860-4ebb-a424-22598bdd6fae.jpg?1783942064",
+            "normal": "https://cards.scryfall.io/normal/front/7/8/783f220b-f860-4ebb-a424-22598bdd6fae.jpg?1783942064",
+            "large": "https://cards.scryfall.io/large/front/7/8/783f220b-f860-4ebb-a424-22598bdd6fae.jpg?1783942064",
+            "png": "https://cards.scryfall.io/png/front/7/8/783f220b-f860-4ebb-a424-22598bdd6fae.png?1783942064",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/7/8/783f220b-f860-4ebb-a424-22598bdd6fae.jpg?1783942064"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      }
+    ],
+    "newReferencesToVerify": [
+      "Cloudshift",
+      "Ephemerate"
+    ],
+    "referenceStatus": "Current-design references preserved as baseline evidence; updated candidate comparisons are provisional."
+  },
+  {
+    "id": "ODY-051",
+    "slot": 51,
+    "reason": "Connect counsel and identity to the supported face-up action while limiting repeated untap engines.",
+    "playtestQuestion": "Can players order recognition and Survival triggers correctly, and does one untap per turn offer enough reward?",
+    "before": {
+      "id": "ODY-051",
+      "number": 51,
+      "name": "Mentor, Trusted Counselor",
+      "displayName": "Mentor, Trusted Counselor",
+      "underlyingName": "",
+      "mana": "{1}{W}{U}",
+      "mv": 3,
+      "color": "WU",
+      "frame": "M",
+      "type": "Legendary Creature — Human Advisor",
+      "pt": "2/3",
+      "rarity": "U",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Manifest Fate; Exile",
+      "rules": "Whenever one or more cards are exiled from your library for the first time each turn, tap up to one target creature an opponent controls. Whenever a permanent you control enters from exile, untap up to one target creature you control.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "WU — revelation / permanents from exile",
+      "story": "Books I–II / Mentor's counsel",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "standard",
+      "primaryArt": "ART-030",
+      "credit": "Art: W. P. van Geldorp · Rijksmuseum",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/Telemachus%2Bbezoekt%2BNestor%2Bop%2Bhet%2Beiland%2BPylon--e81b94a2c647dee1a95ab1e8da935a73",
+      "imageUrl": "",
+      "skeletonClass": "standard",
+      "cycleIds": [
+        "ff-analog-gold-signposts",
+        "story.telemachy"
+      ],
+      "showcase": [
+        "extended-art-legend",
+        "character-showcase",
+        "greek-vase-showcase"
+      ],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "WU",
+      "functionalWords": 41,
+      "changeStatus": "rebuilt-ff-signpost · display-name-repair-v1 · art-p2-direct-v1",
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Books I–II / Mentor's counsel",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey Books I–XXIV",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Books I–II / Mentor's counsel",
+      "flavorMatchScore": 4,
+      "flavorMatchRationale": "Strong match: the card clearly represents Books I–II / Mentor's counsel, and Manifest Fate; Exile supports that story even if the execution is somewhat general."
+    },
+    "after": {
+      "id": "ODY-051",
+      "number": 51,
+      "name": "Mentor, Trusted Counselor",
+      "displayName": "Mentor, Trusted Counselor",
+      "underlyingName": "",
+      "mana": "{1}{W}{U}",
+      "mv": 3,
+      "color": "WU",
+      "frame": "M",
+      "type": "Legendary Creature — Human Advisor",
+      "pt": "2/3",
+      "rarity": "U",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Library exile; face-up recognition; limited untap",
+      "rules": "Whenever one or more cards are exiled from your library for the first time each turn, tap up to one target creature an opponent controls.\nWhenever a permanent you control enters from exile or is turned face up, untap up to one target creature you control. This ability triggers only once each turn.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "WU — revelation / permanents from exile",
+      "story": "Books I–II / Mentor's counsel",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "standard",
+      "primaryArt": "ART-030",
+      "credit": "Art: W. P. van Geldorp · Rijksmuseum",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/Telemachus%2Bbezoekt%2BNestor%2Bop%2Bhet%2Beiland%2BPylon--e81b94a2c647dee1a95ab1e8da935a73",
+      "imageUrl": "",
+      "skeletonClass": "standard",
+      "cycleIds": [
+        "ff-analog-gold-signposts",
+        "story.telemachy"
+      ],
+      "showcase": [
+        "extended-art-legend",
+        "character-showcase",
+        "greek-vase-showcase"
+      ],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "WU",
+      "functionalWords": 53,
+      "changeStatus": "rebuilt-ff-signpost · display-name-repair-v1 · art-p2-direct-v1",
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Books I–II / Mentor's counsel",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey Books I–XXIV",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Mentor defends the household; Athena takes his form and helps Telemachus prepare and depart.",
+      "flavorMatchScore": 4,
+      "flavorMatchRationale": "Concealment opens a way through opposition; recognition readies an ally. The tap/untap model abstracts coordinated assistance, not a literal restoration of the dead. Distinguish human Mentor from Athena in his likeness."
+    },
+    "changedFields": {
+      "mechanics": {
+        "before": "Manifest Fate; Exile",
+        "after": "Library exile; face-up recognition; limited untap"
+      },
+      "rules": {
+        "before": "Whenever one or more cards are exiled from your library for the first time each turn, tap up to one target creature an opponent controls. Whenever a permanent you control enters from exile, untap up to one target creature you control.",
+        "after": "Whenever one or more cards are exiled from your library for the first time each turn, tap up to one target creature an opponent controls.\nWhenever a permanent you control enters from exile or is turned face up, untap up to one target creature you control. This ability triggers only once each turn."
+      },
+      "functionalWords": {
+        "before": 41,
+        "after": 53
+      },
+      "flavorStoryElement": {
+        "before": "Books I–II / Mentor's counsel",
+        "after": "Mentor defends the household; Athena takes his form and helps Telemachus prepare and depart."
+      },
+      "flavorMatchRationale": {
+        "before": "Strong match: the card clearly represents Books I–II / Mentor's counsel, and Manifest Fate; Exile supports that story even if the execution is somewhat general.",
+        "after": "Concealment opens a way through opposition; recognition readies an ally. The tap/untap model abstracts coordinated assistance, not a literal restoration of the dead. Distinguish human Mentor from Athena in his likeness."
+      }
+    },
+    "existingReferenceFacts": [
+      {
+        "role": "rate-best",
+        "roles": [
+          "rate-best"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Best-rate benchmark: Printed front: {2}{W}{U}, 3/4. Odyssey: {1}{W}{U}, 2/3. Tap/untap engine; Odyssey keys off exile rather than mana payments or an activated tap ability. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent.",
+        "notes": [
+          {
+            "role": "rate-best",
+            "text": "Best-rate benchmark: Printed front: {2}{W}{U}, 3/4. Odyssey: {1}{W}{U}, 2/3. Tap/untap engine; Odyssey keys off exile rather than mana payments or an activated tap ability. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "ae9231fd-053d-4b84-a7a8-86063465bc49",
+          "oracleId": "1733c71b-fd28-48dd-8a3d-41afd4b22f0e",
+          "name": "Hylda of the Icy Crown",
+          "manaCost": "{2}{W}{U}",
+          "manaValue": 4.0,
+          "type": "Legendary Creature — Human Warlock",
+          "oracleText": "Whenever you tap an untapped creature an opponent controls, you may pay {1}. When you do, choose one —\n• Create a 4/4 white and blue Elemental creature token.\n• Put a +1/+1 counter on each creature you control.\n• Scry 2, then draw a card.",
+          "power": "3",
+          "toughness": "4",
+          "colors": [
+            "U",
+            "W"
+          ],
+          "colorIdentity": [
+            "U",
+            "W"
+          ],
+          "keywords": [
+            "Scry"
+          ],
+          "rarity": "mythic",
+          "set": "woe",
+          "setName": "Wilds of Eldraine",
+          "collectorNumber": "206",
+          "releasedAt": "2023-09-08",
+          "scryfallUri": "https://scryfall.com/card/woe/206/hylda-of-the-icy-crown?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/a/e/ae9231fd-053d-4b84-a7a8-86063465bc49.jpg?1783915071",
+            "normal": "https://cards.scryfall.io/normal/front/a/e/ae9231fd-053d-4b84-a7a8-86063465bc49.jpg?1783915071",
+            "large": "https://cards.scryfall.io/large/front/a/e/ae9231fd-053d-4b84-a7a8-86063465bc49.jpg?1783915071",
+            "png": "https://cards.scryfall.io/png/front/a/e/ae9231fd-053d-4b84-a7a8-86063465bc49.png?1783915071",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/a/e/ae9231fd-053d-4b84-a7a8-86063465bc49.jpg?1783915071"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "rate-normal",
+        "roles": [
+          "rate-normal"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Normal-rate benchmark: Printed front: {2}{U}, 2/1. Odyssey: {1}{W}{U}, 2/3. Tap/untap engine; Odyssey keys off exile rather than mana payments or an activated tap ability. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone.",
+        "notes": [
+          {
+            "role": "rate-normal",
+            "text": "Normal-rate benchmark: Printed front: {2}{U}, 2/1. Odyssey: {1}{W}{U}, 2/3. Tap/untap engine; Odyssey keys off exile rather than mana payments or an activated tap ability. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "0686843d-6d1e-4488-8c17-7c986a154195",
+          "oracleId": "10391bcb-0932-49a0-8d47-e06e3c10dd68",
+          "name": "Niblis of the Breath",
+          "manaCost": "{2}{U}",
+          "manaValue": 3.0,
+          "type": "Creature — Spirit",
+          "oracleText": "Flying\n{U}, {T}: You may tap or untap target creature.",
+          "power": "2",
+          "toughness": "1",
+          "colors": [
+            "U"
+          ],
+          "colorIdentity": [
+            "U"
+          ],
+          "keywords": [
+            "Flying"
+          ],
+          "rarity": "uncommon",
+          "set": "dka",
+          "setName": "Dark Ascension",
+          "collectorNumber": "44",
+          "releasedAt": "2012-02-03",
+          "scryfallUri": "https://scryfall.com/card/dka/44/niblis-of-the-breath?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/0/6/0686843d-6d1e-4488-8c17-7c986a154195.jpg?1783940844",
+            "normal": "https://cards.scryfall.io/normal/front/0/6/0686843d-6d1e-4488-8c17-7c986a154195.jpg?1783940844",
+            "large": "https://cards.scryfall.io/large/front/0/6/0686843d-6d1e-4488-8c17-7c986a154195.jpg?1783940844",
+            "png": "https://cards.scryfall.io/png/front/0/6/0686843d-6d1e-4488-8c17-7c986a154195.png?1783940844",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/0/6/0686843d-6d1e-4488-8c17-7c986a154195.jpg?1783940844"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "tech",
+        "roles": [
+          "tech"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Mechanic / set-tech precedent: Manifest precedent: a face-down 2/2 and face-up conversion. Manifest Fate selects from two and exiles the other; it is not mechanically identical to manifest or manifest dread.",
+        "notes": [
+          {
+            "role": "tech",
+            "text": "Mechanic / set-tech precedent: Manifest precedent: a face-down 2/2 and face-up conversion. Manifest Fate selects from two and exiles the other; it is not mechanically identical to manifest or manifest dread."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "f522f32d-e510-4128-98ae-d3c0f684b899",
+          "oracleId": "8ec7c7ce-23a5-4ba7-8cfd-4caf8601a9c8",
+          "name": "Whisperwood Elemental",
+          "manaCost": "{3}{G}{G}",
+          "manaValue": 5.0,
+          "type": "Creature — Elemental",
+          "oracleText": "At the beginning of your end step, manifest the top card of your library. (Put it onto the battlefield face down as a 2/2 creature. Turn it face up any time for its mana cost if it's a creature card.)\nSacrifice this creature: Until end of turn, face-up nontoken creatures you control gain \"When this creature dies, manifest the top card of your library.\"",
+          "power": "4",
+          "toughness": "4",
+          "colors": [
+            "G"
+          ],
+          "colorIdentity": [
+            "G"
+          ],
+          "keywords": [
+            "Manifest"
+          ],
+          "rarity": "mythic",
+          "set": "dsc",
+          "setName": "Duskmourn: House of Horror Commander",
+          "collectorNumber": "204",
+          "releasedAt": "2024-09-27",
+          "scryfallUri": "https://scryfall.com/card/dsc/204/whisperwood-elemental?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/f/5/f522f32d-e510-4128-98ae-d3c0f684b899.jpg?1783909598",
+            "normal": "https://cards.scryfall.io/normal/front/f/5/f522f32d-e510-4128-98ae-d3c0f684b899.jpg?1783909598",
+            "large": "https://cards.scryfall.io/large/front/f/5/f522f32d-e510-4128-98ae-d3c0f684b899.jpg?1783909598",
+            "png": "https://cards.scryfall.io/png/front/f/5/f522f32d-e510-4128-98ae-d3c0f684b899.png?1783909598",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/f/5/f522f32d-e510-4128-98ae-d3c0f684b899.jpg?1783909598"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "tech",
+        "roles": [
+          "tech"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Mechanic / set-tech precedent: Manifest dread / face-down engine: the unused card goes to the graveyard rather than exile, so graveyard and exile synergies differ.",
+        "notes": [
+          {
+            "role": "tech",
+            "text": "Mechanic / set-tech precedent: Manifest dread / face-down engine: the unused card goes to the graveyard rather than exile, so graveyard and exile synergies differ."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "744ef0bc-9973-450e-a0c4-056d8244f357",
+          "oracleId": "09c275bd-8323-485e-81f6-aff1f99d0d03",
+          "name": "Hauntwoods Shrieker",
+          "manaCost": "{1}{G}{G}",
+          "manaValue": 3.0,
+          "type": "Creature — Beast Mutant",
+          "oracleText": "Whenever this creature attacks, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)\n{1}{G}: Reveal target face-down permanent. If it's a creature card, you may turn it face up.",
+          "power": "3",
+          "toughness": "3",
+          "colors": [
+            "G"
+          ],
+          "colorIdentity": [
+            "G"
+          ],
+          "keywords": [
+            "Manifest",
+            "Manifest dread"
+          ],
+          "rarity": "mythic",
+          "set": "dsk",
+          "setName": "Duskmourn: House of Horror",
+          "collectorNumber": "182",
+          "releasedAt": "2024-09-27",
+          "scryfallUri": "https://scryfall.com/card/dsk/182/hauntwoods-shrieker?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/7/4/744ef0bc-9973-450e-a0c4-056d8244f357.jpg?1783909453",
+            "normal": "https://cards.scryfall.io/normal/front/7/4/744ef0bc-9973-450e-a0c4-056d8244f357.jpg?1783909453",
+            "large": "https://cards.scryfall.io/large/front/7/4/744ef0bc-9973-450e-a0c4-056d8244f357.jpg?1783909453",
+            "png": "https://cards.scryfall.io/png/front/7/4/744ef0bc-9973-450e-a0c4-056d8244f357.png?1783909453",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/7/4/744ef0bc-9973-450e-a0c4-056d8244f357.jpg?1783909453"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      }
+    ],
+    "newReferencesToVerify": [],
+    "referenceStatus": "Current-design references preserved as baseline evidence; updated candidate comparisons are provisional."
+  },
+  {
+    "id": "ODY-090",
+    "slot": 90,
+    "reason": "Make Nausicaa welcome both the returning traveller and the newly revealed person. Preserve her Adventure.",
+    "playtestQuestion": "Does the two-mana body plus counter reward compete fairly with the other signposts? The Adventure alone still does not trigger this ability.",
+    "before": {
+      "id": "ODY-090",
+      "number": 90,
+      "name": "Nausicaa, Princess of Scheria",
+      "displayName": "Nausicaa, Princess of Scheria",
+      "underlyingName": "",
+      "mana": "{W}{U}",
+      "mv": 2,
+      "color": "WU",
+      "frame": "M",
+      "type": "Legendary Creature — Human Noble",
+      "pt": "2/2",
+      "rarity": "U",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Adventure / Manifest Fate / revelation",
+      "rules": "Once each turn, when a permanent you control enters from exile, untap it and put a +1/+1 counter on it if it's a creature.\n//Adventure// Find the Castaway — {1}{U} — Sorcery — Adventure\nManifest fate.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "WU",
+      "story": "Book VI / Nausicaa finds Odysseus",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "adventure",
+      "primaryArt": "ART-189",
+      "credit": "Art: “Ulysses Following the Car of Nausica” · James Parker, after John Flaxman · Rijksmuseum",
+      "source": "https://www.rijksmuseum.nl/nl/collectie/object/Odysseus%2Bvolgt%2Bde%2Bkoets%2Bvan%2BNausika%C3%A4--d7abd432b5f622c1c18405e25d99518c",
+      "imageUrl": "",
+      "skeletonClass": "adventure",
+      "cycleIds": [
+        "ff-analog-gold-signposts",
+        "story.scheria",
+        "cast.nausicaa",
+        "group.phaeacians"
+      ],
+      "showcase": [
+        "extended-art-legend",
+        "greek-vase-showcase"
+      ],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "WU",
+      "functionalWords": 33,
+      "changeStatus": "carried-from-analysis-candidate-v1",
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Book VI / Nausicaa finds Odysseus",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey Books I–XXIV",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Book VI / Nausicaa finds Odysseus",
+      "flavorMatchScore": 4,
+      "flavorMatchRationale": "Strong match: the card clearly represents Book VI / Nausicaa finds Odysseus, and Adventure / Manifest Fate / revelation supports that story even if the execution is somewhat general."
+    },
+    "after": {
+      "id": "ODY-090",
+      "number": 90,
+      "name": "Nausicaa, Princess of Scheria",
+      "displayName": "Nausicaa, Princess of Scheria",
+      "underlyingName": "",
+      "mana": "{W}{U}",
+      "mv": 2,
+      "color": "WU",
+      "frame": "M",
+      "type": "Legendary Creature — Human Noble",
+      "pt": "2/2",
+      "rarity": "U",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Adventure; Manifest Fate; face-up recognition; counters",
+      "rules": "Whenever a permanent you control enters from exile or is turned face up, untap it. If it's a creature, put a +1/+1 counter on it. This ability triggers only once each turn.\n//Adventure// Find the Castaway — {1}{U} — Sorcery — Adventure\nManifest fate.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "WU",
+      "story": "Book VI / Nausicaa finds Odysseus",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "adventure",
+      "primaryArt": "ART-189",
+      "credit": "Art: “Ulysses Following the Car of Nausica” · James Parker, after John Flaxman · Rijksmuseum",
+      "source": "https://www.rijksmuseum.nl/nl/collectie/object/Odysseus%2Bvolgt%2Bde%2Bkoets%2Bvan%2BNausika%C3%A4--d7abd432b5f622c1c18405e25d99518c",
+      "imageUrl": "",
+      "skeletonClass": "adventure",
+      "cycleIds": [
+        "ff-analog-gold-signposts",
+        "story.scheria",
+        "cast.nausicaa",
+        "group.phaeacians"
+      ],
+      "showcase": [
+        "extended-art-legend",
+        "greek-vase-showcase"
+      ],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "WU",
+      "functionalWords": 44,
+      "changeStatus": "carried-from-analysis-candidate-v1",
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Book VI / Nausicaa finds Odysseus",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey Books I–XXIV",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Nausicaa stands her ground, supplies the castaway, and sees his transformed appearance after washing and clothing.",
+      "flavorMatchScore": 4,
+      "flavorMatchRationale": "Her Adventure discovers the unknown traveller; later revelation or return lets her restore and strengthen them. The new event explicitly supports face-up play. Generic exile still stands for welcome rather than a literal journey from another realm."
+    },
+    "changedFields": {
+      "mechanics": {
+        "before": "Adventure / Manifest Fate / revelation",
+        "after": "Adventure; Manifest Fate; face-up recognition; counters"
+      },
+      "rules": {
+        "before": "Once each turn, when a permanent you control enters from exile, untap it and put a +1/+1 counter on it if it's a creature.\n//Adventure// Find the Castaway — {1}{U} — Sorcery — Adventure\nManifest fate.",
+        "after": "Whenever a permanent you control enters from exile or is turned face up, untap it. If it's a creature, put a +1/+1 counter on it. This ability triggers only once each turn.\n//Adventure// Find the Castaway — {1}{U} — Sorcery — Adventure\nManifest fate."
+      },
+      "functionalWords": {
+        "before": 33,
+        "after": 44
+      },
+      "flavorStoryElement": {
+        "before": "Book VI / Nausicaa finds Odysseus",
+        "after": "Nausicaa stands her ground, supplies the castaway, and sees his transformed appearance after washing and clothing."
+      },
+      "flavorMatchRationale": {
+        "before": "Strong match: the card clearly represents Book VI / Nausicaa finds Odysseus, and Adventure / Manifest Fate / revelation supports that story even if the execution is somewhat general.",
+        "after": "Her Adventure discovers the unknown traveller; later revelation or return lets her restore and strengthen them. The new event explicitly supports face-up play. Generic exile still stands for welcome rather than a literal journey from another realm."
+      }
+    },
+    "existingReferenceFacts": [
+      {
+        "role": "rate-best",
+        "roles": [
+          "rate-best"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Best-rate benchmark: Printed front: {1}{W}{U}, 1/1. Odyssey: {W}{U}, 2/2. Blink payoff and Adventure utility are separate components; Odyssey's Adventure creates a face-down creature rather than blinking. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent.",
+        "notes": [
+          {
+            "role": "rate-best",
+            "text": "Best-rate benchmark: Printed front: {1}{W}{U}, 1/1. Odyssey: {W}{U}, 2/2. Blink payoff and Adventure utility are separate components; Odyssey's Adventure creates a face-down creature rather than blinking. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "50bc0f5b-7421-45b9-af85-86dd9821b7d8",
+          "oracleId": "92019547-f6db-4ea6-8356-d0a90ace5662",
+          "name": "Soulherder",
+          "manaCost": "{1}{W}{U}",
+          "manaValue": 3.0,
+          "type": "Creature — Spirit",
+          "oracleText": "Whenever a creature is exiled from the battlefield, put a +1/+1 counter on this creature.\nAt the beginning of your end step, you may exile another target creature you control, then return that card to the battlefield under its owner's control.",
+          "power": "1",
+          "toughness": "1",
+          "colors": [
+            "U",
+            "W"
+          ],
+          "colorIdentity": [
+            "U",
+            "W"
+          ],
+          "keywords": [],
+          "rarity": "uncommon",
+          "set": "khc",
+          "setName": "Kaldheim Commander",
+          "collectorNumber": "93",
+          "releasedAt": "2021-02-05",
+          "scryfallUri": "https://scryfall.com/card/khc/93/soulherder?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/5/0/50bc0f5b-7421-45b9-af85-86dd9821b7d8.jpg?1783928301",
+            "normal": "https://cards.scryfall.io/normal/front/5/0/50bc0f5b-7421-45b9-af85-86dd9821b7d8.jpg?1783928301",
+            "large": "https://cards.scryfall.io/large/front/5/0/50bc0f5b-7421-45b9-af85-86dd9821b7d8.jpg?1783928301",
+            "png": "https://cards.scryfall.io/png/front/5/0/50bc0f5b-7421-45b9-af85-86dd9821b7d8.png?1783928301",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/5/0/50bc0f5b-7421-45b9-af85-86dd9821b7d8.jpg?1783928301"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "rate-normal",
+        "roles": [
+          "rate-normal"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Normal-rate benchmark: Printed front: {5}{W}, 3/3. Odyssey: {W}{U}, 2/2. Blink payoff and Adventure utility are separate components; Odyssey's Adventure creates a face-down creature rather than blinking. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone.",
+        "notes": [
+          {
+            "role": "rate-normal",
+            "text": "Normal-rate benchmark: Printed front: {5}{W}, 3/3. Odyssey: {W}{U}, 2/2. Blink payoff and Adventure utility are separate components; Odyssey's Adventure creates a face-down creature rather than blinking. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "1d958ec3-1ddc-4622-9089-cbe5b3b47c90",
+          "oracleId": "e71863a7-0de1-4ab5-95e8-c39e6810d899",
+          "name": "Pegasus Guardian // Rescue the Foal",
+          "manaCost": "{5}{W}",
+          "manaValue": 6.0,
+          "type": "Creature — Pegasus // Instant — Adventure",
+          "oracleText": "Pegasus Guardian\nFlying\nAt the beginning of your end step, if a permanent you controlled left the battlefield this turn, create a 1/1 white Pegasus creature token with flying.\n//\nRescue the Foal\nExile target creature you control, then return that card to the battlefield under its owner's control. (Then exile this card. You may cast the creature later from exile.)",
+          "power": "3",
+          "toughness": "3",
+          "colors": [
+            "W"
+          ],
+          "colorIdentity": [
+            "W"
+          ],
+          "keywords": [
+            "Flying"
+          ],
+          "rarity": "common",
+          "set": "clb",
+          "setName": "Commander Legends: Battle for Baldur's Gate",
+          "collectorNumber": "36",
+          "releasedAt": "2022-06-10",
+          "scryfallUri": "https://scryfall.com/card/clb/36/pegasus-guardian-rescue-the-foal?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/1/d/1d958ec3-1ddc-4622-9089-cbe5b3b47c90.jpg?1783922804",
+            "normal": "https://cards.scryfall.io/normal/front/1/d/1d958ec3-1ddc-4622-9089-cbe5b3b47c90.jpg?1783922804",
+            "large": "https://cards.scryfall.io/large/front/1/d/1d958ec3-1ddc-4622-9089-cbe5b3b47c90.jpg?1783922804",
+            "png": "https://cards.scryfall.io/png/front/1/d/1d958ec3-1ddc-4622-9089-cbe5b3b47c90.png?1783922804",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/1/d/1d958ec3-1ddc-4622-9089-cbe5b3b47c90.jpg?1783922804"
+          },
+          "layout": "adventure",
+          "faces": [
+            {
+              "name": "Pegasus Guardian",
+              "manaCost": "{5}{W}",
+              "type": "Creature — Pegasus",
+              "oracleText": "Flying\nAt the beginning of your end step, if a permanent you controlled left the battlefield this turn, create a 1/1 white Pegasus creature token with flying.",
+              "power": "3",
+              "toughness": "3",
+              "images": {}
+            },
+            {
+              "name": "Rescue the Foal",
+              "manaCost": "{1}{W}",
+              "type": "Instant — Adventure",
+              "oracleText": "Exile target creature you control, then return that card to the battlefield under its owner's control. (Then exile this card. You may cast the creature later from exile.)",
+              "power": "",
+              "toughness": "",
+              "images": {}
+            }
+          ]
+        }
+      },
+      {
+        "role": "tech",
+        "roles": [
+          "tech"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Mechanic / set-tech precedent: Manifest precedent: a face-down 2/2 and face-up conversion. Manifest Fate selects from two and exiles the other; it is not mechanically identical to manifest or manifest dread.",
+        "notes": [
+          {
+            "role": "tech",
+            "text": "Mechanic / set-tech precedent: Manifest precedent: a face-down 2/2 and face-up conversion. Manifest Fate selects from two and exiles the other; it is not mechanically identical to manifest or manifest dread."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "f522f32d-e510-4128-98ae-d3c0f684b899",
+          "oracleId": "8ec7c7ce-23a5-4ba7-8cfd-4caf8601a9c8",
+          "name": "Whisperwood Elemental",
+          "manaCost": "{3}{G}{G}",
+          "manaValue": 5.0,
+          "type": "Creature — Elemental",
+          "oracleText": "At the beginning of your end step, manifest the top card of your library. (Put it onto the battlefield face down as a 2/2 creature. Turn it face up any time for its mana cost if it's a creature card.)\nSacrifice this creature: Until end of turn, face-up nontoken creatures you control gain \"When this creature dies, manifest the top card of your library.\"",
+          "power": "4",
+          "toughness": "4",
+          "colors": [
+            "G"
+          ],
+          "colorIdentity": [
+            "G"
+          ],
+          "keywords": [
+            "Manifest"
+          ],
+          "rarity": "mythic",
+          "set": "dsc",
+          "setName": "Duskmourn: House of Horror Commander",
+          "collectorNumber": "204",
+          "releasedAt": "2024-09-27",
+          "scryfallUri": "https://scryfall.com/card/dsc/204/whisperwood-elemental?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/f/5/f522f32d-e510-4128-98ae-d3c0f684b899.jpg?1783909598",
+            "normal": "https://cards.scryfall.io/normal/front/f/5/f522f32d-e510-4128-98ae-d3c0f684b899.jpg?1783909598",
+            "large": "https://cards.scryfall.io/large/front/f/5/f522f32d-e510-4128-98ae-d3c0f684b899.jpg?1783909598",
+            "png": "https://cards.scryfall.io/png/front/f/5/f522f32d-e510-4128-98ae-d3c0f684b899.png?1783909598",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/f/5/f522f32d-e510-4128-98ae-d3c0f684b899.jpg?1783909598"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "tech",
+        "roles": [
+          "tech"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Mechanic / set-tech precedent: Manifest dread / face-down engine: the unused card goes to the graveyard rather than exile, so graveyard and exile synergies differ.",
+        "notes": [
+          {
+            "role": "tech",
+            "text": "Mechanic / set-tech precedent: Manifest dread / face-down engine: the unused card goes to the graveyard rather than exile, so graveyard and exile synergies differ."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "744ef0bc-9973-450e-a0c4-056d8244f357",
+          "oracleId": "09c275bd-8323-485e-81f6-aff1f99d0d03",
+          "name": "Hauntwoods Shrieker",
+          "manaCost": "{1}{G}{G}",
+          "manaValue": 3.0,
+          "type": "Creature — Beast Mutant",
+          "oracleText": "Whenever this creature attacks, manifest dread. (Look at the top two cards of your library. Put one onto the battlefield face down as a 2/2 creature and the other into your graveyard. Turn it face up any time for its mana cost if it's a creature card.)\n{1}{G}: Reveal target face-down permanent. If it's a creature card, you may turn it face up.",
+          "power": "3",
+          "toughness": "3",
+          "colors": [
+            "G"
+          ],
+          "colorIdentity": [
+            "G"
+          ],
+          "keywords": [
+            "Manifest",
+            "Manifest dread"
+          ],
+          "rarity": "mythic",
+          "set": "dsk",
+          "setName": "Duskmourn: House of Horror",
+          "collectorNumber": "182",
+          "releasedAt": "2024-09-27",
+          "scryfallUri": "https://scryfall.com/card/dsk/182/hauntwoods-shrieker?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/7/4/744ef0bc-9973-450e-a0c4-056d8244f357.jpg?1783909453",
+            "normal": "https://cards.scryfall.io/normal/front/7/4/744ef0bc-9973-450e-a0c4-056d8244f357.jpg?1783909453",
+            "large": "https://cards.scryfall.io/large/front/7/4/744ef0bc-9973-450e-a0c4-056d8244f357.jpg?1783909453",
+            "png": "https://cards.scryfall.io/png/front/7/4/744ef0bc-9973-450e-a0c4-056d8244f357.png?1783909453",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/7/4/744ef0bc-9973-450e-a0c4-056d8244f357.jpg?1783909453"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "tech",
+        "roles": [
+          "tech"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Mechanic / set-tech precedent: Adventure spell plus a separately cast permanent from exile; compare both costs and the retained card value.",
+        "notes": [
+          {
+            "role": "tech",
+            "text": "Mechanic / set-tech precedent: Adventure spell plus a separately cast permanent from exile; compare both costs and the retained card value."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "b5b71cd2-de35-451f-b16e-2e3936169407",
+          "oracleId": "d6d72f5f-8f5d-4180-b514-f22ff5482902",
+          "name": "Bonecrusher Giant // Stomp",
+          "manaCost": "{2}{R}",
+          "manaValue": 3.0,
+          "type": "Creature — Giant // Instant — Adventure",
+          "oracleText": "Bonecrusher Giant\nWhenever this creature becomes the target of a spell, this creature deals 2 damage to that spell's controller.\n//\nStomp\nDamage can't be prevented this turn. Stomp deals 2 damage to any target.",
+          "power": "4",
+          "toughness": "3",
+          "colors": [
+            "R"
+          ],
+          "colorIdentity": [
+            "R"
+          ],
+          "keywords": [],
+          "rarity": "rare",
+          "set": "clb",
+          "setName": "Commander Legends: Battle for Baldur's Gate",
+          "collectorNumber": "781",
+          "releasedAt": "2022-06-10",
+          "scryfallUri": "https://scryfall.com/card/clb/781/bonecrusher-giant-stomp?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/b/5/b5b71cd2-de35-451f-b16e-2e3936169407.jpg?1783922435",
+            "normal": "https://cards.scryfall.io/normal/front/b/5/b5b71cd2-de35-451f-b16e-2e3936169407.jpg?1783922435",
+            "large": "https://cards.scryfall.io/large/front/b/5/b5b71cd2-de35-451f-b16e-2e3936169407.jpg?1783922435",
+            "png": "https://cards.scryfall.io/png/front/b/5/b5b71cd2-de35-451f-b16e-2e3936169407.png?1783922435",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/b/5/b5b71cd2-de35-451f-b16e-2e3936169407.jpg?1783922435"
+          },
+          "layout": "adventure",
+          "faces": [
+            {
+              "name": "Bonecrusher Giant",
+              "manaCost": "{2}{R}",
+              "type": "Creature — Giant",
+              "oracleText": "Whenever this creature becomes the target of a spell, this creature deals 2 damage to that spell's controller.",
+              "power": "4",
+              "toughness": "3",
+              "images": {}
+            },
+            {
+              "name": "Stomp",
+              "manaCost": "{1}{R}",
+              "type": "Instant — Adventure",
+              "oracleText": "Damage can't be prevented this turn. Stomp deals 2 damage to any target.",
+              "power": "",
+              "toughness": "",
+              "images": {}
+            }
+          ]
+        }
+      }
+    ],
+    "newReferencesToVerify": [],
+    "referenceStatus": "Current-design references preserved as baseline evidence; updated candidate comparisons are provisional."
+  },
+  {
+    "id": "ODY-056",
+    "slot": 56,
+    "reason": "Replace benevolent rescue with consumption of household resources for personal growth and pressure.",
+    "playtestQuestion": "Is a 3/3 that can grow once at each of your end steps too efficient with recurring Food? Check death triggers, copied triggers and extra end steps.",
+    "before": {
+      "id": "ODY-056",
+      "number": 56,
+      "name": "Antinous, First Suitor",
+      "displayName": "Antinous, First Suitor",
+      "underlyingName": "",
+      "mana": "{1}{W}{B}",
+      "mv": 3,
+      "color": "WB",
+      "frame": "M",
+      "type": "Legendary Creature — Human Noble",
+      "pt": "3/3",
+      "rarity": "U",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Return/sacrifice",
+      "rules": "Whenever another nontoken creature you control dies, you may exile it. If you do, return it to its owner's hand at the beginning of the next end step.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "WB",
+      "story": "Suitors",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "standard",
+      "primaryArt": "ART-160",
+      "credit": "Art: “Phemius Singing to the Suitors” · James Parker, after John Flaxman · Rijksmuseum",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/Phemius-zingt-voor-de-vrijers--7c4051c3fc9d9e14b2d7cede3c7e29d2",
+      "imageUrl": "https://readingproject.au/SpecialReadingProjects/Homer/TheOdyssey/images/art/01/PhemiusSingingToTheSuitors_JohnFlaxman-1805.png",
+      "skeletonClass": "standard",
+      "cycleIds": [
+        "ff-analog-gold-signposts",
+        "story.suitors-palace",
+        "group.suitors"
+      ],
+      "showcase": [
+        "extended-art-legend",
+        "greek-vase-showcase"
+      ],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "WB",
+      "functionalWords": 28,
+      "changeStatus": "carried-from-analysis-candidate-v1",
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Suitors",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey Books I–XXIV",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Books I–XXII / Antinous leads the suitors consuming Odysseus’s house",
+      "flavorMatchScore": 4,
+      "flavorMatchRationale": "Strong match: the card clearly represents Books I–XXII / Antinous leads the suitors consuming Odysseus’s house, and Return/sacrifice supports that story even if the execution is somewhat general."
+    },
+    "after": {
+      "id": "ODY-056",
+      "number": 56,
+      "name": "Antinous, First Suitor",
+      "displayName": "Antinous, First Suitor",
+      "underlyingName": "",
+      "mana": "{1}{W}{B}",
+      "mv": 3,
+      "color": "WB",
+      "frame": "M",
+      "type": "Legendary Creature — Human Noble",
+      "pt": "3/3",
+      "rarity": "U",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "End-step sacrifice; Food; growth; opponent life loss",
+      "rules": "At the beginning of your end step, you may sacrifice another creature or a Food. If you do, put a +1/+1 counter on Antinous and each opponent loses 1 life.",
+      "rulesSource": "14A2-live-sheet-snapshot",
+      "archetypes": "WB",
+      "story": "Suitors",
+      "status": "KEEP",
+      "treatment": "",
+      "layout": "standard",
+      "primaryArt": "ART-160",
+      "credit": "Art: “Phemius Singing to the Suitors” · James Parker, after John Flaxman · Rijksmuseum",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/Phemius-zingt-voor-de-vrijers--7c4051c3fc9d9e14b2d7cede3c7e29d2",
+      "imageUrl": "https://readingproject.au/SpecialReadingProjects/Homer/TheOdyssey/images/art/01/PhemiusSingingToTheSuitors_JohnFlaxman-1805.png",
+      "skeletonClass": "standard",
+      "cycleIds": [
+        "ff-analog-gold-signposts",
+        "story.suitors-palace",
+        "group.suitors"
+      ],
+      "showcase": [
+        "extended-art-legend",
+        "greek-vase-showcase"
+      ],
+      "productLayer": "main",
+      "singleFaceSpecialPlan": "",
+      "signpostPair": "WB",
+      "functionalWords": 30,
+      "changeStatus": "carried-from-analysis-candidate-v1",
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Suitors",
+      "storyRethemeRequired": false,
+      "storySourceBand": "Odyssey Books I–XXIV",
+      "artReviewRequired": false,
+      "flavorStoryElement": "Antinous consumes the absent king’s household resources, pressures the heir and refuses generosity to the disguised stranger.",
+      "flavorMatchScore": 4,
+      "flavorMatchRationale": "The player gives up household bodies or provisions; Antinous alone grows while rivals lose life. Sacrificing your own resources is an abstraction of his control within the occupied household, not literal theft from the opposing player. The card supplies no rescue or replacement body."
+    },
+    "changedFields": {
+      "mechanics": {
+        "before": "Return/sacrifice",
+        "after": "End-step sacrifice; Food; growth; opponent life loss"
+      },
+      "rules": {
+        "before": "Whenever another nontoken creature you control dies, you may exile it. If you do, return it to its owner's hand at the beginning of the next end step.",
+        "after": "At the beginning of your end step, you may sacrifice another creature or a Food. If you do, put a +1/+1 counter on Antinous and each opponent loses 1 life."
+      },
+      "functionalWords": {
+        "before": 28,
+        "after": 30
+      },
+      "flavorStoryElement": {
+        "before": "Books I–XXII / Antinous leads the suitors consuming Odysseus’s house",
+        "after": "Antinous consumes the absent king’s household resources, pressures the heir and refuses generosity to the disguised stranger."
+      },
+      "flavorMatchRationale": {
+        "before": "Strong match: the card clearly represents Books I–XXII / Antinous leads the suitors consuming Odysseus’s house, and Return/sacrifice supports that story even if the execution is somewhat general.",
+        "after": "The player gives up household bodies or provisions; Antinous alone grows while rivals lose life. Sacrificing your own resources is an abstraction of his control within the occupied household, not literal theft from the opposing player. The card supplies no rescue or replacement body."
+      }
+    },
+    "existingReferenceFacts": [
+      {
+        "role": "rate-best",
+        "roles": [
+          "rate-best"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Best-rate benchmark: Printed front: {1}{W}{B}, 5/4. Odyssey: {1}{W}{B}, 3/3. Recurring death value on a creature; Odyssey's hand return is stronger than ordinary life-drain and has no opponent-payment escape. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent.",
+        "notes": [
+          {
+            "role": "rate-best",
+            "text": "Best-rate benchmark: Printed front: {1}{W}{B}, 5/4. Odyssey: {1}{W}{B}, 3/3. Recurring death value on a creature; Odyssey's hand return is stronger than ordinary life-drain and has no opponent-payment escape. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "52705c53-883e-4b6a-9c08-3fa35f6f17d5",
+          "oracleId": "af206aed-1f58-4f5a-ba42-0e0d1f282940",
+          "name": "Athreos, God of Passage",
+          "manaCost": "{1}{W}{B}",
+          "manaValue": 3.0,
+          "type": "Legendary Enchantment Creature — God",
+          "oracleText": "Indestructible\nAs long as your devotion to white and black is less than seven, Athreos isn't a creature.\nWhenever another creature you own dies, return it to your hand unless target opponent pays 3 life.",
+          "power": "5",
+          "toughness": "4",
+          "colors": [
+            "B",
+            "W"
+          ],
+          "colorIdentity": [
+            "B",
+            "W"
+          ],
+          "keywords": [
+            "Indestructible"
+          ],
+          "rarity": "mythic",
+          "set": "jou",
+          "setName": "Journey into Nyx",
+          "collectorNumber": "146",
+          "releasedAt": "2014-05-02",
+          "scryfallUri": "https://scryfall.com/card/jou/146/athreos-god-of-passage?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/5/2/52705c53-883e-4b6a-9c08-3fa35f6f17d5.jpg?1783939406",
+            "normal": "https://cards.scryfall.io/normal/front/5/2/52705c53-883e-4b6a-9c08-3fa35f6f17d5.jpg?1783939406",
+            "large": "https://cards.scryfall.io/large/front/5/2/52705c53-883e-4b6a-9c08-3fa35f6f17d5.jpg?1783939406",
+            "png": "https://cards.scryfall.io/png/front/5/2/52705c53-883e-4b6a-9c08-3fa35f6f17d5.png?1783939406",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/5/2/52705c53-883e-4b6a-9c08-3fa35f6f17d5.jpg?1783939406"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      },
+      {
+        "role": "rate-normal",
+        "roles": [
+          "rate-normal"
+        ],
+        "score": 1,
+        "selection": "editorial",
+        "annotation": "Normal-rate benchmark: Printed front: {3}{B}, 2/2. Odyssey: {1}{W}{B}, 3/3. Recurring death value on a creature; Odyssey's hand return is stronger than ordinary life-drain and has no opponent-payment escape. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone.",
+        "notes": [
+          {
+            "role": "rate-normal",
+            "text": "Normal-rate benchmark: Printed front: {3}{B}, 2/2. Odyssey: {1}{W}{B}, 3/3. Recurring death value on a creature; Odyssey's hand return is stronger than ordinary life-drain and has no opponent-payment escape. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+          }
+        ],
+        "sharedMechanics": [],
+        "sharedPatterns": [],
+        "card": {
+          "id": "f38eac93-3a0e-40e0-84f8-3670fd84ca00",
+          "oracleId": "3739b179-bc81-4737-8376-66a57e16b942",
+          "name": "Falkenrath Noble",
+          "manaCost": "{3}{B}",
+          "manaValue": 4.0,
+          "type": "Creature — Vampire Noble",
+          "oracleText": "Flying\nWhenever this creature or another creature dies, target player loses 1 life and you gain 1 life.",
+          "power": "2",
+          "toughness": "2",
+          "colors": [
+            "B"
+          ],
+          "colorIdentity": [
+            "B"
+          ],
+          "keywords": [
+            "Flying"
+          ],
+          "rarity": "common",
+          "set": "dsc",
+          "setName": "Duskmourn: House of Horror Commander",
+          "collectorNumber": "140",
+          "releasedAt": "2024-09-27",
+          "scryfallUri": "https://scryfall.com/card/dsc/140/falkenrath-noble?utm_source=api",
+          "images": {
+            "small": "https://cards.scryfall.io/small/front/f/3/f38eac93-3a0e-40e0-84f8-3670fd84ca00.jpg?1783909618",
+            "normal": "https://cards.scryfall.io/normal/front/f/3/f38eac93-3a0e-40e0-84f8-3670fd84ca00.jpg?1783909618",
+            "large": "https://cards.scryfall.io/large/front/f/3/f38eac93-3a0e-40e0-84f8-3670fd84ca00.jpg?1783909618",
+            "png": "https://cards.scryfall.io/png/front/f/3/f38eac93-3a0e-40e0-84f8-3670fd84ca00.png?1783909618",
+            "art_crop": "https://cards.scryfall.io/art_crop/front/f/3/f38eac93-3a0e-40e0-84f8-3670fd84ca00.jpg?1783909618"
+          },
+          "layout": "normal",
+          "faces": []
+        }
+      }
+    ],
+    "newReferencesToVerify": [
+      "Ravenous Squirrel"
+    ],
+    "referenceStatus": "Current-design references preserved as baseline evidence; updated candidate comparisons are provisional."
   }
 ]

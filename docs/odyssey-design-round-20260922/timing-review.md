@@ -20,7 +20,7 @@ matches. The two small-creature recovery cases concern the revised candidate.
 | Gift and target loss | Supper was promised with one target; that target becomes illegal | The spell does not resolve: neither Food nor other effects happen. Choosing zero targets when casting avoids having an illegal sole target. |
 | Omen and target loss | Green Omen’s sole chosen target becomes illegal | Its entry ability fails, including Food creation. The enchantment stays. Zero targets is legal and can still produce Food. |
 | Sacrifice as a cost | Iphigenia’s Sacrifice is cast, then countered | The creature is already sacrificed; tapping and drawing do not happen. The spell itself provides no rescue or refund. |
-| Manifest versus revelation | A manifested creature later turns face up | Turning face up is not entering. The amended Basin and Swineherd explicitly reward it; unchanged Mentor and Nausicaa do not. |
+| Manifest versus revelation | A manifested creature later turns face up | Turning face up is not entering. Basin, Swineherd and the revised Mentor and Nausicaa explicitly reward it; their old direct-return text alone did not. |
 | Foretell and return | Dolphins is foretold and later cast | It is cast from exile, then enters from the stack. This enables Tiresias’s cast condition, not a direct enters-from-exile condition. |
 | Enchantment versus enchanted | Spellbound Swine dies without an Aura attached | Its enchantment type alone does not enable Circe’s “enchanted” condition. Face-down and enchanted are separate states. |
 
@@ -34,3 +34,5 @@ The traces apply those rules to custom Odyssey cards. The project’s Manifest F
 action still needs a canonical visible rules definition; it must not be silently
 replaced with published manifest dread. No claim of exhaustive Commander-loop
 coverage is made.
+
+The recognition and Antinous pass adds eleven manual cases in `recognition-and-antinous.md`, including blinked tokens/nonpermanents, trigger-limit resets and end-step sacrifice timing.

@@ -69,7 +69,7 @@ No played matches, draft sessions or Commander games have been performed. Draw/a
 1. Develop the selected WU main-set Penelope and actual-sacrifice Iphigenia (retains UB). Resolve the 16-Saga interpretation and signpost exceptions in the architecture register.
 2. Finish passage-level verification and quotation candidates, beginning with the changed common cards and related signposts; verify modern quotations against exact editions or official excerpts.
 3. Test common decks for cheap creature supply, Omen density, disguise access and Survival timing. Use the recorded questions for the 33 changed cards.
-4. Rework the flagged higher-rarity mismatches, especially Antinous, the immovable bed and the opened wind bag, using their briefs before rules text.
+4. Rework the flagged higher-rarity mismatches, especially the immovable bed and the opened wind bag; Antinous now has a consumption candidate, using their briefs before rules text.
 5. Refresh reference facts and comparisons for the final changed designs; write only accepted cells with concurrency checks. Add quotation support to authoring data and rendering before selecting final text.
 6. Validate actual renders, integrate consistent data, publish under the round's applicable authority and verify live content before closing notes.
 
@@ -103,3 +103,7 @@ Corrected two candidate defects: ODY-142 selects its small creature after millin
 Priorities exposed by the audit: WU has only one common direct blink; manifest, turning face up and casting a foretold creature do not themselves satisfy direct enters-from-exile triggers. UB Circe does not treat enchantment creatures as enchanted. UR Omens do not feed instant/sorcery-only rewards. Blue has no common flyer for Winged Words; its discount is cross-colour or higher-rarity support. BR has only one colourless common Food source. Do not report all ten themes as sufficiently supported from counts alone.
 
 Next design actions are the WU signpost/recognition bridge and Antinous’s exploitation engine, followed by actual deck testing. Booster collation and a visible canonical Manifest Fate definition remain prerequisites for reliable draft testing.
+
+## Recognition and Antinous pass
+
+Slots 007, 051, 090 and 056 now implement the two next priorities. The candidate has 37 changed cards (24 commons): a second common blink, face-up recognition on both WU signposts, and end-step consumption on Antinous. All 309 slots, rarity/land/layout totals and nine common enchantments remain. The new source-specific briefs, alternatives, benchmark comparisons and eleven manual interaction cases are in `recognition-and-antinous.md`. They supersede the earlier unresolved WU/Antinous items. Rates remain provisional. Next: bed and wind-bag flavour mismatches; then actual gameplay and final reference/quotation integration.

@@ -5,8 +5,8 @@
     {
       "pair": "WU",
       "theme": "Recognition / return",
-      "status": "fragile",
-      "assessment": "Only Athena’s Intervention (005) provides common direct exile-to-battlefield return. Manifesting and turning face up do not trigger Mentor/Nausicaa return text. Casting a foretold creature enters from the stack. Plan: a second source-grounded cheap blink or a deliberate face-up signpost bridge; keep untap after Survival resolves.",
+      "status": "bridge added; needs games",
+      "assessment": "Two common direct-return spells (005, 007) now support both signposts. Mentor and Nausicaa also explicitly reward turning face up; the common Omen and Nausicaa Adventure supply hidden creatures. Casting a foretold creature still enters from the stack. Mentor’s recognition untap is capped once each turn; choose timing carefully around Survival.",
       "commonPool": [
         "ODY-001",
         "ODY-003",
@@ -74,12 +74,12 @@
         {
           "id": "ODY-051",
           "name": "Mentor, Trusted Counselor",
-          "rules": "Whenever one or more cards are exiled from your library for the first time each turn, tap up to one target creature an opponent controls. Whenever a permanent you control enters from exile, untap up to one target creature you control."
+          "rules": "Whenever one or more cards are exiled from your library for the first time each turn, tap up to one target creature an opponent controls.\nWhenever a permanent you control enters from exile or is turned face up, untap up to one target creature you control. This ability triggers only once each turn."
         },
         {
           "id": "ODY-090",
           "name": "Nausicaa, Princess of Scheria",
-          "rules": "Once each turn, when a permanent you control enters from exile, untap it and put a +1/+1 counter on it if it's a creature.\n//Adventure// Find the Castaway — {1}{U} — Sorcery — Adventure\nManifest fate."
+          "rules": "Whenever a permanent you control enters from exile or is turned face up, untap it. If it's a creature, put a +1/+1 counter on it. This ability triggers only once each turn.\n//Adventure// Find the Castaway — {1}{U} — Sorcery — Adventure\nManifest fate."
         }
       ],
       "roles": {
@@ -92,7 +92,8 @@
           "ODY-116"
         ],
         "directBlink": [
-          "ODY-005"
+          "ODY-005",
+          "ODY-007"
         ],
         "castFromExile": [
           "ODY-014",
@@ -656,7 +657,8 @@
           "ODY-088"
         ],
         "directBlink": [
-          "ODY-005"
+          "ODY-005",
+          "ODY-007"
         ],
         "castFromExile": [],
         "ownGraveyardDeparture": [
@@ -698,8 +700,8 @@
     {
       "pair": "WB",
       "theme": "Death / household attrition",
-      "status": "story revision needed",
-      "assessment": "Common death effects and recovery can feed Medon. Antinous’s current rescue engine contradicts the exploitative portrayal. Plan: replace that engine from its existing brief before treating WB as final; preserve the common creature supply and test sacrifice access.",
+      "status": "exploitation engine added",
+      "assessment": "Antinous consumes another creature or Food at your end step, grows and drains opponents. Medon rewards creature deaths while protecting continuity through recovery. Common Food sources 008, 108 and 136 and death-effect creatures supply the engine. The timing prevents an ordinary free sacrifice outlet on demand; copied triggers and extra end steps remain possible.",
       "commonPool": [
         "ODY-001",
         "ODY-003",
@@ -775,7 +777,7 @@
         {
           "id": "ODY-056",
           "name": "Antinous, First Suitor",
-          "rules": "Whenever another nontoken creature you control dies, you may exile it. If you do, return it to its owner's hand at the beginning of the next end step."
+          "rules": "At the beginning of your end step, you may sacrifice another creature or a Food. If you do, put a +1/+1 counter on Antinous and each opponent loses 1 life."
         },
         {
           "id": "ODY-148",
@@ -793,7 +795,8 @@
           "ODY-080"
         ],
         "directBlink": [
-          "ODY-005"
+          "ODY-005",
+          "ODY-007"
         ],
         "castFromExile": [
           "ODY-123"
@@ -1218,7 +1221,8 @@
         ],
         "manifest": [],
         "directBlink": [
-          "ODY-005"
+          "ODY-005",
+          "ODY-007"
         ],
         "castFromExile": [],
         "ownGraveyardDeparture": [],
@@ -1400,13 +1404,13 @@
           "copies": 1
         },
         {
-          "id": "ODY-008",
-          "name": "Seat the Guest by the Hearth",
+          "id": "ODY-007",
+          "name": "Wash the Stranger's Feet",
           "copies": 1
         },
         {
-          "id": "ODY-023",
-          "name": "Bolt the Doors",
+          "id": "ODY-008",
+          "name": "Seat the Guest by the Hearth",
           "copies": 1
         },
         {
@@ -1499,8 +1503,8 @@
       "cheapCreatureCopies": 8,
       "manaValueCurve": {
         "1": 2,
-        "2": 7,
-        "3": 9,
+        "2": 8,
+        "3": 8,
         "4": 2,
         "5": 2,
         "6": 1
@@ -2667,7 +2671,7 @@
   "remainingGates": [
     "Lock booster distribution before draft claims.",
     "Expose the canonical Manifest Fate reminder; published card records use the custom action without defining it. Audit uses existing reference notes: top two, manifest one, exile the other.",
-    "WU direct-return density and WB Antinous story mismatch require design work.",
+    "WU recognition and WB exploitation now have revised cards; rates, repeatability and draft access still need games.",
     "Play these lists; these calculations are not results of played games."
   ]
 }

@@ -4,12 +4,12 @@ Manual role classification with exact hypergeometric draw calculations. Probabil
 
 | Pair | Creatures | MV ≤2 creatures | Enchantments | Status |
 |---|---:|---:|---:|---|
-| WU | 11 | 4 | 4 | fragile |
+| WU | 11 | 4 | 4 | bridge added; needs games |
 | UB | 13 | 4 | 4 | split support |
 | BR | 16 | 5 | 4 | testable, narrow Food |
 | RG | 17 | 4 | 2 | testable |
 | GW | 15 | 3 | 4 | testable |
-| WB | 14 | 4 | 6 | story revision needed |
+| WB | 14 | 4 | 6 | exploitation engine added |
 | UR | 13 | 5 | 2 | two distinct lanes |
 | BG | 17 | 3 | 4 | testable |
 | RW | 14 | 5 | 4 | testable |
@@ -17,7 +17,7 @@ Manual role classification with exact hypergeometric draw calculations. Probabil
 
 ## WU — Recognition / return
 
-Only Athena’s Intervention (005) provides common direct exile-to-battlefield return. Manifesting and turning face up do not trigger Mentor/Nausicaa return text. Casting a foretold creature enters from the stack. Plan: a second source-grounded cheap blink or a deliberate face-up signpost bridge; keep untap after Survival resolves.
+Two common direct-return spells (005, 007) now support both signposts. Mentor and Nausicaa also explicitly reward turning face up; the common Omen and Nausicaa Adventure supply hidden creatures. Casting a foretold creature still enters from the stack. Mentor’s recognition untap is capped once each turn; choose timing carefully around Survival.
 
 ## UB — Hidden identity / graveyard
 
@@ -37,7 +37,7 @@ The pair has seven coloured common Food sources plus Salt-Cured Fish, four Survi
 
 ## WB — Death / household attrition
 
-Common death effects and recovery can feed Medon. Antinous’s current rescue engine contradicts the exploitative portrayal. Plan: replace that engine from its existing brief before treating WB as final; preserve the common creature supply and test sacrifice access.
+Antinous consumes another creature or Food at your end step, grows and drains opponents. Medon rewards creature deaths while protecting continuity through recovery. Common Food sources 008, 108 and 136 and death-effect creatures supply the engine. The timing prevents an ordinary free sacrifice outlet on demand; copied triggers and extra end steps remain possible.
 
 ## UR — Seafaring / spells
 
@@ -76,5 +76,5 @@ Ten 40-card hand-built lists are stored in the JSON. These are test fixtures, no
 
 - Lock booster distribution before draft claims.
 - Expose the canonical Manifest Fate reminder; published card records use the custom action without defining it. Audit uses existing reference notes: top two, manifest one, exile the other.
-- WU direct-return density and WB Antinous story mismatch require design work.
+- WU recognition and WB exploitation now have revised cards; rates, repeatability and draft access still need games.
 - Play these lists; these calculations are not results of played games.

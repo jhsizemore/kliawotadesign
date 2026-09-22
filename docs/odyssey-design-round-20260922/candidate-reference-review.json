@@ -1033,5 +1033,153 @@
     "candidateComparison": "Baseline comparison must be adjusted for these exact changes: rules, functionalWords. Use this Aura in the Aura's own reward ability; retain the necessary named source inside the granted creature ability.",
     "newBenchmark": null,
     "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-007",
+    "currentComparison": [
+      {
+        "name": "Refuse to Yield",
+        "mana": "{1}{W}",
+        "pt": "",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/snc/27/refuse-to-yield?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{W}. Odyssey: {W}. Untap combat trick; compare the smaller toughness boost and added life separately. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Veteran's Reflexes",
+        "mana": "{W}",
+        "pt": "",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/wwk/23/veterans-reflexes?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {W}. Odyssey: {W}. Untap combat trick; compare the smaller toughness boost and added life separately. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Costs one mana more, returns tapped rather than untapped, and adds two life. The rest condition limits immediate combat use; repeated enter effects and revealing manifested permanents remain important. Ephemerate offers a stronger repeated-blink ceiling without life gain.",
+    "newBenchmark": {
+      "name": "Cloudshift",
+      "mana_cost": "{W}",
+      "type_line": "Instant",
+      "oracle_text": "Exile target creature you control, then return that card to the battlefield under your control.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/tle/152/cloudshift?utm_source=api",
+      "released_at": "2025-11-21"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-051",
+    "currentComparison": [
+      {
+        "name": "Hylda of the Icy Crown",
+        "mana": "{2}{W}{U}",
+        "pt": "3/4",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/woe/206/hylda-of-the-icy-crown?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {2}{W}{U}, 3/4. Odyssey: {1}{W}{U}, 2/3. Tap/untap engine; Odyssey keys off exile rather than mana payments or an activated tap ability. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Niblis of the Breath",
+        "mana": "{2}{U}",
+        "pt": "2/1",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/dka/44/niblis-of-the-breath?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {2}{U}, 2/1. Odyssey: {1}{W}{U}, 2/3. Tap/untap engine; Odyssey keys off exile rather than mana payments or an activated tap ability. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "A three-mana 2/3 with two tempo triggers, compared with a two-mana enchantment that draws on face-up events. The candidate exchanges cards and passive toughness for a body, library-exile tapping and a recognition untap capped once each turn.",
+    "newBenchmark": {
+      "name": "Secret Plans",
+      "mana_cost": "{G}{U}",
+      "type_line": "Enchantment",
+      "oracle_text": "Face-down creatures you control get +0/+1.\nWhenever a permanent you control is turned face up, draw a card.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/c19/201/secret-plans?utm_source=api",
+      "released_at": "2019-08-23"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-090",
+    "currentComparison": [
+      {
+        "name": "Soulherder",
+        "mana": "{1}{W}{U}",
+        "pt": "1/1",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/khc/93/soulherder?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{W}{U}, 1/1. Odyssey: {W}{U}, 2/2. Blink payoff and Adventure utility are separate components; Odyssey's Adventure creates a face-down creature rather than blinking. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Pegasus Guardian // Rescue the Foal",
+        "mana": "{5}{W}",
+        "pt": "3/3",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/clb/36/pegasus-guardian-rescue-the-foal?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {5}{W}, 3/3. Odyssey: {W}{U}, 2/2. Blink payoff and Adventure utility are separate components; Odyssey's Adventure creates a face-down creature rather than blinking. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "A two-mana 2/2 with an additional paid Adventure. Face-up or direct-return events give an untap and counter once each turn instead of Secret Plans’ unrestricted face-up draw. Do not count the Adventure’s manifest action itself as turning face up.",
+    "newBenchmark": {
+      "name": "Secret Plans",
+      "mana_cost": "{G}{U}",
+      "type_line": "Enchantment",
+      "oracle_text": "Face-down creatures you control get +0/+1.\nWhenever a permanent you control is turned face up, draw a card.",
+      "power": null,
+      "toughness": null,
+      "scryfall_uri": "https://scryfall.com/card/c19/201/secret-plans?utm_source=api",
+      "released_at": "2019-08-23"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
+  },
+  {
+    "id": "ODY-056",
+    "currentComparison": [
+      {
+        "name": "Athreos, God of Passage",
+        "mana": "{1}{W}{B}",
+        "pt": "5/4",
+        "roles": [
+          "rate-best"
+        ],
+        "url": "https://scryfall.com/card/jou/146/athreos-god-of-passage?utm_source=api",
+        "comparison": "Best-rate benchmark: Printed front: {1}{W}{B}, 5/4. Odyssey: {1}{W}{B}, 3/3. Recurring death value on a creature; Odyssey's hand return is stronger than ordinary life-drain and has no opponent-payment escape. Selected strong comparison for the stated component; not a claim of a universal maximum or an exact whole-card equivalent."
+      },
+      {
+        "name": "Falkenrath Noble",
+        "mana": "{3}{B}",
+        "pt": "2/2",
+        "roles": [
+          "rate-normal"
+        ],
+        "url": "https://scryfall.com/card/dsc/140/falkenrath-noble?utm_source=api",
+        "comparison": "Normal-rate benchmark: Printed front: {3}{B}, 2/2. Odyssey: {1}{W}{B}, 3/3. Recurring death value on a creature; Odyssey's hand return is stronger than ordinary life-drain and has no opponent-payment escape. Baseline for the stated component; use the printed conditions, speed and extra costs, not rarity alone."
+      }
+    ],
+    "candidateComparison": "Three mana for a 3/3 instead of one hybrid mana for a 1/1. Growth requires an end-step sacrifice of another creature or Food; it cannot grow from every sacrifice or arbitrary artifacts. Life loss replaces the Squirrel’s paid draw option. Test the immediate 4/4 with Food and multiplayer scaling.",
+    "newBenchmark": {
+      "name": "Ravenous Squirrel",
+      "mana_cost": "{B/G}",
+      "type_line": "Creature — Squirrel",
+      "oracle_text": "Whenever you sacrifice an artifact or creature, put a +1/+1 counter on this creature.\n{1}{B}{G}, Sacrifice an artifact or creature: You gain 1 life and draw a card.",
+      "power": "1",
+      "toughness": "1",
+      "scryfall_uri": "https://scryfall.com/card/mh2/211/ravenous-squirrel?utm_source=api",
+      "released_at": "2021-06-18"
+    },
+    "status": "first-pass component comparison; production reference refresh pending"
   }
 ]

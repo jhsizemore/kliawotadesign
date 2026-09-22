@@ -84,3 +84,7 @@ Publication completed through the connected GitHub account: branch `odyssey/flav
 ## Second checkpoint: common mechanics
 
 All ten pairs have a rules-based allocation and a hand-built 40-card diagnostic list. Seventeen manual timing traces distinguish analytical conclusions from played games. Candidate fixes affect ODY-125 and ODY-142; 33 changed slots and all structural totals remain fixed. Re-run the mechanics audit before the report generator. The next priority is WU recognition support and the Antinous story mismatch; see the new audit and timing documents.
+
+## Third checkpoint: recognition and Antinous
+
+Recovered the exact published branch after workspace maintenance. Revised ODY-007, ODY-051, ODY-090 and ODY-056; 37 total changed slots, 24 commons. WU has two common direct-blink sources and both signposts explicitly reward face-up events. Antinous consumes household resources at the end step. Updated four briefs, comparisons, WU diagnostic deck and timing traces; no production integration or games claimed. Resume with `recognition-and-antinous.md`. The next specific redesigns are ODY-213 (immovable bed) and ODY-235 (opened wind bag).

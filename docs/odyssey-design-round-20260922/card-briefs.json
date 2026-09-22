@@ -182,11 +182,11 @@
     },
     {
       "sourceLabel": "Odyssey 19",
-      "sequence": "Offer washing; touch the stranger; notice what disguise cannot hide.",
-      "emotions": "Care becoming recognition / fear of discovery",
-      "attributes": "Intimate service and involuntary recognition.",
-      "hooks": "Restore readiness; protect a vulnerable body; trigger a recognition reward.",
-      "assessment": "Keep this as the small restorative gesture, distinct from the rare basin's recognition engine.",
+      "sequence": "A stranger is washed; a familiar scar exposes the person beneath the disguise.",
+      "emotions": "Tender care / sudden recognition / fear of exposure",
+      "attributes": "Eurycleia remembers the body she once cared for; the guest must preserve secrecy.",
+      "hooks": "Remove a disguise through blink; bring a permanent back resting; restore life.",
+      "assessment": "The recognition comes from the scar. Blink is a mechanical abstraction, and must not be described as literal disappearance.",
       "id": "ODY-007",
       "number": 7,
       "name": "Wash the Stranger's Feet",
@@ -1511,12 +1511,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 2; Athena as Mentor",
-      "sequence": "Offer counsel; assemble the voyage; change helpless waiting into action.",
-      "emotions": "Confidence / uncertainty about the guide",
+      "sourceLabel": "Odyssey 2",
+      "sequence": "Mentor defends the absent king’s household; Athena assumes his likeness and readies the voyage.",
+      "emotions": "Reassurance / coordinated action / opponents kept off balance",
       "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
-      "hooks": "Exile choices restrain opponents; returning travellers ready allies.",
-      "assessment": "Distinguish the human Mentor from Athena adopting his form.",
+      "hooks": "Revealed identity readies an ally; library exile buys a tempo opening.",
+      "assessment": "Keep the human adviser distinct from the goddess acting in his likeness. Bound repeatable untaps rather than implying a free engine.",
       "id": "ODY-051",
       "number": 51,
       "name": "Mentor, Trusted Counselor",
@@ -1534,7 +1534,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.2.ii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -1660,12 +1660,12 @@
       "quotationCandidate": null
     },
     {
-      "sourceLabel": "Odyssey 1–2 and 22",
-      "sequence": "Lead consumption; threaten the heir; die first at the feast.",
-      "emotions": "Entitlement / resentment",
+      "sourceLabel": "Odyssey 2 and 17",
+      "sequence": "Consume the household’s stores; pressure its heir; refuse the stranger a share.",
+      "emotions": "Entitlement / resentment / mounting depletion",
       "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
-      "hooks": "Exploit household resources; expose a leader's vulnerability.",
-      "assessment": "Current repeated rescue of your dead creatures feels benevolent and is a major flavour mismatch.",
+      "hooks": "Consume bodies or Food; strengthen only the leader; drain rival resources.",
+      "assessment": "Antinous exploits the occupied household. He does not rescue its dead or restore its people; generic sacrifice is a game abstraction of consumption.",
       "id": "ODY-056",
       "number": 56,
       "name": "Antinous, First Suitor",
@@ -1679,19 +1679,15 @@
       "baselineRationale": "Strong match: the card clearly represents Books I–XXII / Antinous leads the suitors consuming Odysseus’s house, and Return/sacrifice supports that story even if the execution is somewhat general.",
       "sources": [
         {
-          "label": "Homer, Odyssey 1 — Butler",
-          "url": "https://classics.mit.edu/Homer/odyssey.1.i.html"
-        },
-        {
           "label": "Homer, Odyssey 2 — Butler",
           "url": "https://classics.mit.edu/Homer/odyssey.2.ii.html"
         },
         {
-          "label": "Homer, Odyssey 22 — Butler",
-          "url": "https://classics.mit.edu/Homer/odyssey.22.xxii.html"
+          "label": "Homer, Odyssey 17 — Butler",
+          "url": "https://classics.mit.edu/Homer/odyssey.17.xvii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null
@@ -2678,11 +2674,11 @@
     },
     {
       "sourceLabel": "Odyssey 6",
-      "sequence": "Stand when companions flee; clothe the castaway; guide him toward the city.",
-      "emotions": "Courage and hospitality / restored opposition",
+      "sequence": "Stand firm before the castaway; provide washing and clothing; see his altered appearance; guide him onward.",
+      "emotions": "Courage / welcome / wonder",
       "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
-      "hooks": "Adventure discovers a hidden stranger; return improves readiness.",
-      "assessment": "Her welcome acts before public recognition and royal feasting.",
+      "hooks": "Discover an unknown traveller; reward revelation; restore and strengthen the guest.",
+      "assessment": "Nausicaa welcomes the stranger before knowing his identity. The Adventure discovers; turning face up or returning supplies the later recognition event.",
       "id": "ODY-090",
       "number": 90,
       "name": "Nausicaa, Princess of Scheria",
@@ -2700,7 +2696,7 @@
           "url": "https://classics.mit.edu/Homer/odyssey.6.vi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
       "quoteStatus": "missing",
       "quotationCandidate": null

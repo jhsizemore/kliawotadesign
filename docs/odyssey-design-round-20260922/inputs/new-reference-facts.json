@@ -136,5 +136,25 @@
     "oracle_text": "Tap all creatures target player controls. Those creatures don't untap during that player's next untap step.",
     "scryfall_uri": "https://magic.wizards.com/en/news/feature/core-set-2019-release-notes-2018-06-22",
     "source": "Wizards Core Set 2019 release notes; fetched 2026-09-22"
+  },
+  "Secret Plans": {
+    "name": "Secret Plans",
+    "mana_cost": "{G}{U}",
+    "type_line": "Enchantment",
+    "oracle_text": "Face-down creatures you control get +0/+1.\nWhenever a permanent you control is turned face up, draw a card.",
+    "power": null,
+    "toughness": null,
+    "scryfall_uri": "https://scryfall.com/card/c19/201/secret-plans?utm_source=api",
+    "released_at": "2019-08-23"
+  },
+  "Ravenous Squirrel": {
+    "name": "Ravenous Squirrel",
+    "mana_cost": "{B/G}",
+    "type_line": "Creature — Squirrel",
+    "oracle_text": "Whenever you sacrifice an artifact or creature, put a +1/+1 counter on this creature.\n{1}{B}{G}, Sacrifice an artifact or creature: You gain 1 life and draw a card.",
+    "power": "1",
+    "toughness": "1",
+    "scryfall_uri": "https://scryfall.com/card/mh2/211/ravenous-squirrel?utm_source=api",
+    "released_at": "2021-06-18"
   }
 }
