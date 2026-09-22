@@ -76,8 +76,8 @@ omens=json.loads((OUT/'inputs/omens.json').read_text())['data']
 for c in omens:extra[c['name']]={k:c.get(k) for k in ['name','mana_cost','type_line','oracle_text','power','toughness','scryfall_uri','released_at']}
 comparisons={
 97:(None,'Naming-only revision: the existing Hephaestus-net mechanics remain unchanged; the title now exposes that this is Demodocus’s performed song.'),
-162:(None,'Chapter II now uses only BG overlap: Food and Treasure are available to both colors, removing the prior creature/artifact sacrifice instruction that was not cleanly green. Chapter I self-mill has contemporary green-hybrid precedent; chapter III creature recursion is shared BG space.'),
-245:(None,'Chapter III now untaps only creatures and/or lands, matching green’s untap access while remaining fully blue. Scry, investigate and hexproof remain shared GU space.'),
+162:('Flotsam','Chapter II now uses only BG overlap: Food and Treasure are available to both colors, removing the prior creature/artifact sacrifice instruction that was not cleanly green. Flotsam verifies GU-hybrid self-mill/investigate precedent; Tough Cookie verifies green Food infrastructure. Chapter III creature recursion is shared BG space.'),
+245:('Shore Up','Chapter III now untaps only creatures and/or lands, matching green’s untap access while remaining fully blue. Flotsam verifies the GU-hybrid investigate precedent; Shore Up verifies blue untap plus hexproof on a creature; Tamiyo’s Safekeeping verifies green hexproof protection. Final rate still needs games.'),
 213:('Flowering of the White Tree','One more generic mana than the two-white enchantment; retains ward {1} for legendary creatures but gives no power/toughness boost. Instead, the artifact protects itself and draws at your end step with two legendary creatures, all conditional on retaining one chosen land. Tome of Legends provides a cheaper but counter- and activation-limited draw comparison. Test colourless access and repeated free draws; the old blink benchmarks no longer describe this design.'),
 235:('Reckless Impulse','One more mana than Reckless Impulse for the same initial two-card access window, followed next turn by three red mana and then a land sacrifice. Seething Song gives five red mana immediately at the same mana value; this Saga exchanges that immediacy for card access and a delayed liability. Counter removal or early sacrifice can avoid chapter III, so the land loss is not a guaranteed balancing cost.'),
 7:('Cloudshift','Costs one mana more, returns tapped rather than untapped, and adds two life. The rest condition limits immediate combat use; repeated enter effects and revealing manifested permanents remain important. Ephemerate offers a stronger repeated-blink ceiling without life gain.'),
@@ -97,17 +97,37 @@ comparisons={
 36:('Soulherder','Both reward exile patterns, but Basin is an artifact that draws rather than grows and has no built-in blink. Face-up recognition adds a second distinct enabler path.'),
 37:('Soul-Guide Lantern','Far more mana for a modest creature body and life. Narrowed to creature cards in one graveyard, but can clear many at once. Compare impact on Escape before increasing the rate.')}
 reference_reviews=[]
+supplemental_benchmarks={
+ 'ODY-127':["Mire's Grasp"],
+ 'ODY-245':['Shore Up',"Tamiyo's Safekeeping"]
+}
+primary_benchmarks={'ODY-015':'Sleep','ODY-127':"Mire's Grasp",'ODY-162':'Flotsam','ODY-245':'Shore Up'}
+missing_requested=[]
 for ch in changes:
  n=ch['slot']; name,comment=comparisons.get(n,(None,None))
  baseline=[{'name':r['card']['name'],'mana':r['card']['manaCost'],'pt':'/'.join(x for x in [r['card'].get('power',''),r['card'].get('toughness','')] if x),'roles':r.get('roles',[]),'url':r['card'].get('scryfallUri',''),'comparison':r.get('annotation','')} for r in ch['existingReferenceFacts'] if any(x in r.get('roles',[]) for x in ['rate-best','rate-normal'])]
- review={'id':ch['id'],'currentComparison':baseline,'candidateComparison':comment or ('Baseline comparison must be adjusted for these exact changes: '+', '.join(ch['changedFields'])+'. '+ch['reason']),'newBenchmark':extra.get(name) if name else None,'status':'first-pass component comparison; production reference refresh pending'}
+ requested=ch.get('newReferencesToVerify',[])
+ verified_names=list(dict.fromkeys(requested+supplemental_benchmarks.get(ch['id'],[])))
+ verified_benchmarks=[extra[x] for x in verified_names if x in extra]
+ missing=[x for x in requested if x not in extra]
+ missing_requested.extend((ch['id'],x) for x in missing)
+ if ch['id']=='ODY-097':
+  status='naming-only revision; no new rate benchmark required';new_benchmark=None
+ elif requested:
+  status='requested printed component benchmarks verified; final rate remains gameplay-gated'
+  primary=primary_benchmarks.get(ch['id'],name or requested[0]);new_benchmark=extra.get(primary)
+ else:
+  status='existing production component benchmarks retained; no additional printed reference required; final rate remains gameplay-gated';new_benchmark=extra.get(name) if name else None
+ review={'id':ch['id'],'currentComparison':baseline,'candidateComparison':comment or ('Baseline comparison must be adjusted for these exact changes: '+', '.join(ch['changedFields'])+'. '+ch['reason']),'newBenchmark':new_benchmark,'verifiedBenchmarks':verified_benchmarks,'requestedBenchmarks':requested,'missingRequestedBenchmarks':missing,'status':status}
  reference_reviews.append(review);ch['candidateReferenceReview']=review
-diagnostics=[]
-for count in [2,9]:
- for slots in [6,7,10]:
-  seen=slots*3
-  diagnostics.append({'commonEnchantments':count,'commonPoolExcludingBasics':90,'commonSlotsPerPackAssumption':slots,'packsPerPlayer':3,'expectedEnchantmentsInThreeUnselectedPacks':round(seen*count/90,2),'probabilityAtLeastOneWithIndependentSlots':round(1-(1-count/90)**seen,4)})
-validation={'structuralChecks':{'unique309Ids':len({b['id'] for b in briefs})==309,'all309Authored':len(briefs)==309,'commons106':sum(b['rarity']=='C' for b in briefs)==106,'changedCards':len(changes),'fixedCountsPreserved':all(summary['before'][k]==summary['after'][k] for k in ['cards','rarity','lands','doubleFaced']),'exactButlerQuotes':True},'analyticalPackAccess':diagnostics,'method':'Independent uniform slots from 90 nonbasic commons. Sensitivity analysis for 6, 7 or 10 commons per pack. Not a draft simulator, chosen booster collation, deck model or played match.','playedMatches':0,'remainingRisks':['Actual booster distribution is not locked.','Draft competition and playable-card selection are not modelled.','Common creature rates, removal and Omen repetition need games.','Three Manifest Fate commons do not guarantee adequate density in every colour pair.','WU Penelope is approved; Iphigenia uses actual sacrifice and retains UB. Rates and interactions remain provisional.','Hybrid Saga overlap is now mechanically audited; BG and GU received narrow repairs, but their Limited rates still need played games.']}
+assert not missing_requested,missing_requested
+valpath=OUT/'validation.json'
+validation=json.loads(valpath.read_text()) if valpath.exists() else {'structuralChecks':{},'remainingRisks':[]}
+validation.pop('analyticalPackAccess',None)
+validation.setdefault('structuralChecks',{}).update({'unique309Ids':len({b['id'] for b in briefs})==309,'all309Authored':len(briefs)==309,'commons106':sum(b['rarity']=='C' for b in briefs)==106,'changedCards':len(changes),'fixedCountsPreserved':all(summary['before'][k]==summary['after'][k] for k in ['cards','rarity','lands','doubleFaced']),'exactButlerQuotes':True})
+validation['method']='Structural checks plus locked FIN-style Play Booster collation, fixed-intent passing stress tests, source audits and printed component-reference review. No played matches or human drafts are represented.'
+validation['playedMatches']=0
+validation['referenceRefresh']={'completedAt':'2026-09-23','changedCards':len(changes),'namingOnlyNoRateRefresh':1,'requestedRefreshCards':sum(bool(ch.get('newReferencesToVerify')) for ch in changes),'retainedExistingBenchmarkCards':sum(not ch.get('newReferencesToVerify') and ch['id']!='ODY-097' for ch in changes),'missingRequestedBenchmarks':len(missing_requested),'balanceStatus':'component precedents verified; rates remain gameplay-gated'}
 for name,val in [('card-briefs.json',{'schema':'odyssey-making-of/v1','status':'first-pass','cards':briefs}),('quotation-candidates.json',quotes),('candidate-reference-review.json',reference_reviews),('validation.json',validation),('reference-research.json',{'retrievedAt':json.loads((OUT/'inputs/retrieval-metadata.json').read_text())['retrievedAt'],'cards':extra,'elderGiantsWithEscape':[{'name':c['name'],'mana':c['mana_cost'],'released':c['released_at'],'url':c['scryfall_uri']} for c in json.loads((OUT/'inputs/titans.json').read_text())['data']]})]:
  (OUT/name).write_text(json.dumps(val,ensure_ascii=False,indent=2)+'\n')
 payload={'briefs':briefs,'changes':changes,'summary':summary,'validation':validation}
