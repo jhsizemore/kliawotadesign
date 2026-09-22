@@ -95,10 +95,11 @@ jobs:
           const targetVersion='2026-09-22.2';
           const targetIds=new Set(['ODY-019','ODY-020','ODY-021','ODY-022','ODY-023','ODY-024','ODY-029','ODY-030','ODY-033','ODY-036','ODY-037','ODY-038','ODY-039','ODY-040','ODY-041','ODY-042','ODY-043','ODY-044','ODY-045','ODY-046']);
           const captured=JSON.parse(fs.readFileSync('/tmp/odyssey-production-check/review-notes.json','utf8'));
-          const pending=(captured.notes||[]).filter(note=>note.datasetVersion===targetVersion&&targetIds.has(note.cardId)&&note.status==='OPEN');
-          const found=new Set(pending.map(note=>note.cardId));
+          const relevant=(captured.notes||[]).filter(note=>note.datasetVersion===targetVersion&&targetIds.has(note.cardId));
+          const found=new Set(relevant.map(note=>note.cardId));
           const missing=[...targetIds].filter(id=>!found.has(id));
           if(missing.length)throw new Error('Expected actioned Studio notes were not present in the verified live queue: '+missing.join(', '));
+          const pending=relevant.filter(note=>note.status==='OPEN');
           for(const note of pending){
             const response=await fetch('https://kliawota.design/mtgtools/odyssey/api/review-notes',{
               method:'POST',
