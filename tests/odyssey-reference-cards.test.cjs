@@ -28,7 +28,8 @@ test('quest-counter progression cards carry the dedicated current quest-tech pre
   assert.ok(quests.length>=5);
   for(const c of quests){
     const list=refs.cards[c.id].references;
-    assert.ok(list.some(r=>r.role==='tech'&&r.card.name==="Last Light of Durin's Day"),c.id+' missing quest-tech anchor');
+    assert.ok(list.some(r=>r.role==='tech'&&r.card.name==="Last Light of Durin's Day"),c.id+' missing modern quest-tech anchor');
+    assert.ok(list.some(r=>r.role==='tech'&&/^Quest for /.test(r.card.name)),c.id+' missing Zendikar quest-cycle anchor');
   }
 });
 
