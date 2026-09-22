@@ -3,7 +3,7 @@
   "summary": {
     "status": "isolated-playtest-candidate-not-live",
     "baseDatasetVersion": "2026-09-22.3",
-    "changedCards": 39,
+    "changedCards": 42,
     "before": {
       "cards": 309,
       "rarity": {
@@ -64,7 +64,8 @@
       "Hunter approved WU Penelope and explicitly selected actual sacrifice for Iphigenia. Slot 015 now remains UB; its proposed rate still needs testing.",
       "The Ordeals still grant Survival to their enchanted creatures; source names remain where self-reference would change meaning.",
       "The seven Studio notes remain open until actual implementation is verified.",
-      "Candidate references need a production refresh before integration."
+      "Candidate references need a production refresh before integration.",
+      "Hybrid Saga overlap is now mechanically audited; BG and GU received narrow repairs, but their Limited rates still need played games."
     ]
   },
   "cards": [
@@ -4739,8 +4740,8 @@
     {
       "id": "ODY-097",
       "number": 97,
-      "name": "Caught in Hephaestus's Net",
-      "displayName": "Caught in Hephaestus's Net",
+      "name": "Song of Hephaestus's Net",
+      "displayName": "Song of Hephaestus's Net",
       "underlyingName": "",
       "mana": "{2}{U/R}",
       "mv": 3,
@@ -4773,7 +4774,7 @@
       "productLayer": "main",
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
-      "functionalWords": 25,
+      "functionalWords": 28,
       "changeStatus": "flavor-redesign-v1 · art-review · art-sweep-v1 · templating-v1 · candidate2-song-cycle-v2-enemy",
       "narrativeEra": "Odyssey",
       "storyTarget": "Book VIII / Demodocus's song of Hephaestus's ingenious trap.",
@@ -7824,8 +7825,8 @@
       "rarity": "U",
       "origin": "NEW",
       "originFull": "New",
-      "mechanics": "Saga; Hybrid; mill; sacrifice; Food; Treasure; recursion",
-      "rules": "I — Mill three cards.\nII — You may sacrifice an artifact or creature. If you do, create a Food token and a Treasure token.\nIII — Return up to one target creature card from your graveyard to your hand.",
+      "mechanics": "Saga; Hybrid; mill; Food; Treasure; recursion",
+      "rules": "I — Mill three cards.\nII — Create a Food token and a Treasure token.\nIII — Return up to one target creature card from your graveyard to your hand.",
       "rulesSource": "14A2-live-sheet-snapshot",
       "archetypes": "BG — graveyard / sacrifice / material temptation",
       "story": "A cautionary song about the crew repeatedly choosing immediate survival and appetite over commands meant to preserve them.",
@@ -7846,7 +7847,7 @@
       "productLayer": "main",
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
-      "functionalWords": 37,
+      "functionalWords": 30,
       "changeStatus": "rebuilt-ff-saga-structure · art-sweep-v2 · mainset-cycles-v1 · candidate2-song-cycle-v2-enemy",
       "narrativeEra": "Odyssey",
       "storyTarget": "Composite cautionary song about the crew's fatal choices.",
@@ -11904,7 +11905,7 @@
       "origin": "NEW",
       "originFull": "New",
       "mechanics": "Saga; Hybrid; scry; investigate; untap; hexproof",
-      "rules": "I — Scry 2.\nII — Investigate.\nIII — Untap up to two target permanents you control. Those permanents gain hexproof until end of turn.",
+      "rules": "I — Scry 2.\nII — Investigate.\nIII — Untap up to two target creatures and/or lands you control. Those permanents gain hexproof until end of turn.",
       "rulesSource": "14A2-live-sheet-snapshot",
       "archetypes": "GU/WU/GW — permanents / enchantments / protection",
       "story": "A song about Penelope preserving the household through patient observation, craft and long-term endurance (Books I–XXIII).",
@@ -11929,7 +11930,7 @@
       "productLayer": "main",
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
-      "functionalWords": 22,
+      "functionalWords": 27,
       "changeStatus": "rebuilt-ff-saga-structure · art-sweep-v2 · mainset-cycles-v1 · candidate2-song-cycle-v1",
       "narrativeEra": "Odyssey",
       "storyTarget": "A song about Penelope preserving the household through the long absence and homecoming (Books I–XXIII).",
