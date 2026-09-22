@@ -1551,8 +1551,24 @@
       ],
       "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-051",
+        "pair": "WU",
+        "text": "I will find you a ship, and will come with you myself.",
+        "location": "Book 2, Athena in Mentor's likeness prepares Telemachus's voyage",
+        "speaker": "Athena in Mentor's likeness",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "context": "Athena, appearing as Mentor, promises to secure the ship and accompany Telemachus.",
+        "fit": "The line makes Mentor's practical counsel and voyage-readiness concrete.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 54
+      }
     },
     {
       "sourceLabel": "Odyssey 11",
@@ -1578,10 +1594,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-052",
+        "pair": "UB",
+        "text": "I may drink of the blood and answer your questions truly.",
+        "location": "Book 11, Tiresias at the blood trench",
+        "speaker": "Tiresias",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "context": "Tiresias asks to drink from the trench so he can speak truthfully to Odysseus.",
+        "fit": "It joins graveyard ritual to the knowledge Tiresias supplies.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 57
+      }
     },
     {
       "sourceLabel": "Odyssey 10 and 12",
@@ -1611,10 +1643,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-053",
+        "pair": "BR",
+        "text": "All deaths are bad enough but there is none so bad as famine.",
+        "location": "Book 12, Eurylochus argues for killing Helios's cattle",
+        "speaker": "Eurylochus",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "context": "Hunger drives Eurylochus to argue for the forbidden slaughter.",
+        "fit": "The line captures the desperate reasoning behind sacrificing long-term safety for immediate survival.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 61
+      }
     },
     {
       "sourceLabel": "Odyssey 9",
@@ -1669,10 +1717,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.14.xiv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-055",
+        "pair": "GW",
+        "text": "Eat, my good fellow, and enjoy your supper, such as it is.",
+        "location": "Book 14, Eumaeus feeds the disguised Odysseus",
+        "speaker": "Eumaeus",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "context": "Eumaeus offers the stranger what food he has before knowing his identity.",
+        "fit": "Directly expresses Eumaeus's hospitality and Food-centered design.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 58
+      }
     },
     {
       "sourceLabel": "Odyssey 2 and 17",
@@ -1704,8 +1768,24 @@
       ],
       "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-056",
+        "pair": "WB",
+        "text": "you are more fond of eating things yourself than of giving them to other people.",
+        "location": "Book 17, Telemachus rebukes Antinous",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "context": "Telemachus condemns Antinous for consuming rather than sharing the household's resources.",
+        "fit": "A sharp source-text statement of the consumption engine.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 80
+      }
     },
     {
       "sourceLabel": "Odyssey 5; craft composite",
@@ -1760,10 +1840,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.11.xi.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-058",
+        "pair": "BG",
+        "text": "Thrice I sprang towards her and tried to clasp her in my arms",
+        "location": "Book 11, Odysseus tries to embrace Anticleia",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "context": "Odysseus repeatedly tries and fails to embrace his mother's shade.",
+        "fit": "The failed embrace makes Anticleia's graveyard/return identity emotionally specific.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 61
+      }
     },
     {
       "sourceLabel": "Odyssey 12; crew composite",
@@ -1789,10 +1885,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-059",
+        "pair": "RW",
+        "text": "trust in Jove and row on with might and main.",
+        "location": "Book 12, Odysseus commands the crew",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "context": "Odysseus rallies the crew to keep rowing through danger.",
+        "fit": "The ordinary Deck-Captain is composite, but this line cleanly represents coordinated rowing under command.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 45
+      }
     },
     {
       "sourceLabel": "Odyssey 9–12; voyage interpretation",
@@ -1822,10 +1934,11 @@
           "url": "https://classics.mit.edu/Homer/odyssey.12.xii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "passages checked; whole-voyage composite; no direct quote selected to avoid false localization.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no direct quote selected; composite portrayal",
+      "quotationCandidate": null,
+      "quotationAuditOutcome": "Whole-poem voyage composite. No single Homeric line is selected because doing so would falsely localize the card to one shore or episode."
     },
     {
       "sourceLabel": "Odyssey 9 and 13–22; synthesis",
@@ -2713,8 +2826,24 @@
       ],
       "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-090",
+        "pair": "WU",
+        "text": "do not forget me when you are safe at home again",
+        "location": "Book 8, Nausicaa asks to be remembered",
+        "speaker": "Nausicaa",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "As Odysseus prepares to leave Scheria, Nausicaa asks that he remember the one who helped him.",
+        "fit": "A concise expression of recognition, care, and successful onward return.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 48
+      }
     },
     {
       "sourceLabel": "Odyssey 24",
@@ -2740,10 +2869,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-091",
+        "pair": "GW",
+        "text": "I will point out to you the trees in the vineyard which you gave me",
+        "location": "Book 24, Odysseus proves himself to Laertes",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+        "context": "Odysseus recalls the trees Laertes gave him as a child to prove their shared history.",
+        "fit": "The remembered trees are the most specific source hook for Laertes's rooted recovery identity.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 67
+      }
     },
     {
       "sourceLabel": "Odyssey 22",
@@ -4468,10 +4613,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.22.xxii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-148",
+        "pair": "WB",
+        "text": "the man is guiltless, do him no hurt",
+        "location": "Book 22, Telemachus defends Medon",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+        "context": "Telemachus intervenes so the innocent herald Medon is spared.",
+        "fit": "The line exactly captures Medon's survival amid the household deaths.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 36
+      }
     },
     {
       "sourceLabel": "Iliad 10; visual interpretation",
@@ -4614,8 +4775,24 @@
       ],
       "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-153",
+        "pair": "UR",
+        "text": "change your song and tell us of the wooden horse",
+        "location": "Book 8, Odysseus requests Demodocus's Trojan Horse song",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "Odysseus asks Demodocus to sing the story of the wooden horse.",
+        "fit": "It makes the card's status as an actual performed song explicit.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 48
+      }
     },
     {
       "sourceLabel": "Odyssey 12",
@@ -4736,10 +4913,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.22.xxii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-157",
+        "pair": "BR",
+        "text": "I will bring you arms from the store room",
+        "location": "Book 22, Melanthius arms the suitors",
+        "speaker": "Melanthius",
+        "source": "https://classics.mit.edu/Homer/odyssey.22.xxii.html",
+        "context": "Melanthius volunteers to fetch weapons for the suitors during the hall battle.",
+        "fit": "A direct statement of his active betrayal and resource conversion.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 41
+      }
     },
     {
       "sourceLabel": "Odyssey 20; dream extension",
@@ -4794,10 +4987,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-159",
+        "pair": "UR",
+        "text": "he could stir or still each one of them according to his own pleasure",
+        "location": "Book 10, Aeolus controls the winds",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "context": "Aeolus is described as able to rouse or quiet the winds at will.",
+        "fit": "The line maps directly onto his Vehicle acceleration and wind-bottling Adventure.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 14,
+        "characters": 69
+      }
     },
     {
       "sourceLabel": "Odyssey 5; landscape extension",
@@ -5198,10 +5407,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-173",
+        "pair": "RG",
+        "text": "let us call her and see whether she is woman or goddess.",
+        "location": "Book 10, Polites urges the crew toward Circe's house",
+        "speaker": "Polites",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "context": "Polites persuades the scouting party to call to the singer inside Circe's house.",
+        "fit": "It captures the decisive first-through-the-door impulse behind the card.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 56
+      }
     },
     {
       "sourceLabel": "Odyssey 2 and 19",
@@ -5275,10 +5500,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.10.x.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-175",
+        "pair": "UB",
+        "text": "when they had drunk she turned them into pigs by a stroke of her wand",
+        "location": "Book 10, Circe transforms the crew",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.10.x.html",
+        "context": "Circe drugs and transforms Odysseus's companions.",
+        "fit": "The exact transformation scene grounds the face-down/enchantment-death identity.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 69
+      }
     },
     {
       "sourceLabel": "Odyssey 5",
@@ -5304,10 +5545,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.5.v.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-176",
+        "pair": "GU",
+        "text": "you would stay where you are, keep house along with me",
+        "location": "Book 5, Calypso urges Odysseus to remain",
+        "speaker": "Calypso",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "context": "Calypso offers continued life with her on Ogygia instead of departure.",
+        "fit": "The line directly expresses comfort becoming captivity and delayed homecoming.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 54
+      }
     },
     {
       "sourceLabel": "Odyssey 15–22",
@@ -5337,10 +5594,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.22.xxii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-177",
+        "pair": "RW",
+        "text": "Father, I have always heard of your renown both in the field and in council",
+        "location": "Book 16, Telemachus recognises Odysseus",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.16.xvi.html",
+        "context": "After the reunion, Telemachus addresses the father whose reputation he has inherited.",
+        "fit": "It bridges returned son, inherited identity, and the coming coordinated fight.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 15,
+        "characters": 75
+      }
     },
     {
       "sourceLabel": "Odyssey 8",
@@ -5366,10 +5639,26 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-178",
+        "pair": "RG",
+        "text": "if anything has been said amiss may the winds blow it away with them",
+        "location": "Book 8, Euryalus apologises to Odysseus",
+        "speaker": "Euryalus",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "context": "After insulting Odysseus and seeing his athletic prowess, Euryalus apologises and offers a gift.",
+        "fit": "It completes Euryalus's sequence from challenge to recognition and reconciliation.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 14,
+        "characters": 68
+      }
     },
     {
       "sourceLabel": "Odyssey 24; funeral composite",
@@ -5395,10 +5684,11 @@
           "url": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Book XXIV checked; funerary/social-world composite; no direct quote selected.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no direct quote selected; composite portrayal",
+      "quotationCandidate": null,
+      "quotationAuditOutcome": "Ordinary funerary/social-world composite. Book XXIV supports ghosts and family memory, but no single narrated grave-tending scene matches this invented role closely enough for a direct quotation."
     },
     {
       "sourceLabel": "Odyssey 9; voyage interpretation",
