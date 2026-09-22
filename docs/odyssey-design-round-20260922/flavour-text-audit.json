@@ -462,9 +462,18 @@
     {
       "id": "ODY-024",
       "name": "Trace the Omen",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-024",
+        "kind": "adaptation",
+        "text": "An omen is only useful after someone decides what it means.",
+        "source": "https://classics.mit.edu/Homer/odyssey.15.xv.html",
+        "basis": "Books XV and XX repeatedly show signs requiring interpretation rather than acting by themselves.",
+        "fit": "Makes selection/exile the cost of interpretation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -617,9 +626,18 @@
     {
       "id": "ODY-032",
       "name": "Loyal Cowherd",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-032",
+        "kind": "adaptation",
+        "text": "He kept the cattle for a master he had almost stopped expecting to see.",
+        "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+        "basis": "Philoetius's loyalty provides the model for an anonymous loyal cowherd common.",
+        "fit": "Ordinary duty echoing a named loyal servant without replacing him.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1191,9 +1209,18 @@
     {
       "id": "ODY-061",
       "name": "Odysseus, Cunning Voyager",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-061",
+        "kind": "adaptation",
+        "text": "The right identity was another tool, chosen for the obstacle in front of him.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Across the poem Odysseus alternates anonymity, disguise, open authority and tactical self-revelation.",
+        "fit": "Mythic synthesis of adaptive identity rather than a single episode.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1254,9 +1281,18 @@
     {
       "id": "ODY-065",
       "name": "Phaeacian Swiftship",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-065",
+        "kind": "adaptation",
+        "text": "The Phaeacians made distance feel like a problem their ships had already solved.",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "basis": "Their ships know destinations and deliver Odysseus home with supernatural speed.",
+        "fit": "Vehicle wonder rather than one named crew member.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -2780,9 +2816,18 @@
     {
       "id": "ODY-143",
       "name": "Great Hall",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-143",
+        "kind": "adaptation",
+        "text": "The feast became a siege long before anyone drew a weapon.",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "basis": "The palace hall accumulates consumption, insults, surveillance and finally violence across the poem.",
+        "fit": "Cross-book setting synthesis.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -2901,9 +2946,25 @@
     {
       "id": "ODY-151",
       "name": "Theoclymenus, Omen Reader",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-151",
+        "text": "I see mischief overhanging you",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 20, Theoclymenus leaves the doomed feast",
+        "speaker": "Theoclymenus",
+        "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+        "context": "Theoclymenus refuses to stay among people who mock the doom he can see clearly.",
+        "fit": "A compact prophetic voice distinct from the visual Veiled Hall omen.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 5,
+        "characters": 30,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -3205,9 +3266,18 @@
     {
       "id": "ODY-168",
       "name": "Nostos, The Long Road Home",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-168",
+        "kind": "adaptation",
+        "text": "Homecoming is not arrival. It is everything that must become yours again after arrival.",
+        "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+        "basis": "The Odyssey's return requires recovery of identity, spouse, father, servants, household and civic peace.",
+        "fit": "A set-level definition of nostos rather than a single quotation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -3504,9 +3574,18 @@
     {
       "id": "ODY-184",
       "name": "Penelope's Shroud",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-184",
+        "kind": "adaptation",
+        "text": "By day the shroud promised an ending; by night it postponed one.",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "basis": "Penelope's weaving/unweaving stratagem delays remarriage through repetitive labour.",
+        "fit": "Keeps the object version distinct from rare Penelope's exact unpicking quotation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -3589,9 +3668,18 @@
     {
       "id": "ODY-189",
       "name": "Scheria, Harbor of Wonders",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-189",
+        "kind": "adaptation",
+        "text": "Scheria was the rare shore where telling the whole story made departure possible.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "The Phaeacian episode turns narrative disclosure into gifts, recognition and transport home.",
+        "fit": "Rare location synthesis across VI–XIII.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -3731,27 +3819,54 @@
     {
       "id": "ODY-197",
       "name": "Homeward Path",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-197",
+        "kind": "adaptation",
+        "text": "Every road home is a claim that belonging can survive absence.",
+        "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+        "basis": "The poem repeatedly distinguishes possession, captivity and rightful home.",
+        "fit": "Fits Homeward Path's restoration of ownership.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-198",
       "name": "Poseidon, Earth-Shaker",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-198",
+        "kind": "adaptation",
+        "text": "The sea-god could delay the return long after he could no longer prevent it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "basis": "Poseidon's anger persists from the Cyclops through the Phaeacian escort and punishment.",
+        "fit": "Mythic pursuit as obstruction rather than random storm.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-199",
       "name": "Penelope, Weaver of Fate",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-199",
+        "kind": "adaptation",
+        "text": "Waiting was Penelope's way of continuing to act when every obvious action served the suitors.",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "basis": "Weaving, questioning, omens and tests make her delay active rather than passive.",
+        "fit": "Mythic agency-under-pressure framing.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -3794,9 +3909,18 @@
     {
       "id": "ODY-202",
       "name": "Alcinous, Hospitable King",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-202",
+        "kind": "adaptation",
+        "text": "A king proved his greatness by how safely a stranger could leave his table.",
+        "source": "https://classics.mit.edu/Homer/odyssey.7.vii.html",
+        "basis": "Alcinous raises, feeds, gifts and ultimately transports Odysseus home.",
+        "fit": "Hospitality as royal capability.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -3943,9 +4067,18 @@
     {
       "id": "ODY-211",
       "name": "Hermes, Guide of Wanderers",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-211",
+        "kind": "adaptation",
+        "text": "He crossed the boundary, delivered the answer, and made movement possible again.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Hermes carries Zeus's order to Calypso and gives Odysseus moly before Circe.",
+        "fit": "Mythic guide role synthesized from Books V and X.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4038,27 +4171,54 @@
     {
       "id": "ODY-216",
       "name": "Lay of the Hidden King",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-216",
+        "kind": "adaptation",
+        "text": "The king returned first as a rumour, then a beggar, then a fact no one could survive ignoring.",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "basis": "The imagined song compresses the disguised return and revelation arc.",
+        "fit": "Adaptive song, not a performed Homeric song.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-217",
       "name": "Metis, Cunning Counsel",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-217",
+        "kind": "adaptation",
+        "text": "Cunning is the patience to let the other person believe they chose the opening.",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "basis": "Odysseus and Athena repeatedly conceal intent, manage appearances and wait for leverage.",
+        "fit": "Metis as concept, not a separate person in the Odyssey.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-218",
       "name": "Moira, Inescapable Fate",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-218",
+        "kind": "adaptation",
+        "text": "Fate fixes the boundary; character decides what happens inside it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "Prophecy and allotted outcomes constrain but do not erase choice throughout the poem.",
+        "fit": "Moira as abstract conceptual card.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4135,27 +4295,61 @@
     {
       "id": "ODY-223",
       "name": "Odysseus, Beggar-King",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-223",
+        "kind": "adaptation",
+        "text": "He learned more in his own hall by being beneath notice than he ever could as king.",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "basis": "The beggar disguise lets Odysseus inspect suitors and servants before revealing power.",
+        "fit": "Specific Beggar-King identity.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-224",
       "name": "Eumaeus and Philoetius",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-224",
+        "kind": "adaptation",
+        "text": "One kept the pigs, one kept the cattle, and both kept faith with the same absent house.",
+        "source": "https://classics.mit.edu/Homer/odyssey.21.xxi.html",
+        "basis": "Eumaeus and Philoetius independently remain loyal and then join the counterplot.",
+        "fit": "Paired loyalty through ordinary labour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-225",
       "name": "Telemachus and Odysseus, Reunited",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-225",
+        "text": "I am your father, on whose account you grieve and suffer so much",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 16, Odysseus reveals himself to Telemachus",
+        "speaker": "Odysseus",
+        "source": "https://classics.mit.edu/Homer/odyssey.16.xvi.html",
+        "context": "Odysseus identifies himself after Athena restores his appearance.",
+        "fit": "The reunion pair begins with the direct disclosure the son cannot initially believe.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 64,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4248,9 +4442,25 @@
     {
       "id": "ODY-230",
       "name": "Xenia, Sacred Guest-Right",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-230",
+        "text": "all strangers and beggars are from Jove",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 14, Eumaeus states the rule of hospitality",
+        "speaker": "Eumaeus",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "context": "Eumaeus explains why even a poor stranger must be welcomed.",
+        "fit": "The set's xenia concept receives its cleanest direct formulation.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 7,
+        "characters": 39,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4383,9 +4593,18 @@
     {
       "id": "ODY-238",
       "name": "Recognition in Plain Sight",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-238",
+        "kind": "adaptation",
+        "text": "Recognition is the instant when all the old evidence rearranges itself around one truth.",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "basis": "Scar, cloak, bed, trees and transformed appearance create repeated recognition structures.",
+        "fit": "Set-level recognition pattern.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4419,9 +4638,18 @@
     {
       "id": "ODY-241",
       "name": "A Name Kept Hidden",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-241",
+        "kind": "adaptation",
+        "text": "A hidden name can be armour, a weapon, or a debt waiting to be collected.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "Nobody protects Odysseus, while the beggar identity later enables reconnaissance; true names also create consequences.",
+        "fit": "Identity interpretation spanning Cyclops and palace.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4464,18 +4692,36 @@
     {
       "id": "ODY-244",
       "name": "Hermes's Golden Wand",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-244",
+        "kind": "adaptation",
+        "text": "The same wand could close one road of consciousness and open another.",
+        "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+        "basis": "Hermes's wand is repeatedly associated with sleep/waking and guiding souls.",
+        "fit": "Artifact interpretation of boundary-crossing authority.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-245",
       "name": "Song of the Faithful Queen",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-245",
+        "kind": "adaptation",
+        "text": "Her faithfulness was not stillness; it was the work of keeping choices open.",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "basis": "The imagined Penelope song reads waiting, weaving and testing as sustained agency.",
+        "fit": "Adaptive song rather than source-text performance.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4527,28 +4773,46 @@
     {
       "id": "ODY-249",
       "name": "The Long Way Home",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-249",
+        "kind": "adaptation",
+        "text": "Every shortcut failed. Home was the accumulation of all the routes that did not.",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "basis": "The Long Way Home synthesizes exile, travel, Vehicles and repeated false starts.",
+        "fit": "Mythic whole-voyage interpretation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-250",
       "name": "The Black-Hulled Ship, Homeward Bound",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-250",
+        "kind": "adaptation",
+        "text": "The ship carried more than bodies: each landing returned someone changed by the last one.",
+        "source": "https://classics.mit.edu/Homer/odyssey.13.xiii.html",
+        "basis": "The mythic ship synthesizes crewing, uncertain shores and transformed return.",
+        "fit": "Whole-voyage Vehicle rather than one historical hull.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-251",
       "name": "Plains",
-      "status": "pending",
+      "status": "no-flavour-selected",
       "kind": null,
       "candidate": null,
-      "rationale": null,
+      "rationale": "Basic Land — Plains. Reserve the Ithaca basic-land treatment without flavour text.",
       "finalSelection": "pending-card-space-and-layout"
     },
     {
@@ -4608,19 +4872,19 @@
     {
       "id": "ODY-258",
       "name": "Swamp",
-      "status": "pending",
+      "status": "no-flavour-selected",
       "kind": null,
       "candidate": null,
-      "rationale": null,
+      "rationale": "Basic Land — Swamp. Reserve the Underworld basic-land treatment without flavour text.",
       "finalSelection": "pending-card-space-and-layout"
     },
     {
       "id": "ODY-259",
       "name": "Swamp",
-      "status": "pending",
+      "status": "no-flavour-selected",
       "kind": null,
       "candidate": null,
-      "rationale": null,
+      "rationale": "Basic Land — Swamp. Reserve the palace-foreboding basic-land treatment without flavour text.",
       "finalSelection": "pending-card-space-and-layout"
     },
     {
@@ -4716,9 +4980,18 @@
     {
       "id": "ODY-268",
       "name": "Olive Pasture",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-268",
+        "kind": "adaptation",
+        "text": "Work, animals, trees and shelter made a home long before kingship did.",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "basis": "Eumaeus's farm and Laertes's later farm make cultivated landscape part of household continuity.",
+        "fit": "GW landscape composite.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4761,9 +5034,18 @@
     {
       "id": "ODY-271",
       "name": "Asphodel Meadow",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-271",
+        "kind": "adaptation",
+        "text": "The dead gathered in a landscape where memory was almost the only motion left.",
+        "source": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html",
+        "basis": "Asphodel and shades recur in the underworld frame.",
+        "fit": "BG land as mournful continuity.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4831,9 +5113,18 @@
     {
       "id": "ODY-275",
       "name": "Penelope's Unending Loom",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-275",
+        "kind": "adaptation",
+        "text": "The loom kept time by refusing to finish it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "basis": "Penelope's weaving delays an imposed future through repetitive work.",
+        "fit": "Object interpretation without reusing the exact unpicking quote.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -5029,9 +5320,18 @@
     {
       "id": "ODY-288",
       "name": "Feast Beyond Measure",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-288",
+        "kind": "adaptation",
+        "text": "Appetite looks like advantage until the cost survives the meal.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Suitor excess and the cattle episode both turn immediate consumption into later consequence.",
+        "fit": "Cross-episode appetite pattern.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -5143,9 +5443,18 @@
     {
       "id": "ODY-297",
       "name": "Memory Beneath the Earth",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-297",
+        "kind": "adaptation",
+        "text": "Memory becomes power only when something is willing to carry it back into use.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "Underworld memory and later family recognition treat the past as retrievable but costly.",
+        "fit": "BG memory-cycle concept.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -5328,20 +5637,29 @@
     {
       "id": "ODY-309",
       "name": "Zeus, Keeper of Oaths",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-309",
+        "kind": "adaptation",
+        "text": "The god of oaths matters most when people act as though no one is watching.",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "basis": "Zeus is repeatedly invoked in guest-right, oaths and punishment for violated social order.",
+        "fit": "Divine-social synthesis rather than guaranteed immediate intervention.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     }
   ],
   "summary": {
     "totalCards": 309,
-    "exactQuoteCandidates": 75,
-    "adaptationCandidates": 153,
-    "noFlavourSelected": 11,
+    "exactQuoteCandidates": 78,
+    "adaptationCandidates": 183,
+    "noFlavourSelected": 14,
     "noDirectQuoteStillNeedsFlavourDecision": 0,
-    "pending": 70,
-    "resolvedFlavourOutcomes": 239
+    "pending": 34,
+    "resolvedFlavourOutcomes": 275
   }
 }
