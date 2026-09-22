@@ -387,15 +387,19 @@ def main():
             spins=[]
             for x in scores:
                 c=pool[x[5]]
-                if not (x[6] or x[7]) or c.get('rarity') not in {'rare','mythic'}:continue
+                if c.get('rarity') not in {'rare','mythic'}:continue
+                if not (x[6] or x[7]) and x[4]<.18:continue
                 novelty=max(0,1-x[8])
-                score=.42*x[2]+.24*x[4]+.20*novelty+.14*(1 if c.get('rarity')=='mythic' else .8)
+                score=.38*x[2]+.28*x[4]+.18*novelty+.16*(1 if c.get('rarity')=='mythic' else .8)
                 spins.append((score,x))
+            spin_added=0
             for score,x in sorted(spins,key=lambda z:z[0],reverse=True):
                 c=pool[x[5]]
-                shared=', '.join(sorted(x[6])[:4] or sorted(x[7])[:2]) or 'the same mechanical space'
+                shared=', '.join(sorted(x[6])[:4] or sorted(x[7])[:2]) or 'a closely overlapping effect package'
                 note='Build-around / interesting spin: shares '+shared+' but deliberately favors a different, higher-complexity implementation. Use it to test whether a splashy Odyssey card has enough payoff, tension, and deck-building identity.'
-                if add(chosen,used,ref_obj('buildaround',score,o,c,x[6],x[7],note),limit):break
+                if add(chosen,used,ref_obj('buildaround',score,o,c,x[6],x[7],note),limit):
+                    spin_added+=1
+                    if spin_added>=2:break
 
         if not chosen:
             x=max(scores,key=lambda x:x[3]);c=pool[x[5]]
