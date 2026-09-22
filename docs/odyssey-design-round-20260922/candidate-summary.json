@@ -1,7 +1,7 @@
 {
   "status": "isolated-playtest-candidate-not-live",
   "baseDatasetVersion": "2026-09-22.3",
-  "changedCards": 39,
+  "changedCards": 42,
   "before": {
     "cards": 309,
     "rarity": {
@@ -62,6 +62,7 @@
     "Hunter approved WU Penelope and explicitly selected actual sacrifice for Iphigenia. Slot 015 now remains UB; its proposed rate still needs testing.",
     "The Ordeals still grant Survival to their enchanted creatures; source names remain where self-reference would change meaning.",
     "The seven Studio notes remain open until actual implementation is verified.",
-    "Candidate references need a production refresh before integration."
+    "Candidate references need a production refresh before integration.",
+    "Hybrid Saga overlap is now mechanically audited; BG and GU received narrow repairs, but their Limited rates still need played games."
   ]
 }
