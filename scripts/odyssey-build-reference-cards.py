@@ -232,7 +232,7 @@ def main():
       ('monstrosity',['Polukranos, World Eater','Nessian Asp'],'Theros Monstrosity technology'),
       ('devotion',['Thassa, God of the Sea','Heliod, Sun-Crowned'],'Theros devotion / God technology'),
       ('gift a ',["Bilbo's Gambit",'Dawn’s Truce',"Dawn's Truce"],'Gift additional-cost technology'),
-      (' adventure',['Bonecrusher Giant','Mosswood Dreadknight'],'Adventure technology'),
+      ('adventure',['Bonecrusher Giant','Mosswood Dreadknight'],'Adventure technology'),
       ('cycle.hybrid-sagas-uncommon',['Fable of the Mirror-Breaker'],'Saga pacing / chapter technology'),
       ('prepare /',['Valki, God of Lies'],'modal / transformation-adjacent technology'),
       ('storm',['Grapeshot'],'Storm technology'),
