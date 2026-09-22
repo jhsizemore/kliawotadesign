@@ -13,17 +13,16 @@ try:
    page.goto(BASE,wait_until='domcontentloaded',timeout=60000)
    page.wait_for_function("window.OdysseyReferenceBrowserMounted && window.ODYSSEY_CARD_REFERENCES && Object.keys(window.ODYSSEY_CARD_REFERENCES.cards).length>0",timeout=45000)
    coverage=page.evaluate("""() => {
-     const original=CARDS.filter(c=>String(c.originFull||'New').toLowerCase()==='new'&&String(c.origin||'').toUpperCase()!=='RPR'&&!/\\bBasic Land\\b/.test(c.type||''));
-     return {original:original.length,covered:original.filter(c=>OdysseyReferenceBrowser.refsFor(c.number).length>0).length,max:Math.max(...original.map(c=>OdysseyReferenceBrowser.refsFor(c.number).length)),min:Math.min(...original.map(c=>OdysseyReferenceBrowser.refsFor(c.number).length))};
+     const current=CARDS;\n     return {current:current.length,covered:current.filter(c=>OdysseyReferenceBrowser.refsFor(c.number).length>0).length,max:Math.max(...current.map(c=>OdysseyReferenceBrowser.refsFor(c.number).length)),min:Math.min(...current.map(c=>OdysseyReferenceBrowser.refsFor(c.number).length))};
    }""")
-   assert coverage['original']==coverage['covered'] and 1<=coverage['min']<=coverage['max']<=3,coverage
+   assert coverage['current']==coverage['covered'] and 1<=coverage['min']<=coverage['max']<=7,coverage
    number=page.evaluate("""() => CARDS.find(c=>OdysseyReferenceBrowser.refsFor(c.number).length>=2)?.number""")
-   assert number, 'no original card with at least two references found'
+   assert number, 'no current card with at least two references found'
    page.evaluate('(n)=>selectCard(n)',number)
    page.wait_for_timeout(100)
    count=page.evaluate('OdysseyReferenceBrowser.refsFor(selected).length')
    assert page.locator('#openCardReferences').is_enabled(), 'reference toolbar button disabled for referenced card'
-   assert page.locator('#odCardReferences .od-ref-card').count()==count, ('compact reference count',page.locator('#odCardReferences .od-ref-card').count(),count)
+   assert page.locator('#odCardReferences .od-ref-card').count()==min(count,3), ('compact reference count',page.locator('#odCardReferences .od-ref-card').count(),min(count,3))
    page.locator('#openCardReferences').click()
    page.wait_for_selector('#odReferenceOverlay.open')
    assert page.locator('#odReferenceOverlay .od-ref-card').count()==count, ('modal reference count',page.locator('#odReferenceOverlay .od-ref-card').count(),count)
