@@ -117,9 +117,25 @@
     {
       "id": "ODY-007",
       "name": "Wash the Stranger's Feet",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-007",
+        "text": "no one ever yet came who was so like Ulysses in figure, voice, and feet as you are",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Eurycleia before the scar is exposed",
+        "speaker": "Eurycleia",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Before she even touches the scar, Eurycleia is struck by the stranger's resemblance to Odysseus.",
+        "fit": "The line makes washing a recognition scene before the decisive physical proof.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 18,
+        "characters": 82,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -151,22 +167,16 @@
     {
       "id": "ODY-009",
       "name": "Argos, Who Waited",
-      "status": "candidate-verified",
-      "kind": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
       "candidate": {
         "cardId": "ODY-009",
-        "text": "he dropped his ears and wagged his tail",
-        "author": "Homer",
-        "translator": "Samuel Butler",
-        "work": "Odyssey",
-        "location": "Book 17, Argos recognises the arriving Odysseus",
-        "speaker": "Narrator",
+        "kind": "adaptation",
+        "text": "He had waited twenty years for one last certainty.",
         "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
-        "context": "A physical sign of recognition despite the master's disguise.",
-        "fit": "A tender bodily action, more specific than a generic quotation about loyalty.",
-        "verification": "exact excerpt checked",
-        "wordCount": 8,
-        "characters": 39,
+        "basis": "Argos recognises Odysseus immediately and dies only after seeing him home.",
+        "fit": "Avoids repeating the exact wagged-tail quotation already attached to this vertical.",
+        "verification": "source-led adaptation checked",
         "selection": "candidate; final card-space check pending"
       },
       "rationale": null,
@@ -489,9 +499,25 @@
     {
       "id": "ODY-028",
       "name": "Penelope Questions the Beggar",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-028",
+        "text": "Now, stranger, I shall put you to the test",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Penelope tests the beggar's story",
+        "speaker": "Penelope",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Penelope asks for remembered details of Odysseus's clothing and companions.",
+        "fit": "This is the card's action in Penelope's own words.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 42,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -603,9 +629,25 @@
     {
       "id": "ODY-036",
       "name": "Eurycleia's Basin",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-036",
+        "text": "she recognized it and dropped the foot at once",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, the basin recognition",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "The scar is felt during the foot-washing; Eurycleia's recognition physically upsets the basin.",
+        "fit": "The artifact is the setting where hidden identity becomes undeniable.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 9,
+        "characters": 46,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -639,9 +681,18 @@
     {
       "id": "ODY-039",
       "name": "Blood on the Walls",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-039",
+        "kind": "adaptation",
+        "text": "The feast continued after the prophet had already seen its ending.",
+        "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+        "basis": "Theoclymenus sees blood, ghosts and darkness while the suitors laugh at him.",
+        "fit": "Separates this removal spell from the exact darkened-hall Omen quotation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -756,9 +807,18 @@
     {
       "id": "ODY-046",
       "name": "Test the Goatherd",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-046",
+        "kind": "adaptation",
+        "text": "The disguise hid the king; it could not hide the servant's character.",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "basis": "Melanthius kicks and insults the disguised Odysseus, revealing disloyalty without knowing whom he abuses.",
+        "fit": "Moral test rather than literal magical debuff.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1245,9 +1305,18 @@
     {
       "id": "ODY-073",
       "name": "Olive-Oil Lamp",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-073",
+        "kind": "adaptation",
+        "text": "Ordinary light was enough for work that still had to remain secret.",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "basis": "The household needs practical light while Athena's supernatural lamp accompanies the weapon removal.",
+        "fit": "Keeps the common lamp distinct from Athena's Golden Lamp.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1290,9 +1359,25 @@
     {
       "id": "ODY-076",
       "name": "Eurycleia, Keeper of the Scar",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-076",
+        "text": "I am sure you must be Ulysses himself",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Eurycleia recognises the scar",
+        "speaker": "Eurycleia",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Eurycleia identifies Odysseus after handling the scarred leg.",
+        "fit": "A direct recognition line for the legendary character version.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 8,
+        "characters": 37,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1317,9 +1402,25 @@
     {
       "id": "ODY-078",
       "name": "Odysseus's Cloak and Brooch",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-078",
+        "text": "It was I who gave Ulysses the clothes you speak of",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Penelope confirms the cloak and brooch",
+        "speaker": "Penelope",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Penelope recognises that the beggar's detailed description of Odysseus's clothing is genuine.",
+        "fit": "The remembered object itself becomes proof.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 11,
+        "characters": 50,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1351,9 +1452,18 @@
     {
       "id": "ODY-080",
       "name": "Disguised Palace Beggar",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-080",
+        "kind": "adaptation",
+        "text": "He entered his own house as the person everyone believed least worth noticing.",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "basis": "Odysseus enters the palace as a despised beggar, begging from each suitor and observing their conduct.",
+        "fit": "Disguise as information gathering rather than simple invisibility.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1669,9 +1779,18 @@
     {
       "id": "ODY-098",
       "name": "Boar Hunt on Parnassus",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-098",
+        "kind": "adaptation",
+        "text": "The scar outlived the boar, the hunt, and the boy who received it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "basis": "The Parnassus hunt explains the scar that later proves Odysseus's identity.",
+        "fit": "The hunt matters because its wound becomes future evidence.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1781,9 +1900,25 @@
     {
       "id": "ODY-104",
       "name": "Hide the Weapons",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-104",
+        "text": "I want to take it down where the smoke cannot reach it",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Telemachus gives the cover story for removing the armour",
+        "speaker": "Telemachus",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Odysseus and Telemachus secretly move the weapons while Telemachus gives Eurycleia a harmless explanation.",
+        "fit": "The card's concealment plan in source-text wording.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 12,
+        "characters": 54,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -1910,9 +2045,18 @@
     {
       "id": "ODY-111",
       "name": "Faithful Old Hound",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-111",
+        "kind": "adaptation",
+        "text": "Recognition was the last strength left in the old dog.",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "basis": "Argos is physically neglected and dying but still recognises his master immediately.",
+        "fit": "Common Argos treatment without duplicating the legendary card's exact line.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -2726,9 +2870,18 @@
     {
       "id": "ODY-158",
       "name": "Nightmare at the Threshold",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-158",
+        "kind": "adaptation",
+        "text": "A house expecting violence can make every threshold feel haunted.",
+        "source": "https://classics.mit.edu/Homer/odyssey.20.xx.html",
+        "basis": "Book XX concentrates dread, divine signs and visions of ghosts; the specific Nightmare creature is an extension.",
+        "fit": "Explicit dream/threshold extension rather than a claimed monster episode.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -3147,9 +3300,18 @@
     {
       "id": "ODY-183",
       "name": "Athena's Golden Lamp",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-183",
+        "kind": "adaptation",
+        "text": "The hall glowed because secrecy itself had divine help.",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "basis": "Athena carries a golden lamp while Odysseus and Telemachus remove the armour.",
+        "fit": "Distinguishes supernatural illumination from the ordinary oil lamp.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -3750,9 +3912,18 @@
     {
       "id": "ODY-227",
       "name": "Scrubland Hare",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-227",
+        "kind": "adaptation",
+        "text": "The smallest life in Ithaca kept moving beneath histories too large to notice it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "basis": "The hare is Mediterranean natural-world texture, not a narrated Book XIX animal.",
+        "fit": "Deliberately quiet environmental flavour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4216,10 +4387,10 @@
     {
       "id": "ODY-266",
       "name": "Parnassus, Hunting Slopes",
-      "status": "pending",
+      "status": "no-flavour-selected",
       "kind": null,
       "candidate": null,
-      "rationale": null,
+      "rationale": "Basic Land — Forest renamed Parnassus, Hunting Slopes. Reserve the basic-land treatment without flavour text.",
       "finalSelection": "pending-card-space-and-layout"
     },
     {
@@ -4358,9 +4529,18 @@
     {
       "id": "ODY-276",
       "name": "Odysseus's Beggar Staff",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "kind": "adaptation",
+      "candidate": {
+        "cardId": "ODY-276",
+        "kind": "adaptation",
+        "text": "The staff made the king look harmless long enough to learn who was not.",
+        "source": "https://classics.mit.edu/Homer/odyssey.17.xvii.html",
+        "basis": "The staff completes the beggar appearance while Odysseus enters, begs and judges the suitors.",
+        "fit": "Prop as reconnaissance rather than heroic weapon.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4715,9 +4895,25 @@
     {
       "id": "ODY-303",
       "name": "Autolycus, Master of Cunning",
-      "status": "pending",
-      "kind": null,
-      "candidate": null,
+      "status": "candidate-verified",
+      "kind": "quote",
+      "candidate": {
+        "cardId": "ODY-303",
+        "text": "the most accomplished thief and perjurer in the whole world",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Odyssey",
+        "location": "Book 19, Autolycus is introduced",
+        "speaker": "Narrator",
+        "source": "https://classics.mit.edu/Homer/odyssey.19.xix.html",
+        "context": "Autolycus is explicitly characterised by exceptional theft and false oaths.",
+        "fit": "A source-specific identity line that prevents the Rogue from feeling generic.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 10,
+        "characters": 59,
+        "kind": "quote"
+      },
       "rationale": null,
       "finalSelection": "pending-card-space-and-layout"
     },
@@ -4794,11 +4990,11 @@
   ],
   "summary": {
     "totalCards": 309,
-    "exactQuoteCandidates": 58,
-    "adaptationCandidates": 123,
-    "noFlavourSelected": 9,
+    "exactQuoteCandidates": 64,
+    "adaptationCandidates": 134,
+    "noFlavourSelected": 10,
     "noDirectQuoteStillNeedsFlavourDecision": 0,
-    "pending": 119,
-    "resolvedFlavourOutcomes": 190
+    "pending": 101,
+    "resolvedFlavourOutcomes": 208
   }
 }
