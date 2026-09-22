@@ -9,6 +9,15 @@ on:
       - 'public/mtgtools/odyssey/card-reference-browser.js'
       - 'tests/odyssey-reference-cards.test.cjs'
       - '.github/workflows/odyssey-reference-refresh.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/odyssey-build-reference-cards.py'
+      - 'scripts/odyssey-reference-integration.py'
+      - 'scripts/odyssey-reference-browser.py'
+      - 'public/mtgtools/odyssey/card-reference-browser.js'
+      - 'tests/odyssey-reference-cards.test.cjs'
+      - '.github/workflows/odyssey-reference-refresh.yml'
   workflow_dispatch:
 permissions:
   contents: write
@@ -20,13 +29,14 @@ defaults:
     shell: bash
 jobs:
   rebuild:
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' || github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || 'main' }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -58,7 +68,11 @@ jobs:
             echo 'Reference outputs already current.'
           else
             git commit -m 'Refresh Odyssey full-set card references'
-            git push origin HEAD:refs/heads/main
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              git push origin HEAD:refs/heads/${{ github.event.pull_request.head.ref }}
+            else
+              git push origin HEAD:refs/heads/main
+            fi
           fi
       - uses: actions/upload-artifact@v4
         if: always()
