@@ -37,12 +37,12 @@
     "status": "structurally-complete-quality-and-source-verification-in-progress"
   },
   "flavourLayer": {
-    "exactQuoteCandidates": 64,
-    "sourceLedAdaptationCandidates": 134,
-    "noFlavourSelected": 10,
+    "exactQuoteCandidates": 75,
+    "sourceLedAdaptationCandidates": 153,
+    "noFlavourSelected": 11,
     "noDirectQuoteStillNeedsFlavourDecision": 0,
-    "pending": 101,
-    "resolvedFlavourOutcomes": 208,
+    "pending": 70,
+    "resolvedFlavourOutcomes": 239,
     "finalSelections": 0
   },
   "gameplay": {
@@ -63,16 +63,15 @@
     "modern reception"
   ],
   "currentCluster": {
-    "name": "Books XVII–XX — palace recognition, suitors and omens",
+    "name": "Books XXI–XXIV — bow, battle, reunion, Laertes and peace",
     "status": "substantially complete",
-    "exactQuotesAdded": 7,
-    "adaptationsAdded": 11,
+    "exactQuotesAdded": 11,
+    "adaptationsAdded": 19,
     "noFlavourDecisionsAdded": 1,
-    "deferred": [
-      "ODY-172 Mother Lion's Charge — Homeric-simile audit"
-    ],
-    "sourceCorrections": [
-      "Mother Lion's Charge removed from unsupported Book XX placement"
+    "notes": [
+      "Reconciliation and peace treated as distinct from vengeance.",
+      "Bed/tree cards distinguish private proof from broader rooted-home symbolism.",
+      "Agricultural extensions explicitly labelled rather than passed off as narrated scenes."
     ]
   }
 }
