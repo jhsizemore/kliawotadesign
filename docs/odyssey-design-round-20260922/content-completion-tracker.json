@@ -37,9 +37,12 @@
     "status": "structurally-complete-quality-and-source-verification-in-progress"
   },
   "flavourLayer": {
-    "verifiedCandidatesAfterThisCheckpoint": 45,
-    "noDirectQuoteSelected": 4,
-    "pending": 260,
+    "exactQuoteCandidates": 54,
+    "sourceLedAdaptationCandidates": 35,
+    "noFlavourSelected": 3,
+    "noDirectQuoteStillNeedsFlavourDecision": 4,
+    "pending": 213,
+    "resolvedFlavourOutcomes": 92,
     "finalSelections": 0
   },
   "gameplay": {
@@ -60,13 +63,16 @@
     "modern reception"
   ],
   "currentCluster": {
-    "name": "Books I–IV — Telemachy",
+    "name": "Books V–VIII — Calypso, Scheria and the Phaeacians",
     "status": "substantially complete",
-    "verifiedQuoteCandidatesAdded": 17,
-    "noDirectQuoteOutcomesAdded": 2,
-    "deferred": [
-      "ODY-072 Aulis, Harbor of Omens — Trojan/pre-Odyssey cluster",
-      "ODY-294 Helen, Remembered and Rewritten — later reception source still required"
+    "exactQuotesAdded": 9,
+    "adaptationsAdded": 35,
+    "noFlavourDecisionsAdded": 3,
+    "notes": [
+      "Direct Homeric action separated from craft/seamanship/landscape extensions.",
+      "Calypso portrayals retain the source's coercion rather than romanticising captivity.",
+      "Three Island basics explicitly receive no flavour text.",
+      "Final card-space/layout selection remains pending."
     ]
   }
 }
