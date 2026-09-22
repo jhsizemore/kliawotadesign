@@ -9,6 +9,7 @@ Annotations are generated only from objective overlaps (rules skeleton, keywords
 from __future__ import annotations
 import collections, datetime as dt, gzip, hashlib, json, math, os, re, statistics, sys, time
 from pathlib import Path
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 
 ROOT=Path(__file__).resolve().parents[1]
