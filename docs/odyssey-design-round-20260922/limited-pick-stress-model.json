@@ -1,0 +1,191 @@
+{
+  "schema": "odyssey-limited-pick-stress/v1",
+  "seed": 20260923,
+  "runsPerScenario": 5000,
+  "collationModel": "odyssey-core-fin-playbooster-v1",
+  "method": "Fixed-intent passing stress model, not a draft bot. A target seat is locked to GU, WU or WB. Any compatible competing seat treats listed support as a high pick; gold signposts are prioritised over mono-uncommon support, which is prioritised over common support. All other cards are filler. Packs pass left/right/left. This intentionally overstates competition for narrow support and does not model card power, signals, pivots, deck construction or gameplay.",
+  "scenarios": {
+    "open": "No other seat shares either target colour.",
+    "one_each": "Exactly one other seat shares the first target colour and one shares the second; no mirror pair.",
+    "two_each": "Exactly two other seats share each target colour; no mirror pair."
+  },
+  "packages": {
+    "GU": {
+      "theme": "Manifest / uncertain voyage",
+      "commonSupport": [
+        "ODY-088 Lotus-Fed Wanderer (G, Manifest Fate)",
+        "ODY-116 Omen of the Dreaming Queen (U, Manifest Fate)"
+      ],
+      "monoUncommonDirect": [
+        "ODY-017 Ordeal of the Sirens (U, Manifest Fate)"
+      ],
+      "additionalGreenUncommonBridge": [
+        "ODY-042 Find the Next Shore (G, voyage/land/tapped-creature bridge)"
+      ],
+      "additionalBlueUncommonBridge": [
+        "ODY-018 Read the Hidden Course (U, exile/face-up bridge)"
+      ],
+      "goldSignposts": [
+        "ODY-060 Voyage into Unknown Shores",
+        "ODY-176 Calypso, Keeper of Ogygia"
+      ]
+    },
+    "WU": {
+      "theme": "Recognition / return",
+      "commonSupport": [
+        "ODY-005 Athena's Intervention",
+        "ODY-007 Wash the Stranger's Feet",
+        "ODY-112 Dolphins Beside the Bow (Foretell permanent)",
+        "ODY-116 Omen of the Dreaming Queen (Manifest Fate)"
+      ],
+      "monoUncommonDirect": [
+        "ODY-017 Ordeal of the Sirens (Manifest Fate)"
+      ],
+      "goldSignposts": [
+        "ODY-051 Mentor, Trusted Counselor",
+        "ODY-090 Nausicaa, Princess of Scheria"
+      ]
+    },
+    "WB": {
+      "theme": "Death / household attrition",
+      "commonSupport": [
+        "ODY-008 Seat the Guest by the Hearth (Food)",
+        "ODY-108 Household Cupbearer (Food)",
+        "ODY-136 Salt-Cured Fish (Food)",
+        "ODY-101 Secret Laid Bare (sacrifice)"
+      ],
+      "note": "This is a deliberately narrow direct-resource subset; the full WB package also contains death, recursion and graveyard support.",
+      "goldSignposts": [
+        "ODY-056 Antinous, First Suitor",
+        "ODY-148 Medon, Herald Who Endured"
+      ]
+    }
+  },
+  "results": {
+    "GU": {
+      "open": {
+        "meanCommonSupport": 4.4664,
+        "pCommonGE2": 0.9506,
+        "pCommonGE3": 0.8382,
+        "meanMonoUncommonDirect": 0.897,
+        "meanTotalDirectEnablers": 5.3634,
+        "pTotalDirectGE2": 0.9758,
+        "pTotalDirectGE3": 0.916,
+        "pSignpostGE1": 0.8322,
+        "pBothSignposts": 0.3502,
+        "pDirectGE2AndSignpost": 0.8118,
+        "pDirectGE3AndSignpost": 0.7602
+      },
+      "one_each": {
+        "meanCommonSupport": 2.0696,
+        "pCommonGE2": 0.6234,
+        "pCommonGE3": 0.3358,
+        "meanMonoUncommonDirect": 0.418,
+        "meanTotalDirectEnablers": 2.4876,
+        "pTotalDirectGE2": 0.7266,
+        "pTotalDirectGE3": 0.454,
+        "pSignpostGE1": 0.8264,
+        "pBothSignposts": 0.3466,
+        "pDirectGE2AndSignpost": 0.5932,
+        "pDirectGE3AndSignpost": 0.372
+      },
+      "two_each": {
+        "meanCommonSupport": 1.3872,
+        "pCommonGE2": 0.4104,
+        "pCommonGE3": 0.152,
+        "meanMonoUncommonDirect": 0.2726,
+        "meanTotalDirectEnablers": 1.6598,
+        "pTotalDirectGE2": 0.5068,
+        "pTotalDirectGE3": 0.2274,
+        "pSignpostGE1": 0.83,
+        "pBothSignposts": 0.3526,
+        "pDirectGE2AndSignpost": 0.4118,
+        "pDirectGE3AndSignpost": 0.181
+      }
+    },
+    "WU": {
+      "open": {
+        "meanCommonSupport": 8.617,
+        "pCommonGE2": 0.9994,
+        "pCommonGE3": 0.994,
+        "meanMonoUncommonDirect": 0.8522,
+        "meanTotalDirectEnablers": 9.4692,
+        "pTotalDirectGE2": 0.9996,
+        "pTotalDirectGE3": 0.9978,
+        "pSignpostGE1": 0.832,
+        "pBothSignposts": 0.3524,
+        "pDirectGE2AndSignpost": 0.8316,
+        "pDirectGE3AndSignpost": 0.8302
+      },
+      "one_each": {
+        "meanCommonSupport": 4.0378,
+        "pCommonGE2": 0.9278,
+        "pCommonGE3": 0.8018,
+        "meanMonoUncommonDirect": 0.4194,
+        "meanTotalDirectEnablers": 4.4572,
+        "pTotalDirectGE2": 0.9558,
+        "pTotalDirectGE3": 0.8574,
+        "pSignpostGE1": 0.8428,
+        "pBothSignposts": 0.369,
+        "pDirectGE2AndSignpost": 0.8036,
+        "pDirectGE3AndSignpost": 0.719
+      },
+      "two_each": {
+        "meanCommonSupport": 2.7488,
+        "pCommonGE2": 0.7914,
+        "pCommonGE3": 0.543,
+        "meanMonoUncommonDirect": 0.276,
+        "meanTotalDirectEnablers": 3.0248,
+        "pTotalDirectGE2": 0.8342,
+        "pTotalDirectGE3": 0.6092,
+        "pSignpostGE1": 0.8398,
+        "pBothSignposts": 0.3494,
+        "pDirectGE2AndSignpost": 0.694,
+        "pDirectGE3AndSignpost": 0.4998
+      }
+    },
+    "WB": {
+      "open": {
+        "meanCommonSupport": 6.8304,
+        "pCommonGE2": 0.9948,
+        "pCommonGE3": 0.9772,
+        "meanTotalDirectEnablers": 6.8304,
+        "pTotalDirectGE2": 0.9948,
+        "pTotalDirectGE3": 0.9772,
+        "pSignpostGE1": 0.8334,
+        "pBothSignposts": 0.3306,
+        "pDirectGE2AndSignpost": 0.8288,
+        "pDirectGE3AndSignpost": 0.8138
+      },
+      "one_each": {
+        "meanCommonSupport": 3.378,
+        "pCommonGE2": 0.8786,
+        "pCommonGE3": 0.6868,
+        "meanTotalDirectEnablers": 3.378,
+        "pTotalDirectGE2": 0.8786,
+        "pTotalDirectGE3": 0.6868,
+        "pSignpostGE1": 0.8332,
+        "pBothSignposts": 0.3368,
+        "pDirectGE2AndSignpost": 0.7268,
+        "pDirectGE3AndSignpost": 0.5648
+      },
+      "two_each": {
+        "meanCommonSupport": 2.2978,
+        "pCommonGE2": 0.688,
+        "pCommonGE3": 0.4122,
+        "meanTotalDirectEnablers": 2.2978,
+        "pTotalDirectGE2": 0.688,
+        "pTotalDirectGE3": 0.4122,
+        "pSignpostGE1": 0.8342,
+        "pBothSignposts": 0.3452,
+        "pDirectGE2AndSignpost": 0.5668,
+        "pDirectGE3AndSignpost": 0.3374
+      }
+    }
+  },
+  "decision": "Do not add a third GU common Manifest source yet. GU meets the Play Booster support skeleton: two monocolour commons, at least two useful monocolour uncommons across the pair (including direct Manifest and voyage/exile bridges), and two multicolour signposts. The stress model shows GU is substantially more competition-sensitive than WU/WB, so actual draft/pool testing remains mandatory. A new common is reopened only if real drafts cannot assemble the lane when GU is plausibly open.",
+  "sourceGuidance": [
+    "https://magic.wizards.com/en/news/making-magic/nuts-and-bolts-16-play-boosters",
+    "https://magic.wizards.com/en/news/announcements/play-booster-discord-q-and-a"
+  ]
+}
