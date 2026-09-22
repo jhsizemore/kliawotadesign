@@ -101,3 +101,17 @@ The architecture review resolves two provisional discrepancies without changing 
 Passage-level review of the five common Omens verified their intended Homeric scenes. Three candidate records still carried pre-Omen source prose and are corrected: ODY-127 now uses Theoclymenus's darkened-hall vision in Book XX; ODY-135 uses the bellowing slaughtered cattle in Book XII; ODY-139 uses the hawk carrying a dove in Book XV. The white clear-sky thunder and blue dream of the geese remain correctly mapped. Five short exact Butler-translation quotation candidates are added to the candidate bank; none is yet final flavour text or written into production card records.
 
 Production data, the 14A2 authoring Sheet and live Studio remain unchanged. Next concrete gate: audit all five enemy-hybrid Sagas under the hybrid colour-pie rule, then continue changed-common passage verification and collation before any integration.
+
+
+## Sixth checkpoint: hybrid Saga gate
+
+The enemy-hybrid Saga cycle has been audited under the actual hybrid “or” rule rather than gold-card logic. Three candidate revisions are added, bringing the isolated candidate from 39 to **42 changed slots** without altering the 309-card skeleton, rarity counts, lands or DFC count.
+
+- ODY-097 becomes **Song of Hephaestus's Net**; Odyssey VIII confirms Demodocus performs the scene as a song.
+- ODY-162 keeps BG, but chapter II now simply creates a Food and a Treasure.
+- ODY-245 keeps GU, but chapter III now untaps up to two creatures and/or lands rather than arbitrary permanents.
+- ODY-163 RW and ODY-232 WB pass without mechanical revision.
+
+The generator/report inputs are also updated so the earlier Omen source corrections and expanded ten-card quotation bank survive a rebuild rather than being overwritten.
+
+No played matches have been performed. Production data, the 14A2 authoring Sheet and live Studio remain unchanged. Next gate: continue passage verification across the remaining changed commons, then collation/reference refresh before integration.
