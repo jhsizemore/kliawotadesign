@@ -310,3 +310,10 @@ The return/disguise cluster is editorially complete: **20/20 cards** have source
 The making-of layer is also clean: zero generic character/object placeholders and, after sharpening the Eumaeus Forest, zero thin emotion fields. The cluster now consistently reads as concealed homecoming rather than generic travel: arrival precedes recognition, hospitality precedes proof, and Athena's strategic control of knowledge lets reunion happen in the right order.
 
 Next narrative cluster: **Books XVII–XX — palace recognition, suitors, omens and mounting confrontation**.
+
+
+## Seventeenth checkpoint: Books XVII–XX complete
+
+The palace-recognition cluster is editorially complete: **22/22 cards** have source review and a flavour outcome (**10 direct quotations, 11 source-led adaptations, 1 deliberate no-flavour basic land**). The final thin setting emotion on Parnassus is now tied to the scar's delayed significance rather than generic danger.
+
+This cluster consistently centres on recognition pressure: objects and bodies become evidence, disguised weakness becomes information gathering, omens become credible only to people willing to interpret them, and the suitors' failure is increasingly framed as refusal to recognise what is already in front of them.
