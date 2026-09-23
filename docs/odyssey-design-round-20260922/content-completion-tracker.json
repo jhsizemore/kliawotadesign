@@ -1,6 +1,6 @@
 {
   "schema": "odyssey-content-completion/v1",
-  "phase": "editorial-content-complete-awaiting-layout-and-validation",
+  "phase": "final-flavour-cardspace-review",
   "startedAt": "2026-09-23",
   "cards": 309,
   "referenceLayer": {
@@ -103,5 +103,19 @@
     },
     "passed": true,
     "note": "Pass means references, source-grounded making briefs and flavour outcomes are complete at candidate/editorial level. Final card-space selection, gameplay validation and production integration remain separate later gates."
+  },
+  "cardSpaceReview": {
+    "dataset": "editorial-candidate-v1",
+    "studioDatasetPath": "public/mtgtools/odyssey/data/odyssey-editorial-candidate-v1.json",
+    "textFitAudit": "Studio batch-render audit enabled; actual browser fit state is authoritative.",
+    "staticPreflight": {
+      "critical": 1,
+      "veryHigh": 7,
+      "high": 13,
+      "medium": 34,
+      "ordinary": 254
+    },
+    "firstReview": "ODY-247 Ogygia, Island Beyond Time",
+    "rule": "Do not delete flavour research for space. Printed omission/shortening is a layout decision retained separately from the editorial candidate."
   }
 }
