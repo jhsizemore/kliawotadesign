@@ -639,7 +639,7 @@
       "sourceLabel": "Apollodorus Epitome 3.7",
       "sequence": "Feign incapacity; avoid recruitment; abandon the deception when the child is threatened.",
       "emotions": "Cunning with vulnerability / suspicion",
-      "attributes": "Odysseus's paternal fear defeats his disguise.",
+      "attributes": "Cunning turned defensive: Odysseus makes himself appear incapable until the test shifts from his own reputation to Telemachus's safety.",
       "hooks": "Lose conspicuous abilities; become harder to harm; prevent hostile targeting.",
       "assessment": "Protection with a real loss of abilities is apt. This is an ancient later tradition, not an Odyssey episode.",
       "id": "ODY-013",
@@ -659,10 +659,20 @@
           "url": "https://www.theoi.com/Text/ApollodorusE.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Apollodorus Epitome 3.7 checked: Odysseus feigns madness to avoid the Trojan expedition; Palamedes threatens infant Telemachus, and fear for his son forces Odysseus to admit the ruse.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-013",
+        "kind": "adaptation",
+        "text": "He could make a king look harmless. He could not make himself stop being a father.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "Apollodorus Epitome 3.7: the feigned madness collapses when Palamedes threatens Telemachus.",
+        "fit": "Preserves the ruse's emotional failure point without presenting invented prose as ancient quotation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; interpretation",
@@ -707,7 +717,7 @@
       "sourceLabel": "Aeschylus, Agamemnon; sacrifice at Aulis",
       "sequence": "The fleet cannot depart; Agamemnon chooses the campaign over his daughter; Iphigenia is killed and the expedition proceeds.",
       "emotions": "Controller: advancement bought with guilt and loss. Opponent: dread at the price paid for the coming attack.",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A father's political and military obligation becomes a family atrocity; the expedition advances because the person with least agency pays its price.",
       "hooks": "Require a real creature sacrifice before gaining passage; clear the way for the army; replenish the expedition without restoring its victim.",
       "assessment": "Iphigenia is the betrayed daughter and victim. Do not turn her death into willing self-sacrifice, divine rescue or a deer substitution. The nine-bird omen is a separate episode.",
       "id": "ODY-015",
@@ -727,10 +737,43 @@
           "url": "https://classics.mit.edu/Aeschylus/agamemnon.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Aeschylus, Agamemnon checked: Agamemnon explicitly weighs abandoning the fleet against killing his daughter, chooses the campaign, and Iphigenia's blood is described as speeding the ships onward.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-015",
+        "kind": "quote",
+        "text": "with her spilt blood make an offering, to speed the ships upon their way",
+        "author": "Aeschylus",
+        "translator": "E. D. A. Morshead",
+        "work": "Agamemnon",
+        "location": "Chorus recounting the sacrifice at Aulis",
+        "speaker": "Chorus",
+        "source": "https://classics.mit.edu/Aeschylus/agamemnon.html",
+        "context": "The chorus describes Iphigenia's killing as the cost used to release the expedition.",
+        "fit": "Directly captures the chosen actual-sacrifice tradition and the mechanical exchange of loss for advance.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 70
+      },
+      "flavourTextCandidate": {
+        "cardId": "ODY-015",
+        "kind": "quote",
+        "text": "with her spilt blood make an offering, to speed the ships upon their way",
+        "author": "Aeschylus",
+        "translator": "E. D. A. Morshead",
+        "work": "Agamemnon",
+        "location": "Chorus recounting the sacrifice at Aulis",
+        "speaker": "Chorus",
+        "source": "https://classics.mit.edu/Aeschylus/agamemnon.html",
+        "context": "The chorus describes Iphigenia's killing as the cost used to release the expedition.",
+        "fit": "Directly captures the chosen actual-sacrifice tradition and the mechanical exchange of loss for advance.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 70
+      }
     },
     {
       "sourceLabel": "Odyssey 8",
@@ -3346,7 +3389,7 @@
       "sourceLabel": "Iliad 2; Aulis setting",
       "sequence": "The fleet assembles; a portent is read; the long war is foreseen.",
       "emotions": "Apprehension / expectation",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A harbour turned into a waiting room for history: the army is assembled, but the omen makes the duration and cost of the war visible before departure.",
       "hooks": "Tapped fixing; glimpse the future.",
       "assessment": "A setting treatment of Temple of Epiphany, not a literal named Homeric temple.",
       "id": "ODY-072",
@@ -3361,10 +3404,20 @@
       "baselineScore": 5,
       "baselineRationale": "Excellent match: A land that enters slowly but immediately scries makes the waiting harbor itself the place where the future is read.",
       "sources": [],
-      "sourceReview": "Deferred to the Trojan/pre-Odyssey cluster: the current source is Iliad II / Aulis rather than the Telemachy.",
+      "sourceReview": "Iliad II and Apollodorus Epitome 3.11 checked: the Greek armament gathers at Aulis; the serpent-and-sparrows portent is interpreted by Calchas as a sign of a long delay before Troy falls.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-072",
+        "kind": "adaptation",
+        "text": "At Aulis, the fleet learned that a promised victory could still be nine years away.",
+        "source": "https://classics.mit.edu/Homer/iliad.2.ii.html",
+        "basis": "Iliad II: Calchas interprets the nine birds as the long wait before Troy's fall; Apollodorus places the armament at Aulis.",
+        "fit": "Makes the scry-land's pause-and-foresee identity legible without pretending Aulis is a literal Temple of Epiphany.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 19",
@@ -6877,7 +6930,7 @@
       "sourceLabel": "Iliad 10; visual interpretation",
       "sequence": "Receive divine backing; strike on the night raid; survive.",
       "emotions": "Confidence / danger",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A small warrior survives an outsized night mission because divine attention amplifies caution, timing and nerve rather than raw stature.",
       "hooks": "Targeted aid gives growth and damage protection.",
       "assessment": "Keep Oracle function; hoplite terminology is a visual-era borrowing rather than Homeric precision.",
       "id": "ODY-149",
@@ -6892,10 +6945,20 @@
       "baselineScore": 4,
       "baselineRationale": "Strong match: Heroic rewards being targeted and prevents damage, making divine attention itself the source of survival during the raid.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Iliad X checked: Diomedes chooses Odysseus for the night raid because Athena favours him and he is quick to understand; Athena sends an omen, hears their prayers and guides the raid.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-149",
+        "kind": "adaptation",
+        "text": "In darkness, Athena's favor mattered more than the size of a shield.",
+        "source": "https://classics.mit.edu/Homer/iliad.10.x.html",
+        "basis": "Iliad X repeatedly links Odysseus and Diomedes's success on the night raid to Athena's guidance.",
+        "fit": "Supports the Favored Hoplite reprint treatment without inventing a named new raider.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 7",
@@ -8347,10 +8410,10 @@
       }
     },
     {
-      "sourceLabel": "Odyssey 9; voyage interpretation",
+      "sourceLabel": "Apollodorus Epitome 3.11–12; Trojan expedition transport",
       "sequence": "Crew the vessel; raid a coast; establish access to land.",
       "emotions": "Adventure / incursion",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "War before battle: a crewed hull turns scattered kings, soldiers and supplies into an expedition capable of reaching another shore.",
       "hooks": "Attack reveals a possible land.",
       "assessment": "Preserve printed Raiders' Karve function; Viking naming is a treatment issue, not evidence of a Greek ship type.",
       "id": "ODY-180",
@@ -8370,11 +8433,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "Deferred to Trojan/pre-Odyssey source band; production metadata identifies Achaean expedition transport rather than Book IX homeward voyage.",
+      "sourceReview": "Apollodorus Epitome 3.11–12 checked: the Achaean armament musters at Aulis and Odysseus's Cephallenian contingent brings twelve ships. The card is expedition infrastructure, not a Book IX homeward vessel.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
       "quotationCandidate": null,
-      "sourceClass": "deferred-trojan-pre-odyssey"
+      "sourceClass": "deferred-trojan-pre-odyssey",
+      "flavourTextCandidate": {
+        "cardId": "ODY-180",
+        "kind": "adaptation",
+        "text": "Twelve Ithacan hulls carried one reluctant king toward a ten-year war.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "Apollodorus Epitome 3.11–12 lists the Achaean muster and twelve ships under Ulysses.",
+        "fit": "Repositions the Vehicle cleanly in the prewar/Trojan transport layer.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5",
@@ -8696,7 +8769,7 @@
       "sourceLabel": "Apollodorus Epitome 3.6–7; prewar setting",
       "sequence": "Remember an old obligation; leave the young household; carry home in memory.",
       "emotions": "Duty and reluctance / separation",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Home before conscription: Ithaca is the life Odysseus is trying to preserve when an obligation he helped create calls him away.",
       "hooks": "Adventure recovers a small permanent; land remains afterward.",
       "assessment": "Town is an approved design exception; do not restore an obsolete generic Adventure land.",
       "id": "ODY-188",
@@ -8716,10 +8789,20 @@
           "url": "https://www.theoi.com/Text/ApollodorusE.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Apollodorus Library 3.10.9 and Epitome 3.6–7 checked: Odysseus helps devise the oath that binds Helen's suitors, then later tries to avoid the resulting Trojan expedition by feigning madness.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-188",
+        "kind": "adaptation",
+        "text": "Before Ithaca became the home he fought to regain, it was the home he tried not to leave.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "The oath tradition and feigned-madness episode frame Odysseus as reluctant to join the expedition.",
+        "fit": "Makes the Town's prewar emotional identity distinct from later homecoming Ithaca.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 6–13",
@@ -11513,8 +11596,8 @@
     {
       "sourceLabel": "Apollodorus Epitome 3.6; prewar interpretation",
       "sequence": "Bind the suitors to the defence of Helen's marriage.",
-      "emotions": "Obligation.",
-      "attributes": "Setting portrayal; no invented character action.",
+      "emotions": "Binding obligation / private courtship becomes collective future liability.",
+      "attributes": "Setting of obligation before consequence: the oath creates a network of duties that outlives the courtship that produced it.",
       "hooks": "Establish place and mood through the existing land function; preserve fixing and pacing.",
       "assessment": "White basic treatment; verify the oath's wider ancient source before selecting an exact quote.",
       "id": "ODY-253",
@@ -11534,10 +11617,12 @@
           "url": "https://www.theoi.com/Text/ApollodorusE.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Apollodorus Library 3.10.9 checked: Odysseus advises Tyndareus to require Helen's suitors to swear that they will defend the chosen bridegroom against wrong done to his marriage.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "no flavour text selected",
+      "quotationCandidate": null,
+      "flavourTextCandidate": null,
+      "quotationAuditOutcome": "Basic Land — Plains treatment. The oath tradition is carried by name, art and source metadata; no additional flavour text is selected for the basic-land frame."
     },
     {
       "sourceLabel": "Odyssey 6–8",
@@ -12745,7 +12830,7 @@
       "sourceLabel": "Iliad 18–22",
       "sequence": "Accept the shortened life; return to battle; turn grief into glory.",
       "emotions": "Fury / terror",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Fury without illusion of safety: Achilles knows victory does not cancel his own doom and attacks anyway.",
       "hooks": "Large first-striking attacker; draw strength from the dead.",
       "assessment": "The dying-fate heroic version differs from Miller's paired emotional portrayal.",
       "id": "ODY-286",
@@ -12760,10 +12845,43 @@
       "baselineScore": 4,
       "baselineRationale": "Strong match: the card clearly represents Odysseus remembers Achilles as the brilliant, doomed center of Achaean martial glory, and Combat; graveyard pressure supports that story even if the execution is somewhat general.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Iliad XXII checked: after killing Hector, Achilles explicitly accepts that his own fate will come whenever Zeus and the gods send it. The card's graveyard-facing aggression therefore reads as glory pursued in full knowledge of mortality.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-286",
+        "kind": "quote",
+        "text": "I will accept my fate whensoever Jove and the other gods see fit to send it.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Iliad",
+        "location": "Book 22, Achilles after Hector's death",
+        "speaker": "Achilles",
+        "source": "https://classics.mit.edu/Homer/iliad.22.xxii.html",
+        "context": "Achilles answers Hector's death by acknowledging his own inevitable fate.",
+        "fit": "An exact statement of the 'doomed to glory' portrayal.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 16,
+        "characters": 80
+      },
+      "flavourTextCandidate": {
+        "cardId": "ODY-286",
+        "kind": "quote",
+        "text": "I will accept my fate whensoever Jove and the other gods see fit to send it.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Iliad",
+        "location": "Book 22, Achilles after Hector's death",
+        "speaker": "Achilles",
+        "source": "https://classics.mit.edu/Homer/iliad.22.xxii.html",
+        "context": "Achilles answers Hector's death by acknowledging his own inevitable fate.",
+        "fit": "An exact statement of the 'doomed to glory' portrayal.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 16,
+        "characters": 80
+      }
     },
     {
       "sourceLabel": "Tennyson, Ulysses",
@@ -13033,7 +13151,7 @@
       "sourceLabel": "Iliad 6 and 22",
       "sequence": "Defend the city; stand for the family; face the superior attacker.",
       "emotions": "Duty / tragic resolve",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Duty made tragic by foresight: Hector understands what may happen to his city and family and still returns to the line that depends on him.",
       "hooks": "Vigilance; support attacking allies; keep a defender ready.",
       "assessment": "Hector's defence should remain visible beneath the red-white aggression.",
       "id": "ODY-293",
@@ -13048,10 +13166,43 @@
       "baselineScore": 5,
       "baselineRationale": "Excellent match: Combat; Legendary matters directly dramatizes a defining feature of Hector bears the defense of Troy and its people.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Iliad VI checked: Hector acknowledges Troy will fall and fears Andromache's captivity, but refuses to abandon the front because he sees himself as responsible for defending Troy and its people.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "candidate verified; final card-space check pending",
+      "quotationCandidate": {
+        "cardId": "ODY-293",
+        "kind": "quote",
+        "text": "I know nothing save to fight bravely in the forefront of the Trojan host",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Iliad",
+        "location": "Book 6, Hector answers Andromache",
+        "speaker": "Hector",
+        "source": "https://classics.mit.edu/Homer/iliad.6.vi.html",
+        "context": "Hector refuses to remain inside Troy despite knowing the danger to himself and his family.",
+        "fit": "Directly states the defender identity represented by vigilance and attacking-legend support.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 72
+      },
+      "flavourTextCandidate": {
+        "cardId": "ODY-293",
+        "kind": "quote",
+        "text": "I know nothing save to fight bravely in the forefront of the Trojan host",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Iliad",
+        "location": "Book 6, Hector answers Andromache",
+        "speaker": "Hector",
+        "source": "https://classics.mit.edu/Homer/iliad.6.vi.html",
+        "context": "Hector refuses to remain inside Troy despite knowing the danger to himself and his family.",
+        "fit": "Directly states the defender identity represented by vigilance and attacking-legend support.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 72
+      }
     },
     {
       "sourceLabel": "Odyssey 4; later reception synthesis",
@@ -13125,7 +13276,7 @@
       "sourceLabel": "Apollodorus Epitome 7.35",
       "sequence": "Receive the wandering king; rule amid war; leave him to return after her death.",
       "emotions": "Command / precarious continuity",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A queen whose alliance creates a whole second political life for Odysseus, yet whose own death is the event that ends it and releases his story onward.",
       "hooks": "Attack beside a hero; lend protection.",
       "assessment": "This is a post-Odyssey tradition, not a missing Homeric queen.",
       "id": "ODY-296",
@@ -13145,10 +13296,20 @@
           "url": "https://www.theoi.com/Text/ApollodorusE.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Apollodorus Epitome 7.34–35 checked: Callidice asks Odysseus to stay, offers him the Thesprotian kingdom, has a son by him, shares his reign and wars, then her death ends that reign and Odysseus returns to Ithaca.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-296",
+        "kind": "adaptation",
+        "text": "Callidice gave the wanderer a kingdom. Her death gave the wanderer back his road.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "Apollodorus Epitome 7.34–35: marriage and reign follow her offer; her death ends the Thesprotian kingship.",
+        "fit": "Captures why her combat design protects another legendary attacker rather than herself.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 11 and 24; memory pattern",
@@ -13449,7 +13610,7 @@
       "sourceLabel": "Apollodorus Epitome 7.36",
       "sequence": "Learn the father's name; sail in search; arrive without recognition.",
       "emotions": "Hope / tragic uncertainty",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Kinship as an unknown destination: the search begins with a name and relationship but no recognition when father and son finally occupy the same shore.",
       "hooks": "Search and manifest; protect the unknown travellers.",
       "assessment": "The voyage begins in desire for kinship, distinct from the fatal raid card.",
       "id": "ODY-304",
@@ -13469,16 +13630,26 @@
           "url": "https://www.theoi.com/Text/ApollodorusE.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Apollodorus Epitome 7.36 checked: Telegonus learns from Circe that Odysseus is his father and sails out specifically to search for him.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-304",
+        "kind": "adaptation",
+        "text": "He knew whom he was seeking long before he knew what his father would look like.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "Apollodorus Epitome 7.36: Telegonus learns his parentage from Circe and sails in search of Odysseus.",
+        "fit": "Supports scry plus Manifest Fate as a search conducted through uncertainty.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Apollodorus Epitome 7.36–37",
       "sequence": "Raid unfamiliar Ithaca; meet resistance; wound the unrecognised father.",
       "emotions": "Misrecognition / horror",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Catastrophe through misrecognition: father and son enter the same fight with enough information to oppose each other and not enough to stop.",
       "hooks": "Divided damage; a legendary casualty supplies painful knowledge.",
       "assessment": "A direct person-specific tragedy, not a generic naval skirmish.",
       "id": "ODY-305",
@@ -13498,10 +13669,20 @@
           "url": "https://www.theoi.com/Text/ApollodorusE.html"
         }
       ],
-      "sourceReview": "key passage checked; mechanical interpretation remains editorial",
+      "sourceReview": "Apollodorus Epitome 7.36–37 checked: Telegonus lands on Ithaca without recognition, drives off cattle, fights Odysseus, kills him with the stingray-barbed spear, and only afterward recognises and laments his father.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-305",
+        "kind": "adaptation",
+        "text": "The stranger he wounded became his father only after the spear had done its work.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "Apollodorus Epitome 7.36–37: recognition follows the fatal wound.",
+        "fit": "Makes the card's legendary-damage draw feel like knowledge purchased too late.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 8 and 24; reception concept",
