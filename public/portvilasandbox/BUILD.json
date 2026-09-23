@@ -1,8 +1,14 @@
 {
-  "version": "0.1.18",
-  "publishedAt": null,
+  "version": "0.1.19",
+  "publishedAt": "2026-09-22T22:35:36.156Z",
   "baseline": "cbd-demolition-2026-09-17.1",
-  "sourcePdf": "Publisher original; local original remains unchanged",
-  "release": "stability-1",
-  "note": "Canonical module graph prevents lazy layers restarting the app; bounded data/storage loading, graphics recovery, smaller shadow maps and preserved navigation state."
+  "release": "floor-anchors-1",
+  "note": "Traceable floor anchors, terrain-following exposed foundations and elevation review. No new surveyed terrain imported. Preserves stability-1 loading and navigation fixes.",
+  "assets": [
+    "assets/index-5phr77lE.css",
+    "assets/index-UW6qFE-L.js",
+    "assets/research-BWxMo9ZI.js",
+    "assets/research-data-DXfJnZDb.js",
+    "assets/vision-CAC1ck2W.js"
+  ]
 }

@@ -31,7 +31,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Rebuild and verify the canonical module graph
+      - name: Verify retained stability fixtures and the current module graph
         run: |
           python3 scripts/port-vila-stability-build.py
           git diff --exit-code -- public/portvilasandbox/assets
@@ -49,6 +49,7 @@ jobs:
         run: |
           set -euo pipefail
           base='https://kliawota.design/portvilasandbox/'
+          entry="$(python3 -c 'import json; d=json.load(open("public/portvilasandbox/BUILD.json")); print(next(a for a in d["assets"] if a.startswith("assets/index-") and a.endswith(".js")))')"
           local_sha="$(sha256sum public/portvilasandbox/index.html | awk '{print $1}')"
           local_header_sha="$(sha256sum public/portvilasandbox/assets/loader-header.jpg | awk '{print $1}')"
           echo "Local index SHA: $local_sha"
@@ -78,7 +79,7 @@ jobs:
                 fi
               fi
 
-              if grep -q 'Explore Port Vila' "$body"                 && grep -q 'Downtown in 3D.' "$body"                 && grep -q 'Welcome to the Port Vila Sandbox' "$body"                 && grep -q 'Leave Port Vila Sandbox?' "$body"                 && grep -q 'index-stability-1.js' "$body"                 && grep -q 'loader-header.jpg' "$body"                 && [ "$header_ok" = true ]; then
+              if grep -q 'Explore Port Vila' "$body"                 && grep -q 'Downtown in 3D.' "$body"                 && grep -q 'Welcome to the Port Vila Sandbox' "$body"                 && grep -q 'Leave Port Vila Sandbox?' "$body"                 && grep -Fq "$entry" "$body"                 && grep -q 'loader-header.jpg' "$body"                 && [ "$header_ok" = true ]; then
                 echo "Live onboarding, navigation and supplied loader header are present."
                 if [ "$live_sha" = "$local_sha" ]; then
                   echo "Live index exactly matches repository index."
@@ -86,9 +87,9 @@ jobs:
                   echo "Markers are live, although transformed/cached bytes differ from local."
                 fi
                 assets_ok=true
-                for asset in index-stability-1.js research-stability-1.js vision-stability-1.js stability-runtime-1.js; do
-                  expected="$(sha256sum "public/portvilasandbox/assets/$asset" | awk '{print $1}')"
-                  if curl --max-time 20 --fail --silent --show-error --location -o "$header" "${base}assets/${asset}?verify=${GITHUB_SHA}-${attempt}"; then
+                for asset in $(python3 -c 'import json; print(" ".join(json.load(open("public/portvilasandbox/BUILD.json"))["assets"]))'); do
+                  expected="$(sha256sum "public/portvilasandbox/$asset" | awk '{print $1}')"
+                  if curl --max-time 20 --fail --silent --show-error --location -o "$header" "${base}${asset}?verify=${GITHUB_SHA}-${attempt}"; then
                     actual="$(sha256sum "$header" | awk '{print $1}')"
                     [ "$expected" = "$actual" ] || assets_ok=false
                   else
@@ -96,7 +97,7 @@ jobs:
                   fi
                 done
                 if [ "$assets_ok" = true ]; then
-                  echo 'All stability modules exactly match repository bytes.'
+                  echo 'All release assets exactly match repository bytes.'
                   exit 0
                 fi
               fi

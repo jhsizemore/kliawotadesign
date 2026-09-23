@@ -23,8 +23,8 @@ test('all reachable chunks resolve to exactly one app entry URL', () => {
   visit(root);
   const entries = [...visited].filter(url => /\/index-[^/]+\.js/.test(url));
   assert.deepEqual(entries, [root.href]);
-  assert.ok([...visited].some(url => url.includes('research-stability-1')));
-  assert.ok([...visited].some(url => url.includes('vision-stability-1')));
+  assert.ok([...visited].some(url => /\/research-[^/]+\.js$/.test(url)));
+  assert.ok([...visited].some(url => /\/vision-[^/]+\.js$/.test(url)));
 });
 
 test('view transitions retain navigation guard state', () => {
