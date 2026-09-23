@@ -486,7 +486,9 @@
       },
       "brief": {
         "sourceClass": "direct",
-        "sourceReview": "Books IX–XII source pass checked; classification: direct. Receive the traveller; bind the winds; release a favourable passage."
+        "sourceReview": "Books IX–XII source pass checked; classification: direct. Receive the traveller; bind the winds; release a favourable passage.",
+        "attributes": "A host who can literally bind weather into a gift: generosity is immense, but the gift remains safe only while the recipient's crew trusts what they were told.",
+        "emotions": "Generosity with enormous leverage / the recipient feels one mistake could release everything at once."
       }
     },
     "ODY-173": {
@@ -3554,7 +3556,8 @@
       },
       "brief": {
         "sourceClass": "landscape-composite",
-        "sourceReview": "Books IX–XII source pass checked; classification: landscape-composite. Round a rocky coast under heavy surf."
+        "sourceReview": "Books IX–XII source pass checked; classification: landscape-composite. Round a rocky coast under heavy surf.",
+        "emotions": "Wild coastal force / every turn of the headland threatens to reveal another hazard."
       }
     },
     "ODY-280": {
@@ -3648,7 +3651,8 @@
       },
       "brief": {
         "sourceClass": "direct-setting",
-        "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Stand beside the blood trench at Ocean's edge."
+        "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Stand beside the blood trench at Ocean's edge.",
+        "emotions": "Ritual dread / the living stand at the edge of a place that should belong only to the dead."
       }
     },
     "ODY-260": {
@@ -3668,7 +3672,8 @@
       },
       "brief": {
         "sourceClass": "direct-setting",
-        "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Enter the enclosed Laestrygonian harbour."
+        "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Enter the enclosed Laestrygonian harbour.",
+        "emotions": "False shelter / the enclosed harbour turns safety into a trap once escape routes close."
       }
     },
     "ODY-262": {
@@ -3678,7 +3683,8 @@
       },
       "brief": {
         "sourceClass": "direct-setting",
-        "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Pass below Scylla's towering cliff."
+        "sourceReview": "Books IX–XII source pass checked; classification: direct-setting. Pass below Scylla's towering cliff.",
+        "emotions": "Exposure and inevitability / the cliff makes the crew visible to a predator they cannot meaningfully fight."
       }
     },
     "ODY-265": {
