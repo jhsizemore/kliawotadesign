@@ -301,3 +301,12 @@ The last making-of cleanup sharpens Aeolus as a giver of enormous but trust-depe
 This cluster now cleanly carries its central emotional arc: ingenuity repeatedly creates escape, pride or appetite spends that advantage, and survival accumulates obligations rather than resetting the voyage.
 
 Next narrative cluster: **Books XIII–XVI — return, disguise, reconnaissance and the father-son reunion**.
+
+
+## Sixteenth checkpoint: Books XIII–XVI complete
+
+The return/disguise cluster is editorially complete: **20/20 cards** have source review and a flavour-text outcome (**6 direct quotations, 14 source-led adaptations**). No cards are deferred from the cluster.
+
+The making-of layer is also clean: zero generic character/object placeholders and, after sharpening the Eumaeus Forest, zero thin emotion fields. The cluster now consistently reads as concealed homecoming rather than generic travel: arrival precedes recognition, hospitality precedes proof, and Athena's strategic control of knowledge lets reunion happen in the right order.
+
+Next narrative cluster: **Books XVII–XX — palace recognition, suitors, omens and mounting confrontation**.
