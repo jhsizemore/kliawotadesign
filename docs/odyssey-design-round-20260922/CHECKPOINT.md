@@ -369,3 +369,12 @@ An isolated Studio dataset, **editorial-candidate-v1**, now combines the stable 
 The renderer now uses dataset flavour by default, preserves flavour line breaks, includes flavour in review signatures/search, and runs a batch text-fit audit through the same typography fitting function used by the visible proxy. Cards are classified as comfortable, tight, compressed or overflow and can be filtered/exported as a queue.
 
 This begins final card-space selection using actual renderer behaviour rather than arbitrary word-count limits.
+
+
+## Twenty-third checkpoint: card-space priority queue
+
+Static density has been converted into a renderer-review queue without pre-emptively deleting flavour. The queue contains **1 critical**, **7 very-high**, **13 high**, **34 medium** and **254 ordinary** cards.
+
+Only one card is classified critical by the static rule: **ODY-247 Ogygia, Island Beyond Time**. Its 89-word rules box plus 14-word flavour line makes it the first likely omission/shortening case, but even there the editorial flavour candidate remains preserved until Studio's actual fit state is reviewed.
+
+The actual Studio fit/overflow result remains authoritative; static density only determines review order.
