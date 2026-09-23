@@ -326,3 +326,12 @@ Books XXI–XXIV is editorially complete: **34/34 cards** have source review and
 With that, the **core Odyssey Books I–XXIV narrative is complete by cluster**. Cards whose true source band is Trojan/pre-Odyssey, post-Odyssey, later reception or historical-world extension remain deliberately outside that declaration rather than being forced into a Homeric book for convenience.
 
 The remaining editorial phase is now concentrated in non-core source bands: **Trojan/prewar and Iliad material; later ancient/post-Odyssey tradition; modern reception/adaptations; Homeric similes; funerary/craft/navigation/agricultural extensions; and a small set of global making-of placeholders**.
+
+
+## Nineteenth checkpoint: Trojan/prewar and later ancient batch
+
+The highest-risk non-core source batch is reconciled without collapsing distinct traditions into Homer. **Feign Madness** is explicitly Apollodorus/Cypria tradition; **Iphigenia's Sacrifice** remains the Aeschylean actual-sacrifice tradition selected for the set; **Sparta, Hall of Oaths** uses Apollodorus's oath tradition; **Aulis** combines the Iliad II omen with the later mythographic fleet muster; the night raid is Iliad X; Achilles/Hector use Iliad XXII/VI; Callidice and Telegonus remain post-Odyssey Apollodorus material.
+
+This batch resolves **12 previous flavour gaps**: 3 direct quotation candidates, 8 source-led adaptations and 1 deliberate no-flavour basic land. The direct candidates are Iphigenia's sacrifice, Achilles accepting his fate and Hector's duty at the Trojan front. No card is presented as an Odyssey quotation where its source is actually Aeschylus, Apollodorus or the Iliad.
+
+Remaining flavour outcomes after this checkpoint: **22**.
