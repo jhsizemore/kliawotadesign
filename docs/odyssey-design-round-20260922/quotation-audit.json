@@ -256,9 +256,18 @@
     {
       "id": "ODY-013",
       "name": "Feign Madness",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-013",
+        "kind": "adaptation",
+        "text": "He could make a king look harmless. He could not make himself stop being a father.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "Apollodorus Epitome 3.7: the feigned madness collapses when Palamedes threatens Telemachus.",
+        "fit": "Preserves the ruse's emotional failure point without presenting invented prose as ancient quotation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -281,9 +290,25 @@
     {
       "id": "ODY-015",
       "name": "Calchas Reads the Omen",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified direct quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-015",
+        "kind": "quote",
+        "text": "with her spilt blood make an offering, to speed the ships upon their way",
+        "author": "Aeschylus",
+        "translator": "E. D. A. Morshead",
+        "work": "Agamemnon",
+        "location": "Chorus recounting the sacrifice at Aulis",
+        "speaker": "Chorus",
+        "source": "https://classics.mit.edu/Aeschylus/agamemnon.html",
+        "context": "The chorus describes Iphigenia's killing as the cost used to release the expedition.",
+        "fit": "Directly captures the chosen actual-sacrifice tradition and the mechanical exchange of loss for advance.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 70
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -1343,9 +1368,18 @@
     {
       "id": "ODY-072",
       "name": "Temple of Epiphany",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-072",
+        "kind": "adaptation",
+        "text": "At Aulis, the fleet learned that a promised victory could still be nine years away.",
+        "source": "https://classics.mit.edu/Homer/iliad.2.ii.html",
+        "basis": "Iliad II: Calchas interprets the nine birds as the long wait before Troy's fall; Apollodorus places the armament at Aulis.",
+        "fit": "Makes the scry-land's pause-and-foresee identity legible without pretending Aulis is a literal Temple of Epiphany.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2771,9 +2805,18 @@
     {
       "id": "ODY-149",
       "name": "Favored Hoplite",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-149",
+        "kind": "adaptation",
+        "text": "In darkness, Athena's favor mattered more than the size of a shield.",
+        "source": "https://classics.mit.edu/Homer/iliad.10.x.html",
+        "basis": "Iliad X repeatedly links Odysseus and Diomedes's success on the night raid to Athena's guidance.",
+        "fit": "Supports the Favored Hoplite reprint treatment without inventing a named new raider.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -3341,9 +3384,18 @@
     {
       "id": "ODY-180",
       "name": "Raiders' Karve",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-180",
+        "kind": "adaptation",
+        "text": "Twelve Ithacan hulls carried one reluctant king toward a ten-year war.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "Apollodorus Epitome 3.11–12 lists the Achaean muster and twelve ships under Ulysses.",
+        "fit": "Repositions the Vehicle cleanly in the prewar/Trojan transport layer.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -3472,9 +3524,18 @@
     {
       "id": "ODY-188",
       "name": "Ithaca, Before the War",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-188",
+        "kind": "adaptation",
+        "text": "Before Ithaca became the home he fought to regain, it was the home he tried not to leave.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "The oath tradition and feigned-madness episode frame Odysseus as reluctant to join the expedition.",
+        "fit": "Makes the Town's prewar emotional identity distinct from later homecoming Ithaca.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -4575,8 +4636,8 @@
     {
       "id": "ODY-253",
       "name": "Sparta, Hall of Oaths",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
+      "status": "no-flavour-selected",
+      "reason": "Basic Land — Plains treatment. The oath tradition is carried by name, art and source metadata; no additional flavour text is selected for the basic-land frame.",
       "candidate": null,
       "finalSelection": "pending-mechanics-and-layout"
     },
@@ -5002,9 +5063,25 @@
     {
       "id": "ODY-286",
       "name": "Achilles, Doomed to Glory",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified direct quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-286",
+        "kind": "quote",
+        "text": "I will accept my fate whensoever Jove and the other gods see fit to send it.",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Iliad",
+        "location": "Book 22, Achilles after Hector's death",
+        "speaker": "Achilles",
+        "source": "https://classics.mit.edu/Homer/iliad.22.xxii.html",
+        "context": "Achilles answers Hector's death by acknowledging his own inevitable fate.",
+        "fit": "An exact statement of the 'doomed to glory' portrayal.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 16,
+        "characters": 80
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -5106,9 +5183,25 @@
     {
       "id": "ODY-293",
       "name": "Hector, Defender of Troy",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-verified",
+      "reason": "A source-verified direct quotation candidate exists; final selection remains pending mechanics and layout.",
+      "candidate": {
+        "cardId": "ODY-293",
+        "kind": "quote",
+        "text": "I know nothing save to fight bravely in the forefront of the Trojan host",
+        "author": "Homer",
+        "translator": "Samuel Butler",
+        "work": "Iliad",
+        "location": "Book 6, Hector answers Andromache",
+        "speaker": "Hector",
+        "source": "https://classics.mit.edu/Homer/iliad.6.vi.html",
+        "context": "Hector refuses to remain inside Troy despite knowing the danger to himself and his family.",
+        "fit": "Directly states the defender identity represented by vigilance and attacking-legend support.",
+        "verification": "exact excerpt checked",
+        "selection": "candidate; final card-space check pending",
+        "wordCount": 13,
+        "characters": 72
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -5139,9 +5232,18 @@
     {
       "id": "ODY-296",
       "name": "Callidice, Last Queen",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-296",
+        "kind": "adaptation",
+        "text": "Callidice gave the wanderer a kingdom. Her death gave the wanderer back his road.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "Apollodorus Epitome 7.34–35: marriage and reign follow her offer; her death ends the Thesprotian kingship.",
+        "fit": "Captures why her combat design protects another legendary attacker rather than herself.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -5264,17 +5366,35 @@
     {
       "id": "ODY-304",
       "name": "Telegonus Searches for His Father",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-304",
+        "kind": "adaptation",
+        "text": "He knew whom he was seeking long before he knew what his father would look like.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "Apollodorus Epitome 7.36: Telegonus learns his parentage from Circe and sails in search of Odysseus.",
+        "fit": "Supports scry plus Manifest Fate as a search conducted through uncertainty.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-305",
       "name": "Telegonus Ravages Ithaca",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-305",
+        "kind": "adaptation",
+        "text": "The stranger he wounded became his father only after the spear had done its work.",
+        "source": "https://www.theoi.com/Text/ApollodorusE.html",
+        "basis": "Apollodorus Epitome 7.36–37: recognition follows the fatal wound.",
+        "fit": "Makes the card's legendary-damage draw feel like knowledge purchased too late.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -5346,11 +5466,11 @@
   ],
   "summary": {
     "totalCards": 309,
-    "directQuoteCandidates": 78,
-    "sourceLedAdaptations": 183,
-    "flavourCandidates": 261,
-    "noFlavourSelected": 14,
-    "pending": 34,
+    "directQuoteCandidates": 81,
+    "sourceLedAdaptations": 191,
+    "flavourCandidates": 272,
+    "noFlavourSelected": 15,
+    "pending": 22,
     "finalSelections": 0
   }
 }
