@@ -281,3 +281,12 @@ The cross-book Odyssey residue is substantially complete. This pass resolves **3
 The major set concepts now have explicit emotional definitions rather than placeholder prose: **nostos** is restoration of belonging beyond physical arrival; **xenia** is obligation before knowledge of the guest; **metis** is timing/concealment/leverage; **moira** fixes constraints without eliminating responsibility; **recognition** is accumulated evidence reaching certainty; hidden names change what opponents can infer and target; Zeus represents witness/sanction behind social obligation rather than guaranteed instant intervention.
 
 Production, 14A2 and live Studio remain unchanged. Remaining editorial work is now concentrated in genuinely external/non-core bands: Trojan/pre-Odyssey and post-Odyssey tradition, modern reception, and historical/material-world/simile extensions.
+
+
+## Fourteenth checkpoint: Books V–VIII complete
+
+The flavour tracker is reconciled to the authoritative editorial register. The set currently has **78 direct quotation candidates**, **183 source-led adaptation candidates**, and **14 deliberate no-flavour decisions**. That is **261 actual flavour-text candidates**, leaving only **34 cards** without a flavour outcome—not the much larger backlog reported by the older quotation-only tracker.
+
+Books V–VIII is now complete for editorial outcomes: **51 cards = 13 direct quotes + 35 adaptations + 3 no-flavour basic lands**, with zero pending source reviews in the cluster. Final making-of cleanup replaced the remaining generic attributes on Take the Stranger's Hand, Song of the Wooden Horse and Storm over Limestone, and strengthened the thin emotion briefs on the open-sea Island, Windswept Isle, Laurel Grounds and Palmshade Cove.
+
+The next narrative cluster is **Books IX–XII — the wanderings, monsters and crew failures**. Gameplay remains deferred validation and does not block this editorial pass.
