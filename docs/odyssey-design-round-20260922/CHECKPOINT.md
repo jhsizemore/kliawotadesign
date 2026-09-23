@@ -360,3 +360,12 @@ The final full-set quality sweep is complete. Seven remaining generic character/
 - missing flavour outcomes: 0.
 
 This completes the phase Hunter requested: references, flavour-text direction and emotional making are all covered at editorial-candidate level. The project can now move to **final flavour/card-space selection and render inspection**, with gameplay validation and production integration remaining separate gates.
+
+
+## Twenty-second checkpoint: editorial render candidate
+
+An isolated Studio dataset, **editorial-candidate-v1**, now combines the stable mechanical candidate with all 309 editorial flavour outcomes. Studio's dataset picker can load it directly; production remains the default and remains unchanged.
+
+The renderer now uses dataset flavour by default, preserves flavour line breaks, includes flavour in review signatures/search, and runs a batch text-fit audit through the same typography fitting function used by the visible proxy. Cards are classified as comfortable, tight, compressed or overflow and can be filtered/exported as a queue.
+
+This begins final card-space selection using actual renderer behaviour rather than arbitrary word-count limits.
