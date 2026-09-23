@@ -6551,9 +6551,9 @@
       "sourceLabel": "Odyssey 5 and 23; craft composite",
       "sequence": "Choose olive timber; shape it; make a vessel or rooted home.",
       "emotions": "Pride / resilience",
-      "attributes": "Odyssean craft shown through an ordinary worker.",
+      "attributes": "Ordinary mastery of the same material that anchors both escape and home: olivewood can become a vessel outward or a structure that cannot be moved.",
       "hooks": "Tap to work; recover land mana after Survival.",
-      "assessment": "Retain a practical common; the bed and raft remain distinct named designs.",
+      "assessment": "Keep as an explicit craft composite. The raft and marriage bed remain the named heroic objects; this common represents the transferable skill between them.",
       "id": "ODY-140",
       "number": 140,
       "name": "Olivewood Carpenter",
@@ -6575,10 +6575,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books V and XXIII checked: Odysseus personally works timber for the raft and later describes building the rooted olive-wood bed. The anonymous Olivewood Carpenter deliberately combines those two craft images rather than claiming a named worker.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-140",
+        "kind": "adaptation",
+        "text": "The same wood can carry a wanderer away or root a household in place.",
+        "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+        "basis": "Odyssey V gives Odysseus practical timber construction; Odyssey XXIII gives the rooted olive-wood bed.",
+        "fit": "One line unifies the common carpenter without pretending the poem names such a worker.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9",
@@ -6708,12 +6718,12 @@
       }
     },
     {
-      "sourceLabel": "Later Greek funerary reception; source verification pending",
+      "sourceLabel": "Later Greek and Roman funerary tradition — Charon's obol",
       "sequence": "Provide the fare; accompany the dead; complete the passage.",
       "emotions": "Solemn duty / finality",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A tiny material obligation imagined as fare for the final crossing; the object belongs to later funerary reception, not Homer's underworld ritual.",
       "hooks": "One graveyard card is removed; later choose broad graveyard removal or knowledge.",
-      "assessment": "Preserve Soul-Guide Lantern as Obol for the Dead. Charon's obol is not part of Homer's Book 11; verify a later source before quoting it.",
+      "assessment": "Keep the Soul-Guide Lantern reskin only with an explicit later-tradition label. Never present Charon's obol as an Odyssey XI practice.",
       "id": "ODY-144",
       "number": 144,
       "name": "Obol for the Dead",
@@ -6726,10 +6736,20 @@
       "baselineScore": 4,
       "baselineRationale": "Excellent reception-layer fit: Soul-Guide Lantern turns the obol into a real, flexible graveyard tool while the card explicitly remains later Greek/Greco-Roman funerary reception rather than Homeric Book XI.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Later funerary tradition checked: the coin placed with or in the mouth of the dead as fare for Charon is post-Homeric and archaeologically/literarily attested in later Greek and Roman practice. It is not part of Odyssey XI.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-144",
+        "kind": "adaptation",
+        "text": "Later mourners gave the dead a final fare for a crossing Homer never charged them for.",
+        "source": "https://www.metmuseum.org/art/collection/search",
+        "basis": "Later Greek/Roman Charon's-obol practice; Odyssey XI itself uses blood and libations rather than a ferryman's coin.",
+        "fit": "Makes the reception gap part of the flavour instead of hiding it.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 13",
@@ -6775,9 +6795,9 @@
       "sourceLabel": "Odyssey 2 and 7; household composite",
       "sequence": "Weave; respond to new demands; sustain more workers.",
       "emotions": "Persistence / growing resistance",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Repeated textile work as institutional endurance: many ordinary hands can keep a household functioning while one famous loom carries the story.",
       "hooks": "Enchantment entry readies the workers; paid tapping makes a citizen.",
-      "assessment": "Untap plus token production is a real resource engine; guard against cheap repeat loops.",
+      "assessment": "Keep as a composite support engine. It should broaden the waiting-house texture without turning every weaver into Penelope.",
       "id": "ODY-146",
       "number": 146,
       "name": "Weavers of the Waiting House",
@@ -6799,10 +6819,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.7.vii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books II and VII checked: Penelope's weaving delays the suitors while Phaeacian women are praised for exceptional weaving skill. The plural anonymous Weavers are a household composite, not a named group in one scene.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-146",
+        "kind": "adaptation",
+        "text": "A waiting house survives because not every thread belongs to the queen.",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "basis": "Penelope's loom is famous, but Homer also presents weaving as ordinary skilled household labour.",
+        "fit": "Separates anonymous household endurance from Penelope's singular deception.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 2; recurring epic formula",
@@ -7518,12 +7548,12 @@
       }
     },
     {
-      "sourceLabel": "Homeric simile; extension",
+      "sourceLabel": "Iliad XVII / Homeric wildfire simile; extension",
       "sequence": "Fire catches dry scrub; spreads; threatens those beyond the first victim.",
       "emotions": "Momentum / alarm",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Violence understood by analogy to spreading fire: one death becomes the point from which danger reaches beyond the first victim.",
       "hooks": "Large removal; death spreads smaller damage to players.",
-      "assessment": "An explicitly invented simile card, not a literal Odyssey wildfire episode.",
+      "assessment": "Keep as explicit Homeric-simile adaptation. Do not localise it to a literal burning episode.",
       "id": "ODY-161",
       "number": 161,
       "name": "Wildfire Through Dry Scrub",
@@ -7536,10 +7566,20 @@
       "baselineScore": 5,
       "baselineRationale": "A large Limited removal spell gets its spectacle from consequence, not extra clauses, while adding one of the missing MV6 roles.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Iliad XVII checked: fighting around Patroclus is compared to consuming flames spreading over a city; other Iliadic passages likewise compare battle to fire sweeping woodland. This is a simile card, not an Odyssey wildfire event.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-161",
+        "kind": "adaptation",
+        "text": "One death became the spark; the battle supplied the dry ground.",
+        "source": "https://classics.mit.edu/Homer/iliad.17.xvii.html",
+        "basis": "Iliad XVII compares spreading battle to consuming flame.",
+        "fit": "Matches the removal-plus-splash-damage structure without claiming literal fire.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 10 and 12; imagined song",
@@ -7589,9 +7629,9 @@
       "sourceLabel": "Madeline Miller, The Song of Achilles; adaptation brief",
       "sequence": "Grow together; fight as companions; let love and glory collide.",
       "emotions": "Devotion / impending loss",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A modern paired-hero portrayal in which martial brilliance is inseparable from intimacy, and the final heroic escalation already carries the knowledge of loss.",
       "hooks": "Paired bodies; shared attack; a final concentrated heroic feat.",
-      "assessment": "An adaptation title, not a song performed inside Homer's Odyssey. Current double strike is legal in either hybrid colour.",
+      "assessment": "Keep the modern-reception label explicit. Do not quote copyrighted novel prose unless a short exact authorised excerpt is separately selected.",
       "id": "ODY-163",
       "number": 163,
       "name": "Song of Achilles",
@@ -7609,10 +7649,20 @@
           "url": "https://madelinemiller.com/the-song-of-achilles/"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Madeline Miller's official Song of Achilles material checked: the retelling centres Achilles and Patroclus's relationship, Achilles's pursuit of glory and the overwhelming grief produced by Patroclus's death. This card is modern reception, not an in-world Homeric song.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-163",
+        "kind": "adaptation",
+        "text": "They learned glory together; only one of them was promised to survive it.",
+        "source": "https://madelinemiller.com/the-song-of-achilles/",
+        "basis": "Miller's official materials frame the novel around the Achilles–Patroclus bond, glory and devastating loss.",
+        "fit": "Original reception flavour for the paired-token-to-single-hero Saga arc.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; craft extension",
@@ -7654,12 +7704,12 @@
       }
     },
     {
-      "sourceLabel": "Mediterranean setting; extension",
+      "sourceLabel": "Mediterranean material-world extension",
       "sequence": "Heat builds; people labour; every effort exacts a cost.",
       "emotions": "Endurance / pressure",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Environmental pressure without a monster or god: ordinary labour becomes costly simply because the built landscape stores the day's heat.",
       "hooks": "Tapping produces a small burn once each turn.",
-      "assessment": "Setting texture; no claim to a discrete episode.",
+      "assessment": "Keep as setting texture and original flavour. It should not acquire a false book citation merely to look source-specific.",
       "id": "ODY-165",
       "number": 165,
       "name": "Summer Heat on Stone",
@@ -7672,10 +7722,20 @@
       "baselineScore": 5,
       "baselineRationale": "The enchantment turns tapping creatures for attacks, crew or work into measured red pressure without another episode-specific hazard.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Material-world extension reviewed: heat on exposed stone is atmospheric Mediterranean texture rather than a discrete Homeric episode. No specific ancient event is claimed.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-165",
+        "kind": "adaptation",
+        "text": "By midday the stone returned every measure of heat the sun had given it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Mediterranean Odyssey setting used only as atmospheric grounding; the exact heat-on-stone scene is invented.",
+        "fit": "Supports a once-per-turn tapping burn without pretending this is a Homeric incident.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9",
@@ -7961,12 +8021,12 @@
       }
     },
     {
-      "sourceLabel": "Homeric lion simile; source audit pending",
+      "sourceLabel": "Classical lioness imagery / Homeric lion analogues; adaptation",
       "sequence": "Protect the vulnerable; confront the threat; remain ready afterward.",
       "emotions": "Fierceness / checked aggression",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Protective ferocity built from a family of classical lion images rather than one source line; defence and attack become the same instinct.",
       "hooks": "Large boost and trample; defence can restore readiness.",
-      "assessment": "Label the exact mother-lion image as an adaptation of Homeric animal comparison unless its passage is verified.",
+      "assessment": "Keep mechanics provisionally, but flag the title/source claim for final naming review. Never label this as a verified Homeric mother-lion simile.",
       "id": "ODY-172",
       "number": 172,
       "name": "Mother Lion's Charge",
@@ -7984,11 +8044,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.20.xx.html"
         }
       ],
-      "sourceReview": "Deferred to Homeric-simile audit; old Book XX placement removed.",
+      "sourceReview": "Source audit corrected: no exact Homeric 'mother lion charge' was verified. Odyssey IV uses a lioness caught in toils as Penelope's anxiety image; Iliad XVIII compares Achilles to a male lion whose cubs were stolen. Later classical tragedy also develops lioness-with-young imagery. The card title is therefore an adaptation, not an exact Homeric simile.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
       "quotationCandidate": null,
-      "sourceClass": "deferred-homeric-simile"
+      "sourceClass": "deferred-homeric-simile",
+      "flavourTextCandidate": {
+        "cardId": "ODY-172",
+        "kind": "adaptation",
+        "text": "Classical poets knew the lion's fury; this mother-lion is our adaptation of that inherited image.",
+        "source": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0113",
+        "basis": "Classical lion/lioness imagery exists across Homer and later tragedy, but the exact card image is composite.",
+        "fit": "Turns the source caveat into honest flavour rather than inventing an attribution.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 10",
@@ -8492,9 +8562,9 @@
       "sourceLabel": "Odyssey 9; later interpretation",
       "sequence": "Construct a name; exploit anonymity; learn while unseen.",
       "emotions": "Self-invention / uncertainty",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A lie elevated into a method of selfhood: anonymity is not only concealment but space to choose what identity others are allowed to see.",
       "hooks": "Protect face-down bodies; reward hidden attackers.",
-      "assessment": "A conceptual reception version, distinct from the historical cave scene.",
+      "assessment": "Keep as explicit reception/interpretive card, distinct from Odysseus, Named Nobody, which represents the cave tactic itself.",
       "id": "ODY-182",
       "number": 182,
       "name": "Nobody, Self-Invented",
@@ -8512,11 +8582,21 @@
           "url": "https://classics.mit.edu/Homer/odyssey.9.ix.html"
         }
       ],
-      "sourceReview": "Deferred to later reception: production metadata treats 'Nobody' as constructed-identity reception, not simply the Book IX episode.",
+      "sourceReview": "Odyssey IX checked as the ancient basis: 'Nobody' is a temporary tactical false name used to defeat Polyphemus. The card deliberately extends that moment into a later conceptual reading of identity as something Odysseus can construct and inhabit.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
       "quotationCandidate": null,
-      "sourceClass": "deferred-later-reception"
+      "sourceClass": "deferred-later-reception",
+      "flavourTextCandidate": {
+        "cardId": "ODY-182",
+        "kind": "adaptation",
+        "text": "Nobody began as a lie. The dangerous discovery was how useful a chosen name could become.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "The ancient false-name trick is direct; the self-invention framing is later interpretation.",
+        "fit": "Separates reception from the literal Cyclops scene.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 19; visual interpretation",
@@ -9469,9 +9549,9 @@
       "sourceLabel": "Madeline Miller, The Song of Achilles; adaptation brief",
       "sequence": "Follow the beloved; share the heroic struggle; leave a transformative loss.",
       "emotions": "Devotion / grief",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Companionship as moral force: Patroclus matters not because he matches Achilles's power, but because his loyalty and compassion change what Achilles's power means.",
       "hooks": "Aid a legendary companion; death leaves lasting strength.",
-      "assessment": "Exact novel passage still needed before a direct quote or specific scene claim.",
+      "assessment": "Keep as modern reception. Use original adaptation flavour rather than unverified copyrighted novel quotation.",
       "id": "ODY-204",
       "number": 204,
       "name": "Patroclus, Beloved Companion",
@@ -9489,18 +9569,28 @@
           "url": "https://madelinemiller.com/the-song-of-achilles/"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Madeline Miller's official Song of Achilles materials checked: Patroclus is framed as compassionate, loyal and morally distinct from Achilles's heroic brilliance; his fateful decision and death transform Achilles.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-204",
+        "kind": "adaptation",
+        "text": "He was not Achilles's shadow. He was the person whose loss changed what Achilles became.",
+        "source": "https://madelinemiller.com/the-song-of-achilles/",
+        "basis": "Miller's official guide stresses Patroclus's compassion, loyalty and decisive effect on Achilles.",
+        "fit": "Matches companion support and a lasting death trigger.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 4 and 8; reception synthesis",
       "sequence": "Tell competing stories of Troy; expose hidden loyalties; shape how the past is remembered.",
       "emotions": "Ambiguity / fascination",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A person turned into an argument: each surviving account makes Helen more legible in one direction and less settleable overall.",
       "hooks": "Sagas and exile create further possibilities.",
-      "assessment": "Do not treat one account of Helen's intent as universally settled.",
+      "assessment": "Keep as reception synthesis without assigning one canonical motive. The ancient contradiction itself is enough to ground the card.",
       "id": "ODY-205",
       "number": 205,
       "name": "Helen, Face of the War",
@@ -9522,10 +9612,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.8.viii.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Odyssey IV and VIII checked as the ancient baseline: Helen tells one memory in which she recognises and aids disguised Odysseus, while Menelaus tells another in which her actions at the wooden horse nearly expose the Greeks. The card intentionally preserves contradictory remembrance rather than resolving motive.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-205",
+        "kind": "adaptation",
+        "text": "Every witness remembered Helen clearly. They did not remember the same woman.",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "basis": "Odyssey IV preserves competing stories of Helen's conduct during the war.",
+        "fit": "Supports Saga/exile possibilities as competing remembered versions.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9–12; original metaphor",
@@ -10194,9 +10294,9 @@
       "sourceLabel": "Odyssey 11 and 24; agricultural composite",
       "sequence": "Work the threshing floor; separate grain; maintain productive ground.",
       "emotions": "Patient labour / resilience",
-      "attributes": "Agricultural knowledge contrasts with seafaring.",
+      "attributes": "Inland expertise defined by not knowing the sea: threshing is the counter-image to rowing, making ordinary farm labour part of Odysseus's eventual reconciliation.",
       "hooks": "Survival returns a land; early self-mill feeds the loop.",
-      "assessment": "Good land-recovery common; compare with the uncommon builder's immediate recovery.",
+      "assessment": "Keep as agricultural composite and as a thematic answer to seafaring, not as a named Homeric worker.",
       "id": "ODY-220",
       "number": 220,
       "name": "Threshing-Floor Worker",
@@ -10218,10 +10318,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Odyssey XI and XXIV checked: Tiresias's inland-oar prophecy turns on a stranger mistaking an oar for a winnowing fan/shovel, while the final book returns to cultivated land and farm labour. The anonymous threshing worker is a deliberate agricultural composite.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-220",
+        "kind": "adaptation",
+        "text": "Far enough from the sea, an oar becomes only another strange tool beside the winnowing floor.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "Tiresias's prophecy depends on an inland person mistaking Odysseus's oar for a winnowing implement.",
+        "fit": "Makes the land-recovery worker a deliberate inland counterpoint to the voyage.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 12",
@@ -11097,9 +11207,9 @@
       "sourceLabel": "Madeline Miller, Circe; adaptation brief",
       "sequence": "Learn through practice; turn craft into power; claim an independent life.",
       "emotions": "Self-possession / fear of transformation",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Power learned rather than inherited cleanly: repeated practice lets an underestimated figure author herself outside the roles her divine family assigned.",
       "hooks": "Repeated spellcraft earns a transformation.",
-      "assessment": "Use Miller's craft and agency framing; exact passage needed before quoting the novel.",
+      "assessment": "Keep as modern-retelling portrayal. Use source-led original flavour, not uncited novel prose.",
       "id": "ODY-240",
       "number": 240,
       "name": "Circe, Self-Made Witch",
@@ -11117,10 +11227,20 @@
           "url": "https://madelinemiller.com/circe/"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Madeline Miller's official Circe page checked: Circe discovers that her power is witchcraft, is exiled, and deliberately hones her craft into an independent source of power and identity.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-240",
+        "kind": "adaptation",
+        "text": "Exile gave her time. Practice taught her what to do with it.",
+        "source": "https://madelinemiller.com/circe/",
+        "basis": "Miller's official description emphasises discovery, exile and the honing of witchcraft.",
+        "fit": "Matches repeated spellcraft accumulating toward transformation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 9 and 17; identity interpretation",
@@ -11418,12 +11538,12 @@
       }
     },
     {
-      "sourceLabel": "Later Siren reception; interpretation",
+      "sourceLabel": "Later Siren reception — feminised beauty and mermaid imagery",
       "sequence": "See seductive beauty; approach willingly; lose the will to leave.",
       "emotions": "Desire / compulsion",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Fatal attraction made visual: later art turns the Sirens' danger from primarily knowledge and voice into a body designed to invite approach.",
       "hooks": "Multiple forced attackers; consume memory and gain life.",
-      "assessment": "Exact reception work remains to be selected. Do not attribute wings or seductive anatomy to Homer.",
+      "assessment": "Keep as reception-only. Do not attribute beautiful female or mermaid anatomy to Homer.",
       "id": "ODY-248",
       "number": 248,
       "name": "Sirens, Dream of Fatal Beauty",
@@ -11436,10 +11556,20 @@
       "baselineScore": 5,
       "baselineRationale": "The mythic version represents reception's fatal beauty: creatures are compelled toward them and lose pieces of themselves as they approach.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Reception history checked against the Met: Homer leaves the Sirens' bodies undescribed; archaic art often makes them bird-human hybrids, later traditions increasingly feminise and beautify them, and medieval/modern reception moves toward mermaid-like seductresses. This card is deliberately later reception.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-248",
+        "kind": "adaptation",
+        "text": "Homer gave them voices. Later artists gave the danger a beautiful face.",
+        "source": "https://www.metmuseum.org/perspectives/articles/2022/10/dangerous-beauty-medusa-sphinx-sirens",
+        "basis": "Met reception history traces Sirens from ancient bird hybrids toward increasingly beautiful and mermaid-like forms.",
+        "fit": "States the reception transformation honestly and succinctly.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5–13; synthesis",
@@ -12484,12 +12614,12 @@
       }
     },
     {
-      "sourceLabel": "Ancient craft; extension",
+      "sourceLabel": "Ancient Greek pottery craft; material-world extension",
       "sequence": "Load the kiln; fire the vessels; put new work to use.",
       "emotions": "Energy / immediate pressure",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Heat as productive transformation: the kiln turns fragile shaped clay into an object ready for immediate use.",
       "hooks": "Artifact entry grants haste and power.",
-      "assessment": "Invented everyday scene; keep separate from literal destructive fire.",
+      "assessment": "Keep as historical-world extension with no claim that a specific Odyssey potter performs this action.",
       "id": "ODY-277",
       "number": 277,
       "name": "Potter's Firing",
@@ -12502,18 +12632,28 @@
       "baselineScore": 5,
       "baselineRationale": "Uncommon rebuild: structural role preserved while obscure/sequel identity remains cut.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Ancient Greek pottery practice checked: vessels were formed, dried and fired in kilns through controlled multi-stage firing. The card is ordinary craft texture, not an Odyssey episode.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-277",
+        "kind": "adaptation",
+        "text": "The vessel entered the kiln as work in progress and left it ready for the world.",
+        "source": "https://www.metmuseum.org/toah/hd/vase/hd_vase.htm",
+        "basis": "Documented ancient Greek pottery firing practice.",
+        "fit": "Supports artifact arrival granting immediate energy/haste.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
-      "sourceLabel": "Ancient navigation; extension",
+      "sourceLabel": "Ancient Greek beacon and signal-fire tradition; extension",
       "sequence": "Light a headland fire; guide ships; expose a passage.",
       "emotions": "Reassurance / approach",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A distant human-made point of certainty in dangerous geography: the fire communicates before the ship can safely reach the speaker.",
       "hooks": "Vehicle attacks provide foresight; menace opens travel.",
-      "assessment": "A plausible maritime extension, not an attested Odyssey signal-fire episode.",
+      "assessment": "Keep as explicit historical-world extension. Navigation use is inferred from signalling practice rather than sourced to a discrete Odyssey scene.",
       "id": "ODY-278",
       "number": 278,
       "name": "Signal Fire on the Headland",
@@ -12526,10 +12666,20 @@
       "baselineScore": 5,
       "baselineRationale": "Uncommon rebuild: structural role preserved while obscure/sequel identity remains cut.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Ancient Greek beacon practice checked: pyrsos can denote a beacon/signal fire, and Greek literature uses chains or distant fires to transmit news. The card extends that signalling logic to a navigational headland; no Odyssey signal-fire episode is claimed.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-278",
+        "kind": "adaptation",
+        "text": "Long before the shore was safe, the fire could tell a crew where people were waiting.",
+        "source": "https://classics.mit.edu/Aeschylus/agamemnon.html",
+        "basis": "Greek beacon-fire signalling tradition, with Aeschylus providing a famous literary beacon chain.",
+        "fit": "Keeps the navigation function plausible without calling it an Odyssey event.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 3; material-world composite",
@@ -12740,12 +12890,12 @@
       }
     },
     {
-      "sourceLabel": "Ancient craft; extension",
+      "sourceLabel": "Ancient Greek leatherworking; material-world extension",
       "sequence": "Pierce the hide; stitch the work; improve it by inspection.",
       "emotions": "Patience / incremental advantage",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Tiny precision repeated until a durable object exists: the awl's advantage is attention, not force.",
       "hooks": "Equipment rewards tapping with paid foresight.",
-      "assessment": "Ordinary tool, not a named magic relic.",
+      "assessment": "Keep as historically grounded craft extension.",
       "id": "ODY-283",
       "number": 283,
       "name": "Leatherworker's Awl",
@@ -12758,18 +12908,28 @@
       "baselineScore": 5,
       "baselineRationale": "Final pre-Weavers fill: ordinary-world/structural card occupying a previously cut or blank physical row.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Ancient Greek artisan evidence checked: Attic workshop imagery depicts shoemakers/leatherworkers handling leather with an awl. The equipment is an ordinary tool, not a named relic.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-283",
+        "kind": "adaptation",
+        "text": "Good leatherwork is a row of small holes no one notices once the journey begins.",
+        "source": "https://www.carc.ox.ac.uk/record/2A334E32-3491-4D1B-8AD9-8E6399C30A68",
+        "basis": "Attic artisan imagery documents leatherworking with an awl.",
+        "fit": "Matches paid foresight from patient equipped labour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
-      "sourceLabel": "Ancient seamanship; extension",
+      "sourceLabel": "Odyssey XII / practical seamanship extension",
       "sequence": "Read reefs; choose the channel; guide a vulnerable vessel.",
       "emotions": "Expert confidence / blocked interception",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Expertise measured by choosing the survivable channel before everyone else can see why the turn matters.",
       "hooks": "Crewing gives foresight and protection.",
-      "assessment": "Keep as the more specialised upgrade to a common sailor.",
+      "assessment": "Keep as specialised seamanship extension grounded in the explicit steersman role.",
       "id": "ODY-284",
       "number": 284,
       "name": "Reefwise Pilot",
@@ -12782,10 +12942,20 @@
       "baselineScore": 5,
       "baselineRationale": "Final pre-Weavers fill: ordinary-world/structural card occupying a previously cut or blank physical row.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Odyssey XII checked: Odysseus commands the steersman to turn away from danger and hug the safer rock while the crew rows hard. The named Reefwise Pilot is an anonymous specialist extrapolated from that practical role.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-284",
+        "kind": "adaptation",
+        "text": "The reef is most dangerous to the sailor who recognises it one stroke too late.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Odysseus's commands to the coxswain/steersman in the narrow passage.",
+        "fit": "Supports crewing as foresight and protection.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 24; agriculture extension",
@@ -12991,12 +13161,12 @@
       }
     },
     {
-      "sourceLabel": "Homeric simile; extension",
+      "sourceLabel": "Iliad XX / Homeric wildfire simile; extension",
       "sequence": "Build strength; surge forward; overwhelm resistance like fire.",
       "emotions": "Fury / alarm",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Fury visualised as a front of fire: large bodies do not merely hit harder, they make resistance feel like fuel.",
       "hooks": "Big creatures trample; an attack starts a fight.",
-      "assessment": "A cross-archetype force engine, not a literal wildfire scene.",
+      "assessment": "Keep distinct from Wildfire Through Dry Scrub: ODY-161 is death spreading damage; this rare is combat momentum spreading through large creatures.",
       "id": "ODY-289",
       "number": 289,
       "name": "Fury Like Wildfire",
@@ -13009,18 +13179,28 @@
       "baselineScore": 5,
       "baselineRationale": "The build-around makes large creatures tactically matter without requiring a named monster packet.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Iliadic fire imagery checked: Achilles's renewed assault is compared with fire raging across dry land after drought, while other Iliadic battle passages use spreading wildfire. This is metaphorical combat force, not a literal battlefield wildfire.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-289",
+        "kind": "adaptation",
+        "text": "The simile did not say the warriors were fire. It said standing before them felt the same.",
+        "source": "https://classics.mit.edu/Homer/iliad.20.xx.html",
+        "basis": "Iliadic battle is repeatedly compared to advancing fire.",
+        "fit": "Makes the card's metaphorical status explicit while preserving force.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 14 and 24; household pattern",
       "sequence": "Work; support a neighbour; keep the house functioning.",
       "emotions": "Solidarity / durable resistance",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "A house endures when ordinary labour and mutual obligation continue without certainty that the absent owner will ever reward them.",
       "hooks": "Tapped labour grows a creature; enchantments restore readiness.",
-      "assessment": "An untap trigger can suppress Survival if used before it resolves; sequencing must be taught.",
+      "assessment": "Keep as household-pattern engine, not a single scene. The resilience should feel collective rather than like a hidden named hero.",
       "id": "ODY-290",
       "number": 290,
       "name": "The House Endures",
@@ -13042,10 +13222,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Books XIV and XXIV checked as household synthesis: Eumaeus's loyalty, ordinary work and hospitality maintain part of Odysseus's world during absence; the closing farm and family restoration show continuity surviving beyond the palace crisis.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-290",
+        "kind": "adaptation",
+        "text": "Home survived twenty years because some people kept doing tomorrow's work.",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "basis": "Eumaeus and the loyal household preserve ordinary duties through Odysseus's long absence.",
+        "fit": "Directly supports the tapped-labour/endurance engine.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 14; oath interpretation",
@@ -13208,9 +13398,9 @@
       "sourceLabel": "Odyssey 4; later reception synthesis",
       "sequence": "Tell a memory; have it contested; let repeated versions alter judgment.",
       "emotions": "Ambiguity / fascination",
-      "attributes": "Helen is both narrator and subject; every retelling alters how the listener judges her.",
+      "attributes": "A remembered woman whose meaning changes with narrator and era; uncertainty is the portrayal, not a gap to be solved.",
       "hooks": "Legends prompt foresight; repeated scrutiny yields a card.",
-      "assessment": "Exact later reception source remains to be chosen; avoid claiming one canonical motive.",
+      "assessment": "Keep as reception synthesis without naming a single later adaptation as canonical.",
       "id": "ODY-294",
       "number": 294,
       "name": "Helen, Remembered and Rewritten",
@@ -13228,10 +13418,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.4.iv.html"
         }
       ],
-      "sourceReview": "Book IV baseline checked: Helen and Menelaus offer competing memories of Odysseus and shared grief. The card's later-reception synthesis still needs a specific modern/later source before flavour text can be completed.",
+      "sourceReview": "Odyssey IV checked as ancient baseline: Helen narrates herself as recognising and helping disguised Odysseus while Menelaus preserves a story in which her actions at the horse nearly destroy the Greek plan. Later reception repeatedly rewrites that ambiguity; this card deliberately represents the act of reinterpretation rather than one modern verdict.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-294",
+        "kind": "adaptation",
+        "text": "Helen's story never stopped changing because no one agreed which memory should have the last word.",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "basis": "The Odyssey already preserves conflicting memories; later reception amplifies that instability.",
+        "fit": "Original reception flavour for a card about repeated scrutiny and retelling.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 5; seamanship composite",
@@ -13478,12 +13678,12 @@
       }
     },
     {
-      "sourceLabel": "Ancient seamanship; extension",
+      "sourceLabel": "Odyssey XII / crew-rowing composite",
       "sequence": "Match the stroke; keep the cadence; turn work into movement and supplies.",
       "emotions": "Collective pride / steady pressure",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Collective technique made visible: many small repeated motions become speed, safety and eventually material advantage.",
       "hooks": "Two workers produce Treasure; crew participation matters.",
-      "assessment": "Power after crewing may arrive too late to help the ship; test what the boost actually does.",
+      "assessment": "Keep as crew composite. Test timing of the power bonus separately from the flavour.",
       "id": "ODY-301",
       "number": 301,
       "name": "Every Oar in Rhythm",
@@ -13496,10 +13696,20 @@
       "baselineScore": 5,
       "baselineRationale": "A rare red engine makes tapping/crewing produce material momentum without requiring another named captain.",
       "sources": [],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Odyssey XII checked: the crew is repeatedly ordered to row hard, quicken the stroke and maintain course through danger. The phrase 'Every Oar in Rhythm' is a set-level synthesis of coordinated rowing, not a quoted ancient formulation.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-301",
+        "kind": "adaptation",
+        "text": "No single stroke carried the ship. The voyage belonged to the rhythm between them.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Odyssey XII repeatedly foregrounds coordinated rowing under command.",
+        "fit": "Matches two tapped workers producing value and crew participation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 23–24; rooted-home metaphor",
@@ -13688,9 +13898,9 @@
       "sourceLabel": "Odyssey 8 and 24; reception concept",
       "sequence": "Perform the tale; lose the performer; keep the memory in circulation.",
       "emotions": "Continuity / grief",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "attributes": "Cultural memory survives its carrier: a singer can die while the pattern of story, refrain and recognition remains available to someone else.",
       "hooks": "Sagas and legends set up knowledge; their departure yields a card.",
-      "assessment": "The storyteller's legacy differs from the hero's active pursuit of renown.",
+      "assessment": "Keep distinct from Kleos: heroes seek or receive renown; this card is about the medium that continues after both hero and performer.",
       "id": "ODY-306",
       "number": 306,
       "name": "The Song Outlives the Singer",
@@ -13712,10 +13922,20 @@
           "url": "https://classics.mit.edu/Homer/odyssey.24.xxiv.html"
         }
       ],
-      "sourceReview": "source mapped; detailed passage review pending",
+      "sourceReview": "Odyssey VIII and XXIV checked as reception concept: Demodocus shows performance preserving events beyond participants, while the poem's closing world is crowded by stories of people already dead. The card is about transmission after the performer, not one literal scene.",
       "briefStatus": "first-pass",
-      "quoteStatus": "missing",
-      "quotationCandidate": null
+      "quoteStatus": "source-led adaptation candidate; final card-space check pending",
+      "quotationCandidate": null,
+      "flavourTextCandidate": {
+        "cardId": "ODY-306",
+        "kind": "adaptation",
+        "text": "The singer ends. The song becomes someone else's memory.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "Demodocus demonstrates performed memory; the later poem remains populated by stories outliving their subjects.",
+        "fit": "A concise statement of the card's death/departure draw trigger.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      }
     },
     {
       "sourceLabel": "Odyssey 24; agriculture extension",
