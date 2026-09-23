@@ -317,3 +317,12 @@ Next narrative cluster: **Books XVII–XX — palace recognition, suitors, omens
 The palace-recognition cluster is editorially complete: **22/22 cards** have source review and a flavour outcome (**10 direct quotations, 11 source-led adaptations, 1 deliberate no-flavour basic land**). The final thin setting emotion on Parnassus is now tied to the scar's delayed significance rather than generic danger.
 
 This cluster consistently centres on recognition pressure: objects and bodies become evidence, disguised weakness becomes information gathering, omens become credible only to people willing to interpret them, and the suitors' failure is increasingly framed as refusal to recognise what is already in front of them.
+
+
+## Eighteenth checkpoint: core Odyssey narrative complete
+
+Books XXI–XXIV is editorially complete: **34/34 cards** have source review and a flavour outcome (**13 direct quotations, 20 source-led adaptations, 1 deliberate no-flavour basic land**). Final making-of cleanup replaces generic descriptions on Neck Shot, Laertes and Medon and gives the Laertes Forest and Silent Courtyard explicit emotional jobs.
+
+With that, the **core Odyssey Books I–XXIV narrative is complete by cluster**. Cards whose true source band is Trojan/pre-Odyssey, post-Odyssey, later reception or historical-world extension remain deliberately outside that declaration rather than being forced into a Homeric book for convenience.
+
+The remaining editorial phase is now concentrated in non-core source bands: **Trojan/prewar and Iliad material; later ancient/post-Odyssey tradition; modern reception/adaptations; Homeric similes; funerary/craft/navigation/agricultural extensions; and a small set of global making-of placeholders**.
