@@ -133,6 +133,23 @@
     "kind": "quote"
   },
   {
+    "cardId": "ODY-015",
+    "kind": "quote",
+    "text": "with her spilt blood make an offering, to speed the ships upon their way",
+    "author": "Aeschylus",
+    "translator": "E. D. A. Morshead",
+    "work": "Agamemnon",
+    "location": "Chorus recounting the sacrifice at Aulis",
+    "speaker": "Chorus",
+    "source": "https://classics.mit.edu/Aeschylus/agamemnon.html",
+    "context": "The chorus describes Iphigenia's killing as the cost used to release the expedition.",
+    "fit": "Directly captures the chosen actual-sacrifice tradition and the mechanical exchange of loss for advance.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 13,
+    "characters": 70
+  },
+  {
     "cardId": "ODY-019",
     "text": "lay him down upon the sand still fast asleep",
     "author": "Homer",
@@ -1267,6 +1284,23 @@
     "characters": 37
   },
   {
+    "cardId": "ODY-286",
+    "kind": "quote",
+    "text": "I will accept my fate whensoever Jove and the other gods see fit to send it.",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Iliad",
+    "location": "Book 22, Achilles after Hector's death",
+    "speaker": "Achilles",
+    "source": "https://classics.mit.edu/Homer/iliad.22.xxii.html",
+    "context": "Achilles answers Hector's death by acknowledging his own inevitable fate.",
+    "fit": "An exact statement of the 'doomed to glory' portrayal.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 16,
+    "characters": 80
+  },
+  {
     "cardId": "ODY-287",
     "text": "To strive, to seek, to find, and not to yield.",
     "author": "Alfred, Lord Tennyson",
@@ -1297,6 +1331,23 @@
     "wordCount": 6,
     "characters": 27,
     "selection": "candidate; final card-space check pending"
+  },
+  {
+    "cardId": "ODY-293",
+    "kind": "quote",
+    "text": "I know nothing save to fight bravely in the forefront of the Trojan host",
+    "author": "Homer",
+    "translator": "Samuel Butler",
+    "work": "Iliad",
+    "location": "Book 6, Hector answers Andromache",
+    "speaker": "Hector",
+    "source": "https://classics.mit.edu/Homer/iliad.6.vi.html",
+    "context": "Hector refuses to remain inside Troy despite knowing the danger to himself and his family.",
+    "fit": "Directly states the defender identity represented by vigilance and attacking-legend support.",
+    "verification": "exact excerpt checked",
+    "selection": "candidate; final card-space check pending",
+    "wordCount": 13,
+    "characters": 72
   },
   {
     "cardId": "ODY-303",
