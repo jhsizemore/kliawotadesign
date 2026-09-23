@@ -87,6 +87,9 @@
           "wordCount": 12,
           "characters": 54
         }
+      },
+      "brief": {
+        "attributes": "Trusted counsel as a social identity: Mentor is valuable because his name carries the expectation of loyal advice, while Athena's use of that likeness shows how much authority the role already has."
       }
     },
     "ODY-052": {
@@ -184,6 +187,9 @@
           "wordCount": 15,
           "characters": 80
         }
+      },
+      "brief": {
+        "attributes": "Entitlement expressed as consumption: Antinous converts another household's food, bodies and attention into personal stature while making everyone else poorer."
       }
     },
     "ODY-058": {
@@ -463,6 +469,9 @@
           "wordCount": 9,
           "characters": 41
         }
+      },
+      "brief": {
+        "attributes": "Insider betrayal is his defining weapon: Melanthius knows the household well enough to insult its disguised master and later turn its own storeroom against it."
       }
     },
     "ODY-159": {
@@ -539,6 +548,9 @@
           "characters": 36,
           "selection": "candidate; final card-space check pending"
         }
+      },
+      "brief": {
+        "attributes": "Delay as active rule-making: Penelope turns repetitive domestic labour into a private clock only she controls, advancing the public promise by day and reversing it by night."
       }
     },
     "ODY-175": {
@@ -614,6 +626,9 @@
           "wordCount": 15,
           "characters": 75
         }
+      },
+      "brief": {
+        "attributes": "The returned son is no longer the boy waiting for a father-shaped answer; travel has made him capable of recognising, coordinating with and fighting beside the man he sought."
       }
     },
     "ODY-178": {
@@ -661,6 +676,9 @@
           "characters": 46,
           "selection": "candidate; final card-space check pending"
         }
+      },
+      "brief": {
+        "attributes": "Tennyson's Ulysses is deliberately not Homer's settled homecomer: age, kingship and domestic order feel to him like reasons to leave again rather than rewards for returning."
       }
     },
     "ODY-292": {
@@ -682,6 +700,9 @@
           "characters": 27,
           "selection": "candidate; final card-space check pending"
         }
+      },
+      "brief": {
+        "attributes": "Atwood's Penelope speaks with retrospective control but not neutral authority: telling her own story means defending choices, revisiting the maids and competing with the versions other people made of her."
       }
     },
     "ODY-060": {
@@ -1344,7 +1365,8 @@
       },
       "brief": {
         "sourceReview": "Book III checked only as Pylos of Telemachus's postwar visit. 'Before the War' is intentionally an earlier-period visual interpretation, so no direct Odyssey quotation is selected.",
-        "attributes": "A historical-imaginative view of ordered Pylos before the later homecoming stories."
+        "attributes": "A historical-imaginative view of ordered Pylos before the later homecoming stories.",
+        "emotions": "Established order with obligation waiting beneath it / the peaceful city is imagined before later journeys turn hospitality and alliance into duty."
       }
     },
     "ODY-294": {
@@ -5835,7 +5857,8 @@
         }
       },
       "brief": {
-        "sourceReview": "Books XIV and XXIV checked as cultivated Ithacan landscape composite: herds, worked slopes, orchard and household provisioning."
+        "sourceReview": "Books XIV and XXIV checked as cultivated Ithacan landscape composite: herds, worked slopes, orchard and household provisioning.",
+        "emotions": "Stability through ordinary work / pasture and livestock make loyalty tangible as something fed, guarded and maintained every day."
       }
     },
     "ODY-271": {
@@ -5943,7 +5966,8 @@
         "rationale": "Basic Land — Plains. Reserve the Ithaca basic-land treatment without flavour text."
       },
       "brief": {
-        "sourceReview": "Books XIII and XXIII checked for Ithaca's cultivated/home setting. Basic land receives no flavour text."
+        "sourceReview": "Books XIII and XXIII checked for Ithaca's cultivated/home setting. Basic land receives no flavour text.",
+        "emotions": "Belonging with residual disbelief / familiar ground feels precious because the returning king has spent so long unable to trust that he has truly reached it."
       }
     },
     "ODY-258": {
@@ -5952,7 +5976,8 @@
         "rationale": "Basic Land — Swamp. Reserve the Underworld basic-land treatment without flavour text."
       },
       "brief": {
-        "sourceReview": "Books XI and XXIV checked for shades/asphodel atmosphere. Basic land receives no flavour text."
+        "sourceReview": "Books XI and XXIV checked for shades/asphodel atmosphere. Basic land receives no flavour text.",
+        "emotions": "Loss and stillness / the dead remain present enough to be remembered but too distant for ordinary human repair."
       }
     },
     "ODY-259": {
@@ -5961,7 +5986,8 @@
         "rationale": "Basic Land — Swamp. Reserve the palace-foreboding basic-land treatment without flavour text."
       },
       "brief": {
-        "sourceReview": "Books XX–XXII checked for the hall's foreboding and violent threshold. Basic land receives no flavour text."
+        "sourceReview": "Books XX–XXII checked for the hall's foreboding and violent threshold. Basic land receives no flavour text.",
+        "emotions": "Foreboding and confinement / the palace has become a place where every door, omen and stored weapon points toward violence."
       }
     },
     "ODY-013": {
