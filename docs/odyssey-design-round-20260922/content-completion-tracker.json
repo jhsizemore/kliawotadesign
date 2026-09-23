@@ -1,6 +1,6 @@
 {
   "schema": "odyssey-content-completion/v1",
-  "phase": "full-set-editorial-completion",
+  "phase": "editorial-content-complete-awaiting-layout-and-validation",
   "startedAt": "2026-09-23",
   "cards": 309,
   "referenceLayer": {
@@ -21,11 +21,11 @@
   },
   "makingLayer": {
     "briefsPresent": 309,
-    "passageOrSourceReviewed": 95,
-    "sourceReviewPending": 213,
-    "genericAttributePlaceholdersRemaining": 192,
-    "genericLandAttributeFrames": 25,
-    "weakEmotionFieldsRemaining": 18,
+    "passageOrSourceReviewed": 309,
+    "sourceReviewPending": 0,
+    "genericAttributePlaceholdersRemaining": 0,
+    "weakEmotionFieldsRemaining": 0,
+    "missingRequiredFields": 0,
     "requiredFields": [
       "sequence",
       "emotions",
@@ -34,7 +34,7 @@
       "assessment",
       "sourceReview"
     ],
-    "status": "structurally-complete-quality-and-source-verification-in-progress"
+    "status": "complete-at-editorial-candidate-level"
   },
   "flavourLayer": {
     "directQuoteCandidates": 81,
@@ -80,5 +80,28 @@
       "Books XXI–XXIV"
     ],
     "note": "Deferred cards whose real source band is Trojan/pre-Odyssey, post-Odyssey or later reception are excluded from core-poem completion rather than falsely forced into the nearest Odyssey book."
+  },
+  "editorialCompletion": {
+    "checkedAt": "2026-09-23",
+    "cards": 309,
+    "references": {
+      "cardsCovered": 309,
+      "totalReferences": 912,
+      "policy": "reference-quality-v3"
+    },
+    "flavour": {
+      "directQuoteCandidates": 81,
+      "sourceLedAdaptations": 213,
+      "noFlavourSelected": 15,
+      "missing": 0
+    },
+    "making": {
+      "missingRequiredFields": 0,
+      "pendingSourceReviews": 0,
+      "genericAttributePlaceholders": 0,
+      "weakEmotionFields": 0
+    },
+    "passed": true,
+    "note": "Pass means references, source-grounded making briefs and flavour outcomes are complete at candidate/editorial level. Final card-space selection, gameplay validation and production integration remain separate later gates."
   }
 }
