@@ -44,10 +44,12 @@ quote_rows=[]
 for c in cards:
  e=editorial_cards.get(c['id'],{}).get('flavour',{})
  if e.get('status')=='candidate-verified':
-  quote_rows.append({'id':c['id'],'name':c['name'],'status':'candidate-verified','reason':'A source-verified quotation candidate exists; final selection remains pending mechanics and layout.','candidate':e.get('candidate'),'finalSelection':'pending-mechanics-and-layout'})
- elif e.get('status')=='no-direct-quote-selected':
-  quote_rows.append({'id':c['id'],'name':c['name'],'status':'no-direct-quote-selected','reason':e.get('rationale',''),'candidate':None,'finalSelection':'pending-mechanics-and-layout'})
+  quote_rows.append({'id':c['id'],'name':c['name'],'status':'candidate-verified','reason':'A source-verified direct quotation candidate exists; final selection remains pending mechanics and layout.','candidate':e.get('candidate'),'finalSelection':'pending-mechanics-and-layout'})
+ elif e.get('status')=='candidate-adaptation':
+  quote_rows.append({'id':c['id'],'name':c['name'],'status':'candidate-adaptation','reason':'A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.','candidate':e.get('candidate'),'finalSelection':'pending-mechanics-and-layout'})
+ elif e.get('status')=='no-flavour-selected':
+  quote_rows.append({'id':c['id'],'name':c['name'],'status':'no-flavour-selected','reason':e.get('rationale','No flavour text selected.'),'candidate':None,'finalSelection':'pending-mechanics-and-layout'})
  else:
-  quote_rows.append({'id':c['id'],'name':c['name'],'status':'missing','reason':'No dedicated flavour-text value is present in the current card record. Story element and rationale are design commentary, not quotations.','candidate':None,'finalSelection':'pending-mechanics-and-layout'})
-write('quotation-audit.json',{'schema':'odyssey-quotation-audit/v1','scope':'Published card records and authoring columns; artwork text and old external documents are not audited quotations.','cards':quote_rows,'summary':{'totalCards':len(quote_rows),'verifiedCandidates':sum(r['status']=='candidate-verified' for r in quote_rows),'noDirectQuoteSelected':sum(r['status']=='no-direct-quote-selected' for r in quote_rows),'pending':sum(r['status']=='missing' for r in quote_rows),'finalSelections':0}})
+  quote_rows.append({'id':c['id'],'name':c['name'],'status':'missing','reason':'No flavour-text outcome is yet recorded in the editorial register.','candidate':None,'finalSelection':'pending-mechanics-and-layout'})
+write('quotation-audit.json',{'schema':'odyssey-quotation-audit/v2','scope':'Published card records and authoring columns; direct quotations, source-led adaptations and explicit no-flavour outcomes are tracked separately.','cards':quote_rows,'summary':{'totalCards':len(quote_rows),'directQuoteCandidates':sum(r['status']=='candidate-verified' for r in quote_rows),'sourceLedAdaptations':sum(r['status']=='candidate-adaptation' for r in quote_rows),'flavourCandidates':sum(r['status'] in ['candidate-verified','candidate-adaptation'] for r in quote_rows),'noFlavourSelected':sum(r['status']=='no-flavour-selected' for r in quote_rows),'pending':sum(r['status']=='missing' for r in quote_rows),'finalSelections':0}})
 print(json.dumps({'actual':actual,'sheetDifferences':len(diffs),'openNotes':len(open_notes),'common':common_metrics(cards)},indent=2))
