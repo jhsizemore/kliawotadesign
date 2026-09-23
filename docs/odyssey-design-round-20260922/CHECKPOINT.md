@@ -344,3 +344,19 @@ The remaining modern-reception, simile and historical-world flavour gaps are clo
 This pass explicitly repairs the Mother Lion source claim: no exact Homeric 'mother lion charge' was verified. The card is now labelled as a classical lioness/Homeric-analogue adaptation and is flagged for final naming review rather than being presented as a Homer quote. Charon's obol is likewise labelled as later Greek/Roman funerary tradition, not Odyssey XI. Modern Miller cards use source-led original lines grounded in the author's official framing rather than unverified novel quotations. Siren beauty is labelled as later reception, not Homeric anatomy.
 
 The remaining editorial work is now purely **making-of/source quality cleanup**: eliminate generic attribute placeholders, strengthen thin emotion fields, and verify the small remaining source-review backlog. Flavour-text coverage itself is complete at the candidate/outcome level.
+
+
+## Twenty-first checkpoint: editorial content complete
+
+The final full-set quality sweep is complete. Seven remaining generic character/object descriptions and five thin emotion fields were replaced with specific portrayal language.
+
+**Editorial exit check passes across all 309 cards:**
+- 309/309 have complete making-of fields.
+- 309/309 have source review; pending source reviews: 0.
+- generic character/object placeholders: 0.
+- weak emotion fields: 0.
+- production MTG references: 309 cards / 912 references.
+- flavour outcomes: 81 direct quotation candidates + 213 source-led adaptations + 15 deliberate no-flavour cards = 309.
+- missing flavour outcomes: 0.
+
+This completes the phase Hunter requested: references, flavour-text direction and emotional making are all covered at editorial-candidate level. The project can now move to **final flavour/card-space selection and render inspection**, with gameplay validation and production integration remaining separate gates.
