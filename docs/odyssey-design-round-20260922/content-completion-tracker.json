@@ -63,19 +63,14 @@
     "modern reception"
   ],
   "currentCluster": {
-    "name": "Books IX–XII — wanderings, monsters, crew failures",
-    "status": "complete-with-two-intentional-deferrals",
-    "cards": 87,
-    "directQuoteCandidates": 8,
-    "sourceLedAdaptations": 72,
-    "noFlavourSelected": 5,
-    "deferred": 2,
-    "deferredCards": [
-      "ODY-180 Black-Hulled Achaean Galley — Trojan/pre-Odyssey source band",
-      "ODY-182 Nobody, Self-Invented — later reception / constructed-identity pass"
-    ],
-    "sourceReviewPendingInActiveCluster": 0,
-    "genericAttributePlaceholdersRemainingInActiveCluster": 0,
-    "weakEmotionFieldsRemainingInActiveCluster": 0
+    "name": "Books XIII–XVI — return, disguise, reconnaissance",
+    "status": "complete-for-editorial-outcomes",
+    "cards": 20,
+    "directQuoteCandidates": 6,
+    "sourceLedAdaptations": 14,
+    "noFlavourSelected": 0,
+    "sourceReviewPending": 0,
+    "genericAttributePlaceholdersRemaining": 0,
+    "weakEmotionFieldsRemaining": 0
   }
 }
