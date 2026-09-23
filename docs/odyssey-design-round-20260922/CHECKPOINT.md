@@ -290,3 +290,14 @@ The flavour tracker is reconciled to the authoritative editorial register. The s
 Books V–VIII is now complete for editorial outcomes: **51 cards = 13 direct quotes + 35 adaptations + 3 no-flavour basic lands**, with zero pending source reviews in the cluster. Final making-of cleanup replaced the remaining generic attributes on Take the Stranger's Hand, Song of the Wooden Horse and Storm over Limestone, and strengthened the thin emotion briefs on the open-sea Island, Windswept Isle, Laurel Grounds and Palmshade Cove.
 
 The next narrative cluster is **Books IX–XII — the wanderings, monsters and crew failures**. Gameplay remains deferred validation and does not block this editorial pass.
+
+
+## Fifteenth checkpoint: Books IX–XII complete
+
+The wanderings cluster is editorially complete for material that genuinely belongs to Books IX–XII. Of **87 cards**, **8** use direct quotation candidates, **72** use source-led adaptations, and **5** basic lands deliberately carry no flavour text. Two cards are intentionally deferred rather than falsely completed here: **ODY-180 Black-Hulled Achaean Galley** belongs to the Trojan/pre-Odyssey source band, and **ODY-182 Nobody, Self-Invented** belongs to the later-reception/constructed-identity pass.
+
+The last making-of cleanup sharpens Aeolus as a giver of enormous but trust-dependent control, and replaces one-word landscape emotions on the blood-trench Swamp, Laestrygonian harbour Mountain, Scylla-cliff Mountain and Rugged Headland with explicit player-facing emotional beats.
+
+This cluster now cleanly carries its central emotional arc: ingenuity repeatedly creates escape, pride or appetite spends that advantage, and survival accumulates obligations rather than resetting the voyage.
+
+Next narrative cluster: **Books XIII–XVI — return, disguise, reconnaissance and the father-son reunion**.
