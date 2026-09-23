@@ -37,13 +37,13 @@
     "status": "structurally-complete-quality-and-source-verification-in-progress"
   },
   "flavourLayer": {
-    "exactQuoteCandidates": 78,
-    "sourceLedAdaptationCandidates": 183,
+    "directQuoteCandidates": 78,
+    "sourceLedAdaptations": 183,
+    "totalFlavourCandidates": 261,
     "noFlavourSelected": 14,
-    "noDirectQuoteStillNeedsFlavourDecision": 0,
     "pending": 34,
-    "resolvedFlavourOutcomes": 275,
-    "finalSelections": 0
+    "finalSelections": 0,
+    "status": "outcome-nearly-complete-card-space-selection-pending"
   },
   "gameplay": {
     "status": "prepared-deferred",
@@ -63,18 +63,14 @@
     "modern reception"
   ],
   "currentCluster": {
-    "name": "Cross-book Odyssey synthesis cleanup",
-    "status": "substantially complete",
-    "exactQuotesAdded": 3,
-    "adaptationsAdded": 30,
-    "noFlavourDecisionsAdded": 3,
-    "deferred": [
-      "ODY-172 Homeric lion-simile audit",
-      "ODY-180 Trojan/pre-Odyssey"
-    ],
-    "notes": [
-      "Concept cards receive source-led synthesis rather than false single-scene attribution.",
-      "Basic lands continue to use deliberate no-flavour decisions."
-    ]
+    "name": "Books V–VIII — Calypso, Scheria, Phaeacians",
+    "status": "complete-for-editorial-outcomes",
+    "cards": 51,
+    "directQuoteCandidates": 13,
+    "sourceLedAdaptations": 35,
+    "noFlavourSelected": 3,
+    "sourceReviewPending": 0,
+    "genericAttributePlaceholdersRemaining": 0,
+    "weakEmotionFieldsRemaining": 0
   }
 }
