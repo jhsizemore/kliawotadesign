@@ -68,3 +68,9 @@ A completed flavour **outcome** may be one of three things:
 - **No flavour selected** — deliberate layout/editorial decision, such as a basic land treatment.
 
 “No direct quote selected” by itself is now an intermediate classification, not a completed flavour outcome. Composite cards should normally receive a source-led adaptation unless silence is the better layout choice.
+
+## Books V–VIII completion
+
+The Calypso/Scheria/Phaeacian cluster is editorially complete at the candidate-text level: **51 cards**, with **13 direct quotation candidates**, **35 source-led adaptations**, and **3 deliberate no-flavour basic lands**. Every card in the cluster has passage/source review. The final three generic attribute placeholders and four thin emotion fields were rewritten in this checkpoint.
+
+Source-led adaptations count as completed flavour-text candidates. They remain explicitly labelled as adaptations and must never be rendered as quotation marks attributed to Homer.
