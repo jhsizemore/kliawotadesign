@@ -74,3 +74,20 @@ A completed flavour **outcome** may be one of three things:
 The Calypso/Scheria/Phaeacian cluster is editorially complete at the candidate-text level: **51 cards**, with **13 direct quotation candidates**, **35 source-led adaptations**, and **3 deliberate no-flavour basic lands**. Every card in the cluster has passage/source review. The final three generic attribute placeholders and four thin emotion fields were rewritten in this checkpoint.
 
 Source-led adaptations count as completed flavour-text candidates. They remain explicitly labelled as adaptations and must never be rendered as quotation marks attributed to Homer.
+
+## Editorial completion exit check
+
+**PASS — 309 / 309 cards at editorial candidate level.**
+
+- Printed MTG reference coverage: **309 / 309 cards**, **912 references**, reference-quality-v3.
+- Making-of briefs present: **309 / 309**.
+- Pending source reviews: **0**.
+- Generic character/object placeholders: **0**.
+- Weak/underspecified emotion fields: **0**.
+- Missing required making fields: **0**.
+- Direct quotation candidates: **81**.
+- Source-led adaptation candidates: **213**.
+- Deliberate no-flavour outcomes: **15**.
+- Missing flavour outcomes: **0**.
+
+This closes the editorial-content phase. It does **not** certify card balance or final printed layout. The next work is final flavour/card-space selection, render inspection, gameplay validation and eventual authoring-data integration.
