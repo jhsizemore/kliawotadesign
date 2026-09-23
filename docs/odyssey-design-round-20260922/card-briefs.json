@@ -6900,8 +6900,8 @@
     {
       "sourceLabel": "Odyssey 7",
       "sequence": "Take the suppliant's hand; raise them; restore a place among the living.",
-      "emotions": "Acceptance / returning opposition",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "emotions": "Relief through acceptance / an opponent watches a threatened piece return to relevance.",
+      "attributes": "A ritual of acceptance made physical: taking the suppliant's hand changes their social position before it changes their circumstances.",
       "hooks": "Recover a small creature; gain life.",
       "assessment": "Return to hand expresses aid without literal resurrection.",
       "id": "ODY-150",
@@ -7044,8 +7044,8 @@
     {
       "sourceLabel": "Odyssey 8",
       "sequence": "Ask for the horse story; sing the hidden entry; expose the listener's grief.",
-      "emotions": "Admiration and pain / recognition",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "emotions": "Admiration mixed with old grief / recognition that a hidden plan has already succeeded.",
+      "attributes": "A performed memory of concealed victory: the audience admires the stratagem while the hidden veteran relives its cost.",
       "hooks": "Recall a stratagem; recover a spell; execute it cheaply.",
       "assessment": "Actually performed by Demodocus. This gold Saga is not currently a member of the five hybrid Sagas.",
       "id": "ODY-153",
@@ -7418,8 +7418,8 @@
     {
       "sourceLabel": "Odyssey 5; landscape extension",
       "sequence": "The storm strikes; visibility breaks; a route opens amid damage.",
-      "emotions": "Force / disruption",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "emotions": "Sudden environmental force / loss of footing and route.",
+      "attributes": "An exposed limestone coast turned into a hazard by weather; the landscape itself becomes part of the attack.",
       "hooks": "Entry damage; continuing blocker denial.",
       "assessment": "A storm enchantment should not permanently suppress every defence without opportunity to remove it.",
       "id": "ODY-160",
@@ -11577,7 +11577,7 @@
     {
       "sourceLabel": "Odyssey 5",
       "sequence": "Cross open sea at dawn.",
-      "emotions": "Scale and solitude.",
+      "emotions": "Vastness and solitude / the traveller is reduced to one moving point on open water.",
       "attributes": "Setting portrayal; no invented character action.",
       "hooks": "Establish place and mood through the existing land function; preserve fixing and pacing.",
       "assessment": "Blue basic for the journey itself, not a named island.",
@@ -12097,7 +12097,7 @@
     {
       "sourceLabel": "Odyssey 5; landscape composite",
       "sequence": "Read changing wind on an exposed island.",
-      "emotions": "Restlessness.",
+      "emotions": "Restlessness and exposure / no shore feels fully settled while the wind keeps changing.",
       "attributes": "Setting portrayal; no invented character action.",
       "hooks": "Establish place and mood through the existing land function; preserve fixing and pacing.",
       "assessment": "UR tapped dual for weather and navigation; invented unnamed location.",
@@ -12179,7 +12179,7 @@
     {
       "sourceLabel": "Odyssey 8; games interpretation",
       "sequence": "Gather for public contests and honour.",
-      "emotions": "Competitive pride.",
+      "emotions": "Competitive pride / hospitality has become public comparison and the risk of humiliation.",
       "attributes": "Setting portrayal; no invented character action.",
       "hooks": "Establish place and mood through the existing land function; preserve fixing and pacing.",
       "assessment": "RW tapped dual; laurel is a later visual shorthand, not proof of an Odyssey prize ceremony.",
@@ -12218,7 +12218,7 @@
     {
       "sourceLabel": "Odyssey 6; landscape interpretation",
       "sequence": "Find shade and shelter beside the water.",
-      "emotions": "Enticing safety.",
+      "emotions": "Enticing safety / a strange shore briefly feels sheltered enough to imagine staying.",
       "attributes": "Setting portrayal; no invented character action.",
       "hooks": "Establish place and mood through the existing land function; preserve fixing and pacing.",
       "assessment": "GU tapped dual; the palm evokes Odysseus's comparison at Delos, not a literal named Palmshade Cove.",
