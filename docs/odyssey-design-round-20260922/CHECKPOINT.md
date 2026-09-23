@@ -335,3 +335,12 @@ The highest-risk non-core source batch is reconciled without collapsing distinct
 This batch resolves **12 previous flavour gaps**: 3 direct quotation candidates, 8 source-led adaptations and 1 deliberate no-flavour basic land. The direct candidates are Iphigenia's sacrifice, Achilles accepting his fate and Hector's duty at the Trojan front. No card is presented as an Odyssey quotation where its source is actually Aeschylus, Apollodorus or the Iliad.
 
 Remaining flavour outcomes after this checkpoint: **22**.
+
+
+## Twentieth checkpoint: flavour outcomes complete
+
+The remaining modern-reception, simile and historical-world flavour gaps are closed. **All 309 cards now have a flavour outcome**: **81 direct quotation candidates**, **213 source-led adaptations**, and **15 deliberate no-flavour decisions**. Pending flavour outcomes: **0**.
+
+This pass explicitly repairs the Mother Lion source claim: no exact Homeric 'mother lion charge' was verified. The card is now labelled as a classical lioness/Homeric-analogue adaptation and is flagged for final naming review rather than being presented as a Homer quote. Charon's obol is likewise labelled as later Greek/Roman funerary tradition, not Odyssey XI. Modern Miller cards use source-led original lines grounded in the author's official framing rather than unverified novel quotations. Siren beauty is labelled as later reception, not Homeric anatomy.
+
+The remaining editorial work is now purely **making-of/source quality cleanup**: eliminate generic attribute placeholders, strengthen thin emotion fields, and verify the small remaining source-review backlog. Flavour-text coverage itself is complete at the candidate/outcome level.
