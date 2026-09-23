@@ -63,14 +63,27 @@
     "modern reception"
   ],
   "currentCluster": {
-    "name": "Books XVII–XX — palace recognition, suitors, omens",
+    "name": "Books XXI–XXIV — bow, battle, reunion, peace",
     "status": "complete-for-editorial-outcomes",
-    "cards": 22,
-    "directQuoteCandidates": 10,
-    "sourceLedAdaptations": 11,
+    "cards": 34,
+    "directQuoteCandidates": 13,
+    "sourceLedAdaptations": 20,
     "noFlavourSelected": 1,
     "sourceReviewPending": 0,
     "genericAttributePlaceholdersRemaining": 0,
     "weakEmotionFieldsRemaining": 0
+  },
+  "coreOdysseyNarrative": {
+    "scope": "Odyssey Books I–XXIV",
+    "status": "editorially complete by narrative cluster",
+    "completedClusters": [
+      "Books I–IV",
+      "Books V–VIII",
+      "Books IX–XII",
+      "Books XIII–XVI",
+      "Books XVII–XX",
+      "Books XXI–XXIV"
+    ],
+    "note": "Deferred cards whose real source band is Trojan/pre-Odyssey, post-Odyssey or later reception are excluded from core-poem completion rather than falsely forced into the nearest Odyssey book."
   }
 }
