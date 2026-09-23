@@ -1,14 +1,14 @@
 {
-  "version": "0.1.19",
-  "publishedAt": "2026-09-23T02:04:53.649Z",
+  "version": "0.1.20",
+  "publishedAt": "2026-09-23T02:39:01.693Z",
   "baseline": "cbd-demolition-2026-09-17.1",
-  "release": "floor-anchors-1",
-  "note": "Traceable floor anchors, terrain-following exposed foundations and elevation review. No new surveyed terrain imported. Preserves stability-1 loading and navigation fixes.",
+  "release": "lagoon-geography-1",
+  "note": "Mapped Erakor and Emten lagoon coastlines, southern peninsula and islands, wider terrain context, plan and 3D navigation. Original building baseline, saved proposals and floor anchors retained.",
   "assets": [
-    "assets/index-5phr77lE.css",
-    "assets/index-DEFM5uK4.js",
+    "assets/index-Bu_M4e3M.js",
+    "assets/index-BY3rxmgi.css",
+    "assets/research-CQLGmInE.js",
     "assets/research-data-DXfJnZDb.js",
-    "assets/research-emYdYO_9.js",
-    "assets/vision-CBM0QEQE.js"
+    "assets/vision-DaRiUyCS.js"
   ]
 }
