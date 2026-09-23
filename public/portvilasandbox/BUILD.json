@@ -1,14 +1,14 @@
 {
-  "version": "0.1.20",
-  "publishedAt": "2026-09-23T02:39:01.693Z",
+  "version": "0.1.21",
+  "publishedAt": "2026-09-23T03:52:21.175Z",
   "baseline": "cbd-demolition-2026-09-17.1",
-  "release": "lagoon-geography-1",
-  "note": "Mapped Erakor and Emten lagoon coastlines, southern peninsula and islands, wider terrain context, plan and 3D navigation. Original building baseline, saved proposals and floor anchors retained.",
+  "release": "place-details-1",
+  "note": "Denser island and hillside canopy, dated exterior palettes, mapped piers and lagoon crossings, illustrative harbour boats and market life, B-plate minibuses and place navigation. Building baseline and saved proposals retained.",
   "assets": [
-    "assets/index-Bu_M4e3M.js",
-    "assets/index-BY3rxmgi.css",
-    "assets/research-CQLGmInE.js",
+    "assets/index-DTHw6XJG.js",
+    "assets/index-DtJow0-l.css",
+    "assets/research-BdzLJBAY.js",
     "assets/research-data-DXfJnZDb.js",
-    "assets/vision-DaRiUyCS.js"
+    "assets/vision-DtMKNIHp.js"
   ]
 }
