@@ -38,12 +38,12 @@
   },
   "flavourLayer": {
     "directQuoteCandidates": 81,
-    "sourceLedAdaptations": 191,
-    "totalFlavourCandidates": 272,
+    "sourceLedAdaptations": 213,
+    "totalFlavourCandidates": 294,
     "noFlavourSelected": 15,
-    "pending": 22,
+    "pending": 0,
     "finalSelections": 0,
-    "status": "outcome-nearly-complete-card-space-selection-pending"
+    "status": "outcomes-complete-card-space-selection-pending"
   },
   "gameplay": {
     "status": "prepared-deferred",
@@ -63,12 +63,10 @@
     "modern reception"
   ],
   "currentCluster": {
-    "name": "Trojan/prewar + later ancient",
-    "status": "major source-risk batch complete",
-    "cardsProcessed": 12,
-    "directQuoteCandidatesAdded": 3,
-    "sourceLedAdaptationsAdded": 8,
-    "noFlavourSelectedAdded": 1
+    "name": "Modern reception, similes and historical-world extensions",
+    "status": "flavour-outcomes-complete",
+    "cardsProcessed": 22,
+    "sourceLedAdaptationsAdded": 22
   },
   "coreOdysseyNarrative": {
     "scope": "Odyssey Books I–XXIV",
