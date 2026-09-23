@@ -37,11 +37,11 @@
     "status": "structurally-complete-quality-and-source-verification-in-progress"
   },
   "flavourLayer": {
-    "directQuoteCandidates": 78,
-    "sourceLedAdaptations": 183,
-    "totalFlavourCandidates": 261,
-    "noFlavourSelected": 14,
-    "pending": 34,
+    "directQuoteCandidates": 81,
+    "sourceLedAdaptations": 191,
+    "totalFlavourCandidates": 272,
+    "noFlavourSelected": 15,
+    "pending": 22,
     "finalSelections": 0,
     "status": "outcome-nearly-complete-card-space-selection-pending"
   },
@@ -63,15 +63,12 @@
     "modern reception"
   ],
   "currentCluster": {
-    "name": "Books XXI–XXIV — bow, battle, reunion, peace",
-    "status": "complete-for-editorial-outcomes",
-    "cards": 34,
-    "directQuoteCandidates": 13,
-    "sourceLedAdaptations": 20,
-    "noFlavourSelected": 1,
-    "sourceReviewPending": 0,
-    "genericAttributePlaceholdersRemaining": 0,
-    "weakEmotionFieldsRemaining": 0
+    "name": "Trojan/prewar + later ancient",
+    "status": "major source-risk batch complete",
+    "cardsProcessed": 12,
+    "directQuoteCandidatesAdded": 3,
+    "sourceLedAdaptationsAdded": 8,
+    "noFlavourSelectedAdded": 1
   },
   "coreOdysseyNarrative": {
     "scope": "Odyssey Books I–XXIV",
