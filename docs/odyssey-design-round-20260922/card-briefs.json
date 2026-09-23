@@ -7355,8 +7355,8 @@
     {
       "sourceLabel": "Odyssey 10",
       "sequence": "Receive the traveller; bind the winds; release a favourable passage.",
-      "emotions": "Generosity / volatile advantage",
-      "attributes": "Portrayal and defining behaviour are described in the sequence and distinction below.",
+      "emotions": "Generosity with enormous leverage / the recipient feels one mistake could release everything at once.",
+      "attributes": "A host who can literally bind weather into a gift: generosity is immense, but the gift remains safe only while the recipient's crew trusts what they were told.",
       "hooks": "Prepare a wind as an Adventure; accelerate a Vehicle.",
       "assessment": "The gift should be powerful but vulnerable to misuse by the recipient.",
       "id": "ODY-159",
@@ -11639,7 +11639,7 @@
     {
       "sourceLabel": "Odyssey 11",
       "sequence": "Stand beside the blood trench at Ocean's edge.",
-      "emotions": "Dread.",
+      "emotions": "Ritual dread / the living stand at the edge of a place that should belong only to the dead.",
       "attributes": "Setting portrayal; no invented character action.",
       "hooks": "Establish place and mood through the existing land function; preserve fixing and pacing.",
       "assessment": "Black basic is a symbolic landscape treatment; the hero performs the rite at the boundary rather than entering a city of Hades.",
@@ -11773,7 +11773,7 @@
     {
       "sourceLabel": "Odyssey 10",
       "sequence": "Enter the enclosed Laestrygonian harbour.",
-      "emotions": "False shelter.",
+      "emotions": "False shelter / the enclosed harbour turns safety into a trap once escape routes close.",
       "attributes": "Setting portrayal; no invented character action.",
       "hooks": "Establish place and mood through the existing land function; preserve fixing and pacing.",
       "assessment": "Red basic for the trap's geography, distinct from individual giants.",
@@ -11805,7 +11805,7 @@
     {
       "sourceLabel": "Odyssey 12",
       "sequence": "Pass below Scylla's towering cliff.",
-      "emotions": "Exposure.",
+      "emotions": "Exposure and inevitability / the cliff makes the crew visible to a predator they cannot meaningfully fight.",
       "attributes": "Setting portrayal; no invented character action.",
       "hooks": "Establish place and mood through the existing land function; preserve fixing and pacing.",
       "assessment": "Red basic for the physical threat above the ship.",
@@ -11971,7 +11971,7 @@
     {
       "sourceLabel": "Odyssey 9–12; landscape composite",
       "sequence": "Round a rocky coast under heavy surf.",
-      "emotions": "Wild force.",
+      "emotions": "Wild coastal force / every turn of the headland threatens to reveal another hazard.",
       "attributes": "Setting portrayal; no invented character action.",
       "hooks": "Establish place and mood through the existing land function; preserve fixing and pacing.",
       "assessment": "RG tapped dual joins weather and untamed land; invented unnamed location.",
