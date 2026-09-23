@@ -2666,9 +2666,18 @@
     {
       "id": "ODY-140",
       "name": "Olivewood Carpenter",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-140",
+        "kind": "adaptation",
+        "text": "The same wood can carry a wanderer away or root a household in place.",
+        "source": "https://classics.mit.edu/Homer/odyssey.23.xxiii.html",
+        "basis": "Odyssey V gives Odysseus practical timber construction; Odyssey XXIII gives the rooted olive-wood bed.",
+        "fit": "One line unifies the common carpenter without pretending the poem names such a worker.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2725,9 +2734,18 @@
     {
       "id": "ODY-144",
       "name": "Soul-Guide Lantern",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-144",
+        "kind": "adaptation",
+        "text": "Later mourners gave the dead a final fare for a crossing Homer never charged them for.",
+        "source": "https://www.metmuseum.org/art/collection/search",
+        "basis": "Later Greek/Roman Charon's-obol practice; Odyssey XI itself uses blood and libations rather than a ferryman's coin.",
+        "fit": "Makes the reception gap part of the flavour instead of hiding it.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -2750,9 +2768,18 @@
     {
       "id": "ODY-146",
       "name": "Weavers of the Waiting House",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-146",
+        "kind": "adaptation",
+        "text": "A waiting house survives because not every thread belongs to the queen.",
+        "source": "https://classics.mit.edu/Homer/odyssey.2.ii.html",
+        "basis": "Penelope's loom is famous, but Homer also presents weaving as ordinary skilled household labour.",
+        "fit": "Separates anonymous household endurance from Penelope's singular deception.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -3043,9 +3070,18 @@
     {
       "id": "ODY-161",
       "name": "Wildfire Through Dry Scrub",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-161",
+        "kind": "adaptation",
+        "text": "One death became the spark; the battle supplied the dry ground.",
+        "source": "https://classics.mit.edu/Homer/iliad.17.xvii.html",
+        "basis": "Iliad XVII compares spreading battle to consuming flame.",
+        "fit": "Matches the removal-plus-splash-damage structure without claiming literal fire.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -3068,9 +3104,18 @@
     {
       "id": "ODY-163",
       "name": "Song of Achilles",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-163",
+        "kind": "adaptation",
+        "text": "They learned glory together; only one of them was promised to survive it.",
+        "source": "https://madelinemiller.com/the-song-of-achilles/",
+        "basis": "Miller's official materials frame the novel around the Achilles–Patroclus bond, glory and devastating loss.",
+        "fit": "Original reception flavour for the paired-token-to-single-hero Saga arc.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -3093,9 +3138,18 @@
     {
       "id": "ODY-165",
       "name": "Summer Heat on Stone",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-165",
+        "kind": "adaptation",
+        "text": "By midday the stone returned every measure of heat the sun had given it.",
+        "source": "https://classics.mit.edu/Homer/odyssey.5.v.html",
+        "basis": "Mediterranean Odyssey setting used only as atmospheric grounding; the exact heat-on-stone scene is invented.",
+        "fit": "Supports a once-per-turn tapping burn without pretending this is a Homeric incident.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -3216,9 +3270,18 @@
     {
       "id": "ODY-172",
       "name": "Mother Lion's Charge",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-172",
+        "kind": "adaptation",
+        "text": "Classical poets knew the lion's fury; this mother-lion is our adaptation of that inherited image.",
+        "source": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0113",
+        "basis": "Classical lion/lioness imagery exists across Homer and later tragedy, but the exact card image is composite.",
+        "fit": "Turns the source caveat into honest flavour rather than inventing an attribution.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -3418,9 +3481,18 @@
     {
       "id": "ODY-182",
       "name": "Nobody, Self-Invented",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-182",
+        "kind": "adaptation",
+        "text": "Nobody began as a lie. The dangerous discovery was how useful a chosen name could become.",
+        "source": "https://classics.mit.edu/Homer/odyssey.9.ix.html",
+        "basis": "The ancient false-name trick is direct; the self-invention framing is later interpretation.",
+        "fit": "Separates reception from the literal Cyclops scene.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -3810,17 +3882,35 @@
     {
       "id": "ODY-204",
       "name": "Patroclus, Beloved Companion",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-204",
+        "kind": "adaptation",
+        "text": "He was not Achilles's shadow. He was the person whose loss changed what Achilles became.",
+        "source": "https://madelinemiller.com/the-song-of-achilles/",
+        "basis": "Miller's official guide stresses Patroclus's compassion, loyalty and decisive effect on Achilles.",
+        "fit": "Matches companion support and a lasting death trigger.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-205",
       "name": "Helen, Face of the War",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-205",
+        "kind": "adaptation",
+        "text": "Every witness remembered Helen clearly. They did not remember the same woman.",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "basis": "Odyssey IV preserves competing stories of Helen's conduct during the war.",
+        "fit": "Supports Saga/exile possibilities as competing remembered versions.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -4092,9 +4182,18 @@
     {
       "id": "ODY-220",
       "name": "Threshing-Floor Worker",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-220",
+        "kind": "adaptation",
+        "text": "Far enough from the sea, an oar becomes only another strange tool beside the winnowing floor.",
+        "source": "https://classics.mit.edu/Homer/odyssey.11.xi.html",
+        "basis": "Tiresias's prophecy depends on an inland person mistaking Odysseus's oar for a winnowing implement.",
+        "fit": "Makes the land-recovery worker a deliberate inland counterpoint to the voyage.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -4451,9 +4550,18 @@
     {
       "id": "ODY-240",
       "name": "Circe, Self-Made Witch",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-240",
+        "kind": "adaptation",
+        "text": "Exile gave her time. Practice taught her what to do with it.",
+        "source": "https://madelinemiller.com/circe/",
+        "basis": "Miller's official description emphasises discovery, exile and the honing of witchcraft.",
+        "fit": "Matches repeated spellcraft accumulating toward transformation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -4578,9 +4686,18 @@
     {
       "id": "ODY-248",
       "name": "Sirens, Dream of Fatal Beauty",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-248",
+        "kind": "adaptation",
+        "text": "Homer gave them voices. Later artists gave the danger a beautiful face.",
+        "source": "https://www.metmuseum.org/perspectives/articles/2022/10/dangerous-beauty-medusa-sphinx-sirens",
+        "basis": "Met reception history traces Sirens from ancient bird hybrids toward increasingly beautiful and mermaid-like forms.",
+        "fit": "States the reception transformation honestly and succinctly.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -4934,17 +5051,35 @@
     {
       "id": "ODY-277",
       "name": "Potter's Firing",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-277",
+        "kind": "adaptation",
+        "text": "The vessel entered the kiln as work in progress and left it ready for the world.",
+        "source": "https://www.metmuseum.org/toah/hd/vase/hd_vase.htm",
+        "basis": "Documented ancient Greek pottery firing practice.",
+        "fit": "Supports artifact arrival granting immediate energy/haste.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-278",
       "name": "Signal Fire on the Headland",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-278",
+        "kind": "adaptation",
+        "text": "Long before the shore was safe, the fire could tell a crew where people were waiting.",
+        "source": "https://classics.mit.edu/Aeschylus/agamemnon.html",
+        "basis": "Greek beacon-fire signalling tradition, with Aeschylus providing a famous literary beacon chain.",
+        "fit": "Keeps the navigation function plausible without calling it an Odyssey event.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -5030,17 +5165,35 @@
     {
       "id": "ODY-283",
       "name": "Leatherworker's Awl",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-283",
+        "kind": "adaptation",
+        "text": "Good leatherwork is a row of small holes no one notices once the journey begins.",
+        "source": "https://www.carc.ox.ac.uk/record/2A334E32-3491-4D1B-8AD9-8E6399C30A68",
+        "basis": "Attic artisan imagery documents leatherworking with an awl.",
+        "fit": "Matches paid foresight from patient equipped labour.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-284",
       "name": "Reefwise Pilot",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-284",
+        "kind": "adaptation",
+        "text": "The reef is most dangerous to the sailor who recognises it one stroke too late.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Odysseus's commands to the coxswain/steersman in the narrow passage.",
+        "fit": "Supports crewing as foresight and protection.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -5127,17 +5280,35 @@
     {
       "id": "ODY-289",
       "name": "Fury Like Wildfire",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-289",
+        "kind": "adaptation",
+        "text": "The simile did not say the warriors were fire. It said standing before them felt the same.",
+        "source": "https://classics.mit.edu/Homer/iliad.20.xx.html",
+        "basis": "Iliadic battle is repeatedly compared to advancing fire.",
+        "fit": "Makes the card's metaphorical status explicit while preserving force.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
       "id": "ODY-290",
       "name": "The House Endures",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-290",
+        "kind": "adaptation",
+        "text": "Home survived twenty years because some people kept doing tomorrow's work.",
+        "source": "https://classics.mit.edu/Homer/odyssey.14.xiv.html",
+        "basis": "Eumaeus and the loyal household preserve ordinary duties through Odysseus's long absence.",
+        "fit": "Directly supports the tapped-labour/endurance engine.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -5207,9 +5378,18 @@
     {
       "id": "ODY-294",
       "name": "Helen, Remembered and Rewritten",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-294",
+        "kind": "adaptation",
+        "text": "Helen's story never stopped changing because no one agreed which memory should have the last word.",
+        "source": "https://classics.mit.edu/Homer/odyssey.4.iv.html",
+        "basis": "The Odyssey already preserves conflicting memories; later reception amplifies that instability.",
+        "fit": "Original reception flavour for a card about repeated scrutiny and retelling.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -5317,9 +5497,18 @@
     {
       "id": "ODY-301",
       "name": "Every Oar in Rhythm",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-301",
+        "kind": "adaptation",
+        "text": "No single stroke carried the ship. The voyage belonged to the rhythm between them.",
+        "source": "https://classics.mit.edu/Homer/odyssey.12.xii.html",
+        "basis": "Odyssey XII repeatedly foregrounds coordinated rowing under command.",
+        "fit": "Matches two tapped workers producing value and crew participation.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -5400,9 +5589,18 @@
     {
       "id": "ODY-306",
       "name": "The Song Outlives the Singer",
-      "status": "missing",
-      "reason": "No flavour-text outcome is yet recorded in the editorial register.",
-      "candidate": null,
+      "status": "candidate-adaptation",
+      "reason": "A source-led adaptation candidate exists and is explicitly not presented as a direct quotation.",
+      "candidate": {
+        "cardId": "ODY-306",
+        "kind": "adaptation",
+        "text": "The singer ends. The song becomes someone else's memory.",
+        "source": "https://classics.mit.edu/Homer/odyssey.8.viii.html",
+        "basis": "Demodocus demonstrates performed memory; the later poem remains populated by stories outliving their subjects.",
+        "fit": "A concise statement of the card's death/departure draw trigger.",
+        "verification": "source-led adaptation checked",
+        "selection": "candidate; final card-space check pending"
+      },
       "finalSelection": "pending-mechanics-and-layout"
     },
     {
@@ -5467,10 +5665,10 @@
   "summary": {
     "totalCards": 309,
     "directQuoteCandidates": 81,
-    "sourceLedAdaptations": 191,
-    "flavourCandidates": 272,
+    "sourceLedAdaptations": 213,
+    "flavourCandidates": 294,
     "noFlavourSelected": 15,
-    "pending": 22,
+    "pending": 0,
     "finalSelections": 0
   }
 }
