@@ -1,14 +1,14 @@
 {
   "version": "0.1.19",
-  "publishedAt": "2026-09-22T22:35:36.156Z",
+  "publishedAt": "2026-09-23T02:04:53.649Z",
   "baseline": "cbd-demolition-2026-09-17.1",
   "release": "floor-anchors-1",
   "note": "Traceable floor anchors, terrain-following exposed foundations and elevation review. No new surveyed terrain imported. Preserves stability-1 loading and navigation fixes.",
   "assets": [
     "assets/index-5phr77lE.css",
-    "assets/index-UW6qFE-L.js",
-    "assets/research-BWxMo9ZI.js",
+    "assets/index-DEFM5uK4.js",
     "assets/research-data-DXfJnZDb.js",
-    "assets/vision-CAC1ck2W.js"
+    "assets/research-emYdYO_9.js",
+    "assets/vision-CBM0QEQE.js"
   ]
 }
