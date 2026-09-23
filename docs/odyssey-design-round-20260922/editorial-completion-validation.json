@@ -1,0 +1,33 @@
+{
+  "schema": "odyssey-editorial-completion-validation/v1",
+  "checkedAt": "2026-09-23",
+  "cards": 309,
+  "references": {
+    "cardsCovered": 309,
+    "totalReferences": 912,
+    "policy": "reference-quality-v3"
+  },
+  "making": {
+    "completeBriefs": 309,
+    "missingRequiredFields": [],
+    "pendingSourceReviews": [],
+    "genericAttributePlaceholders": [],
+    "weakEmotionFields": []
+  },
+  "flavour": {
+    "statuses": {
+      "candidate-verified": 81,
+      "candidate-adaptation": 213,
+      "no-flavour-selected": 15
+    },
+    "missing": []
+  },
+  "passed": true,
+  "nextGates": [
+    "Final flavour-text selection and card-space/layout review",
+    "Rendered desktop/mobile card inspection",
+    "Played Draft/Sealed/Constructed/Commander validation using playtest packet",
+    "Concurrency-safe authoring-sheet/data integration",
+    "Live Studio publication and verification"
+  ]
+}

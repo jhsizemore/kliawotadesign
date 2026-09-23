@@ -1,0 +1,121 @@
+{
+  "schema": "odyssey-content-completion/v1",
+  "phase": "final-flavour-cardspace-review",
+  "startedAt": "2026-09-23",
+  "cards": 309,
+  "referenceLayer": {
+    "productionCardsCovered": 309,
+    "totalProductionReferences": 912,
+    "policy": "reference-quality-v3",
+    "nonbasicRatePairs": 293,
+    "roleCounts": {
+      "rate-best": 293,
+      "rate-normal": 293,
+      "tech": 118,
+      "identity": 41,
+      "buildaround": 198
+    },
+    "changedCandidateCards": 42,
+    "missingRequestedCandidateBenchmarks": 0,
+    "status": "coverage-complete-refresh-on-rules-change"
+  },
+  "makingLayer": {
+    "briefsPresent": 309,
+    "passageOrSourceReviewed": 309,
+    "sourceReviewPending": 0,
+    "genericAttributePlaceholdersRemaining": 0,
+    "weakEmotionFieldsRemaining": 0,
+    "missingRequiredFields": 0,
+    "requiredFields": [
+      "sequence",
+      "emotions",
+      "attributes",
+      "hooks",
+      "assessment",
+      "sourceReview"
+    ],
+    "status": "complete-at-editorial-candidate-level"
+  },
+  "flavourLayer": {
+    "directQuoteCandidates": 81,
+    "sourceLedAdaptations": 213,
+    "totalFlavourCandidates": 294,
+    "noFlavourSelected": 15,
+    "pending": 0,
+    "finalSelections": 0,
+    "status": "outcomes-complete-card-space-selection-pending"
+  },
+  "gameplay": {
+    "status": "prepared-deferred",
+    "playedMatches": 0,
+    "packet": "playtest-packet-v1.md"
+  },
+  "completionRule": "Every card has current reference coverage, source-grounded emotional brief, and verified quotation candidate or explicit no-text/no-direct-quote outcome; final flavour selection waits for card-space/layout review.",
+  "workOrder": [
+    "Books I–IV",
+    "Books V–VIII",
+    "Books IX–XII",
+    "Books XIII–XVI",
+    "Books XVII–XX",
+    "Books XXI–XXIV",
+    "Trojan/pre-Odyssey",
+    "post-Odyssey",
+    "modern reception"
+  ],
+  "currentCluster": {
+    "name": "Modern reception, similes and historical-world extensions",
+    "status": "flavour-outcomes-complete",
+    "cardsProcessed": 22,
+    "sourceLedAdaptationsAdded": 22
+  },
+  "coreOdysseyNarrative": {
+    "scope": "Odyssey Books I–XXIV",
+    "status": "editorially complete by narrative cluster",
+    "completedClusters": [
+      "Books I–IV",
+      "Books V–VIII",
+      "Books IX–XII",
+      "Books XIII–XVI",
+      "Books XVII–XX",
+      "Books XXI–XXIV"
+    ],
+    "note": "Deferred cards whose real source band is Trojan/pre-Odyssey, post-Odyssey or later reception are excluded from core-poem completion rather than falsely forced into the nearest Odyssey book."
+  },
+  "editorialCompletion": {
+    "checkedAt": "2026-09-23",
+    "cards": 309,
+    "references": {
+      "cardsCovered": 309,
+      "totalReferences": 912,
+      "policy": "reference-quality-v3"
+    },
+    "flavour": {
+      "directQuoteCandidates": 81,
+      "sourceLedAdaptations": 213,
+      "noFlavourSelected": 15,
+      "missing": 0
+    },
+    "making": {
+      "missingRequiredFields": 0,
+      "pendingSourceReviews": 0,
+      "genericAttributePlaceholders": 0,
+      "weakEmotionFields": 0
+    },
+    "passed": true,
+    "note": "Pass means references, source-grounded making briefs and flavour outcomes are complete at candidate/editorial level. Final card-space selection, gameplay validation and production integration remain separate later gates."
+  },
+  "cardSpaceReview": {
+    "dataset": "editorial-candidate-v1",
+    "studioDatasetPath": "public/mtgtools/odyssey/data/odyssey-editorial-candidate-v1.json",
+    "textFitAudit": "Studio batch-render audit enabled; actual browser fit state is authoritative.",
+    "staticPreflight": {
+      "critical": 1,
+      "veryHigh": 7,
+      "high": 13,
+      "medium": 34,
+      "ordinary": 254
+    },
+    "firstReview": "ODY-247 Ogygia, Island Beyond Time",
+    "rule": "Do not delete flavour research for space. Printed omission/shortening is a layout decision retained separately from the editorial candidate."
+  }
+}

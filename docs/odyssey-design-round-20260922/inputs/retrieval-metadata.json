@@ -1,0 +1,7 @@
+{
+  "retrievedAt": "2026-09-22T09:47:30.688533+00:00",
+  "baselineCommit": "7d8828cd15ecc92a0de7eb1d577a8ad6bcbde03d",
+  "liveDataUrl": "https://kliawota.design/mtgtools/odyssey/data/odyssey-data.json",
+  "liveCanonicalSha256": "1ff07defe3969fd7e79ab1d6527c279505705c5e688a18c23cf06c9d2109a6fa",
+  "note": "Archived evidence from the baseline read, not a new live check when these scripts are rerun."
+}

@@ -1,0 +1,133 @@
+{
+  "schema": "odyssey-limited-collation/v1",
+  "id": "odyssey-core-fin-playbooster-v1",
+  "lockedAt": "2026-09-23",
+  "source": "https://magic.wizards.com/en/news/feature/collecting-final-fantasy",
+  "mainSet": {
+    "cards": 309,
+    "ordinaryCommons": 80,
+    "commonDualLands": 10,
+    "basics": 16,
+    "uncommons": 109,
+    "rares": 74,
+    "mythics": 20
+  },
+  "pack": {
+    "gameCards": 14,
+    "dedicatedOrdinaryCommons": 7,
+    "uncommons": 3,
+    "wildcard": {
+      "common": 0.193,
+      "uncommon": 0.64,
+      "rareMythic": 0.167
+    },
+    "guaranteedRareMythic": 1,
+    "foilWildcard": {
+      "common": 0.5585,
+      "uncommon": 0.3665,
+      "rareMythic": 0.075
+    },
+    "land": {
+      "commonDual": 0.55,
+      "basic": 0.45
+    },
+    "externalBonusSheet": null
+  },
+  "expected": {
+    "ordinaryCommonsPerPack": 7.7515,
+    "ordinaryCommonsPerThreeOpenedBoosters": 23.2545,
+    "ordinaryCommonsPer24PackTable": 186.036,
+    "specificCommonPer24PackTable": 2.32545
+  },
+  "strictFinBonusSheetSensitivity": {
+    "replacementChance": 0.3333333333333333,
+    "expectedOrdinaryCommonsPerPack": 7.4181666667,
+    "ordinaryCommonsPer24PackTable": 178.036,
+    "specificCommonPer24PackTable": 2.22545
+  },
+  "commonExposure": {
+    "Enchantment card": {
+      "count": 9,
+      "expectedPerPack": 0.872044,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.943459,
+      "expectedAcross24PackTable": 20.92905
+    },
+    "Omen": {
+      "count": 5,
+      "expectedPerPack": 0.484469,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.788587,
+      "expectedAcross24PackTable": 11.62725
+    },
+    "Manifest Fate": {
+      "count": 3,
+      "expectedPerPack": 0.290681,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.60165,
+      "expectedAcross24PackTable": 6.97635
+    },
+    "Foretell": {
+      "count": 2,
+      "expectedPerPack": 0.193788,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.456508,
+      "expectedAcross24PackTable": 4.6509
+    },
+    "Gift": {
+      "count": 2,
+      "expectedPerPack": 0.193788,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.456508,
+      "expectedAcross24PackTable": 4.6509
+    },
+    "Escape": {
+      "count": 1,
+      "expectedPerPack": 0.096894,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.261375,
+      "expectedAcross24PackTable": 2.32545
+    },
+    "Constellation payoff": {
+      "count": 1,
+      "expectedPerPack": 0.096894,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.261375,
+      "expectedAcross24PackTable": 2.32545
+    },
+    "Survival": {
+      "count": 6,
+      "expectedPerPack": 0.581363,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.846951,
+      "expectedAcross24PackTable": 13.9527
+    },
+    "Food source": {
+      "count": 8,
+      "expectedPerPack": 0.77515,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.920841,
+      "expectedAcross24PackTable": 18.6036
+    },
+    "Vehicle": {
+      "count": 3,
+      "expectedPerPack": 0.290681,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.60165,
+      "expectedAcross24PackTable": 6.97635
+    },
+    "Direct blink": {
+      "count": 2,
+      "expectedPerPack": 0.193788,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.456508,
+      "expectedAcross24PackTable": 4.6509
+    },
+    "Self-mill": {
+      "count": 6,
+      "expectedPerPack": 0.581363,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.846951,
+      "expectedAcross24PackTable": 13.9527
+    },
+    "Graveyard return": {
+      "count": 3,
+      "expectedPerPack": 0.290681,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.60165,
+      "expectedAcross24PackTable": 6.97635
+    }
+  },
+  "caveats": [
+    "Three-opened-booster probabilities are not draft acquisition probabilities.",
+    "No pick competition or game play is represented.",
+    "Odyssey currently has no Through the Ages-style external sheet."
+  ]
+}

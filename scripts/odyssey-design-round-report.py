@@ -1,0 +1,190 @@
+#!/usr/bin/env python3
+"""Assemble authored briefs, evidence, candidate and a standalone review surface."""
+from pathlib import Path
+import json,re,math,html,hashlib,datetime
+ROOT=Path(__file__).resolve().parents[1]; OUT=ROOT/'docs/odyssey-design-round-20260922'
+cards=json.loads((ROOT/'public/mtgtools/odyssey/data/odyssey-data.json').read_text())['cards']; authored={}
+def rows(fn):return [line.split('|') for line in (OUT/fn).read_text().splitlines() if line and not line.startswith('#')]
+for n,source,seq,feel,attr,hooks,assessment in rows('common-briefs.txt'):
+ authored[int(n)]={'sourceLabel':source,'sequence':seq,'emotions':feel,'attributes':attr,'hooks':hooks,'assessment':assessment}
+for n,source,seq,feel,hooks,assessment in rows('higher-briefs.txt'):
+ authored[int(n)]={'sourceLabel':source,'sequence':seq,'emotions':feel,'attributes':'Portrayal and defining behaviour are described in the sequence and distinction below.','hooks':hooks,'assessment':assessment}
+for n,source,seq,feel,distinction in rows('land-briefs.txt'):
+ authored[int(n)]={'sourceLabel':source,'sequence':seq,'emotions':feel,'attributes':'Setting portrayal; no invented character action.','hooks':'Establish place and mood through the existing land function; preserve fixing and pacing.','assessment':distinction}
+assert set(authored)==set(range(1,310))
+romans=['I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI','XXII','XXIII','XXIV']
+def sources(label):
+ if label.startswith('Odyssey'):
+  nums=[int(x) for x in re.findall(r'\b\d+\b',label)]
+  return [{'label':'Homer, Odyssey '+str(n)+' — Butler','url':f'https://classics.mit.edu/Homer/odyssey.{n}.{romans[n-1].lower()}.html'} for n in nums if 1<=n<=24]
+ if label.startswith('Aeschylus'):return [{'label':'Aeschylus, Agamemnon — Morshead','url':'https://classics.mit.edu/Aeschylus/agamemnon.html'}]
+ if label.startswith('Apollodorus'):return [{'label':'Apollodorus, Epitome — Frazer','url':'https://www.theoi.com/Text/ApollodorusE.html'}]
+ if label.startswith('Tennyson'):return [{'label':'Tennyson, Ulysses','url':'https://poets.org/poem/ulysses'}]
+ if label.startswith('Margaret'):return [{'label':'Atwood, The Penelopiad — author page','url':'https://margaretatwood.ca/books/the-penelopiad/'}]
+ if label.startswith('Madeline'):
+  return [{'label':'Miller — author context; exact novel passage pending','url':'https://madelinemiller.com/circe/' if 'Circe' in label else 'https://madelinemiller.com/the-song-of-achilles/'}]
+ return []
+verified={1,5,7,8,11,13,14,15,23,26,31,35,36,37,41,49,50,77,80,88,107,110,111,116,125,129,144,153,174,184,199,215,221,223,232,235,243,244,245,246,275,287,292,296,304,305}
+verified.remove(144)
+verified.update({51,56,90,127,135,139,213})
+verified.update({44,64,74,87,103,108,112,115,123,142})
+source_review_overrides={
+ "44": "passage checked: Book XII directly has Odysseus order the crew to row with might and main and command the coxswain; delayed recovery is gameplay abstraction.",
+ "64": "passages checked: Books IX and XII directly show boarding, oar-work, ship handling and dangerous passage; the delayed untap is mechanical abstraction.",
+ "74": "passage checked: Book VII directly seats the stranger and serves bread and household food before further questioning.",
+ "87": "passage checked with extension: Book V uses cormorant and sea-gull imagery around sea travel; a mortal lookout reading birds for navigation is not narrated by Homer.",
+ "103": "passage checked: Book III directly shows the cup, prayer and drink-offering being passed in ritual order.",
+ "108": "passage checked: Book III directly describes pages filling mixing bowls with wine and water and serving the gathering.",
+ "112": "passage checked with extension: Book XII explicitly names dolphins among Scylla's prey; dolphins pacing a ship's bow are an explicit natural-world extension, not a narrated event.",
+ "115": "passage checked with external extension: Odyssey IX supplies ship and oar work but not depth sounding; sounding is treated as historically attested ancient-Mediterranean seamanship, not a Homeric event.",
+ "123": "passage checked with fantasy extension: Book XXIV opens with the suitors' ghosts in Hades; a shade escaping bodily back into play is explicitly non-Homeric fantasy.",
+ "142": "passage checked: Book XI directly gives the drink-offering to the dead and the ghosts approaching; battlefield return is symbolic game abstraction."
+}
+extra_sources={
+ 115:[{'label':'Kemp & D\'Olier, ancient lead-line navigation — Journal of Navigation','url':'https://www.cambridge.org/core/journals/journal-of-navigation/article/early-navigation-in-the-north-sea-the-use-of-the-lead-and-line-and-other-navigation-methods/EDA8012AE267C583E8F2EA14EE36E145'}]
+}
+editorial_path=OUT/'inputs/editorial-register.json'
+editorial=json.loads(editorial_path.read_text()) if editorial_path.exists() else {'cards':{}}
+editorial_cards=editorial.get('cards',{})
+briefs=[]
+for c in cards:
+ b=authored[c['number']]
+ src=sources(b['sourceLabel'])+extra_sources.get(c['number'],[])
+ review=source_review_overrides.get(c['number'],'key passage checked; mechanical interpretation remains editorial' if c['number'] in verified else 'source mapped; detailed passage review pending')
+ b.update({'id':c['id'],'number':c['number'],'name':c['displayName'] or c['name'],'rarity':c['rarity'],'color':c['color'],'currentType':c['type'],'currentMana':c['mana'],'currentRules':c['rules'],'baselineStoryElement':c.get('flavorStoryElement',''),'baselineScore':c.get('flavorMatchScore'),'baselineRationale':c.get('flavorMatchRationale',''),'sources':src,'sourceReview':review,'briefStatus':'first-pass','quoteStatus':'missing'});briefs.append(b)
+for b in briefs:
+ e=editorial_cards.get(b['id'],{})
+ if e.get('sourceReview'): b['sourceReview']=e['sourceReview']
+ if e.get('brief'): b.update(e['brief'])
+
+quotes=[
+ {'cardId':'ODY-035','text':'Tell me, O muse','author':'Homer','translator':'Samuel Butler','work':'Odyssey','location':'Book 1, opening invocation','speaker':'Narrator','source':'https://classics.mit.edu/Homer/odyssey.1.i.html','context':'The singer invokes divine assistance to tell the journey.','fit':'Short opening phrase fits the selection spell without pretending to be rules text.'},
+ {'cardId':'ODY-174','text':'at night I would unpick the stitches','author':'Homer','translator':'Samuel Butler','work':'Odyssey','location':'Book 19, Penelope recounts the shroud deception','speaker':'Penelope','source':'https://classics.mit.edu/Homer/odyssey.19.xix.html','context':'She explains to the disguised Odysseus how she postponed the marriage.','fit':'The action is exactly the rare proposal\'s unweaving hook.'},
+ {'cardId':'ODY-009','text':'he dropped his ears and wagged his tail','author':'Homer','translator':'Samuel Butler','work':'Odyssey','location':'Book 17, Argos recognises the arriving Odysseus','speaker':'Narrator','source':'https://classics.mit.edu/Homer/odyssey.17.xvii.html','context':'A physical sign of recognition despite the master\'s disguise.','fit':'A tender bodily action, more specific than a generic quotation about loyalty.'},
+ {'cardId':'ODY-287','text':'To strive, to seek, to find, and not to yield.','author':'Alfred, Lord Tennyson','translator':None,'work':'Ulysses','location':'Final line','speaker':'Tennyson\'s Ulysses','source':'https://poets.org/poem/ulysses','context':'The later poem ends with resolve to continue voyaging.','fit':'Matches the deliberately restless reception version rather than Homeric homecoming.'},
+ {'cardId':'ODY-292','text':'So I’ll spin my own thread.','author':'Margaret Atwood','translator':None,'work':'The Penelopiad','location':'Excerpt on author\'s book page; edition pagination not verified','speaker':'Penelope','source':'https://margaretatwood.ca/books/the-penelopiad/','context':'Penelope claims the right to tell her own story.','fit':'Directly fits the Teller of Her Own Tale version.'}
+
+ ,{'cardId':'ODY-049','text':'you have thundered from a clear sky','author':'Homer','translator':'Samuel Butler','work':'Odyssey','location':"Book 20, Zeus's confirming thunder",'speaker':'Odysseus','source':'https://classics.mit.edu/Homer/odyssey.20.xx.html','context':'Odysseus asks for a sign and recognizes thunder under a clear sky as confirmation.','fit':"The impossible weather sign is the card's exact subject and remains short enough for a common."}
+ ,{'cardId':'ODY-116','text':'this is no dream, but a vision of good omen','author':'Homer','translator':'Samuel Butler','work':'Odyssey','location':"Book 19, the eagle interprets Penelope's dream",'speaker':"Eagle in Penelope's dream",'source':'https://classics.mit.edu/Homer/odyssey.19.xix.html','context':"The eagle declares the geese dream a true omen of Odysseus's return and the suitors' destruction.",'fit':"Directly names the dream as an omen while preserving Penelope's surrounding uncertainty."}
+ ,{'cardId':'ODY-127','text':'the sun is blotted out of heaven','author':'Homer','translator':'Samuel Butler','work':'Odyssey','location':"Book 20, Theoclymenus's vision",'speaker':'Theoclymenus','source':'https://classics.mit.edu/Homer/odyssey.20.xx.html','context':"The prophet sees blood, ghosts and darkness over the hall and announces the suitors' doom.",'fit':'A compact image from the exact vision gives the black Omen dread without explaining the whole prophecy.'}
+ ,{'cardId':'ODY-135','text':'the joints upon the spits began to low like cows','author':'Homer','translator':'Samuel Butler','work':'Odyssey','location':"Book 12, omen after Helios's cattle are slaughtered",'speaker':'Narrator','source':'https://classics.mit.edu/Homer/odyssey.12.xii.html','context':'After the crew violates the taboo, the hides crawl and the roasting meat bellows before punishment follows.','fit':"The uncanny physical sign is the card's exact image and carries the horror of the violated oath."}
+ ,{'cardId':'ODY-139','text':'there will be no house in Ithaca more royal than your own','author':'Homer','translator':'Samuel Butler','work':'Odyssey','location':'Book 15, Theoclymenus interprets the hawk','speaker':'Theoclymenus','source':'https://classics.mit.edu/Homer/odyssey.15.xv.html','context':"A hawk carrying a dove crosses on the right and is read as a sign of the enduring rule of Odysseus's house.",'fit':'It states the interpretation of the bird omen rather than merely describing the animal.'}
+]
+flavour_candidates=[e['flavour']['candidate'] for e in editorial_cards.values() if e.get('flavour',{}).get('status') in ['candidate-verified','candidate-adaptation'] and e['flavour'].get('candidate')]
+quotes=[q for q in flavour_candidates if q.get('kind','quote')=='quote' or q.get('author')]
+for q in quotes:q.update({'verification':'exact excerpt checked','wordCount':len(q['text'].split()),'characters':len(q['text']),'selection':'candidate; final card-space check pending'})
+butler=' '.join(q['text'] for q in json.loads((OUT/'inputs/verified-butler-excerpts.json').read_text()))
+for q in quotes:
+ if q['translator']=='Samuel Butler':assert q['text'] in butler,q['cardId']
+quote_by_id={q['cardId']:q for q in quotes}
+flavour_by_id={q['cardId']:q for q in flavour_candidates}
+for b in briefs:
+ b['flavourTextCandidate']=flavour_by_id.get(b['id'])
+ b['quotationCandidate']=quote_by_id.get(b['id'])
+ b['flavourCandidate']=b['quotationCandidate']
+ if b['quotationCandidate']:b['quoteStatus']='candidate verified; final card-space check pending'
+ e=editorial_cards.get(b['id'],{})
+ fs=e.get('flavour',{}).get('status')
+ if fs=='candidate-adaptation': b['quoteStatus']='source-led adaptation candidate; final card-space check pending'
+ elif fs=='no-flavour-selected':
+  b['quoteStatus']='no flavour text selected'
+  b['quotationAuditOutcome']=e['flavour'].get('rationale','')
+ elif fs=='no-direct-quote-selected':
+  b['quoteStatus']='no direct quote selected; composite/interpretive portrayal'
+  b['quotationAuditOutcome']=e['flavour'].get('rationale','')
+ e=editorial_cards.get(b['id'],{})
+ fl=e.get('flavour',{})
+ if fl.get('status')=='candidate-adaptation':
+  b['flavourCandidate']=fl.get('candidate')
+  b['quotationCandidate']=None
+  b['quoteStatus']='source-led adaptation candidate; final card-space check pending'
+ elif fl.get('status')=='no-flavour-selected':
+  b['flavourCandidate']=None
+  b['quotationCandidate']=None
+  b['quoteStatus']='no flavour text selected'
+  b['quotationAuditOutcome']=fl.get('rationale','')
+ elif fl.get('status')=='no-direct-quote-selected':
+  b['quoteStatus']='no direct quote selected; adaptation still pending'
+  b['quotationAuditOutcome']=fl.get('rationale','')
+changes=json.loads((OUT/'candidate-changes.json').read_text()); summary=json.loads((OUT/'candidate-summary.json').read_text())
+factsrc=OUT/'inputs/new-reference-facts.json'; extra=json.loads(factsrc.read_text()) if factsrc.exists() else {}
+omens=json.loads((OUT/'inputs/omens.json').read_text())['data']
+for c in omens:extra[c['name']]={k:c.get(k) for k in ['name','mana_cost','type_line','oracle_text','power','toughness','scryfall_uri','released_at']}
+comparisons={
+97:(None,'Naming-only revision: the existing Hephaestus-net mechanics remain unchanged; the title now exposes that this is Demodocus’s performed song.'),
+162:('Flotsam','Chapter II now uses only BG overlap: Food and Treasure are available to both colors, removing the prior creature/artifact sacrifice instruction that was not cleanly green. Flotsam verifies GU-hybrid self-mill/investigate precedent; Tough Cookie verifies green Food infrastructure. Chapter III creature recursion is shared BG space.'),
+245:('Shore Up','Chapter III now untaps only creatures and/or lands, matching green’s untap access while remaining fully blue. Flotsam verifies the GU-hybrid investigate precedent; Shore Up verifies blue untap plus hexproof on a creature; Tamiyo’s Safekeeping verifies green hexproof protection. Final rate still needs games.'),
+213:('Flowering of the White Tree','One more generic mana than the two-white enchantment; retains ward {1} for legendary creatures but gives no power/toughness boost. Instead, the artifact protects itself and draws at your end step with two legendary creatures, all conditional on retaining one chosen land. Tome of Legends provides a cheaper but counter- and activation-limited draw comparison. Test colourless access and repeated free draws; the old blink benchmarks no longer describe this design.'),
+235:('Reckless Impulse','One more mana than Reckless Impulse for the same initial two-card access window, followed next turn by three red mana and then a land sacrifice. Seething Song gives five red mana immediately at the same mana value; this Saga exchanges that immediacy for card access and a delayed liability. Counter removal or early sacrifice can avoid chapter III, so the land loss is not a guaranteed balancing cost.'),
+7:('Cloudshift','Costs one mana more, returns tapped rather than untapped, and adds two life. The rest condition limits immediate combat use; repeated enter effects and revealing manifested permanents remain important. Ephemerate offers a stronger repeated-blink ceiling without life gain.'),
+51:('Secret Plans','A three-mana 2/3 with two tempo triggers, compared with a two-mana enchantment that draws on face-up events. The candidate exchanges cards and passive toughness for a body, library-exile tapping and a recognition untap capped once each turn.'),
+90:('Secret Plans','A two-mana 2/2 with an additional paid Adventure. Face-up or direct-return events give an untap and counter once each turn instead of Secret Plans’ unrestricted face-up draw. Do not count the Adventure’s manifest action itself as turning face up.'),
+56:('Ravenous Squirrel','Three mana for a 3/3 instead of one hybrid mana for a 1/1. Growth requires an end-step sacrifice of another creature or Food; it cannot grow from every sacrifice or arbitrary artifacts. Life loss replaces the Squirrel’s paid draw option. Test the immediate 4/4 with Food and multiplayer scaling.'),
+49:('Omen of the Sun','One mana cheaper, but trades two bodies for one turn of restraint; life and later scry remain. This is a tempo sign, not a token engine.'),
+116:('Omen of the Sea','Costs one more mana and scries one fewer, replacing the drawn card with a selected hidden 2/2 and an exiled alternative. The body and flash ambush need testing.'),
+127:("Mire's Grasp",'Costs one more mana for a smaller temporary debuff, but has flash, remains as a reusable enchantment and can be sacrificed for scry. Repeated blink is the main risk.'),
+135:('Omen of the Forge','Same mana cost and damage quantity, restricted to creatures rather than any target. Same delayed scry cost; a deliberate power concession.'),
+139:('Omen of the Hunt','Costs one less but does not ramp or fix. Food and a counter reward board presence; compare support value, not the amount of text.'),
+103:('Arashin Cleric','One mana cheaper, one less toughness and one less life. Provides an early crew body without card advantage.'),
+108:('Novice Inspector','One mana more, one more power and one less toughness; Food replaces a Clue and does not buy a card. Ordinary body-plus-resource comparison.'),
+88:('Jewel Thief','Costs one more. The optional extra body leaves the main body tapped with a stun counter; lacks vigilance, trample and Treasure. Face-up potential is the variable upside.'),
+15:('Sleep','Same mana value as Sleep, with UB instead of UU. Trades the next-untap restriction for two cards and all-opponent scope, at the additional cost of a nontoken creature. The creature is lost during casting even if this spell is countered. Test multiplayer reach and recursion; no refund, blink or rescue is built into this spell.'),
+174:('Scholar of New Horizons','One more mana, an additional colour and a larger 2/4 body; removes only lore counters through enchantment entry instead of any counter through tapping. Once each turn still allows multiple removals per multiplayer round.'),
+36:('Soulherder','Both reward exile patterns, but Basin is an artifact that draws rather than grows and has no built-in blink. Face-up recognition adds a second distinct enabler path.'),
+37:('Soul-Guide Lantern','Far more mana for a modest creature body and life. Narrowed to creature cards in one graveyard, but can clear many at once. Compare impact on Escape before increasing the rate.')}
+reference_reviews=[]
+supplemental_benchmarks={
+ 'ODY-127':["Mire's Grasp"],
+ 'ODY-245':['Shore Up',"Tamiyo's Safekeeping"]
+}
+primary_benchmarks={'ODY-015':'Sleep','ODY-127':"Mire's Grasp",'ODY-162':'Flotsam','ODY-245':'Shore Up'}
+missing_requested=[]
+for ch in changes:
+ n=ch['slot']; name,comment=comparisons.get(n,(None,None))
+ baseline=[{'name':r['card']['name'],'mana':r['card']['manaCost'],'pt':'/'.join(x for x in [r['card'].get('power',''),r['card'].get('toughness','')] if x),'roles':r.get('roles',[]),'url':r['card'].get('scryfallUri',''),'comparison':r.get('annotation','')} for r in ch['existingReferenceFacts'] if any(x in r.get('roles',[]) for x in ['rate-best','rate-normal'])]
+ requested=ch.get('newReferencesToVerify',[])
+ verified_names=list(dict.fromkeys(requested+supplemental_benchmarks.get(ch['id'],[])))
+ verified_benchmarks=[extra[x] for x in verified_names if x in extra]
+ missing=[x for x in requested if x not in extra]
+ missing_requested.extend((ch['id'],x) for x in missing)
+ if ch['id']=='ODY-097':
+  status='naming-only revision; no new rate benchmark required';new_benchmark=None
+ elif requested:
+  status='requested printed component benchmarks verified; final rate remains gameplay-gated'
+  primary=primary_benchmarks.get(ch['id'],name or requested[0]);new_benchmark=extra.get(primary)
+ else:
+  status='existing production component benchmarks retained; no additional printed reference required; final rate remains gameplay-gated';new_benchmark=extra.get(name) if name else None
+ review={'id':ch['id'],'currentComparison':baseline,'candidateComparison':comment or ('Baseline comparison must be adjusted for these exact changes: '+', '.join(ch['changedFields'])+'. '+ch['reason']),'newBenchmark':new_benchmark,'verifiedBenchmarks':verified_benchmarks,'requestedBenchmarks':requested,'missingRequestedBenchmarks':missing,'status':status}
+ reference_reviews.append(review);ch['candidateReferenceReview']=review
+assert not missing_requested,missing_requested
+valpath=OUT/'validation.json'
+validation=json.loads(valpath.read_text()) if valpath.exists() else {'structuralChecks':{},'remainingRisks':[]}
+validation.pop('analyticalPackAccess',None)
+validation.setdefault('structuralChecks',{}).update({'unique309Ids':len({b['id'] for b in briefs})==309,'all309Authored':len(briefs)==309,'commons106':sum(b['rarity']=='C' for b in briefs)==106,'changedCards':len(changes),'fixedCountsPreserved':all(summary['before'][k]==summary['after'][k] for k in ['cards','rarity','lands','doubleFaced']),'exactButlerQuotes':True})
+validation['method']='Structural checks plus locked FIN-style Play Booster collation, fixed-intent passing stress tests, source audits and printed component-reference review. No played matches or human drafts are represented.'
+validation['playedMatches']=0
+validation['referenceRefresh']={'completedAt':'2026-09-23','changedCards':len(changes),'namingOnlyNoRateRefresh':1,'requestedRefreshCards':sum(bool(ch.get('newReferencesToVerify')) for ch in changes),'retainedExistingBenchmarkCards':sum(not ch.get('newReferencesToVerify') and ch['id']!='ODY-097' for ch in changes),'missingRequestedBenchmarks':len(missing_requested),'balanceStatus':'component precedents verified; rates remain gameplay-gated'}
+for name,val in [('card-briefs.json',{'schema':'odyssey-making-of/v1','status':'first-pass','cards':briefs}),('quotation-candidates.json',quotes),('flavour-text-candidates.json',flavour_candidates),('candidate-reference-review.json',reference_reviews),('validation.json',validation),('reference-research.json',{'retrievedAt':json.loads((OUT/'inputs/retrieval-metadata.json').read_text())['retrievedAt'],'cards':extra,'elderGiantsWithEscape':[{'name':c['name'],'mana':c['mana_cost'],'released':c['released_at'],'url':c['scryfall_uri']} for c in json.loads((OUT/'inputs/titans.json').read_text())['data']]})]:
+ (OUT/name).write_text(json.dumps(val,ensure_ascii=False,indent=2)+'\n')
+payload={'briefs':briefs,'changes':changes,'summary':summary,'validation':validation}
+template='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Odyssey — Making the set</title>
+<style>:root{color-scheme:light;--ink:#192d34;--muted:#57676c;--line:#cbd4d1;--sea:#176d76;--paper:#f7f4ec}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,sans-serif}header,main{max-width:1180px;margin:auto;padding:28px}header{padding-top:45px}small,.eyebrow{letter-spacing:.1em;text-transform:uppercase;color:var(--sea);font-size:12px;font-weight:700}h1{font:600 clamp(34px,6vw,60px)/1.08 Georgia,serif;margin:15px 0}h2{font:600 28px/1.2 Georgia,serif}h3{margin:5px 0 12px;font:600 24px/1.2 Georgia,serif}p{margin:8px 0 16px}.intro{max-width:740px;font-size:19px}.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:25px}.stats b{display:block;font-size:30px}.stats span{font-size:13px;color:var(--muted)}.panel{border:1px solid var(--line);border-radius:12px;padding:22px;background:#fffdfa;margin:20px 0}.controls{display:flex;gap:10px;flex-wrap:wrap;position:sticky;top:0;background:var(--paper);padding:14px 0;z-index:2}input,select,button{font:inherit;padding:10px 12px;border:1px solid #93aaa9;border-radius:7px;background:white;color:var(--ink)}input{flex:1;min-width:170px}button{cursor:pointer}button.active{background:var(--sea);color:white}.count{color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:white;border:1px solid var(--line);border-radius:10px;padding:22px;overflow-wrap:anywhere}.badge{font:600 11px system-ui;background:#e0eeee;color:#14525a;padding:4px 7px;border-radius:4px;display:inline-block;margin:3px 3px 8px 0}.label{font-weight:700;font-size:13px;color:var(--sea);margin-top:17px}details{margin-top:16px;border-top:1px solid var(--line);padding-top:10px}summary{cursor:pointer;font-weight:600}pre{white-space:pre-wrap;font:14px/1.5 system-ui;background:#f0f4f1;padding:12px;border-radius:6px}.rules{font-size:14px}a{color:#116478;text-underline-offset:3px}.source{font-size:12px;color:var(--muted)}table{border-collapse:collapse;width:100%;font-size:14px}th,td{text-align:left;border-bottom:1px solid var(--line);padding:8px}th{color:var(--sea)}.tablewrap{overflow:auto}.note{border-left:3px solid #b67a28;padding-left:14px}.quote{font:italic 21px/1.4 Georgia,serif}footer{margin:35px 0;color:var(--muted);font-size:13px}@media(max-width:700px){header,main{padding:20px}.grid{grid-template-columns:1fr}.card{padding:18px}.stats{gap:18px}.controls{position:static}h2{font-size:25px}}</style>
+<header><div class="eyebrow">Odyssey Studio · Design round · 22 September 2026</div><h1>Making the set</h1><p class="intro">The action, feeling and character behind every card—and a first candidate for making those things happen in play.</p><div class="stats"><div><b>309</b><span>first-pass briefs</span></div><div><b>106</b><span>commons considered first</span></div><div><b>__CHANGE_COUNT__</b><span>candidate revisions</span></div><div><b>__QUOTE_COUNT__</b><span>flavour-text candidates</span></div></div></header>
+<main><section class="panel"><h2>What the commons need to teach</h2><p>Work together to survive and travel. Conceal and recognise identity. Keep—or violate—the duties of home. Enchantments connect those experiences through signs, stories and transformations.</p><div class="tablewrap"><table id="metrics"></table></div><p class="source">Counts describe card records, not draft balance. The candidate preserves 309 cards, the rarity allocation, 40 lands, eight common Food sources and one double-faced card.</p></section>
+<section class="panel"><h2>Selected story and colour directions</h2><p><strong>Penelope:</strong> the rare Saga-unweaving proposal uses the existing slot 174 and changes her from blue to white-blue, so she can lead a WU enchantment Commander deck.</p><p><strong>Iphigenia:</strong> Hunter selected the version in which Iphigenia is actually sacrificed for the war effort. Slot 15 remains blue-black: a mandatory creature sacrifice buys passage for the army. The rescue-and-deer proposal is withdrawn.</p><p class="note">This is a first-pass review and playtest candidate. Exact passage checks, further quotation selection, played games and final card rendering remain outstanding. Existing cards and the Studio note queue have not been marked finished.</p></section>
+<h2>Explore the cards</h2><div class="controls"><input id="search" aria-label="Search cards" placeholder="Search a card, action, source or feeling"><select id="rarity" aria-label="Rarity"><option value="">All rarities</option><option>C</option><option>U</option><option>R</option><option>M</option></select><button id="changed" aria-pressed="false">Candidate changes only</button></div><p class="count" id="count"></p><div class="grid" id="cards"></div><footer>Baseline: Studio 2026-09-22.5 · dataset 2026-09-22.3. Source labels distinguish episodes, composites, interpretations and later reception. __QUOTE_COUNT__ flavour-text candidates are provisional until the final designs and card-space checks settle.</footer></main>
+<script>const DATA=__DATA__;const changes=new Map(DATA.changes.map(c=>[c.id,c]));const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));let changedOnly=false;const metricNames={commonCreatures:'Common creatures',commonEnchantments:'Common enchantments',commonEnchantmentCreatures:'Enchantment creatures',commonManifestFate:'Manifest Fate',commonForetell:'Foretell',commonGift:'Gift',commonEscape:'Escape',commonConstellation:'Constellation'};document.querySelector('#metrics').innerHTML='<tr><th>Common foundation</th><th>Current</th><th>Candidate</th></tr>'+Object.entries(metricNames).map(([k,v])=>`<tr><td>${v}</td><td>${DATA.summary.before[k]}</td><td>${DATA.summary.after[k]}</td></tr>`).join('');
+function card(b){const c=changes.get(b.id),q=b.quotationCandidate,f=b.flavourCandidate||q;return `<article class="card" data-id="${b.id}"><small>${b.id} · ${b.rarity} · ${esc(b.color)}</small><h3>${esc(b.name)}</h3>${c?'<span class="badge">Candidate revision</span>':''}<span class="badge">First-pass brief</span><div class="label">The action</div><p>${esc(b.sequence)}</p><div class="label">The feeling</div><p>${esc(b.emotions)}</p>${b.rarity==='C'&&!b.currentType.includes('Land')?`<div class="label">The character or object</div><p>${esc(b.attributes)}</p>`:''}<div class="label">Hooks for mechanics</div><p>${esc(b.hooks)}</p><div class="label">What this version must get right</div><p>${esc(b.assessment)}</p><div class="source">${esc(b.sourceLabel)} · ${esc(b.sourceReview)}<br>${b.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)}</a>`).join(' · ')}</div>${f?`<details><summary>${q?'Quotation candidate':'Flavour adaptation candidate'}</summary><p class="quote">${q?'“':''}${esc(f.text)}${q?'”':''}</p><p class="source">${q?esc(q.author)+(q.translator?', translated by '+esc(q.translator):'')+' · '+esc(q.work)+' · '+esc(q.location):'Odyssey Studio adaptation'}<br>${f.source?`<a href="${esc(f.source)}" target="_blank" rel="noopener">Source basis</a>`:''}</p><p>${esc(f.fit||f.basis||'')}</p></details>`:''}${c?`<details open><summary>Proposed revision</summary><h4>${esc(c.after.displayName)} · ${esc(c.after.mana)} ${esc(c.after.pt)}</h4><p class="rules">${esc(c.after.type)}</p><pre>${esc(c.after.rules)}</pre><p>${esc(c.reason)}</p><div class="label">Test question</div><p>${esc(c.playtestQuestion)}</p><div class="label">Reference comparison</div><p>${esc(c.candidateReferenceReview.candidateComparison)}</p>${c.candidateReferenceReview.newBenchmark?`<p class="source"><a href="${esc(c.candidateReferenceReview.newBenchmark.scryfall_uri)}" target="_blank" rel="noopener">${esc(c.candidateReferenceReview.newBenchmark.name)}</a> · ${esc(c.candidateReferenceReview.newBenchmark.mana_cost)}</p>`:''}</details>`:''}<details><summary>Current rules and inherited assessment</summary><pre>${esc(b.currentMana)} ${esc(b.currentType)}\n${esc(b.currentRules)}</pre><p>${esc(b.baselineStoryElement)}</p><p class="source">Inherited flavour score: ${esc(b.baselineScore)}/5. This first pass does not certify that score.<br>${esc(b.baselineRationale)}</p></details></article>`}
+function render(){let q=document.querySelector('#search').value.toLowerCase(),r=document.querySelector('#rarity').value;let bs=DATA.briefs.filter(b=>(!r||b.rarity===r)&&(!changedOnly||changes.has(b.id))&&(!q||JSON.stringify([b,changes.get(b.id)?.after.name]).toLowerCase().includes(q)));document.querySelector('#count').textContent=bs.length+' cards';document.querySelector('#cards').innerHTML=bs.map(card).join('')};document.querySelector('#search').addEventListener('input',render);document.querySelector('#rarity').addEventListener('change',render);document.querySelector('#changed').addEventListener('click',e=>{changedOnly=!changedOnly;e.target.classList.toggle('active',changedOnly);e.target.setAttribute('aria-pressed',String(changedOnly));render()});render();</script></html>'''
+audit=json.loads((OUT/'common-mechanics-audit.json').read_text()) if (OUT/'common-mechanics-audit.json').exists() else None
+if audit:
+ table='<section class="panel"><h2>Common mechanics pass</h2><p>Ten colour pairs assessed; two recovery defects corrected. These are inventory checks, manual rules traces and exact draw calculations. No games or drafts have been played.</p><div class="tablewrap"><table><tr><th>Pair</th><th>Common creatures</th><th>Cheap creatures</th><th>Enchantments</th><th>Assessment</th></tr>'
+ for a in audit['pairs']:table+=f'<tr><td>{a["pair"]}</td><td>{len(a["creatures"])}</td><td>{len(a["cheapCreatures"])}</td><td>{len(a["enchantments"])}</td><td>{html.escape(a["status"])}</td></tr>'
+ table+='</table></div><p class="source">Distinct common nonland IDs available to each pair, including shared colourless cards. Cheap means mana value two or less; this is not a measure of actual draft access.</p>'
+ for a in audit['pairs']:table+=f'<details><summary>{a["pair"]} — {html.escape(a["theme"])}</summary><p>{html.escape(a["assessment"])}</p></details>'
+ table+='<p class="note">Pour to the Dead now chooses its creature after milling. Spellbound Swine recovers another enchantment card, preventing unintended self-recovery. White-blue now has a second common blink and face-up signpost rewards. Antinous consumes creatures or Food at the end step. These new rates still need games.</p></section>'
+ template=template.replace('<h2>Explore the cards</h2>',table+'<h2>Explore the cards</h2>')
+template=template.replace('__CHANGE_COUNT__',str(len(changes))).replace('__QUOTE_COUNT__',str(len(flavour_candidates)))
+report=template.replace('__DATA__',json.dumps(payload,ensure_ascii=False,separators=(',',':')).replace('</','<\\/'))
+(ROOT.parent/'odyssey-making-of-first-pass.html').write_text(report)
+print(json.dumps({'briefs':len(briefs),'quotes':len(quotes),'changes':len(changes),'report':str(ROOT.parent/'odyssey-making-of-first-pass.html'),'validation':validation['structuralChecks']}))

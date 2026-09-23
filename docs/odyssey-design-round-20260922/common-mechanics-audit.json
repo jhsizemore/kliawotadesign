@@ -1,0 +1,2776 @@
+{
+  "schema": "odyssey-common-mechanics-audit/v1",
+  "method": "Manual role classification with exact hypergeometric hand-draw calculations. Odyssey Limited test collation is now locked separately to the core FIN-style Play Booster v1 model. The diagnostic decks remain hand-built: no draft picks, opponent decisions or actual games are simulated.",
+  "pairs": [
+    {
+      "pair": "WU",
+      "theme": "Recognition / return",
+      "status": "bridge added; needs games",
+      "assessment": "Two common direct-return spells (005, 007) now support both signposts. Mentor and Nausicaa also explicitly reward turning face up; the common Omen and Nausicaa Adventure supply hidden creatures. Casting a foretold creature still enters from the stack. Mentor’s recognition untap is capped once each turn; choose timing carefully around Survival.",
+      "commonPool": [
+        "ODY-001",
+        "ODY-003",
+        "ODY-005",
+        "ODY-007",
+        "ODY-008",
+        "ODY-011",
+        "ODY-012",
+        "ODY-013",
+        "ODY-014",
+        "ODY-023",
+        "ODY-035",
+        "ODY-049",
+        "ODY-064",
+        "ODY-068",
+        "ODY-073",
+        "ODY-075",
+        "ODY-077",
+        "ODY-085",
+        "ODY-086",
+        "ODY-087",
+        "ODY-094",
+        "ODY-103",
+        "ODY-107",
+        "ODY-108",
+        "ODY-109",
+        "ODY-110",
+        "ODY-111",
+        "ODY-112",
+        "ODY-113",
+        "ODY-115",
+        "ODY-116",
+        "ODY-119",
+        "ODY-120",
+        "ODY-136",
+        "ODY-145",
+        "ODY-279"
+      ],
+      "creatures": [
+        "ODY-012",
+        "ODY-077",
+        "ODY-087",
+        "ODY-103",
+        "ODY-107",
+        "ODY-108",
+        "ODY-110",
+        "ODY-111",
+        "ODY-112",
+        "ODY-115",
+        "ODY-119"
+      ],
+      "cheapCreatures": [
+        "ODY-077",
+        "ODY-087",
+        "ODY-103",
+        "ODY-108"
+      ],
+      "enchantments": [
+        "ODY-008",
+        "ODY-049",
+        "ODY-109",
+        "ODY-116"
+      ],
+      "signposts": [
+        {
+          "id": "ODY-051",
+          "name": "Mentor, Trusted Counselor",
+          "rules": "Whenever one or more cards are exiled from your library for the first time each turn, tap up to one target creature an opponent controls.\nWhenever a permanent you control enters from exile or is turned face up, untap up to one target creature you control. This ability triggers only once each turn."
+        },
+        {
+          "id": "ODY-090",
+          "name": "Nausicaa, Princess of Scheria",
+          "rules": "Whenever a permanent you control enters from exile or is turned face up, untap it. If it's a creature, put a +1/+1 counter on it. This ability triggers only once each turn.\n//Adventure// Find the Castaway — {1}{U} — Sorcery — Adventure\nManifest fate."
+        }
+      ],
+      "roles": {
+        "foodSource": [
+          "ODY-008",
+          "ODY-108",
+          "ODY-136"
+        ],
+        "manifest": [
+          "ODY-116"
+        ],
+        "directBlink": [
+          "ODY-005",
+          "ODY-007"
+        ],
+        "castFromExile": [
+          "ODY-014",
+          "ODY-112"
+        ],
+        "ownGraveyardDeparture": [],
+        "selfMill": [],
+        "creatureSacrificeOutlet": [],
+        "survival": [
+          "ODY-012"
+        ],
+        "vehicle": [
+          "ODY-064",
+          "ODY-085",
+          "ODY-145"
+        ],
+        "creatureInteraction": [
+          "ODY-008",
+          "ODY-014",
+          "ODY-023",
+          "ODY-049",
+          "ODY-094",
+          "ODY-113",
+          "ODY-120"
+        ],
+        "combatTrick": [
+          "ODY-001",
+          "ODY-007",
+          "ODY-013",
+          "ODY-023"
+        ],
+        "fixing": [
+          "ODY-003",
+          "ODY-107",
+          "ODY-119"
+        ]
+      }
+    },
+    {
+      "pair": "UB",
+      "theme": "Hidden identity / graveyard",
+      "status": "split support",
+      "assessment": "Tiresias has Foretell, Escape and recovery support. Circe has two common Manifest sources but no friendly common Aura in these colours. Enchantment creatures do not satisfy enchanted. Plan: make the face-down sacrifice line the initial Circe test; do not count the Omens as creature enchantment.",
+      "commonPool": [
+        "ODY-003",
+        "ODY-011",
+        "ODY-013",
+        "ODY-014",
+        "ODY-025",
+        "ODY-026",
+        "ODY-035",
+        "ODY-037",
+        "ODY-046",
+        "ODY-064",
+        "ODY-068",
+        "ODY-073",
+        "ODY-075",
+        "ODY-077",
+        "ODY-080",
+        "ODY-085",
+        "ODY-086",
+        "ODY-087",
+        "ODY-101",
+        "ODY-112",
+        "ODY-113",
+        "ODY-115",
+        "ODY-116",
+        "ODY-119",
+        "ODY-120",
+        "ODY-122",
+        "ODY-123",
+        "ODY-124",
+        "ODY-125",
+        "ODY-126",
+        "ODY-127",
+        "ODY-128",
+        "ODY-129",
+        "ODY-136",
+        "ODY-142",
+        "ODY-145",
+        "ODY-214",
+        "ODY-279"
+      ],
+      "creatures": [
+        "ODY-037",
+        "ODY-077",
+        "ODY-080",
+        "ODY-087",
+        "ODY-112",
+        "ODY-115",
+        "ODY-119",
+        "ODY-123",
+        "ODY-124",
+        "ODY-125",
+        "ODY-126",
+        "ODY-128",
+        "ODY-214"
+      ],
+      "cheapCreatures": [
+        "ODY-077",
+        "ODY-087",
+        "ODY-125",
+        "ODY-126"
+      ],
+      "enchantments": [
+        "ODY-116",
+        "ODY-123",
+        "ODY-125",
+        "ODY-127"
+      ],
+      "signposts": [
+        {
+          "id": "ODY-052",
+          "name": "Tiresias, Voice Below",
+          "rules": "Once each turn, when one or more cards leave your graveyard or you cast a spell from exile, target opponent mills two cards. If two or more cards left your graveyard this turn, surveil 1."
+        },
+        {
+          "id": "ODY-175",
+          "name": "Circe, Witch of Aeaea",
+          "rules": "Whenever one or more creatures you control that are face down or enchanted die, draw a card, then discard a card. This ability triggers only once each turn."
+        }
+      ],
+      "roles": {
+        "foodSource": [
+          "ODY-136"
+        ],
+        "manifest": [
+          "ODY-080",
+          "ODY-116"
+        ],
+        "directBlink": [],
+        "castFromExile": [
+          "ODY-014",
+          "ODY-112",
+          "ODY-123"
+        ],
+        "ownGraveyardDeparture": [
+          "ODY-037",
+          "ODY-123",
+          "ODY-125",
+          "ODY-142"
+        ],
+        "selfMill": [
+          "ODY-123",
+          "ODY-125",
+          "ODY-126",
+          "ODY-128",
+          "ODY-142",
+          "ODY-214"
+        ],
+        "creatureSacrificeOutlet": [
+          "ODY-101"
+        ],
+        "survival": [],
+        "vehicle": [
+          "ODY-064",
+          "ODY-085",
+          "ODY-145"
+        ],
+        "creatureInteraction": [
+          "ODY-014",
+          "ODY-026",
+          "ODY-037",
+          "ODY-046",
+          "ODY-113",
+          "ODY-120",
+          "ODY-122",
+          "ODY-127",
+          "ODY-129"
+        ],
+        "combatTrick": [
+          "ODY-013"
+        ],
+        "fixing": [
+          "ODY-003",
+          "ODY-119",
+          "ODY-128"
+        ]
+      }
+    },
+    {
+      "pair": "BR",
+      "theme": "Consumption / sacrifice",
+      "status": "testable, narrow Food",
+      "assessment": "Two attack-trigger signposts supply repeatable outlets, and black has several death effects. Only colourless Salt-Cured Fish supplies Food at common in this pair. Plan: test artifact/creature sacrifice first; treat Hearthfire Cook as cross-pair support rather than a BR theme guarantee.",
+      "commonPool": [
+        "ODY-003",
+        "ODY-025",
+        "ODY-026",
+        "ODY-037",
+        "ODY-038",
+        "ODY-044",
+        "ODY-045",
+        "ODY-046",
+        "ODY-064",
+        "ODY-067",
+        "ODY-068",
+        "ODY-073",
+        "ODY-075",
+        "ODY-080",
+        "ODY-083",
+        "ODY-084",
+        "ODY-085",
+        "ODY-101",
+        "ODY-117",
+        "ODY-118",
+        "ODY-122",
+        "ODY-123",
+        "ODY-124",
+        "ODY-125",
+        "ODY-126",
+        "ODY-127",
+        "ODY-128",
+        "ODY-129",
+        "ODY-131",
+        "ODY-132",
+        "ODY-133",
+        "ODY-134",
+        "ODY-135",
+        "ODY-136",
+        "ODY-142",
+        "ODY-145",
+        "ODY-214",
+        "ODY-227",
+        "ODY-279"
+      ],
+      "creatures": [
+        "ODY-037",
+        "ODY-067",
+        "ODY-080",
+        "ODY-083",
+        "ODY-084",
+        "ODY-117",
+        "ODY-123",
+        "ODY-124",
+        "ODY-125",
+        "ODY-126",
+        "ODY-128",
+        "ODY-132",
+        "ODY-133",
+        "ODY-134",
+        "ODY-214",
+        "ODY-227"
+      ],
+      "cheapCreatures": [
+        "ODY-067",
+        "ODY-084",
+        "ODY-125",
+        "ODY-126",
+        "ODY-227"
+      ],
+      "enchantments": [
+        "ODY-123",
+        "ODY-125",
+        "ODY-127",
+        "ODY-135"
+      ],
+      "signposts": [
+        {
+          "id": "ODY-053",
+          "name": "Eurylochus, Voice of Doubt",
+          "rules": "Whenever Eurylochus attacks, you may sacrifice another creature. If you do, exile the top card of your library. You may play it this turn."
+        },
+        {
+          "id": "ODY-157",
+          "name": "Melanthius, Treacherous Goatherd",
+          "rules": "Whenever Melanthius attacks, you may sacrifice an artifact or another creature. When you do, exile the top card of your library. You may play that card until the end of your next turn."
+        }
+      ],
+      "roles": {
+        "foodSource": [
+          "ODY-136"
+        ],
+        "manifest": [
+          "ODY-080"
+        ],
+        "directBlink": [],
+        "castFromExile": [
+          "ODY-123"
+        ],
+        "ownGraveyardDeparture": [
+          "ODY-037",
+          "ODY-123",
+          "ODY-125",
+          "ODY-142"
+        ],
+        "selfMill": [
+          "ODY-123",
+          "ODY-125",
+          "ODY-126",
+          "ODY-128",
+          "ODY-142",
+          "ODY-214"
+        ],
+        "creatureSacrificeOutlet": [
+          "ODY-101"
+        ],
+        "survival": [
+          "ODY-117",
+          "ODY-132"
+        ],
+        "vehicle": [
+          "ODY-064",
+          "ODY-085",
+          "ODY-145"
+        ],
+        "creatureInteraction": [
+          "ODY-026",
+          "ODY-037",
+          "ODY-038",
+          "ODY-045",
+          "ODY-046",
+          "ODY-122",
+          "ODY-127",
+          "ODY-129",
+          "ODY-135"
+        ],
+        "combatTrick": [
+          "ODY-044",
+          "ODY-118",
+          "ODY-131"
+        ],
+        "fixing": [
+          "ODY-003",
+          "ODY-128",
+          "ODY-134"
+        ]
+      }
+    },
+    {
+      "pair": "RG",
+      "theme": "Labour / combat / Survival",
+      "status": "testable",
+      "assessment": "Five common Survival bodies, big creatures and shared Vehicles form a clear route. Early untap tricks compete with Survival; using them can still be correct to save a creature. Plan: compare attack-first and crew-first lines without automatically moving every untap to the end step.",
+      "commonPool": [
+        "ODY-003",
+        "ODY-031",
+        "ODY-032",
+        "ODY-038",
+        "ODY-041",
+        "ODY-044",
+        "ODY-045",
+        "ODY-048",
+        "ODY-050",
+        "ODY-064",
+        "ODY-067",
+        "ODY-068",
+        "ODY-073",
+        "ODY-074",
+        "ODY-075",
+        "ODY-083",
+        "ODY-084",
+        "ODY-085",
+        "ODY-088",
+        "ODY-105",
+        "ODY-117",
+        "ODY-118",
+        "ODY-130",
+        "ODY-131",
+        "ODY-132",
+        "ODY-133",
+        "ODY-134",
+        "ODY-135",
+        "ODY-136",
+        "ODY-137",
+        "ODY-139",
+        "ODY-140",
+        "ODY-141",
+        "ODY-145",
+        "ODY-220",
+        "ODY-227",
+        "ODY-279"
+      ],
+      "creatures": [
+        "ODY-032",
+        "ODY-048",
+        "ODY-067",
+        "ODY-083",
+        "ODY-084",
+        "ODY-088",
+        "ODY-105",
+        "ODY-117",
+        "ODY-130",
+        "ODY-132",
+        "ODY-133",
+        "ODY-134",
+        "ODY-137",
+        "ODY-140",
+        "ODY-141",
+        "ODY-220",
+        "ODY-227"
+      ],
+      "cheapCreatures": [
+        "ODY-048",
+        "ODY-067",
+        "ODY-084",
+        "ODY-227"
+      ],
+      "enchantments": [
+        "ODY-135",
+        "ODY-139"
+      ],
+      "signposts": [
+        {
+          "id": "ODY-173",
+          "name": "Polites, First Through the Door",
+          "rules": "Trample. Survival — At the beginning of your second main phase, if Polites is tapped, put a +1/+1 counter on him if he was blocked this turn. Then you may have him fight target creature you do not control."
+        },
+        {
+          "id": "ODY-178",
+          "name": "Euryalus, Phaeacian Champion",
+          "rules": "Whenever Euryalus becomes tapped during your turn, he gets +1/+0 and gains trample until end of turn. Survival — At the beginning of your second main phase, if Euryalus is tapped, add {R}{G}. Until end of turn, you do not lose this mana as steps and phases end."
+        }
+      ],
+      "roles": {
+        "foodSource": [
+          "ODY-031",
+          "ODY-074",
+          "ODY-136",
+          "ODY-137",
+          "ODY-139",
+          "ODY-141"
+        ],
+        "manifest": [
+          "ODY-088"
+        ],
+        "directBlink": [],
+        "castFromExile": [],
+        "ownGraveyardDeparture": [
+          "ODY-220"
+        ],
+        "selfMill": [],
+        "creatureSacrificeOutlet": [],
+        "survival": [
+          "ODY-032",
+          "ODY-117",
+          "ODY-132",
+          "ODY-140",
+          "ODY-220"
+        ],
+        "vehicle": [
+          "ODY-064",
+          "ODY-085",
+          "ODY-145"
+        ],
+        "creatureInteraction": [
+          "ODY-038",
+          "ODY-045",
+          "ODY-135"
+        ],
+        "combatTrick": [
+          "ODY-041",
+          "ODY-044",
+          "ODY-118",
+          "ODY-131"
+        ],
+        "fixing": [
+          "ODY-003",
+          "ODY-048",
+          "ODY-105",
+          "ODY-134"
+        ]
+      }
+    },
+    {
+      "pair": "GW",
+      "theme": "Hospitality / household labour",
+      "status": "testable",
+      "assessment": "The pair has seven coloured common Food sources plus Salt-Cured Fish, four Survival bodies and cheap white creatures. Laertes has Libation Attendant, Traveler’s Amulet and Olive-Oil Lamp as common nonland MV1 recovery targets, alongside lands. Plan: test whether this narrow second signpost earns its slot.",
+      "commonPool": [
+        "ODY-001",
+        "ODY-003",
+        "ODY-005",
+        "ODY-007",
+        "ODY-008",
+        "ODY-012",
+        "ODY-023",
+        "ODY-031",
+        "ODY-032",
+        "ODY-041",
+        "ODY-048",
+        "ODY-049",
+        "ODY-050",
+        "ODY-064",
+        "ODY-068",
+        "ODY-073",
+        "ODY-074",
+        "ODY-075",
+        "ODY-085",
+        "ODY-088",
+        "ODY-094",
+        "ODY-103",
+        "ODY-105",
+        "ODY-107",
+        "ODY-108",
+        "ODY-109",
+        "ODY-110",
+        "ODY-111",
+        "ODY-130",
+        "ODY-136",
+        "ODY-137",
+        "ODY-139",
+        "ODY-140",
+        "ODY-141",
+        "ODY-145",
+        "ODY-220",
+        "ODY-279"
+      ],
+      "creatures": [
+        "ODY-012",
+        "ODY-032",
+        "ODY-048",
+        "ODY-088",
+        "ODY-103",
+        "ODY-105",
+        "ODY-107",
+        "ODY-108",
+        "ODY-110",
+        "ODY-111",
+        "ODY-130",
+        "ODY-137",
+        "ODY-140",
+        "ODY-141",
+        "ODY-220"
+      ],
+      "cheapCreatures": [
+        "ODY-048",
+        "ODY-103",
+        "ODY-108"
+      ],
+      "enchantments": [
+        "ODY-008",
+        "ODY-049",
+        "ODY-109",
+        "ODY-139"
+      ],
+      "signposts": [
+        {
+          "id": "ODY-055",
+          "name": "Eumaeus, Loyal Swineherd",
+          "rules": "Survival — At the beginning of your second main phase, if Eumaeus is tapped, create a Food token. Whenever you sacrifice a Food, put a +1/+1 counter on another target creature."
+        },
+        {
+          "id": "ODY-091",
+          "name": "Laertes, Rooted Patriarch",
+          "rules": "Survival — At the beginning of your second main phase, if Laertes is tapped, you may return target permanent card with mana value 1 or less from your graveyard to your hand."
+        }
+      ],
+      "roles": {
+        "foodSource": [
+          "ODY-008",
+          "ODY-031",
+          "ODY-074",
+          "ODY-108",
+          "ODY-136",
+          "ODY-137",
+          "ODY-139",
+          "ODY-141"
+        ],
+        "manifest": [
+          "ODY-088"
+        ],
+        "directBlink": [
+          "ODY-005",
+          "ODY-007"
+        ],
+        "castFromExile": [],
+        "ownGraveyardDeparture": [
+          "ODY-220"
+        ],
+        "selfMill": [],
+        "creatureSacrificeOutlet": [],
+        "survival": [
+          "ODY-012",
+          "ODY-032",
+          "ODY-140",
+          "ODY-220"
+        ],
+        "vehicle": [
+          "ODY-064",
+          "ODY-085",
+          "ODY-145"
+        ],
+        "creatureInteraction": [
+          "ODY-008",
+          "ODY-023",
+          "ODY-049",
+          "ODY-094"
+        ],
+        "combatTrick": [
+          "ODY-001",
+          "ODY-007",
+          "ODY-023",
+          "ODY-041"
+        ],
+        "fixing": [
+          "ODY-003",
+          "ODY-048",
+          "ODY-105",
+          "ODY-107"
+        ]
+      }
+    },
+    {
+      "pair": "WB",
+      "theme": "Death / household attrition",
+      "status": "exploitation engine added",
+      "assessment": "Antinous consumes another creature or Food at your end step, grows and drains opponents. Medon rewards creature deaths while protecting continuity through recovery. Common Food sources 008, 108 and 136 and death-effect creatures supply the engine. The timing prevents an ordinary free sacrifice outlet on demand; copied triggers and extra end steps remain possible.",
+      "commonPool": [
+        "ODY-001",
+        "ODY-003",
+        "ODY-005",
+        "ODY-007",
+        "ODY-008",
+        "ODY-012",
+        "ODY-023",
+        "ODY-025",
+        "ODY-026",
+        "ODY-037",
+        "ODY-046",
+        "ODY-049",
+        "ODY-064",
+        "ODY-068",
+        "ODY-073",
+        "ODY-075",
+        "ODY-080",
+        "ODY-085",
+        "ODY-094",
+        "ODY-101",
+        "ODY-103",
+        "ODY-107",
+        "ODY-108",
+        "ODY-109",
+        "ODY-110",
+        "ODY-111",
+        "ODY-122",
+        "ODY-123",
+        "ODY-124",
+        "ODY-125",
+        "ODY-126",
+        "ODY-127",
+        "ODY-128",
+        "ODY-129",
+        "ODY-136",
+        "ODY-142",
+        "ODY-145",
+        "ODY-214",
+        "ODY-279"
+      ],
+      "creatures": [
+        "ODY-012",
+        "ODY-037",
+        "ODY-080",
+        "ODY-103",
+        "ODY-107",
+        "ODY-108",
+        "ODY-110",
+        "ODY-111",
+        "ODY-123",
+        "ODY-124",
+        "ODY-125",
+        "ODY-126",
+        "ODY-128",
+        "ODY-214"
+      ],
+      "cheapCreatures": [
+        "ODY-103",
+        "ODY-108",
+        "ODY-125",
+        "ODY-126"
+      ],
+      "enchantments": [
+        "ODY-008",
+        "ODY-049",
+        "ODY-109",
+        "ODY-123",
+        "ODY-125",
+        "ODY-127"
+      ],
+      "signposts": [
+        {
+          "id": "ODY-056",
+          "name": "Antinous, First Suitor",
+          "rules": "At the beginning of your end step, you may sacrifice another creature or a Food. If you do, put a +1/+1 counter on Antinous and each opponent loses 1 life."
+        },
+        {
+          "id": "ODY-148",
+          "name": "Medon, Herald Who Endured",
+          "rules": "When Medon enters, return up to one target permanent card with mana value 2 or less from your graveyard to your hand. Whenever another creature you control dies, you gain 1 life."
+        }
+      ],
+      "roles": {
+        "foodSource": [
+          "ODY-008",
+          "ODY-108",
+          "ODY-136"
+        ],
+        "manifest": [
+          "ODY-080"
+        ],
+        "directBlink": [
+          "ODY-005",
+          "ODY-007"
+        ],
+        "castFromExile": [
+          "ODY-123"
+        ],
+        "ownGraveyardDeparture": [
+          "ODY-037",
+          "ODY-123",
+          "ODY-125",
+          "ODY-142"
+        ],
+        "selfMill": [
+          "ODY-123",
+          "ODY-125",
+          "ODY-126",
+          "ODY-128",
+          "ODY-142",
+          "ODY-214"
+        ],
+        "creatureSacrificeOutlet": [
+          "ODY-101"
+        ],
+        "survival": [
+          "ODY-012"
+        ],
+        "vehicle": [
+          "ODY-064",
+          "ODY-085",
+          "ODY-145"
+        ],
+        "creatureInteraction": [
+          "ODY-008",
+          "ODY-023",
+          "ODY-026",
+          "ODY-037",
+          "ODY-046",
+          "ODY-049",
+          "ODY-094",
+          "ODY-122",
+          "ODY-127",
+          "ODY-129"
+        ],
+        "combatTrick": [
+          "ODY-001",
+          "ODY-007",
+          "ODY-023"
+        ],
+        "fixing": [
+          "ODY-003",
+          "ODY-107",
+          "ODY-128"
+        ]
+      }
+    },
+    {
+      "pair": "UR",
+      "theme": "Seafaring / spells",
+      "status": "two distinct lanes",
+      "assessment": "Aeolus rewards Vehicles while the Wooden Horse rewards instants/sorceries. Flash Omens are enchantment spells and do not feed the Saga’s recovery or discount. Plan: test a Vehicle deck with useful instants; do not label every spell as instant/sorcery support.",
+      "commonPool": [
+        "ODY-003",
+        "ODY-011",
+        "ODY-013",
+        "ODY-014",
+        "ODY-035",
+        "ODY-038",
+        "ODY-044",
+        "ODY-045",
+        "ODY-064",
+        "ODY-067",
+        "ODY-068",
+        "ODY-073",
+        "ODY-075",
+        "ODY-077",
+        "ODY-083",
+        "ODY-084",
+        "ODY-085",
+        "ODY-086",
+        "ODY-087",
+        "ODY-112",
+        "ODY-113",
+        "ODY-115",
+        "ODY-116",
+        "ODY-117",
+        "ODY-118",
+        "ODY-119",
+        "ODY-120",
+        "ODY-131",
+        "ODY-132",
+        "ODY-133",
+        "ODY-134",
+        "ODY-135",
+        "ODY-136",
+        "ODY-145",
+        "ODY-227",
+        "ODY-279"
+      ],
+      "creatures": [
+        "ODY-067",
+        "ODY-077",
+        "ODY-083",
+        "ODY-084",
+        "ODY-087",
+        "ODY-112",
+        "ODY-115",
+        "ODY-117",
+        "ODY-119",
+        "ODY-132",
+        "ODY-133",
+        "ODY-134",
+        "ODY-227"
+      ],
+      "cheapCreatures": [
+        "ODY-067",
+        "ODY-077",
+        "ODY-084",
+        "ODY-087",
+        "ODY-227"
+      ],
+      "enchantments": [
+        "ODY-116",
+        "ODY-135"
+      ],
+      "signposts": [
+        {
+          "id": "ODY-153",
+          "name": "Song of the Wooden Horse",
+          "rules": "I — You may discard a card. If you do, draw a card.\nII — Return up to one target instant or sorcery card from your graveyard to your hand.\nIII — The next instant or sorcery spell you cast this turn costs {2} less to cast."
+        },
+        {
+          "id": "ODY-159",
+          "name": "Aeolus, Lord of the Winds",
+          "rules": "{T}: Target Vehicle you control gets +1/+0 and gains haste until end of turn.\n//Adventure// Bottle the Winds — {1}{U} — Instant — Adventure\nUntap target Vehicle you control. It gains flying until end of turn. Draw a card."
+        }
+      ],
+      "roles": {
+        "foodSource": [
+          "ODY-136"
+        ],
+        "manifest": [
+          "ODY-116"
+        ],
+        "directBlink": [],
+        "castFromExile": [
+          "ODY-014",
+          "ODY-112"
+        ],
+        "ownGraveyardDeparture": [],
+        "selfMill": [],
+        "creatureSacrificeOutlet": [],
+        "survival": [
+          "ODY-117",
+          "ODY-132"
+        ],
+        "vehicle": [
+          "ODY-064",
+          "ODY-085",
+          "ODY-145"
+        ],
+        "creatureInteraction": [
+          "ODY-014",
+          "ODY-038",
+          "ODY-045",
+          "ODY-113",
+          "ODY-120",
+          "ODY-135"
+        ],
+        "combatTrick": [
+          "ODY-013",
+          "ODY-044",
+          "ODY-118",
+          "ODY-131"
+        ],
+        "fixing": [
+          "ODY-003",
+          "ODY-119",
+          "ODY-134"
+        ]
+      }
+    },
+    {
+      "pair": "BG",
+      "theme": "Graveyard departures / endurance",
+      "status": "testable",
+      "assessment": "Five common own-graveyard departure sources across the pair, counting Maidservants targeting your own graveyard; Escape can move several cards at once, while land recovery needs a land in the graveyard and a tapped worker. Plan: track available fuel and legal recovery objects, not just mill counts.",
+      "commonPool": [
+        "ODY-003",
+        "ODY-025",
+        "ODY-026",
+        "ODY-031",
+        "ODY-032",
+        "ODY-037",
+        "ODY-041",
+        "ODY-046",
+        "ODY-048",
+        "ODY-050",
+        "ODY-064",
+        "ODY-068",
+        "ODY-073",
+        "ODY-074",
+        "ODY-075",
+        "ODY-080",
+        "ODY-085",
+        "ODY-088",
+        "ODY-101",
+        "ODY-105",
+        "ODY-122",
+        "ODY-123",
+        "ODY-124",
+        "ODY-125",
+        "ODY-126",
+        "ODY-127",
+        "ODY-128",
+        "ODY-129",
+        "ODY-130",
+        "ODY-136",
+        "ODY-137",
+        "ODY-139",
+        "ODY-140",
+        "ODY-141",
+        "ODY-142",
+        "ODY-145",
+        "ODY-214",
+        "ODY-220",
+        "ODY-279"
+      ],
+      "creatures": [
+        "ODY-032",
+        "ODY-037",
+        "ODY-048",
+        "ODY-080",
+        "ODY-088",
+        "ODY-105",
+        "ODY-123",
+        "ODY-124",
+        "ODY-125",
+        "ODY-126",
+        "ODY-128",
+        "ODY-130",
+        "ODY-137",
+        "ODY-140",
+        "ODY-141",
+        "ODY-214",
+        "ODY-220"
+      ],
+      "cheapCreatures": [
+        "ODY-048",
+        "ODY-125",
+        "ODY-126"
+      ],
+      "enchantments": [
+        "ODY-123",
+        "ODY-125",
+        "ODY-127",
+        "ODY-139"
+      ],
+      "signposts": [
+        {
+          "id": "ODY-058",
+          "name": "Anticleia, Shade of Home",
+          "rules": "Whenever one or more cards leave your graveyard for the first time each turn, put a +1/+1 counter on Anticleia. When Anticleia dies, mill two cards, then you may return a land card from your graveyard to your hand."
+        },
+        {
+          "id": "ODY-179",
+          "name": "Keeper of Ancestral Graves",
+          "rules": "At the beginning of your end step, mill two cards. Whenever one or more permanent cards leave your graveyard for the first time each turn, put a +1/+1 counter on this creature and you gain 1 life."
+        }
+      ],
+      "roles": {
+        "foodSource": [
+          "ODY-031",
+          "ODY-074",
+          "ODY-136",
+          "ODY-137",
+          "ODY-139",
+          "ODY-141"
+        ],
+        "manifest": [
+          "ODY-080",
+          "ODY-088"
+        ],
+        "directBlink": [],
+        "castFromExile": [
+          "ODY-123"
+        ],
+        "ownGraveyardDeparture": [
+          "ODY-037",
+          "ODY-123",
+          "ODY-125",
+          "ODY-142",
+          "ODY-220"
+        ],
+        "selfMill": [
+          "ODY-123",
+          "ODY-125",
+          "ODY-126",
+          "ODY-128",
+          "ODY-142",
+          "ODY-214"
+        ],
+        "creatureSacrificeOutlet": [
+          "ODY-101"
+        ],
+        "survival": [
+          "ODY-032",
+          "ODY-140",
+          "ODY-220"
+        ],
+        "vehicle": [
+          "ODY-064",
+          "ODY-085",
+          "ODY-145"
+        ],
+        "creatureInteraction": [
+          "ODY-026",
+          "ODY-037",
+          "ODY-046",
+          "ODY-122",
+          "ODY-127",
+          "ODY-129"
+        ],
+        "combatTrick": [
+          "ODY-041"
+        ],
+        "fixing": [
+          "ODY-003",
+          "ODY-048",
+          "ODY-105",
+          "ODY-128"
+        ]
+      }
+    },
+    {
+      "pair": "RW",
+      "theme": "Crew / coordinated attack",
+      "status": "testable",
+      "assessment": "Three colourless Vehicles and three common Survival bodies are accessible. Delayed ship recovery preserves Survival. Plan: test the three-mana ship and team-tap spell together for overly decisive attacks; resolve Telemachus after other relevant Survival triggers.",
+      "commonPool": [
+        "ODY-001",
+        "ODY-003",
+        "ODY-005",
+        "ODY-007",
+        "ODY-008",
+        "ODY-012",
+        "ODY-023",
+        "ODY-038",
+        "ODY-044",
+        "ODY-045",
+        "ODY-049",
+        "ODY-064",
+        "ODY-067",
+        "ODY-068",
+        "ODY-073",
+        "ODY-075",
+        "ODY-083",
+        "ODY-084",
+        "ODY-085",
+        "ODY-094",
+        "ODY-103",
+        "ODY-107",
+        "ODY-108",
+        "ODY-109",
+        "ODY-110",
+        "ODY-111",
+        "ODY-117",
+        "ODY-118",
+        "ODY-131",
+        "ODY-132",
+        "ODY-133",
+        "ODY-134",
+        "ODY-135",
+        "ODY-136",
+        "ODY-145",
+        "ODY-227",
+        "ODY-279"
+      ],
+      "creatures": [
+        "ODY-012",
+        "ODY-067",
+        "ODY-083",
+        "ODY-084",
+        "ODY-103",
+        "ODY-107",
+        "ODY-108",
+        "ODY-110",
+        "ODY-111",
+        "ODY-117",
+        "ODY-132",
+        "ODY-133",
+        "ODY-134",
+        "ODY-227"
+      ],
+      "cheapCreatures": [
+        "ODY-067",
+        "ODY-084",
+        "ODY-103",
+        "ODY-108",
+        "ODY-227"
+      ],
+      "enchantments": [
+        "ODY-008",
+        "ODY-049",
+        "ODY-109",
+        "ODY-135"
+      ],
+      "signposts": [
+        {
+          "id": "ODY-059",
+          "name": "Ithacan Deck-Captain",
+          "rules": "Vehicles you control have haste.\nSurvival — At the beginning of your second main phase, if this creature is tapped and a Vehicle you control attacked this turn, create a 1/1 red and white Human Sailor creature token."
+        },
+        {
+          "id": "ODY-177",
+          "name": "Telemachus, Returned Son",
+          "rules": "Survival — At the beginning of your second main phase, if Telemachus is tapped, another target creature you control gets +1/+1 until your next turn. If a Vehicle you control attacked this turn, untap that creature."
+        }
+      ],
+      "roles": {
+        "foodSource": [
+          "ODY-008",
+          "ODY-108",
+          "ODY-136"
+        ],
+        "manifest": [],
+        "directBlink": [
+          "ODY-005",
+          "ODY-007"
+        ],
+        "castFromExile": [],
+        "ownGraveyardDeparture": [],
+        "selfMill": [],
+        "creatureSacrificeOutlet": [],
+        "survival": [
+          "ODY-012",
+          "ODY-117",
+          "ODY-132"
+        ],
+        "vehicle": [
+          "ODY-064",
+          "ODY-085",
+          "ODY-145"
+        ],
+        "creatureInteraction": [
+          "ODY-008",
+          "ODY-023",
+          "ODY-038",
+          "ODY-045",
+          "ODY-049",
+          "ODY-094",
+          "ODY-135"
+        ],
+        "combatTrick": [
+          "ODY-001",
+          "ODY-007",
+          "ODY-023",
+          "ODY-044",
+          "ODY-118",
+          "ODY-131"
+        ],
+        "fixing": [
+          "ODY-003",
+          "ODY-107",
+          "ODY-134"
+        ]
+      }
+    },
+    {
+      "pair": "GU",
+      "theme": "Manifest / uncertain voyage",
+      "status": "minimum support skeleton met; competition-sensitive; needs real draft",
+      "assessment": "Two common Manifest sources (ODY-088 G, ODY-116 U) feed both signposts. ODY-017 Ordeal of the Sirens is a direct blue uncommon Manifest source; ODY-042 Find the Next Shore is the green voyage/land bridge; ODY-018 Read the Hidden Course adds blue exile/face-up support. This meets the Play Booster minimum support skeleton without spending another common slot. In the conservative one-blue/one-green competitor stress model, a GU seat averages 2.49 direct Manifest enablers including Ordeal; 72.7% of runs acquire at least two and 45.4% acquire at least three. Keep the lane under real-draft watch, especially the four-cards-in-exile threshold.",
+      "commonPool": [
+        "ODY-003",
+        "ODY-011",
+        "ODY-013",
+        "ODY-014",
+        "ODY-031",
+        "ODY-032",
+        "ODY-035",
+        "ODY-041",
+        "ODY-048",
+        "ODY-050",
+        "ODY-064",
+        "ODY-068",
+        "ODY-073",
+        "ODY-074",
+        "ODY-075",
+        "ODY-077",
+        "ODY-085",
+        "ODY-086",
+        "ODY-087",
+        "ODY-088",
+        "ODY-105",
+        "ODY-112",
+        "ODY-113",
+        "ODY-115",
+        "ODY-116",
+        "ODY-119",
+        "ODY-120",
+        "ODY-130",
+        "ODY-136",
+        "ODY-137",
+        "ODY-139",
+        "ODY-140",
+        "ODY-141",
+        "ODY-145",
+        "ODY-220",
+        "ODY-279"
+      ],
+      "creatures": [
+        "ODY-032",
+        "ODY-048",
+        "ODY-077",
+        "ODY-087",
+        "ODY-088",
+        "ODY-105",
+        "ODY-112",
+        "ODY-115",
+        "ODY-119",
+        "ODY-130",
+        "ODY-137",
+        "ODY-140",
+        "ODY-141",
+        "ODY-220"
+      ],
+      "cheapCreatures": [
+        "ODY-048",
+        "ODY-077",
+        "ODY-087"
+      ],
+      "enchantments": [
+        "ODY-116",
+        "ODY-139"
+      ],
+      "signposts": [
+        {
+          "id": "ODY-060",
+          "name": "Voyage into Unknown Shores",
+          "rules": "Whenever you manifest fate for the first time each turn, you may put a land card from your hand onto the battlefield tapped. At the beginning of your end step, if you own four or more cards in exile, draw a card."
+        },
+        {
+          "id": "ODY-176",
+          "name": "Calypso, Keeper of Ogygia",
+          "rules": "Whenever one or more cards are exiled from your library for the first time each turn, put a +1/+1 counter on up to one target face-down creature you control. {4}{G}{U}: Target face-down creature you control gets +3/+3 and gains trample until end of turn."
+        }
+      ],
+      "roles": {
+        "foodSource": [
+          "ODY-031",
+          "ODY-074",
+          "ODY-136",
+          "ODY-137",
+          "ODY-139",
+          "ODY-141"
+        ],
+        "manifest": [
+          "ODY-088",
+          "ODY-116"
+        ],
+        "directBlink": [],
+        "castFromExile": [
+          "ODY-014",
+          "ODY-112"
+        ],
+        "ownGraveyardDeparture": [
+          "ODY-220"
+        ],
+        "selfMill": [],
+        "creatureSacrificeOutlet": [],
+        "survival": [
+          "ODY-032",
+          "ODY-140",
+          "ODY-220"
+        ],
+        "vehicle": [
+          "ODY-064",
+          "ODY-085",
+          "ODY-145"
+        ],
+        "creatureInteraction": [
+          "ODY-014",
+          "ODY-113",
+          "ODY-120"
+        ],
+        "combatTrick": [
+          "ODY-013",
+          "ODY-041"
+        ],
+        "fixing": [
+          "ODY-003",
+          "ODY-048",
+          "ODY-105",
+          "ODY-119"
+        ]
+      }
+    }
+  ],
+  "diagnosticDecks": [
+    {
+      "pair": "WU",
+      "construction": "Hand-built diagnostic list, not drafted or played. 21 commons + both uncommon signposts + 17 basic lands split 9/8. Doubles assume availability, not a real pool.",
+      "nonlands": [
+        {
+          "id": "ODY-005",
+          "name": "Athena's Intervention",
+          "copies": 1
+        },
+        {
+          "id": "ODY-007",
+          "name": "Wash the Stranger's Feet",
+          "copies": 1
+        },
+        {
+          "id": "ODY-008",
+          "name": "Seat the Guest by the Hearth",
+          "copies": 1
+        },
+        {
+          "id": "ODY-051",
+          "name": "Mentor, Trusted Counselor",
+          "copies": 1
+        },
+        {
+          "id": "ODY-064",
+          "name": "Black-Hulled Ship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-077",
+          "name": "Phaeacian Oarsman",
+          "copies": 1
+        },
+        {
+          "id": "ODY-085",
+          "name": "Beach-Drawn Longship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-087",
+          "name": "Seabird Lookout",
+          "copies": 2
+        },
+        {
+          "id": "ODY-090",
+          "name": "Nausicaa, Princess of Scheria",
+          "copies": 1
+        },
+        {
+          "id": "ODY-094",
+          "name": "Divine Verdict",
+          "copies": 1
+        },
+        {
+          "id": "ODY-103",
+          "name": "Libation Attendant",
+          "copies": 2
+        },
+        {
+          "id": "ODY-107",
+          "name": "Eagle Omen over Ithaca",
+          "copies": 1
+        },
+        {
+          "id": "ODY-108",
+          "name": "Household Cupbearer",
+          "copies": 2
+        },
+        {
+          "id": "ODY-110",
+          "name": "Hospitable Swineherd",
+          "copies": 1
+        },
+        {
+          "id": "ODY-112",
+          "name": "Dolphins Beside the Bow",
+          "copies": 1
+        },
+        {
+          "id": "ODY-113",
+          "name": "Griptide",
+          "copies": 1
+        },
+        {
+          "id": "ODY-115",
+          "name": "Depth-Sounding Sailor",
+          "copies": 2
+        },
+        {
+          "id": "ODY-116",
+          "name": "Omen of the Dreaming Queen",
+          "copies": 1
+        },
+        {
+          "id": "ODY-119",
+          "name": "Sea-Swallowed Mariner",
+          "copies": 1
+        }
+      ],
+      "basicLands": {
+        "W": 9,
+        "U": 8
+      },
+      "cards": 40,
+      "creatures": 15,
+      "cheapCreatureCopies": 8,
+      "manaValueCurve": {
+        "1": 2,
+        "2": 8,
+        "3": 8,
+        "4": 2,
+        "5": 2,
+        "6": 1
+      },
+      "chanceCheapCreatureInFirst8": 0.8632,
+      "chanceAtLeast3LandsInFirst9": 0.8446
+    },
+    {
+      "pair": "UB",
+      "construction": "Hand-built diagnostic list, not drafted or played. 21 commons + both uncommon signposts + 17 basic lands split 9/8. Doubles assume availability, not a real pool.",
+      "nonlands": [
+        {
+          "id": "ODY-026",
+          "name": "Elpenor's Funeral Due",
+          "copies": 1
+        },
+        {
+          "id": "ODY-052",
+          "name": "Tiresias, Voice Below",
+          "copies": 1
+        },
+        {
+          "id": "ODY-064",
+          "name": "Black-Hulled Ship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-077",
+          "name": "Phaeacian Oarsman",
+          "copies": 1
+        },
+        {
+          "id": "ODY-080",
+          "name": "Disguised Palace Beggar",
+          "copies": 2
+        },
+        {
+          "id": "ODY-087",
+          "name": "Seabird Lookout",
+          "copies": 2
+        },
+        {
+          "id": "ODY-101",
+          "name": "Secret Laid Bare",
+          "copies": 1
+        },
+        {
+          "id": "ODY-112",
+          "name": "Dolphins Beside the Bow",
+          "copies": 1
+        },
+        {
+          "id": "ODY-113",
+          "name": "Griptide",
+          "copies": 1
+        },
+        {
+          "id": "ODY-115",
+          "name": "Depth-Sounding Sailor",
+          "copies": 1
+        },
+        {
+          "id": "ODY-116",
+          "name": "Omen of the Dreaming Queen",
+          "copies": 1
+        },
+        {
+          "id": "ODY-119",
+          "name": "Sea-Swallowed Mariner",
+          "copies": 1
+        },
+        {
+          "id": "ODY-123",
+          "name": "Shade of the Waiting House",
+          "copies": 1
+        },
+        {
+          "id": "ODY-124",
+          "name": "Storeroom Keeper",
+          "copies": 1
+        },
+        {
+          "id": "ODY-125",
+          "name": "Spellbound Swine",
+          "copies": 2
+        },
+        {
+          "id": "ODY-126",
+          "name": "Ash Gatherer",
+          "copies": 1
+        },
+        {
+          "id": "ODY-127",
+          "name": "Omen of the Veiled Hall",
+          "copies": 1
+        },
+        {
+          "id": "ODY-128",
+          "name": "Funeral-Bier Bearer",
+          "copies": 1
+        },
+        {
+          "id": "ODY-142",
+          "name": "Pour to the Dead",
+          "copies": 1
+        },
+        {
+          "id": "ODY-175",
+          "name": "Circe, Witch of Aeaea",
+          "copies": 1
+        }
+      ],
+      "basicLands": {
+        "U": 9,
+        "B": 8
+      },
+      "cards": 40,
+      "creatures": 16,
+      "cheapCreatureCopies": 6,
+      "manaValueCurve": {
+        "2": 8,
+        "3": 9,
+        "4": 3,
+        "5": 1,
+        "6": 2
+      },
+      "chanceCheapCreatureInFirst8": 0.7639,
+      "chanceAtLeast3LandsInFirst9": 0.8446
+    },
+    {
+      "pair": "BR",
+      "construction": "Hand-built diagnostic list, not drafted or played. 21 commons + both uncommon signposts + 17 basic lands split 9/8. Doubles assume availability, not a real pool.",
+      "nonlands": [
+        {
+          "id": "ODY-026",
+          "name": "Elpenor's Funeral Due",
+          "copies": 1
+        },
+        {
+          "id": "ODY-038",
+          "name": "Shipyard Sparks",
+          "copies": 1
+        },
+        {
+          "id": "ODY-053",
+          "name": "Eurylochus, Voice of Doubt",
+          "copies": 1
+        },
+        {
+          "id": "ODY-064",
+          "name": "Black-Hulled Ship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-067",
+          "name": "Potter at the Kiln",
+          "copies": 2
+        },
+        {
+          "id": "ODY-080",
+          "name": "Disguised Palace Beggar",
+          "copies": 1
+        },
+        {
+          "id": "ODY-083",
+          "name": "Bronze-Bowl Smith",
+          "copies": 1
+        },
+        {
+          "id": "ODY-084",
+          "name": "Hearthfire Cook",
+          "copies": 1
+        },
+        {
+          "id": "ODY-101",
+          "name": "Secret Laid Bare",
+          "copies": 1
+        },
+        {
+          "id": "ODY-117",
+          "name": "Salt-Sprayed Oarsman",
+          "copies": 1
+        },
+        {
+          "id": "ODY-123",
+          "name": "Shade of the Waiting House",
+          "copies": 1
+        },
+        {
+          "id": "ODY-124",
+          "name": "Storeroom Keeper",
+          "copies": 1
+        },
+        {
+          "id": "ODY-125",
+          "name": "Spellbound Swine",
+          "copies": 1
+        },
+        {
+          "id": "ODY-126",
+          "name": "Ash Gatherer",
+          "copies": 2
+        },
+        {
+          "id": "ODY-127",
+          "name": "Omen of the Veiled Hall",
+          "copies": 1
+        },
+        {
+          "id": "ODY-128",
+          "name": "Funeral-Bier Bearer",
+          "copies": 1
+        },
+        {
+          "id": "ODY-132",
+          "name": "Weatherwise Sailor",
+          "copies": 1
+        },
+        {
+          "id": "ODY-133",
+          "name": "Laestrygonian Stone-Hurler",
+          "copies": 1
+        },
+        {
+          "id": "ODY-134",
+          "name": "Breaker of the Raft",
+          "copies": 1
+        },
+        {
+          "id": "ODY-135",
+          "name": "Omen of the Bellowing Meat",
+          "copies": 1
+        },
+        {
+          "id": "ODY-157",
+          "name": "Melanthius, Treacherous Goatherd",
+          "copies": 1
+        }
+      ],
+      "basicLands": {
+        "B": 9,
+        "R": 8
+      },
+      "cards": 40,
+      "creatures": 17,
+      "cheapCreatureCopies": 6,
+      "manaValueCurve": {
+        "2": 10,
+        "3": 9,
+        "4": 2,
+        "6": 2
+      },
+      "chanceCheapCreatureInFirst8": 0.7639,
+      "chanceAtLeast3LandsInFirst9": 0.8446
+    },
+    {
+      "pair": "RG",
+      "construction": "Hand-built diagnostic list, not drafted or played. 21 commons + both uncommon signposts + 17 basic lands split 9/8. Doubles assume availability, not a real pool.",
+      "nonlands": [
+        {
+          "id": "ODY-031",
+          "name": "Eumaeus Shares His Supper",
+          "copies": 1
+        },
+        {
+          "id": "ODY-038",
+          "name": "Shipyard Sparks",
+          "copies": 1
+        },
+        {
+          "id": "ODY-041",
+          "name": "Test the Swineherd",
+          "copies": 1
+        },
+        {
+          "id": "ODY-048",
+          "name": "Ilysian Caryatid",
+          "copies": 2
+        },
+        {
+          "id": "ODY-064",
+          "name": "Black-Hulled Ship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-067",
+          "name": "Potter at the Kiln",
+          "copies": 1
+        },
+        {
+          "id": "ODY-084",
+          "name": "Hearthfire Cook",
+          "copies": 1
+        },
+        {
+          "id": "ODY-088",
+          "name": "Lotus-Fed Wanderer",
+          "copies": 2
+        },
+        {
+          "id": "ODY-105",
+          "name": "Neighboring Cyclops",
+          "copies": 1
+        },
+        {
+          "id": "ODY-117",
+          "name": "Salt-Sprayed Oarsman",
+          "copies": 1
+        },
+        {
+          "id": "ODY-130",
+          "name": "Team of Oxen",
+          "copies": 1
+        },
+        {
+          "id": "ODY-132",
+          "name": "Weatherwise Sailor",
+          "copies": 1
+        },
+        {
+          "id": "ODY-133",
+          "name": "Laestrygonian Stone-Hurler",
+          "copies": 1
+        },
+        {
+          "id": "ODY-135",
+          "name": "Omen of the Bellowing Meat",
+          "copies": 1
+        },
+        {
+          "id": "ODY-137",
+          "name": "Limestone Goat",
+          "copies": 1
+        },
+        {
+          "id": "ODY-139",
+          "name": "Omen of the Hunting Hawk",
+          "copies": 1
+        },
+        {
+          "id": "ODY-140",
+          "name": "Olivewood Carpenter",
+          "copies": 1
+        },
+        {
+          "id": "ODY-141",
+          "name": "Goat of the Empty Isle",
+          "copies": 1
+        },
+        {
+          "id": "ODY-173",
+          "name": "Polites, First Through the Door",
+          "copies": 1
+        },
+        {
+          "id": "ODY-178",
+          "name": "Euryalus, Phaeacian Champion",
+          "copies": 1
+        },
+        {
+          "id": "ODY-220",
+          "name": "Threshing-Floor Worker",
+          "copies": 1
+        }
+      ],
+      "basicLands": {
+        "R": 9,
+        "G": 8
+      },
+      "cards": 40,
+      "creatures": 17,
+      "cheapCreatureCopies": 5,
+      "manaValueCurve": {
+        "2": 10,
+        "3": 5,
+        "4": 6,
+        "6": 2
+      },
+      "chanceCheapCreatureInFirst8": 0.694,
+      "chanceAtLeast3LandsInFirst9": 0.8446
+    },
+    {
+      "pair": "GW",
+      "construction": "Hand-built diagnostic list, not drafted or played. 21 commons + both uncommon signposts + 17 basic lands split 9/8. Doubles assume availability, not a real pool.",
+      "nonlands": [
+        {
+          "id": "ODY-005",
+          "name": "Athena's Intervention",
+          "copies": 1
+        },
+        {
+          "id": "ODY-008",
+          "name": "Seat the Guest by the Hearth",
+          "copies": 1
+        },
+        {
+          "id": "ODY-023",
+          "name": "Bolt the Doors",
+          "copies": 1
+        },
+        {
+          "id": "ODY-031",
+          "name": "Eumaeus Shares His Supper",
+          "copies": 1
+        },
+        {
+          "id": "ODY-032",
+          "name": "Loyal Cowherd",
+          "copies": 1
+        },
+        {
+          "id": "ODY-048",
+          "name": "Ilysian Caryatid",
+          "copies": 1
+        },
+        {
+          "id": "ODY-055",
+          "name": "Eumaeus, Loyal Swineherd",
+          "copies": 1
+        },
+        {
+          "id": "ODY-064",
+          "name": "Black-Hulled Ship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-074",
+          "name": "Set Bread Before the Guest",
+          "copies": 1
+        },
+        {
+          "id": "ODY-085",
+          "name": "Beach-Drawn Longship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-088",
+          "name": "Lotus-Fed Wanderer",
+          "copies": 1
+        },
+        {
+          "id": "ODY-091",
+          "name": "Laertes, Rooted Patriarch",
+          "copies": 1
+        },
+        {
+          "id": "ODY-103",
+          "name": "Libation Attendant",
+          "copies": 1
+        },
+        {
+          "id": "ODY-107",
+          "name": "Eagle Omen over Ithaca",
+          "copies": 1
+        },
+        {
+          "id": "ODY-108",
+          "name": "Household Cupbearer",
+          "copies": 2
+        },
+        {
+          "id": "ODY-110",
+          "name": "Hospitable Swineherd",
+          "copies": 1
+        },
+        {
+          "id": "ODY-111",
+          "name": "Faithful Old Hound",
+          "copies": 1
+        },
+        {
+          "id": "ODY-137",
+          "name": "Limestone Goat",
+          "copies": 1
+        },
+        {
+          "id": "ODY-139",
+          "name": "Omen of the Hunting Hawk",
+          "copies": 1
+        },
+        {
+          "id": "ODY-140",
+          "name": "Olivewood Carpenter",
+          "copies": 1
+        },
+        {
+          "id": "ODY-141",
+          "name": "Goat of the Empty Isle",
+          "copies": 1
+        },
+        {
+          "id": "ODY-220",
+          "name": "Threshing-Floor Worker",
+          "copies": 1
+        }
+      ],
+      "basicLands": {
+        "G": 9,
+        "W": 8
+      },
+      "cards": 40,
+      "creatures": 15,
+      "cheapCreatureCopies": 4,
+      "manaValueCurve": {
+        "1": 1,
+        "2": 7,
+        "3": 9,
+        "4": 5,
+        "5": 1
+      },
+      "chanceCheapCreatureInFirst8": 0.6065,
+      "chanceAtLeast3LandsInFirst9": 0.8446
+    },
+    {
+      "pair": "WB",
+      "construction": "Hand-built diagnostic list, not drafted or played. 21 commons + both uncommon signposts + 17 basic lands split 9/8. Doubles assume availability, not a real pool.",
+      "nonlands": [
+        {
+          "id": "ODY-008",
+          "name": "Seat the Guest by the Hearth",
+          "copies": 1
+        },
+        {
+          "id": "ODY-026",
+          "name": "Elpenor's Funeral Due",
+          "copies": 1
+        },
+        {
+          "id": "ODY-037",
+          "name": "Condemned Maidservants",
+          "copies": 1
+        },
+        {
+          "id": "ODY-056",
+          "name": "Antinous, First Suitor",
+          "copies": 1
+        },
+        {
+          "id": "ODY-064",
+          "name": "Black-Hulled Ship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-094",
+          "name": "Divine Verdict",
+          "copies": 1
+        },
+        {
+          "id": "ODY-101",
+          "name": "Secret Laid Bare",
+          "copies": 1
+        },
+        {
+          "id": "ODY-103",
+          "name": "Libation Attendant",
+          "copies": 1
+        },
+        {
+          "id": "ODY-108",
+          "name": "Household Cupbearer",
+          "copies": 2
+        },
+        {
+          "id": "ODY-110",
+          "name": "Hospitable Swineherd",
+          "copies": 1
+        },
+        {
+          "id": "ODY-111",
+          "name": "Faithful Old Hound",
+          "copies": 1
+        },
+        {
+          "id": "ODY-123",
+          "name": "Shade of the Waiting House",
+          "copies": 1
+        },
+        {
+          "id": "ODY-124",
+          "name": "Storeroom Keeper",
+          "copies": 1
+        },
+        {
+          "id": "ODY-125",
+          "name": "Spellbound Swine",
+          "copies": 2
+        },
+        {
+          "id": "ODY-126",
+          "name": "Ash Gatherer",
+          "copies": 2
+        },
+        {
+          "id": "ODY-127",
+          "name": "Omen of the Veiled Hall",
+          "copies": 1
+        },
+        {
+          "id": "ODY-128",
+          "name": "Funeral-Bier Bearer",
+          "copies": 1
+        },
+        {
+          "id": "ODY-129",
+          "name": "Funeral Pyre",
+          "copies": 1
+        },
+        {
+          "id": "ODY-142",
+          "name": "Pour to the Dead",
+          "copies": 1
+        },
+        {
+          "id": "ODY-148",
+          "name": "Medon, Herald Who Endured",
+          "copies": 1
+        }
+      ],
+      "basicLands": {
+        "W": 9,
+        "B": 8
+      },
+      "cards": 40,
+      "creatures": 15,
+      "cheapCreatureCopies": 7,
+      "manaValueCurve": {
+        "1": 1,
+        "2": 8,
+        "3": 9,
+        "4": 3,
+        "6": 2
+      },
+      "chanceCheapCreatureInFirst8": 0.8195,
+      "chanceAtLeast3LandsInFirst9": 0.8446
+    },
+    {
+      "pair": "UR",
+      "construction": "Hand-built diagnostic list, not drafted or played. 21 commons + both uncommon signposts + 17 basic lands split 9/8. Doubles assume availability, not a real pool.",
+      "nonlands": [
+        {
+          "id": "ODY-011",
+          "name": "Steer by the Great Bear",
+          "copies": 1
+        },
+        {
+          "id": "ODY-014",
+          "name": "Poseidon's Storm Foretold",
+          "copies": 1
+        },
+        {
+          "id": "ODY-035",
+          "name": "Invoke the Muse",
+          "copies": 1
+        },
+        {
+          "id": "ODY-038",
+          "name": "Shipyard Sparks",
+          "copies": 1
+        },
+        {
+          "id": "ODY-064",
+          "name": "Black-Hulled Ship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-067",
+          "name": "Potter at the Kiln",
+          "copies": 2
+        },
+        {
+          "id": "ODY-077",
+          "name": "Phaeacian Oarsman",
+          "copies": 2
+        },
+        {
+          "id": "ODY-083",
+          "name": "Bronze-Bowl Smith",
+          "copies": 1
+        },
+        {
+          "id": "ODY-085",
+          "name": "Beach-Drawn Longship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-087",
+          "name": "Seabird Lookout",
+          "copies": 1
+        },
+        {
+          "id": "ODY-112",
+          "name": "Dolphins Beside the Bow",
+          "copies": 1
+        },
+        {
+          "id": "ODY-113",
+          "name": "Griptide",
+          "copies": 1
+        },
+        {
+          "id": "ODY-115",
+          "name": "Depth-Sounding Sailor",
+          "copies": 1
+        },
+        {
+          "id": "ODY-117",
+          "name": "Salt-Sprayed Oarsman",
+          "copies": 1
+        },
+        {
+          "id": "ODY-119",
+          "name": "Sea-Swallowed Mariner",
+          "copies": 1
+        },
+        {
+          "id": "ODY-132",
+          "name": "Weatherwise Sailor",
+          "copies": 1
+        },
+        {
+          "id": "ODY-133",
+          "name": "Laestrygonian Stone-Hurler",
+          "copies": 1
+        },
+        {
+          "id": "ODY-134",
+          "name": "Breaker of the Raft",
+          "copies": 1
+        },
+        {
+          "id": "ODY-135",
+          "name": "Omen of the Bellowing Meat",
+          "copies": 1
+        },
+        {
+          "id": "ODY-153",
+          "name": "Song of the Wooden Horse",
+          "copies": 1
+        },
+        {
+          "id": "ODY-159",
+          "name": "Aeolus, Lord of the Winds",
+          "copies": 1
+        }
+      ],
+      "basicLands": {
+        "U": 9,
+        "R": 8
+      },
+      "cards": 40,
+      "creatures": 14,
+      "cheapCreatureCopies": 5,
+      "manaValueCurve": {
+        "2": 9,
+        "3": 9,
+        "4": 2,
+        "5": 1,
+        "6": 2
+      },
+      "chanceCheapCreatureInFirst8": 0.694,
+      "chanceAtLeast3LandsInFirst9": 0.8446
+    },
+    {
+      "pair": "BG",
+      "construction": "Hand-built diagnostic list, not drafted or played. 21 commons + both uncommon signposts + 17 basic lands split 9/8. Doubles assume availability, not a real pool.",
+      "nonlands": [
+        {
+          "id": "ODY-026",
+          "name": "Elpenor's Funeral Due",
+          "copies": 1
+        },
+        {
+          "id": "ODY-048",
+          "name": "Ilysian Caryatid",
+          "copies": 2
+        },
+        {
+          "id": "ODY-058",
+          "name": "Anticleia, Shade of Home",
+          "copies": 1
+        },
+        {
+          "id": "ODY-064",
+          "name": "Black-Hulled Ship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-080",
+          "name": "Disguised Palace Beggar",
+          "copies": 1
+        },
+        {
+          "id": "ODY-088",
+          "name": "Lotus-Fed Wanderer",
+          "copies": 1
+        },
+        {
+          "id": "ODY-101",
+          "name": "Secret Laid Bare",
+          "copies": 1
+        },
+        {
+          "id": "ODY-105",
+          "name": "Neighboring Cyclops",
+          "copies": 1
+        },
+        {
+          "id": "ODY-123",
+          "name": "Shade of the Waiting House",
+          "copies": 1
+        },
+        {
+          "id": "ODY-124",
+          "name": "Storeroom Keeper",
+          "copies": 1
+        },
+        {
+          "id": "ODY-125",
+          "name": "Spellbound Swine",
+          "copies": 2
+        },
+        {
+          "id": "ODY-126",
+          "name": "Ash Gatherer",
+          "copies": 1
+        },
+        {
+          "id": "ODY-127",
+          "name": "Omen of the Veiled Hall",
+          "copies": 1
+        },
+        {
+          "id": "ODY-128",
+          "name": "Funeral-Bier Bearer",
+          "copies": 1
+        },
+        {
+          "id": "ODY-137",
+          "name": "Limestone Goat",
+          "copies": 1
+        },
+        {
+          "id": "ODY-139",
+          "name": "Omen of the Hunting Hawk",
+          "copies": 1
+        },
+        {
+          "id": "ODY-140",
+          "name": "Olivewood Carpenter",
+          "copies": 1
+        },
+        {
+          "id": "ODY-141",
+          "name": "Goat of the Empty Isle",
+          "copies": 1
+        },
+        {
+          "id": "ODY-142",
+          "name": "Pour to the Dead",
+          "copies": 1
+        },
+        {
+          "id": "ODY-179",
+          "name": "Keeper of Ancestral Graves",
+          "copies": 1
+        },
+        {
+          "id": "ODY-220",
+          "name": "Threshing-Floor Worker",
+          "copies": 1
+        }
+      ],
+      "basicLands": {
+        "B": 9,
+        "G": 8
+      },
+      "cards": 40,
+      "creatures": 17,
+      "cheapCreatureCopies": 6,
+      "manaValueCurve": {
+        "2": 9,
+        "3": 8,
+        "4": 4,
+        "6": 2
+      },
+      "chanceCheapCreatureInFirst8": 0.7639,
+      "chanceAtLeast3LandsInFirst9": 0.8446
+    },
+    {
+      "pair": "RW",
+      "construction": "Hand-built diagnostic list, not drafted or played. 21 commons + both uncommon signposts + 17 basic lands split 9/8. Doubles assume availability, not a real pool.",
+      "nonlands": [
+        {
+          "id": "ODY-008",
+          "name": "Seat the Guest by the Hearth",
+          "copies": 1
+        },
+        {
+          "id": "ODY-012",
+          "name": "Loyal Householder",
+          "copies": 1
+        },
+        {
+          "id": "ODY-023",
+          "name": "Bolt the Doors",
+          "copies": 1
+        },
+        {
+          "id": "ODY-038",
+          "name": "Shipyard Sparks",
+          "copies": 1
+        },
+        {
+          "id": "ODY-044",
+          "name": "Row in Unison",
+          "copies": 1
+        },
+        {
+          "id": "ODY-059",
+          "name": "Ithacan Deck-Captain",
+          "copies": 1
+        },
+        {
+          "id": "ODY-064",
+          "name": "Black-Hulled Ship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-067",
+          "name": "Potter at the Kiln",
+          "copies": 1
+        },
+        {
+          "id": "ODY-083",
+          "name": "Bronze-Bowl Smith",
+          "copies": 1
+        },
+        {
+          "id": "ODY-085",
+          "name": "Beach-Drawn Longship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-103",
+          "name": "Libation Attendant",
+          "copies": 1
+        },
+        {
+          "id": "ODY-107",
+          "name": "Eagle Omen over Ithaca",
+          "copies": 1
+        },
+        {
+          "id": "ODY-108",
+          "name": "Household Cupbearer",
+          "copies": 2
+        },
+        {
+          "id": "ODY-110",
+          "name": "Hospitable Swineherd",
+          "copies": 1
+        },
+        {
+          "id": "ODY-111",
+          "name": "Faithful Old Hound",
+          "copies": 1
+        },
+        {
+          "id": "ODY-117",
+          "name": "Salt-Sprayed Oarsman",
+          "copies": 1
+        },
+        {
+          "id": "ODY-132",
+          "name": "Weatherwise Sailor",
+          "copies": 1
+        },
+        {
+          "id": "ODY-133",
+          "name": "Laestrygonian Stone-Hurler",
+          "copies": 1
+        },
+        {
+          "id": "ODY-134",
+          "name": "Breaker of the Raft",
+          "copies": 1
+        },
+        {
+          "id": "ODY-135",
+          "name": "Omen of the Bellowing Meat",
+          "copies": 1
+        },
+        {
+          "id": "ODY-145",
+          "name": "Broad-Beamed Ferry",
+          "copies": 1
+        },
+        {
+          "id": "ODY-177",
+          "name": "Telemachus, Returned Son",
+          "copies": 1
+        }
+      ],
+      "basicLands": {
+        "R": 9,
+        "W": 8
+      },
+      "cards": 40,
+      "creatures": 15,
+      "cheapCreatureCopies": 4,
+      "manaValueCurve": {
+        "1": 1,
+        "2": 6,
+        "3": 11,
+        "4": 3,
+        "5": 1,
+        "6": 1
+      },
+      "chanceCheapCreatureInFirst8": 0.6065,
+      "chanceAtLeast3LandsInFirst9": 0.8446
+    },
+    {
+      "pair": "GU",
+      "construction": "Hand-built diagnostic list, not drafted or played. 21 commons + both uncommon signposts + 17 basic lands split 9/8. Doubles assume availability, not a real pool.",
+      "nonlands": [
+        {
+          "id": "ODY-014",
+          "name": "Poseidon's Storm Foretold",
+          "copies": 1
+        },
+        {
+          "id": "ODY-035",
+          "name": "Invoke the Muse",
+          "copies": 1
+        },
+        {
+          "id": "ODY-041",
+          "name": "Test the Swineherd",
+          "copies": 1
+        },
+        {
+          "id": "ODY-048",
+          "name": "Ilysian Caryatid",
+          "copies": 2
+        },
+        {
+          "id": "ODY-060",
+          "name": "Voyage into Unknown Shores",
+          "copies": 1
+        },
+        {
+          "id": "ODY-064",
+          "name": "Black-Hulled Ship",
+          "copies": 1
+        },
+        {
+          "id": "ODY-077",
+          "name": "Phaeacian Oarsman",
+          "copies": 1
+        },
+        {
+          "id": "ODY-087",
+          "name": "Seabird Lookout",
+          "copies": 1
+        },
+        {
+          "id": "ODY-088",
+          "name": "Lotus-Fed Wanderer",
+          "copies": 2
+        },
+        {
+          "id": "ODY-105",
+          "name": "Neighboring Cyclops",
+          "copies": 1
+        },
+        {
+          "id": "ODY-112",
+          "name": "Dolphins Beside the Bow",
+          "copies": 1
+        },
+        {
+          "id": "ODY-113",
+          "name": "Griptide",
+          "copies": 1
+        },
+        {
+          "id": "ODY-115",
+          "name": "Depth-Sounding Sailor",
+          "copies": 1
+        },
+        {
+          "id": "ODY-116",
+          "name": "Omen of the Dreaming Queen",
+          "copies": 1
+        },
+        {
+          "id": "ODY-119",
+          "name": "Sea-Swallowed Mariner",
+          "copies": 1
+        },
+        {
+          "id": "ODY-137",
+          "name": "Limestone Goat",
+          "copies": 1
+        },
+        {
+          "id": "ODY-139",
+          "name": "Omen of the Hunting Hawk",
+          "copies": 1
+        },
+        {
+          "id": "ODY-140",
+          "name": "Olivewood Carpenter",
+          "copies": 1
+        },
+        {
+          "id": "ODY-141",
+          "name": "Goat of the Empty Isle",
+          "copies": 1
+        },
+        {
+          "id": "ODY-176",
+          "name": "Calypso, Keeper of Ogygia",
+          "copies": 1
+        },
+        {
+          "id": "ODY-220",
+          "name": "Threshing-Floor Worker",
+          "copies": 1
+        }
+      ],
+      "basicLands": {
+        "G": 9,
+        "U": 8
+      },
+      "cards": 40,
+      "creatures": 15,
+      "cheapCreatureCopies": 4,
+      "manaValueCurve": {
+        "2": 7,
+        "3": 8,
+        "4": 5,
+        "5": 1,
+        "6": 2
+      },
+      "chanceCheapCreatureInFirst8": 0.6065,
+      "chanceAtLeast3LandsInFirst9": 0.8446
+    }
+  ],
+  "playedMatches": 0,
+  "drafts": 0,
+  "fixedDefects": [
+    {
+      "id": "ODY-142",
+      "issue": "Target is selected before milling.",
+      "fix": "Choose the small creature during resolution so newly milled cards are eligible."
+    },
+    {
+      "id": "ODY-125",
+      "issue": "Adding enchantment type enables unintended self-recovery.",
+      "fix": "Recover another enchantment card; maintain access to other enchantments."
+    }
+  ],
+  "remainingGates": [
+    "Run actual draft/pool tests under odyssey-core-fin-playbooster-v1; reopen GU common density only if the lane fails while plausibly open.",
+    "Expose the canonical Manifest Fate reminder; published card records use the custom action without defining it. Audit uses existing reference notes: top two, manifest one, exile the other.",
+    "WU recognition and WB exploitation now have revised cards; rates, repeatability and draft access still need games.",
+    "Play these lists; these calculations are not results of played games."
+  ],
+  "collationModel": {
+    "id": "odyssey-core-fin-playbooster-v1",
+    "document": "docs/odyssey-design-round-20260922/collation-model.md",
+    "ordinaryCommons": 80,
+    "commonDualLands": 10,
+    "basics": 16,
+    "dedicatedOrdinaryCommonSlots": 7,
+    "expectedOrdinaryCommonsPerPack": 7.7515,
+    "expectedSpecificCommonAcross24PackTable": 2.32545,
+    "strictFinBonusSheetSensitivityExpectedOrdinaryCommonsPerPack": 7.4181666667,
+    "note": "The Odyssey candidate has no external Through the Ages-style bonus sheet. Seven ordinary common slots are the default; FIN's one-third common replacement is retained only as a sensitivity case."
+  },
+  "commonExposure": {
+    "Enchantment card": {
+      "count": 9,
+      "expectedPerPack": 0.872044,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.943459,
+      "expectedAcross24PackTable": 20.92905
+    },
+    "Omen": {
+      "count": 5,
+      "expectedPerPack": 0.484469,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.788587,
+      "expectedAcross24PackTable": 11.62725
+    },
+    "Manifest Fate": {
+      "count": 3,
+      "expectedPerPack": 0.290681,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.60165,
+      "expectedAcross24PackTable": 6.97635
+    },
+    "Foretell": {
+      "count": 2,
+      "expectedPerPack": 0.193788,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.456508,
+      "expectedAcross24PackTable": 4.6509
+    },
+    "Gift": {
+      "count": 2,
+      "expectedPerPack": 0.193788,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.456508,
+      "expectedAcross24PackTable": 4.6509
+    },
+    "Escape": {
+      "count": 1,
+      "expectedPerPack": 0.096894,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.261375,
+      "expectedAcross24PackTable": 2.32545
+    },
+    "Constellation payoff": {
+      "count": 1,
+      "expectedPerPack": 0.096894,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.261375,
+      "expectedAcross24PackTable": 2.32545
+    },
+    "Survival": {
+      "count": 6,
+      "expectedPerPack": 0.581363,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.846951,
+      "expectedAcross24PackTable": 13.9527
+    },
+    "Food source": {
+      "count": 8,
+      "expectedPerPack": 0.77515,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.920841,
+      "expectedAcross24PackTable": 18.6036
+    },
+    "Vehicle": {
+      "count": 3,
+      "expectedPerPack": 0.290681,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.60165,
+      "expectedAcross24PackTable": 6.97635
+    },
+    "Direct blink": {
+      "count": 2,
+      "expectedPerPack": 0.193788,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.456508,
+      "expectedAcross24PackTable": 4.6509
+    },
+    "Self-mill": {
+      "count": 6,
+      "expectedPerPack": 0.581363,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.846951,
+      "expectedAcross24PackTable": 13.9527
+    },
+    "Graveyard return": {
+      "count": 3,
+      "expectedPerPack": 0.290681,
+      "chanceAtLeastOneInThreeOpenedBoosters": 0.60165,
+      "expectedAcross24PackTable": 6.97635
+    }
+  },
+  "pickStress": {
+    "document": "docs/odyssey-design-round-20260922/limited-pick-stress-model.md",
+    "json": "docs/odyssey-design-round-20260922/limited-pick-stress-model.json",
+    "runsPerScenario": 5000,
+    "seed": 20260923,
+    "decision": "Do not add a third GU common Manifest source yet. GU meets the Play Booster support skeleton: two monocolour commons, at least two useful monocolour uncommons across the pair (including direct Manifest and voyage/exile bridges), and two multicolour signposts. The stress model shows GU is substantially more competition-sensitive than WU/WB, so actual draft/pool testing remains mandatory. A new common is reopened only if real drafts cannot assemble the lane when GU is plausibly open."
+  }
+}
