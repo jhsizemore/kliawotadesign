@@ -436,7 +436,9 @@
         }
       },
       "brief": {
-        "sourceReview": "Book VIII checked: Odysseus explicitly asks Demodocus to change songs and tell the wooden-horse story; the performance triggers his grief."
+        "sourceReview": "Book VIII checked: Odysseus explicitly asks Demodocus to change songs and tell the wooden-horse story; the performance triggers his grief.",
+        "attributes": "A performed memory of concealed victory: the audience admires the stratagem while the hidden veteran relives its cost.",
+        "emotions": "Admiration mixed with old grief / recognition that a hidden plan has already succeeded."
       }
     },
     "ODY-157": {
@@ -1980,7 +1982,9 @@
         }
       },
       "brief": {
-        "sourceReview": "Book VII checked: Alcinous physically raises Odysseus from the hearth and moves him from ash-covered supplication into the household's protected space."
+        "sourceReview": "Book VII checked: Alcinous physically raises Odysseus from the hearth and moves him from ash-covered supplication into the household's protected space.",
+        "attributes": "A ritual of acceptance made physical: taking the suppliant's hand changes their social position before it changes their circumstances.",
+        "emotions": "Relief through acceptance / an opponent watches a threatened piece return to relevance."
       }
     },
     "ODY-152": {
@@ -2019,7 +2023,9 @@
         }
       },
       "brief": {
-        "sourceReview": "Book V checked for storm, surf and exposed rock. 'Storm over Limestone' is a landscape extension rather than a separately narrated event."
+        "sourceReview": "Book V checked for storm, surf and exposed rock. 'Storm over Limestone' is a landscape extension rather than a separately narrated event.",
+        "attributes": "An exposed limestone coast turned into a hazard by weather; the landscape itself becomes part of the attack.",
+        "emotions": "Sudden environmental force / loss of footing and route."
       }
     },
     "ODY-164": {
@@ -2177,7 +2183,8 @@
         }
       },
       "brief": {
-        "sourceReview": "Book V checked for exposed island/sea weather. Windswept Isle is an invented unnamed landscape composite."
+        "sourceReview": "Book V checked for exposed island/sea weather. Windswept Isle is an invented unnamed landscape composite.",
+        "emotions": "Restlessness and exposure / no shore feels fully settled while the wind keeps changing."
       }
     },
     "ODY-272": {
@@ -2196,7 +2203,8 @@
         }
       },
       "brief": {
-        "sourceReview": "Book VIII checked for the Phaeacian public games. Laurel is later visual shorthand rather than an Odyssey prize detail."
+        "sourceReview": "Book VIII checked for the Phaeacian public games. Laurel is later visual shorthand rather than an Odyssey prize detail.",
+        "emotions": "Competitive pride / hospitality has become public comparison and the risk of humiliation."
       }
     },
     "ODY-273": {
@@ -2215,7 +2223,8 @@
         }
       },
       "brief": {
-        "sourceReview": "Book VI checked: Odysseus compares Nausicaa to a young palm at Delos. Palmshade Cove is an invented landscape treatment, not that literal palm's location."
+        "sourceReview": "Book VI checked: Odysseus compares Nausicaa to a young palm at Delos. Palmshade Cove is an invented landscape treatment, not that literal palm's location.",
+        "emotions": "Enticing safety / a strange shore briefly feels sheltered enough to imagine staying."
       }
     },
     "ODY-295": {
@@ -2253,7 +2262,8 @@
         "rationale": "Basic Land — Island. Reserve the text box for the basic-land treatment; no flavour text is selected."
       },
       "brief": {
-        "sourceReview": "Book V checked for the long open-sea crossing. Basic land treatment selected with no flavour text."
+        "sourceReview": "Book V checked for the long open-sea crossing. Basic land treatment selected with no flavour text.",
+        "emotions": "Vastness and solitude / the traveller is reduced to one moving point on open water."
       }
     },
     "ODY-256": {
