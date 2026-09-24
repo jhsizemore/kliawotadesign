@@ -77,7 +77,11 @@ try:
    page.goto(URL,wait_until='domcontentloaded',timeout=60000)
    page.wait_for_function("typeof CARDS!=='undefined'&&CARDS.length===309&&typeof OdysseyArtDelivery!=='undefined'",timeout=60000)
    initial=wait_for_painted_art(page)
-   assert page.evaluate("CARDS.every(c=>!!OdysseyArtDelivery.full(artById[c.primaryArt]))")
+   missing=page.evaluate("[...new Set(CARDS.map(c=>c.primaryArt).filter(Boolean))].filter(id=>!directArtUrl(id))")
+   if missing:
+    page.evaluate("""async ids => { for (const id of ids) { const art=artById[id]; if (!art) continue; try { await resolveArtUrl(art,false); } catch (_) {} } }""", missing)
+   unresolved=page.evaluate("[...new Set(CARDS.map(c=>c.primaryArt).filter(Boolean))].filter(id=>!directArtUrl(id))")
+   assert not unresolved, 'Unresolved default artworks: '+', '.join(unresolved)
    page.evaluate("selectCard(1);applyArt('ART-432');setCropField('zoom',1.23);setCropField('focusX',43);setCropField('focusY',57)")
    page.wait_for_function("document.querySelector('#previewShell .art-img')?.naturalWidth===7195&&document.querySelector('#previewShell .art-img')?.src.includes('/assets/artwork/')",timeout=45000)
    wait_for_painted_art(page)
