@@ -1,8 +1,8 @@
 {
   "schema": "odyssey-artwork-delivery/v1",
-  "revision": "studio-notes-art-v1",
-  "checkedAt": "2026-09-21T21:05:00.000Z",
-  "datasetVersion": "2026-09-19.3",
+  "revision": "studio-notes-20260925-v1",
+  "checkedAt": "2026-09-24T20:50:00Z",
+  "datasetVersion": "2026-09-25.1",
   "artworks": {
     "ART-001": {
       "id": "ART-001",
@@ -4957,37 +4957,6 @@
       },
       "delivery": "same-origin",
       "seconds": 4.46
-    },
-    "ART-160": {
-      "id": "ART-160",
-      "title": "Phemius Singing to the Suitors",
-      "credit": "Art: “Phemius Singing to the Suitors” · James Parker, after John Flaxman · Rijksmuseum",
-      "source": "https://www.rijksmuseum.nl/en/collection/object/Phemius-zingt-voor-de-vrijers--7c4051c3fc9d9e14b2d7cede3c7e29d2",
-      "rights": "Public Domain",
-      "attempts": [],
-      "status": "verified",
-      "originalUrl": "https://readingproject.au/SpecialReadingProjects/Homer/TheOdyssey/images/art/01/PhemiusSingingToTheSuitors_JohnFlaxman-1805.png",
-      "requestedUrl": "https://readingproject.au/SpecialReadingProjects/Homer/TheOdyssey/images/art/01/PhemiusSingingToTheSuitors_JohnFlaxman-1805.png",
-      "width": 605,
-      "height": 413,
-      "originalBytes": 357648,
-      "sourceSha256": "22d22417fab31fbefe6f02c6b08b76bfbfd53371eb93bf5b16171ca3d3e6d2c5",
-      "full": {
-        "url": "/mtgtools/odyssey/assets/artwork/ART-160.20d16e9efd44.full.webp",
-        "width": 605,
-        "height": 413,
-        "bytes": 40844,
-        "sha256": "20d16e9efd4449a18b88e9bb3b7c35792d8410735eee0b86b5ba32476022542f"
-      },
-      "thumb": {
-        "url": "/mtgtools/odyssey/assets/artwork/ART-160.2941e94e68cb.thumb.webp",
-        "width": 480,
-        "height": 328,
-        "bytes": 13114,
-        "sha256": "2941e94e68cb273e686154a19ccb8199df1541011a78a3335b886e7f7b2b8cf3"
-      },
-      "delivery": "same-origin",
-      "seconds": 0.24
     },
     "ART-161": {
       "id": "ART-161",
@@ -14382,23 +14351,99 @@
       "delivery": "external-preview",
       "note": "Public-domain Met object image via Wikimedia Commons; exact Mycenaean comparator recorded separately as ART-489.",
       "seconds": 0
+    },
+    "ART-501": {
+      "id": "ART-501",
+      "title": "Athena and Telemachus Set Sail",
+      "credit": "Art: Walter Paget · La Odisea (1910) · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:La_Odisea_(Luis_Segal%C3%A1_y_Estalella)_(page_33_crop).jpg",
+      "rights": "Public Domain; Commons PD-scan",
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/La_Odisea_%28Luis_Segal%C3%A1_y_Estalella%29_%28page_33_crop%29.jpg",
+      "requestedUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/La_Odisea_%28Luis_Segal%C3%A1_y_Estalella%29_%28page_33_crop%29.jpg",
+      "width": 1235,
+      "height": 1743,
+      "originalBytes": 0,
+      "sourceSha256": "external-preview-not-mirrored",
+      "delivery": "external-preview",
+      "note": "Public-domain book scan; delivered as external preview.",
+      "seconds": 0
+    },
+    "ART-530": {
+      "id": "ART-530",
+      "title": "Bronze shepherd",
+      "credit": "Art: The Metropolitan Museum of Art · Open Access",
+      "source": "https://www.metmuseum.org/art/collection/search/254539",
+      "rights": "Public Domain / Met Open Access",
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/254539/521216/main-image",
+      "requestedUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/254539/521216/main-image",
+      "width": 1200,
+      "height": 1200,
+      "originalBytes": 0,
+      "sourceSha256": "external-preview-not-mirrored",
+      "delivery": "external-preview",
+      "note": "Met Open Access IIIF image; external preview.",
+      "seconds": 0
+    },
+    "ART-539": {
+      "id": "ART-539",
+      "title": "Terracotta krater with warship friezes",
+      "credit": "Art: The Metropolitan Museum of Art · Open Access",
+      "source": "https://www.metmuseum.org/art/collection/search/253422",
+      "rights": "Public Domain / Met Open Access",
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/253422/541180/main-image",
+      "requestedUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/253422/541180/main-image",
+      "width": 1200,
+      "height": 1200,
+      "originalBytes": 0,
+      "sourceSha256": "external-preview-not-mirrored",
+      "delivery": "external-preview",
+      "note": "Met Open Access IIIF image; external preview.",
+      "seconds": 0
+    },
+    "ART-553": {
+      "id": "ART-553",
+      "title": "Odysseus Between Scylla and Charybdis (British Museum lithograph)",
+      "credit": "Art: after Henry Fuseli · British Museum · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Odysseus_Between_Scylla_and_Charybdis_(BM_1870,1008.2799).jpg",
+      "rights": "Public Domain / British Museum / Wikimedia Commons",
+      "attempts": [],
+      "status": "verified",
+      "originalUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Odysseus_Between_Scylla_and_Charybdis_(BM_1870,1008.2799).jpg",
+      "requestedUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Odysseus_Between_Scylla_and_Charybdis_(BM_1870,1008.2799).jpg",
+      "width": 1600,
+      "height": 1096,
+      "originalBytes": 0,
+      "sourceSha256": "external-preview-not-mirrored",
+      "delivery": "external-preview",
+      "note": "Higher-resolution public-domain British Museum variant of the same Fuseli composition.",
+      "seconds": 0
     }
   },
   "summary": {
-    "total": 461,
-    "verified": 460,
-    "sameOrigin": 456,
+    "total": 464,
+    "verified": 463,
+    "sameOrigin": 455,
     "externalPreviews": [
       "ART-115",
       "ART-487",
       "ART-488",
-      "ART-490"
+      "ART-490",
+      "ART-501",
+      "ART-530",
+      "ART-539",
+      "ART-553"
     ],
     "unavailable": [
       "ART-200"
     ],
-    "originalBytes": 1362503948,
-    "fullBytes": 1066021786,
-    "thumbnailBytes": 9167208
+    "originalBytes": 1362146300,
+    "fullBytes": 1065980942,
+    "thumbnailBytes": 9154094
   }
 }
