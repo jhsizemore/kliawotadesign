@@ -540,10 +540,10 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}
 <div id="toast" class="toast"></div>
 <input id="importFile" type="file" accept="application/json,.json" hidden>
 <input id="datasetFile" type="file" accept="application/json,.json" hidden>
-<script src="/mtgtools/odyssey/data/artwork-delivery-manifest.138e0c69ce5f.js?v=20260922-notes1"></script>
+<script src="/mtgtools/odyssey/data/artwork-delivery-manifest.20260925a.js?v=20260922-notes1"></script>
 <script src="/mtgtools/odyssey/artwork-delivery.js?v=20260919-1"></script>
 <script src="/mtgtools/odyssey/design-refinement.js?v=20260919-1"></script>
-<script src="/mtgtools/odyssey/data/odyssey-data.js?v=20260924-c12"></script>
+<script src="/mtgtools/odyssey/data/odyssey-data.js?v=20260925-notes1"></script>
 <script src="/mtgtools/odyssey/data/card-references.js?v=ref3-74f7052f346c"></script>
 <script src="/mtgtools/odyssey/card-reference-browser.js?v=ref3-74f7052f346c"></script>
 <script src="/mtgtools/odyssey/card-sheet-editor.js?v=20260921-notes1"></script>\n<script src="/mtgtools/odyssey/review-notes.js?v=20260921-8"></script>\n<script src="/mtgtools/odyssey/media-preview.js?v=20260921-1"></script>
@@ -619,7 +619,7 @@ const NGA_UUIDS={
  "ART-193":"7499fba5-3afb-4120-bd7f-bf0912ac2379",
  "ART-203":"7e5df24d-31a2-4255-9318-0e0a03342793"
 };
-const ART_URL_CACHE_KEY='ody_art_urls_v25', ART_FAIL_CACHE_KEY='ody_art_fail_v25', ART_BAD_CACHE_KEY='ody_art_bad_urls_v25';
+const ART_URL_CACHE_KEY='ody_art_urls_v26', ART_FAIL_CACHE_KEY='ody_art_fail_v26', ART_BAD_CACHE_KEY='ody_art_bad_urls_v26';
 const LEGACY_ART_URL_CACHE_KEY='ody_art_urls_v03';
 function loadCache(key,fallbackKey=''){try{const raw=localStorage.getItem(key)||(fallbackKey&&localStorage.getItem(fallbackKey))||'{}';return JSON.parse(raw)||{}}catch(e){return {}}}
 let resolvedArtUrls=loadCache(ART_URL_CACHE_KEY,LEGACY_ART_URL_CACHE_KEY);
@@ -627,7 +627,7 @@ let failedArtUrls=loadCache(ART_FAIL_CACHE_KEY);
 let badArtUrls=loadCache(ART_BAD_CACHE_KEY);
 const imageRequestQueue=OdysseyArtDelivery.createQueue(4), imageProbes=new Map();
 let candidateUsageCache=null,candidateUsageResolver=null,artCacheTimer=0;
-const ART_DIM_CACHE_KEY='ody_art_dimensions_v06';
+const ART_DIM_CACHE_KEY='ody_art_dimensions_v07';
 let artImageDims=loadCache(ART_DIM_CACHE_KEY);
 let qualityAudit={running:false,done:0,total:0,current:''};
 const PRINT_DPI_TARGET=300, PRINT_DPI_MIN=240, ART_PREVIEW_PX=2400, FAIL_RETRY_MS=45000;
