@@ -1,14 +1,14 @@
 {
-  "version": "0.1.21",
-  "publishedAt": "2026-09-23T03:52:21.175Z",
+  "version": "0.1.22",
+  "publishedAt": "2026-09-24T06:28:00.838Z",
   "baseline": "cbd-demolition-2026-09-17.1",
-  "release": "place-details-1",
-  "note": "Denser island and hillside canopy, dated exterior palettes, mapped piers and lagoon crossings, illustrative harbour boats and market life, B-plate minibuses and place navigation. Building baseline and saved proposals retained.",
+  "release": "scalable-canopy-1",
+  "note": "Expand to 11,032 illustrative trees with three instanced distance levels, spatial culling and fixed desktop/phone geometry budgets. Precomputed compressed placement; original city baseline and saved proposals retained.",
   "assets": [
-    "assets/index-DTHw6XJG.js",
+    "assets/index-DsH_Msyr.js",
     "assets/index-DtJow0-l.css",
-    "assets/research-BdzLJBAY.js",
+    "assets/research-C1jT6J10.js",
     "assets/research-data-DXfJnZDb.js",
-    "assets/vision-DtMKNIHp.js"
+    "assets/vision-DXkcoOnH.js"
   ]
 }
