@@ -1,8 +1,8 @@
 {
-  "version": "2026-09-24.1",
-  "revision": "gate-c12-high-floor-theros-ecology-v1",
+  "version": "2026-09-25.1",
+  "revision": "studio-notes-20260925-v1",
   "cards": 309,
-  "artworks": 490,
+  "artworks": 553,
   "rarity": {
     "C": 106,
     "U": 109,
@@ -31,7 +31,7 @@
       "name": "Song of the Faithful Queen"
     }
   ],
-  "cardsSha256": "e2c1703e9216bea896a946a44b168cc46e4c8823e5ba36a0cc380acba603a1af",
+  "cardsSha256": "41716e8475d5883b8001aa1b7fc1c95312ac61699b172d6b2b2d6311cfaf185e",
   "actual": {
     "physicalCards": 309,
     "rarity": {
@@ -100,12 +100,11 @@
     }
   },
   "notes": [
-    "Gate C12 cumulative design promoted to the live Odyssey Studio on 24 September 2026.",
-    "Includes Gate B3 source/rules reconciliation, high-floor Limited tuning, Theros lineage recovery, signpost floor fixes and mechanical-ecology support.",
-    "309 cards, 106 C / 109 U / 74 R / 20 M, 40 lands and one transform card preserved.",
-    "Reference-card comparisons rebuild automatically from the promoted production dataset."
+    "Studio review-note pass promoted from the canonical 14A2 sheet on 25 September 2026.",
+    "Ordeal templating shortened; Hubris restored as a straight reprint; Cutting Raft Timbers retitled; Named Nobody now seeds Manifest Fate; Vengeance in the Great Hall rebuilt as a Boros combat Saga.",
+    "Artwork notes reconciled against the current 14B2 library, including higher-resolution Charybdis art and revised goatherd, Mentor, carpenter, oarsman, longship and lookout assignments."
   ],
-  "appRevision": "gate-c12-live-v1",
+  "appRevision": "studio-notes-20260925-v1",
   "artworkDelivery": {
     "total": 461,
     "verified": 460,
@@ -206,9 +205,12 @@
     ]
   },
   "reviewNotes": {
-    "revision": "studio-notes-20260922-v1",
-    "actionedOpenCount": 20,
-    "sourceDatasetVersion": "2026-09-22.2",
+    "revision": "studio-notes-20260925-v1",
+    "actionedOpenCount": 28,
+    "sourceDatasetVersions": [
+      "2026-09-22.3",
+      "2026-09-24.1"
+    ],
     "closure": "production-verification-hook"
   }
 }
