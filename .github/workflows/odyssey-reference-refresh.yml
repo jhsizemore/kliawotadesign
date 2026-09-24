@@ -57,19 +57,19 @@ jobs:
       - name: Verify selection exclusions and mechanic boundaries
         run: python -m unittest discover -s tests -p 'test_odyssey_reference_selection.py'
       - name: Rebuild references from current Scryfall Oracle bulk
-        if: github.event_name != 'pull_request'
+        if: github.event_name == 'workflow_dispatch'
         run: |
           mkdir -p /tmp/odyssey-card-references/browser
           python scripts/odyssey-build-reference-cards.py | tee /tmp/odyssey-card-references/generator.log
       - name: Integrate rebuilt reference layer
-        if: github.event_name != 'pull_request'
+        if: github.event_name == 'workflow_dispatch'
         run: python scripts/odyssey-reference-integration.py | tee /tmp/odyssey-card-references/integration.log
       - name: Verify full-set reference policy
         run: |
           mkdir -p /tmp/odyssey-card-references
           node --test tests/odyssey-reference-cards.test.cjs | tee /tmp/odyssey-card-references/tests.txt
       - name: Commit verified generated reference data
-        if: github.event_name != 'pull_request'
+        if: github.event_name == 'workflow_dispatch'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
