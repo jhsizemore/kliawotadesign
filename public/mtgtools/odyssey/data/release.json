@@ -106,21 +106,25 @@
   ],
   "appRevision": "studio-notes-20260925-v1",
   "artworkDelivery": {
-    "total": 461,
-    "verified": 460,
-    "sameOrigin": 456,
+    "total": 464,
+    "verified": 463,
+    "sameOrigin": 455,
     "externalPreviews": [
       "ART-115",
       "ART-487",
       "ART-488",
-      "ART-490"
+      "ART-490",
+      "ART-501",
+      "ART-530",
+      "ART-539",
+      "ART-553"
     ],
     "unavailable": [
       "ART-200"
     ],
-    "originalBytes": 1362503948,
-    "fullBytes": 1066021786,
-    "thumbnailBytes": 9167208
+    "originalBytes": 1362146300,
+    "fullBytes": 1065980942,
+    "thumbnailBytes": 9154094
   },
   "localeCycle": {
     "id": "cycle.odyssean-locales",
