@@ -1,15 +1,15 @@
 {
-  "version": "0.1.23",
-  "publishedAt": "2026-09-24T09:36:29.674Z",
+  "version": "0.1.24",
+  "publishedAt": "2026-09-24T23:51:42.644Z",
   "baseline": "cbd-demolition-2026-09-17.1",
-  "release": "northern-expansion-1",
-  "note": "Expand the landscape north to Bauerfield Airport with tiled terrain and 9,036 mapped context footprints in lazy-loaded sections. Approximate heights; original city baseline and saved proposals retained.",
+  "release": "downtown-aerial-1",
+  "note": "Refine 71 downtown roof palettes, selected roof forms, waterfront lawns and wooded areas using a user-supplied aerial estimated Q2 2025. Retain later demolition evidence, original foundations and saved proposals; northern expansion remains available.",
   "assets": [
-    "assets/index-BI04TLLa.js",
     "assets/index-DtJow0-l.css",
-    "assets/research-BLWmVJ8U.js",
+    "assets/index-iSZdlO1J.js",
+    "assets/research-CJAMIhjN.js",
     "assets/research-data-DXfJnZDb.js",
-    "assets/vision-CnVXskB6.js"
+    "assets/vision-CScsXS3G.js"
   ],
   "districtTiles": [
     "data/north-v1/-960_-5280-1e1d637cb5f7.json",
