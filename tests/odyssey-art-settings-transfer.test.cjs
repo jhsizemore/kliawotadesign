@@ -6,6 +6,15 @@ const art = id => ({id, imageUrl:`https://example.test/${id}.jpg`,credit:`Artist
 const card = (id,number,extra={}) => ({id,number,name:id,layout:'standard',primaryArt:'ART-001',rules:'Original rules',type:'Creature',...extra});
 const data = cards => ({cards,artworks:[art('ART-001'),art('ART-002')],coverage:[]});
 const baseline = data([card('ODY-001',1),card('ODY-002',2)]);
+test('explicit blank assignment wins over stale coverage, while legacy cards retain fallback',()=>{
+  const d=data([card('ODY-001',1,{primaryArt:''}),card('ODY-002',2)]);
+  delete d.cards[1].primaryArt;
+  d.coverage=[{number:1,primary:'ART-002'},{number:2,primary:'ART-002'}];
+  const index=A.indexDataset(d);
+  assert.equal(A.effective(d.cards[0],index,{},{}).artId,'');
+  assert.equal(A.effective(d.cards[0],index,{},{}).imageUrl,'');
+  assert.equal(A.effective(d.cards[1],index,{},{}).artId,'ART-002');
+});
 const candidate = {...data([card('ODY-001',1,{name:'Renamed',rules:'Manifest fate',type:'Enchantment'}),card('ODY-002',2)]),datasetVersion:'analysis-candidate-v1'};
 const candidate2 = {...clone(candidate),datasetVersion:'analysis-candidate-v2'};
 const input = extra => ({baseline:clone(baseline),candidate:clone(candidate),...extra});

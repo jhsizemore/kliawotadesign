@@ -24,10 +24,10 @@
         window.OdysseyIncomingSyncKey = location.hash.slice(14);
         history.replaceState(null, '', location.pathname + location.search);
       }
-      const response = await fetch('./app.html?v=20260927-battle1', { cache: 'no-store' });
+      const response = await fetch('./app.html?v=20260927-art1', { cache: 'no-store' });
       if (!response.ok) throw new Error('Studio source returned ' + response.status);
       let markup = await response.text();
-      const transferScript = '<script src="./art-settings-transfer.js?v=20260921-2"><' + '/script>';
+      const transferScript = '<script src="./art-settings-transfer.js?v=20260927-art1"><' + '/script>';
       const mobileStyle = '<link rel="stylesheet" href="./mobile-navigation.css?v=20260921-1">';
       const polishStyle = '<link rel="stylesheet" href="./studio-polish.css?v=20260926-clean2">';
       const mechanicsStyle = '<link rel="stylesheet" href="./mechanics-review.css?v=20260921-1">';
