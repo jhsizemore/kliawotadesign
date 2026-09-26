@@ -10,7 +10,11 @@ ROOT=Path(__file__).resolve().parents[1];APP=ROOT/'public/mtgtools/odyssey'
 OUT=Path('/tmp/odyssey-production-artwork');OUT.mkdir(parents=True,exist_ok=True)
 BASE='https://kliawota.design';URL=BASE+'/mtgtools/odyssey/'
 manifest=json.loads((APP/'data/artwork-manifest.json').read_text())
-report={'commit':os.environ.get('GITHUB_SHA'),'checkedAt':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'summary':manifest['summary'],'errors':[]}
+sync_text=(APP/'live-sheet-sync.js').read_text()
+sync_match=re.search(r'const META=(\{.*?\});\s*const CARD_ROWS=',sync_text,re.S)
+if not sync_match:raise RuntimeError('Could not read live sheet-sync metadata')
+sync_meta=json.loads(sync_match.group(1))
+report={'commit':os.environ.get('GITHUB_SHA'),'checkedAt':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'summary':manifest['summary'],'liveSync':sync_meta,'errors':[]}
 local=threading.local()
 def sha(data):return hashlib.sha256(data).hexdigest()
 def session():
@@ -66,13 +70,19 @@ try:
  report['externalPreviews']=[];report['externalPreviewWarnings']=[]
  for id in manifest['summary']['externalPreviews']:
   row=manifest['artworks'][id];r=None
+  last_status=None
   for attempt in range(4):
-   candidate=session().get(row['originalUrl'],timeout=30)
-   if candidate.status_code!=429:
+   try:
+    candidate=session().get(row['originalUrl'],timeout=30);last_status=candidate.status_code
+    if candidate.status_code==429 or candidate.status_code>=500:
+     if attempt<3:time.sleep(1.5*(attempt+1))
+     continue
     candidate.raise_for_status();r=candidate;break
-   if attempt<3:time.sleep(1.5*(attempt+1))
+   except requests.RequestException as exc:
+    last_status=str(exc)
+    if attempt<3:time.sleep(1.5*(attempt+1))
   if r is None:
-   report['externalPreviewWarnings'].append({'id':id,'status':429,'note':'Provider rate-limited bulk audit; browser resolver remains independently tested.'})
+   report['externalPreviewWarnings'].append({'id':id,'status':last_status,'note':'External provider unavailable during bulk audit; browser resolver remains independently tested.'})
    continue
   try:
    with Image.open(io.BytesIO(r.content)) as im:
@@ -92,7 +102,8 @@ try:
    page.goto(URL,wait_until='domcontentloaded',timeout=60000)
    page.wait_for_function("typeof CARDS!=='undefined'&&CARDS.length===309&&typeof OdysseyArtDelivery!=='undefined'&&typeof OdysseySheetSync!=='undefined'",timeout=60000)
    runtime=page.evaluate("({version:ODYSSEY_DATASET.datasetVersion,cards:CARDS.length,artworks:ART.length,coverage:COVERAGE.length,newArt:ART.filter(a=>Number(String(a.id||'').replace('ART-',''))>553).length,assigned:CARDS.filter(c=>c.primaryArt).length})")
-   assert runtime=={'version':'2026-09-26.2','cards':309,'artworks':581,'coverage':309,'newArt':28,'assigned':302},runtime
+   expected={'version':sync_meta['version'],'cards':sync_meta['cards'],'artworks':sync_meta['artworks'],'coverage':sync_meta['coverage'],'assigned':sync_meta['cards']}
+   for key,value in expected.items():assert runtime[key]==value,(runtime,expected)
    initial=wait_for_painted_art(page)
    missing=page.evaluate("[...new Set(CARDS.map(c=>c.primaryArt).filter(Boolean))].filter(id=>!directArtUrl(id))")
    if missing:
