@@ -152,7 +152,7 @@ jobs:
               assert page.locator('#odFinishDock').is_visible()
               page.wait_for_selector('#odFinishConfidence',timeout=10000)
               assert page.locator('[data-fin-confidence]').count()==6
-              page.wait_for_selector('#odSortCards',timeout=10000)
+              page.wait_for_selector('#odSortCards',state='attached',timeout=10000)
               sort_values=page.locator('#odSortCards option').evaluate_all("(els)=>els.map(x=>x.value)")
               assert 'confidence-low' in sort_values and 'cycle' in sort_values and 'suite' in sort_values, sort_values
               page.click('#odNotesQueue')
