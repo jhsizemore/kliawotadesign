@@ -192,6 +192,7 @@
       const artButton = document.createElement('button');
       artButton.type = 'button';
       artButton.className = 'btn secondary small od-art-options-button';
+      artButton.setAttribute('aria-label', 'Artwork options');
       artButton.textContent = 'Art options';
       artButton.onclick = () => root.openArtOptions(selected);
       toolbar.insertBefore(artButton, printButton);
@@ -201,7 +202,7 @@
         const trigger = document.querySelector('#previewShell .art-options-trigger');
         artButton.disabled = !trigger;
         artButton.textContent = trigger?.querySelector('.art-new-count')
-          ? `Art options · ${trigger.querySelector('.art-new-count').textContent} new`
+          ? `Art · ${trigger.querySelector('.art-new-count').textContent}`
           : 'Art options';
         return result;
       };
