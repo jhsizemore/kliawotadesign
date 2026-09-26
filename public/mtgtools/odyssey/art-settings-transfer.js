@@ -60,6 +60,25 @@
   function profileKey(m) {
     return `${m.artId || 'NOART'}|${m.layout || 'standard'}|${m.artHeight || 'normal'}${m.frameStyle === 'full-art' ? '|full-art' : ''}`;
   }
+  function migrateSagaCropProfiles(cards, overrides, profiles) {
+    let copied = 0;
+    for (const card of cards) {
+      if (card.layout !== 'saga' || ![208, 228].includes(card.number)) continue;
+      const override = overrides[card.number] || {};
+      if (override.layout && override.layout !== 'saga') continue;
+      const artId = override.artId === undefined ? card.primaryArt : override.artId;
+      if (!artId) continue;
+      const prefix = `${artId}|standard|`;
+      for (const [key, value] of Object.entries(profiles)) {
+        if (!key.startsWith(prefix) || !record(value)) continue;
+        const target = `${artId}|saga|${key.slice(prefix.length)}`;
+        if (own(profiles, target)) continue;
+        profiles[target] = clone(value);
+        copied++;
+      }
+    }
+    return copied;
+  }
   function effective(card, index, overrides, profiles) {
     const o = overrides[card.number] || {};
     const m = Object.assign(defaults(card, index), o);
@@ -254,7 +273,7 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', install, { once: true });
     else install();
   }
-  const api = { prepare, transfer, copyAgain, mount, reportText, indexDataset, effective, profileKey, BASE, ART_KEYS };
+  const api = { prepare, transfer, copyAgain, mount, reportText, indexDataset, effective, profileKey, migrateSagaCropProfiles, BASE, ART_KEYS };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   root.OdysseyArtTransfer = api;
 })(typeof window !== 'undefined' ? window : globalThis);

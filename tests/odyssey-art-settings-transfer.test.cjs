@@ -29,6 +29,17 @@ test('shared profiles remain shared instead of card-specific exceptions',()=>{
   const p={'ART-001|standard|normal':{zoom:2,focusX:23,focusY:-8,fit:'cover'}};
   const r=A.transfer(input({sourceProfiles:p}));assert.equal(view(r).zoom,2);assert.equal(r.overrides[1],undefined);assert.deepEqual(r.crops,p);
 });
+test('Saga layout migration copies selected artwork crop without changing old profiles or approved target crop',()=>{
+  const cards=[card('ODY-208',208,{layout:'saga',type:'Enchantment Creature — Saga Horror'}),card('ODY-228',228,{layout:'saga',type:'Enchantment — Saga'})];
+  const old={zoom:2.3,focusX:18,focusY:-9,fit:'cover'};
+  const profiles={'ART-002|standard|normal':old,'ART-002|saga|normal':{zoom:3},'ART-001|standard|normal|full-art':old};
+  const overrides={208:{artId:'ART-002',artHeight:'normal'},228:{frameStyle:'full-art'}};
+  assert.equal(A.migrateSagaCropProfiles(cards,overrides,profiles),1);
+  assert.deepEqual(profiles['ART-001|saga|normal|full-art'],old);
+  assert.deepEqual(profiles['ART-002|saga|normal'],{zoom:3});
+  assert.notStrictEqual(profiles['ART-001|saga|normal|full-art'],old);
+  assert.equal(A.migrateSagaCropProfiles(cards,overrides,profiles),0);
+});
 test('card-specific crop beats source shared profile; zero pan is retained',()=>{
   const r=A.transfer(input({sourceOverrides:{1:{zoom:3,focusX:0,focusY:0}},sourceProfiles:{'ART-001|standard|normal':{zoom:2,focusX:40,focusY:50,fit:'cover'}}}));
   assert.equal(view(r).zoom,3);assert.equal(view(r).focusX,0);assert.equal(view(r).focusY,0);assert.equal(view(r,2).zoom,2);

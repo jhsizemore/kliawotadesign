@@ -31,7 +31,7 @@
       "name": "Song of the Faithful Queen"
     }
   ],
-  "cardsSha256": "6dc6f9f1ecc3f39eeb1f651d8d5b612c6486d002b01e8a3db85f3854dac52f77",
+  "cardsSha256": "bd9e7945bbabc084294549216b28722f19e1c0afff796d4b9c70a5923d06af67",
   "actual": {
     "physicalCards": 309,
     "rarity": {
@@ -44,10 +44,10 @@
       "singleFace": 308,
       "doubleFace": 1,
       "byLayout": {
-        "standard": 277,
+        "standard": 275,
         "vehicle": 9,
         "adventure": 7,
-        "saga": 14,
+        "saga": 16,
         "prepare": 1,
         "double-face-battle": 1
       }
