@@ -35,6 +35,7 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
  assert.equal(d.cards.find(c=>c.number===245).primaryArt,'ART-574');
  assert.deepEqual([102,152,208,209,236].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-584','ART-027','ART-237','ART-020','ART-583']);
  assert.deepEqual(['ART-583','ART-584'].map(id=>{const a=d.artworks.find(x=>x.id===id);return [a.id,a.imageWidth,a.imageHeight]}),[['ART-583',6382,4832],['ART-584',2560,1920]]);
+ assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-020');return [a.imageUrl,a.imageWidth,a.imageHeight]})(),['https://iiif.micr.io/PmgVy/full/max/0/default.jpg',4102,2717]);
  assert.equal(d.coverage.find(c=>c.number===236).name,'The Burning Olive Stake');
 });
 test('Studio loads the sheet sync before model construction and links the current card source',()=>{
