@@ -12,6 +12,8 @@
 #artOptionsOverlay .art-options-note{flex:0 0 auto!important;max-height:6em;overflow:auto}
 @media(max-width:600px){#artOptionsGrid{grid-template-columns:1fr!important}#artOptionsGrid .art-option-thumb{height:240px!important;min-height:240px!important;max-height:240px!important;flex-basis:240px!important}#artOptionsGrid .art-option{min-height:350px!important}}
 /* The text line itself must include room for glyph ascenders and descenders. */
+.preview-toolbar{flex-wrap:wrap}
+.od-art-options-button{flex:0 0 auto;white-space:nowrap}
 .render-card .titlebar{align-items:center!important;overflow:visible!important}
 .render-card .art-options-trigger{display:none!important}
 .render-card .title-text{display:flex!important;flex-direction:column!important;justify-content:center!important;flex:1 1 auto!important;min-width:0!important;height:auto!important;max-height:none!important;overflow:visible!important;padding:0!important}
