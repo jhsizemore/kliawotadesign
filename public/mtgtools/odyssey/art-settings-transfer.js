@@ -48,7 +48,7 @@
     return { ids, artworks, coverage };
   }
   function defaults(card, index) {
-    const id = card.primaryArt || index.coverage.get(card.number)?.primary || '';
+    const id = own(card, 'primaryArt') ? (card.primaryArt || '') : (index.coverage.get(card.number)?.primary || '');
     const art = index.artworks.get(id) || {};
     return {
       artId: id, imageUrl: card.imageUrl || art.imageUrl || '',
