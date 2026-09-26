@@ -31,7 +31,7 @@
       const mobileStyle = '<link rel="stylesheet" href="./mobile-navigation.css?v=20260921-1">';
       const polishStyle = '<link rel="stylesheet" href="./studio-polish.css?v=20260926-frame1">';
       const mechanicsStyle = '<link rel="stylesheet" href="./mechanics-review.css?v=20260921-1">';
-      markup = markup.replace('</head>', '<meta name="referrer" content="no-referrer"><link rel="stylesheet" href="./frame-system.css?v=20260926-frame1">' + transferScript + mobileStyle + polishStyle + mechanicsStyle + '</head>');
+      markup = markup.replace('</head>', '<meta name="referrer" content="no-referrer"><link rel="stylesheet" href="./frame-system.css?v=20260926-frame2">' + transferScript + mobileStyle + polishStyle + mechanicsStyle + '</head>');
       // Keep the canonical app/data intact. Scope only the four per-set state stores.
       const statePatches = [
         ["const STORAGE='odyssey-layout-overrides-v02';",
@@ -43,7 +43,7 @@
         if (!markup.includes(before)) throw new Error('Studio art-settings integration needs an update; saved settings have not been changed.');
         markup = markup.replace(before, after);
       }
-      const frameScript = '<script src="./frame-system.js?v=20260926-frame1"><' + '/script>';
+      const frameScript = '<script src="./frame-system.js?v=20260926-frame2"><' + '/script>';
       const artworkScript = '<script src="./artwork-tools.js?v=20260919-1"><' + '/script>';
       const transferMount = '<script>OdysseyArtTransfer.mount(ODYSSEY_ART_STATE);<' + '/script>';
       const mobileScript = '<script src="./mobile-navigation.js?v=20260921-1"><' + '/script>';

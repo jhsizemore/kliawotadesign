@@ -2,7 +2,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const data = require('../public/mtgtools/odyssey/data/odyssey-data.json');
-const {frameFamily, parseSagaText} = require('../public/mtgtools/odyssey/frame-system.js');
+const {frameFamily, frameTraits, parseSagaText} = require('../public/mtgtools/odyssey/frame-system.js');
 const polish = require('../public/mtgtools/odyssey/studio-polish.js');
 
 test('a Saga creature keeps its ordinary ability and every grouped chapter', () => {
@@ -34,4 +34,16 @@ test('each two-colour cost stays one labelled pip with both source glyphs', () =
     assert.match(html, new RegExp(`${b}\\.png`));
     assert.match(html, /role="img"/);
   }
+});
+
+test('extra enchantment types survive artifact and Adventure layout selection', () => {
+  for (const number of [181, 238, 295, 296]) {
+    const card = data.cards.find(c => c.number === number);
+    assert.equal(frameFamily(card), 'artifact');
+    assert.ok(frameTraits(card).includes('enchantment-artifact'));
+    assert.ok(frameTraits(card).includes('equipment'));
+  }
+  const aeaea = data.cards.find(c => c.number === 191);
+  assert.equal(frameFamily(aeaea), 'adventure');
+  assert.ok(frameTraits(aeaea).includes('enchantment-land'));
 });
