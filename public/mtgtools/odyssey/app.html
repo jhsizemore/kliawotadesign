@@ -541,6 +541,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}
 <script src="/mtgtools/odyssey/artwork-delivery.js?v=20260919-1"></script>
 <script src="/mtgtools/odyssey/design-refinement.js?v=20260919-1"></script>
 <script src="/mtgtools/odyssey/data/odyssey-data.js?v=20260926-closing2"></script>
+<script src="/mtgtools/odyssey/data/reminder-review.20260927a.js?v=20260927a"></script>
 <script src="/mtgtools/odyssey/live-sheet-sync.js?v=20260927-art1"></script>
 <script src="/mtgtools/odyssey/transform-faces.js?v=20260927-battle1"></script>
 <script src="/mtgtools/odyssey/data/card-references.js?v=ref3-74f7052f346c"></script>
@@ -800,6 +801,8 @@ const PLAYTEST_REMINDERS={
 };
 function playtestRemindersFor(m,text){const t=String(text||''),out=[];const add=k=>{const r=PLAYTEST_REMINDERS[k];if(r&&!out.some(x=>x.label===r.label))out.push(r)};if(/manifest hope/i.test(t))add('manifest');if(m.layout==='prepare')add('prepare');if(m.layout==='battle')add('battle');if(/\bForetell\b/i.test(t))add('foretell');if(/\bEscape\b/i.test(t))add('escape');if(/\bBestow\b/i.test(t))add('bestow');if(/\bMonstrosity\b/i.test(t))add('monstrosity');if(/\bFlashback\b/i.test(t))add('flashback');if(/\bPlot\b/i.test(t))add('plot');if(/\bHideaway\b/i.test(t))add('hideaway');if(/\bMiracle\b/i.test(t))add('miracle');if(/\bBoast\b/i.test(t))add('boast');if(/(?:^|[.!?]\s*)Storm\.?\s*$/im.test(t))add('storm');if(/\bdevotion\b/i.test(t))add('devotion');if(m.layout==='adventure')add('adventure');if(/\bCrew\s+\d+/i.test(t))add('crew');return out}
 function reminderHTMLFor(m,text){return playtestRemindersFor(m,text).map(r=>`<span class="playtest-reminder" data-reminder-label="${esc(r.label)}" data-priority="${r.priority}">${esc(r.text)}</span>`).join('')}
+function reminderReviewFor(number){return window.ODYSSEY_REMINDER_REVIEW?.cards?.find(row=>row.number===number)||null}
+function reminderStatusHTML(m,automatic){const review=reminderReviewFor(m.number),current=automatic.length?`Current face: <b>automatic</b> · ${automatic.map(r=>esc(r.label)).join(', ')}.`:'Current face: <b>no automatic paragraph</b>.';if(!review)return current+' No per-card editorial proposal is required.';const proposal=review.proposal==='print'?'PRINT, after wording approval':'INSPECTOR ONLY';return `${current}<br>Editorial proposal: <b>${proposal}</b> · ${review.mechanics.map(esc).join(' + ')}. ${esc(review.reason)}<br><b>Advisory only:</b> card rules and printed reminders are unchanged.`}
 function fitDown(el,start,min,step,overflowFn){
  if(!el)return;let size=start;el.style.setProperty('font-size',size+'px','important');
  while(size>min&&overflowFn(el)){size=Math.max(min,size-step);el.style.setProperty('font-size',size+'px','important')}
@@ -896,7 +899,7 @@ function renderPreview(){
  $('flipFace').hidden=!pair;$('flipFace').textContent=selectedTransformFace==='back'?'← Show front face':'Show back face →';
  $('printCurrent').textContent=pair?`Print ${selectedTransformFace} face`:'Print card';
  $('addSheet').textContent=pair?`+ ${selectedTransformFace} to sheet`:'+ Sheet';
- renderInspector();renderList();updateReviewTop();
+ renderInspector();if($('reminderStatus'))$('reminderStatus').innerHTML=reminderStatusHTML(m,playtestRemindersFor(m,splitSpecial(m).main));renderList();updateReviewTop();
  const backShown=!!pair&&selectedTransformFace==='back';
  document.querySelectorAll('#fArtId,#fImageUrl,#fCredit,#fSource,#fFit,#fZoom,#fZoomNum,#fFocusX,#fFocusXNum,#fFocusY,#fFocusYNum,#localImage,#usePrimary,#removeArtCard,#resolveCurrent,#candidateChips button').forEach(el=>{el.disabled=backShown});
  if(!pair||selectedTransformFace==='front')maybeResolveVisibleArt();
