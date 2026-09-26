@@ -7,7 +7,7 @@
     'kind-creature', 'kind-instant', 'kind-sorcery', 'kind-land',
     'kind-artifact', 'kind-artifact-creature', 'kind-enchantment',
     'kind-enchantment-creature', 'kind-planeswalker', 'kind-token',
-    'kind-adventure', 'kind-prepare', 'kind-battle', 'kind-saga',
+    'kind-adventure', 'kind-prepare', 'kind-battle', 'kind-saga', 'kind-saga-creature',
     'kind-vehicle', 'trait-equipment', 'trait-food', 'trait-god',
     'trait-aura', 'trait-legendary', 'trait-transform'
   ];
@@ -22,6 +22,7 @@
     if (layout === 'battle' || /\bBattle\b/i.test(type)) return 'battle';
     if (layout === 'adventure') return 'adventure';
     if (layout === 'prepare') return 'prepare';
+    if (/\bSaga\b/i.test(type) && /\bCreature\b/i.test(type)) return 'saga-creature';
     if (layout === 'saga' || /\bSaga\b/i.test(type)) return 'saga';
     if (layout === 'vehicle' || /\bVehicle\b/i.test(type)) return 'vehicle';
     if (/\bPlaneswalker\b/i.test(type)) return 'planeswalker';
@@ -61,7 +62,7 @@
       artifact: 'Artifact', 'artifact-creature': 'Artifact creature',
       enchantment: 'Enchantment', 'enchantment-creature': 'Enchantment creature',
       planeswalker: 'Planeswalker', token: 'Token', adventure: 'Adventure',
-      prepare: 'Prepared', battle: 'Battle', saga: 'Saga', vehicle: 'Vehicle'
+      prepare: 'Prepared', battle: 'Battle', saga: 'Saga', 'saga-creature': 'Saga creature', vehicle: 'Vehicle'
     })[family] || family;
   }
 
@@ -83,21 +84,40 @@
       .replace(/"/g, '&quot;');
   }
 
+  function parseSagaText(value) {
+    const source = String(value || '').split('//BACK//')[0].trim();
+    const markers = [...source.matchAll(/(?:^|\s)((?:IV|V|III|II|I)(?:\s*,\s*(?:IV|V|III|II|I))*)\s*[—-]\s*/g)];
+    return {
+      ordinary: markers.length ? source.slice(0, markers[0].index).trim() : source,
+      chapters: markers.map((match, index) => ({
+        numeral: match[1],
+        text: source.slice(match.index + match[0].length, markers[index + 1]?.index ?? source.length).trim()
+      }))
+    };
+  }
+
   function decorateSaga(card, model) {
     const rules = card.querySelector('.rules');
     const main = rules?.querySelector('.rule-main');
-    if (!main || main.querySelector('.saga-chapters')) return;
-    const source = String(model.rules || '').split('//BACK//')[0].trim();
-    const markers = [...source.matchAll(/(?:^|\s)(IV|V|III|II|I)\s*[—-]\s*/g)];
-    if (!markers.length) return;
-    const chapters = markers.map((match, index) => {
-      const start = match.index + match[0].length;
-      const end = markers[index + 1]?.index ?? source.length;
-      return { numeral: match[1], text: source.slice(start, end).trim() };
-    });
-    main.innerHTML = `<div class="saga-chapters">${chapters.map(chapter =>
+    if (!main || main.querySelector('.saga-chapters') || card.querySelector('.saga-creature-panel')) return;
+    const {ordinary, chapters} = parseSagaText(model.rules);
+    if (!chapters.length) return;
+    const chapterHTML = `<div class="saga-chapters">${chapters.map(chapter =>
       `<div class="saga-chapter"><span class="saga-medallion" aria-hidden="true">${chapter.numeral}</span><span>${escapeHTML(chapter.text)}</span></div>`
     ).join('')}</div>`;
+    if (card.classList.contains('kind-saga-creature')) {
+      const panel = document.createElement('div');
+      panel.className = 'saga-creature-panel';
+      panel.innerHTML = chapterHTML;
+      card.querySelector('.typebar')?.before(panel);
+      const reminder = document.createElement('div');
+      reminder.className = 'saga-creature-reminder';
+      reminder.textContent = `(As this Saga enters and after your draw step, add a lore counter. Sacrifice after ${chapters.at(-1).numeral.split(',').at(-1).trim()}.)`;
+      card.querySelector('.titlebar')?.after(reminder);
+      main.innerHTML = ordinary ? `<span class="saga-creature-ability">${escapeHTML(ordinary)}</span>` : '';
+    } else {
+      main.innerHTML = chapterHTML;
+    }
   }
 
   function decorateBattleStats(card, model) {
@@ -129,7 +149,7 @@
     card.dataset.frameFamily = family;
     card.dataset.frameLabel = familyLabel(family);
     addOrnament(card);
-    if (family === 'saga') decorateSaga(card, model);
+    if (family === 'saga' || family === 'saga-creature') decorateSaga(card, model);
     if (family === 'battle') decorateBattleStats(card, model);
     if (family === 'adventure' || family === 'prepare' || family === 'battle') {
       decorateSpecialInset(card, family);
@@ -239,6 +259,8 @@
     window.renderPreview();
   }
 
+  if (typeof module !== 'undefined' && module.exports) module.exports = {frameFamily, parseSagaText};
+  if (typeof document === 'undefined') return;
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', install, { once: true });
   } else {
