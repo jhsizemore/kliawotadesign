@@ -7,6 +7,12 @@ const SCHEMA='odyssey-finishing-queue/v1';
 const STORAGE_PREFIX='odyssey-finishing-local-v1';
 const PREFS_KEY='odyssey-finishing-prefs-v1';
 const ART_STATES=['REVIEWING','LOCKED','NEEDS_ART'];
+const CONFIDENCE_LABELS=['Recast','Redesign','Rework','Close / iterate','Soft details','Locked'];
+const SORT_OPTIONS=[
+  ['number','Number'],['confidence-low','Confidence · low first'],['confidence-high','Confidence · high first'],
+  ['cycle','Cycle'],['suite','Suite / program'],['color','Color'],['rarity','Rarity'],['mv','Mana value'],
+  ['name','Name'],['status','Card status']
+];
 const QUICK_FIELDS={
   displayName:{label:'Card name',selector:'.name',kind:'input'},
   mana:{label:'Mana cost',selector:'.mana',kind:'input'},
@@ -17,7 +23,7 @@ const QUICK_FIELDS={
 };
 
 let state={cards:{}};
-let prefs={enabled:true};
+let prefs={enabled:true,sort:'number',confidenceFilter:'',cycleFilter:'',suiteFilter:''};
 let shared=new Map();
 let syncTimers=new Map();
 let quickDialog=null,artDialog=null,queueDialog=null,dock=null;
@@ -34,7 +40,7 @@ function cleanObject(value){return value&&typeof value==='object'&&!Array.isArra
 
 function loadLocal(){
   try{state=Object.assign({cards:{}},JSON.parse(localStorage.getItem(storageKey())||'{}'));state.cards=cleanObject(state.cards)}catch(_){state={cards:{}}}
-  try{prefs=Object.assign({enabled:true},JSON.parse(localStorage.getItem(PREFS_KEY)||'{}'))}catch(_){prefs={enabled:true}}
+  try{prefs=Object.assign({enabled:true,sort:'number',confidenceFilter:'',cycleFilter:'',suiteFilter:''},JSON.parse(localStorage.getItem(PREFS_KEY)||'{}'))}catch(_){prefs={enabled:true,sort:'number',confidenceFilter:'',cycleFilter:'',suiteFilter:''}}
 }
 function saveLocal(){
   try{localStorage.setItem(storageKey(),JSON.stringify(state));localStorage.setItem(PREFS_KEY,JSON.stringify(prefs))}catch(_){}
@@ -49,6 +55,30 @@ function setArtState(n,value,{sync=true}={}){
   n=Number(n);if(!ART_STATES.includes(value))value='REVIEWING';
   const c=localCard(n);c.artState=value;c.updatedAt=new Date().toISOString();saveLocal();
   paint();if(sync)scheduleSync(n,true);
+}
+function suggestedConfidence(n){
+  const m=model(Number(n))||{},text=[m.designDisposition,m.changeStatus,m.status].filter(Boolean).join(' ').toUpperCase();
+  if(/\b(RECAST|CUT)\b/.test(text))return 0;
+  if(/\bREDESIGN\b/.test(text)||m.status==='PROTOTYPE')return 1;
+  if(/\b(REWORK|MAJOR)\b/.test(text)||m.status==='REVISE'||m.storyRethemeRequired)return 2;
+  if(m.status==='REPRINT TEST')return 3;
+  if(m.status==='KEEP')return 4;
+  return 3;
+}
+function confidenceExplicit(n){return Number.isInteger(state.cards[Number(n)]?.confidence)}
+function confidence(n){const v=state.cards[Number(n)]?.confidence;return Number.isInteger(v)&&v>=0&&v<=5?v:suggestedConfidence(n)}
+function confidenceLabel(v){v=Math.max(0,Math.min(5,Number(v)||0));return CONFIDENCE_LABELS[v]}
+function setConfidence(n,value){
+  n=Number(n);value=Math.max(0,Math.min(5,Number(value)));
+  const c=localCard(n);c.confidence=value;c.updatedAt=new Date().toISOString();saveLocal();
+  scheduleSync(n,true);renderList();paint();toast(value+' · '+confidenceLabel(value));
+}
+function listValues(value){return Array.isArray(value)?value.filter(Boolean).map(String):String(value||'').split(/[;,]/).map(x=>x.trim()).filter(Boolean)}
+function cycleValues(n){return listValues(model(Number(n))?.cycleIds)}
+function cycleKey(n){return cycleValues(n)[0]||''}
+function suiteKey(n){
+  const m=model(Number(n))||{},show=listValues(m.showcase);
+  return show[0]||String(m.productLayer||'').trim()||String(m.signpostPair||'').trim()||listValues(m.archetypes)[0]||'';
 }
 
 function changeKeys(n){return Object.keys(cleanObject(overrides[Number(n)]))}
@@ -70,11 +100,12 @@ function observeCardChange(n){
   if(prevArt!==nextArt&&artState(n)==='LOCKED'){const c=localCard(n);c.artState='REVIEWING';c.updatedAt=new Date().toISOString();saveLocal()}
   lastOverrideSig.set(n,nextOverride);lastArtSig.set(n,nextArt);if(prefs.enabled)scheduleSync(n)
 }
-function actionable(n){return changeKeys(n).length>0||artState(n)!=='REVIEWING'}
+function actionable(n){return changeKeys(n).length>0||artState(n)!=='REVIEWING'||confidenceExplicit(n)}
 function recordFor(n){
   n=Number(n);return {
     schema:SCHEMA,datasetVersion:datasetVersion(),cardId:baseId(n),number:n,name:cardName(n),
-    artState:artState(n),changes:clone(cleanObject(overrides[n])),art:artSnapshot(n),
+    artState:artState(n),confidence:confidence(n),confidenceExplicit:confidenceExplicit(n),workState:confidenceLabel(confidence(n)),
+    cycle:cycleKey(n),suite:suiteKey(n),changes:clone(cleanObject(overrides[n])),art:artSnapshot(n),
     updatedAt:new Date().toISOString()
   };
 }
@@ -82,9 +113,9 @@ function pendingNumbers(){
   return CARDS.map(c=>Number(c.number)).filter(n=>actionable(n));
 }
 function statusCounts(){
-  let locked=0,needed=0,changed=0;
-  CARDS.forEach(c=>{const n=Number(c.number),s=artState(n);if(s==='LOCKED')locked++;else if(s==='NEEDS_ART')needed++;if(changeKeys(n).length)changed++});
-  return{locked,needed,changed,pending:pendingNumbers().length};
+  let locked=0,needed=0,changed=0,recast=0,redesign=0,confidenceLocked=0;
+  CARDS.forEach(c=>{const n=Number(c.number),s=artState(n),cf=confidence(n);if(s==='LOCKED')locked++;else if(s==='NEEDS_ART')needed++;if(changeKeys(n).length)changed++;if(cf===0)recast++;if(cf===1)redesign++;if(cf===5)confidenceLocked++});
+  return{locked,needed,changed,recast,redesign,confidenceLocked,pending:pendingNumbers().length};
 }
 
 async function request(method,body){
@@ -102,6 +133,9 @@ function mergeRemoteIntoEmptyLocal(record){
     const m=model(n);Object.assign(m,clone(remoteChanges));diffOverride(n,m);
   }
   if(!state.cards[n]&&ART_STATES.includes(record.artState))state.cards[n]={artState:record.artState,updatedAt:record.updatedAt||new Date().toISOString()};
+  if(record.confidenceExplicit===true&&!confidenceExplicit(n)){
+    const c=localCard(n),v=Number(record.confidence);if(Number.isInteger(v)&&v>=0&&v<=5)c.confidence=v;
+  }
 }
 async function refreshShared({apply=true,quiet=false}={}){
   if(loadingShared)return;loadingShared=true;paintSync('Loading shared finishing queue…','loading');
