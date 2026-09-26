@@ -11,7 +11,7 @@ test('live sheet sync promotes the full current 309 and 585-art library',()=>{
  assert.equal(d.datasetVersion,'2026-09-26.5');
  assert.equal(d.cards.length,309);assert.equal(d.artworks.length,585);assert.equal(d.coverage.length,309);
  assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,585);
- assert.equal(d.sheetSync.cardSheet.revision,'226');assert.equal(d.sheetSync.artSheet.revision,'66');
+ assert.equal(d.sheetSync.cardSheet.revision,'226');assert.equal(d.sheetSync.artSheet.revision,'67');
  const art=new Set(d.artworks.map(a=>a.id));const assigned=d.cards.filter(c=>c.primaryArt);
  assert.equal(assigned.length,305);for(const c of assigned)assert.ok(art.has(c.primaryArt),c.id+' has current art');
  assert.deepEqual(d.cards.filter(c=>!c.primaryArt).map(c=>c.number),[259,262,263,266]);
@@ -35,6 +35,7 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
  assert.equal(d.cards.find(c=>c.number===245).primaryArt,'ART-574');
  assert.deepEqual([102,152,208,209,236].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-584','ART-027','ART-237','ART-020','ART-583']);
  assert.deepEqual([131,135,210,276].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-201','ART-585','ART-511','ART-517']);
+ assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-201');return [a.imageWidth,a.imageHeight]})(),[793,1200]);
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-585');return [a.imageWidth,a.imageHeight]})(),[5231,3648]);
  assert.deepEqual(['ART-583','ART-584'].map(id=>{const a=d.artworks.find(x=>x.id===id);return [a.id,a.imageWidth,a.imageHeight]}),[['ART-583',6382,4832],['ART-584',2560,1920]]);
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-020');return [a.imageUrl,a.imageWidth,a.imageHeight]})(),['https://iiif.micr.io/PmgVy/full/max/0/default.jpg',4102,2717]);
