@@ -1,6 +1,6 @@
 {
-  "version": "2026-09-25.1",
-  "revision": "studio-notes-20260925-v1",
+  "version": "2026-09-26.1",
+  "revision": "wave-a-live-20260926-v1",
   "cards": 309,
   "artworks": 553,
   "rarity": {
@@ -31,7 +31,7 @@
       "name": "Song of the Faithful Queen"
     }
   ],
-  "cardsSha256": "41716e8475d5883b8001aa1b7fc1c95312ac61699b172d6b2b2d6311cfaf185e",
+  "cardsSha256": "6dc6f9f1ecc3f39eeb1f651d8d5b612c6486d002b01e8a3db85f3854dac52f77",
   "actual": {
     "physicalCards": 309,
     "rarity": {
@@ -41,26 +41,26 @@
       "M": 20
     },
     "layouts": {
-      "singleFace": 308,
-      "doubleFace": 1,
+      "singleFace": 309,
+      "doubleFace": 0,
       "byLayout": {
         "standard": 277,
         "vehicle": 9,
         "adventure": 7,
         "saga": 14,
         "prepare": 1,
-        "double-face-battle": 1
+        "transform": 1
       }
     },
     "lands": 40,
-    "legendaryCards": 84,
+    "legendaryCards": 91,
     "legendaryByRarity": {
       "C": 0,
-      "U": 30,
-      "R": 36,
+      "U": 34,
+      "R": 39,
       "M": 18
     },
-    "sixPlusManaValue": 23,
+    "sixPlusManaValue": 29,
     "goldUncommonLegendarySignposts": 16,
     "signpostPairs": {
       "WU": 2,
@@ -71,40 +71,41 @@
       "BG": 2,
       "RW": 2,
       "GU": 2,
-      "UR": 1,
+      "UR": 2,
       "RG": 2
     },
     "manaCurve": {
-      "1": 11,
-      "2": 73,
-      "3": 112,
-      "4": 37,
-      "5": 13,
-      "6": 19,
-      "7+": 4
+      "1": 10,
+      "2": 68,
+      "3": 113,
+      "4": 39,
+      "5": 10,
+      "6": 26,
+      "7+": 3
     },
-    "sagaCards": 16
+    "sagaCards": 17
   },
   "knownBenchmarkDifferences": {
     "legendaryCards": {
       "target": 105,
-      "actual": 84
+      "actual": 91
     },
     "showcase": {
-      "extended-art-legend": 79,
-      "character-showcase": 26,
-      "greek-vase-showcase": 37,
+      "extended-art-legend": 85,
+      "character-showcase": 29,
+      "greek-vase-showcase": 42,
       "master-artist": 8,
       "odysseus-many-faces": 1,
       "adventure-land-showcase": 5
     }
   },
   "notes": [
-    "Studio review-note pass promoted from the canonical 14A2 sheet on 25 September 2026.",
-    "Ordeal templating shortened; Hubris restored as a straight reprint; Cutting Raft Timbers retitled; Named Nobody now seeds Manifest Fate; Vengeance in the Great Hall rebuilt as a Boros combat Saga.",
-    "Artwork notes reconciled against the current 14B2 library, including higher-resolution Charybdis art and revised goatherd, Mentor, carpenter, oarsman, longship and lookout assignments."
+    "Wave A synchronized from canonical 14A2 on 26 September 2026.",
+    "Duplicate motifs consolidated and every released slot repopulated; Last Woman at the Mill closes the final black common vacancy.",
+    "High-rarity swaps live: Arms of Achilles, Judgment of Paris, The Wrath of Achilles, and Menelaus, Spear of Achaea.",
+    "Omen cycle now has three enchantment creatures: Hunting Hawk, Clear-Sky Thunder, and Bellowing Meat."
   ],
-  "appRevision": "studio-notes-20260925-v1",
+  "appRevision": "wave-a-live-20260926-v1",
   "artworkDelivery": {
     "total": 464,
     "verified": 463,
