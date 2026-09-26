@@ -141,12 +141,19 @@ function validateFinishingAction(body) {
   if (action === 'delete') return {action,datasetVersion,cardId,number};
   const artState = ['REVIEWING','LOCKED','NEEDS_ART'].includes(record.artState) ? record.artState : '';
   if (!artState) throw new Error('Invalid art state.');
+  const confidence = Number(record.confidence);
+  if (!Number.isInteger(confidence) || confidence < 0 || confidence > 5) throw new Error('Invalid confidence.');
   return {
     action,
     record:{
       datasetVersion,cardId,number,
       name:cleanOptional(record.name,200),
       artState,
+      confidence,
+      confidenceExplicit:record.confidenceExplicit===true,
+      workState:cleanOptional(record.workState,100),
+      cycle:cleanOptional(record.cycle,300),
+      suite:cleanOptional(record.suite,300),
       changes:cleanFinishMap(record.changes,FINISH_KEYS),
       art:cleanFinishMap(record.art,FINISH_ART_KEYS)
     }
