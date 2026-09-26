@@ -1,8 +1,8 @@
 {
-  "version": "2026-09-26.1",
-  "revision": "wave-a-live-20260926-v1",
+  "version": "2026-09-26.2",
+  "revision": "closing-act-live-20260926-v2",
   "cards": 309,
-  "artworks": 553,
+  "artworks": 582,
   "rarity": {
     "C": 106,
     "U": 109,
@@ -31,7 +31,7 @@
       "name": "Song of the Faithful Queen"
     }
   ],
-  "cardsSha256": "bd9e7945bbabc084294549216b28722f19e1c0afff796d4b9c70a5923d06af67",
+  "cardsSha256": "27de69096b6d47c80504b4373821b57ec5307b4e2557937299d6750a4341b74f",
   "actual": {
     "physicalCards": 309,
     "rarity": {
@@ -53,14 +53,14 @@
       }
     },
     "lands": 40,
-    "legendaryCards": 91,
+    "legendaryCards": 93,
     "legendaryByRarity": {
       "C": 0,
       "U": 34,
-      "R": 39,
+      "R": 41,
       "M": 18
     },
-    "sixPlusManaValue": 29,
+    "sixPlusManaValue": 28,
     "goldUncommonLegendarySignposts": 16,
     "signpostPairs": {
       "WU": 2,
@@ -77,10 +77,10 @@
     "manaCurve": {
       "1": 10,
       "2": 68,
-      "3": 113,
-      "4": 39,
-      "5": 10,
-      "6": 26,
+      "3": 112,
+      "4": 40,
+      "5": 11,
+      "6": 25,
       "7+": 3
     },
     "sagaCards": 17
@@ -88,7 +88,7 @@
   "knownBenchmarkDifferences": {
     "legendaryCards": {
       "target": 105,
-      "actual": 91
+      "actual": 93
     },
     "showcase": {
       "greek-vase-showcase": 42,
@@ -102,9 +102,10 @@
     "Wave A synchronized from canonical 14A2 on 26 September 2026.",
     "Duplicate motifs consolidated and every released slot repopulated; Last Woman at the Mill closes the final black common vacancy.",
     "High-rarity swaps live: Arms of Achilles, Judgment of Paris, The Wrath of Achilles, and Menelaus, Spear of Achaea.",
-    "Omen cycle now has three enchantment creatures: Hunting Hawk, Clear-Sky Thunder, and Bellowing Meat."
+    "Omen cycle now has three enchantment creatures: Hunting Hawk, Clear-Sky Thunder, and Bellowing Meat.",
+    "Closing act synchronized: Saga-creature Scylla and Lotus-Eaters, Burning Olive Stake, Zeus Guardian of Strangers, Penelope rules and Faith title."
   ],
-  "appRevision": "wave-a-live-20260926-v1",
+  "appRevision": "closing-act-live-20260926-v2",
   "artworkDelivery": {
     "total": 464,
     "verified": 463,
@@ -124,7 +125,8 @@
     ],
     "originalBytes": 1362146300,
     "fullBytes": 1065980942,
-    "thumbnailBytes": 9154094
+    "thumbnailBytes": 9154094,
+    "note": "Delivery manifest retains verified mirrored artwork; newly catalogued ART-554–ART-582 use source URLs pending crop publication."
   },
   "localeCycle": {
     "id": "cycle.odyssean-locales",
@@ -133,11 +135,11 @@
     "rulesType": "Land",
     "names": {
       "70": "Homeward Harbor",
-      "71": "Mistbound Crossing",
+      "71": "Cimmerian Crossing",
       "143": "Great Hall",
       "267": "Rugged Headland",
       "268": "Olive Pasture",
-      "269": "Silent Courtyard",
+      "269": "Penelope's Upper Chamber",
       "270": "Windswept Isle",
       "271": "Asphodel Meadow",
       "272": "Laurel Grounds",
