@@ -1,7 +1,7 @@
 (function(root){
 'use strict';
 
-const VERSION='1.0';
+const VERSION='1.1';
 const API='/mtgtools/odyssey/api/finishing';
 const SCHEMA='odyssey-finishing-queue/v1';
 const STORAGE_PREFIX='odyssey-finishing-local-v1';
@@ -72,6 +72,10 @@ function setConfidence(n,value){
   n=Number(n);value=Math.max(0,Math.min(5,Number(value)));
   const c=localCard(n);c.confidence=value;c.updatedAt=new Date().toISOString();saveLocal();
   scheduleSync(n,true);renderList();paint();toast(value+' · '+confidenceLabel(value));
+}
+function clearConfidence(n){
+  n=Number(n);const c=state.cards[n];if(c&&Object.prototype.hasOwnProperty.call(c,'confidence')){delete c.confidence;c.updatedAt=new Date().toISOString();saveLocal()}
+  scheduleSync(n,true);renderList();paint();toast('Confidence returned to inferred');
 }
 function listValues(value){return Array.isArray(value)?value.filter(Boolean).map(String):String(value||'').split(/[;,]/).map(x=>x.trim()).filter(Boolean)}
 function cycleValues(n){return listValues(model(Number(n))?.cycleIds)}
@@ -337,10 +341,11 @@ function buildDock(){
   const stage=document.querySelector('.stage'),toolbar=document.querySelector('.preview-toolbar');if(!stage||!toolbar)return;
   dock=document.createElement('div');dock.id='odFinishDock';
   const confidenceButtons=CONFIDENCE_LABELS.map((label,i)=>'<button class="od-fin-chip confidence c'+i+'" data-fin-confidence="'+i+'" title="Set confidence '+i+' · '+esc(label)+'">'+i+' '+esc(label)+'</button>').join('');
-  dock.innerHTML='<div class="od-fin-row"><span class="od-fin-title" id="odFinishCardTitle"></span><span class="od-fin-grow"></span><button class="od-fin-chip" data-quick="displayName">Name</button><button class="od-fin-chip" data-quick="mana">Mana</button><button class="od-fin-chip" data-quick="type">Type</button><button class="od-fin-chip" data-quick="rules">Rules</button><button class="od-fin-chip" data-quick="flavor">Flavor</button><button class="od-fin-chip" data-quick="pt">P/T</button></div><div class="od-fin-row" id="odFinishConfidence"><span class="od-fin-title">Confidence</span>'+confidenceButtons+'</div><div class="od-fin-row"><span class="od-fin-title">Artwork</span><button class="od-fin-chip" data-fin-art-state="REVIEWING">Reviewing</button><button class="od-fin-chip lock" data-fin-art-state="LOCKED">Locked ✓</button><button class="od-fin-chip need" data-fin-art-state="NEEDS_ART">Still needed</button><button class="btn secondary small" data-library>Library art</button><button class="btn secondary small" data-external>External art</button><span class="od-fin-grow"></span><button class="btn secondary small" data-queue>Queue</button><button class="btn small" data-next>Next →</button></div><div class="od-fin-row"><span class="od-fin-help" id="odFinishMeta"></span><span class="od-fin-grow"></span><span class="od-fin-sync" id="odFinishSync">Autosave on · shared finishing queue</span></div>';
+  dock.innerHTML='<div class="od-fin-row"><span class="od-fin-title" id="odFinishCardTitle"></span><span class="od-fin-grow"></span><button class="od-fin-chip" data-quick="displayName">Name</button><button class="od-fin-chip" data-quick="mana">Mana</button><button class="od-fin-chip" data-quick="type">Type</button><button class="od-fin-chip" data-quick="rules">Rules</button><button class="od-fin-chip" data-quick="flavor">Flavor</button><button class="od-fin-chip" data-quick="pt">P/T</button></div><div class="od-fin-row" id="odFinishConfidence"><span class="od-fin-title">Confidence</span>'+confidenceButtons+'<button class="od-fin-chip" data-fin-confidence-auto title="Clear explicit rating and return to the inferred score">Auto</button></div><div class="od-fin-row"><span class="od-fin-title">Artwork</span><button class="od-fin-chip" data-fin-art-state="REVIEWING">Reviewing</button><button class="od-fin-chip lock" data-fin-art-state="LOCKED">Locked ✓</button><button class="od-fin-chip need" data-fin-art-state="NEEDS_ART">Still needed</button><button class="btn secondary small" data-library>Library art</button><button class="btn secondary small" data-external>External art</button><span class="od-fin-grow"></span><button class="btn secondary small" data-queue>Queue</button><button class="btn small" data-next>Next →</button></div><div class="od-fin-row"><span class="od-fin-help" id="odFinishMeta"></span><span class="od-fin-grow"></span><span class="od-fin-sync" id="odFinishSync">Autosave on · shared finishing queue</span></div>';
   toolbar.insertAdjacentElement('afterend',dock);
   dock.querySelectorAll('[data-quick]').forEach(b=>b.onclick=()=>openQuickEditor(b.dataset.quick));
   dock.querySelectorAll('[data-fin-confidence]').forEach(b=>b.onclick=()=>setConfidence(selected,+b.dataset.finConfidence));
+  dock.querySelector('[data-fin-confidence-auto]').onclick=()=>clearConfidence(selected);
   dock.querySelectorAll('[data-fin-art-state]').forEach(b=>b.onclick=()=>setArtState(selected,b.dataset.finArtState));
   dock.querySelector('[data-library]').onclick=()=>openArtOptions(selected);dock.querySelector('[data-external]').onclick=openExternalArt;dock.querySelector('[data-queue]').onclick=openQueue;dock.querySelector('[data-next]').onclick=()=>selectCard(cardNumberAtOffset(selected,1));
 }
@@ -363,7 +368,7 @@ function mount(){
 }
 
 
-const api={VERSION,API,SCHEMA,mount,refresh:refreshShared,syncAll,recordFor,changeset,artState,setArtState,openQueue,openExternalArt,openQuickEditor};
+const api={VERSION,API,SCHEMA,mount,refresh:refreshShared,syncAll,recordFor,changeset,artState,setArtState,confidence,confidenceExplicit,confidenceLabel,suggestedConfidence,setConfidence,clearConfidence,cycleKey,suiteKey,openQueue,openExternalArt,openQuickEditor};
 root.OdysseyFinishing=api;
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount,{once:true});else mount();
 
