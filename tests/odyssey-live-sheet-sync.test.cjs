@@ -6,15 +6,15 @@ function baseline(){
  const cards=Array.from({length:309},(_,i)=>({id:'ODY-'+String(i+1).padStart(3,'0'),number:i+1,backFace:i===228?{imageUrl:'wooden-horse.jpg'}:undefined}));
  return {schema:'odyssey-studio-data/v1',datasetVersion:'old',cards,artworks:[],coverage:[],integrity:{},candidate:{}};
 }
-test('live sheet sync promotes the full current 309 and 585-art library',()=>{
+test('live sheet sync promotes the full current 309 and 589-art library',()=>{
  const d=sync.apply(baseline());
- assert.equal(d.datasetVersion,'2026-09-26.5');
- assert.equal(d.cards.length,309);assert.equal(d.artworks.length,585);assert.equal(d.coverage.length,309);
- assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,585);
- assert.equal(d.sheetSync.cardSheet.revision,'226');assert.equal(d.sheetSync.artSheet.revision,'67');
+ assert.equal(d.datasetVersion,'2026-09-26.6');
+ assert.equal(d.cards.length,309);assert.equal(d.artworks.length,589);assert.equal(d.coverage.length,309);
+ assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,589);
+ assert.equal(d.sheetSync.cardSheet.revision,'229');assert.equal(d.sheetSync.artSheet.revision,'69');
  const art=new Set(d.artworks.map(a=>a.id));const assigned=d.cards.filter(c=>c.primaryArt);
- assert.equal(assigned.length,305);for(const c of assigned)assert.ok(art.has(c.primaryArt),c.id+' has current art');
- assert.deepEqual(d.cards.filter(c=>!c.primaryArt).map(c=>c.number),[259,262,263,266]);
+ assert.equal(assigned.length,309);for(const c of assigned)assert.ok(art.has(c.primaryArt),c.id+' has current art');
+ assert.deepEqual(d.cards.filter(c=>!c.primaryArt).map(c=>c.number),[]);
 });
 test('current special layouts survive the sheet cutover',()=>{
  const d=sync.apply(baseline()),count=k=>d.cards.filter(c=>c.layout===k).length;
@@ -24,7 +24,7 @@ test('current special layouts survive the sheet cutover',()=>{
 });
 test('the newest artwork wave is directly renderable and assigned',()=>{
  const d=sync.apply(baseline()),fresh=d.artworks.filter(a=>+a.id.slice(4)>553);
- assert.equal(fresh.length,32);assert.ok(fresh.every(a=>/^https:\/\//.test(a.imageUrl)),fresh.filter(a=>!a.imageUrl).map(a=>a.id).join(','));
+ assert.equal(fresh.length,36);assert.ok(fresh.every(a=>/^https:\/\//.test(a.imageUrl)),fresh.filter(a=>!a.imageUrl).map(a=>a.id).join(','));
  assert.equal(d.cards.find(c=>c.number===84).primaryArt,'ART-582');
  assert.match(d.artworks.find(a=>a.id==='ART-582').credit,/Marie-Lan Nguyen.*CC BY 2.5/);
  assert.equal(d.cards.find(c=>c.number===84).primaryArt,'ART-582');
@@ -35,16 +35,18 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
  assert.equal(d.cards.find(c=>c.number===245).primaryArt,'ART-574');
  assert.deepEqual([102,152,208,209,236].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-584','ART-027','ART-237','ART-020','ART-583']);
  assert.deepEqual([131,135,210,276].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-201','ART-585','ART-511','ART-517']);
+ assert.deepEqual([130,259,262,263,266].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-275','ART-589','ART-588','ART-586','ART-587']);
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-201');return [a.imageWidth,a.imageHeight]})(),[793,1200]);
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-585');return [a.imageWidth,a.imageHeight]})(),[5231,3648]);
+ assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-589');return [a.imageWidth,a.imageHeight]})(),[1024,840]);
  assert.deepEqual(['ART-583','ART-584'].map(id=>{const a=d.artworks.find(x=>x.id===id);return [a.id,a.imageWidth,a.imageHeight]}),[['ART-583',6382,4832],['ART-584',2560,1920]]);
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-020');return [a.imageUrl,a.imageWidth,a.imageHeight]})(),['https://iiif.micr.io/PmgVy/full/max/0/default.jpg',4102,2717]);
  assert.equal(d.coverage.find(c=>c.number===236).name,'The Burning Olive Stake');
 });
 test('Studio loads the sheet sync before model construction and links the current card source',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- const data=app.indexOf('odyssey-data.js?v=20260926-closing2'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art3'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
+ const data=app.indexOf('odyssey-data.js?v=20260926-closing2'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art4'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
  assert.ok(data>=0&&syncPos>data&&model>syncPos);
  assert.match(app,/1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE\/edit/);
- const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-art3/);
+ const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-art4/);
 });
