@@ -199,7 +199,7 @@
       const oldPreview = root.renderPreview;
       root.renderPreview = function () {
         const result = oldPreview.apply(this, arguments);
-        const trigger = document.querySelector('#previewShell .art-options-trigger');
+        const trigger = document.querySelector('#previewShell .render-card:not([data-face="back"]) .art-options-trigger');
         artButton.disabled = !trigger;
         artButton.textContent = trigger?.querySelector('.art-new-count')
           ? `Art · ${trigger.querySelector('.art-new-count').textContent}`

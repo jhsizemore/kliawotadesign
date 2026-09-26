@@ -212,8 +212,10 @@
     window.renderPreview = function () {
       const result = originalRenderPreview.apply(this, arguments);
       const current = window.model(currentNumber());
-      applyFrameSystem(document.querySelector('#previewShell .render-card'), current);
-      updateReadout(current);
+      const card = document.querySelector('#previewShell .render-card');
+      const shown = window.OdysseyTransformFaces?.face(current, card?.dataset.face) || current;
+      applyFrameSystem(card, shown);
+      updateReadout(shown);
       return result;
     };
 
@@ -228,8 +230,9 @@
       const card = document.querySelector('#previewShell .render-card:not([data-frame-family])');
       if (!card) return;
       const current = window.model(currentNumber());
-      applyFrameSystem(card, current);
-      updateReadout(current);
+      const shown = window.OdysseyTransformFaces?.face(current, card.dataset.face) || current;
+      applyFrameSystem(card, shown);
+      updateReadout(shown);
     });
     const preview = document.getElementById('previewShell');
     if (preview) observer.observe(preview, { childList: true, subtree: true });
