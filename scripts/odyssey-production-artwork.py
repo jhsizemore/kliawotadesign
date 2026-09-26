@@ -35,7 +35,7 @@ try:
   except requests.RequestException:pass
   time.sleep(5)
  else:raise RuntimeError('Production did not serve the new app within the deployment window')
- paths=['index.html','app.html','artwork-delivery.js','artwork-tools.js','data/release.json','data/artwork-manifest.json','data/odyssey-data.js','data/odyssey-data.json','data/odyssey-analysis-candidate-v1.json']
+ paths=['index.html','app.html','live-sheet-sync.js','artwork-delivery.js','artwork-tools.js','data/release.json','data/artwork-manifest.json','data/odyssey-data.js','data/odyssey-data.json','data/odyssey-analysis-candidate-v1.json']
  boot=re.search(r'/data/(artwork-delivery-manifest\.[a-f0-9]+\.js)',(APP/'app.html').read_text()).group(1);paths.append('data/'+boot)
  report['sourceFiles']=[]
  for file in paths:
@@ -63,9 +63,17 @@ try:
  failed=[r for r in report['assets'] if not r['ok']];assert not failed,failed
  report['localImagesVerified']=sum(r['kind']=='full' for r in report['assets']);report['thumbnailsVerified']=sum(r['kind']=='thumb' for r in report['assets'])
  report['immutableAssets']=sum(r.get('immutable',False) for r in report['assets'])
- report['externalPreviews']=[]
+ report['externalPreviews']=[];report['externalPreviewWarnings']=[]
  for id in manifest['summary']['externalPreviews']:
-  row=manifest['artworks'][id];r=session().get(row['originalUrl'],timeout=30);r.raise_for_status()
+  row=manifest['artworks'][id];r=None
+  for attempt in range(4):
+   candidate=session().get(row['originalUrl'],timeout=30)
+   if candidate.status_code!=429:
+    candidate.raise_for_status();r=candidate;break
+   if attempt<3:time.sleep(1.5*(attempt+1))
+  if r is None:
+   report['externalPreviewWarnings'].append({'id':id,'status':429,'note':'Provider rate-limited bulk audit; browser resolver remains independently tested.'})
+   continue
   with Image.open(io.BytesIO(r.content)) as im:im.load();assert im.size==(row['width'],row['height'])
   report['externalPreviews'].append({'id':id,'verified':True,'width':row['width'],'height':row['height'],'printRestricted':True})
  report['viewports']={}
@@ -75,13 +83,21 @@ try:
    context=browser.new_context(viewport={'width':width,'height':height});page=context.new_page();errors=[]
    page.on('pageerror',lambda e:errors.append(str(e)))
    page.goto(URL,wait_until='domcontentloaded',timeout=60000)
-   page.wait_for_function("typeof CARDS!=='undefined'&&CARDS.length===309&&typeof OdysseyArtDelivery!=='undefined'",timeout=60000)
+   page.wait_for_function("typeof CARDS!=='undefined'&&CARDS.length===309&&typeof OdysseyArtDelivery!=='undefined'&&typeof OdysseySheetSync!=='undefined'",timeout=60000)
+   runtime=page.evaluate("({version:ODYSSEY_DATASET.datasetVersion,cards:CARDS.length,artworks:ART.length,coverage:COVERAGE.length,newArt:ART.filter(a=>Number(String(a.id||'').replace('ART-',''))>553).length,assigned:CARDS.filter(c=>c.primaryArt).length})")
+   assert runtime=={'version':'2026-09-26.2','cards':309,'artworks':581,'coverage':309,'newArt':28,'assigned':302},runtime
    initial=wait_for_painted_art(page)
    missing=page.evaluate("[...new Set(CARDS.map(c=>c.primaryArt).filter(Boolean))].filter(id=>!directArtUrl(id))")
    if missing:
     page.evaluate("""async ids => { for (const id of ids) { const art=artById[id]; if (!art) continue; try { await resolveArtUrl(art,false); } catch (_) {} } }""", missing)
    unresolved=page.evaluate("[...new Set(CARDS.map(c=>c.primaryArt).filter(Boolean))].filter(id=>!directArtUrl(id))")
    assert not unresolved, 'Unresolved default artworks: '+', '.join(unresolved)
+   freshPaint={}
+   for number,expected in [(12,'ART-578'),(67,'ART-554'),(117,'ART-564')]:
+    page.evaluate("n=>selectCard(n)",number)
+    page.wait_for_function("(id)=>model(selected).artId===id",arg=expected,timeout=10000)
+    freshPaint[str(number)]={'artId':expected,**wait_for_painted_art(page)}
+   report.setdefault('freshRuntimeArtwork',{})[name]=freshPaint
    page.evaluate("selectCard(1);applyArt('ART-432');setCropField('zoom',1.23);setCropField('focusX',43);setCropField('focusY',57)")
    page.wait_for_function("document.querySelector('#previewShell .art-img')?.naturalWidth===7195&&document.querySelector('#previewShell .art-img')?.src.includes('/assets/artwork/')",timeout=45000)
    wait_for_painted_art(page)

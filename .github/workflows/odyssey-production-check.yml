@@ -39,7 +39,7 @@ jobs:
           import fs from 'node:fs';
           import {createHash,randomBytes} from 'node:crypto';
           const base='https://kliawota.design/mtgtools/odyssey/';
-          const files=['index.html','app.html','frame-system.js','frame-system.css','art-settings-transfer.js','art-sync-core.js','art-sync.js','card-sheet-editor.js','card-reference-browser.js','review-notes.js','media-preview.js','design-refinement.js','studio-polish.js','studio-polish.css','data/card-references.json','data/card-references.js','data/templating-report.json','data/empty-slot-report.json','data/odyssey-data.json','data/odyssey-data.js','data/odyssey-analysis-candidate-v1.json','data/odyssey-analysis-candidate-v2.json','data/release.json'];
+          const files=['index.html','app.html','live-sheet-sync.js','frame-system.js','frame-system.css','art-settings-transfer.js','art-sync-core.js','art-sync.js','card-sheet-editor.js','card-reference-browser.js','review-notes.js','media-preview.js','design-refinement.js','studio-polish.js','studio-polish.css','data/card-references.json','data/card-references.js','data/templating-report.json','data/empty-slot-report.json','data/odyssey-data.json','data/odyssey-data.js','data/odyssey-analysis-candidate-v1.json','data/odyssey-analysis-candidate-v2.json','data/release.json'];
           const hash=text=>createHash('sha256').update(text).digest('hex');
           let results=[],matched=false;
           for(let attempt=1;attempt<=60;attempt++){
