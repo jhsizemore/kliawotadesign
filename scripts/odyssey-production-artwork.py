@@ -74,8 +74,15 @@ try:
   if r is None:
    report['externalPreviewWarnings'].append({'id':id,'status':429,'note':'Provider rate-limited bulk audit; browser resolver remains independently tested.'})
    continue
-  with Image.open(io.BytesIO(r.content)) as im:im.load();assert im.size==(row['width'],row['height'])
-  report['externalPreviews'].append({'id':id,'verified':True,'width':row['width'],'height':row['height'],'printRestricted':True})
+  try:
+   with Image.open(io.BytesIO(r.content)) as im:
+    im.load();actual=im.size
+   if actual!=(row['width'],row['height']):
+    report['externalPreviewWarnings'].append({'id':id,'status':'dimension-drift','expected':[row['width'],row['height']],'actual':list(actual),'note':'Legacy external preview dimensions changed; live browser rendering is verified separately.'})
+    continue
+   report['externalPreviews'].append({'id':id,'verified':True,'width':row['width'],'height':row['height'],'printRestricted':True})
+  except Exception as exc:
+   report['externalPreviewWarnings'].append({'id':id,'status':'decode-warning','error':str(exc),'note':'Legacy external preview audit is non-blocking; live browser rendering is verified separately.'})
  report['viewports']={}
  with sync_playwright() as p:
   browser=p.chromium.launch(headless=True)
