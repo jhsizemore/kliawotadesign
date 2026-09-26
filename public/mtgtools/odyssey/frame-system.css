@@ -4,23 +4,6 @@
   --od-metal-hi: rgba(255, 241, 196, .42);
   --od-metal-lo: rgba(34, 29, 21, .48);
   --od-rule-line: color-mix(in srgb, var(--proxy-edge) 52%, #2a241b 48%);
-  --od-frame-accent: var(--proxy-edge);
-}
-
-.frame-identity {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
-  border-radius: inherit;
-}
-
-.frame-identity .identity-mark,
-.frame-identity .identity-line {
-  position: absolute;
-  display: block;
-  pointer-events: none;
 }
 
 .frame-system-readout {
@@ -51,50 +34,6 @@
 
 /* Standard card families -------------------------------------------------- */
 
-.render-card.kind-creature .frame-identity .identity-line {
-  left: 18px;
-  right: 18px;
-  bottom: 55px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--od-frame-accent) 16%, var(--od-frame-accent) 84%, transparent);
-  opacity: .38;
-}
-
-.render-card.kind-creature .frame-identity .identity-mark {
-  right: 15px;
-  bottom: 51px;
-  width: 10px;
-  height: 10px;
-  border: 1px solid var(--od-frame-accent);
-  transform: rotate(45deg);
-  opacity: .5;
-}
-
-.render-card.kind-instant .typebar::before {
-  content: "";
-  width: 20px;
-  height: 12px;
-  margin-right: 6px;
-  border-top: 2px solid currentColor;
-  border-right: 1px solid currentColor;
-  border-radius: 50% 100% 0 0;
-  opacity: .38;
-  transform: skewX(-18deg);
-}
-
-.render-card.kind-sorcery .typebar::before {
-  content: "";
-  width: 16px;
-  height: 13px;
-  margin-right: 6px;
-  background:
-    linear-gradient(currentColor, currentColor) 50% 0 / 1px 100% no-repeat,
-    linear-gradient(currentColor, currentColor) 0 50% / 100% 1px no-repeat;
-  border: 1px solid currentColor;
-  transform: rotate(45deg) scale(.58);
-  opacity: .42;
-}
-
 .render-card.kind-land .inner {
   background-image:
     radial-gradient(ellipse at 50% 112%, transparent 0 48%, rgba(244, 224, 188, .19) 49% 50%, transparent 51% 59%, rgba(65, 48, 32, .11) 60% 61%, transparent 62%),
@@ -105,22 +44,7 @@
   box-shadow: inset 0 -2px rgba(84, 61, 38, .18) !important;
 }
 
-.render-card.kind-land .frame-identity .identity-mark {
-  left: 24px;
-  right: 24px;
-  bottom: 55px;
-  height: 12px;
-  border-top: 1px solid rgba(92, 68, 43, .44);
-  border-radius: 50% 50% 0 0;
-}
-
 /* Artifacts, Vehicles and material subtypes ------------------------------ */
-
-.render-card.kind-artifact,
-.render-card.kind-artifact-creature,
-.render-card.kind-vehicle {
-  --od-frame-accent: #b78b48;
-}
 
 .render-card.kind-artifact .frame,
 .render-card.kind-artifact-creature .frame,
@@ -147,43 +71,9 @@
   box-shadow: inset 0 1px rgba(255,255,255,.6), inset 0 -1px rgba(30,28,24,.25) !important;
 }
 
-.render-card.kind-artifact .frame-identity::before,
-.render-card.kind-artifact .frame-identity::after,
-.render-card.kind-artifact-creature .frame-identity::before,
-.render-card.kind-artifact-creature .frame-identity::after,
-.render-card.kind-vehicle .frame-identity::before,
-.render-card.kind-vehicle .frame-identity::after {
-  content: "";
-  position: absolute;
-  top: 303px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #f2dfb7 0 10%, #8b7556 30%, #40382c 72%);
-  box-shadow: 0 1px 1px rgba(0,0,0,.55);
-}
-
-.render-card.kind-artifact .frame-identity::before,
-.render-card.kind-artifact-creature .frame-identity::before,
-.render-card.kind-vehicle .frame-identity::before { left: 10px; }
-.render-card.kind-artifact .frame-identity::after,
-.render-card.kind-artifact-creature .frame-identity::after,
-.render-card.kind-vehicle .frame-identity::after { right: 10px; }
-
 .render-card.kind-vehicle .artbox {
   border-color: #5b5040 !important;
   clip-path: polygon(0 0, 100% 0, 100% 96%, 82% 100%, 18% 100%, 0 96%);
-}
-
-.render-card.kind-vehicle .typebar::before {
-  content: "";
-  width: 24px;
-  height: 12px;
-  margin-right: 5px;
-  border: solid #62543d;
-  border-width: 0 0 2px 2px;
-  transform: skewX(-28deg);
-  opacity: .7;
 }
 
 .render-card.kind-vehicle .pt {
@@ -191,25 +81,6 @@
   border-color: #c39d58 !important;
   background: linear-gradient(180deg, #554735, #262521) !important;
   box-shadow: inset 0 1px rgba(255,244,211,.22), 0 2px 3px rgba(0,0,0,.3) !important;
-}
-
-.render-card.trait-equipment .typebar::after {
-  content: "EQUIPPED";
-  margin-left: 5px;
-  padding: 2px 4px;
-  border: 1px solid rgba(64,58,48,.4);
-  border-radius: 2px;
-  font: 800 6.5px/1 var(--card-small-font);
-  letter-spacing: .09em;
-  opacity: .68;
-}
-
-.render-card.trait-food .typebar::after {
-  content: "PROVISION";
-  margin-left: 5px;
-  font: 800 6.5px/1 var(--card-small-font);
-  letter-spacing: .09em;
-  opacity: .62;
 }
 
 /* Enchantments and Nyx creatures ---------------------------------------- */
@@ -228,17 +99,6 @@
 .render-card.kind-enchantment .rules,
 .render-card.kind-enchantment-creature .rules {
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.46), inset 0 7px 15px rgba(255,255,255,.12) !important;
-}
-
-.render-card.kind-enchantment .frame-identity .identity-mark,
-.render-card.kind-enchantment-creature .frame-identity .identity-mark {
-  left: 26px;
-  right: 26px;
-  bottom: 53px;
-  height: 8px;
-  border-top: 1px solid color-mix(in srgb, var(--proxy-edge) 68%, #fff 32%);
-  border-radius: 50%;
-  opacity: .55;
 }
 
 .render-card.kind-enchantment-creature .frame::after,
@@ -261,13 +121,6 @@
   box-shadow: inset 0 0 0 1px rgba(255,232,155,.34), 0 0 10px rgba(245,210,113,.17) !important;
 }
 
-.render-card.trait-aura .typebar::after {
-  content: "◌";
-  margin-left: 4px;
-  font: 700 15px/1 Georgia, serif;
-  opacity: .5;
-}
-
 /* Saga ------------------------------------------------------------------- */
 
 .render-card.kind-saga .rules {
@@ -278,37 +131,6 @@
 }
 
 .render-card.kind-saga .rules::before { display: none !important; }
-
-.saga-rail {
-  position: absolute;
-  left: 7px;
-  top: 9px;
-  bottom: 9px;
-  width: 32px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  border: 1px solid rgba(91,70,41,.42);
-  border-radius: 16px 16px 5px 5px;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.28), transparent 34%, rgba(61,46,29,.12)),
-    #d8c79e;
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,.18);
-}
-
-.saga-rail span {
-  width: 24px;
-  height: 24px;
-  display: grid;
-  place-items: center;
-  border: 1px solid #77613f;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #f6e8bd, #bda16a);
-  box-shadow: 0 1px 2px rgba(44,34,23,.33), inset 0 1px rgba(255,255,255,.48);
-  color: #473a28;
-  font: 800 9px/1 var(--card-display-font);
-}
 
 .render-card.kind-saga .typebar {
   background-image:
@@ -330,7 +152,7 @@
 .render-card.kind-prepare .special-box {
   position: relative;
   margin: 0 !important;
-  padding: 8px 8px 7px 29px !important;
+  padding: 8px 8px 7px 8px !important;
   border-width: 1px !important;
   border-radius: 4px !important;
   overflow: hidden;
@@ -344,18 +166,6 @@
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.28), 0 1px 2px rgba(61,45,22,.18);
 }
 
-.render-card.kind-adventure .special-box::after {
-  content: "";
-  position: absolute;
-  right: -7px;
-  bottom: -9px;
-  width: 46px;
-  height: 33px;
-  border: solid rgba(105,79,40,.28);
-  border-width: 1px 0 0 1px;
-  border-radius: 100% 0 0 0;
-}
-
 .render-card.kind-prepare .special-box {
   border-color: #665270 !important;
   background:
@@ -364,38 +174,6 @@
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.27), 0 1px 3px rgba(48,34,55,.2);
 }
 
-.render-card.kind-prepare .special-box::after {
-  content: "";
-  position: absolute;
-  right: 8px;
-  bottom: -14px;
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(77,57,86,.3);
-  transform: rotate(45deg);
-}
-
-.special-kind-mark {
-  position: absolute;
-  left: 7px;
-  top: 8px;
-  width: 17px;
-  height: 17px;
-  display: grid;
-  place-items: center;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  font: 800 9px/1 Georgia, serif;
-  opacity: .7;
-}
-
-.render-card.kind-prepare .special-kind-mark {
-  border-radius: 3px;
-  transform: rotate(45deg);
-}
-
-.render-card.kind-prepare .special-kind-mark::first-letter { transform: rotate(-45deg); }
-
 .render-card.kind-adventure .special-head,
 .render-card.kind-prepare .special-head {
   color: #342b20;
@@ -403,10 +181,6 @@
 }
 
 /* Battle ----------------------------------------------------------------- */
-
-.render-card.kind-battle {
-  --od-frame-accent: #c5794e;
-}
 
 .render-card.kind-battle .frame {
   background-image:
@@ -434,7 +208,7 @@
 .render-card.kind-battle .special-box {
   position: relative;
   margin: 0 !important;
-  padding: 7px 8px 7px 28px !important;
+  padding: 7px 8px !important;
   border: 1px solid #7a513d !important;
   border-radius: 3px !important;
   background: linear-gradient(180deg, #d6b08e, #bc8468) !important;
@@ -489,39 +263,15 @@
   backdrop-filter: blur(3px) saturate(.82);
 }
 
-.render-card.treatment-full-art .frame-identity { z-index: 3; }
-.render-card.treatment-full-art .frame-identity .identity-line,
-.render-card.treatment-full-art .frame-identity .identity-mark { opacity: .6; }
-
-/* Reserved complete-system families for future cards in the same set file. */
-.render-card.kind-planeswalker .rules {
-  padding-left: 47px !important;
-  background: linear-gradient(90deg, rgba(88,71,47,.18) 0 39px, transparent 40px), var(--proxy-rules) !important;
-}
-
-.render-card.kind-planeswalker .rules::before {
-  content: "+\A−\A0";
-  white-space: pre;
-  position: absolute;
-  left: 11px;
-  top: 15px;
-  font: 800 15px/2.2 var(--card-display-font);
-  color: color-mix(in srgb, var(--proxy-ink) 72%, transparent);
-}
-
 .render-card.kind-token .titlebar { border-radius: 16px 16px 5px 5px !important; }
-.render-card.kind-token .footer .collector-line::before { content: "TOKEN · "; }
 
 @media print {
   .frame-system-readout { display: none !important; }
-  .print-sheet .saga-rail { left: 1.1mm; top: 1.2mm; bottom: 1.2mm; width: 5.2mm; }
-  .print-sheet .saga-rail span { width: 3.8mm; height: 3.8mm; font-size: 1.35mm; }
   .print-sheet .kind-saga .rules { padding-left: 8.5mm !important; }
   .print-sheet .kind-battle .pt { min-width: 10.7mm !important; height: 6.4mm; }
   .print-sheet .defense-label { font-size: 1.05mm; }
   .print-sheet .defense-value { font-size: 3.2mm; }
   .print-sheet .battle-back-stat { font-size: 1.7mm; padding-left: .8mm; }
-  .print-sheet .special-kind-mark { left: 1mm; top: 1.1mm; width: 2.8mm; height: 2.8mm; font-size: 1.3mm; }
 }
 
 /* v3.13 structural rebuild ------------------------------------------------
@@ -533,12 +283,8 @@
   --od-panel-lo: color-mix(in srgb, var(--proxy-type) 78%, #4c4436 22%);
 }
 
-.render-card .frame-identity { z-index: 6; }
-.render-card .frame-identity .identity-mark,
-.render-card .frame-identity .identity-line { opacity: .5; }
-
-/* Standard modern frame language. Creature and spell geometry is shared in
-   real MTG frames; power/toughness and subtle furniture identify creatures. */
+/* Standard modern frame language. Creature and spell geometry is shared;
+   power/toughness identifies creatures without extra type pictograms. */
 .render-card.kind-creature .pt,
 .render-card.kind-artifact-creature .pt,
 .render-card.kind-enchantment-creature .pt {
@@ -553,32 +299,6 @@
   background-image:
     linear-gradient(135deg, rgba(255,255,255,.2), transparent 28%),
     linear-gradient(180deg, var(--proxy-rules), color-mix(in srgb, var(--proxy-rules) 91%, var(--proxy-type) 9%)) !important;
-}
-
-.render-card.kind-instant .typebar::before,
-.render-card.kind-sorcery .typebar::before {
-  flex: 0 0 auto;
-  margin-right: 7px;
-}
-
-.render-card.kind-instant .typebar::before {
-  width: 19px;
-  height: 10px;
-  border: 0;
-  border-top: 2px solid currentColor;
-  border-right: 2px solid currentColor;
-  border-radius: 80% 100% 0 0;
-  transform: skewX(-20deg);
-  opacity: .42;
-}
-
-.render-card.kind-sorcery .typebar::before {
-  width: 12px;
-  height: 12px;
-  border: 1.5px solid currentColor;
-  background: transparent;
-  transform: rotate(45deg) scale(.68);
-  opacity: .42;
 }
 
 .render-card.kind-land .frame {
@@ -661,19 +381,6 @@
   clip-path: polygon(12% 0, 88% 0, 100% 28%, 91% 100%, 9% 100%, 0 28%);
 }
 
-.render-card.kind-vehicle .frame-identity::before,
-.render-card.kind-vehicle .frame-identity::after,
-.render-card.kind-artifact .frame-identity::before,
-.render-card.kind-artifact .frame-identity::after,
-.render-card.kind-artifact-creature .frame-identity::before,
-.render-card.kind-artifact-creature .frame-identity::after {
-  top: 303px;
-  z-index: 9;
-}
-
-.render-card.kind-vehicle .frame-identity::before,
-.render-card.kind-vehicle .frame-identity::after { top: 317px; }
-
 /* Enchantments carry a restrained Nyx treatment. Enchantment creatures and
    Gods intensify the star field, without changing the color identity. */
 .render-card.kind-enchantment .frame,
@@ -747,7 +454,7 @@
   min-width: 0;
   height: 100%;
   margin: 0 !important;
-  padding: 9px 8px 7px 27px !important;
+  padding: 9px 8px 7px 9px !important;
   border: 0 !important;
   border-radius: 0 !important;
   font-size: .82em !important;
@@ -794,18 +501,6 @@
 .render-card.kind-prepare .special-head > span:first-child { display: block; font-size: 1.16em; margin-bottom: 4px; }
 .render-card.kind-adventure .special-meta,
 .render-card.kind-prepare .special-meta { display: block; text-align: left !important; font-size: 7.8px !important; line-height: 1.15 !important; text-transform: uppercase; letter-spacing: .04em; }
-
-.render-card.kind-adventure .special-kind-mark,
-.render-card.kind-prepare .special-kind-mark {
-  left: 7px;
-  top: 8px;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  font: 900 8px/1 var(--card-small-font);
-  transform: none;
-}
-.render-card.kind-prepare .special-kind-mark { border-radius: 2px; transform: rotate(45deg); }
 
 /* Saga: a genuine vertical illustration panel with a separate chapter field. */
 .render-card.kind-saga .artbox {
@@ -857,17 +552,6 @@
   color: #3f3323;
   font: 900 9px/1 var(--card-display-font);
 }
-.render-card.kind-saga .frame-identity::before {
-  content: "";
-  position: absolute;
-  left: 151px;
-  top: 52px;
-  bottom: 58px;
-  width: 7px;
-  background: linear-gradient(90deg, #715431, #ead7a7 42%, #735431 100%);
-  box-shadow: 1px 0 2px rgba(52,38,23,.3);
-}
-
 
 /* Transform proxy: preserve the front-face Saga frame and surface the back face
    as a compact secondary panel so a single printable proxy still communicates both faces. */
@@ -881,7 +565,7 @@
 .render-card.kind-saga.trait-transform .special-box {
   position: relative;
   margin: 0 !important;
-  padding: 7px 8px 7px 29px !important;
+  padding: 7px 8px !important;
   border: 1px solid rgba(73,61,45,.72) !important;
   border-radius: 7px !important;
   background: linear-gradient(145deg, rgba(71,68,61,.95), rgba(35,38,36,.98)) !important;
@@ -911,20 +595,6 @@
   text-transform: uppercase;
   letter-spacing: .045em;
 }
-.render-card.kind-saga.trait-transform .special-kind-mark {
-  position: absolute;
-  left: 7px;
-  top: 8px;
-  width: 15px;
-  height: 15px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255,255,255,.45);
-  border-radius: 50%;
-  color: #f3ead6;
-  font: 900 10px/1 var(--card-small-font);
-}
-
 /* Battle: Battles are landscape cards. The preview changes orientation and
    uses a dedicated art field, rules column, transform panel and defense shield. */
 .card-shell:has(.render-card.kind-battle) { width: 528px; height: 378px; }
@@ -984,7 +654,7 @@
   position: relative;
   display: block !important;
   margin: 6px 0 0 !important;
-  padding: 7px 7px 6px 26px !important;
+  padding: 7px 7px 6px 8px !important;
   border: 1px solid #714838 !important;
   border-radius: 3px !important;
   background: linear-gradient(180deg, #c98865, #a95f4f) !important;
@@ -1050,6 +720,9 @@
 }
 
 @media print {
+  .print-sheet .kind-adventure .special-box,
+  .print-sheet .kind-prepare .special-box { padding: 1.2mm !important; }
+  .print-sheet .kind-battle .special-box { padding: 1.1mm !important; }
   .print-sheet .kind-adventure .artbox,
   .print-sheet .kind-prepare .artbox { height: 41.5mm !important; }
   .print-sheet .kind-adventure .typebar,
@@ -1063,11 +736,10 @@
   .print-sheet .saga-chapter { grid-template-columns: 5mm minmax(0,1fr); gap: 1.1mm; }
   .print-sheet .saga-medallion { width: 4.6mm; height: 4.6mm; font-size: 1.4mm; }
   .print-sheet .kind-saga.trait-transform .rules { gap: 1mm !important; }
-  .print-sheet .kind-saga.trait-transform .special-box { padding: 1.1mm 1.2mm 1.1mm 4.5mm !important; font-size: 1.55mm !important; border-radius: 1.1mm !important; }
+  .print-sheet .kind-saga.trait-transform .special-box { padding: 1.1mm 1.2mm !important; font-size: 1.55mm !important; border-radius: 1.1mm !important; }
   .print-sheet .kind-saga.trait-transform .special-head { padding-bottom: .6mm !important; margin-bottom: .6mm !important; }
   .print-sheet .kind-saga.trait-transform .special-head > span:first-child { font-size: 1.85mm !important; }
   .print-sheet .kind-saga.trait-transform .special-meta { font-size: 1.15mm !important; }
-  .print-sheet .kind-saga.trait-transform .special-kind-mark { left: 1mm; top: 1.2mm; width: 2.5mm; height: 2.5mm; font-size: 1.5mm; }
 
   .print-sheet .card-shell:has(.kind-battle) { width: 63mm !important; height: 88mm !important; transform: none !important; margin: 0 !important; }
   .print-sheet .render-card.kind-battle { width: 88mm !important; height: 63mm !important; transform: translateX(63mm) rotate(90deg); transform-origin: 0 0; }
@@ -1181,9 +853,6 @@
   box-shadow: inset 0 0 0 1px rgba(255,244,202,.44), 0 0 8px rgba(202,215,255,.16) !important;
 }
 
-/* Type lines describe the permanent, never an imaginary equipped state. */
-.render-card.trait-equipment .typebar::after,
-.render-card.trait-food .typebar::after { content: none !important; display: none !important; }
 .render-card.treatment-full-art.kind-saga-creature .artbox {
   top: 0 !important;
   left: 0 !important;

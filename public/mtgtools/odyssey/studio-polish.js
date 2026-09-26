@@ -186,6 +186,26 @@
       if (focused) grid?.querySelector(`[data-art-option="${CSS.escape(focused)}"]`)?.focus({preventScroll:true});
       return result;
     };
+    const toolbar = document.querySelector('.preview-toolbar');
+    const printButton = document.getElementById('printCurrent');
+    if (toolbar && printButton) {
+      const artButton = document.createElement('button');
+      artButton.type = 'button';
+      artButton.className = 'btn secondary small od-art-options-button';
+      artButton.textContent = 'Art options';
+      artButton.onclick = () => root.openArtOptions(selected);
+      toolbar.insertBefore(artButton, printButton);
+      const oldPreview = root.renderPreview;
+      root.renderPreview = function () {
+        const result = oldPreview.apply(this, arguments);
+        const trigger = document.querySelector('#previewShell .art-options-trigger');
+        artButton.disabled = !trigger;
+        artButton.textContent = trigger?.querySelector('.art-new-count')
+          ? `Art options · ${trigger.querySelector('.art-new-count').textContent} new`
+          : 'Art options';
+        return result;
+      };
+    }
     document.querySelectorAll('#fMana,#fRules').forEach(input => {
       input.addEventListener('blur', () => {
         const value = input.id === 'fMana' ? normalizeCost(input.value) : normalizeRules(input.value);
