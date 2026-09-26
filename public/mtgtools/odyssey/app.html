@@ -1052,7 +1052,7 @@ if($('datasetPicker'))$('datasetPicker').onchange=e=>{const value=e.target.value
 syncDatasetPicker();
 if($('cardCountTop'))$('cardCountTop').textContent=`${CARDS.length} cards`;
 if($('artCountTop'))$('artCountTop').textContent=`${ART.length} curated artworks`;
-if($('artJoinCountTop'))$('artJoinCountTop').textContent=`${COVERAGE.filter(row=>row.primary).length} primary art joins`;
+if($('artJoinCountTop'))$('artJoinCountTop').textContent=`${CARDS.filter(card=>defaultsFor(card.number).artId).length} primary art joins`;
 if($('datasetStatusTop')){const m=ODYSSEY_DATASET.integrity||{};$('datasetStatusTop').textContent=`Data ${ODYSSEY_DATASET.datasetVersion||'unversioned'} · ${m.cards||CARDS.length} cards · ${m.artworks||ART.length} art`;}
 
 const fieldMap={fDisplayName:'displayName',fMana:'mana',fFrame:'frame',fType:'type',fRarity:'rarity',fPT:'pt',fRules:'rules',fFlavor:'flavor',fArtId:'artId',fImageUrl:'imageUrl',fCredit:'credit',fSource:'source',fFit:'fit',fZoom:'zoom',fFocusX:'focusX',fFocusY:'focusY',fLayout:'layout',fArtHeight:'artHeight',fFrameStyle:'frameStyle'};
