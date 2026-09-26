@@ -1027,6 +1027,7 @@ async function loadAnalysisCandidate(version){
     d={...baseline,...candidate,artworks:baseline.artworks,coverage:mergedCoverage,integrity:{...candidate.integrity,cards:candidate.cards.length,artworks:baseline.artworks.length,coverage:mergedCoverage.length}};
   }
   if(!validOdysseyDataset(d))throw new Error('Candidate dataset is invalid');
+  d.candidate=Object.assign({},d.candidate,{productionDatasetVersion:baseline.datasetVersion,previewSourceVersion:version});
   localStorage.setItem(DATASET_STORAGE,JSON.stringify(d));
   toast((version==='analysis-candidate-v2'?'Candidate 2':'Analysis candidate v1')+' loaded — reloading Studio');
   setTimeout(()=>location.reload(),250);
