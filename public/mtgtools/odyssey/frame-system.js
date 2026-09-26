@@ -116,11 +116,10 @@
   function decorateBattleStats(card, model) {
     const stat = card.querySelector('.pt');
     if (!stat || stat.querySelector('.defense-value')) return;
-    const source = String(model.pt || '');
+    const source = String(model.defense ?? model.pt ?? '');
     const defense = source.match(/Defense\s*(\d+)/i)?.[1] || source.match(/\d+/)?.[0] || '—';
-    const back = source.match(/\/\/\s*([0-9*]+\s*\/\s*[0-9*]+)/)?.[1] || '';
-    stat.setAttribute('aria-label', `Defense ${defense}${back ? `; back face ${back}` : ''}`);
-    stat.innerHTML = `<span class="defense-label">DEFENSE</span><span class="defense-value">${defense}</span>${back ? `<span class="battle-back-stat">${back}</span>` : ''}`;
+    stat.setAttribute('aria-label', `Defense ${defense}`);
+    stat.innerHTML = `<span class="defense-label">DEFENSE</span><span class="defense-value">${defense}</span>`;
   }
 
   function applyFrameSystem(card, model) {
