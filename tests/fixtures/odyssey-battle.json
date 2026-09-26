@@ -1,0 +1,25 @@
+{
+  "id": "FIXTURE-BATTLE-001",
+  "number": 999,
+  "name": "Test Siege",
+  "displayName": "Test Siege",
+  "mana": "2R",
+  "frame": "R",
+  "type": "Battle — Siege",
+  "layout": "battle",
+  "rules": "When Test Siege enters, draw a card.",
+  "defense": 5,
+  "pt": "5",
+  "rarity": "R",
+  "artId": "FIXTURE-FRONT-ART",
+  "imageUrl": "fixture-front.png",
+  "credit": "Fixture front artist",
+  "backFace": {
+    "name": "Test Giant",
+    "type": "Creature — Giant",
+    "rules": "Trample",
+    "pt": "4/4",
+    "frame": "R",
+    "layout": "standard"
+  }
+}
