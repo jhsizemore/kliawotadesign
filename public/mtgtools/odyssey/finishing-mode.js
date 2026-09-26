@@ -226,7 +226,8 @@ function buildDock(){
 }
 function mountTopButton(){const top=document.querySelector('.top-actions');if(!top)return;const b=document.createElement('button');b.type='button';b.className='btn';b.id='odFinishMode';b.onclick=toggleMode;top.insertBefore(b,top.firstChild)}
 function wrapRenderers(){
-  const preview=renderPreview;renderPreview=function(){const n=Number(selected),r=preview.apply(this,arguments);queueMicrotask(()=>{observeCardChange(n);paint()});return r};
+  const diff=diffOverride;diffOverride=function(n,data){const r=diff.apply(this,arguments);queueMicrotask(()=>observeCardChange(Number(n)));return r};
+  const preview=renderPreview;renderPreview=function(){const r=preview.apply(this,arguments);queueMicrotask(paint);return r};
   const list=renderList;renderList=function(){const r=list.apply(this,arguments);queueMicrotask(paintRows);return r};
 }
 
