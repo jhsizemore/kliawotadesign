@@ -69,16 +69,6 @@
     })[family] || family;
   }
 
-  function addOrnament(card) {
-    const inner = card.querySelector('.inner');
-    if (!inner || inner.querySelector('.frame-identity')) return;
-    const ornament = document.createElement('div');
-    ornament.className = 'frame-identity';
-    ornament.setAttribute('aria-hidden', 'true');
-    ornament.innerHTML = '<span class="identity-mark"></span><span class="identity-line"></span>';
-    inner.appendChild(ornament);
-  }
-
   function escapeHTML(value) {
     return String(value || '')
       .replace(/&/g, '&amp;')
@@ -133,16 +123,6 @@
     stat.innerHTML = `<span class="defense-label">DEFENSE</span><span class="defense-value">${defense}</span>${back ? `<span class="battle-back-stat">${back}</span>` : ''}`;
   }
 
-  function decorateSpecialInset(card, family) {
-    const box = card.querySelector('.special-box');
-    if (!box || box.querySelector('.special-kind-mark')) return;
-    const mark = document.createElement('span');
-    mark.className = 'special-kind-mark';
-    mark.setAttribute('aria-hidden', 'true');
-    mark.textContent = family === 'adventure' ? 'A' : family === 'prepare' ? 'P' : family === 'battle' ? '↻' : family === 'transform' ? '↺' : '';
-    box.prepend(mark);
-  }
-
   function applyFrameSystem(card, model) {
     if (!card || !model) return card;
     card.classList.remove(...FRAME_CLASSES);
@@ -151,13 +131,8 @@
     card.classList.add(`kind-${family}`, ...traits.map(t => `trait-${t}`));
     card.dataset.frameFamily = family;
     card.dataset.frameLabel = familyLabel(family);
-    addOrnament(card);
     if (family === 'saga' || family === 'saga-creature') decorateSaga(card, model);
     if (family === 'battle') decorateBattleStats(card, model);
-    if (family === 'adventure' || family === 'prepare' || family === 'battle') {
-      decorateSpecialInset(card, family);
-    }
-    if (traits.includes('transform')) decorateSpecialInset(card, 'transform');
     return card;
   }
 
