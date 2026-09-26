@@ -11,7 +11,7 @@ const CONFIDENCE_LABELS=['Recast','Redesign','Rework','Close / iterate','Soft de
 const SORT_OPTIONS=[
   ['number','Number'],['confidence-low','Confidence · low first'],['confidence-high','Confidence · high first'],
   ['cycle','Cycle'],['suite','Suite / program'],['color','Color'],['rarity','Rarity'],['mv','Mana value'],
-  ['name','Name'],['status','Card status']
+  ['layout','Layout'],['art-state','Artwork state'],['changed-first','Changed first'],['name','Name'],['status','Card status']
 ];
 const QUICK_FIELDS={
   displayName:{label:'Card name',selector:'.name',kind:'input'},
@@ -114,7 +114,7 @@ function pendingNumbers(){
 }
 function statusCounts(){
   let locked=0,needed=0,changed=0,recast=0,redesign=0,confidenceLocked=0;
-  CARDS.forEach(c=>{const n=Number(c.number),s=artState(n),cf=confidence(n);if(s==='LOCKED')locked++;else if(s==='NEEDS_ART')needed++;if(changeKeys(n).length)changed++;if(cf===0)recast++;if(cf===1)redesign++;if(cf===5)confidenceLocked++});
+  CARDS.forEach(c=>{const n=Number(c.number),s=artState(n),cf=confidence(n);if(s==='LOCKED')locked++;else if(s==='NEEDS_ART')needed++;if(changeKeys(n).length)changed++;if(confidenceExplicit(n)){if(cf===0)recast++;if(cf===1)redesign++;if(cf===5)confidenceLocked++}});
   return{locked,needed,changed,recast,redesign,confidenceLocked,pending:pendingNumbers().length};
 }
 
@@ -259,6 +259,9 @@ function compareCards(a,b,mode){
   else if(mode==='color'){const order={W:0,U:1,B:2,R:3,G:4,M:5,C:6,L:7};d=(order[ma.frame]??99)-(order[mb.frame]??99)}
   else if(mode==='rarity'){const order={C:0,U:1,R:2,M:3};d=(order[ma.rarity]??99)-(order[mb.rarity]??99)}
   else if(mode==='mv')d=(Number(ma.mv)||0)-(Number(mb.mv)||0);
+  else if(mode==='layout')d=compareText(ma.layout,mb.layout);
+  else if(mode==='art-state')d=compareText(artState(na),artState(nb));
+  else if(mode==='changed-first')d=Number(isModified(nb))-Number(isModified(na));
   else if(mode==='name')d=compareText(ma.displayName,mb.displayName);
   else if(mode==='status')d=compareText(ma.status,mb.status);
   else d=na-nb;
