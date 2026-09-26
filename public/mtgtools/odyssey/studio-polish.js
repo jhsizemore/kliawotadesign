@@ -124,7 +124,7 @@
       return oldDownload.call(this, filename, content, ...rest);
     };
     function decorate(card) {
-      for(const host of card.querySelectorAll('.saga-chapter > span:last-child')){
+      for(const host of card.querySelectorAll('.saga-chapter > span:last-child,.saga-creature-ability')){
         if(host.dataset.odSentenceLayout)continue;
         const source=host.textContent;host.innerHTML=rulesHTML(source,pips);host.dataset.odSentenceLayout='1';
       }

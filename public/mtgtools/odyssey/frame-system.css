@@ -1081,3 +1081,104 @@
   .print-sheet .kind-battle .defense-value { font-size: 3.8mm !important; }
   .print-sheet .kind-battle .battle-back-stat { font-size: 1.2mm !important; }
 }
+
+/* Saga creatures: chapters beside the illustration, ordinary abilities below
+   the full-width type line. The dedicated panel also retains grouped chapters. */
+.render-card.kind-saga-creature .frame {
+  background:
+    radial-gradient(circle at 14% 20%, rgba(255,247,214,.62) 0 1px, transparent 2px),
+    radial-gradient(circle at 80% 70%, rgba(218,230,255,.58) 0 1px, transparent 2px),
+    linear-gradient(145deg, color-mix(in srgb, var(--proxy-bar) 75%, #182039 25%), color-mix(in srgb, var(--proxy-edge) 60%, #2a2945 40%)) !important;
+  background-size: 61px 67px, 71px 79px, 100% 100% !important;
+}
+.render-card.kind-saga-creature .saga-creature-reminder {
+  position: absolute;
+  top: 55px;
+  left: 8px;
+  right: 8px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  padding: 3px 11px;
+  border: 1px solid #765f42;
+  border-radius: 7px 7px 2px 2px;
+  background: linear-gradient(180deg, #e7dbbd, #d4c099);
+  color: #473a2b;
+  font: italic 11px/1.15 var(--card-rules-font);
+  z-index: 4;
+}
+.render-card.kind-saga-creature .artbox {
+  top: 96px !important;
+  left: 174px !important;
+  right: 8px !important;
+  width: auto !important;
+  height: 280px !important;
+  border: 2px solid #62503b !important;
+}
+.render-card.kind-saga-creature .saga-creature-panel {
+  position: absolute;
+  top: 96px;
+  left: 8px;
+  right: calc(100% - 173px);
+  height: 280px;
+  padding: 10px 7px 9px 6px;
+  border: 1px solid #795e3e;
+  border-right: 4px ridge #b3925c;
+  border-radius: 2px 0 0 2px;
+  background: linear-gradient(90deg, #c7af7b 0 23px, #e9d9b4 24px, #f0e4c9 100%);
+  color: #30291f;
+  font: 12.2px/1.15 var(--card-rules-font);
+  z-index: 3;
+  overflow: hidden;
+}
+.render-card.kind-saga-creature .saga-chapters { gap: 12px; }
+.render-card.kind-saga-creature .saga-chapter { grid-template-columns: 28px minmax(0,1fr); gap: 5px; }
+.render-card.kind-saga-creature .saga-medallion { width: 26px; height: 26px; font-size: 8px; text-align: center; }
+.render-card.kind-saga-creature .typebar {
+  top: 379px !important;
+  left: 8px !important;
+  right: 8px !important;
+  height: 37px !important;
+}
+.render-card.kind-saga-creature .rules {
+  top: 420px !important;
+  left: 8px !important;
+  right: 8px !important;
+  bottom: 43px !important;
+  padding: 8px 76px 5px 11px !important;
+  background: linear-gradient(180deg, #f2e8d2, #e0d1ad) !important;
+  font-size: 14px !important;
+  line-height: 1.14 !important;
+}
+.render-card.kind-saga-creature .rules::before { display: none !important; }
+.render-card.kind-saga-creature .pt { min-width: 62px !important; }
+
+/* The dataset also uses explicit two-colour frame codes. Keep their borders
+   tied to both colours instead of falling back to the uncoloured base frame. */
+.render-card.frame-UB .frame { background: linear-gradient(125deg, var(--U1), var(--U2) 42%, var(--B1) 58%, var(--B2)) !important; }
+.render-card.frame-WB .frame { background: linear-gradient(125deg, var(--W1), var(--W2) 42%, var(--B1) 58%, var(--B2)) !important; }
+.render-card.frame-RG .frame { background: linear-gradient(125deg, var(--R1), var(--R2) 42%, var(--G1) 58%, var(--G2)) !important; }
+.render-card.frame-WU .frame { background: linear-gradient(125deg, var(--W1), var(--W2) 42%, var(--U1) 58%, var(--U2)) !important; }
+.render-card.frame-RW .frame { background: linear-gradient(125deg, var(--R1), var(--R2) 42%, var(--W1) 58%, var(--W2)) !important; }
+.render-card.treatment-full-art.kind-saga-creature .artbox {
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: auto !important;
+  border: 0 !important;
+}
+.render-card.treatment-full-art.kind-saga-creature .saga-creature-panel { background: linear-gradient(90deg, rgba(199,175,123,.95) 0 23px, rgba(240,228,201,.92) 24px) !important; }
+.render-card.treatment-full-art.kind-saga-creature .rules { background: rgba(242,232,210,.92) !important; }
+
+@media print {
+  .print-sheet .kind-saga-creature .saga-creature-reminder { top: 9.15mm; left: 1.3mm; right: 1.3mm; height: 6.15mm; padding: .5mm 1.8mm; font-size: 1.85mm; border-width: .18mm; }
+  .print-sheet .kind-saga-creature .artbox { top: 16mm !important; left: 29mm !important; right: 1.3mm !important; height: 46.65mm !important; border-width: .3mm !important; }
+  .print-sheet .kind-saga-creature .saga-creature-panel { top: 16mm; left: 1.3mm; right: calc(100% - 28.85mm); height: 46.65mm; padding: 1.7mm 1.15mm 1.5mm 1mm; border-width: .18mm .65mm .18mm .18mm; font-size: 1.95mm; background: linear-gradient(90deg, #c7af7b 0 3.85mm, #e9d9b4 4mm, #f0e4c9 100%); }
+  .print-sheet .kind-saga-creature .saga-chapters { gap: 2mm; }
+  .print-sheet .kind-saga-creature .saga-chapter { grid-template-columns: 4.6mm minmax(0,1fr); gap: .8mm; }
+  .print-sheet .kind-saga-creature .saga-medallion { width: 4.3mm; height: 4.3mm; font-size: 1.3mm; }
+  .print-sheet .kind-saga-creature .typebar { top: 63.15mm !important; left: 1.3mm !important; right: 1.3mm !important; height: 6.15mm !important; }
+  .print-sheet .kind-saga-creature .rules { top: 70mm !important; left: 1.3mm !important; right: 1.3mm !important; bottom: 7.2mm !important; padding: 1.3mm 12.5mm .8mm 1.8mm !important; font-size: 2.3mm !important; }
+  .print-sheet .kind-saga-creature .pt { min-width: 10mm !important; }
+}

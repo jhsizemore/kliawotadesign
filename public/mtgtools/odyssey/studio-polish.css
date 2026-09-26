@@ -61,3 +61,17 @@
 .render-card.od-rules-compact.kind-adventure .rule-main,.render-card.od-rules-compact.kind-prepare .rule-main{padding-top:8px;padding-bottom:5px}
 .render-card.od-rules-compact.kind-adventure .special-box,.render-card.od-rules-compact.kind-prepare .special-box{padding-top:7px!important;padding-bottom:5px!important;padding-left:24px!important}
 .od-hybrid-parts[data-parts="2"] .od-hybrid-half>.od-generic-value{position:absolute;width:60%;height:60%;display:grid;place-items:center;font-size:.72em;line-height:1}
+
+/* Two complete coloured semicircles meet on the diagonal. The original pip
+   art supplies only the dark icon; its lightened disc multiplies away. */
+.od-symbol.od-vector.od-hybrid{background:transparent!important;border-color:#39342b!important;box-shadow:none!important}
+.od-symbol.od-hybrid::after{display:none!important}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half{background:#c5c0b4}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half.mW{background:#eee5cc}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half.mU{background:#91b1c8}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half.mB{background:#a09a93}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half.mR{background:#c87961}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half.mG{background:#83a277}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half>img{width:76%!important;height:76%!important;filter:grayscale(1) brightness(2) contrast(3);mix-blend-mode:multiply}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half:first-child>img{left:-5%;top:-5%}
+.od-hybrid-parts[data-parts="2"] .od-hybrid-half:last-child>img{right:-5%;bottom:-5%}
