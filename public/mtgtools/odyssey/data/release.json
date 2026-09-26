@@ -224,14 +224,18 @@
     "datasetVersion": "2026-09-26.9",
     "generatedAt": "2026-09-26T21:50:16.762Z",
     "cardSheetRevision": "250",
-    "artworkSheetRevision": "91",
+    "artworkSheetRevision": "92",
     "cards": 309,
     "artworks": 589,
     "coverage": 309,
     "primaryArtAssigned": 309,
     "duplicateArtOverage": 22,
-    "fingerprint": "r250-r91-art9",
-    "cacheKey": "20260927-art9",
-    "note": "Studio applies this canonical sheet sync over the bundled closing-act fallback."
-  }
+    "fingerprint": "r250-r92-art10",
+    "cacheKey": "20260927-art10",
+    "note": "Studio applies canonical sheet sync over the bundled closing-act fallback; ART-463 and ART-475 now have direct NGA image delivery URLs."
+  },
+  "liveRuntimeFixes": [
+    "ART-463 direct NGA image URL restored for Like Wildfire Through Dry Scrub.",
+    "ART-475 direct NGA image URL restored for Work the Family Estate."
+  ]
 }
