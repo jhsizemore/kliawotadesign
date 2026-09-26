@@ -11,16 +11,16 @@
   },
   "songSagas": [
     {
-      "id": "ODY-216",
-      "name": "Lay of the Hidden King"
-    },
-    {
-      "id": "ODY-153",
-      "name": "Song of the Wooden Horse"
+      "id": "ODY-097",
+      "name": "Caught in Hephaestus's Net"
     },
     {
       "id": "ODY-162",
       "name": "Song of the Faithless Crew"
+    },
+    {
+      "id": "ODY-163",
+      "name": "Song of Achilles"
     },
     {
       "id": "ODY-232",
@@ -41,15 +41,15 @@
       "M": 20
     },
     "layouts": {
-      "singleFace": 309,
-      "doubleFace": 0,
+      "singleFace": 308,
+      "doubleFace": 1,
       "byLayout": {
         "standard": 277,
         "vehicle": 9,
         "adventure": 7,
         "saga": 14,
         "prepare": 1,
-        "transform": 1
+        "double-face-battle": 1
       }
     },
     "lands": 40,
@@ -91,12 +91,11 @@
       "actual": 91
     },
     "showcase": {
-      "extended-art-legend": 85,
-      "character-showcase": 29,
       "greek-vase-showcase": 42,
+      "character-showcase": 29,
       "master-artist": 8,
-      "odysseus-many-faces": 1,
-      "adventure-land-showcase": 5
+      "adventure-land-showcase": 5,
+      "extended-art-legend": 85
     }
   },
   "notes": [
