@@ -9,7 +9,8 @@
     'kind-enchantment-creature', 'kind-planeswalker', 'kind-token',
     'kind-adventure', 'kind-prepare', 'kind-battle', 'kind-saga', 'kind-saga-creature',
     'kind-vehicle', 'trait-equipment', 'trait-food', 'trait-god',
-    'trait-aura', 'trait-legendary', 'trait-transform'
+    'trait-aura', 'trait-legendary', 'trait-transform',
+    'trait-enchantment-artifact', 'trait-enchantment-land'
   ];
 
   function frontType(model) {
@@ -53,6 +54,8 @@
     if (/\bFood\b/i.test(type)) traits.push('food');
     if (/\bGod\b/i.test(type)) traits.push('god');
     if (/\bAura\b/i.test(type)) traits.push('aura');
+    if (/\bEnchantment\b/i.test(type) && /\bArtifact\b/i.test(type)) traits.push('enchantment-artifact');
+    if (/\bEnchantment\b/i.test(type) && /\bLand\b/i.test(type)) traits.push('enchantment-land');
     return traits;
   }
 
@@ -259,7 +262,7 @@
     window.renderPreview();
   }
 
-  if (typeof module !== 'undefined' && module.exports) module.exports = {frameFamily, parseSagaText};
+  if (typeof module !== 'undefined' && module.exports) module.exports = {frameFamily, frameTraits, parseSagaText};
   if (typeof document === 'undefined') return;
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', install, { once: true });
