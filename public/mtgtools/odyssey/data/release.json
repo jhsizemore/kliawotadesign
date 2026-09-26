@@ -232,7 +232,9 @@
     "duplicateArtOverage": 22,
     "fingerprint": "r250-r92-art10",
     "cacheKey": "20260927-art10",
-    "note": "Studio applies canonical sheet sync over the bundled closing-act fallback; ART-463 and ART-475 now have direct NGA image delivery URLs."
+    "note": "Studio applies canonical sheet sync over the bundled closing-act fallback; ART-463 and ART-475 now have direct NGA image delivery URLs.",
+    "sourceDriveRevision": "76",
+    "sourceUpdatedAt": "2026-09-26T22:14:59.294Z"
   },
   "liveRuntimeFixes": [
     "ART-463 direct NGA image URL restored for Like Wildfire Through Dry Scrub.",
