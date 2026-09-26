@@ -229,21 +229,99 @@ async function copyChangeset(){const text=JSON.stringify(changeset(),null,2);try
 function downloadChangeset(){const text=JSON.stringify(changeset(),null,2),a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type:'application/json'}));a.download='odyssey-finishing-changeset-'+datasetVersion()+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('Finishing changeset downloaded')}
 function openQueue(){ensureDialogs();renderQueue();queueDialog.showModal()}
 function renderQueue(){
-  if(!queueDialog)return;const rows=queueRecords(),c=statusCounts();queueDialog.querySelector('[data-summary]').textContent=`${rows.length} cards in the finishing queue · ${c.changed} with Studio edits · ${c.locked} art locked · ${c.needed} still need art.`;
-  const list=queueDialog.querySelector('[data-list]');list.innerHTML=rows.length?rows.map(r=>{const keys=Object.keys(r.changes||{}),badges=[r.artState==='LOCKED'?'<span class="od-fin-badge lock">ART LOCKED</span>':r.artState==='NEEDS_ART'?'<span class="od-fin-badge need">ART NEEDED</span>':'',keys.length?'<span class="od-fin-badge change">'+keys.length+' EDIT'+(keys.length===1?'':'S')+'</span>':''].join('');return `<div class="od-fin-card"><div class="num">${String(r.number).padStart(3,'0')}</div><div><strong>${esc(r.name)}</strong><div class="meta">${badges}<br>${esc(keys.join(', ')||'art status only')}</div></div><button class="btn secondary small" data-open="${r.number}">Open</button></div>`}).join(''):'<div class="od-fin-help">No pending finishing changes yet. Click card text to edit it, or mark artwork locked / still needed.</div>';
+  if(!queueDialog)return;
+  const rows=queueRecords(),c=statusCounts();
+  queueDialog.querySelector('[data-summary]').textContent=rows.length+' cards in the finishing queue · '+c.changed+' with Studio edits · '+c.recast+' recast · '+c.redesign+' redesign · '+c.confidenceLocked+' design-locked · '+c.needed+' still need art.';
+  const list=queueDialog.querySelector('[data-list]');
+  list.innerHTML=rows.length?rows.map(r=>{
+    const keys=Object.keys(r.changes||{});
+    const badges=[
+      '<span class="od-fin-badge">'+r.confidence+' · '+esc(r.workState)+'</span>',
+      r.artState==='LOCKED'?'<span class="od-fin-badge lock">ART LOCKED</span>':r.artState==='NEEDS_ART'?'<span class="od-fin-badge need">ART NEEDED</span>':'',
+      keys.length?'<span class="od-fin-badge change">'+keys.length+' EDIT'+(keys.length===1?'':'S')+'</span>':''
+    ].join('');
+    const details=[r.cycle?'cycle '+r.cycle:'',r.suite?'suite '+r.suite:'',keys.join(', ')].filter(Boolean).join(' · ')||'finishing status only';
+    return '<div class="od-fin-card"><div class="num">'+String(r.number).padStart(3,'0')+'</div><div><strong>'+esc(r.name)+'</strong><div class="meta">'+badges+'<br>'+esc(details)+'</div></div><button class="btn secondary small" data-open="'+r.number+'">Open</button></div>';
+  }).join(''):'<div class="od-fin-help">No pending finishing changes yet. Click card text to edit it, set confidence, or mark artwork locked / still needed.</div>';
   list.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{queueDialog.close();selectCard(+b.dataset.open)});
-  const s=queueDialog.querySelector('[data-status]');s.textContent=lastSyncMessage||'Shared queue keeps this batch available for the later commit pass.';
+  const status=queueDialog.querySelector('[data-status]');status.textContent=lastSyncMessage||'Shared queue keeps this batch available for the later commit pass.';
+}
+
+function sortText(value){return String(value||'').toLowerCase()}
+function compareText(a,b){a=sortText(a)||'\uffff';b=sortText(b)||'\uffff';return a.localeCompare(b)}
+function compareCards(a,b,mode){
+  const na=Number(a),nb=Number(b),ma=model(na),mb=model(nb);
+  let d=0;
+  if(mode==='confidence-low')d=confidence(na)-confidence(nb);
+  else if(mode==='confidence-high')d=confidence(nb)-confidence(na);
+  else if(mode==='cycle')d=compareText(cycleKey(na),cycleKey(nb));
+  else if(mode==='suite')d=compareText(suiteKey(na),suiteKey(nb));
+  else if(mode==='color'){const order={W:0,U:1,B:2,R:3,G:4,M:5,C:6,L:7};d=(order[ma.frame]??99)-(order[mb.frame]??99)}
+  else if(mode==='rarity'){const order={C:0,U:1,R:2,M:3};d=(order[ma.rarity]??99)-(order[mb.rarity]??99)}
+  else if(mode==='mv')d=(Number(ma.mv)||0)-(Number(mb.mv)||0);
+  else if(mode==='name')d=compareText(ma.displayName,mb.displayName);
+  else if(mode==='status')d=compareText(ma.status,mb.status);
+  else d=na-nb;
+  return d||na-nb;
+}
+function browserFilterOptions(){
+  const cycles=[...new Set(CARDS.flatMap(c=>cycleValues(c.number)))].sort((a,b)=>compareText(a,b));
+  const suites=[...new Set(CARDS.map(c=>suiteKey(c.number)).filter(Boolean))].sort((a,b)=>compareText(a,b));
+  return{cycles,suites};
+}
+function buildBrowserTools(){
+  const host=document.querySelector('.browser-tools');if(!host||document.getElementById('odFinishBrowserTools'))return;
+  const box=document.createElement('div');box.id='odFinishBrowserTools';box.className='od-fin-browser-tools';
+  box.innerHTML='<select id="odSortCards" class="wide" aria-label="Sort Odyssey cards"></select><select id="odConfidenceFilter" aria-label="Filter confidence"><option value="">All confidence</option>'+CONFIDENCE_LABELS.map((label,i)=>'<option value="'+i+'">'+i+' · '+esc(label)+'</option>').join('')+'</select><select id="odCycleFilter" aria-label="Filter cycle"><option value="">All cycles</option></select><select id="odSuiteFilter" class="wide" aria-label="Filter suite"><option value="">All suites / programs</option></select>';
+  host.appendChild(box);
+  const sort=box.querySelector('#odSortCards'),cf=box.querySelector('#odConfidenceFilter'),cy=box.querySelector('#odCycleFilter'),su=box.querySelector('#odSuiteFilter');
+  sort.innerHTML=SORT_OPTIONS.map(x=>'<option value="'+x[0]+'">Sort · '+esc(x[1])+'</option>').join('');
+  const opts=browserFilterOptions();
+  cy.innerHTML='<option value="">All cycles</option>'+opts.cycles.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join('');
+  su.innerHTML='<option value="">All suites / programs</option>'+opts.suites.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join('');
+  sort.value=prefs.sort||'number';cf.value=String(prefs.confidenceFilter||'');cy.value=prefs.cycleFilter||'';su.value=prefs.suiteFilter||'';
+  sort.onchange=()=>{prefs.sort=sort.value;saveLocal();applyBrowserSortAndFilters()};
+  cf.onchange=()=>{prefs.confidenceFilter=cf.value;saveLocal();applyBrowserSortAndFilters()};
+  cy.onchange=()=>{prefs.cycleFilter=cy.value;saveLocal();applyBrowserSortAndFilters()};
+  su.onchange=()=>{prefs.suiteFilter=su.value;saveLocal();applyBrowserSortAndFilters()};
+}
+function applyBrowserSortAndFilters(){
+  const list=document.getElementById('cardList');if(!list)return;
+  const rows=[...list.querySelectorAll('.card-row[data-n]')];
+  rows.sort((a,b)=>compareCards(+a.dataset.n,+b.dataset.n,prefs.sort||'number')).forEach(row=>list.appendChild(row));
+  let visible=0;
+  rows.forEach(row=>{
+    const n=+row.dataset.n,matchConfidence=prefs.confidenceFilter===''||confidence(n)===Number(prefs.confidenceFilter),matchCycle=!prefs.cycleFilter||cycleValues(n).includes(prefs.cycleFilter),matchSuite=!prefs.suiteFilter||suiteKey(n)===prefs.suiteFilter;
+    const show=matchConfidence&&matchCycle&&matchSuite;row.style.display=show?'':'none';if(show)visible++;
+  });
+  const count=document.getElementById('browserCount');if(count)count.textContent=visible+' shown · '+CARDS.length+' total';
 }
 
 function paintSync(message,stateName){lastSyncMessage=message;const el=document.getElementById('odFinishSync');if(el){el.textContent=message;el.dataset.state=stateName||''}if(queueDialog?.open){const x=queueDialog.querySelector('[data-status]');if(x){x.textContent=message;x.dataset.state=stateName||''}}}
 function paintRows(){
-  document.querySelectorAll('.card-row[data-n]').forEach(row=>{const n=Number(row.dataset.n),dots=row.querySelector('.dots');if(!dots)return;dots.querySelectorAll('.dot.finish-lock,.dot.finish-need,.dot.finish-change').forEach(x=>x.remove());const st=artState(n),keys=changeKeys(n);if(st==='LOCKED'){const d=document.createElement('span');d.className='dot finish-lock';d.title='art locked';dots.appendChild(d)}else if(st==='NEEDS_ART'){const d=document.createElement('span');d.className='dot finish-need';d.title='art still needed';dots.appendChild(d)}if(keys.length){const d=document.createElement('span');d.className='dot finish-change';d.title=keys.length+' staged finishing edits';dots.appendChild(d)}})
+  document.querySelectorAll('.card-row[data-n]').forEach(row=>{
+    const n=Number(row.dataset.n),dots=row.querySelector('.dots');if(!dots)return;
+    dots.querySelectorAll('.dot.finish-lock,.dot.finish-need,.dot.finish-change,.od-confidence-badge').forEach(x=>x.remove());
+    const st=artState(n),keys=changeKeys(n),cf=confidence(n),badge=document.createElement('span');
+    badge.className='od-confidence-badge c'+cf+(confidenceExplicit(n)?'':' inferred');badge.textContent=cf;badge.title=(confidenceExplicit(n)?'Confidence':'Inferred confidence')+' '+cf+' · '+confidenceLabel(cf);dots.appendChild(badge);
+    if(st==='LOCKED'){const d=document.createElement('span');d.className='dot finish-lock';d.title='art locked';dots.appendChild(d)}
+    else if(st==='NEEDS_ART'){const d=document.createElement('span');d.className='dot finish-need';d.title='art still needed';dots.appendChild(d)}
+    if(keys.length){const d=document.createElement('span');d.className='dot finish-change';d.title=keys.length+' staged finishing edits';dots.appendChild(d)}
+  });
 }
 function paint(){
-  if(!mounted)return;document.body.classList.toggle('od-finish-on',!!prefs.enabled);const mode=document.getElementById('odFinishMode');if(mode){mode.classList.toggle('active',!!prefs.enabled);const c=statusCounts();mode.textContent='Finish · '+c.pending}
-  const m=model(selected),s=artState(selected),keys=changeKeys(selected);const title=document.getElementById('odFinishCardTitle');if(title)title.textContent=String(selected).padStart(3,'0')+' · '+cardName(selected);const meta=document.getElementById('odFinishMeta');if(meta)meta.textContent=(keys.length?keys.length+' staged edit'+(keys.length===1?'':'s'):'No text/layout edits')+' · art '+(s==='LOCKED'?'locked':s==='NEEDS_ART'?'still needed':'reviewing');
-  document.querySelectorAll('[data-fin-art-state]').forEach(b=>b.classList.toggle('active',b.dataset.finArtState===s));const sync=document.getElementById('odFinishSync');if(sync&&!sync.textContent)sync.textContent='Autosave on · shared finishing queue';paintRows();if(queueDialog?.open)renderQueue();
+  if(!mounted)return;
+  document.body.classList.toggle('od-finish-on',!!prefs.enabled);
+  const mode=document.getElementById('odFinishMode');if(mode){mode.classList.toggle('active',!!prefs.enabled);const c=statusCounts();mode.textContent='Finish · '+c.pending}
+  const s=artState(selected),keys=changeKeys(selected),cf=confidence(selected),title=document.getElementById('odFinishCardTitle'),meta=document.getElementById('odFinishMeta');
+  if(title)title.textContent=String(selected).padStart(3,'0')+' · '+cardName(selected);
+  if(meta)meta.textContent='Confidence '+cf+' · '+confidenceLabel(cf)+(confidenceExplicit(selected)?'':' · inferred')+' · '+(keys.length?keys.length+' staged edit'+(keys.length===1?'':'s'):'no text/layout edits')+' · art '+(s==='LOCKED'?'locked':s==='NEEDS_ART'?'still needed':'reviewing');
+  document.querySelectorAll('[data-fin-confidence]').forEach(b=>b.classList.toggle('active',Number(b.dataset.finConfidence)===cf));
+  document.querySelectorAll('[data-fin-art-state]').forEach(b=>b.classList.toggle('active',b.dataset.finArtState===s));
+  const sync=document.getElementById('odFinishSync');if(sync&&!sync.textContent)sync.textContent='Autosave on · shared finishing queue';
+  paintRows();applyBrowserSortAndFilters();if(queueDialog?.open)renderQueue();
 }
+
 
 function toggleMode(){prefs.enabled=!prefs.enabled;saveLocal();paint();toast(prefs.enabled?'Finishing mode on — click card text to edit':'Finishing mode off')}
 function onPreviewClick(event){
@@ -254,20 +332,33 @@ function onPreviewClick(event){
 
 function buildDock(){
   const stage=document.querySelector('.stage'),toolbar=document.querySelector('.preview-toolbar');if(!stage||!toolbar)return;
-  dock=document.createElement('div');dock.id='odFinishDock';dock.innerHTML=`<div class="od-fin-row"><span class="od-fin-title" id="odFinishCardTitle"></span><span class="od-fin-grow"></span><button class="od-fin-chip" data-quick="displayName">Name</button><button class="od-fin-chip" data-quick="mana">Mana</button><button class="od-fin-chip" data-quick="type">Type</button><button class="od-fin-chip" data-quick="rules">Rules</button><button class="od-fin-chip" data-quick="flavor">Flavor</button><button class="od-fin-chip" data-quick="pt">P/T</button></div><div class="od-fin-row"><span class="od-fin-title">Artwork</span><button class="od-fin-chip" data-fin-art-state="REVIEWING">Reviewing</button><button class="od-fin-chip lock" data-fin-art-state="LOCKED">Locked ✓</button><button class="od-fin-chip need" data-fin-art-state="NEEDS_ART">Still needed</button><button class="btn secondary small" data-library>Library art</button><button class="btn secondary small" data-external>External art</button><span class="od-fin-grow"></span><button class="btn secondary small" data-queue>Queue</button><button class="btn small" data-next>Next →</button></div><div class="od-fin-row"><span class="od-fin-help" id="odFinishMeta"></span><span class="od-fin-grow"></span><span class="od-fin-sync" id="odFinishSync">Autosave on · shared finishing queue</span></div>`;
+  dock=document.createElement('div');dock.id='odFinishDock';
+  const confidenceButtons=CONFIDENCE_LABELS.map((label,i)=>'<button class="od-fin-chip confidence c'+i+'" data-fin-confidence="'+i+'" title="Set confidence '+i+' · '+esc(label)+'">'+i+' '+esc(label)+'</button>').join('');
+  dock.innerHTML='<div class="od-fin-row"><span class="od-fin-title" id="odFinishCardTitle"></span><span class="od-fin-grow"></span><button class="od-fin-chip" data-quick="displayName">Name</button><button class="od-fin-chip" data-quick="mana">Mana</button><button class="od-fin-chip" data-quick="type">Type</button><button class="od-fin-chip" data-quick="rules">Rules</button><button class="od-fin-chip" data-quick="flavor">Flavor</button><button class="od-fin-chip" data-quick="pt">P/T</button></div><div class="od-fin-row" id="odFinishConfidence"><span class="od-fin-title">Confidence</span>'+confidenceButtons+'</div><div class="od-fin-row"><span class="od-fin-title">Artwork</span><button class="od-fin-chip" data-fin-art-state="REVIEWING">Reviewing</button><button class="od-fin-chip lock" data-fin-art-state="LOCKED">Locked ✓</button><button class="od-fin-chip need" data-fin-art-state="NEEDS_ART">Still needed</button><button class="btn secondary small" data-library>Library art</button><button class="btn secondary small" data-external>External art</button><span class="od-fin-grow"></span><button class="btn secondary small" data-queue>Queue</button><button class="btn small" data-next>Next →</button></div><div class="od-fin-row"><span class="od-fin-help" id="odFinishMeta"></span><span class="od-fin-grow"></span><span class="od-fin-sync" id="odFinishSync">Autosave on · shared finishing queue</span></div>';
   toolbar.insertAdjacentElement('afterend',dock);
-  dock.querySelectorAll('[data-quick]').forEach(b=>b.onclick=()=>openQuickEditor(b.dataset.quick));dock.querySelectorAll('[data-fin-art-state]').forEach(b=>b.onclick=()=>setArtState(selected,b.dataset.finArtState));dock.querySelector('[data-library]').onclick=()=>openArtOptions(selected);dock.querySelector('[data-external]').onclick=openExternalArt;dock.querySelector('[data-queue]').onclick=openQueue;dock.querySelector('[data-next]').onclick=()=>selectCard(cardNumberAtOffset(selected,1));
+  dock.querySelectorAll('[data-quick]').forEach(b=>b.onclick=()=>openQuickEditor(b.dataset.quick));
+  dock.querySelectorAll('[data-fin-confidence]').forEach(b=>b.onclick=()=>setConfidence(selected,+b.dataset.finConfidence));
+  dock.querySelectorAll('[data-fin-art-state]').forEach(b=>b.onclick=()=>setArtState(selected,b.dataset.finArtState));
+  dock.querySelector('[data-library]').onclick=()=>openArtOptions(selected);dock.querySelector('[data-external]').onclick=openExternalArt;dock.querySelector('[data-queue]').onclick=openQueue;dock.querySelector('[data-next]').onclick=()=>selectCard(cardNumberAtOffset(selected,1));
 }
+
 function mountTopButton(){const top=document.querySelector('.top-actions');if(!top)return;const b=document.createElement('button');b.type='button';b.className='btn';b.id='odFinishMode';b.onclick=toggleMode;top.insertBefore(b,top.firstChild)}
 function wrapRenderers(){
   const diff=diffOverride;diffOverride=function(n,data){const r=diff.apply(this,arguments);queueMicrotask(()=>observeCardChange(Number(n)));return r};
   const preview=renderPreview;renderPreview=function(){const r=preview.apply(this,arguments);queueMicrotask(paint);return r};
-  const list=renderList;renderList=function(){const r=list.apply(this,arguments);queueMicrotask(paintRows);return r};
+  const list=renderList;renderList=function(){const r=list.apply(this,arguments);queueMicrotask(()=>{paintRows();applyBrowserSortAndFilters()});return r};
+}
+function onConfidenceHotkey(event){
+  const tag=(event.target&&event.target.tagName||'').toLowerCase();if(!prefs.enabled||!event.altKey||['input','textarea','select'].includes(tag))return;
+  if(/^[0-5]$/.test(event.key)){event.preventDefault();setConfidence(selected,+event.key)}
+}
+function mount(){
+  if(mounted||typeof model!=='function'||typeof diffOverride!=='function')return;
+  mounted=true;loadLocal();seedSignatures();injectStyle();ensureDialogs();buildDock();buildBrowserTools();mountTopButton();wrapRenderers();
+  document.getElementById('previewShell')?.addEventListener('click',onPreviewClick,true);document.addEventListener('keydown',onConfidenceHotkey);
+  renderList();paint();refreshShared({apply:true,quiet:true});
 }
 
-function mount(){
-  if(mounted||typeof model!=='function'||typeof diffOverride!=='function')return;mounted=true;loadLocal();seedSignatures();injectStyle();ensureDialogs();buildDock();mountTopButton();wrapRenderers();document.getElementById('previewShell')?.addEventListener('click',onPreviewClick,true);paint();refreshShared({apply:true,quiet:true});
-}
 
 const api={VERSION,API,SCHEMA,mount,refresh:refreshShared,syncAll,recordFor,changeset,artState,setArtState,openQueue,openExternalArt,openQuickEditor};
 root.OdysseyFinishing=api;
