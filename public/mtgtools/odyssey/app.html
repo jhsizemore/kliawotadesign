@@ -539,7 +539,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}
 <script src="/mtgtools/odyssey/data/artwork-delivery-manifest.20260925a.js?v=20260922-notes1"></script>
 <script src="/mtgtools/odyssey/artwork-delivery.js?v=20260919-1"></script>
 <script src="/mtgtools/odyssey/design-refinement.js?v=20260919-1"></script>
-<script src="/mtgtools/odyssey/data/odyssey-data.js?v=20260926-audit1"></script>
+<script src="/mtgtools/odyssey/data/odyssey-data.js?v=20260926-saga1"></script>
 <script src="/mtgtools/odyssey/data/card-references.js?v=ref3-74f7052f346c"></script>
 <script src="/mtgtools/odyssey/card-reference-browser.js?v=ref3-74f7052f346c"></script>
 <script src="/mtgtools/odyssey/card-sheet-editor.js?v=20260921-notes1"></script>\n<script src="/mtgtools/odyssey/review-notes.js?v=20260921-8"></script>\n<script src="/mtgtools/odyssey/media-preview.js?v=20260921-1"></script>
@@ -583,6 +583,9 @@ let overrides={};try{overrides=JSON.parse(localStorage.getItem(STORAGE)||'{}')}c
 const CROP_PROFILE_STORAGE='odyssey-art-crop-profiles-v04', REVIEW_STORAGE='odyssey-card-review-v04', PROFILE_REVIEW_STORAGE='odyssey-profile-review-v05';
 const WORKFLOW_STORAGE='odyssey-card-workflow-v08';
 let cropProfiles={};try{cropProfiles=JSON.parse(localStorage.getItem(CROP_PROFILE_STORAGE)||'{}')}catch(e){}
+if(ODYSSEY_DATASET.datasetVersion===window.ODYSSEY_DATA?.datasetVersion && OdysseyArtTransfer.migrateSagaCropProfiles(CARDS,overrides,cropProfiles)){
+  try{localStorage.setItem(CROP_PROFILE_STORAGE,JSON.stringify(cropProfiles))}catch(e){/* Keep the migrated crop for this session if storage is full. */}
+}
 let cardReview={};try{cardReview=JSON.parse(localStorage.getItem(REVIEW_STORAGE)||'{}')}catch(e){}
 let profileReview={};try{profileReview=JSON.parse(localStorage.getItem(PROFILE_REVIEW_STORAGE)||'{}')}catch(e){}
 let workflowPrefs=(()=>{try{return Object.assign({browserQueue:false,galleryQueue:false},JSON.parse(localStorage.getItem(WORKFLOW_STORAGE)||'{}'))}catch(e){return {browserQueue:false,galleryQueue:false}}})();

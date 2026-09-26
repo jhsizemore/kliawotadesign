@@ -1,6 +1,7 @@
 'use strict';
 // Refresh derived release metadata from the published card records. Never edits cards or art.
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const {createHash}=require('node:crypto');
 const dir=path.resolve(__dirname,'../public/mtgtools/odyssey/data');
 const file=name=>path.join(dir,name),read=name=>JSON.parse(fs.readFileSync(file(name),'utf8'));
 const tally=(cards,key)=>cards.reduce((out,c)=>{const k=typeof key==='function'?key(c):c[key];out[k]=(out[k]||0)+1;return out;},{});
@@ -40,6 +41,10 @@ d.release.knownBenchmarkDifferences.showcase=Object.fromEntries(f.showcaseProgra
 assert.equal(JSON.stringify({cards:d.cards,artworks:d.artworks,coverage:d.coverage}),before,'Card or artwork data changed');
 release.actual=f.actual;release.knownBenchmarkDifferences=d.release.knownBenchmarkDifferences;
 release.songSagas=hybrids.map(c=>({id:c.id,name:c.name}));
+const cardsHash=createHash('sha256').update(JSON.stringify(cards)).digest('hex');
+assert.equal(d.integrity.sha256Scope,'cards-json-stringify-utf8-v1');
+d.integrity.sha256=cardsHash;
+release.cardsSha256=cardsHash;
 fs.writeFileSync(file('odyssey-data.json'),JSON.stringify(d));
 fs.writeFileSync(file('odyssey-data.js'),'window.ODYSSEY_DATA='+JSON.stringify(d)+';\n');
 fs.writeFileSync(file('release.json'),JSON.stringify(release,null,2)+'\n');
