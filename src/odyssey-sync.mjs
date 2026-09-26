@@ -3,6 +3,18 @@ import core from '../public/mtgtools/odyssey/art-sync-core.js';
 const API = '/mtgtools/odyssey/api/art-sync';
 const NOTES_API = '/mtgtools/odyssey/api/review-notes';
 const NOTES_SCHEMA = 'odyssey-review-notes/v1';
+const FINISH_API = '/mtgtools/odyssey/api/finishing';
+const FINISH_SCHEMA = 'odyssey-finishing-queue/v1';
+const FINISH_KEYS = new Set([
+  'name','displayName','underlyingName','mana','mv','color','frame','type','rules','rarity','pt',
+  'origin','originFull','mechanics','archetypes','story','status','treatment','skeletonClass',
+  'cycleIds','showcase','productLayer','singleFaceSpecialPlan','signpostPair','functionalWords',
+  'changeStatus','narrativeEra','storyTarget','storyRethemeRequired','storySourceBand',
+  'artReviewRequired','flavorStoryElement','flavorMatchScore','flavorMatchRationale','flavor',
+  'layout','artHeight','frameStyle','artId','imageUrl','credit','source','zoom','focusX','focusY',
+  'fit','designDisposition'
+]);
+const FINISH_ART_KEYS = new Set(['artId','imageUrl','credit','source','fit','zoom','focusX','focusY','layout','artHeight','frameStyle']);
 const json = (value, status = 200) => new Response(JSON.stringify(value), {
   status,
   headers:{
@@ -84,11 +96,73 @@ function noteStorageKey(datasetVersion, cardId) {
   return 'note:'+datasetVersion+':'+cardId;
 }
 
+function cleanFinishValue(key, value) {
+  if (value == null) return '';
+  if (typeof value === 'string') {
+    const max = key === 'rules' ? 12000 : 5000;
+    if (value.length > max) throw new Error('Finishing value is too long.');
+    return value.replace(/\r\n?/g,'\n');
+  }
+  if (typeof value === 'number') {
+    if (!Number.isFinite(value) || Math.abs(value) > 1000000) throw new Error('Invalid finishing number.');
+    return value;
+  }
+  if (typeof value === 'boolean') return value;
+  if (Array.isArray(value)) {
+    if (value.length > 100) throw new Error('Too many finishing list values.');
+    return value.map(item => cleanOptional(item,1000));
+  }
+  throw new Error('Unsupported finishing value.');
+}
+
+function cleanFinishMap(value, allowed) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+  const entries = Object.entries(value);
+  if (entries.length > 80) throw new Error('Too many finishing fields.');
+  const out = {};
+  for (const [key,item] of entries) {
+    if (!allowed.has(key)) throw new Error('Unsupported finishing field: '+key);
+    out[key] = cleanFinishValue(key,item);
+  }
+  return out;
+}
+
+function validateFinishingAction(body) {
+  if (!body || typeof body !== 'object' || Array.isArray(body)) throw new Error('Invalid finishing request.');
+  const action = body.action === 'upsert' ? 'upsert' : body.action === 'delete' ? 'delete' : body.action === 'probe' ? 'probe' : '';
+  if (!action) throw new Error('Unknown finishing action.');
+  if (action === 'probe') return {action};
+  const record = body.record;
+  if (!record || typeof record !== 'object' || Array.isArray(record)) throw new Error('Missing finishing record.');
+  const datasetVersion = cleanId(record.datasetVersion,'dataset version');
+  const cardId = cleanId(record.cardId,'card id');
+  const number = Number(record.number);
+  if (!Number.isInteger(number) || number < 1 || number > 10000) throw new Error('Invalid card number.');
+  if (action === 'delete') return {action,datasetVersion,cardId,number};
+  const artState = ['REVIEWING','LOCKED','NEEDS_ART'].includes(record.artState) ? record.artState : '';
+  if (!artState) throw new Error('Invalid art state.');
+  return {
+    action,
+    record:{
+      datasetVersion,cardId,number,
+      name:cleanOptional(record.name,200),
+      artState,
+      changes:cleanFinishMap(record.changes,FINISH_KEYS),
+      art:cleanFinishMap(record.art,FINISH_ART_KEYS)
+    }
+  };
+}
+
+function finishingStorageKey(datasetVersion, cardId) {
+  return 'finish:'+datasetVersion+':'+cardId;
+}
+
 export async function handleSync(request, env) {
   const url = new URL(request.url);
   const isArt = url.pathname === API || url.pathname === API + '/health';
   const isNotes = url.pathname === NOTES_API || url.pathname === NOTES_API + '/health';
-  if (!isArt && !isNotes) return null;
+  const isFinishing = url.pathname === FINISH_API || url.pathname === FINISH_API + '/health';
+  if (!isArt && !isNotes && !isFinishing) return null;
   if (!sameOrigin(request,url)) return json({error:'Cross-origin requests are not allowed.'},403);
 
   if (isNotes) {
@@ -102,6 +176,19 @@ export async function handleSync(request, env) {
     const id = env.ODYSSEY_ART_SYNC.idFromName('odyssey-review-notes-v1');
     try { return await env.ODYSSEY_ART_SYNC.get(id).fetch(request); }
     catch (_) { return json({error:'Review-note storage is temporarily unavailable.'},503); }
+  }
+
+  if (isFinishing) {
+    if (url.pathname.endsWith('/health')) {
+      return request.method === 'GET'
+        ? json({schema:FINISH_SCHEMA,available:!!env.ODYSSEY_ART_SYNC},env.ODYSSEY_ART_SYNC?200:503)
+        : json({error:'Method not allowed.'},405);
+    }
+    if (!['GET','POST'].includes(request.method)) return json({error:'Method not allowed.'},405);
+    if (!env.ODYSSEY_ART_SYNC) return json({error:'Shared storage is not deployed. Finishing changes remain in this browser.'},503);
+    const id = env.ODYSSEY_ART_SYNC.idFromName('odyssey-finishing-v1');
+    try { return await env.ODYSSEY_ART_SYNC.get(id).fetch(request); }
+    catch (_) { return json({error:'Finishing storage is temporarily unavailable. Local edits remain safe.'},503); }
   }
 
   if (url.pathname.endsWith('/health')) {
@@ -187,9 +274,56 @@ export class OdysseyArtWorkspace {
     }
   }
 
+  async fetchFinishing(request) {
+    let body = null;
+    if (request.method === 'POST') {
+      try { body = validateFinishingAction(await boundedJSON(request)); }
+      catch (error) { return json({error:error.message},400); }
+    } else if (request.method !== 'GET') return json({error:'Method not allowed.'},405);
+
+    try {
+      const result = await this.ctx.storage.transaction(async txn => {
+        const minute = Math.floor(Date.now()/60000), rate = await txn.get('finish-rate') || {minute,count:0};
+        const count = rate.minute === minute ? rate.count+1 : 1;
+        if (count > 240) return {limited:true};
+        await txn.put('finish-rate',{minute,count});
+
+        if (request.method === 'GET') {
+          const stored = await txn.list({prefix:'finish:',limit:4000});
+          const records = [...stored.values()].filter(row=>row && typeof row === 'object');
+          records.sort((a,b)=>(a.number||0)-(b.number||0)||String(a.cardId||'').localeCompare(String(b.cardId||'')));
+          return {schema:FINISH_SCHEMA,records};
+        }
+
+        if (body.action === 'probe') {
+          const probe={at:new Date().toISOString(),ok:true};
+          await txn.put('finish-probe',probe);
+          const check=await txn.get('finish-probe');
+          await txn.delete('finish-probe');
+          return {schema:FINISH_SCHEMA,probe:!!(check&&check.ok)};
+        }
+
+        const key = finishingStorageKey(body.record?.datasetVersion || body.datasetVersion,body.record?.cardId || body.cardId);
+        if (body.action === 'delete') {
+          await txn.delete(key);
+          return {schema:FINISH_SCHEMA,record:null};
+        }
+
+        const now = new Date().toISOString(), current = await txn.get(key);
+        const record = {...body.record,createdAt:current?.createdAt||now,updatedAt:now};
+        await txn.put(key,record);
+        return {schema:FINISH_SCHEMA,record};
+      });
+      return result.limited ? json({error:'Finishing sync rate limit reached. Retry shortly.'},429) : json(result);
+    } catch (error) {
+      return json({error:error.message},400);
+    }
+  }
+
   async fetch(request) {
     const url = new URL(request.url);
     if (url.pathname === NOTES_API) return this.fetchNotes(request);
+    if (url.pathname === FINISH_API) return this.fetchFinishing(request);
 
     let changes;
     if (request.method === 'PATCH') {
