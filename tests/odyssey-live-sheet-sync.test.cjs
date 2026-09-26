@@ -8,10 +8,10 @@ function baseline(){
 }
 test('live sheet sync promotes the full current 309 and 589-art library',()=>{
  const d=sync.apply(baseline());
- assert.equal(d.datasetVersion,'2026-09-26.7');
+ assert.equal(d.datasetVersion,'2026-09-26.8');
  assert.equal(d.cards.length,309);assert.equal(d.artworks.length,589);assert.equal(d.coverage.length,309);
  assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,589);
- assert.equal(d.sheetSync.cardSheet.revision,'229');assert.equal(d.sheetSync.artSheet.revision,'70');
+ assert.equal(d.sheetSync.cardSheet.revision,'239');assert.equal(d.sheetSync.artSheet.revision,'80');
  const art=new Set(d.artworks.map(a=>a.id));const assigned=d.cards.filter(c=>c.primaryArt);
  assert.equal(assigned.length,309);for(const c of assigned)assert.ok(art.has(c.primaryArt),c.id+' has current art');
  assert.deepEqual(d.cards.filter(c=>!c.primaryArt).map(c=>c.number),[]);
@@ -36,6 +36,10 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
  assert.deepEqual([102,152,208,209,236].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-584','ART-027','ART-237','ART-020','ART-583']);
  assert.deepEqual([131,135,210,276].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-201','ART-585','ART-511','ART-517']);
  assert.deepEqual([130,259,262,263,266].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-275','ART-589','ART-588','ART-586','ART-587']);
+ assert.deepEqual([59,148,191,194,214,216,226,265,280,288].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-155','ART-551','ART-219','ART-509','ART-540','ART-007','ART-019','ART-256','ART-510','ART-500']);
+ const useCounts={};for(const c of d.cards)useCounts[c.primaryArt]=(useCounts[c.primaryArt]||0)+1;
+ assert.equal(Object.values(useCounts).reduce((sum,n)=>sum+Math.max(0,n-1),0),32);
+ assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-155');return [a.imageWidth,a.imageHeight,a.rights]})(),[4000,2911,'Public Domain / NGA Open Access; Commons CC0']);
  assert.equal(d.cards.find(c=>c.number===130).name,"Nymph of Laertes' Orchard");
  assert.equal(d.cards.find(c=>c.number===309).name,'Zeus, Guardian of Strangers');
  assert.equal(d.coverage.find(c=>c.number===309).name,'Zeus, Guardian of Strangers');
@@ -48,8 +52,8 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
 });
 test('Studio loads the sheet sync before model construction and links the current card source',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- const data=app.indexOf('odyssey-data.js?v=20260926-closing2'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art5'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
+ const data=app.indexOf('odyssey-data.js?v=20260926-closing2'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art6'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
  assert.ok(data>=0&&syncPos>data&&model>syncPos);
  assert.match(app,/1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE\/edit/);
- const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-art5/);
+ const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-art6/);
 });
