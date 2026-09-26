@@ -35,6 +35,17 @@ test('incomplete Battle back cannot silently inherit its front identity',()=>{
  }
 });
 
+test('sparse custom datasets can render the numbered synthetic Battle fixture',()=>{
+ const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
+ assert.equal(fixture.number,999,'the fixture deliberately exercises a non-contiguous collector number');
+ assert.match(app,/const CARD_NUMBERS=CARDS\.map\(card=>Number\(card\.number\)\)/);
+ assert.match(app,/const cardByNum=Object\.fromEntries\(CARDS\.map\(card=>\[Number\(card\.number\),card\]\)\)/);
+ assert.match(app,/function baseCard\(n\)\{return cardByNum\[Number\(n\)\]\}/);
+ assert.match(app,/cardByNum\[2\]\?2:CARD_NUMBERS\[0\]/,'custom datasets without slot 2 start on their first real card');
+ assert.match(app,/function cardNumberAtOffset\(from,offset\)/,'previous/next navigation follows the actual ordered card numbers');
+ assert.doesNotMatch(app,/function baseCard\(n\)\{return CARDS\[n-1\]\}/);
+});
+
 test('Battle print has a rotated landscape front and ordinary portrait back route',()=>{
  const css=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/frame-system.css'),'utf8');
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
