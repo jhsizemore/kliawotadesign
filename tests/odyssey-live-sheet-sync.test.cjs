@@ -81,6 +81,7 @@ test('Studio loads the sheet sync before model construction and links the curren
  assert.ok(data>=0&&syncPos>data&&patchPos>syncPos&&model>patchPos);
  assert.match(app,/ART-430\.1cce9d409251\.full\.webp/);
  assert.match(app,/function stalePackagedArtOverride/);
+ assert.match(app,/cropProfileReset/);
  assert.match(app,/1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE\/edit/);
- const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-flavor1-art21/);
+ const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-flavor1-art22/);
 });
