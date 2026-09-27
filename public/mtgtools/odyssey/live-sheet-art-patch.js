@@ -49,10 +49,10 @@ COVERAGE_REPLACEMENTS.push(
 for(const [number,artId,credit,source] of CARD_PATCHES){const row=sync.cardRows.find(r=>Number(r[0])===number);if(row){row[17]=artId;row[18]=credit;row[19]=source}}
 for(const replacement of ART_REPLACEMENTS){const i=sync.artRows.findIndex(r=>r[0]===replacement[0]);if(i>=0)sync.artRows[i]=replacement;else sync.artRows.push(replacement)}
 for(const replacement of COVERAGE_REPLACEMENTS){const i=sync.coverageRows.findIndex(r=>Number(r[0])===Number(replacement[0]));if(i>=0)sync.coverageRows[i]=replacement;else sync.coverageRows.push(replacement)}
-Object.assign(sync.META,{version:'2026-09-26.18',generatedAt:'2026-09-27T05:56:00.000Z',artworks:604,cardsFingerprint:'r254-r102-art22'});
+Object.assign(sync.META,{version:'2026-09-26.19',generatedAt:'2026-09-27T06:06:00.000Z',artworks:604,cardsFingerprint:'r254-r102-art23'});
 sync.META.cardSheet.revision='254';
 sync.META.artSheet.revision='102';
-sync.META.artPublication={checkedAt:'2026-09-27T05:56:00.000Z',scope:'Turbulent rowing, working mooring rope, and exact Telegonus wounding episode with tightened Studio crop, preserving zero blanks and zero duplicate excess uses',fingerprint:'r254-r102-art22'};
+sync.META.artPublication={checkedAt:'2026-09-27T06:06:00.000Z',scope:'Turbulent rowing, working mooring rope, and exact Telegonus wounding episode with tightened Studio crop and stale-route migration, preserving zero blanks and zero duplicate excess uses',fingerprint:'r254-r102-art23'};
 if(root.ODYSSEY_DATA)root.ODYSSEY_DATA=sync.apply(root.ODYSSEY_DATA);
 if(typeof module!=='undefined'&&module.exports)module.exports=sync;
 })(typeof window!=='undefined'?window:globalThis);
