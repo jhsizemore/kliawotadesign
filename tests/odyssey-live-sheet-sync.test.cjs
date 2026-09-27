@@ -9,10 +9,10 @@ function baseline(){
 }
 test('live sheet sync promotes the full current 309 and 616-art library',()=>{
  const d=sync.apply(baseline());
- assert.equal(d.datasetVersion,'2026-09-26.33');
+ assert.equal(d.datasetVersion,'2026-09-26.34');
  assert.equal(d.cards.length,309);assert.equal(d.artworks.length,616);assert.equal(d.coverage.length,309);
  assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,616);
- assert.equal(d.sheetSync.cardSheet.revision,'256');assert.equal(d.sheetSync.artSheet.revision,'111');
+ assert.equal(d.sheetSync.cardSheet.revision,'256');assert.equal(d.sheetSync.artSheet.revision,'112');
  const art=new Set(d.artworks.map(a=>a.id));const assigned=d.cards.filter(c=>c.primaryArt);
  assert.equal(assigned.length,309);for(const c of assigned)assert.ok(art.has(c.primaryArt),c.id+' has current art');
  assert.deepEqual(d.cards.filter(c=>!c.primaryArt).map(c=>c.number),[]);
@@ -78,7 +78,7 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
  assert.equal(d.coverage.find(c=>c.number===285).status,'SELECTED');
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-609');return [a.imageWidth,a.imageHeight,a.rights,a.source]})(),[1920,1559,'Getty Open Content; Public Domain Mark 1.0; artist died 1875; faithful reproduction of public-domain work','https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_L%27Homme_%C3%A0_la_houe_%281860-62%29.jpg']);
  assert.deepEqual([11,116,127,151,195].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-612','ART-610','ART-431','ART-616','ART-613']);
- assert.deepEqual([116,127].map(n=>d.coverage.find(c=>c.number===n).status),['NEXT PASS','NEXT PASS']);
+ assert.deepEqual([3,116,127].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','NEXT PASS','SELECTED']);
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-610');return [a.imageWidth,a.imageHeight,a.rights,a.source]})(),[1280,720,'Public Domain in the USA; artwork public domain by age (artist died 1942); Project Gutenberg scan','https://www.gutenberg.org/ebooks/52927']);
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-611');return [a.imageWidth,a.imageHeight,a.rights,a.source]})(),[1280,720,'Public Domain in the USA; artwork public domain by age (artist died 1942); Project Gutenberg scan','https://www.gutenberg.org/ebooks/52927']);
  assert.deepEqual(['ART-612','ART-613'].map(id=>{const a=d.artworks.find(x=>x.id===id);return [a.id,a.imageWidth,a.imageHeight,a.rights]}),[['ART-612',1920,1897,'CC0 1.0 Universal; public domain'],['ART-613',1920,1433,'CC0 1.0 Universal; public domain']]);
@@ -112,7 +112,7 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
 });
 test('Studio loads the sheet sync before model construction and links the current card source',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- const data=app.indexOf('odyssey-data.js?v=20260927-flavor1'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art38'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260927-art38'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
+ const data=app.indexOf('odyssey-data.js?v=20260927-flavor1'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art39'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260927-art39'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
  assert.ok(data>=0&&syncPos>data&&patchPos>syncPos&&model>patchPos);
  assert.match(app,/ART-430\.1cce9d409251\.full\.webp/);
  assert.match(app,/function stalePackagedArtOverride/);
@@ -120,5 +120,5 @@ test('Studio loads the sheet sync before model construction and links the curren
  assert.match(app,/PUBLISHED_ART_URL_UPDATES=\{'ART-239'.*'ART-432'.*'ART-604'.*'ART-605'.*'ART-606'.*'ART-607'.*'ART-608'.*'ART-609'.*'ART-610'.*'ART-611'.*'ART-612'.*'ART-613'.*'ART-614'.*'ART-615'.*'ART-616'/);
  assert.match(app,/const vals=\[PUBLISHED_ART_URL_UPDATES\[a\.id\],verified,resolvedArtUrls\[a\.id\]/);
  assert.match(app,/1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE\/edit/);
- const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-flavor1-art41/);
+ const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-flavor1-art42/);
 });
