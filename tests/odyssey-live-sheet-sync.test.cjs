@@ -7,12 +7,12 @@ function baseline(){
  const cards=Array.from({length:309},(_,i)=>({id:'ODY-'+String(i+1).padStart(3,'0'),number:i+1,backFace:i===228?{imageUrl:'wooden-horse.jpg'}:undefined}));
  return {schema:'odyssey-studio-data/v1',datasetVersion:'old',cards,artworks:[],coverage:[],integrity:{},candidate:{}};
 }
-test('live sheet sync promotes the full current 309 and 601-art library',()=>{
+test('live sheet sync promotes the full current 309 and 602-art library',()=>{
  const d=sync.apply(baseline());
- assert.equal(d.datasetVersion,'2026-09-26.15');
- assert.equal(d.cards.length,309);assert.equal(d.artworks.length,601);assert.equal(d.coverage.length,309);
- assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,601);
- assert.equal(d.sheetSync.cardSheet.revision,'252');assert.equal(d.sheetSync.artSheet.revision,'99');
+ assert.equal(d.datasetVersion,'2026-09-26.16');
+ assert.equal(d.cards.length,309);assert.equal(d.artworks.length,602);assert.equal(d.coverage.length,309);
+ assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,602);
+ assert.equal(d.sheetSync.cardSheet.revision,'253');assert.equal(d.sheetSync.artSheet.revision,'100');
  const art=new Set(d.artworks.map(a=>a.id));const assigned=d.cards.filter(c=>c.primaryArt);
  assert.equal(assigned.length,309);for(const c of assigned)assert.ok(art.has(c.primaryArt),c.id+' has current art');
  assert.deepEqual(d.cards.filter(c=>!c.primaryArt).map(c=>c.number),[]);
@@ -25,7 +25,7 @@ test('current special layouts survive the sheet cutover',()=>{
 });
 test('the newest artwork wave is directly renderable and assigned',()=>{
  const d=sync.apply(baseline()),fresh=d.artworks.filter(a=>+a.id.slice(4)>553);
- assert.equal(fresh.length,48);assert.ok(fresh.every(a=>/^https:\/\//.test(a.imageUrl)),fresh.filter(a=>!a.imageUrl).map(a=>a.id).join(','));
+ assert.equal(fresh.length,49);assert.ok(fresh.every(a=>/^https:\/\//.test(a.imageUrl)),fresh.filter(a=>!a.imageUrl).map(a=>a.id).join(','));
  assert.equal(d.cards.find(c=>c.number===84).primaryArt,'ART-582');
  assert.match(d.artworks.find(a=>a.id==='ART-582').credit,/Marie-Lan Nguyen.*CC BY 2.5/);
  assert.equal(d.cards.find(c=>c.number===84).primaryArt,'ART-582');
@@ -47,6 +47,11 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-600');return [a.imageUrl,a.imageWidth,a.imageHeight]})(),['https://kliawota.design/mtgtools/odyssey/art-telegonus-circe-roscher.jpg',1548,864]);
  assert.equal(d.cards.find(c=>c.number===10).primaryArt,'ART-601');
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-601');return [a.imageUrl,a.imageWidth,a.imageHeight,a.source]})(),['https://kliawota.design/mtgtools/odyssey/art-telemachus-assembly-calbet.jpg',2000,1360,'https://www.gutenberg.org/files/52927/52927-h/52927-h.htm']);
+ assert.equal(d.cards.find(c=>c.number===56).primaryArt,'ART-430');
+ assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-430');return [a.imageUrl,a.imageWidth,a.imageHeight]})(),['https://kliawota.design/mtgtools/odyssey/art-antinous-footstool-pogany.png',2160,1440]);
+ assert.equal(d.cards.find(c=>c.number===302).primaryArt,'ART-602');
+ assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-602');return [a.imageUrl,a.imageWidth,a.imageHeight,a.source]})(),['https://kliawota.design/mtgtools/odyssey/art-work-family-estate-steinhausen.jpg',2064,1260,'https://sammlung.staedelmuseum.de/en/work/worker-on-the-vineyard-1']);
+ assert.deepEqual([56,302].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','SELECTED']);
  assert.deepEqual([10,58].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','SELECTED']);
  assert.deepEqual([173,178,304].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','SELECTED','SELECTED']);
  assert.deepEqual([8,18,32,77].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','SELECTED','SELECTED','SELECTED']);
@@ -72,7 +77,7 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
 });
 test('Studio loads the sheet sync before model construction and links the current card source',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- const data=app.indexOf('odyssey-data.js?v=20260927-flavor1'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art18'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260927-art18'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
+ const data=app.indexOf('odyssey-data.js?v=20260927-flavor1'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art19'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260927-art19'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
  assert.ok(data>=0&&syncPos>data&&patchPos>syncPos&&model>patchPos);
  assert.match(app,/1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE\/edit/);
  const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-flavor1/);
