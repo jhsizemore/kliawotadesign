@@ -127,13 +127,24 @@ ART_REPLACEMENTS.push(
 COVERAGE_REPLACEMENTS.push(
  [105.0,"Neighboring Cyclops","NEXT PASS","2 — Historical / generic","ART-615, ART-198, ART-013","ART-615","YES","28 Sep 2026: Replaced wrong-myth ART-198 with ART-615, Theodoor van Thulden after Francesco Primaticcio, ‘Odysseus in the Land of the Cyclopes’ (1632–33). The Rijksmuseum identifies the print as Odysseus and his companions arriving in the Cyclopes’ country (Odyssey IX); it is therefore a materially closer episode match and preserves the group setting. It does not show the later neighboring-Cyclopes dialogue at Polyphemus’s cave, so NEXT PASS remains. Official Rijksmuseum source confirms title, authorship, subject, public-domain status and object RP-P-OB-66.737; Commons original verified at 5108×4004. Crop around the large foreground inhabitants and the smaller armed travelers, retaining the rocky country."]
 );
+CARD_PATCHES.push(
+ [127,"ART-431","Art: “Theoclymenus Foretelling the Destruction of the Suitors” · Tako Hajo Jelgersma · British Museum · Wikimedia Commons","https://commons.wikimedia.org/wiki/File:1482363001_-_Theoclymenus_foretelling_the_destruction_of_the_suitors.jpg"],
+ [151,"ART-616","Art: Jacob Jordaens · Nationalmuseum, Stockholm · Public Domain","https://collection.nationalmuseum.se/sv/collection/item/77300/"]
+);
+ART_REPLACEMENTS.push(
+ ["ART-616","Theoclymenus; Telemachus; Penelope; prophet; omen reader; Book XVII; Ithaca","Telemachus Leading Theoklymenus before His Mother Penelope","Jacob Jordaens","17th century","Flemish Baroque drawing / tapestry design","Brush and ink with wash, watercolor and gouache over black chalk","Nationalmuseum, Stockholm","NMH 1954/1863","Public Domain; Nationalmuseum photograph marked Public Domain; Wikimedia Commons PDM","https://collection.nationalmuseum.se/sv/collection/item/77300/","Art: Jacob Jordaens · Nationalmuseum, Stockholm · Public Domain","Direct named-character / exact Odyssey episode",5.0,"Theoclymenus, Omen Reader (#151)","28 Sep 2026: Selected for #151 to free ART-431’s exact Book XX prophecy composition for Omen of Bloody Walls. Nationalmuseum identifies Jordaens’s drawing as Telemachus leading Theoclymenus before Penelope, giving the character card a distinct, named Odyssey scene with the seer visibly presented at court. Official collection record verifies title, artist, medium, 28.1×50.9 cm dimensions, accession NMH 1954/1863 and Public Domain photography; Commons original visually inspected at 1,000×559. Crop wide enough to retain Penelope at left, Telemachus/Theoclymenus at center-right and the presentation gesture.","CURATED","https://upload.wikimedia.org/wikipedia/commons/7/7c/Jacob_Jordaens_-_Telemachus_Leading_Theoklymenus_before_His_Mother_Penelope_-_NMH_1954-1863_-_Nationalmuseum.jpg",1000.0,559.0,"2026-09-28"]
+);
+COVERAGE_REPLACEMENTS.push(
+ [127.0,"Omen of Bloody Walls","NEXT PASS","1 — Direct / iconic","ART-431, ART-611, ART-160, ART-043, ART-336, ART-130","ART-431","YES","28 Sep 2026: Upgraded from ART-611’s adjacent laughing-suitors vignette to ART-431, Tako Hajo Jelgersma’s exact Book XX scene of Theoclymenus standing before and foretelling destruction to the laughing suitors. The subject, creator, British Museum provenance, public-domain status and 1,140×852 source were reverified; the complete composition was visually inspected. This now depicts the prophet and the precise speech, but the walls themselves do not visibly run with blood, so retain NEXT PASS only for a truly literal historic treatment."],
+ [151.0,"Theoclymenus, Omen Reader","SELECTED","1 — Direct / iconic","ART-616, ART-431, ART-073, ART-211","ART-616","YES","28 Sep 2026: ART-616 selected. Nationalmuseum identifies Jacob Jordaens’s drawing as Telemachus leading Theoclymenus before Penelope, an exact named-character Odyssey episode that keeps the seer distinct while freeing ART-431 for the Book XX prophecy card. Official title, artist, accession NMH 1954/1863, Public Domain photography and 1,000×559 source were verified; full composition visually inspected."]
+);
 for(const [number,artId,credit,source] of CARD_PATCHES){const row=sync.cardRows.find(r=>Number(r[0])===number);if(row){row[17]=artId;row[18]=credit;row[19]=source}}
 for(const replacement of ART_REPLACEMENTS){const i=sync.artRows.findIndex(r=>r[0]===replacement[0]);if(i>=0)sync.artRows[i]=replacement;else sync.artRows.push(replacement)}
 for(const replacement of COVERAGE_REPLACEMENTS){const i=sync.coverageRows.findIndex(r=>Number(r[0])===Number(replacement[0]));if(i>=0)sync.coverageRows[i]=replacement;else sync.coverageRows.push(replacement)}
-Object.assign(sync.META,{version:'2026-09-26.32',generatedAt:'2026-09-27T14:40:39.000Z',artworks:615,cardsFingerprint:'r255-r110-art37'});
-sync.META.cardSheet.revision='255';
-sync.META.artSheet.revision='110';
-sync.META.artPublication={checkedAt:'2026-09-27T14:40:39.000Z',scope:'Book IX Cyclopes-country correction for card 105 while preserving zero blanks and zero duplicate excess uses',fingerprint:'r255-r110-art37'};
+Object.assign(sync.META,{version:'2026-09-26.33',generatedAt:'2026-09-27T15:42:19.000Z',artworks:616,cardsFingerprint:'r256-r111-art38'});
+sync.META.cardSheet.revision='256';
+sync.META.artSheet.revision='111';
+sync.META.artPublication={checkedAt:'2026-09-27T15:42:19.000Z',scope:'Two-card Theoclymenus composition-safe swap: exact Book XX prophecy for card 127 and exact named-character presentation for card 151',fingerprint:'r256-r111-art38'};
 if(root.ODYSSEY_DATA)root.ODYSSEY_DATA=sync.apply(root.ODYSSEY_DATA);
 if(typeof module!=='undefined'&&module.exports)module.exports=sync;
 })(typeof window!=='undefined'?window:globalThis);
