@@ -552,8 +552,8 @@ Object.assign(window.ODYSSEY_ARTWORK_MANIFEST.artworks['ART-430'],{
 <script src="/mtgtools/odyssey/design-refinement.js?v=20260919-1"></script>
 <script src="/mtgtools/odyssey/data/odyssey-data.js?v=20260927-flavor1"></script>
 <script src="/mtgtools/odyssey/data/reminder-review.20260927a.js?v=20260927a"></script>
-<script src="/mtgtools/odyssey/live-sheet-sync.js?v=20260927-art23"></script>
-<script src="/mtgtools/odyssey/live-sheet-art-patch.js?v=20260927-art23"></script>
+<script src="/mtgtools/odyssey/live-sheet-sync.js?v=20260927-art24"></script>
+<script src="/mtgtools/odyssey/live-sheet-art-patch.js?v=20260927-art24"></script>
 <script src="/mtgtools/odyssey/transform-faces.js?v=20260927-battle1"></script>
 <script src="/mtgtools/odyssey/data/card-references.js?v=ref3-74f7052f346c"></script>
 <script src="/mtgtools/odyssey/card-reference-browser.js?v=ref3-74f7052f346c"></script>
@@ -646,7 +646,7 @@ function loadCache(key,fallbackKey=''){try{const raw=localStorage.getItem(key)||
 let resolvedArtUrls=loadCache(ART_URL_CACHE_KEY,LEGACY_ART_URL_CACHE_KEY);
 let failedArtUrls=loadCache(ART_FAIL_CACHE_KEY);
 let badArtUrls=loadCache(ART_BAD_CACHE_KEY);
-const PUBLISHED_ART_URL_UPDATES={'ART-604':'https://kliawota.design/mtgtools/odyssey/art-telegonus-wounds-ulysses-royal20di-tight.jpg'};
+const PUBLISHED_ART_URL_UPDATES={'ART-604':'https://kliawota.design/mtgtools/odyssey/art-telegonus-wounds-ulysses-royal20di-tight.jpg','ART-605':'https://kliawota.design/mtgtools/odyssey/art-agamemnon-tiresias-ajax-orcus.jpg'};
 Object.entries(PUBLISHED_ART_URL_UPDATES).forEach(([id,url])=>{resolvedArtUrls[id]=url;delete failedArtUrls[id];delete badArtUrls[id]});
 const imageRequestQueue=OdysseyArtDelivery.createQueue(4), imageProbes=new Map();
 let candidateUsageCache=null,candidateUsageResolver=null,artCacheTimer=0;
