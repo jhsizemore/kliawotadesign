@@ -9,13 +9,15 @@ function baseline(){
 }
 test('live sheet sync promotes the full current 309 and 616-art library',()=>{
  const d=sync.apply(baseline());
- assert.equal(d.datasetVersion,'2026-09-26.34');
+ assert.equal(d.datasetVersion,'2026-09-26.35');
  assert.equal(d.cards.length,309);assert.equal(d.artworks.length,616);assert.equal(d.coverage.length,309);
  assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,616);
- assert.equal(d.sheetSync.cardSheet.revision,'256');assert.equal(d.sheetSync.artSheet.revision,'112');
+ assert.equal(d.sheetSync.cardSheet.revision,'256');assert.equal(d.sheetSync.artSheet.revision,'113');
  const art=new Set(d.artworks.map(a=>a.id));const assigned=d.cards.filter(c=>c.primaryArt);
  assert.equal(assigned.length,309);for(const c of assigned)assert.ok(art.has(c.primaryArt),c.id+' has current art');
  assert.deepEqual(d.cards.filter(c=>!c.primaryArt).map(c=>c.number),[]);
+ assert.equal(d.cards.filter(c=>!c.credit||!c.source).length,0);
+ assert.equal(d.coverage.filter(c=>c.status==='NEXT PASS').length,0);
 });
 test('current special layouts survive the sheet cutover',()=>{
  const d=sync.apply(baseline()),count=k=>d.cards.filter(c=>c.layout===k).length;
@@ -78,15 +80,15 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
  assert.equal(d.coverage.find(c=>c.number===285).status,'SELECTED');
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-609');return [a.imageWidth,a.imageHeight,a.rights,a.source]})(),[1920,1559,'Getty Open Content; Public Domain Mark 1.0; artist died 1875; faithful reproduction of public-domain work','https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_L%27Homme_%C3%A0_la_houe_%281860-62%29.jpg']);
  assert.deepEqual([11,116,127,151,195].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-612','ART-610','ART-431','ART-616','ART-613']);
- assert.deepEqual([3,116,127].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','NEXT PASS','SELECTED']);
+ assert.deepEqual([3,11,29,105,116,127,195].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','SELECTED','SELECTED','SELECTED','SELECTED','SELECTED','SELECTED']);
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-610');return [a.imageWidth,a.imageHeight,a.rights,a.source]})(),[1280,720,'Public Domain in the USA; artwork public domain by age (artist died 1942); Project Gutenberg scan','https://www.gutenberg.org/ebooks/52927']);
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-611');return [a.imageWidth,a.imageHeight,a.rights,a.source]})(),[1280,720,'Public Domain in the USA; artwork public domain by age (artist died 1942); Project Gutenberg scan','https://www.gutenberg.org/ebooks/52927']);
  assert.deepEqual(['ART-612','ART-613'].map(id=>{const a=d.artworks.find(x=>x.id===id);return [a.id,a.imageWidth,a.imageHeight,a.rights]}),[['ART-612',1920,1897,'CC0 1.0 Universal; public domain'],['ART-613',1920,1433,'CC0 1.0 Universal; public domain']]);
  assert.equal(d.cards.find(c=>c.number===29).primaryArt,'ART-614');
- assert.equal(d.coverage.find(c=>c.number===29).status,'NEXT PASS');
+ assert.equal(d.coverage.find(c=>c.number===29).status,'SELECTED');
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-614');return [a.imageUrl,a.imageWidth,a.imageHeight,a.rights]})(),['https://upload.wikimedia.org/wikipedia/commons/e/ef/La_Odisea_%28Luis_Segal%C3%A1_y_Estalella%29_%28page_294_crop%29.jpg',1280,687,'Public Domain; Commons PD-scan / PD-old-80-expired; published before 1931']);
  assert.equal(d.cards.find(c=>c.number===105).primaryArt,'ART-615');
- assert.equal(d.coverage.find(c=>c.number===105).status,'NEXT PASS');
+ assert.equal(d.coverage.find(c=>c.number===105).status,'SELECTED');
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-615');return [a.imageUrl,a.imageWidth,a.imageHeight,a.rights]})(),['https://upload.wikimedia.org/wikipedia/commons/d/d4/Odysseus_in_het_land_van_de_Cyclopen_De_werken_van_Odysseus_%28serietitel%29%2C_RP-P-OB-66.737.jpg',5108,4004,'Public Domain; Rijksmuseum public-domain object / Wikimedia Commons CC0 reproduction']);
  assert.equal(d.coverage.find(c=>c.number===151).status,'SELECTED');
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-616');return [a.imageUrl,a.imageWidth,a.imageHeight,a.rights,a.source]})(),['https://upload.wikimedia.org/wikipedia/commons/7/7c/Jacob_Jordaens_-_Telemachus_Leading_Theoklymenus_before_His_Mother_Penelope_-_NMH_1954-1863_-_Nationalmuseum.jpg',1000,559,'Public Domain; Nationalmuseum photograph marked Public Domain; Wikimedia Commons PDM','https://collection.nationalmuseum.se/sv/collection/item/77300/']);
@@ -112,7 +114,7 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
 });
 test('Studio loads the sheet sync before model construction and links the current card source',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- const data=app.indexOf('odyssey-data.js?v=20260927-flavor1'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art39'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260927-art39'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
+ const data=app.indexOf('odyssey-data.js?v=20260927-flavor1'),syncPos=app.indexOf('live-sheet-sync.js?v=20260928-art40'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260928-art40'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
  assert.ok(data>=0&&syncPos>data&&patchPos>syncPos&&model>patchPos);
  assert.match(app,/ART-430\.1cce9d409251\.full\.webp/);
  assert.match(app,/function stalePackagedArtOverride/);
@@ -120,5 +122,5 @@ test('Studio loads the sheet sync before model construction and links the curren
  assert.match(app,/PUBLISHED_ART_URL_UPDATES=\{'ART-239'.*'ART-432'.*'ART-604'.*'ART-605'.*'ART-606'.*'ART-607'.*'ART-608'.*'ART-609'.*'ART-610'.*'ART-611'.*'ART-612'.*'ART-613'.*'ART-614'.*'ART-615'.*'ART-616'/);
  assert.match(app,/const vals=\[PUBLISHED_ART_URL_UPDATES\[a\.id\],verified,resolvedArtUrls\[a\.id\]/);
  assert.match(app,/1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE\/edit/);
- const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-flavor1-art42/);
+ const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260928-flavor1-art43/);
 });
