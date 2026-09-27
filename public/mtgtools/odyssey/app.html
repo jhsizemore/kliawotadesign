@@ -552,8 +552,8 @@ Object.assign(window.ODYSSEY_ARTWORK_MANIFEST.artworks['ART-430'],{
 <script src="/mtgtools/odyssey/design-refinement.js?v=20260919-1"></script>
 <script src="/mtgtools/odyssey/data/odyssey-data.js?v=20260927-flavor1"></script>
 <script src="/mtgtools/odyssey/data/reminder-review.20260927a.js?v=20260927a"></script>
-<script src="/mtgtools/odyssey/live-sheet-sync.js?v=20260927-art25"></script>
-<script src="/mtgtools/odyssey/live-sheet-art-patch.js?v=20260927-art25"></script>
+<script src="/mtgtools/odyssey/live-sheet-sync.js?v=20260927-art26"></script>
+<script src="/mtgtools/odyssey/live-sheet-art-patch.js?v=20260927-art26"></script>
 <script src="/mtgtools/odyssey/transform-faces.js?v=20260927-battle1"></script>
 <script src="/mtgtools/odyssey/data/card-references.js?v=ref3-74f7052f346c"></script>
 <script src="/mtgtools/odyssey/card-reference-browser.js?v=ref3-74f7052f346c"></script>
@@ -666,7 +666,7 @@ function isBadUrl(id,u){const k=badKeyUrl(u);return OdysseyArtDelivery.freshFail
 function markBadUrl(id,u,reason='Image failed to load'){if(!id||!u)return;const k=badKeyUrl(u);badArtUrls[id]=badArtUrls[id]||{};badArtUrls[id][k]={at:new Date().toISOString(),reason:String(reason||'load failure')};if(resolvedArtUrls[id]&&badKeyUrl(resolvedArtUrls[id])===k)delete resolvedArtUrls[id];saveArtCaches()}
 function clearBadUrl(id,u){const k=badKeyUrl(u);if(badArtUrls[id]&&badArtUrls[id][k]){delete badArtUrls[id][k];if(!Object.keys(badArtUrls[id]).length)delete badArtUrls[id];saveArtCaches()}}
 function ngaOfficialUrls(id){const uuid=NGA_UUIDS[id];return uuid?[`https://api.nga.gov/iiif/${uuid}/full/${ART_PREVIEW_PX},/0/default.jpg`,`https://api.nga.gov/iiif/${uuid}/full/1600,/0/default.jpg`]:[]}
-function staticArtCandidates(a){if(!a)return[];const verified=OdysseyArtDelivery.full(a),row=OdysseyArtDelivery.entry(a);const vals=[verified,resolvedArtUrls[a.id],a.imageUrl,KNOWN_IMAGE_URLS[a.id],row?.originalUrl,...ngaOfficialUrls(a.id)];for(const u of [...vals]){const orig=wikimediaOriginalUrl(u);if(orig&&orig!==u)vals.push(orig)}return dedupeUrls(vals).filter(u=>!isBadUrl(a.id,u))}
+function staticArtCandidates(a){if(!a)return[];const verified=OdysseyArtDelivery.full(a),row=OdysseyArtDelivery.entry(a);const vals=[PUBLISHED_ART_URL_UPDATES[a.id],verified,resolvedArtUrls[a.id],a.imageUrl,KNOWN_IMAGE_URLS[a.id],row?.originalUrl,...ngaOfficialUrls(a.id)];for(const u of [...vals]){const orig=wikimediaOriginalUrl(u);if(orig&&orig!==u)vals.push(orig)}return dedupeUrls(vals).filter(u=>!isBadUrl(a.id,u))}
 function directArtUrl(id){const a=artById[id];return staticArtCandidates(a)[0]||''}
 function imageForArt(m){const a=artById[m.artId],saved=m.faceRole==='back'?'':(overrides[m.number]&&Object.prototype.hasOwnProperty.call(overrides[m.number],'imageUrl'))?m.imageUrl:'';const mirror=OdysseyArtDelivery.full(a),entry=OdysseyArtDelivery.entry(a);const catalog=!!(mirror&&saved&&[a?.imageUrl,KNOWN_IMAGE_URLS[m.artId],entry?.originalUrl].filter(Boolean).some(u=>badKeyUrl(u)===badKeyUrl(saved)));const manual=catalog?'':saved;return (m.faceRole==='back'?'':localImageUrls[m.number])||manual||directArtUrl(m.artId)||sizedMuseumUrl(m.imageUrl)||''}
 function artBoxMm(m){if(m.frameStyle==='full-art')return{w:60.5,h:85.5};const h={standard:{normal:35.5,tall:39.5,short:31.5},adventure:{normal:27,tall:30,short:24},prepare:{normal:27,tall:30,short:24},battle:{normal:23,tall:25.5,short:20.5}};return{w:59.7,h:(h[m.layout]||{normal:35.5,tall:39.5,short:31.5})[m.artHeight||'normal']||35.5}}
