@@ -12,7 +12,7 @@ test('live sheet sync promotes the full current 309 and 600-art library',()=>{
  assert.equal(d.datasetVersion,'2026-09-26.14');
  assert.equal(d.cards.length,309);assert.equal(d.artworks.length,600);assert.equal(d.coverage.length,309);
  assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,600);
- assert.equal(d.sheetSync.cardSheet.revision,'251');assert.equal(d.sheetSync.artSheet.revision,'97');
+ assert.equal(d.sheetSync.cardSheet.revision,'251');assert.equal(d.sheetSync.artSheet.revision,'98');
  const art=new Set(d.artworks.map(a=>a.id));const assigned=d.cards.filter(c=>c.primaryArt);
  assert.equal(assigned.length,309);for(const c of assigned)assert.ok(art.has(c.primaryArt),c.id+' has current art');
  assert.deepEqual(d.cards.filter(c=>!c.primaryArt).map(c=>c.number),[]);
@@ -46,6 +46,11 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
  assert.equal(d.cards.find(c=>c.number===304).primaryArt,'ART-600');
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-600');return [a.imageUrl,a.imageWidth,a.imageHeight]})(),['https://kliawota.design/mtgtools/odyssey/art-telegonus-circe-roscher.jpg',1548,864]);
  assert.deepEqual([173,178,304].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','SELECTED','SELECTED']);
+ assert.deepEqual([8,18,32,77].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','SELECTED','SELECTED','SELECTED']);
+ assert.equal(d.coverage.find(c=>c.number===231).status,'REVIEW');
+ assert.match(d.coverage.find(c=>c.number===231).notes,/ART-181 is not Agamemnon/);
+ assert.match(d.artworks.find(a=>a.id==='ART-181').subjects,/Elpenor/);
+ assert.doesNotMatch(d.artworks.find(a=>a.id==='ART-181').subjects,/Agamemnon/);
  assert.deepEqual([24,31,37,66,82].map(n=>d.coverage.find(c=>c.number===n).status),['COVERED','COVERED','COVERED','COVERED','COVERED']);
  assert.deepEqual([60,83,126,244,261,281,306].map(n=>d.cards.find(c=>c.number===n).primaryArt),['ART-122','ART-590','ART-592','ART-593','ART-545','ART-591','ART-104']);
  assert.deepEqual(['ART-590','ART-591','ART-592','ART-593'].map(id=>{const a=d.artworks.find(x=>x.id===id);return [a.id,a.imageWidth,a.imageHeight]}),[['ART-590',2911,3880],['ART-591',3888,5184],['ART-592',4874,5125],['ART-593',2427,4000]]);
@@ -64,8 +69,8 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
 });
 test('Studio loads the sheet sync before model construction and links the current card source',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- const data=app.indexOf('odyssey-data.js?v=20260926-closing2'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art16'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260927-art16'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
+ const data=app.indexOf('odyssey-data.js?v=20260926-closing2'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art17'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260927-art17'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
  assert.ok(data>=0&&syncPos>data&&patchPos>syncPos&&model>patchPos);
  assert.match(app,/1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE\/edit/);
- const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-art16/);
+ const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-art17/);
 });
