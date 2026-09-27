@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Odyssey — a complete custom Magic: The Gathering set inspired by Homer's Odyssey.">
+  <title>Odyssey — Full Set Gallery</title>
+  <link rel="stylesheet" href="./scry.css?v=20260928-1">
+</head>
+<body>
+  <header class="sitebar">
+    <a class="wordmark" href="#top" aria-label="Odyssey home">ODYSSEY</a>
+    <nav>
+      <a href="#story">Set overview</a>
+      <a href="#cards">Full set</a>
+      <a href="/mtgtools/odyssey/" class="studio-link">Odyssey Studio</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A custom Magic: The Gathering set</p>
+        <h1>ODYSSEY</h1>
+        <p class="dek">The war is over. The hard part is getting home.</p>
+        <p class="hero-text">A 309-card journey through Homer's <em>Odyssey</em>, reimagined through the language of Magic and the mythic texture of Theros: gods and monsters, vows and temptations, enchantments, ordeals, cunning, homecoming and the cost of survival.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#cards">Browse the full set</a>
+          <button class="button ghost" id="randomCard" type="button">Show me a card</button>
+        </div>
+        <div class="hero-meta" id="heroMeta">Loading current set…</div>
+      </div>
+      <div class="hero-card-stage" id="heroCardStage" aria-live="polite"></div>
+    </section>
+
+    <section class="intro" id="story">
+      <article class="intro-lead">
+        <p class="kicker">The story</p>
+        <h2>An epic built as a playable world.</h2>
+        <p>Odysseus has survived Troy, but the route back to Ithaca becomes its own war. The set follows the crew through divine grudges, impossible choices, seduction, shipwreck, monsters and strange islands, while Penelope and Telemachus fight a quieter battle at home.</p>
+      </article>
+      <div class="feature-grid">
+        <article><span>01</span><h3>Myth as game structure</h3><p>Major episodes become cards, cycles and mechanical through-lines rather than one-off references.</p></article>
+        <article><span>02</span><h3>Theros DNA</h3><p>Enchantments, devotion, sagas and mythic archetypes create a familiar Magic vocabulary for an ancient story.</p></article>
+        <article><span>03</span><h3>Built to draft</h3><p>The set is designed as a real Limited environment, with color identities, signposts, commons and build-around themes.</p></article>
+      </div>
+    </section>
+
+    <section class="mechanics">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Set themes & mechanics</p>
+          <h2>What the set is doing</h2>
+        </div>
+        <p class="section-note">Pulled from the current set file, so this stays in sync as the design changes.</p>
+      </div>
+      <div class="mechanic-chips" id="mechanicChips"></div>
+      <div class="example-strip" id="mechanicExamples"></div>
+    </section>
+
+    <section class="cards-section" id="cards">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Complete card image gallery</p>
+          <h2>The full Odyssey set</h2>
+        </div>
+        <div class="result-count" id="resultCount">Loading cards…</div>
+      </div>
+
+      <div class="toolbar" aria-label="Card gallery controls">
+        <label class="searchbox"><span>Search</span><input id="search" type="search" placeholder="Name, rules, type, mechanic…" autocomplete="off"></label>
+        <select id="colorFilter" aria-label="Filter by color">
+          <option value="">All colors</option><option value="W">White</option><option value="U">Blue</option><option value="B">Black</option><option value="R">Red</option><option value="G">Green</option><option value="M">Multicolor</option><option value="C">Colorless</option><option value="L">Lands</option>
+        </select>
+        <select id="rarityFilter" aria-label="Filter by rarity">
+          <option value="">All rarities</option><option value="C">Common</option><option value="U">Uncommon</option><option value="R">Rare</option><option value="M">Mythic</option>
+        </select>
+        <select id="sort" aria-label="Sort cards">
+          <option value="number">Collector number</option><option value="name">Name</option><option value="rarity">Rarity</option><option value="color">Color</option>
+        </select>
+        <div class="view-toggle" role="group" aria-label="View style">
+          <button class="active" data-view="grid" type="button">Grid</button>
+          <button data-view="compact" type="button">Compact</button>
+        </div>
+      </div>
+
+      <div class="active-filters" id="activeFilters"></div>
+      <div class="card-grid" id="cardGrid"></div>
+      <div class="load-sentinel" id="loadSentinel"><span>Loading more cards…</span></div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>ODYSSEY</strong><span>Fan-made Magic set · work in progress</span></div>
+    <p>Magic: The Gathering and related marks belong to Wizards of the Coast. This project is unaffiliated and non-commercial.</p>
+  </footer>
+
+  <dialog id="cardDialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Close">×</button>
+    <div class="dialog-card" id="dialogCard"></div>
+    <div class="dialog-info" id="dialogInfo"></div>
+  </dialog>
+
+  <script src="./scry.js?v=20260928-1"></script>
+</body>
+</html>
