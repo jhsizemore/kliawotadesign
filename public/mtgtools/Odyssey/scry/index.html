@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="description" content="Odyssey — a complete custom Magic: The Gathering set inspired by Homer's Odyssey.">
   <title>Odyssey — Full Set Gallery</title>
-  <link rel="stylesheet" href="./scry.css?v=20260928-1">
+  <link rel="canonical" href="https://kliawota.design/mtgtools/Odyssey/scry">
+  <meta property="og:url" content="https://kliawota.design/mtgtools/Odyssey/scry">
+  <meta property="og:title" content="Odyssey — A custom Magic: The Gathering set">
+  <meta property="og:description" content="Browse the complete Odyssey set and build shareable social previews.">
+  <link rel="stylesheet" href="./scry.css?v=20260928-2">
 </head>
 <body>
   <header class="sitebar">
@@ -13,6 +17,7 @@
     <nav>
       <a href="#story">Set overview</a>
       <a href="#cards">Full set</a>
+      <a href="#social">Social previews</a>
       <a href="/mtgtools/odyssey/" class="studio-link">Odyssey Studio</a>
     </nav>
   </header>
@@ -58,6 +63,69 @@
       <div class="example-strip" id="mechanicExamples"></div>
     </section>
 
+    <section class="social-builder" id="social">
+      <div class="section-head">
+        <div>
+          <p class="kicker">Social preview studio</p>
+          <h2>Present Odyssey like a real set.</h2>
+        </div>
+        <p class="section-note">Build polished promo compositions from one to five cards. The selected background card supplies the mirrored, Gaussian-blurred art field behind the cards.</p>
+      </div>
+
+      <div class="promo-workspace">
+        <div class="promo-controls">
+          <div class="promo-logo-sample" aria-label="Odyssey promotional logo">
+            <div class="promo-logo-kicker">A custom Magic set</div>
+            <div class="promo-logo-main">ODYSSEY</div>
+            <div class="promo-logo-rule"><span></span><b>ΙΘΑΚΗ</b><span></span></div>
+            <div class="promo-logo-sub">THE LONG WAY HOME</div>
+          </div>
+
+          <label>Format
+            <select id="promoFormat">
+              <option value="landscape">Landscape · 1200 × 630</option>
+              <option value="square">Square · 1080 × 1080</option>
+              <option value="portrait">Portrait · 1080 × 1350</option>
+              <option value="story">Story · 1080 × 1920</option>
+            </select>
+          </label>
+
+          <label>Headline
+            <input id="promoHeadline" value="THE LONG WAY HOME" maxlength="70">
+          </label>
+
+          <div class="promo-card-pickers" id="promoCardPickers"></div>
+
+          <label>Background art
+            <select id="promoBackground"></select>
+          </label>
+
+          <div class="promo-actions">
+            <button class="button primary" id="promoDownload" type="button">Download PNG</button>
+            <button class="button ghost" id="promoFullscreen" type="button">Full-screen preview</button>
+            <button class="button ghost" id="promoRandomize" type="button">Random five</button>
+          </div>
+          <p class="promo-note" id="promoStatus">Select up to five cards. Card 1 is used as the background by default.</p>
+        </div>
+
+        <div class="promo-stage-wrap">
+          <div class="promo-stage landscape" id="promoStage">
+            <div class="promo-bg" id="promoBg"></div>
+            <div class="promo-bg-mirror" id="promoBgMirror"></div>
+            <div class="promo-vignette"></div>
+            <div class="promo-brand">
+              <div class="promo-brand-kicker">A CUSTOM MAGIC SET</div>
+              <div class="promo-brand-title">ODYSSEY</div>
+              <div class="promo-brand-rule"></div>
+              <div class="promo-brand-sub" id="promoStageHeadline">THE LONG WAY HOME</div>
+            </div>
+            <div class="promo-cards" id="promoCards"></div>
+            <div class="promo-url">kliawota.design/mtgtools/Odyssey/scry</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="cards-section" id="cards">
       <div class="section-head">
         <div>
@@ -101,6 +169,6 @@
     <div class="dialog-info" id="dialogInfo"></div>
   </dialog>
 
-  <script src="./scry.js?v=20260928-1"></script>
+  <script src="./scry.js?v=20260928-2"></script>
 </body>
 </html>
