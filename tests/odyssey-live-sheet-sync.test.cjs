@@ -7,12 +7,12 @@ function baseline(){
  const cards=Array.from({length:309},(_,i)=>({id:'ODY-'+String(i+1).padStart(3,'0'),number:i+1,backFace:i===228?{imageUrl:'wooden-horse.jpg'}:undefined}));
  return {schema:'odyssey-studio-data/v1',datasetVersion:'old',cards,artworks:[],coverage:[],integrity:{},candidate:{}};
 }
-test('live sheet sync promotes the full current 309 and 600-art library',()=>{
+test('live sheet sync promotes the full current 309 and 601-art library',()=>{
  const d=sync.apply(baseline());
- assert.equal(d.datasetVersion,'2026-09-26.14');
- assert.equal(d.cards.length,309);assert.equal(d.artworks.length,600);assert.equal(d.coverage.length,309);
- assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,600);
- assert.equal(d.sheetSync.cardSheet.revision,'251');assert.equal(d.sheetSync.artSheet.revision,'98');
+ assert.equal(d.datasetVersion,'2026-09-26.15');
+ assert.equal(d.cards.length,309);assert.equal(d.artworks.length,601);assert.equal(d.coverage.length,309);
+ assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,601);
+ assert.equal(d.sheetSync.cardSheet.revision,'252');assert.equal(d.sheetSync.artSheet.revision,'99');
  const art=new Set(d.artworks.map(a=>a.id));const assigned=d.cards.filter(c=>c.primaryArt);
  assert.equal(assigned.length,309);for(const c of assigned)assert.ok(art.has(c.primaryArt),c.id+' has current art');
  assert.deepEqual(d.cards.filter(c=>!c.primaryArt).map(c=>c.number),[]);
@@ -25,7 +25,7 @@ test('current special layouts survive the sheet cutover',()=>{
 });
 test('the newest artwork wave is directly renderable and assigned',()=>{
  const d=sync.apply(baseline()),fresh=d.artworks.filter(a=>+a.id.slice(4)>553);
- assert.equal(fresh.length,47);assert.ok(fresh.every(a=>/^https:\/\//.test(a.imageUrl)),fresh.filter(a=>!a.imageUrl).map(a=>a.id).join(','));
+ assert.equal(fresh.length,48);assert.ok(fresh.every(a=>/^https:\/\//.test(a.imageUrl)),fresh.filter(a=>!a.imageUrl).map(a=>a.id).join(','));
  assert.equal(d.cards.find(c=>c.number===84).primaryArt,'ART-582');
  assert.match(d.artworks.find(a=>a.id==='ART-582').credit,/Marie-Lan Nguyen.*CC BY 2.5/);
  assert.equal(d.cards.find(c=>c.number===84).primaryArt,'ART-582');
@@ -45,6 +45,9 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
  assert.deepEqual(['ART-594','ART-595','ART-596','ART-597','ART-598','ART-599'].map(id=>{const a=d.artworks.find(x=>x.id===id);return [a.id,a.imageWidth,a.imageHeight]}),[['ART-594',1920,1574],['ART-595',3804,2542],['ART-596',2000,1371],['ART-597',6488,4942],['ART-598',2080,1390],['ART-599',1920,1446]]);
  assert.equal(d.cards.find(c=>c.number===304).primaryArt,'ART-600');
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-600');return [a.imageUrl,a.imageWidth,a.imageHeight]})(),['https://kliawota.design/mtgtools/odyssey/art-telegonus-circe-roscher.jpg',1548,864]);
+ assert.equal(d.cards.find(c=>c.number===10).primaryArt,'ART-601');
+ assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-601');return [a.imageUrl,a.imageWidth,a.imageHeight,a.source]})(),['https://kliawota.design/mtgtools/odyssey/art-telemachus-assembly-calbet.jpg',2000,1360,'https://www.gutenberg.org/files/52927/52927-h/52927-h.htm']);
+ assert.deepEqual([10,58].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','SELECTED']);
  assert.deepEqual([173,178,304].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','SELECTED','SELECTED']);
  assert.deepEqual([8,18,32,77].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','SELECTED','SELECTED','SELECTED']);
  assert.equal(d.coverage.find(c=>c.number===231).status,'REVIEW');
@@ -69,8 +72,8 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
 });
 test('Studio loads the sheet sync before model construction and links the current card source',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- const data=app.indexOf('odyssey-data.js?v=20260926-closing2'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art17'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260927-art17'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
+ const data=app.indexOf('odyssey-data.js?v=20260927-flavor1'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art18'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260927-art18'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
  assert.ok(data>=0&&syncPos>data&&patchPos>syncPos&&model>patchPos);
  assert.match(app,/1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE\/edit/);
- const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-art17/);
+ const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-flavor1/);
 });

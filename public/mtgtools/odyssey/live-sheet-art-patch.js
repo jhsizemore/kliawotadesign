@@ -1,4 +1,4 @@
-/* Generated art-only delta for Odyssey dataset 2026-09-26.14. */
+/* Generated art-only delta for Odyssey dataset 2026-09-26.15. */
 (function(root){
 'use strict';
 const sync=root.OdysseySheetSync||(typeof require!=='undefined'?require('./live-sheet-sync.js'):null);
@@ -14,13 +14,19 @@ COVERAGE_REPLACEMENTS.push(
  [77.0,"Phaeacian Oarsman","SELECTED","1 — Direct / iconic","ART-027, ART-176, ART-539","ART-539","YES","Review closed 27 Sep 2026: ART-539 is an authentic ancient Greek warship frieze with synchronized rowers. For this generic Phaeacian sailor card it supplies the exact action and cultural period without claiming the vessel is literally Phaeacian; Met Open Access image 2978×3722, unique composition."],
  [231.0,"Agamemnon, King Among Shades","REVIEW","1 — Direct / iconic","ART-181, ART-048, ART-047, ART-329","ART-181","YES","27 Sep 2026 audit correction: ART-181 is not Agamemnon. The Rijksmuseum identifies the scene as Odysseus seeing the ghost of Elpenor. The current assignment is a known subject mismatch and must be replaced; unused ART-048/ART-329 depict the living Agamemnon, not his Book XI shade, so no weak swap was forced."]
 );
+CARD_PATCHES.push([10,"ART-601","Art: Antoine Calbet · L’Odyssée (1897) · Project Gutenberg · Public Domain","https://www.gutenberg.org/files/52927/52927-h/52927-h.htm"]);
+ART_REPLACEMENTS.push(["ART-601","Telemachus; assembly; Ithaca; sceptre; elders; Book II","Telemachus Calls the Assembly of Ithacans","Antoine Calbet","1897","French fin-de-siècle Homeric illustration","Book illustration / line drawing","Project Gutenberg / Internet Archive Canadian Libraries scan","Project Gutenberg eBook 52927, image 0045","Public Domain in the USA; source scan via Project Gutenberg","https://www.gutenberg.org/files/52927/52927-h/52927-h.htm","Art: Antoine Calbet · L’Odyssée (1897) · Project Gutenberg · Public Domain","Direct named episode / Book II assembly",5.0,"Telemachus Calls the Assembly (#10)","27 Sep 2026: Exact Book II assembly. Calbet shows Telemachus seated centrally with sceptre among the Ithacan elders. Landscape derivative crops the official 500×634 Project Gutenberg raster to a 500×340 native region and enlarges it to 2000×1360 for Studio placement; treat sharpness as inherited from the native line-art scan and avoid further zoom.","CURATED","https://kliawota.design/mtgtools/odyssey/art-telemachus-assembly-calbet.jpg",2000.0,1360.0,"2026-09-27"]);
+COVERAGE_REPLACEMENTS.push(
+ [10.0,"Telemachus Calls the Assembly","SELECTED","1 — Direct / iconic","ART-601, ART-062, ART-094, ART-002","ART-601","YES","27 Sep 2026: ART-601 replaces ART-002 with Antoine Calbet’s exact Book II assembly: Telemachus sits with sceptre among Ithacan elders as he calls the citizens together. Project Gutenberg identifies the 1897 edition and public-domain status. The Studio asset uses a landscape crop of the official 500×634 scan, enlarged to 2000×1360; avoid further zoom."],
+ [58.0,"Anticleia, Shade of Home","SELECTED","1 — Direct / iconic","ART-418, ART-017, ART-154","ART-418","YES","Review closed 27 Sep 2026: ART-418 is an exact Book XI composition with Anticleia’s shade visibly between Tiresias and Odysseus. The live 1920×2273 render is print-safe; retain the pale central shade in the crop so the named mother, not Tiresias, remains legible."]
+);
 for(const [number,artId,credit,source] of CARD_PATCHES){const row=sync.cardRows.find(r=>Number(r[0])===number);if(row){row[17]=artId;row[18]=credit;row[19]=source}}
 for(const replacement of ART_REPLACEMENTS){const i=sync.artRows.findIndex(r=>r[0]===replacement[0]);if(i>=0)sync.artRows[i]=replacement;else sync.artRows.push(replacement)}
 for(const replacement of COVERAGE_REPLACEMENTS){const i=sync.coverageRows.findIndex(r=>Number(r[0])===Number(replacement[0]));if(i>=0)sync.coverageRows[i]=replacement;else sync.coverageRows.push(replacement)}
-Object.assign(sync.META,{version:'2026-09-26.14',generatedAt:'2026-09-27T02:48:00.000Z',artworks:600,cardsFingerprint:'r251-r98-art17'});
-sync.META.cardSheet.revision='251';
-sync.META.artSheet.revision='98';
-sync.META.artPublication={checkedAt:'2026-09-27T02:48:00.000Z',scope:'Four closed quality reviews plus corrected ART-181 Elpenor attribution and explicit Agamemnon replacement flag, preserving zero blanks and zero duplicate excess uses',fingerprint:'r251-r98-art17'};
+Object.assign(sync.META,{version:'2026-09-26.15',generatedAt:'2026-09-27T03:55:00.000Z',artworks:601,cardsFingerprint:'r252-r99-art18'});
+sync.META.cardSheet.revision='252';
+sync.META.artSheet.revision='99';
+sync.META.artPublication={checkedAt:'2026-09-27T03:55:00.000Z',scope:'Exact Book II Telemachus assembly upgrade plus Anticleia composition review closure, preserving zero blanks and zero duplicate excess uses',fingerprint:'r252-r99-art18'};
 if(root.ODYSSEY_DATA)root.ODYSSEY_DATA=sync.apply(root.ODYSSEY_DATA);
 if(typeof module!=='undefined'&&module.exports)module.exports=sync;
 })(typeof window!=='undefined'?window:globalThis);
