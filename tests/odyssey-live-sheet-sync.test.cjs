@@ -7,12 +7,12 @@ function baseline(){
  const cards=Array.from({length:309},(_,i)=>({id:'ODY-'+String(i+1).padStart(3,'0'),number:i+1,backFace:i===228?{imageUrl:'wooden-horse.jpg'}:undefined}));
  return {schema:'odyssey-studio-data/v1',datasetVersion:'old',cards,artworks:[],coverage:[],integrity:{},candidate:{}};
 }
-test('live sheet sync promotes the full current 309 and 607-art library',()=>{
+test('live sheet sync promotes the full current 309 and 608-art library',()=>{
  const d=sync.apply(baseline());
- assert.equal(d.datasetVersion,'2026-09-26.26');
- assert.equal(d.cards.length,309);assert.equal(d.artworks.length,607);assert.equal(d.coverage.length,309);
- assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,607);
- assert.equal(d.sheetSync.cardSheet.revision,'259');assert.equal(d.sheetSync.artSheet.revision,'110');
+ assert.equal(d.datasetVersion,'2026-09-26.27');
+ assert.equal(d.cards.length,309);assert.equal(d.artworks.length,608);assert.equal(d.coverage.length,309);
+ assert.equal(new Set(d.cards.map(c=>c.number)).size,309);assert.equal(new Set(d.artworks.map(a=>a.id)).size,608);
+ assert.equal(d.sheetSync.cardSheet.revision,'260');assert.equal(d.sheetSync.artSheet.revision,'111');
  const art=new Set(d.artworks.map(a=>a.id));const assigned=d.cards.filter(c=>c.primaryArt);
  assert.equal(assigned.length,309);for(const c of assigned)assert.ok(art.has(c.primaryArt),c.id+' has current art');
  assert.deepEqual(d.cards.filter(c=>!c.primaryArt).map(c=>c.number),[]);
@@ -25,7 +25,7 @@ test('current special layouts survive the sheet cutover',()=>{
 });
 test('the newest artwork wave is directly renderable and assigned',()=>{
  const d=sync.apply(baseline()),fresh=d.artworks.filter(a=>+a.id.slice(4)>553);
- assert.equal(fresh.length,54);assert.ok(fresh.every(a=>/^https:\/\//.test(a.imageUrl)),fresh.filter(a=>!a.imageUrl).map(a=>a.id).join(','));
+ assert.equal(fresh.length,55);assert.ok(fresh.every(a=>/^https:\/\//.test(a.imageUrl)),fresh.filter(a=>!a.imageUrl).map(a=>a.id).join(','));
  assert.equal(d.cards.find(c=>c.number===84).primaryArt,'ART-582');
  assert.match(d.artworks.find(a=>a.id==='ART-582').credit,/Marie-Lan Nguyen.*CC BY 2.5/);
  assert.equal(d.cards.find(c=>c.number===84).primaryArt,'ART-582');
@@ -71,6 +71,10 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
  assert.equal(d.cards.find(c=>c.number===65).primaryArt,'ART-419');
  assert.equal(d.coverage.find(c=>c.number===65).status,'SELECTED');
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-419');return [a.imageUrl,a.imageWidth,a.imageHeight,a.rights]})(),['https://collectionapi.metmuseum.org/api/collection/v1/iiif/241307/2346844/main-image',1200,960,'Public Domain / Met Open Access']);
+ assert.equal(d.cards.find(c=>c.number===115).primaryArt,'ART-608');
+ assert.deepEqual([38,115].map(n=>d.coverage.find(c=>c.number===n).status),['SELECTED','SELECTED']);
+ assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-608');return [a.imageUrl,a.imageWidth,a.imageHeight,a.rights]})(),['https://upload.wikimedia.org/wikipedia/commons/5/58/Mesure_du_fond_avec_la_sonde_sur_une_fr%C3%A9gate-Morel_Fatio-img_3163.jpg',1340,985,'Public Domain Mark 1.0; author died 1871; faithful reproduction of public-domain work']);
+ assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-192');return [a.imageUrl,a.imageWidth,a.imageHeight]})(),['https://api.nga.gov/iiif/e80f3c24-43ba-4184-861d-f5d489bbab57/full/full/0/default.jpg',4096,3046]);
  assert.deepEqual((()=>{const a=d.artworks.find(x=>x.id==='ART-432');return [a.imageUrl,a.imageWidth,a.imageHeight]})(),['https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Eumaeus%2C_Oddyseus_and_Melanthius.tif/lossy-page1-960px-Eumaeus%2C_Oddyseus_and_Melanthius.tif.jpg',960,1142]);
  assert.match(d.artworks.find(a=>a.id==='ART-181').subjects,/Elpenor/);
  assert.doesNotMatch(d.artworks.find(a=>a.id==='ART-181').subjects,/Agamemnon/);
@@ -92,13 +96,13 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
 });
 test('Studio loads the sheet sync before model construction and links the current card source',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- const data=app.indexOf('odyssey-data.js?v=20260927-flavor1'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art31'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260927-art31'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
+ const data=app.indexOf('odyssey-data.js?v=20260927-flavor1'),syncPos=app.indexOf('live-sheet-sync.js?v=20260927-art32'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260927-art32'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
  assert.ok(data>=0&&syncPos>data&&patchPos>syncPos&&model>patchPos);
  assert.match(app,/ART-430\.1cce9d409251\.full\.webp/);
  assert.match(app,/function stalePackagedArtOverride/);
  assert.match(app,/cropProfileReset/);
- assert.match(app,/PUBLISHED_ART_URL_UPDATES=\{'ART-239'.*'ART-432'.*'ART-604'.*'ART-605'.*'ART-606'.*'ART-607'/);
+ assert.match(app,/PUBLISHED_ART_URL_UPDATES=\{'ART-239'.*'ART-432'.*'ART-604'.*'ART-605'.*'ART-606'.*'ART-607'.*'ART-608'/);
  assert.match(app,/const vals=\[PUBLISHED_ART_URL_UPDATES\[a\.id\],verified,resolvedArtUrls\[a\.id\]/);
  assert.match(app,/1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE\/edit/);
- const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-flavor1-art34/);
+ const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260927-flavor1-art35/);
 });
