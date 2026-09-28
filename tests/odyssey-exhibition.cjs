@@ -16,3 +16,11 @@ const production=C.catalogue(dataset,sandbox.window.ODYSSEY_ARTWORK_MANIFEST);as
 const missing=[];for(const a of production.arts.values())for(const u of [a.image,a.thumb])if(u?.startsWith('/mtgtools/')&&!fs.existsSync(path.join(root,'public',u)))missing.push(u);
 for(const n of Object.values(C.PIPS))assert(fs.existsSync(path.join(root,'public/mtgtools/odyssey/assets/mana-pips',n+'.png')),'Missing mana asset '+n);
 console.log(JSON.stringify({suite:'Odyssey exhibition',status:'passed',cards:production.cards.length,assignedImages:production.cards.filter(x=>x.image).length,exhibitionWorks:production.exhibition.length,media:Object.fromEntries(C.chapters.map(ch=>[ch.key,production.exhibition.filter(a=>a.kind===ch.key).length])),missingPublishedAssets:[...new Set(missing)].slice(0,10)},null,2));
+
+const cutoff=Date.parse(C.previewClosesAt);assert(C.previewOpen(cutoff-1));assert(!C.previewOpen(cutoff));assert(!C.previewOpen(cutoff+1));
+const ordeals=production.cards.filter(c=>/^Ordeal of /.test(c.displayName));assert.equal(ordeals.length,5);assert(ordeals.every(c=>/Survival/.test(c.rules)));
+for(const feature of [...C.mechanics,...C.themes])for(const n of feature.featured)assert(production.cards.some(c=>c.number===n),'Missing editorial feature card '+n);
+assert.equal(C.mechanics.length,4);assert(!C.mechanics.some(m=>/Prepare|Manifest hope/i.test(m.name)));
+const generated=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/public-renderer.generated.js'),'utf8');new vm.Script(generated);
+assert(!/localStorage|sessionStorage|\/mtgtools\/odyssey\/api\//.test(generated),'Read-only renderer must not depend on editor storage or synchronization');
+console.log(JSON.stringify({features:C.mechanics.map(m=>({id:m.id,featured:m.featured,matches:production.cards.filter(m.match).length})),ordeals:ordeals.map(c=>c.displayName),previewClosesAt:C.previewClosesAt},null,2));
