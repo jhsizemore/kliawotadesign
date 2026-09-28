@@ -84,6 +84,8 @@ function renderMediumShowcase(key){
 }
 function artHistory(){
   const all=eligibleArt();if(!all.length)return;
+  const institutions=[...new Set(all.map(a=>a.institution||a.collection).filter(Boolean))],media=[...new Set(all.map(mediumKey))].filter(k=>k!=='other');
+  if($('#artCollectionStats'))$('#artCollectionStats').innerHTML='<div><strong>'+all.length+'</strong><span>sourced works with resolved images</span></div><div><strong>'+institutions.length+'</strong><span>institutions / collections represented</span></div><div><strong>'+media.length+'</strong><span>historical media families visible</span></div>';
   const hero=all[0],u=artImage(hero);
   if($('#heroArtLayer'))$('#heroArtLayer').style.backgroundImage=u?'url("'+String(u).replace(/"/g,'%22')+'")':'none';
   if($('#heroArtCredit'))$('#heroArtCredit').innerHTML='<strong>'+esc(hero.title||'Untitled')+'</strong> · '+esc(artMetaLine(hero))+(hero.source?' · <a href="'+esc(hero.source)+'" target="_blank" rel="noopener">source ↗</a>':'');
