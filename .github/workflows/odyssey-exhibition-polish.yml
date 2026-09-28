@@ -70,12 +70,17 @@ jobs:
           assert set(staged)==allowed,'Revision is incomplete'
           for name,data in staged.items():
               path=Path(name);path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
-          # The extracted native mana table must be bound in the renderer's isolated scope.
-          generator=Path('scripts/build-odyssey-public-renderer.cjs')
-          text=generator.read_text()
-          old='const manaHTML=cost=>window.OdysseyPolish.costHTML(cost,pips)'
-          assert text.count(old)==1
+          generator=Path('scripts/build-odyssey-public-renderer.cjs');text=generator.read_text()
+          old='const manaHTML=cost=>window.OdysseyPolish.costHTML(cost,pips)';assert text.count(old)==1
           generator.write_text(text.replace(old,'const pips=MANA_PIP_DATA;'+old))
+          test=Path('tests/odyssey-exhibition-browser.py');text=test.read_text()
+          old="        page.on('pageerror', lambda e: errors.append(str(e)))"
+          assert text.count(old)==1
+          text=text.replace(old,old+"\n        page.on('console', lambda m: print('BROWSER ERROR:', m.text, flush=True) if m.type=='error' else None)")
+          old="        async with page.expect_download(timeout=60000) as event:\n            await page.locator('#promoDownload').click()\n        await (await event.value).save_as(str(OUT/'studio-reveal-portrait.png'))"
+          assert text.count(old)==1
+          new="        try:\n            async with page.expect_download(timeout=60000) as event:\n                await page.locator('#promoDownload').click()\n            await (await event.value).save_as(str(OUT/'studio-reveal-portrait.png'))\n        except Exception:\n            status=await page.locator('#promoStatus').inner_text()\n            print('EXPORT FAILURE STATUS:',status,flush=True)\n            (OUT/'export-failure.json').write_text(json.dumps({'status':status,'errors':errors}))\n            await page.screenshot(path=str(OUT/'export-failure.png'))\n            raise"
+          test.write_text(text.replace(old,new))
           Path('test-results').mkdir(exist_ok=True)
           Path('test-results/revision-files.json').write_text(json.dumps(sorted(staged)))
           PY
@@ -91,7 +96,7 @@ jobs:
       - name: Test complete candidate file and revised experience
         run: |
           python -m http.server 8765 --directory public > /tmp/exhibition-http.log 2>&1 &
-          python tests/odyssey-exhibition-browser.py
+          python -u tests/odyssey-exhibition-browser.py
       - name: Save real browser evidence
         if: always()
         uses: actions/upload-artifact@v4
