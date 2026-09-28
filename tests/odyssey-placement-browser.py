@@ -1,4 +1,4 @@
-"""Real Studio/Scry pages; only authorized Google publication boundary is mocked.
+"""Real Studio/Scry pages; only the authorized Google publication boundary is mocked.
 Server Google write/read-back behavior is independently covered by unit tests.
 """
 import asyncio, json, os
@@ -11,6 +11,8 @@ FIELDS=['artHeight','frameStyle','fit','zoom','focusX','focusY']
 async def main():
  published={'schema':SCHEMA,'revision':0,'records':{}}
  live={};requests=[];errors=[]
+ def error(label,e):
+  errors.append(label+': '+str(e));print(errors[-1],flush=True)
  def eq(a,b):
   if a is None or b is None:return a is b
   return all(a.get(k)==b.get(k) for k in a if k not in ['updatedAt','revision'])
@@ -27,7 +29,8 @@ async def main():
   if b['action']=='review':return await route.fulfill(json={'schema':SCHEMA,'records':live,**plan})
   if plan['conflicts']:return await route.fulfill(status=409,json={'error':'Sheet placements changed.',**plan})
   for d in plan['writes']:
-   k=d['after']['cardId']+'|'+d['after']['face'];live[k]={**d['after'],'revision':live.get(k,{}).get('revision',0)+1,'updatedAt':'2026-09-29T00:00:00Z'}
+   k=d['after']['cardId']+'|d' if False else d['after']['cardId']+'|'+d['after']['face']
+   live[k]={**d['after'],'revision':live.get(k,{}).get('revision',0)+1,'updatedAt':'2026-09-29T00:00:00Z'}
   published['revision']+=1;published['records']=json.loads(json.dumps(live))
   return await route.fulfill(json={**published,'verified':True,'written':len(plan['writes'])})
  async with async_playwright() as p:
@@ -37,9 +40,13 @@ async def main():
   context=await browser.new_context(viewport={'width':1440,'height':1050},reduced_motion='reduce')
   await context.route('**/api/art-placement',endpoint)
   await context.add_init_script("window.ODYSSEY_SHEET_TEST_TOKEN='test-google-credential';if(!sessionStorage.getItem('seeded')){localStorage.setItem('odyssey-layout-overrides-v02',JSON.stringify({'61':{zoom:1.8,focusX:24,focusY:-33,fit:'cover',displayName:'PRIVATE NAME TEST'}}));sessionStorage.setItem('seeded','1');}")
-  studio=await context.new_page();studio.on('pageerror',lambda e:errors.append('Studio: '+str(e)))
+  studio=await context.new_page();studio.on('pageerror',lambda e:error('Studio',e))
   await studio.goto(BASE+'/mtgtools/odyssey/',wait_until='domcontentloaded')
-  await studio.wait_for_function('!!window.OdysseyPlacementStudio',timeout=40000)
+  try:await studio.wait_for_function('!!window.OdysseyPlacementStudio',timeout=40000)
+  except Exception:
+   await studio.screenshot(path=str(OUT/'studio-boot-failure.png'))
+   diagnostic=await studio.evaluate("({ready:document.readyState,model:typeof model,rootModel:typeof window.model,placement:typeof window.OdysseyPlacement,studio:typeof window.OdysseyPlacementStudio,version:typeof ODYSSEY_DATASET==='undefined'?null:ODYSSEY_DATASET.datasetVersion,original:window.ODYSSEY_DATA?.datasetVersion,text:document.body.innerText.slice(0,2000),scripts:[...document.scripts].map(s=>s.src)})")
+   diagnostic['pageErrors']=errors;(OUT/'startup-failure.json').write_text(json.dumps(diagnostic,indent=2));print(json.dumps(diagnostic),flush=True);raise
   await studio.evaluate('selectCard(61)')
   assert await studio.evaluate('model(61).zoom')==1.8
   assert await studio.evaluate('OdysseyPlacementStudio.changes().some(d=>d.after.cardId==="ODY-061")')
@@ -58,7 +65,7 @@ async def main():
   public_context=await browser.new_context(viewport={'width':1440,'height':1050},reduced_motion='reduce')
   await public_context.route('**/api/art-placement',endpoint)
   await public_context.add_init_script("const native=Storage.prototype.getItem;Storage.prototype.getItem=function(k){if(String(k).startsWith('odyssey-'))throw Error('Private editor storage read: '+k);return native.call(this,k)}")
-  scry=await public_context.new_page();scry.on('pageerror',lambda e:errors.append('Scry: '+str(e)))
+  scry=await public_context.new_page();scry.on('pageerror',lambda e:error('Scry',e))
   await scry.goto(BASE+'/mtgtools/Odyssey/scry/?view=cards#card-61',wait_until='domcontentloaded')
   await scry.wait_for_function('window.OdysseyStudioRenderer?.engine?.model(61)?.zoom===1.8',timeout=45000)
   assert await scry.evaluate('OdysseyStudioRenderer.engine.model(61).displayName')!='PRIVATE NAME TEST'
@@ -75,7 +82,7 @@ async def main():
   await scry.set_viewport_size({'width':390,'height':900});await scry.screenshot(path=str(OUT/'scry-published-390.png'))
   await studio.evaluate("selected=61;setCropField('zoom',2.25)")
   assert await scry.evaluate('OdysseyStudioRenderer.engine.model(61).zoom')==1.8
-  preview=await context.new_page();preview.on('pageerror',lambda e:errors.append('Preview: '+str(e)))
+  preview=await context.new_page();preview.on('pageerror',lambda e:error('Preview',e))
   await preview.goto(BASE+'/mtgtools/Odyssey/scry/?placementPreview=1&view=cards#card-61',wait_until='domcontentloaded')
   await preview.wait_for_function('window.OdysseyStudioRenderer?.engine?.model(61)?.zoom===2.25',timeout=45000)
   assert await preview.get_by_text('LOCAL ARTWORK PREVIEW',exact=False).count()==1
@@ -92,7 +99,7 @@ async def main():
   assert await scry.evaluate('OdysseyStudioRenderer.engine.model(61).zoom')==3
   assert await scry.evaluate('document.querySelector("#detailVisual odyssey-studio-card").model.zoom')==3,'Existing custom element did not refresh'
   await studio.locator('[data-close]').click()
-  await studio.evaluate("selected=61;resetCrop()")
+  await studio.evaluate("selected=61;document.getElementById('resetCrop').click()")
   reset=await studio.evaluate('OdysseyPlacementStudio.changes().find(d=>d.after.cardId==="ODY-061")')
   assert reset and reset['after']['zoom']==1 and reset['after']['focusX']==0 and reset['before']['zoom']==3
   await studio.reload(wait_until='domcontentloaded');await studio.wait_for_function('window.OdysseyPlacementStudio',timeout=45000)
@@ -102,6 +109,6 @@ async def main():
   assert len(all_cards)==309 and all(r.get('ok') for r in all_cards)
   assert not errors,'\n'.join(errors)
   result={'status':'passed','realCards':309,'nativeStudioRenderer':True,'legacySavedCropMigrated':True,'studioSheetScryRoundtrip':True,'readOnlyVisitor':True,'unpublishedDraftIsolated':True,'explicitLocalPreview':True,'sheetConflictPreservesDraft':True,'useSheetThenPublish':True,'existingCardRerenders':True,'resetPersistsReload':True,'changedArtworkGuard':True,'responsiveGeometry':ratios,'pageErrors':errors,'googleBoundary':'mocked; server Google protocol separately tested; no real spreadsheet writes'}
-  (OUT/'results.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
+  (OUT/'results.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2),flush=True)
   await browser.close()
 asyncio.run(main())
