@@ -29,7 +29,7 @@ jobs:
               for p in Path(root).rglob('*'):
                   if not p.is_file(): continue
                   text=p.suffix in ['.html','.js','.cjs','.mjs','.css','.json','.md','.yml','.py','.ts','.toml'] and p.stat().st_size<10000000
-                  image=('assets/artwork/' in str(p) and p.suffix=='.webp') or 'assets/mana-pips/' in str(p)
+                  image=('assets/artwork/' in str(p) and p.name.endswith('.thumb.webp')) or 'assets/mana-pips/' in str(p)
                   if text or image: files.append(p)
           with zipfile.ZipFile('test-results/studio-source.zip','w',zipfile.ZIP_DEFLATED) as z:
               for p in files:z.write(p)
@@ -38,6 +38,6 @@ jobs:
       - name: Save integration source
         uses: actions/upload-artifact@v4
         with:
-          name: odyssey-studio-source-lean
+          name: odyssey-studio-source-small
           path: test-results/studio-source.zip
           retention-days: 3
