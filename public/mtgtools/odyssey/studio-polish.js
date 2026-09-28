@@ -150,7 +150,8 @@
       if(rules?.dataset.fitState==='overflow'){card.classList.add('od-rules-compact');oldFit(card);}
       if(rules?.dataset.fitState==='overflow'&&!card.matches('.kind-saga,.kind-battle')&&card.offsetWidth){
         const scale=card.offsetWidth/378,art=card.querySelector('.artbox'),typebar=card.querySelector('.typebar');
-        const amount=Math.min(24*scale,Math.max(14*scale,rules.scrollHeight-rules.clientHeight+8*scale));
+        // Dense published cards, including Ogygia, can need 40 design pixels to keep flavour inside the frame.
+        const amount=Math.min(40*scale,Math.max(14*scale,rules.scrollHeight-rules.clientHeight+8*scale));
         const move=(element,property,delta)=>{
           if(!element)return;
           const current=parseFloat(getComputedStyle(element)[property]);if(!Number.isFinite(current))return;
