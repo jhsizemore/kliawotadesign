@@ -194,3 +194,20 @@ A candidate should not count as confirmed until it passes:
 9. final editorial review.
 
 Until that exists in the data model, the public count remains **0 confirmed**.
+
+
+## Art-history standard
+
+The public visual identity should be built from the sourced artwork library rather than generic fantasy illustration.
+
+Required presentation rules:
+- no AI-generated artwork in the Odyssey art program;
+- show artist/maker, title, date, medium and institution/collection whenever those fields exist;
+- expose the canonical museum/archive source link;
+- distinguish media families visually (pottery/ceramics, metalwork, stone/sculpture, drawing, painting, printmaking);
+- use large historical artworks as page backgrounds and mechanic splashes without stripping away attribution;
+- keep artwork gaps visible rather than filling them with synthetic substitutes;
+- treat provenance as educational content, not a hidden legal note;
+- use the live artwork dataset to generate collection counts and showcase sections so claims remain tied to actual records.
+
+The intended outcome is a Magic fan set that also functions as an accessible art-history trail through the Odyssey: the player should encounter different periods, materials, institutions and artists simply by browsing the set.
