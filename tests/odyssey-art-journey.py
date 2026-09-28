@@ -84,9 +84,15 @@ async def main():
         await page.set_viewport_size({'width':1440,'height':1050})
         await screenshot(page,'#route-landfalls','landfalls.png')
         await page.get_by_role('button',name='Open spoiler ↗',exact=True).click()
-        while await page.locator('#loadMore').is_visible():
-            await page.locator('#loadMore').click()
-            await page.wait_for_timeout(100)
+        # Scrolling to Load more also triggers the auto-loader, which can hide
+        # the target before a pointer click. Exercise its actual click handler
+        # without scrolling and still require every native card below.
+        for _ in range(10):
+            before=await page.locator('#cardGrid odyssey-studio-card').count()
+            if before>=309:
+                break
+            await page.locator('#loadMore').evaluate('(button)=>{if(!button.hidden&&!button.disabled)button.click();}')
+            await page.wait_for_function('(before)=>document.querySelectorAll("#cardGrid odyssey-studio-card").length>before',arg=before,timeout=10000)
         assert await page.locator('#cardGrid odyssey-studio-card').count()==309
         overflow=await page.locator('#cardGrid odyssey-studio-card').evaluate_all('''els=>els.filter(e=>e.dataset.renderError||e.shadowRoot.querySelector('.rules')?.dataset.fitState==='overflow'||e.shadowRoot.querySelector('.name')?.dataset.fitState==='overflow').map(e=>e.getAttribute('number'))''')
         assert not overflow,overflow
