@@ -1,0 +1,32 @@
+name: Odyssey artwork journey review
+on:
+  push:
+    branches: [odyssey-art-journey]
+    paths: ['.github/workflows/odyssey-art-journey.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect current presentation source
+        run: |
+          mkdir -p test-results
+          python - <<'PY'
+          import zipfile
+          from pathlib import Path
+          with zipfile.ZipFile('test-results/source.zip','w',zipfile.ZIP_DEFLATED) as z:
+            roots=['public/mtgtools/Odyssey/scry','tests','scripts']
+            for root in roots:
+              for p in Path(root).glob('**/*'):
+                if p.is_file() and p.suffix in ['.js','.css','.html','.cjs','.py','.md']: z.write(p)
+            for s in ['public/mtgtools/odyssey/public-renderer.generated.js','public/mtgtools/odyssey/studio-polish.js','package.json']:
+              z.write(s)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-art-journey-source
+          path: test-results/source.zip
+          retention-days: 3
