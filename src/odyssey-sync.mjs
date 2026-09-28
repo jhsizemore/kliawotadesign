@@ -1,4 +1,5 @@
 import core from '../public/mtgtools/odyssey/art-sync-core.js';
+import { placementWorkspace } from './odyssey-placement.mjs';
 
 const API = '/mtgtools/odyssey/api/art-sync';
 const NOTES_API = '/mtgtools/odyssey/api/review-notes';
@@ -329,6 +330,11 @@ export class OdysseyArtWorkspace {
 
   async fetch(request) {
     const url = new URL(request.url);
+    if (url.pathname === '/mtgtools/odyssey/api/art-placement') {
+      const task = (this.placementTail || Promise.resolve()).then(() => placementWorkspace(request, this.ctx.storage));
+      this.placementTail = task.catch(() => {});
+      return task;
+    }
     if (url.pathname === NOTES_API) return this.fetchNotes(request);
     if (url.pathname === FINISH_API) return this.fetchFinishing(request);
 
