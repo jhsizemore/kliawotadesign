@@ -16,7 +16,7 @@ jobs:
       - run: python -m pip install -q Pillow==11.3.0
       - name: Import approved image without redrawing
         env:
-          LOGO_URL: 'https://media.canva.com/v2/image-resize/format:PNG/height:421/quality:100/uri:ifs%3A%2F%2FM%2F187f623b-b600-40b6-b703-bc48cdb8414b/watermark:F/width:1851?csig=AAAAAAAAAAAAAAAAAAAAAGfIJOKP73DA_cuutqCE6LIKvXfC-yfRunM3LP3FlRCy&exp=1790610449&osig=AAAAAAAAAAAAAAAAAAAAAOIxbDOxy8f424HmERvKc1jwAD8_EC_lmJ6LUqXk3Bh0&signer=media-rpc&x-canva-quality=thumbnail'
+          LOGO_URL: 'https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-a9a4-81fa-9700-0dce6aa070e0/raw?se=2026-09-28T11%3A47%3A09Z&sp=r&sv=2026-02-06&sr=b&scid=20987d95-2192-5c3d-bc6e-aec91892dd07&skoid=b7fc319f-b93c-4fac-ba5f-14fdc3f9209f&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-28T11%3A10%3A15Z&ske=2026-09-29T11%3A10%3A15Z&sks=b&skv=2026-02-06&sig=gjdxzRyyQCncv8E4O9OscaNsnu9E2IVdoaf3r%2BL%2BQmI%3D'
         run: |
           python - <<'PY'
           import os, io, json, hashlib, urllib.request
@@ -24,23 +24,24 @@ jobs:
           from PIL import Image, ImageDraw, ImageFont
           path = Path('public/mtgtools/Odyssey/scry/assets/brand')
           path.mkdir(parents=True, exist_ok=True)
-          request = urllib.request.Request(os.environ['LOGO_URL'], headers={'User-Agent': 'Mozilla/5.0'})
+          request = urllib.request.Request(os.environ['LOGO_URL'], headers={'User-Agent': 'Odyssey-website-build'})
           with urllib.request.urlopen(request, timeout=45) as response:
               data = response.read(8000000)
+          assert hashlib.sha256(data).hexdigest() == 'e5fc4e98f58ed6052787208f1305d84396c5aafb87a1425fea8e504ef7a0b39c', 'Source must match the approved local PNG exactly'
           source = Image.open(io.BytesIO(data))
           assert source.size == (1851,421), f'Wrong source resolution: {source.size}'
           assert 'A' in source.getbands(), 'Transparent source required'
           image = source.convert('RGBA')
           assert image.getchannel('A').getextrema() == (0,255), 'Transparency was lost'
-          image.save(path/'the-odyssey-logo.png', optimize=True)
+          (path/'the-odyssey-logo.png').write_bytes(data)
           for width in (400,960,1851):
               scaled = image if width == image.width else image.resize((width, round(image.height*width/image.width)), Image.Resampling.LANCZOS)
-              scaled.save(path/f'the-odyssey-logo-{width}.webp', quality=88, method=4)
+              scaled.save(path/f'the-odyssey-logo-{width}.webp', quality=88, method=3)
           preview = Image.new('RGBA',(1200,630),'#142a2e')
           draw = ImageDraw.Draw(preview)
           draw.line((72,78,1128,78), fill='#ae8c54', width=2)
           logo = image.resize((1060,round(image.height*1060/image.width)), Image.Resampling.LANCZOS)
-          preview.alpha_composite(logo,(70,160))
+          preview.alpha_composite(logo,(70,150))
           fontdir='/usr/share/fonts/truetype/dejavu/'
           regular=ImageFont.truetype(fontdir+'DejaVuSans.ttf',23)
           bold=ImageFont.truetype(fontdir+'DejaVuSans.ttf',42)
