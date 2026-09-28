@@ -1,17 +1,21 @@
 name: Odyssey exhibition verification
 on:
   push:
-    branches: [main, odyssey-art-first-exhibition]
+    branches: [main, odyssey-exhibition-studio-polish]
     paths:
       - 'public/mtgtools/Odyssey/scry/**'
-      - 'public/mtgtools/odyssey/data/**'
+      - 'public/mtgtools/odyssey/**'
+      - 'scripts/build-odyssey-public-renderer.cjs'
       - 'tests/odyssey-exhibition*'
+      - 'package.json'
       - '.github/workflows/odyssey-exhibition-check.yml'
   pull_request:
     paths:
       - 'public/mtgtools/Odyssey/scry/**'
-      - 'public/mtgtools/odyssey/data/**'
+      - 'public/mtgtools/odyssey/**'
+      - 'scripts/build-odyssey-public-renderer.cjs'
       - 'tests/odyssey-exhibition*'
+      - 'package.json'
       - '.github/workflows/odyssey-exhibition-check.yml'
   workflow_dispatch:
 permissions:
@@ -22,22 +26,26 @@ concurrency:
 jobs:
   exhibition:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Test adapter against published data
-        run: node tests/odyssey-exhibition.cjs
+      - name: Install build dependencies without changing the committed renderer
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Verify source parity and published data
+        run: |
+          node scripts/build-odyssey-public-renderer.cjs --check
+          node tests/odyssey-exhibition.cjs
       - name: Install browser test dependency
         run: |
-          python -m pip install playwright==1.57.0
-          python -m playwright install --with-deps chromium
+          python -m pip install -q playwright==1.57.0
+          python -m playwright install --with-deps chromium > /tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
       - name: Run real-data browser checks
         run: |
           python -m http.server 8765 --directory public > /tmp/odyssey-exhibition-http.log 2>&1 &
-          python tests/odyssey-exhibition-browser.py
+          python -u tests/odyssey-exhibition-browser.py
       - name: Save visual checks
         if: always()
         uses: actions/upload-artifact@v4
