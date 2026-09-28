@@ -26,8 +26,77 @@ function cardHTML(c,{meta=true}={}){
 <div class="typebar">${esc(type)}</div>
 <div class="rules">${richText(rules)}${flavor?'<span class="flavor">'+richText(flavor)+'</span>':''}</div>
 <div class="footerline"><span>ODY · ${String(n).padStart(3,'0')} · ${rarity(c.rarity)}</span>${pt?'<span class="pt">'+esc(pt)+'</span>':''}</div>
-</div></div></div>${meta?'<div class="tile-meta"><div class="tile-title">'+esc(name)+'</div><div class="tile-sub">#'+String(n).padStart(3,'0')+' · '+esc(type)+'</div></div>':''}</article>`}
+</div></div></div>${meta?'<div class="tile-meta"><div class="tile-title">'+esc(name)+'</div><div class="tile-sub">#'+String(n).padStart(3,'0')+' · '+esc(type)+'</div>'+artCreditHTML(c,{compact:true})+'</div>':''}</article>`}
 function hydrateArt(d){(d.artworks||[]).forEach(a=>state.art.set(a.id,a))}
+function artRecordForCard(c){return state.art.get(c?.artId)||null}
+function artImage(a){
+  if(!a)return'';
+  const direct=a.imageUrl||a.thumbUrl||a.thumbnail||'';
+  if(direct)return direct;
+  const c=state.all.find(card=>card.artId===a.id&&artFor(card));
+  return c?artFor(c):'';
+}
+function artCreditHTML(c,{compact=false}={}){
+  const a=artRecordForCard(c);if(!a)return'';
+  const bits=[a.artist||a.maker||'Unknown maker',a.title||'',a.date||'',a.medium||'',a.institution||a.collection||''].filter(Boolean);
+  if(compact)return '<div class="tile-art-credit"><strong>'+esc(a.artist||a.maker||'Unknown maker')+'</strong> · '+esc(a.title||a.medium||a.date||'Artwork record')+'</div>';
+  return '<div class="dialog-art-credit"><div class="label">ART HISTORY RECORD · NO AI ART</div><h4>'+esc(a.title||'Untitled artwork')+'</h4><p><strong>'+esc(a.artist||a.maker||'Unknown maker')+'</strong>'+[a.date,a.medium,a.institution||a.collection,a.rights].filter(Boolean).map(x=>' · '+esc(x)).join('')+'</p>'+(a.source?'<a href="'+esc(a.source)+'" target="_blank" rel="noopener">View canonical collection record ↗</a>':'')+'</div>';
+}
+const MEDIUM_GROUPS=[
+  {key:'pottery',label:'Pottery & vase',terms:['terracotta','ceramic','pottery','vase','amphora','krater','kylix','hydria','lekythos','oinochoe','clay']},
+  {key:'metal',label:'Bronze, iron & metal',terms:['bronze','iron','metal','silver','gold','copper','brass']},
+  {key:'stone',label:'Stone & sculpture',terms:['marble','limestone','stone','sculpture','relief','statu','granite']},
+  {key:'drawing',label:'Drawing & sketch',terms:['drawing','sketch','chalk','charcoal','pencil','graphite','ink','wash']},
+  {key:'painting',label:'Painting',terms:['oil','tempera','painting','painted','fresco','canvas','panel','watercolor','watercolour','gouache']},
+  {key:'print',label:'Prints & engraving',terms:['print','etching','engraving','lithograph','woodcut','mezzotint','aquatint']},
+  {key:'other',label:'Other historical media',terms:[]}
+];
+function mediumKey(a){
+  const t=((a?.medium||'')+' '+(a?.title||'')).toLowerCase();
+  for(const g of MEDIUM_GROUPS.slice(0,-1))if(g.terms.some(term=>t.includes(term)))return g.key;
+  return'other';
+}
+function artScore(a){
+  const hero=Number(a?.heroScore)||0,hasImage=artImage(a)?20:0,hasSource=a?.source?5:0,hasInstitution=(a?.institution||a?.collection)?4:0,hasMedium=a?.medium?3:0,hasDate=a?.date?2:0;
+  return hero*20+hasImage+hasSource+hasInstitution+hasMedium+hasDate;
+}
+function artMetaLine(a){
+  return [a?.artist||a?.maker||'Unknown maker',a?.date,a?.medium,a?.institution||a?.collection].filter(Boolean).join(' · ');
+}
+function eligibleArt(){
+  return [...state.art.values()].filter(a=>artImage(a)).sort((a,b)=>artScore(b)-artScore(a));
+}
+function setMuseumSplash(a){
+  if(!a)return;
+  const u=artImage(a),img=$('#museumSplashImage');if(img)img.style.backgroundImage=u?'url("'+String(u).replace(/"/g,'%22')+'")':'none';
+  if($('#museumSplashTitle'))$('#museumSplashTitle').textContent=a.title||'Untitled artwork';
+  if($('#museumSplashMeta'))$('#museumSplashMeta').textContent=artMetaLine(a)+(a.rights?' · '+a.rights:'');
+  const link=$('#museumSplashSource');if(link){link.hidden=!a.source;if(a.source)link.href=a.source}
+}
+function renderMediumShowcase(key){
+  const group=MEDIUM_GROUPS.find(g=>g.key===key)||MEDIUM_GROUPS[0],all=eligibleArt(),arts=all.filter(a=>mediumKey(a)===group.key).slice(0,12);
+  document.querySelectorAll('#mediumNav button').forEach(b=>b.classList.toggle('active',b.dataset.medium===group.key));
+  $('#mediumShowcase').innerHTML=arts.length?arts.map(a=>`<article class="art-tile" data-art-id="${esc(a.id)}">
+    <div class="art-tile-image" style="background-image:url(&quot;${esc(artImage(a)).replace(/"/g,'%22')}&quot;)"></div>
+    <div class="art-tile-copy"><div class="art-tile-medium">${esc(group.label.toUpperCase())}</div><div class="art-tile-title">${esc(a.title||'Untitled')}</div><div class="art-tile-meta">${esc(artMetaLine(a))}</div>${a.source?'<a class="art-tile-source" href="'+esc(a.source)+'" target="_blank" rel="noopener">Collection record ↗</a>':''}</div>
+  </article>`).join(''):'<div class="art-empty">No resolved '+esc(group.label.toLowerCase())+' works are currently in the live artwork library.</div>';
+  $('#mediumShowcase').querySelectorAll('.art-tile').forEach(t=>t.addEventListener('click',e=>{if(e.target.closest('a'))return;const a=state.art.get(t.dataset.artId);setMuseumSplash(a);$('#museumSplash').scrollIntoView({behavior:'smooth',block:'center'})}));
+}
+function artHistory(){
+  const all=eligibleArt();if(!all.length)return;
+  const hero=all[0],u=artImage(hero);
+  if($('#heroArtLayer'))$('#heroArtLayer').style.backgroundImage=u?'url("'+String(u).replace(/"/g,'%22')+'")':'none';
+  if($('#heroArtCredit'))$('#heroArtCredit').innerHTML='<strong>'+esc(hero.title||'Untitled')+'</strong> · '+esc(artMetaLine(hero))+(hero.source?' · <a href="'+esc(hero.source)+'" target="_blank" rel="noopener">source ↗</a>':'');
+  setMuseumSplash(hero);
+  const available=MEDIUM_GROUPS.map(g=>({g,count:all.filter(a=>mediumKey(a)===g.key).length})).filter(x=>x.count);
+  $('#mediumNav').innerHTML=available.map(({g,count},i)=>'<button type="button" data-medium="'+g.key+'" class="'+(i===0?'active':'')+'">'+esc(g.label)+' · '+count+'</button>').join('');
+  $('#mediumNav').onclick=e=>{const b=e.target.closest('[data-medium]');if(b)renderMediumShowcase(b.dataset.medium)};
+  if(available[0])renderMediumShowcase(available[0].g.key);
+  const showcaseCards=[...state.all].filter(c=>artRecordForCard(c)&&artFor(c)).sort((a,b)=>artScore(artRecordForCard(b))-artScore(artRecordForCard(a))).filter((c,i,arr)=>arr.findIndex(x=>x.artId===c.artId)===i).slice(0,8);
+  $('#artCardShowcase').innerHTML=showcaseCards.map(c=>{const a=artRecordForCard(c);return '<article class="art-card-item">'+cardHTML(c,{meta:false})+'<div class="art-card-attribution"><strong>'+esc(a.title||'Untitled')+'</strong>'+esc(artMetaLine(a))+(a.source?'<br><a href="'+esc(a.source)+'" target="_blank" rel="noopener">Museum / archive record ↗</a>':'')+'</div></article>'}).join('');
+  $('#artCardShowcase').querySelectorAll('.card-tile').forEach(t=>t.onclick=()=>openCard(state.all.find(c=>+c.number===+t.dataset.number)));
+}
+
 function textBlob(c){return [c.name,c.displayName,c.type,c.rules,c.flavor,c.mechanics,c.archetypes,c.story].filter(Boolean).join(' ').toLowerCase()}
 function applyFilters(reset=true){const q=$('#search').value.trim().toLowerCase(),cf=$('#colorFilter').value,rf=$('#rarityFilter').value,sort=$('#sort').value;let a=state.all.filter(c=>(!q||textBlob(c).includes(q))&&(!cf||normFrame(c)===cf)&&(!rf||rarity(c.rarity)===rf));a.sort((x,y)=>sort==='name'?String(x.displayName||x.name).localeCompare(String(y.displayName||y.name)):sort==='rarity'?rarity(x.rarity).localeCompare(rarity(y.rarity))||(+x.number-+y.number):sort==='color'?normFrame(x).localeCompare(normFrame(y))||(+x.number-+y.number):(+x.number-+y.number));state.filtered=a;if(reset){state.shown=0;$('#cardGrid').innerHTML=''}renderMore();$('#resultCount').textContent=`${a.length} of ${state.all.length} cards`;$('#activeFilters').textContent=[q&&`Search: “${q}”`,cf&&`Color: ${cf}`,rf&&`Rarity: ${rf}`].filter(Boolean).join(' · ')}
 function renderMore(){if(state.shown>=state.filtered.length){$('#loadSentinel span').textContent=state.filtered.length?'End of set':'No cards match these filters.';return}const slice=state.filtered.slice(state.shown,state.shown+state.batch);$('#cardGrid').insertAdjacentHTML('beforeend',slice.map(c=>cardHTML(c)).join(''));state.shown+=slice.length;$('#loadSentinel span').textContent=state.shown<state.filtered.length?`Loading more… ${state.shown}/${state.filtered.length}`:`All ${state.filtered.length} cards loaded`}
@@ -102,7 +171,7 @@ function renderPromo(){
   $('#promoBg').style.backgroundImage=cssUrl;$('#promoBgMirror').style.backgroundImage=cssUrl;
   $('#promoCards').className='promo-cards count-'+cards.length;
   $('#promoCards').innerHTML=cards.map(c=>cardHTML(c,{meta:false})).join('');
-  $('#promoStatus').textContent=cards.length?cards.length+' card'+(cards.length===1?'':'s')+' selected · background: '+(bg?.displayName||bg?.name||'none'):'Select up to five cards. Card 1 is used as the background by default.';
+  const ba=bg?artRecordForCard(bg):null;$('#promoStatus').textContent=cards.length?cards.length+' card'+(cards.length===1?'':'s')+' selected · background: '+(bg?.displayName||bg?.name||'none')+(ba?' · '+artMetaLine(ba):''):'Select up to five cards. Card 1 is used as the background by default.';
 }
 function loadCanvasImage(url){
   return new Promise((resolve,reject)=>{if(!url)return reject(new Error('no image'));const img=new Image();img.crossOrigin='anonymous';img.referrerPolicy='no-referrer';img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('image unavailable'));img.src=url});
@@ -141,5 +210,5 @@ async function downloadPromo(){
   button.disabled=false;
 }
 
-async function init(){try{const r=await fetch(DATA_URL,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);const d=await r.json();state.all=Array.isArray(d.cards)?d.cards:[];hydrateArt(d);hero();mechanics();applyFilters();setupPromo();const hash=location.hash.match(/^#card-(\d+)$/);if(hash)openCard(state.all.find(c=>+c.number===+hash[1]),false)}catch(e){$('#cardGrid').innerHTML='<p>Odyssey set data could not be loaded. Please refresh the page.</p>';$('#resultCount').textContent='Data unavailable';console.error(e)}}
+async function init(){try{const r=await fetch(DATA_URL,{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);const d=await r.json();state.all=Array.isArray(d.cards)?d.cards:[];hydrateArt(d);hero();artHistory();mechanics();applyFilters();setupPromo();const hash=location.hash.match(/^#card-(\d+)$/);if(hash)openCard(state.all.find(c=>+c.number===+hash[1]),false)}catch(e){$('#cardGrid').innerHTML='<p>Odyssey set data could not be loaded. Please refresh the page.</p>';$('#resultCount').textContent='Data unavailable';console.error(e)}}
 ['search','colorFilter','rarityFilter','sort'].forEach(id=>$('#'+id).addEventListener('input',()=>applyFilters()));document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x===b));state.view=b.dataset.view;$('#cardGrid').classList.toggle('compact',state.view==='compact')});$('#cardGrid').addEventListener('click',e=>{const t=e.target.closest('.card-tile');if(t)openCard(state.all.find(c=>+c.number===+t.dataset.number))});$('#cardGrid').addEventListener('keydown',e=>{if(e.key==='Enter'){const t=e.target.closest('.card-tile');if(t)openCard(state.all.find(c=>+c.number===+t.dataset.number))}});$('#randomCard').onclick=()=>openCard(state.all[Math.floor(Math.random()*state.all.length)]);$('#dialogClose').onclick=()=>{$('#cardDialog').close();history.replaceState(null,'',location.pathname+'#cards')};$('#cardDialog').addEventListener('click',e=>{if(e.target===$('#cardDialog'))$('#dialogClose').click()});new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting))renderMore()},{rootMargin:'900px'}).observe($('#loadSentinel'));init();
