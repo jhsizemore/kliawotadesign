@@ -4,6 +4,7 @@ on:
     branches: [odyssey-exhibition-studio-polish]
     paths:
       - 'scripts/_exhibition_revision_*.json'
+      - 'scripts/_exhibition_export_fix.py'
       - '.github/workflows/odyssey-exhibition-polish.yml'
   workflow_dispatch:
 permissions:
@@ -74,16 +75,15 @@ jobs:
           old='const manaHTML=cost=>window.OdysseyPolish.costHTML(cost,pips)';assert text.count(old)==1
           generator.write_text(text.replace(old,'const pips=MANA_PIP_DATA;'+old))
           test=Path('tests/odyssey-exhibition-browser.py');text=test.read_text()
-          old="        page.on('pageerror', lambda e: errors.append(str(e)))"
-          assert text.count(old)==1
+          old="        page.on('pageerror', lambda e: errors.append(str(e)))";assert text.count(old)==1
           text=text.replace(old,old+"\n        page.on('console', lambda m: print('BROWSER ERROR:', m.text, flush=True) if m.type=='error' else None)")
-          old="        async with page.expect_download(timeout=60000) as event:\n            await page.locator('#promoDownload').click()\n        await (await event.value).save_as(str(OUT/'studio-reveal-portrait.png'))"
-          assert text.count(old)==1
+          old="        async with page.expect_download(timeout=60000) as event:\n            await page.locator('#promoDownload').click()\n        await (await event.value).save_as(str(OUT/'studio-reveal-portrait.png'))";assert text.count(old)==1
           new="        try:\n            async with page.expect_download(timeout=60000) as event:\n                await page.locator('#promoDownload').click()\n            await (await event.value).save_as(str(OUT/'studio-reveal-portrait.png'))\n        except Exception:\n            status=await page.locator('#promoStatus').inner_text()\n            print('EXPORT FAILURE STATUS:',status,flush=True)\n            (OUT/'export-failure.json').write_text(json.dumps({'status':status,'errors':errors}))\n            await page.screenshot(path=str(OUT/'export-failure.png'))\n            raise"
           test.write_text(text.replace(old,new))
           Path('test-results').mkdir(exist_ok=True)
           Path('test-results/revision-files.json').write_text(json.dumps(sorted(staged)))
           PY
+          python scripts/_exhibition_export_fix.py
       - name: Build shared Studio renderer
         run: |
           npm install --no-audit --no-fund
@@ -116,7 +116,7 @@ jobs:
           paths.append('public/mtgtools/odyssey/public-renderer.generated.js')
           assert not any(p.startswith('.github/') for p in paths)
           subprocess.run(['git','add','--',*paths],check=True)
-          subprocess.run(['git','rm','--',*[f'scripts/_exhibition_revision_{n}.json' for n in range(1,6)]],check=True)
+          subprocess.run(['git','rm','--','scripts/_exhibition_export_fix.py',*[f'scripts/_exhibition_revision_{n}.json' for n in range(1,6)]],check=True)
           PY
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
