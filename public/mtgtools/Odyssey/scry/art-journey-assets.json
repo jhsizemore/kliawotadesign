@@ -38,18 +38,18 @@
       },
       "museum": "https://www.ngv.vic.gov.au/explore/collection/work/4457/",
       "face": {
-        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-245-entranced-face.c359024cf5df.webp",
-        "width": 1255,
-        "height": 1944,
-        "bytes": 1002702,
-        "sha256": "c359024cf5df5ccbd562bb623e3c6d53351771c016ba2b6fa5cc735764ec8af3",
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-245-entranced-face.0427eb6461ce.webp",
+        "width": 969,
+        "height": 1215,
+        "bytes": 485198,
+        "sha256": "0427eb6461ce57a8b4bafa9469eaeff7543b6623d056e8379111c4c0fc04df71",
         "sourceRect": [
           0.586,
           0.28,
-          0.7,
-          0.64
+          0.674,
+          0.505
         ],
-        "description": "Detail: Odysseus listening to the Sirens, face and upper body; no retouching or generated pixels."
+        "description": "Detail: Odysseus listening to the Sirens, face and shoulders; no retouching or generated pixels."
       }
     },
     "ART-239": {
