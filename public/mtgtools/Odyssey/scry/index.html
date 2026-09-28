@@ -9,13 +9,14 @@
   <meta property="og:url" content="https://kliawota.design/mtgtools/Odyssey/scry">
   <meta property="og:title" content="Odyssey — A custom Magic: The Gathering set">
   <meta property="og:description" content="309 working candidates. 0 cards locked. A limited-time look inside an Odyssey set being finished in public.">
-  <link rel="stylesheet" href="./scry.css?v=20260928-3">
+  <link rel="stylesheet" href="./scry.css?v=20260928-4">
 </head>
 <body>
   <header class="sitebar">
     <a class="wordmark" href="#top" aria-label="Odyssey home">ODYSSEY</a>
     <nav>
       <a href="#story">Set overview</a>
+      <a href="#art-history">Art history</a>
       <a href="#development">Development</a>
       <a href="#cards">Full set</a>
       <a href="#social">Social previews</a>
@@ -25,7 +26,9 @@
 
   <div class="preview-ribbon"><b>DEVELOPMENT PREVIEW</b><span>309 working candidates · 0 confirmed cards · full spoiler temporarily open</span></div>
   <main id="top">
-    <section class="hero">
+    <section class="hero art-led-hero">
+      <div class="hero-art-layer" id="heroArtLayer"></div>
+      <div class="hero-art-veil"></div>
       <div class="hero-copy">
         <p class="eyebrow">A set being built in public</p>
         <h1>ODYSSEY</h1>
@@ -40,6 +43,7 @@
         <div class="hero-meta" id="heroMeta">Loading current set…</div>
       </div>
       <div class="hero-card-stage" id="heroCardStage" aria-live="polite"></div>
+      <div class="hero-art-credit" id="heroArtCredit"></div>
     </section>
 
     <section class="intro" id="story">
@@ -52,6 +56,59 @@
         <article><span>01</span><h3>Myth as game structure</h3><p>Major episodes become cards, cycles and mechanical through-lines rather than one-off references.</p></article>
         <article><span>02</span><h3>Theros DNA</h3><p>Enchantments, devotion, sagas and mythic archetypes create a familiar Magic vocabulary for an ancient story.</p></article>
         <article><span>03</span><h3>Built to draft</h3><p>The set is designed as a real Limited environment, with color identities, signposts, commons and build-around themes.</p></article>
+      </div>
+    </section>
+
+    <section class="art-history" id="art-history">
+      <div class="art-history-intro">
+        <div>
+          <p class="kicker">Odyssey through art history</p>
+          <h2>The set’s visual world comes from museums, archives and the history of making.</h2>
+        </div>
+        <div class="art-history-copy">
+          <p>Odyssey is being illustrated through existing works of art: ancient pottery and sculpture, metalwork, drawings, paintings and prints. The point is not just to decorate the cards. It is to let thousands of years of artists interpreting Greek myth become part of how the set teaches its subject.</p>
+          <div class="art-standards">
+            <span>NO AI-GENERATED ARTWORK</span>
+            <span>VISIBLE ATTRIBUTION</span>
+            <span>CANONICAL SOURCE LINKS</span>
+            <span>DATE · MEDIUM · COLLECTION</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="museum-splash" id="museumSplash">
+        <div class="museum-splash-image" id="museumSplashImage"></div>
+        <div class="museum-splash-shade"></div>
+        <div class="museum-splash-copy">
+          <p class="kicker">A playable art-history trail</p>
+          <h3 id="museumSplashTitle">Loading the collection…</h3>
+          <p id="museumSplashMeta"></p>
+          <a id="museumSplashSource" class="museum-source" href="#" target="_blank" rel="noopener">View collection record ↗</a>
+        </div>
+      </div>
+
+      <div class="medium-nav" id="mediumNav"></div>
+      <div class="medium-showcase" id="mediumShowcase"></div>
+
+      <div class="education-standard">
+        <div>
+          <p class="kicker">Educational standard</p>
+          <h3>Every featured image should teach you something even if you never read the card.</h3>
+        </div>
+        <div class="education-grid">
+          <article><b>01</b><h4>Attribution in view</h4><p>Artist or maker, title, date and medium are presented alongside the image rather than hidden in a legal footer.</p></article>
+          <article><b>02</b><h4>Collection context</h4><p>The museum, archive or holding institution is part of the credit, with a canonical source link wherever the library provides one.</p></article>
+          <article><b>03</b><h4>Material literacy</h4><p>Pottery, bronze, marble, ink, oil paint and printmaking are treated as different visual languages, not interchangeable image files.</p></article>
+          <article><b>04</b><h4>No synthetic substitutes</h4><p>The art-history program does not use AI-generated imagery. Gaps remain gaps until a suitable sourced work is found.</p></article>
+        </div>
+      </div>
+
+      <div class="art-led-cards">
+        <div class="section-head">
+          <div><p class="kicker">Art → card</p><h3>See historical artworks inside the current card candidates.</h3></div>
+          <p class="section-note">Featured candidates are selected from cards with strong, resolved artwork records.</p>
+        </div>
+        <div class="art-card-showcase" id="artCardShowcase"></div>
       </div>
     </section>
 
@@ -195,6 +252,6 @@
     <div class="dialog-info" id="dialogInfo"></div>
   </dialog>
 
-  <script src="./scry.js?v=20260928-3"></script>
+  <script src="./scry.js?v=20260928-4"></script>
 </body>
 </html>
