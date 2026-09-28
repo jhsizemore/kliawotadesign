@@ -1,0 +1,740 @@
+{
+  "version": "20260928-journey1",
+  "assets": {
+    "ART-245": {
+      "id": "ART-245",
+      "title": "Ulysses and the Sirens",
+      "artist": "John William Waterhouse",
+      "date": "1891",
+      "medium": "Oil on canvas",
+      "institution": "National Gallery of Victoria",
+      "rights": "Public-domain painting; faithful Google Art Project reproduction via Wikimedia Commons. Detail cropped for this exhibition; complete work available in the viewer.",
+      "source": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_Ulysses_and_the_Sirens_-_Google_Art_Project.jpg",
+      "catalogueSource": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_Ulysses_and_the_Sirens_%281891%29.jpg",
+      "verification": "Google Art Project reproduction via Wikimedia Commons; NGV collection identity checked",
+      "masterWidth": 11009,
+      "masterHeight": 5400,
+      "sourceSha256": "621fdf44bcf0d5ec0dffac97d72bf07d589f17b571fd8aa682bd84a2443648a3",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-245-full.025360795b8f.webp",
+        "width": 3600,
+        "height": 1766,
+        "bytes": 2103304,
+        "sha256": "025360795b8f3af2aa430c187b06a81415ae92347d2a4b484e61cd292534b289"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-245-display.44c7409bba65.webp",
+        "width": 2000,
+        "height": 981,
+        "bytes": 437194,
+        "sha256": "44c7409bba651a260aad9cd6592ad30a66080f95f41231baff4066c8fe2b2f10"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-245-thumb.695960f5025f.webp",
+        "width": 600,
+        "height": 294,
+        "bytes": 32994,
+        "sha256": "695960f5025f6882b6f481fdb4e33c071d2914f315f630b4a9861ef63269232e"
+      },
+      "museum": "https://www.ngv.vic.gov.au/explore/collection/work/4457/",
+      "face": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-245-entranced-face.0427eb6461ce.webp",
+        "width": 969,
+        "height": 1215,
+        "bytes": 485198,
+        "sha256": "0427eb6461ce57a8b4bafa9469eaeff7543b6623d056e8379111c4c0fc04df71",
+        "sourceRect": [
+          0.586,
+          0.28,
+          0.674,
+          0.505
+        ],
+        "description": "Detail: Odysseus listening to the Sirens, face and shoulders; no retouching or generated pixels."
+      }
+    },
+    "ART-239": {
+      "id": "ART-239",
+      "title": "Ulysses Deriding Polyphemus",
+      "artist": "J. M. W. Turner",
+      "date": "1829",
+      "medium": "Oil on canvas",
+      "institution": "National Gallery, London",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Turner_-_Ulysses_deriding_Polyphemus_1829.jpg",
+      "catalogueSource": "https://commons.wikimedia.org/wiki/File:Turner_-_Ulysses_deriding_Polyphemus_1829.jpg",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 6493,
+      "masterHeight": 4226,
+      "sourceSha256": "3576d8b6d10346946a2eba0b4bf006ad56ca0f72bdb71eb9e06a22072dd07d71",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-239-full.1c3554c085a9.webp",
+        "width": 3600,
+        "height": 2343,
+        "bytes": 1949428,
+        "sha256": "1c3554c085a9e7d6945b5948f0455088f05a026c035cfe834152e961fb444d0e"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-239-display.eb713c30b047.webp",
+        "width": 2000,
+        "height": 1302,
+        "bytes": 483754,
+        "sha256": "eb713c30b0472e81e73ecc57424e9767ef9bcbd5ba2df7edce7d8b43dfa57372"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-239-thumb.45326e17f858.webp",
+        "width": 600,
+        "height": 391,
+        "bytes": 28882,
+        "sha256": "45326e17f85841baca693770bef7ae53e3af98f5188f6a7be70169b6db03fa5e"
+      }
+    },
+    "ART-243": {
+      "id": "ART-243",
+      "title": "Circe Offering the Cup to Ulysses",
+      "artist": "John William Waterhouse",
+      "date": "1891",
+      "medium": "Oil on canvas",
+      "institution": "Gallery Oldham",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Circe_Offering_the_Cup_to_Odysseus_%282457_x_4023px_ed.%29.jpg",
+      "catalogueSource": "https://commons.wikimedia.org/wiki/File:Circe_Offering_the_Cup_to_Odysseus_%282457_x_4023px_ed.%29.jpg",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 2457,
+      "masterHeight": 4023,
+      "sourceSha256": "4eaaca6b9da61f965c7d6202ec9d4e34abc842b9c1faa9f9d02d740af883545c",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-243-full.59861d80ed32.webp",
+        "width": 2199,
+        "height": 3600,
+        "bytes": 2755644,
+        "sha256": "59861d80ed327a6ce0bdaf81f6fa4e783c9b93adc13e3641f017192a05669d8e"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-243-display.51e550c5207a.webp",
+        "width": 1221,
+        "height": 2000,
+        "bytes": 723632,
+        "sha256": "51e550c5207aadb058fb60055ab6a1c1b356bfce761a6cd451c6921fdc618a8b"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-243-thumb.a20168d58328.webp",
+        "width": 275,
+        "height": 450,
+        "bytes": 28442,
+        "sha256": "a20168d5832857039bded80c216975a86a35c44d90e06f3893ea7d7e4cfb4a61"
+      }
+    },
+    "ART-297": {
+      "id": "ART-297",
+      "title": "Charybdis and Scylla",
+      "artist": "Ary Renan",
+      "date": "1894",
+      "medium": "Oil on canvas",
+      "institution": "Musée de la Vie romantique",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Renan%2C_Ary_Ernest_-_Charybde_et_Scylla_-_CSR_P_17_-_Mus%C3%A9e_de_la_Vie_romantique.jpg",
+      "catalogueSource": "https://commons.wikimedia.org/wiki/File:Renan%2C_Ary_Ernest_-_Charybde_et_Scylla_-_CSR_P_17_-_Mus%C3%A9e_de_la_Vie_romantique.jpg",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 4865,
+      "masterHeight": 3355,
+      "sourceSha256": "e0f5cd266307a489bdfba878c555c2b3bbac411ac30137a9b0ba6b82e276c164",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-297-full.c7bd213ff841.webp",
+        "width": 3600,
+        "height": 2483,
+        "bytes": 2138982,
+        "sha256": "c7bd213ff8412d64e3bd5ced5ef1fe32315652f15ebbbfa3526f63f31156116e"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-297-display.f15cf3e57986.webp",
+        "width": 2000,
+        "height": 1379,
+        "bytes": 734982,
+        "sha256": "f15cf3e579867cde4a237684a3662b70b0f42615b9d9ee9974a5ded45d10f47d"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-297-thumb.66b09868d0bc.webp",
+        "width": 600,
+        "height": 414,
+        "bytes": 52616,
+        "sha256": "66b09868d0bc8f663ea4ceaffffaf41f71cb9cdad998fc3b9ddc8455465ab40e"
+      }
+    },
+    "ART-213": {
+      "id": "ART-213",
+      "title": "Ulysses and Calypso",
+      "artist": "Arnold Böcklin",
+      "date": "1882",
+      "medium": "Oil on mahogany",
+      "institution": "Kunstmuseum Basel",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_008.jpg",
+      "catalogueSource": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_008.jpg",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 6576,
+      "masterHeight": 4562,
+      "sourceSha256": "de2384630cf35760b3ca15f8eb004111895ae5893422b7925c2ae023b6914c6f",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-213-full.7b50c7c90b56.webp",
+        "width": 3600,
+        "height": 2497,
+        "bytes": 1780260,
+        "sha256": "7b50c7c90b5654da7495c35fc4d97c0ef9a5f65407093a5ccff6906d7142809e"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-213-display.e44978d7b988.webp",
+        "width": 2000,
+        "height": 1387,
+        "bytes": 359578,
+        "sha256": "e44978d7b988eacc1613305054a54ec70bddd214b7c48245600f34125204cd21"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-213-thumb.6b0fba9432d5.webp",
+        "width": 600,
+        "height": 416,
+        "bytes": 24772,
+        "sha256": "6b0fba9432d5afb4757ef6e693642f815fb6e9ec392c21225abe2a591277efa7"
+      }
+    },
+    "ART-053": {
+      "id": "ART-053",
+      "title": "Trojans Bring the Wooden Horse into Troy",
+      "artist": "Giulio Bonasone, after Francesco Primaticcio",
+      "date": "1545",
+      "medium": "Engraving",
+      "institution": "Rijksmuseum",
+      "rights": "Public Domain",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/Trojanen%2Bhalen%2Bhet%2Bhouten%2Bpaard%2Bbinnen--cb8f0d43cea6a5c29a9c98fc15ed6aab",
+      "catalogueSource": "https://www.rijksmuseum.nl/en/collection/object/Trojanen%2Bhalen%2Bhet%2Bhouten%2Bpaard%2Bbinnen--cb8f0d43cea6a5c29a9c98fc15ed6aab",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 6632,
+      "masterHeight": 5104,
+      "sourceSha256": "d319d2643dd6d9e74cfaab535d1ad96b48ded6174699360ae7f8ea68040e05c2",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-053-full.2ee4e6e265cc.webp",
+        "width": 3600,
+        "height": 2771,
+        "bytes": 4397766,
+        "sha256": "2ee4e6e265cc25c5849d9083b74b765c761046ed6427fae68d1f845ca24f1809"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-053-display.9084265daca5.webp",
+        "width": 2000,
+        "height": 1539,
+        "bytes": 1105342,
+        "sha256": "9084265daca5ef0a6f732121835547e547a338ceea88c8f306129ec69809569a"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-053-thumb.24940a549f8f.webp",
+        "width": 585,
+        "height": 450,
+        "bytes": 62838,
+        "sha256": "24940a549f8f9cc0d8548703f165bdbe3df0664780a62dee87745350faf7b91f"
+      }
+    },
+    "ART-221": {
+      "id": "ART-221",
+      "title": "The Adventures of Ulysses",
+      "artist": "Apollonio di Giovanni",
+      "date": "1435–1445",
+      "medium": "Tempera on panel",
+      "institution": "Art Institute of Chicago",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Apollonio_di_Giovanni_-_The_Adventures_of_Ulysses_-_1933.1006_-_Art_Institute_of_Chicago.jpg",
+      "catalogueSource": "https://commons.wikimedia.org/wiki/File:Apollonio_di_Giovanni_-_The_Adventures_of_Ulysses_-_1933.1006_-_Art_Institute_of_Chicago.jpg",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 3000,
+      "masterHeight": 1133,
+      "sourceSha256": "584e71ec2c17033bb265776480ceffeb88047990af81debd579c33ba750df8e4",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-221-full.49f0fe976d63.webp",
+        "width": 3000,
+        "height": 1133,
+        "bytes": 1482946,
+        "sha256": "49f0fe976d63da03dfe35f103b8841bedd87c7c1647790872df1792e24c06d45"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-221-display.dd341925b1f8.webp",
+        "width": 2000,
+        "height": 755,
+        "bytes": 639414,
+        "sha256": "dd341925b1f81cb4a2b32f9515ee577121cf83e8d84ae68a668d37adeaf883b4"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-221-thumb.c7c2e1fd3c2c.webp",
+        "width": 600,
+        "height": 227,
+        "bytes": 38576,
+        "sha256": "c7c2e1fd3c2c9089a89cc0aaf3c6fde168cc5438280cb20bf46d76f92ee54171"
+      }
+    },
+    "ART-222": {
+      "id": "ART-222",
+      "title": "Athena Appearing to Odysseus to Reveal the Island of Ithaca",
+      "artist": "Giuseppe Bottani",
+      "date": "18th century",
+      "medium": "Oil on canvas",
+      "institution": "Collection not stated",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Athena_appearing_to_Odysseus_to_reveal_the_Island_of_Ithaca_by_Giuseppe_Bottani.jpg",
+      "catalogueSource": "https://commons.wikimedia.org/wiki/File:Athena_appearing_to_Odysseus_to_reveal_the_Island_of_Ithaca_by_Giuseppe_Bottani.jpg",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 4000,
+      "masterHeight": 3103,
+      "sourceSha256": "da2ef729a8ca098bcc62f25a72894813a540ceaa0a45dba850d53fecd33dda07",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-222-full.0dd7a240a9ac.webp",
+        "width": 3600,
+        "height": 2793,
+        "bytes": 3574940,
+        "sha256": "0dd7a240a9ac53e3117820408d58fece017aefcf312f76ba3c7eb7ca943cf68d"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-222-display.a9dd192e79df.webp",
+        "width": 2000,
+        "height": 1552,
+        "bytes": 1013888,
+        "sha256": "a9dd192e79df4eb652e31f4cfbd8991d448b2e1a04c6eb8f06cd47c86d347c9a"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-222-thumb.0ad50063179b.webp",
+        "width": 580,
+        "height": 450,
+        "bytes": 42340,
+        "sha256": "0ad50063179bcb54b2696c19d0cc3c2639b04f88b4d4b6244be55479f010a8fc"
+      }
+    },
+    "ART-409": {
+      "id": "ART-409",
+      "title": "Hector and Andromache",
+      "artist": "Giovanni Maria Benzoni",
+      "date": "1871",
+      "medium": "Marble",
+      "institution": "The Metropolitan Museum of Art",
+      "rights": "Public Domain / Met Open Access",
+      "source": "https://www.metmuseum.org/art/collection/search/188474",
+      "catalogueSource": "https://www.metmuseum.org/art/collection/search/188474",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 2978,
+      "masterHeight": 3722,
+      "sourceSha256": "09cd575022366a3a79befa21a2400928d7a4123b77bb0099f5986d13f6f6f624",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-409-full.377d7e36e412.webp",
+        "width": 2880,
+        "height": 3600,
+        "bytes": 3196138,
+        "sha256": "377d7e36e41279642bae7b4d256f9d1bedb90666c7d525aceff8525610d8a943"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-409-display.e1329514fedd.webp",
+        "width": 1600,
+        "height": 2000,
+        "bytes": 671440,
+        "sha256": "e1329514feddd6385b933fee25b1ff7af47911145254a157cb9ef991dfa5e5f2"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-409-thumb.0d347539e341.webp",
+        "width": 360,
+        "height": 450,
+        "bytes": 15502,
+        "sha256": "0d347539e3413b025e55fe6b6a2155c7c61749db7052480b194a0a562d527213"
+      }
+    },
+    "ART-425": {
+      "id": "ART-425",
+      "title": "Odysseus and the Sirens, detail of the Siren Vase",
+      "artist": "Siren Painter; photo Jastrow",
+      "date": "c. 480–470 BCE",
+      "medium": "Attic red-figure pottery",
+      "institution": "British Museum",
+      "rights": "Public domain photograph",
+      "source": "https://commons.wikimedia.org/wiki/File:Odysseus_Sirens_BM_E440_n2.jpg",
+      "catalogueSource": "https://commons.wikimedia.org/wiki/File:Odysseus_Sirens_BM_E440_n2.jpg",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 2500,
+      "masterHeight": 1750,
+      "sourceSha256": "fefd6db482a7539f768e79503964fab9b64066ca7e16ec390ce531e1fb4a8e7d",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-425-full.f2ebb6019370.webp",
+        "width": 2500,
+        "height": 1750,
+        "bytes": 751932,
+        "sha256": "f2ebb601937042e22e4098ae4bc14f40e9abd71e01a49f101b01976d1cb1f2c7"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-425-display.bc8c8fd0995c.webp",
+        "width": 2000,
+        "height": 1400,
+        "bytes": 449004,
+        "sha256": "bc8c8fd0995ce2897f7a615328a3c24cbcdfa5d4def563a2fd11e80c8178d9ab"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-425-thumb.5ec510ee5257.webp",
+        "width": 600,
+        "height": 420,
+        "bytes": 55982,
+        "sha256": "5ec510ee5257fb79f612d8f8071317cede35eeb3e117a73fe55579402e566adf"
+      }
+    },
+    "ART-121": {
+      "id": "ART-121",
+      "title": "Siren",
+      "artist": "Niccolò Roccatagliata",
+      "date": "late 16th–early 17th century",
+      "medium": "Bronze; alabaster base",
+      "institution": "The Metropolitan Museum of Art",
+      "rights": "Public Domain",
+      "source": "https://www.metmuseum.org/art/collection/search/195369",
+      "catalogueSource": "https://www.metmuseum.org/art/collection/search/195369",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 2931,
+      "masterHeight": 4000,
+      "sourceSha256": "0a6dc72c312c278d0539701e1a04ff553ade3a776c26c536fea6165a0e1f5c69",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-121-full.8a548da97563.webp",
+        "width": 2638,
+        "height": 3600,
+        "bytes": 700568,
+        "sha256": "8a548da975639ea2db547f2b4f0f9433810ccebdc9cd03e9f595e24ad78cc332"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-121-display.ed6cecfca806.webp",
+        "width": 1465,
+        "height": 2000,
+        "bytes": 196942,
+        "sha256": "ed6cecfca806881cc2068a7ec7c797916a308fbc3e1059f5f34018a785a78cc2"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-121-thumb.2109d5e4a3b1.webp",
+        "width": 330,
+        "height": 450,
+        "bytes": 9554,
+        "sha256": "2109d5e4a3b1583733499761685ad364cb20b5b69e3c64185ffc5edf57324b57"
+      }
+    },
+    "ART-438": {
+      "id": "ART-438",
+      "title": "Ulysses and His Companions Fighting the Cicones Before the City of Ismaros, Study for a Destroyed Fresco in the Galerie d'Ulysee, Chateau de Fontainebleau",
+      "artist": "Francesco Primaticcio",
+      "date": "1555–60",
+      "medium": "Red chalk highlighted with white gouache, on red-washed paper",
+      "institution": "The Metropolitan Museum of Art",
+      "rights": "CC0 / Met Open Access",
+      "source": "https://www.metmuseum.org/art/collection/search/340556",
+      "catalogueSource": "https://www.metmuseum.org/art/collection/search/340556",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 3695,
+      "masterHeight": 3012,
+      "sourceSha256": "8f7c9a0f17363b512425f36a89fc436b3e26cd28ad020d4ae55590585718ceb5",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-438-full.6880a6427371.webp",
+        "width": 3600,
+        "height": 2935,
+        "bytes": 1964934,
+        "sha256": "6880a64273713e631e141e49574c0d834a3268abf1f860d0eff29a8db2309d51"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-438-display.27cef3fb5c1f.webp",
+        "width": 2000,
+        "height": 1630,
+        "bytes": 633406,
+        "sha256": "27cef3fb5c1f164e33caac90b51ef337d15800a1debb6a581d202efaebb01e87"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-438-thumb.1c6c6283babb.webp",
+        "width": 552,
+        "height": 450,
+        "bytes": 27830,
+        "sha256": "1c6c6283babb5f21fff1bcab92920d4c02ca498bf78a40307860fa00190ec668"
+      }
+    },
+    "ART-054": {
+      "id": "ART-054",
+      "title": "Odysseus in the Land of the Lotus-Eaters",
+      "artist": "Theodoor van Thulden, after Francesco Primaticcio",
+      "date": "1632–33",
+      "medium": "Etching and engraving",
+      "institution": "Rijksmuseum",
+      "rights": "Public Domain",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/Odysseus-in-het-land-van-de-lotuseters--8679bed17329ec6151516243a53e7ff9",
+      "catalogueSource": "https://www.rijksmuseum.nl/en/collection/object/Odysseus-in-het-land-van-de-lotuseters--8679bed17329ec6151516243a53e7ff9",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 6694,
+      "masterHeight": 5016,
+      "sourceSha256": "4b47355136985b9e11f9d17b1003ec34b4f623e34b0c4e5b4cdc1cbcb6b5ef01",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-054-full.44962e99aed0.webp",
+        "width": 3600,
+        "height": 2698,
+        "bytes": 3450128,
+        "sha256": "44962e99aed01f692ef667ccd50406dcbd4925c3658276bb1abba5cde7b1d6b3"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-054-display.520a9eb8fe7d.webp",
+        "width": 2000,
+        "height": 1499,
+        "bytes": 1244472,
+        "sha256": "520a9eb8fe7d26242d5fa6fa8264c0d44a4070ae5f02dcfa88dddc5886124953"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-054-thumb.fb005c2b9ef9.webp",
+        "width": 600,
+        "height": 450,
+        "bytes": 100564,
+        "sha256": "fb005c2b9ef9376d1358d92b9d743db095feae09f6c808cb9989abbdd85c104d"
+      }
+    },
+    "ART-052": {
+      "id": "ART-052",
+      "title": "Odysseus in the Land of the Laestrygonians",
+      "artist": "Theodoor van Thulden, after Francesco Primaticcio",
+      "date": "1632–33",
+      "medium": "Etching and engraving",
+      "institution": "Rijksmuseum",
+      "rights": "Public Domain",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/Odysseus-in-het-land-van-de-Laistrygonen--d857283617daa6d3f9a6b7e529bf2182",
+      "catalogueSource": "https://www.rijksmuseum.nl/en/collection/object/Odysseus-in-het-land-van-de-Laistrygonen--d857283617daa6d3f9a6b7e529bf2182",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 5068,
+      "masterHeight": 3938,
+      "sourceSha256": "23e796ab2802a1b069122aab48d0b9b62a3d638d4d0e987927c02ccc046dfbfa",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-052-full.3ec17ebd8b4a.webp",
+        "width": 3600,
+        "height": 2797,
+        "bytes": 4355062,
+        "sha256": "3ec17ebd8b4af158d2f3df0263f8584760af6fef00550fdbcef8af2c6529c71e"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-052-display.ea6cb7dfdc94.webp",
+        "width": 2000,
+        "height": 1554,
+        "bytes": 1397690,
+        "sha256": "ea6cb7dfdc94cd65b6a823c00ab35fd2b26c78372773ec142078a3bbcd38545c"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-052-thumb.aa23b3d3494d.webp",
+        "width": 579,
+        "height": 450,
+        "bytes": 84550,
+        "sha256": "aa23b3d3494de287caee7830a2f6676c44cebb20639c81f64dc240652fa93852"
+      }
+    },
+    "ART-250": {
+      "id": "ART-250",
+      "title": "Aeolus Giving the Winds to Odysseus",
+      "artist": "Isaac Moillon",
+      "date": "Date not stated",
+      "medium": "Oil on canvas",
+      "institution": "Musée de Tessé",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Isaac_Moillon_-_%C3%89ole_donnant_les_vents_%C3%A0_Ulysse.jpg",
+      "catalogueSource": "https://commons.wikimedia.org/wiki/File:Isaac_Moillon_-_%C3%89ole_donnant_les_vents_%C3%A0_Ulysse.jpg",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 2017,
+      "masterHeight": 1928,
+      "sourceSha256": "e8bb7d40c880f2f22b75c08325fa3ffca0bff887b91682ae2d0f9c755f5b918c",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-250-full.8e729006b7d3.webp",
+        "width": 2017,
+        "height": 1928,
+        "bytes": 768390,
+        "sha256": "8e729006b7d3bc52423a0928f20ded9f10a22543536d66e26597ec8c2257da33"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-250-display.36ef5624130f.webp",
+        "width": 2000,
+        "height": 1912,
+        "bytes": 659428,
+        "sha256": "36ef5624130f853338b5a32c325da8d7487258f1128082a06503d7e44e424be3"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-250-thumb.fb781b2adee4.webp",
+        "width": 471,
+        "height": 450,
+        "bytes": 58382,
+        "sha256": "fb781b2adee47a66dafb32e7c2aca5b1f468e41dd788b300421736ab741d83de"
+      }
+    },
+    "ART-418": {
+      "id": "ART-418",
+      "title": "Teiresias Foretells the Future to Odysseus",
+      "artist": "Henry Fuseli",
+      "date": "c. 1800",
+      "medium": "Oil on canvas",
+      "institution": "National Museum Wales",
+      "rights": "Public domain artwork / faithful reproduction",
+      "source": "https://commons.wikimedia.org/wiki/File:Anticlea_in_the_Underworld.jpg",
+      "catalogueSource": "https://commons.wikimedia.org/wiki/File:Anticlea_in_the_Underworld.jpg",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 1920,
+      "masterHeight": 2273,
+      "sourceSha256": "e68e6130fa4868f4e48765fdd2cef860952c71b57907496ec926bf1e9b4131a9",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-418-full.fe3760ea3b11.webp",
+        "width": 1920,
+        "height": 2273,
+        "bytes": 857036,
+        "sha256": "fe3760ea3b11c061bf5f0823b542d9ab0483288040708ba75c9f70382609992f"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-418-display.d8aad16b65a6.webp",
+        "width": 1689,
+        "height": 2000,
+        "bytes": 685808,
+        "sha256": "d8aad16b65a6c63328e550dd0f86a8e19c427a9c5afe288da0e65b4f07d54220"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-418-thumb.5a9a91dac60d.webp",
+        "width": 380,
+        "height": 450,
+        "bytes": 21780,
+        "sha256": "5a9a91dac60d3d95cfd4413050fe80ecea5e6d208912938092ebebe1d8b0f004"
+      }
+    },
+    "ART-021": {
+      "id": "ART-021",
+      "title": "Cattle of Helios",
+      "artist": "Theodoor van Thulden, after Francesco Primaticcio",
+      "date": "1633",
+      "medium": "Etching and engraving",
+      "institution": "Rijksmuseum",
+      "rights": "Public Domain",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/Runderen-van-Helios--d4a33b453772b2ba5ee214750ebf98f6",
+      "catalogueSource": "https://www.rijksmuseum.nl/en/collection/object/Runderen-van-Helios--d4a33b453772b2ba5ee214750ebf98f6",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 5691,
+      "masterHeight": 4235,
+      "sourceSha256": "383e8bc9ee91328e6d13e280f12e35ecf13f547a305f1ae91958ebc096972671",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-021-full.d4611a198118.webp",
+        "width": 3600,
+        "height": 2679,
+        "bytes": 4024098,
+        "sha256": "d4611a198118b7f08bd74bb93fa10a3e51a8de20764722ac336b27ffaf7c8c6a"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-021-display.f074543dc823.webp",
+        "width": 2000,
+        "height": 1488,
+        "bytes": 1181212,
+        "sha256": "f074543dc823626f2284c0a081e4bb15123127c66b67d733306c7ac5eb0b383b"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-021-thumb.5a6f5998eec0.webp",
+        "width": 600,
+        "height": 446,
+        "bytes": 62176,
+        "sha256": "5a6f5998eec0996b1245d10c833d73802bd16b312c28ddd5ea23b921eda8172f"
+      }
+    },
+    "ART-009": {
+      "id": "ART-009",
+      "title": "The Meeting of Odysseus and Nausicaa",
+      "artist": "Jacques Jordaens",
+      "date": "ca. 1630–40",
+      "medium": "Oil on canvas",
+      "institution": "Rijksmuseum",
+      "rights": "Public Domain",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/The-Meeting-of-Odysseus-and-Nausicaa--6ab23658036da806a559719cce16931d",
+      "catalogueSource": "https://www.rijksmuseum.nl/en/collection/object/The-Meeting-of-Odysseus-and-Nausicaa--6ab23658036da806a559719cce16931d",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 2400,
+      "masterHeight": 1423,
+      "sourceSha256": "faddcef9af93a37c8a379bb435a2773ca77ee201253d5c5f261db31b11ac5fc8",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-009-full.7a787d2eb0a3.webp",
+        "width": 2400,
+        "height": 1423,
+        "bytes": 939572,
+        "sha256": "7a787d2eb0a3557fe14b4f94080efeb797693bc13eaa295e24b5a95eb93d78e0"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-009-display.e0e5f65c7747.webp",
+        "width": 2000,
+        "height": 1186,
+        "bytes": 593374,
+        "sha256": "e0e5f65c77479b49214950a5b5f499f45e384a4017b2896a0f4e73eb76da3692"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-009-thumb.702c6de2e276.webp",
+        "width": 600,
+        "height": 356,
+        "bytes": 48844,
+        "sha256": "702c6de2e2761d0bb6e03282c416a099204d4e222b1bd57cd47f08b6d8d0d06a"
+      }
+    },
+    "ART-210": {
+      "id": "ART-210",
+      "title": "Odysseus and Penelope",
+      "artist": "Johann Heinrich Wilhelm Tischbein",
+      "date": "1802",
+      "medium": "Oil on canvas",
+      "institution": "Private collection",
+      "rights": "Public domain artwork / Wikimedia Commons reproduction; see source rights statement",
+      "source": "https://commons.wikimedia.org/wiki/File:Odysseus_und_Penelope_%28Tischbein%29.jpg",
+      "catalogueSource": "https://commons.wikimedia.org/wiki/File:Odysseus_und_Penelope_%28Tischbein%29.jpg",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 2136,
+      "masterHeight": 1598,
+      "sourceSha256": "d39225d8bded2383e8fb78c10e9787fce46b3e2e4f938f41d1d41b9150c9916e",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-210-full.af1b846053bb.webp",
+        "width": 2136,
+        "height": 1598,
+        "bytes": 369860,
+        "sha256": "af1b846053bb5f29bbe430f06b15ad441923a4ab061fb0b9c4c6dfe6a06eaad9"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-210-display.b94e64a9bfb9.webp",
+        "width": 2000,
+        "height": 1496,
+        "bytes": 278240,
+        "sha256": "b94e64a9bfb975585924cb334c28e3952b66ef3c39d9dece9b3191460cbd2b0b"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-210-thumb.57bfdd535b3f.webp",
+        "width": 600,
+        "height": 449,
+        "bytes": 31054,
+        "sha256": "57bfdd535b3f6533e4d9ae312eca5250c6d925a8da01708abe928f8b37c8690d"
+      }
+    },
+    "ART-024": {
+      "id": "ART-024",
+      "title": "Odysseus Embraces Laertes in His Vineyard",
+      "artist": "Theodoor van Thulden, after Francesco Primaticcio",
+      "date": "1632–33",
+      "medium": "Etching and engraving",
+      "institution": "Rijksmuseum",
+      "rights": "Public Domain",
+      "source": "https://www.rijksmuseum.nl/nl/collectie/object/Odysseus-omhelst-Laertes-in-zijn-wijngaard--1cc0d08528f2153de148c937b18ee258",
+      "catalogueSource": "https://www.rijksmuseum.nl/nl/collectie/object/Odysseus-omhelst-Laertes-in-zijn-wijngaard--1cc0d08528f2153de148c937b18ee258",
+      "verification": "Published identity-checked artwork delivery record",
+      "masterWidth": 6582,
+      "masterHeight": 4998,
+      "sourceSha256": "7170b1f55e6c09f20913a458806180a9653b4a2634098bd5ca96ac9e06d20991",
+      "full": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-024-full.741ce7f5f0af.webp",
+        "width": 3600,
+        "height": 2734,
+        "bytes": 3425396,
+        "sha256": "741ce7f5f0afb078e2c6794157ca2a0c67b5dd7fc632861566defc17a44dbc18"
+      },
+      "display": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-024-display.ea4eff98e89a.webp",
+        "width": 2000,
+        "height": 1519,
+        "bytes": 1235042,
+        "sha256": "ea4eff98e89ae14792ef13adf3916664344334ae4ed7b5b949c4ab536600c9b4"
+      },
+      "thumb": {
+        "url": "/mtgtools/Odyssey/scry/assets/journey/ART-024-thumb.a591d3334c3c.webp",
+        "width": 593,
+        "height": 450,
+        "bytes": 97822,
+        "sha256": "a591d3334c3c15e5d3a25d42a634394528b3732adbc2b23e9f88873bd3981f2b"
+      }
+    }
+  }
+}
