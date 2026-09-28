@@ -86,3 +86,7 @@ body.promo-fullscreen{overflow:hidden}body.promo-fullscreen::after{content:"Clic
 
 @media(max-width:1000px){.art-history-intro,.education-standard{grid-template-columns:1fr}.art-history-intro{gap:24px}.museum-splash{min-height:570px}.museum-splash-copy{width:78%}.art-card-showcase{grid-template-columns:repeat(2,1fr)}.medium-showcase{grid-auto-rows:120px}}
 @media(max-width:700px){.hero-art-credit{max-width:70vw;font-size:8px}.museum-splash{min-height:500px}.museum-splash-copy{left:24px;right:24px;width:auto}.medium-showcase{grid-template-columns:1fr 1fr;grid-auto-rows:220px}.art-tile,.art-tile:nth-child(n){grid-column:span 1;grid-row:span 1}.art-tile:nth-child(3n+1){grid-column:1/-1}.education-standard{padding:28px 18px}.education-grid{grid-template-columns:1fr}.art-card-showcase{grid-template-columns:1fr 1fr;gap:12px}}
+
+.mechanic-art-credit{margin-top:18px;padding-top:12px;border-top:1px solid rgba(214,195,145,.24);font-size:9px;line-height:1.45;color:#a9a08e}.mechanic-art-credit strong{color:#d7c89e}.mechanic-art-credit a{text-decoration:underline;text-underline-offset:2px;color:#c0aa72}
+.promo-art-credit{position:absolute;right:4.5%;bottom:4.5%;z-index:5;max-width:48%;text-align:right;font-size:clamp(6px,.72vw,10px);line-height:1.35;color:rgba(244,237,220,.7);text-shadow:0 1px 8px rgba(0,0,0,.8)}
+.promo-art-credit strong{color:rgba(248,238,211,.92)}
