@@ -1,6 +1,6 @@
 """One-time, anchor-checked integration. Never alters card or artwork datasets."""
 from pathlib import Path
-import re
+import re, subprocess
 ROOT=Path(__file__).resolve().parents[1]
 def edit(name,old,new):
  p=ROOT/name;s=p.read_text()
@@ -12,7 +12,11 @@ edit('src/odyssey-worker.js','const response = await handleSync(request, env);',
 edit('src/odyssey-sync.mjs',"import core from '../public/mtgtools/odyssey/art-sync-core.js';","import core from '../public/mtgtools/odyssey/art-sync-core.js';\nimport { placementWorkspace } from './odyssey-placement.mjs';")
 edit('src/odyssey-sync.mjs',"    if (url.pathname === NOTES_API) return this.fetchNotes(request);","    if (url.pathname === '/mtgtools/odyssey/api/art-placement') {\n      const task = (this.placementTail || Promise.resolve()).then(() => placementWorkspace(request, this.ctx.storage));\n      this.placementTail = task.catch(() => {});\n      return task;\n    }\n    if (url.pathname === NOTES_API) return this.fetchNotes(request);")
 edit('public/mtgtools/odyssey/app.html','</body></html>','<script src="/mtgtools/odyssey/art-placement-core.js?v=20260929-placement1"></script>\n<script src="/mtgtools/odyssey/art-placement-studio.js?v=20260929-placement1"></script>\n</body></html>')
-p=ROOT/'public/mtgtools/odyssey/index.html';s=p.read_text();s=re.sub(r'(app\.html\?v=)[^"\s<>]+',r'\g<1>20260929-placement1',s);p.write_text(s)
+p=ROOT/'public/mtgtools/odyssey/index.html';s=p.read_text()
+s=s.replace("fetch('./app.html?v=20260929-placement1 {", "fetch('./app.html?v=20260929-placement1', {")
+s=re.sub(r'(app\.html\?v=)[A-Za-z0-9._-]+',r'\g<1>20260929-placement1',s);p.write_text(s)
+for script in re.findall(r'<script\b[^>]*>([\s\S]*?)</script>',s,re.I):
+ subprocess.run(['node','--check','-'],input=script,text=True,check=True)
 for name in ['public/mtgtools/Odyssey/scry/index.html','public/mtgtools/Odyssey/scry/social/index.html']:
  p=ROOT/name;s=p.read_text()
  if 'scry/placement-sync.js' not in s:
