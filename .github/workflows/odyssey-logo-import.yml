@@ -1,0 +1,61 @@
+name: Import approved Odyssey logo
+on:
+  push:
+    branches: [odyssey-logo-jan7-launch]
+    paths: ['.github/workflows/odyssey-logo-import.yml']
+permissions:
+  contents: write
+jobs:
+  import-logo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: odyssey-logo-jan7-launch
+      - run: python -m pip install -q Pillow==11.3.0
+      - name: Import approved image without redrawing
+        env:
+          LOGO_URL: 'https://media.canva.com/v2/image-resize/format:PNG/height:421/quality:100/uri:ifs%3A%2F%2FM%2F187f623b-b600-40b6-b703-bc48cdb8414b/watermark:F/width:1851?csig=AAAAAAAAAAAAAAAAAAAAAGfIJOKP73DA_cuutqCE6LIKvXfC-yfRunM3LP3FlRCy&exp=1790610449&osig=AAAAAAAAAAAAAAAAAAAAAOIxbDOxy8f424HmERvKc1jwAD8_EC_lmJ6LUqXk3Bh0&signer=media-rpc&x-canva-quality=thumbnail'
+        run: |
+          python - <<'PY'
+          import os, io, json, hashlib, urllib.request
+          from pathlib import Path
+          from PIL import Image, ImageDraw, ImageFont
+          path = Path('public/mtgtools/Odyssey/scry/assets/brand')
+          path.mkdir(parents=True, exist_ok=True)
+          request = urllib.request.Request(os.environ['LOGO_URL'], headers={'User-Agent': 'Mozilla/5.0'})
+          with urllib.request.urlopen(request, timeout=45) as response:
+              data = response.read(8000000)
+          source = Image.open(io.BytesIO(data))
+          assert source.size == (1851,421), f'Wrong source resolution: {source.size}'
+          assert 'A' in source.getbands(), 'Transparent source required'
+          image = source.convert('RGBA')
+          assert image.getchannel('A').getextrema() == (0,255), 'Transparency was lost'
+          image.save(path/'the-odyssey-logo.png', optimize=True)
+          for width in (400,960,1851):
+              scaled = image if width == image.width else image.resize((width, round(image.height*width/image.width)), Image.Resampling.LANCZOS)
+              scaled.save(path/f'the-odyssey-logo-{width}.webp', quality=88, method=4)
+          preview = Image.new('RGBA',(1200,630),'#142a2e')
+          draw = ImageDraw.Draw(preview)
+          draw.line((72,78,1128,78), fill='#ae8c54', width=2)
+          logo = image.resize((1060,round(image.height*1060/image.width)), Image.Resampling.LANCZOS)
+          preview.alpha_composite(logo,(70,160))
+          fontdir='/usr/share/fonts/truetype/dejavu/'
+          regular=ImageFont.truetype(fontdir+'DejaVuSans.ttf',23)
+          bold=ImageFont.truetype(fontdir+'DejaVuSans.ttf',42)
+          draw.text((600,434),'RELEASES JANUARY 7, 2027',font=bold,anchor='mt',fill='#f4ebd7')
+          draw.text((600,512),'A custom Magic set, illustrated by art history.',font=regular,anchor='mt',fill='#c4d1cc')
+          draw.line((72,570,1128,570),fill='#ae8c54',width=2)
+          preview.convert('RGB').save(path/'the-odyssey-release-20270107.jpg',quality=93,optimize=True)
+          files={p.name:{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in path.iterdir()}
+          (path/'manifest.json').write_text(json.dumps({'approved_title':'The Odyssey','release_date':'2027-01-07','source_dimensions':[1851,421],'source_note':'User-approved final logo: single Greek wave in O; no subtitle. Only transparent outer padding trimmed. Website assets are self-hosted.','files':files},indent=2)+'\n')
+          print(json.dumps(files,indent=2))
+          PY
+      - name: Commit first-party assets to the working branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/mtgtools/Odyssey/scry/assets/brand
+          git commit -m 'Add approved Odyssey wordmark and January 7 launch preview assets'
+          git push origin HEAD:odyssey-logo-jan7-launch
