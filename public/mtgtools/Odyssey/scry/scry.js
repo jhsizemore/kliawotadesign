@@ -29,8 +29,15 @@ function cardHTML(c,{meta=true}={}){
 </div></div></div>${meta?'<div class="tile-meta"><div class="tile-title">'+esc(name)+'</div><div class="tile-sub">#'+String(n).padStart(3,'0')+' · '+esc(type)+'</div>'+artCreditHTML(c,{compact:true})+'</div>':''}</article>`}
 function hydrateArt(d){(d.artworks||[]).forEach(a=>state.art.set(a.id,a))}
 function artRecordForCard(c){return state.art.get(c?.artId)||null}
+function artIsSynthetic(a){
+  if(!a)return false;
+  if(a.aiGenerated===true||a.synthetic===true)return true;
+  const t=[a.title,a.artist,a.maker,a.medium,a.rights,a.notes,a.source].filter(Boolean).join(' ').toLowerCase();
+  return /\b(ai[- ]?generated|generative ai|midjourney|stable diffusion|dall[- ]?e|synthetic image)\b/.test(t);
+}
+function artHasProvenance(a){return !!(a&&(a.source||a.institution||a.collection)&&!artIsSynthetic(a))}
 function artImage(a){
-  if(!a)return'';
+  if(!a||artIsSynthetic(a))return'';
   const direct=a.imageUrl||a.thumbUrl||a.thumbnail||'';
   if(direct)return direct;
   const c=state.all.find(card=>card.artId===a.id&&artFor(card));
@@ -64,7 +71,7 @@ function artMetaLine(a){
   return [a?.artist||a?.maker||'Unknown maker',a?.date,a?.medium,a?.institution||a?.collection].filter(Boolean).join(' · ');
 }
 function eligibleArt(){
-  return [...state.art.values()].filter(a=>artImage(a)).sort((a,b)=>artScore(b)-artScore(a));
+  return [...state.art.values()].filter(a=>artImage(a)&&artHasProvenance(a)).sort((a,b)=>artScore(b)-artScore(a));
 }
 function setMuseumSplash(a){
   if(!a)return;
