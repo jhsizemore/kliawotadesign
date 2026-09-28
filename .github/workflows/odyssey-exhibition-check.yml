@@ -1,0 +1,47 @@
+name: Odyssey exhibition verification
+on:
+  push:
+    branches: [main, odyssey-art-first-exhibition]
+    paths:
+      - 'public/mtgtools/Odyssey/scry/**'
+      - 'public/mtgtools/odyssey/data/**'
+      - 'tests/odyssey-exhibition*'
+      - '.github/workflows/odyssey-exhibition-check.yml'
+  pull_request:
+    paths:
+      - 'public/mtgtools/Odyssey/scry/**'
+      - 'public/mtgtools/odyssey/data/**'
+      - 'tests/odyssey-exhibition*'
+      - '.github/workflows/odyssey-exhibition-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odyssey-exhibition-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  exhibition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test adapter against published data
+        run: node tests/odyssey-exhibition.cjs
+      - name: Install browser test dependency
+        run: |
+          python -m pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Run real-data browser checks
+        run: |
+          python -m http.server 8765 --directory public > /tmp/odyssey-exhibition-http.log 2>&1 &
+          python tests/odyssey-exhibition-browser.py
+      - name: Save visual checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-exhibition-visual-checks
+          path: test-results/odyssey-exhibition/
+          if-no-files-found: ignore

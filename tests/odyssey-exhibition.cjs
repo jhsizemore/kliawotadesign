@@ -1,0 +1,18 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const root=path.resolve(__dirname,'..'),dir=path.join(root,'public/mtgtools/Odyssey/scry');
+const C=require(path.join(dir,'exhibition-core.js'));
+assert.equal(C.url(''),'');assert.equal(C.url('  '),'');assert.equal(C.url('javascript:alert(1)'),'');assert.equal(C.url('https://bad:secret@example.org/a'),'');
+assert.equal(C.media({medium:'Engraving, black ink on paper',title:'Gold vase'}),'print');
+assert.equal(C.media({medium:'Oil on canvas',title:'Bronze sword'}),'paint');
+assert.deepEqual(C.tokens('{2}{W/U}{B/R}'),['2','W/U','B/R']);assert.deepEqual(C.colors({mana:'2WUG'}),['W','U','G']);assert(C.pip('B/R').includes('#777076'));assert(C.pip('B/R').includes('#d88467'));
+const source={cards:[{number:1,name:'A',primaryArt:'ART-002'},{number:2,name:'B',primaryArt:''},{number:3,name:'C'}],artworks:[{id:'ART-001',title:'Old',source:'https://example.org/one',imageUrl:'/one.png'},{id:'ART-002',title:'Assigned',source:'https://example.org/two',imageUrl:'/two.png'},{id:'ART-003',title:'Blocked',source:'https://example.org/three',imageUrl:'/three.png',aiGenerated:true},{id:'ART-004',title:'Missing',source:'',imageUrl:''}],coverage:[{number:1,primary:'ART-001'},{number:2,primary:'ART-001'},{number:3,primary:'ART-001'}]};
+const before=JSON.stringify(source),c=C.catalogue(source);assert.equal(c.cards[0].artId,'ART-002');assert.equal(c.cards[1].image,'');assert.equal(c.cards[2].image,'/one.png');assert.equal(c.arts.get('ART-003').image,'');assert.equal(c.arts.get('ART-004').image,'');assert.equal(c.exhibition.length,2);assert.equal(JSON.stringify(source),before);
+const manifest={artworks:{'ART-002':{title:'Wrong title',source:'https://example.org/two',status:'verified',full:{url:'/wrong.png'}}}};assert.equal(C.catalogue(source,manifest).cards[0].image,'/two.png');
+for(const f of ['exhibition-core.js','exhibition.js'])new vm.Script(fs.readFileSync(path.join(dir,f),'utf8'),{filename:f});
+const dataset=JSON.parse(fs.readFileSync(path.join(root,'public/mtgtools/odyssey/data/odyssey-data.json'),'utf8'));
+const sandbox={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'public/mtgtools/odyssey/data/artwork-delivery-manifest.20260925a.js'),'utf8'),sandbox);
+const production=C.catalogue(dataset,sandbox.window.ODYSSEY_ARTWORK_MANIFEST);assert.equal(production.cards.length,dataset.cards.length);assert.equal(new Set(production.cards.map(x=>x.number)).size,production.cards.length);assert(production.cards.every(x=>Number.isFinite(x.number)));assert(production.exhibition.length>0,'No source-linked exhibition artworks');assert(production.cards.some(x=>x.image),'No artwork joins');
+const missing=[];for(const a of production.arts.values())for(const u of [a.image,a.thumb])if(u?.startsWith('/mtgtools/')&&!fs.existsSync(path.join(root,'public',u)))missing.push(u);
+for(const n of Object.values(C.PIPS))assert(fs.existsSync(path.join(root,'public/mtgtools/odyssey/assets/mana-pips',n+'.png')),'Missing mana asset '+n);
+console.log(JSON.stringify({suite:'Odyssey exhibition',status:'passed',cards:production.cards.length,assignedImages:production.cards.filter(x=>x.image).length,exhibitionWorks:production.exhibition.length,media:Object.fromEntries(C.chapters.map(ch=>[ch.key,production.exhibition.filter(a=>a.kind===ch.key).length])),missingPublishedAssets:[...new Set(missing)].slice(0,10)},null,2));

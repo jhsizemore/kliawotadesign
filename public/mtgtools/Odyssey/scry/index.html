@@ -1,259 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="Odyssey — an in-development custom Magic set inspired by Homer's Odyssey. 309 working candidates. 0 cards locked.">
-  <title>Odyssey — Full Set Gallery</title>
-  <link rel="canonical" href="https://kliawota.design/mtgtools/Odyssey/scry">
-  <meta property="og:url" content="https://kliawota.design/mtgtools/Odyssey/scry">
-  <meta property="og:title" content="Odyssey — A custom Magic: The Gathering set">
-  <meta property="og:description" content="309 working candidates. 0 cards locked. A limited-time look inside an Odyssey set being finished in public.">
-  <link rel="stylesheet" href="./scry.css?v=20260928-4">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="referrer" content="no-referrer">
+<title>Odyssey — an epic illustrated by art history</title>
+<meta name="description" content="A custom Magic set in development. Explore the Odyssey through historical art, material, story and candidate mechanics. No cards are confirmed yet.">
+<link rel="canonical" href="https://kliawota.design/mtgtools/Odyssey/scry">
+<meta property="og:title" content="Odyssey — an epic illustrated by art history"><meta property="og:description" content="Explore the art. Discover the mechanics. Help shape the final set."><meta property="og:url" content="https://kliawota.design/mtgtools/Odyssey/scry"><meta name="theme-color" content="#11130f">
+<link rel="stylesheet" href="/mtgtools/Odyssey/scry/exhibition.css?v=20260928-launch1">
+<script defer src="/mtgtools/odyssey/data/artwork-delivery-manifest.20260925a.js?v=20260928-launch1"></script>
+<script defer src="/mtgtools/Odyssey/scry/exhibition-core.js?v=20260928-launch1"></script>
+<script defer src="/mtgtools/Odyssey/scry/exhibition.js?v=20260928-launch1"></script>
 </head>
 <body>
-  <header class="sitebar">
-    <a class="wordmark" href="#top" aria-label="Odyssey home">ODYSSEY</a>
-    <nav>
-      <a href="#story">Set overview</a>
-      <a href="#art-history">Art history</a>
-      <a href="#development">Development</a>
-      <a href="#cards">Full set</a>
-      <a href="#social">Social previews</a>
-      <a href="/mtgtools/odyssey/" class="studio-link">Odyssey Studio</a>
-    </nav>
-  </header>
-
-  <div class="preview-ribbon"><b>DEVELOPMENT PREVIEW</b><span>309 working candidates · 0 confirmed cards · full spoiler temporarily open</span></div>
-  <main id="top">
-    <section class="hero art-led-hero">
-      <div class="hero-art-layer" id="heroArtLayer"></div>
-      <div class="hero-art-veil"></div>
-      <div class="hero-copy">
-        <p class="eyebrow">A set being built in public</p>
-        <h1>ODYSSEY</h1>
-        <p class="dek">The war is over. The hard part is getting home.</p>
-        <p class="hero-text">A 309-card working file built around Homer's <em>Odyssey</em>. The proof of concept exists. The final card file does not. Every card you see here is still a candidate: a place to test flavour, mechanics, art direction and Limited structure before anything earns a lock.</p>
-        <div class="truth-strip"><div><strong>309</strong><span>working candidates</span></div><div><strong>0</strong><span>confirmed cards</span></div><div><strong>NOW</strong><span>limited open spoiler</span></div></div>
-        <div class="hero-actions">
-          <a class="button primary" href="#mechanics">Taste the mechanics</a>
-          <a class="button ghost" href="#cards">Open the temporary spoiler</a>
-          <button class="button ghost" id="randomCard" type="button">Show me a card</button>
-        </div>
-        <div class="hero-meta" id="heroMeta">Loading current set…</div>
-      </div>
-      <div class="hero-card-stage" id="heroCardStage" aria-live="polite"></div>
-      <div class="hero-art-credit" id="heroArtCredit"></div>
-    </section>
-
-    <section class="intro" id="story">
-      <article class="intro-lead">
-        <p class="kicker">The story</p>
-        <h2>An epic built as a playable world.</h2>
-        <p>Odysseus has survived Troy, but the route back to Ithaca becomes its own war. The set follows the crew through divine grudges, impossible choices, seduction, shipwreck, monsters and strange islands, while Penelope and Telemachus fight a quieter battle at home.</p>
-      </article>
-      <div class="feature-grid">
-        <article><span>01</span><h3>Myth as game structure</h3><p>Major episodes become cards, cycles and mechanical through-lines rather than one-off references.</p></article>
-        <article><span>02</span><h3>Theros DNA</h3><p>Enchantments, devotion, sagas and mythic archetypes create a familiar Magic vocabulary for an ancient story.</p></article>
-        <article><span>03</span><h3>Built to draft</h3><p>The set is designed as a real Limited environment, with color identities, signposts, commons and build-around themes.</p></article>
-      </div>
-    </section>
-
-    <section class="art-history" id="art-history">
-      <div class="art-history-intro">
-        <div>
-          <p class="kicker">Odyssey through art history</p>
-          <h2>The set’s visual world comes from museums, archives and the history of making.</h2>
-        </div>
-        <div class="art-history-copy">
-          <p>Odyssey is being illustrated through existing works of art: ancient pottery and sculpture, metalwork, drawings, paintings and prints. The point is not just to decorate the cards. It is to let thousands of years of artists interpreting Greek myth become part of how the set teaches its subject.</p>
-          <div class="art-collection-stats" id="artCollectionStats"></div>
-          <div class="art-standards">
-            <span>NO AI-GENERATED ARTWORK</span>
-            <span>VISIBLE ATTRIBUTION</span>
-            <span>CANONICAL SOURCE LINKS</span>
-            <span>DATE · MEDIUM · COLLECTION</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="museum-splash" id="museumSplash">
-        <div class="museum-splash-image" id="museumSplashImage"></div>
-        <div class="museum-splash-shade"></div>
-        <div class="museum-splash-copy">
-          <p class="kicker">A playable art-history trail</p>
-          <h3 id="museumSplashTitle">Loading the collection…</h3>
-          <p id="museumSplashMeta"></p>
-          <a id="museumSplashSource" class="museum-source" href="#" target="_blank" rel="noopener">View collection record ↗</a>
-        </div>
-      </div>
-
-      <div class="medium-nav" id="mediumNav"></div>
-      <div class="medium-showcase" id="mediumShowcase"></div>
-
-      <div class="education-standard">
-        <div>
-          <p class="kicker">Educational standard</p>
-          <h3>Every featured image should teach you something even if you never read the card.</h3>
-        </div>
-        <div class="education-grid">
-          <article><b>01</b><h4>Attribution in view</h4><p>Artist or maker, title, date and medium are presented alongside the image rather than hidden in a legal footer.</p></article>
-          <article><b>02</b><h4>Collection context</h4><p>The museum, archive or holding institution is part of the credit, with a canonical source link wherever the library provides one.</p></article>
-          <article><b>03</b><h4>Material literacy</h4><p>Pottery, bronze, marble, ink, oil paint and printmaking are treated as different visual languages, not interchangeable image files.</p></article>
-          <article><b>04</b><h4>No synthetic substitutes</h4><p>The art-history program does not use AI-generated imagery. Gaps remain gaps until a suitable sourced work is found.</p></article>
-        </div>
-      </div>
-
-      <div class="art-led-cards">
-        <div class="section-head">
-          <div><p class="kicker">Art → card</p><h3>See historical artworks inside the current card candidates.</h3></div>
-          <p class="section-note">Featured candidates are selected from cards with strong, resolved artwork records.</p>
-        </div>
-        <div class="art-card-showcase" id="artCardShowcase"></div>
-      </div>
-    </section>
-
-    <section class="mechanics" id="mechanics">
-      <div class="section-head">
-        <div>
-          <p class="kicker">Taste the set</p>
-          <h2>Mechanics should feel like story.</h2>
-        </div>
-        <p class="section-note">Each feature below is generated from the live candidate file: representative colours, candidate cards and the slice of the Odyssey it is trying to make playable.</p>
-      </div>
-      <div class="mechanic-features" id="mechanicFeatures"></div>
-      <div class="mechanic-chips" id="mechanicChips"></div>
-    </section>
-
-    <section class="development" id="development">
-      <div class="development-hero">
-        <p class="kicker">The experiment</p>
-        <h2>What if the final set were developed with the community?</h2>
-        <p>The design skeleton is real. The final choices are deliberately not. The next phase is about turning a large working file into a defensible final set through structured critique, playtesting, recasting and public design discussion.</p>
-      </div>
-      <div class="development-grid">
-        <article><b>01</b><h3>Open development</h3><p>Use Reddit and public design notes to pressure-test flavour, templating, cycles, colour balance and individual card candidates.</p></article>
-        <article><b>02</b><h3>Playtest cohorts</h3><p>Run small, trackable draft and gameplay rounds. Supporters can opt into the tester pool, but the fan content itself stays freely viewable.</p></article>
-        <article><b>03</b><h3>Fund the finishing work</h3><p>Patreon, donations and clearly labelled sponsorship can subsidise illustration research, testing, tooling and editing without turning the spoiler into paid access.</p></article>
-        <article><b>04</b><h3>Leave your mark</h3><p>Contributor and sponsor usernames can be acknowledged in a restrained credit ledger or allocated supporter space attached to the free project—recognition, not ownership of the card.</p></article>
-      </div>
-      <div class="roadmap">
-        <div class="roadmap-state current"><span>NOW</span><strong>Proof of concept</strong><small>309 candidates · 0 locks</small></div>
-        <div class="roadmap-state"><span>NEXT</span><strong>Community cuts</strong><small>recast · merge · test</small></div>
-        <div class="roadmap-state"><span>THEN</span><strong>Closed candidate file</strong><small>playtest-ready shortlist</small></div>
-        <div class="roadmap-state"><span>FINAL</span><strong>Public release</strong><small>locked free set</small></div>
-      </div>
-      <p class="policy-note">Odyssey is unofficial fan content. The public card content is intended to remain free to view; funding supports the development process rather than purchasing access to Wizards-owned IP.</p>
-    </section>
-
-    <section class="social-builder" id="social">
-      <div class="section-head">
-        <div>
-          <p class="kicker">Social preview studio</p>
-          <h2>Present Odyssey like a real set.</h2>
-        </div>
-        <p class="section-note">Build polished promo compositions from one to five cards. The selected background card supplies the mirrored, Gaussian-blurred art field behind the cards.</p>
-      </div>
-
-      <div class="promo-workspace">
-        <div class="promo-controls">
-          <div class="promo-logo-sample" aria-label="Odyssey promotional logo">
-            <div class="promo-logo-kicker">A custom Magic set</div>
-            <div class="promo-logo-main">ODYSSEY</div>
-            <div class="promo-logo-rule"><span></span><b>ΙΘΑΚΗ</b><span></span></div>
-            <div class="promo-logo-sub">THE LONG WAY HOME</div>
-          </div>
-
-          <label>Format
-            <select id="promoFormat">
-              <option value="landscape">Landscape · 1200 × 630</option>
-              <option value="square">Square · 1080 × 1080</option>
-              <option value="portrait">Portrait · 1080 × 1350</option>
-              <option value="story">Story · 1080 × 1920</option>
-            </select>
-          </label>
-
-          <label>Headline
-            <input id="promoHeadline" value="THE LONG WAY HOME" maxlength="70">
-          </label>
-
-          <div class="promo-card-pickers" id="promoCardPickers"></div>
-
-          <label>Background art
-            <select id="promoBackground"></select>
-          </label>
-
-          <div class="promo-actions">
-            <button class="button primary" id="promoDownload" type="button">Download PNG</button>
-            <button class="button ghost" id="promoFullscreen" type="button">Full-screen preview</button>
-            <button class="button ghost" id="promoRandomize" type="button">Random five</button>
-          </div>
-          <p class="promo-note" id="promoStatus">Select up to five cards. Card 1 is used as the background by default.</p>
-        </div>
-
-        <div class="promo-stage-wrap">
-          <div class="promo-stage landscape" id="promoStage">
-            <div class="promo-bg" id="promoBg"></div>
-            <div class="promo-bg-mirror" id="promoBgMirror"></div>
-            <div class="promo-vignette"></div>
-            <div class="promo-brand">
-              <div class="promo-brand-kicker">A CUSTOM MAGIC SET</div>
-              <div class="promo-brand-title">ODYSSEY</div>
-              <div class="promo-brand-rule"></div>
-              <div class="promo-brand-sub" id="promoStageHeadline">THE LONG WAY HOME</div>
-            </div>
-            <div class="promo-cards" id="promoCards"></div>
-            <div class="promo-art-credit" id="promoArtCredit"></div>
-            <div class="promo-url">kliawota.design/mtgtools/Odyssey/scry</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="cards-section" id="cards">
-      <div class="section-head">
-        <div>
-          <p class="kicker">Limited-time development spoiler</p>
-          <h2>Every current candidate, while this window is open.</h2>
-        </div>
-        <div class="result-count" id="resultCount">Loading working file…</div>
-      </div>
-
-      <div class="spoiler-notice"><strong>OPEN PREVIEW WINDOW</strong><span>This candidate file is deliberately overexposed while the design is being audited. The long-term public site will move toward curated previews while the working file enters structured testing.</span></div>
-      <div class="toolbar" aria-label="Card gallery controls">
-        <label class="searchbox"><span>Search</span><input id="search" type="search" placeholder="Name, rules, type, mechanic…" autocomplete="off"></label>
-        <select id="colorFilter" aria-label="Filter by color">
-          <option value="">All colors</option><option value="W">White</option><option value="U">Blue</option><option value="B">Black</option><option value="R">Red</option><option value="G">Green</option><option value="M">Multicolor</option><option value="C">Colorless</option><option value="L">Lands</option>
-        </select>
-        <select id="rarityFilter" aria-label="Filter by rarity">
-          <option value="">All rarities</option><option value="C">Common</option><option value="U">Uncommon</option><option value="R">Rare</option><option value="M">Mythic</option>
-        </select>
-        <select id="sort" aria-label="Sort cards">
-          <option value="number">Collector number</option><option value="name">Name</option><option value="rarity">Rarity</option><option value="color">Color</option>
-        </select>
-        <div class="view-toggle" role="group" aria-label="View style">
-          <button class="active" data-view="grid" type="button">Grid</button>
-          <button data-view="compact" type="button">Compact</button>
-        </div>
-      </div>
-
-      <div class="active-filters" id="activeFilters"></div>
-      <div class="card-grid" id="cardGrid"></div>
-      <div class="load-sentinel" id="loadSentinel"><span>Loading more cards…</span></div>
-    </section>
-  </main>
-
-  <footer>
-    <div><strong>ODYSSEY</strong><span>Unofficial fan project · active design development · 0 cards currently locked</span></div>
-    <p>Odyssey is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p>
-  </footer>
-
-  <dialog id="cardDialog">
-    <button class="dialog-close" id="dialogClose" aria-label="Close">×</button>
-    <div class="dialog-card" id="dialogCard"></div>
-    <div class="dialog-info" id="dialogInfo"></div>
-  </dialog>
-
-  <script src="./scry.js?v=20260928-4"></script>
-</body>
-</html>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><a href="#top" class="brand" data-exhibition>ODYSSEY</a><nav aria-label="Main navigation"><a href="#materials" data-exhibition>Art & materials</a><a href="#mechanics" data-exhibition>Mechanics</a><a href="#development" data-exhibition>The project</a><button type="button" class="button small" data-spoiler>Open spoiler ↗</button></nav></header>
+<div id="loadStatus" class="load-status" role="status">Opening the published collection…</div>
+<main id="main">
+<div id="exhibition">
+<section id="top" class="opening">
+ <div id="heroImage" class="opening-art"></div><div class="opening-shade"></div>
+ <div class="opening-copy"><p class="eyebrow">Homer’s epic. Art history’s imagination.</p><h1>ODYSSEY</h1><p class="tagline">The war is over.<br>The hard part is getting home.</p><p class="opening-sub">A custom Magic set, illustrated by art history.</p><div class="actions"><a class="button light" href="#first-card">Enter the exhibition ↓</a><button class="text-button" data-spoiler>Temporary full spoiler ↗</button></div></div>
+ <div id="heroCredit" class="opening-label"></div><span class="edge-note">AN UNOFFICIAL SET IN DEVELOPMENT</span>
+</section>
+<section id="first-card" class="first-card section">
+ <div><p class="eyebrow">From historical image to playable idea</p><h2>A world first.<br>A card second.</h2><p class="lead">The work of art is not anonymous scenery. It has a maker, a material and a history. The card is our interpretation of it.</p><p>Open the candidate to read its current rules. Open the artwork to see the complete image and its source record.</p><div id="firstCredit"></div></div><div id="firstCard" class="first-card-object"></div>
+</section>
+<section class="manifesto section" id="manifesto"><p class="eyebrow">The project, honestly</p><h2>The proof of concept exists.<br><em>The final set does not.</em></h2><p class="lead">The next phase is to turn a working file into a final card file through critique, playtesting and careful revision. Every card shown here is a candidate.</p><div class="project-stats"><div><strong id="candidateCount">—</strong><span>working candidates</span></div><div><strong>0</strong><span>confirmed cards</span></div><div><strong>OPEN</strong><span>temporary preview window</span></div></div><p class="fine">Historical-art sourcing is a project standard, not a claim of museum endorsement or educational accreditation. Attribution and rights records are still being reviewed.</p></section>
+<section class="section section-heading" id="materials"><p class="eyebrow">An exhibition in six materials</p><h2>The same epic.<br><em>Different ways of seeing.</em></h2><p class="lead">Explore what the collection actually contains. No invented objects, dates or attribution. No AI-generated artwork substitutes.</p><nav id="chapterNav" class="chapter-nav" aria-label="Material chapters"></nav></section>
+<div id="mediumChapters"></div>
+<section id="mechanics" class="section section-heading"><p class="eyebrow">The Odyssey in Magic</p><h2>Play the feeling.<br><em>Then read the rules.</em></h2><p class="lead">Selected mechanics from the current file. The colour bands reflect every matching candidate, not just the examples on screen.</p></section>
+<div id="mechanicChapters"></div>
+<section class="section section-heading" id="stories"><p class="eyebrow">People, places & impossible choices</p><h2>Who gets home?<br><em>And what comes home with them?</em></h2></section><div id="storyChapters"></div>
+<section class="section development" id="development"><p class="eyebrow">An invitation, not a finished product</p><h2>Help decide<br><em>what survives.</em></h2><p class="lead">The aim is a community-informed final set: public critique, small playtest rounds and an editorial record of what changed and why. Not a claim to be the first Reddit-designed set.</p><div class="process"><article><span>01 / NOW</span><h3>Explore the candidates</h3><p>Read the cards, examine the historical artwork and identify what is worth keeping.</p></article><article><span>02 / NEXT</span><h3>Critique & playtest</h3><p>Test the colour pairs, question duplicated designs and report the moments where flavour and gameplay separate.</p></article><article><span>03 / THEN</span><h3>Earn a place in the file</h3><p>Only after design, wording, power, flavour and artwork review does a candidate become confirmed.</p></article></div><div class="development-note"><h3>Support the work, not a paywall around the cards.</h3><p>Voluntary development support and contributor credits are being explored. No paid membership, sponsorship checkout or exclusive card access is being sold here. The independent art-history and creator-tool products remain proposals.</p><a href="/mtgtools/Odyssey/scry/PRODUCT_PLAN.md">Read the development plan ↗</a></div></section>
+<section id="social" class="section social"><p class="eyebrow">Make a reveal</p><h2>One story.<br><em>Up to five candidates.</em></h2><p class="lead">Choose the cards and the artwork behind them. Credits travel with the composition.</p><div class="composer"><form id="promoControls" class="controls"><label>Format<select id="promoFormat"><option value="landscape">Landscape · 1200 × 630</option><option value="square">Square · 1080 × 1080</option><option value="portrait">Portrait · 1080 × 1350</option><option value="story">Story · 1080 × 1920</option></select></label><label>Headline<input id="promoHeadline" maxlength="70" value="THE LONG WAY HOME"></label><div id="promoPickers"></div><label>Background artwork<select id="promoBackground"></select></label><div class="actions"><button type="button" id="promoDownload" class="button light">Export PNG</button><button type="button" id="promoFullscreen" class="button">Full screen</button></div><p id="promoStatus" class="fine" role="status">Choose one to five distinct candidates.</p></form><div class="preview-frame" id="promoViewport"><div id="promoStage" class="promo-stage"></div></div></div></section>
+<section class="spoiler-door section"><p class="eyebrow">Leave the exhibition. Enter the working file.</p><h2>The temporary<br><em>full spoiler.</em></h2><p class="lead">Search and inspect every current candidate in a focused, full-width gallery. No card is a promise of inclusion.</p><button class="button light" data-spoiler>Open the candidate gallery ↗</button><p class="fine">The preview is open now; no closing date has been announced. This is a browsing mode, not an access-control system.</p></section>
+</div>
+<section id="spoiler" class="spoiler" hidden aria-labelledby="spoilerTitle"><div class="spoiler-header"><button class="text-button" id="backExhibition">← Return to the exhibition</button><p class="eyebrow">WORKING FILE / ZERO CONFIRMED CARDS</p><h1 id="spoilerTitle">Odyssey candidates</h1><p id="resultCount" role="status"></p></div><form class="filterbar" id="filters"><label>Search<input id="search" type="search" placeholder="Name, rules, story, artist…"></label><label>Colour<select id="colorFilter"><option value="">All colours</option><option value="W">White</option><option value="U">Blue</option><option value="B">Black</option><option value="R">Red</option><option value="G">Green</option><option value="M">Multicolour</option><option value="C">Colourless</option><option value="L">Lands</option></select></label><label>Rarity<select id="rarityFilter"><option value="">All rarities</option><option value="C">Common</option><option value="U">Uncommon</option><option value="R">Rare</option><option value="M">Mythic</option></select></label><label>Sort<select id="sort"><option value="number">Collector number</option><option value="name">Name</option><option value="color">Colour</option><option value="rarity">Rarity</option></select></label><button type="button" id="clearFilters" class="button">Reset</button><button type="button" id="compact" class="button" aria-pressed="false">Compact</button></form><div id="filterContext" class="filter-context"></div><div id="cardGrid" class="card-grid"></div><div class="load-more"><button class="button" type="button" id="loadMore">Load more candidates</button><span id="loadProgress" role="status"></span></div><div id="sentinel" aria-hidden="true"></div></section>
+</main>
+<footer class="site-footer"><span class="brand">ODYSSEY</span><p>Historical artwork. Visible attribution. A set still being designed.</p><p class="fine">Odyssey is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC. Individual artwork rights and source records are shown alongside the works.</p><a href="/mtgtools/odyssey/">Odyssey Studio ↗</a><span class="fine">Exhibition build 20260928-launch1</span></footer>
+<dialog id="detailDialog" aria-labelledby="detailTitle"><button class="close" id="closeDialog" aria-label="Close detail">×</button><div id="detailVisual"></div><div id="detailText"></div></dialog>
+<div id="toast" role="status" class="toast" hidden></div><noscript><p class="section">The exhibition text is available above. JavaScript is required to load the current artwork collection and candidate gallery.</p></noscript>
+</body></html>
