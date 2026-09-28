@@ -27,7 +27,6 @@ function cardHTML(c,{meta=true}={}){
 <div class="rules">${richText(rules)}${flavor?'<span class="flavor">'+richText(flavor)+'</span>':''}</div>
 <div class="footerline"><span>ODY · ${String(n).padStart(3,'0')} · ${rarity(c.rarity)}</span>${pt?'<span class="pt">'+esc(pt)+'</span>':''}</div>
 </div></div></div>${meta?'<div class="tile-meta"><div class="tile-title">'+esc(name)+'</div><div class="tile-sub">#'+String(n).padStart(3,'0')+' · '+esc(type)+'</div></div>':''}</article>`}
-}
 function hydrateArt(d){(d.artworks||[]).forEach(a=>state.art.set(a.id,a))}
 function textBlob(c){return [c.name,c.displayName,c.type,c.rules,c.flavor,c.mechanics,c.archetypes,c.story].filter(Boolean).join(' ').toLowerCase()}
 function applyFilters(reset=true){const q=$('#search').value.trim().toLowerCase(),cf=$('#colorFilter').value,rf=$('#rarityFilter').value,sort=$('#sort').value;let a=state.all.filter(c=>(!q||textBlob(c).includes(q))&&(!cf||normFrame(c)===cf)&&(!rf||rarity(c.rarity)===rf));a.sort((x,y)=>sort==='name'?String(x.displayName||x.name).localeCompare(String(y.displayName||y.name)):sort==='rarity'?rarity(x.rarity).localeCompare(rarity(y.rarity))||(+x.number-+y.number):sort==='color'?normFrame(x).localeCompare(normFrame(y))||(+x.number-+y.number):(+x.number-+y.number));state.filtered=a;if(reset){state.shown=0;$('#cardGrid').innerHTML=''}renderMore();$('#resultCount').textContent=`${a.length} of ${state.all.length} cards`;$('#activeFilters').textContent=[q&&`Search: “${q}”`,cf&&`Color: ${cf}`,rf&&`Rarity: ${rf}`].filter(Boolean).join(' · ')}
