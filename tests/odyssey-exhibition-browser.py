@@ -1,6 +1,4 @@
-"""Run against a local server serving the actual repository public directory.
-No fixture images or invented museum records are committed to the website.
-"""
+"""Browser checks against actual published records; no invented artwork fixtures."""
 import asyncio
 import json
 import os
@@ -14,25 +12,22 @@ OUT.mkdir(parents=True, exist_ok=True)
 async def main():
     async with async_playwright() as p:
         browser = await p.chromium.launch()
-        page = await browser.new_page(viewport={'width': 1440, 'height': 1000})
+        page = await browser.new_page(viewport={'width': 1440, 'height': 1000}, reduced_motion='reduce')
         errors = []
         page.on('pageerror', lambda e: errors.append(str(e)))
         await page.goto(BASE, wait_until='domcontentloaded')
         await page.wait_for_function('window.OdysseyExhibition?.catalogue.cards.length > 0', timeout=45000)
         total = await page.evaluate('window.OdysseyExhibition.catalogue.cards.length')
         assert await page.locator('#spoiler').is_hidden()
-        assert await page.locator('#cardGrid .candidate').count() == 0, 'Spoiler should not render before it is opened'
+        assert await page.locator('#cardGrid .candidate').count() == 0
         assert await page.locator('#candidateCount').inner_text() == str(total)
         initial_cards = await page.locator('#exhibition .candidate').count()
         assert initial_cards <= 30, 'Launch experience is too card-dense'
-        try:
-            await page.wait_for_function('document.querySelector("#heroImage img")?.naturalWidth > 0', timeout=15000)
-        except Exception:
-            print('WARNING: hero image did not finish loading; source record retained')
+        await page.wait_for_function('document.querySelector("#heroImage img")?.naturalWidth > 0', timeout=60000)
         await page.screenshot(path=str(OUT / 'desktop-hero.png'))
         if await page.locator('#chapter-stone').count():
             await page.locator('#chapter-stone').scroll_into_view_if_needed()
-            await page.wait_for_timeout(700)
+            await page.wait_for_timeout(500)
             await page.screenshot(path=str(OUT / 'stone-chapter.png'))
         await page.get_by_role('button', name='Open spoiler ↗', exact=True).click()
         await page.wait_for_function('document.querySelectorAll("#cardGrid .candidate").length > 0')
@@ -74,8 +69,10 @@ async def main():
         await page.screenshot(path=str(OUT / 'story-social.png'))
         for width in [390,768,1440]:
             await page.set_viewport_size({'width':width,'height':950})
-            await page.evaluate('window.scrollTo(0,0)')
+            await page.evaluate('window.scrollTo({top:0,behavior:"instant"})')
+            await page.wait_for_function('window.scrollY < 2')
             await page.wait_for_timeout(400)
+            assert await page.locator('#top h1').is_in_viewport()
             assert not await page.evaluate('document.documentElement.scrollWidth > innerWidth+1'), f'Horizontal overflow at {width}'
             await page.screenshot(path=str(OUT / f'hero-{width}.png'))
         await page.goto(BASE + '?view=cards#card-' + str(first_number).zfill(3), wait_until='domcontentloaded')
@@ -84,7 +81,7 @@ async def main():
         await page.keyboard.press('Escape')
         assert await page.locator('#spoiler').is_visible()
         assert not errors, '\n'.join(errors)
-        result = {'status':'passed','realCandidates':total,'launchCardAppearances':initial_cards,'rulesOverflow':overflow,'widths':[390,768,1440],'socialLayouts':geometry,'pageErrors':errors}
+        result = {'status':'passed','realCandidates':total,'launchCardAppearances':initial_cards,'rulesOverflow':overflow,'heroImageLoaded':True,'widths':[390,768,1440],'socialLayouts':geometry,'pageErrors':errors}
         (OUT / 'results.json').write_text(json.dumps(result,indent=2))
         print(json.dumps(result,indent=2))
         await browser.close()
