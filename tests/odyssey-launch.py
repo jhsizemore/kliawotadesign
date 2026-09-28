@@ -30,7 +30,7 @@ async def main():
         assert await page.locator('time[datetime="2027-01-07"]').count() == 4
         assert await page.locator('time[datetime="2026-11-01T00:00:00+11:00"]').count() == 2
         assert 'November 1, 2026' in await page.locator('.spoiler-door').inner_text()
-        assert await page.locator('#signupLink').get_attribute('href').startswith('mailto:')
+        assert (await page.locator('#signupLink').get_attribute('href')).startswith('mailto:')
         assert 'no automatic mailing-list signup' in (await page.locator('#signupNotice').inner_text()).lower()
         assert await page.locator('#mechanicChapters .carousel-slide').count() == 4
         assert await page.locator('#candidateCount').inner_text() == '309'
