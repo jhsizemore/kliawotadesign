@@ -61,16 +61,20 @@ for entry in PLAN['entries']:
     if aid == 'ART-245':
         asset['museum'] = entry['upgrade']['museum']
         asset['rights'] = 'Public-domain painting; faithful Google Art Project reproduction via Wikimedia Commons. Detail cropped for this exhibition; complete work available in the viewer.'
-        rect = [0.586, 0.28, 0.70, 0.64]
+        rect = [0.586, 0.28, 0.674, 0.505]
         crop = image.crop(tuple(round(v * (image.width if i % 2 == 0 else image.height)) for i, v in enumerate(rect)))
         asset['face'] = save_variant(crop, aid + '-entranced-face', (1600, 2200), 95)
         asset['face']['sourceRect'] = rect
-        asset['face']['description'] = 'Detail: Odysseus listening to the Sirens, face and upper body; no retouching or generated pixels.'
+        asset['face']['description'] = 'Detail: Odysseus listening to the Sirens, face and shoulders; no retouching or generated pixels.'
     report['assets'][aid] = asset
     print(aid, art['title'], image.size, flush=True)
 
 assert len(report['assets']) == 20
 (PAGE / 'art-journey-assets.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
-# Machine-readable data is also available before the exhibition-ready event.
 (PAGE / 'art-journey-assets.js').write_text('window.OdysseyJourneyAssets=' + json.dumps(report, ensure_ascii=False, separators=(',', ':')) + ';\n')
+# Remove obsolete derivatives only within this builder's dedicated output folder.
+used = {Path(v['url']).name for a in report['assets'].values() for k, v in a.items() if k in ['full', 'display', 'thumb', 'face']}
+for path in OUT.glob('*.webp'):
+    if path.name not in used:
+        path.unlink()
 print('Created 20 credited responsive artwork families; no upscaling or AI imagery.')
