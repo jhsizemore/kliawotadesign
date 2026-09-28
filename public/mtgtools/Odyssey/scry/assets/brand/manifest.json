@@ -1,0 +1,31 @@
+{
+  "approved_title": "The Odyssey",
+  "release_date": "2027-01-07",
+  "source_dimensions": [
+    1851,
+    421
+  ],
+  "source_note": "User-approved final logo: single Greek wave in O; no subtitle. Only transparent outer padding trimmed. Website assets are self-hosted.",
+  "files": {
+    "the-odyssey-logo-1851.webp": {
+      "bytes": 277558,
+      "sha256": "94548067a9df48189061886948f4f96c32a1217a0d98a65743a6a3f574c9ea90"
+    },
+    "the-odyssey-logo-400.webp": {
+      "bytes": 26084,
+      "sha256": "7e75f39f037bb460887dfa4c24b4f1ba0be6fabe03c6cd6d4a74c86670f5be2c"
+    },
+    "the-odyssey-release-20270107.jpg": {
+      "bytes": 105196,
+      "sha256": "525c01c5fcc60b64be154f29ca2e7d5b4c6babe8bac7d62b0534c7da3bac6bff"
+    },
+    "the-odyssey-logo-960.webp": {
+      "bytes": 98354,
+      "sha256": "5cf62b675b9ab811e5f61124ea78a64ac3b677db80c60cdce3442cc230caedc4"
+    },
+    "the-odyssey-logo.png": {
+      "bytes": 864669,
+      "sha256": "e5fc4e98f58ed6052787208f1305d84396c5aafb87a1425fea8e504ef7a0b39c"
+    }
+  }
+}
