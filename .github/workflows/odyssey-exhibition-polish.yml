@@ -2,9 +2,12 @@ name: Odyssey Studio exhibition integration
 on:
   push:
     branches: [odyssey-exhibition-studio-polish]
+    paths:
+      - 'scripts/_exhibition_revision_*.json'
+      - '.github/workflows/odyssey-exhibition-polish.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: odyssey-studio-exhibition-${{ github.ref }}
   cancel-in-progress: true
@@ -17,27 +20,81 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Snapshot renderer source
+      - name: Validate and apply source revision
         run: |
-          mkdir -p test-results
           python - <<'PY'
+          import base64, hashlib, json, zlib
           from pathlib import Path
-          import zipfile
-          roots=['public/mtgtools/odyssey','public/mtgtools/Odyssey/scry','tests','.github/workflows','src']
-          files=[Path(p) for p in ['package.json','wrangler.jsonc','wrangler.toml','worker.js'] if Path(p).exists()]
-          for root in roots:
-              for p in Path(root).rglob('*'):
-                  if not p.is_file(): continue
-                  text=p.suffix in ['.html','.js','.cjs','.mjs','.css','.json','.md','.yml','.py','.ts','.toml'] and p.stat().st_size<10000000
-                  image=('assets/artwork/' in str(p) and p.name.endswith('.thumb.webp')) or 'assets/mana-pips/' in str(p)
-                  if text or image: files.append(p)
-          with zipfile.ZipFile('test-results/studio-source.zip','w',zipfile.ZIP_DEFLATED) as z:
-              for p in files:z.write(p)
-          print(len(files),'files;',Path('test-results/studio-source.zip').stat().st_size,'bytes')
+          allowed={
+           'package.json','scripts/build-odyssey-public-renderer.cjs',
+           'tests/odyssey-exhibition.cjs','tests/odyssey-exhibition-browser.py',
+           'public/mtgtools/odyssey/studio-polish.js',
+           'public/mtgtools/Odyssey/scry/index.html','public/mtgtools/Odyssey/scry/social/index.html',
+           'public/mtgtools/Odyssey/scry/exhibition-core.js','public/mtgtools/Odyssey/scry/exhibition.css',
+           'public/mtgtools/Odyssey/scry/exhibition.js','public/mtgtools/Odyssey/scry/carousels.js',
+           'public/mtgtools/Odyssey/scry/EXHIBITION_BUILD.md'}
+          staged={}
+          errors=[]
+          for n in range(1,6):
+              payload=Path(f'scripts/_exhibition_revision_{n}.json')
+              for row in json.loads(payload.read_text()):
+                  try:
+                      name=row['path']; assert name in allowed and name not in staged,name
+                      path=Path(name); before=path.read_bytes() if path.exists() else b''
+                      actual=hashlib.sha256(before).hexdigest() if path.exists() else None
+                      assert actual==row['before'],f'Concurrent source change: {name}: {actual}'
+                      # Correct known transport transcription errors; the complete output hash remains mandatory.
+                      data=row['data']
+                      fixes={'sc2M7dlHlUJ':'sc2M7dlpHlUJ','u48TPrRPk':'u48RPk','KccVV2Qr':'KccV2Qr','k/c1dOtN':'k/c1OtN'}
+                      for bad,good in fixes.items(): data=data.replace(bad,good)
+                      decoder=zlib.decompressobj(zdict=before[-32768:]) if row['before'] else zlib.decompressobj()
+                      after=decoder.decompress(base64.b64decode(data,validate=True))+decoder.flush()
+                      assert hashlib.sha256(after).hexdigest()==row['after'],f'Output checksum mismatch: {name}'
+                      staged[name]=after
+                      print('Verified',name,len(after))
+                  except Exception as error: errors.append(f"{row.get('path')}: {error}")
+          assert not errors,'\n'.join(errors)
+          assert set(staged)==allowed,'Revision is incomplete'
+          for name,data in staged.items():
+              path=Path(name);path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+          Path('test-results').mkdir(exist_ok=True)
+          Path('test-results/revision-files.json').write_text(json.dumps(sorted(staged)))
           PY
-      - name: Save integration source
+      - name: Build shared Studio renderer
+        run: |
+          npm install --no-audit --no-fund
+          node scripts/build-odyssey-public-renderer.cjs --check
+          node tests/odyssey-exhibition.cjs
+      - name: Install real browser
+        run: |
+          python -m pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Test complete candidate file and revised experience
+        run: |
+          python -m http.server 8765 --directory public > /tmp/exhibition-http.log 2>&1 &
+          python tests/odyssey-exhibition-browser.py
+      - name: Save real browser evidence
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: odyssey-studio-source-small
-          path: test-results/studio-source.zip
-          retention-days: 3
+          name: odyssey-studio-exhibition-evidence
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Commit verified source to the feature branch only
+        env:
+          EXPECTED_SHA: ${{ github.sha }}
+        run: |
+          test "$(git ls-remote origin refs/heads/odyssey-exhibition-studio-polish | cut -f1)" = "$EXPECTED_SHA"
+          python - <<'PY'
+          import json,subprocess
+          paths=json.load(open('test-results/revision-files.json'))
+          paths.append('public/mtgtools/odyssey/public-renderer.generated.js')
+          assert not any(p.startswith('.github/') for p in paths)
+          subprocess.run(['git','add','--',*paths],check=True)
+          subprocess.run(['git','rm','--',*[f'scripts/_exhibition_revision_{n}.json' for n in range(1,6)]],check=True)
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Use Studio-native cards in a brighter, shorter Odyssey exhibition'
+          git push origin HEAD:odyssey-exhibition-studio-polish
