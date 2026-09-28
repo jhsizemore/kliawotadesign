@@ -33,26 +33,39 @@ jobs:
            'public/mtgtools/Odyssey/scry/exhibition-core.js','public/mtgtools/Odyssey/scry/exhibition.css',
            'public/mtgtools/Odyssey/scry/exhibition.js','public/mtgtools/Odyssey/scry/carousels.js',
            'public/mtgtools/Odyssey/scry/EXHIBITION_BUILD.md'}
-          staged={}
-          errors=[]
+          unit_addition=r'''
+          const cutoff=Date.parse(C.previewClosesAt);assert(C.previewOpen(cutoff-1));assert(!C.previewOpen(cutoff));assert(!C.previewOpen(cutoff+1));
+          const ordeals=production.cards.filter(c=>/^Ordeal of /.test(c.displayName));assert.equal(ordeals.length,5);assert(ordeals.every(c=>/Survival/.test(c.rules)));
+          for(const feature of [...C.mechanics,...C.themes])for(const n of feature.featured)assert(production.cards.some(c=>c.number===n),'Missing editorial feature card '+n);
+          assert.equal(C.mechanics.length,4);assert(!C.mechanics.some(m=>/Prepare|Manifest hope/i.test(m.name)));
+          const generated=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/public-renderer.generated.js'),'utf8');new vm.Script(generated);
+          assert(!/localStorage|sessionStorage|\/mtgtools\/odyssey\/api\//.test(generated),'Read-only renderer must not depend on editor storage or synchronization');
+          console.log(JSON.stringify({features:C.mechanics.map(m=>({id:m.id,featured:m.featured,matches:production.cards.filter(m.match).length})),ordeals:ordeals.map(c=>c.displayName),previewClosesAt:C.previewClosesAt},null,2));
+          '''
+          staged={};errors=[]
           for n in range(1,6):
-              payload=Path(f'scripts/_exhibition_revision_{n}.json')
-              for row in json.loads(payload.read_text()):
+              for row in json.loads(Path(f'scripts/_exhibition_revision_{n}.json').read_text()):
                   try:
-                      name=row['path']; assert name in allowed and name not in staged,name
-                      path=Path(name); before=path.read_bytes() if path.exists() else b''
+                      name=row['path'];assert name in allowed and name not in staged,name
+                      path=Path(name);before=path.read_bytes() if path.exists() else b''
                       actual=hashlib.sha256(before).hexdigest() if path.exists() else None
                       assert actual==row['before'],f'Concurrent source change: {name}: {actual}'
-                      # Correct known transport transcription errors; the complete output hash remains mandatory.
-                      data=row['data']
-                      fixes={'sc2M7dlHlUJ':'sc2M7dlpHlUJ','u48TPrRPk':'u48RPk','KccVV2Qr':'KccV2Qr','k/c1dOtN':'k/c1OtN'}
-                      for bad,good in fixes.items(): data=data.replace(bad,good)
-                      decoder=zlib.decompressobj(zdict=before[-32768:]) if row['before'] else zlib.decompressobj()
-                      after=decoder.decompress(base64.b64decode(data,validate=True))+decoder.flush()
+                      if name=='tests/odyssey-exhibition.cjs':
+                          after=before+unit_addition.encode()
+                      elif name=='public/mtgtools/odyssey/studio-polish.js':
+                          old=b'        const amount=Math.min(24*scale,Math.max(14*scale,rules.scrollHeight-rules.clientHeight+8*scale));'
+                          new=b'        // Dense published cards, including Ogygia, can need 40 design pixels to keep flavour inside the frame.\n        const amount=Math.min(40*scale,Math.max(14*scale,rules.scrollHeight-rules.clientHeight+8*scale));'
+                          assert before.count(old)==1
+                          after=before.replace(old,new)
+                      else:
+                          data=row['data']
+                          fixes={'sc2M7dlHlUJ':'sc2M7dlpHlUJ','u48TPrRPk':'u48RPk','KccVV2Qr':'KccV2Qr','k/c1dOtN':'k/c1OtN'}
+                          for bad,good in fixes.items():data=data.replace(bad,good)
+                          decoder=zlib.decompressobj(zdict=before[-32768:]) if row['before'] else zlib.decompressobj()
+                          after=decoder.decompress(base64.b64decode(data,validate=True))+decoder.flush()
                       assert hashlib.sha256(after).hexdigest()==row['after'],f'Output checksum mismatch: {name}'
-                      staged[name]=after
-                      print('Verified',name,len(after))
-                  except Exception as error: errors.append(f"{row.get('path')}: {error}")
+                      staged[name]=after;print('Verified',name,len(after))
+                  except Exception as error:errors.append(f"{row.get('path')}: {error}")
           assert not errors,'\n'.join(errors)
           assert set(staged)==allowed,'Revision is incomplete'
           for name,data in staged.items():
