@@ -49,8 +49,19 @@ async def main():
               const box=e=>{const r=e.getBoundingClientRect();return {left:r.left,right:r.right,top:r.top,bottom:r.bottom,width:r.width,height:r.height}};
               const image=document.querySelector('.opening-wordmark img');
               const credit=document.querySelector('#heroCredit').getBoundingClientRect();
-              const copy=document.querySelector('.opening-copy').getBoundingClientRect();
-              return {viewport:innerWidth,documentWidth:document.documentElement.scrollWidth,logo:box(image),nav:box(document.querySelector('.nav .brand-logo')),release:box(document.querySelector('.release-announcement')),logoLoaded:image.complete&&image.naturalWidth>0,logoSource:image.currentSrc,creditOverlap:Math.max(0,Math.min(credit.right,copy.right)-Math.max(credit.left,copy.left))*Math.max(0,Math.min(credit.bottom,copy.bottom)-Math.max(credit.top,copy.top))};
+              const copy=document.querySelector('.opening-copy');
+              // The desktop credit sits in the unused right side of the copy container.
+              // Test painted elements and text lines, not its empty full-width box.
+              const painted=[...copy.querySelectorAll('img,.release-announcement,.button')].map(e=>e.getBoundingClientRect());
+              const walker=document.createTreeWalker(copy,NodeFilter.SHOW_TEXT);
+              let node;
+              while((node=walker.nextNode())){
+                if(!node.textContent.trim()) continue;
+                const range=document.createRange();range.selectNodeContents(node);
+                painted.push(...range.getClientRects());
+              }
+              const overlap=r=>Math.max(0,Math.min(credit.right,r.right)-Math.max(credit.left,r.left))*Math.max(0,Math.min(credit.bottom,r.bottom)-Math.max(credit.top,r.top));
+              return {viewport:innerWidth,documentWidth:document.documentElement.scrollWidth,logo:box(image),nav:box(document.querySelector('.nav .brand-logo')),release:box(document.querySelector('.release-announcement')),logoLoaded:image.complete&&image.naturalWidth>0,logoSource:image.currentSrc,creditOverlap:painted.reduce((total,r)=>total+overlap(r),0)};
             }''')
             await page.screenshot(path=str(OUT/f'opening-{width}.png'))
             assert measurements['documentWidth'] <= width + 1, measurements
