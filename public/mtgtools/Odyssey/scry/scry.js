@@ -127,7 +127,7 @@ function mechanics(){
     const cards=state.all.filter(c=>mechanicWords(c).some(x=>x.toLowerCase()===m.toLowerCase())).slice(0,3),bg=cards.find(c=>artFor(c))||cards[0],colors=[...new Set(cards.map(normFrame))];
     return `<article class="mechanic-feature">
       <div class="mechanic-feature-bg" style="background-image:${bg&&artFor(bg)?'url(&quot;'+esc(artFor(bg)).replace(/"/g,'%22')+'&quot;)':'none'}"></div>
-      <div class="mechanic-copy"><div class="mechanic-index">MECHANIC ${String(i+1).padStart(2,'0')} · ${n} CURRENT CANDIDATES</div><h3>${esc(m)}</h3><p>${esc(mechanicDescription(m,cards))}</p><div class="mechanic-colors">${colors.map(c=>'<span class="color-pip '+c+'" title="'+c+'"></span>').join('')}<small>${colors.join(' · ')}</small></div><button class="mechanic-action" data-mechanic="${esc(m)}">See every ${esc(m)} candidate</button></div>
+      <div class="mechanic-copy"><div class="mechanic-index">MECHANIC ${String(i+1).padStart(2,'0')} · ${n} CURRENT CANDIDATES</div><h3>${esc(m)}</h3><p>${esc(mechanicDescription(m,cards))}</p><div class="mechanic-colors">${colors.map(c=>'<span class="color-pip '+c+'" title="'+c+'"></span>').join('')}<small>${colors.join(' · ')}</small></div><button class="mechanic-action" data-mechanic="${esc(m)}">See every ${esc(m)} candidate</button>${bg&&artRecordForCard(bg)?'<div class="mechanic-art-credit"><strong>Background artwork:</strong> '+esc(artMetaLine(artRecordForCard(bg)))+(artRecordForCard(bg).source?' · <a href="'+esc(artRecordForCard(bg).source)+'" target="_blank" rel="noopener">source ↗</a>':'')+'</div>':''}</div>
       <div class="mechanic-cards">${cards.map(c=>cardHTML(c,{meta:false})).join('')}</div>
     </article>`;
   }).join('');
@@ -171,7 +171,7 @@ function renderPromo(){
   $('#promoBg').style.backgroundImage=cssUrl;$('#promoBgMirror').style.backgroundImage=cssUrl;
   $('#promoCards').className='promo-cards count-'+cards.length;
   $('#promoCards').innerHTML=cards.map(c=>cardHTML(c,{meta:false})).join('');
-  const ba=bg?artRecordForCard(bg):null;$('#promoStatus').textContent=cards.length?cards.length+' card'+(cards.length===1?'':'s')+' selected · background: '+(bg?.displayName||bg?.name||'none')+(ba?' · '+artMetaLine(ba):''):'Select up to five cards. Card 1 is used as the background by default.';
+  const ba=bg?artRecordForCard(bg):null;$('#promoStatus').textContent=cards.length?cards.length+' card'+(cards.length===1?'':'s')+' selected · background: '+(bg?.displayName||bg?.name||'none')+(ba?' · '+artMetaLine(ba):''):'Select up to five cards. Card 1 is used as the background by default.';if($('#promoArtCredit'))$('#promoArtCredit').innerHTML=ba?'<strong>'+esc(ba.title||'Untitled')+'</strong> · '+esc(artMetaLine(ba))+(ba.source?' · source record':''):'';
 }
 function loadCanvasImage(url){
   return new Promise((resolve,reject)=>{if(!url)return reject(new Error('no image'));const img=new Image();img.crossOrigin='anonymous';img.referrerPolicy='no-referrer';img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('image unavailable'));img.src=url});
@@ -205,7 +205,7 @@ async function downloadPromo(){
   let cardW,cardH;if(H/W>1.4){cardW=W*(cards.length<=2?.39:.27)}else{cardW=W*(cards.length===1?.28:cards.length===2?.24:cards.length===3?.20:cards.length===4?.175:.15)}cardH=cardW*88/63;
   const gap=cardW*.07,total=cards.length*cardW+(cards.length-1)*gap;let startX=(W-total)/2;if(H/W<1.1)startX=W-total-W*.045;const cy=H*(H/W>1.4?.52:.59)-cardH/2;
   for(let i=0;i<cards.length;i++)await drawPromoCard(ctx,cards[i],startX+i*(cardW+gap),cy+(i%2? -cardH*.025:cardH*.018),cardW,cardH);
-  ctx.fillStyle='rgba(244,237,220,.8)';ctx.font=Math.round(W*.011)+'px Arial';ctx.fillText('kliawota.design/mtgtools/Odyssey/scry',lx,H*.95);
+  const bgArt=bg?artRecordForCard(bg):null;ctx.fillStyle='rgba(244,237,220,.8)';ctx.font=Math.round(W*.011)+'px Arial';ctx.fillText('kliawota.design/mtgtools/Odyssey/scry',lx,H*.95);if(bgArt){ctx.textAlign='right';ctx.font=Math.round(W*.009)+'px Arial';ctx.fillStyle='rgba(244,237,220,.72)';ctx.fillText((bgArt.title||'Untitled')+' · '+artMetaLine(bgArt),W*.945,H*.95,W*.46);ctx.textAlign='left'}
   try{const a=document.createElement('a');a.download='odyssey-social-'+$('#promoFormat').value+'.png';a.href=canvas.toDataURL('image/png',.95);a.click();$('#promoStatus').textContent='PNG created. Background: '+(bg.displayName||bg.name)}catch(e){$('#promoStatus').textContent='Preview is ready, but this artwork host blocks browser PNG export. Use full-screen preview for capture.'}
   button.disabled=false;
 }
