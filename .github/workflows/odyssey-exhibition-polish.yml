@@ -1,0 +1,29 @@
+name: Odyssey Studio exhibition integration
+on:
+  push:
+    branches: [odyssey-exhibition-studio-polish]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odyssey-studio-exhibition-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Snapshot real source and assets
+        run: |
+          mkdir -p test-results
+          tar -czf test-results/studio-source.tgz public/mtgtools/odyssey public/mtgtools/Odyssey/scry tests .github/workflows package.json wrangler.jsonc src 2>/dev/null || test -s test-results/studio-source.tgz
+      - name: Save integration source
+        uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-studio-integration-source
+          path: test-results/studio-source.tgz
+          retention-days: 3
