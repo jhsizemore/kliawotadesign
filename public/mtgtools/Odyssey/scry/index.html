@@ -3,34 +3,38 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="Odyssey — a complete custom Magic: The Gathering set inspired by Homer's Odyssey.">
+  <meta name="description" content="Odyssey — an in-development custom Magic set inspired by Homer's Odyssey. 309 working candidates. 0 cards locked.">
   <title>Odyssey — Full Set Gallery</title>
   <link rel="canonical" href="https://kliawota.design/mtgtools/Odyssey/scry">
   <meta property="og:url" content="https://kliawota.design/mtgtools/Odyssey/scry">
   <meta property="og:title" content="Odyssey — A custom Magic: The Gathering set">
-  <meta property="og:description" content="Browse the complete Odyssey set and build shareable social previews.">
-  <link rel="stylesheet" href="./scry.css?v=20260928-2">
+  <meta property="og:description" content="309 working candidates. 0 cards locked. A limited-time look inside an Odyssey set being finished in public.">
+  <link rel="stylesheet" href="./scry.css?v=20260928-3">
 </head>
 <body>
   <header class="sitebar">
     <a class="wordmark" href="#top" aria-label="Odyssey home">ODYSSEY</a>
     <nav>
       <a href="#story">Set overview</a>
+      <a href="#development">Development</a>
       <a href="#cards">Full set</a>
       <a href="#social">Social previews</a>
       <a href="/mtgtools/odyssey/" class="studio-link">Odyssey Studio</a>
     </nav>
   </header>
 
+  <div class="preview-ribbon"><b>DEVELOPMENT PREVIEW</b><span>309 working candidates · 0 confirmed cards · full spoiler temporarily open</span></div>
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">A custom Magic: The Gathering set</p>
+        <p class="eyebrow">A set being built in public</p>
         <h1>ODYSSEY</h1>
         <p class="dek">The war is over. The hard part is getting home.</p>
-        <p class="hero-text">A 309-card journey through Homer's <em>Odyssey</em>, reimagined through the language of Magic and the mythic texture of Theros: gods and monsters, vows and temptations, enchantments, ordeals, cunning, homecoming and the cost of survival.</p>
+        <p class="hero-text">A 309-card working file built around Homer's <em>Odyssey</em>. The proof of concept exists. The final card file does not. Every card you see here is still a candidate: a place to test flavour, mechanics, art direction and Limited structure before anything earns a lock.</p>
+        <div class="truth-strip"><div><strong>309</strong><span>working candidates</span></div><div><strong>0</strong><span>confirmed cards</span></div><div><strong>NOW</strong><span>limited open spoiler</span></div></div>
         <div class="hero-actions">
-          <a class="button primary" href="#cards">Browse the full set</a>
+          <a class="button primary" href="#mechanics">Taste the mechanics</a>
+          <a class="button ghost" href="#cards">Open the temporary spoiler</a>
           <button class="button ghost" id="randomCard" type="button">Show me a card</button>
         </div>
         <div class="hero-meta" id="heroMeta">Loading current set…</div>
@@ -51,16 +55,37 @@
       </div>
     </section>
 
-    <section class="mechanics">
+    <section class="mechanics" id="mechanics">
       <div class="section-head">
         <div>
-          <p class="kicker">Set themes & mechanics</p>
-          <h2>What the set is doing</h2>
+          <p class="kicker">Taste the set</p>
+          <h2>Mechanics should feel like story.</h2>
         </div>
-        <p class="section-note">Pulled from the current set file, so this stays in sync as the design changes.</p>
+        <p class="section-note">Each feature below is generated from the live candidate file: representative colours, candidate cards and the slice of the Odyssey it is trying to make playable.</p>
       </div>
+      <div class="mechanic-features" id="mechanicFeatures"></div>
       <div class="mechanic-chips" id="mechanicChips"></div>
-      <div class="example-strip" id="mechanicExamples"></div>
+    </section>
+
+    <section class="development" id="development">
+      <div class="development-hero">
+        <p class="kicker">The experiment</p>
+        <h2>What if the final set were developed with the community?</h2>
+        <p>The design skeleton is real. The final choices are deliberately not. The next phase is about turning a large working file into a defensible final set through structured critique, playtesting, recasting and public design discussion.</p>
+      </div>
+      <div class="development-grid">
+        <article><b>01</b><h3>Open development</h3><p>Use Reddit and public design notes to pressure-test flavour, templating, cycles, colour balance and individual card candidates.</p></article>
+        <article><b>02</b><h3>Playtest cohorts</h3><p>Run small, trackable draft and gameplay rounds. Supporters can opt into the tester pool, but the fan content itself stays freely viewable.</p></article>
+        <article><b>03</b><h3>Fund the finishing work</h3><p>Patreon, donations and clearly labelled sponsorship can subsidise illustration research, testing, tooling and editing without turning the spoiler into paid access.</p></article>
+        <article><b>04</b><h3>Leave your mark</h3><p>Contributor and sponsor usernames can be acknowledged in a restrained credit ledger or allocated supporter space attached to the free project—recognition, not ownership of the card.</p></article>
+      </div>
+      <div class="roadmap">
+        <div class="roadmap-state current"><span>NOW</span><strong>Proof of concept</strong><small>309 candidates · 0 locks</small></div>
+        <div class="roadmap-state"><span>NEXT</span><strong>Community cuts</strong><small>recast · merge · test</small></div>
+        <div class="roadmap-state"><span>THEN</span><strong>Closed candidate file</strong><small>playtest-ready shortlist</small></div>
+        <div class="roadmap-state"><span>FINAL</span><strong>Public release</strong><small>locked free set</small></div>
+      </div>
+      <p class="policy-note">Odyssey is unofficial fan content. The public card content is intended to remain free to view; funding supports the development process rather than purchasing access to Wizards-owned IP.</p>
     </section>
 
     <section class="social-builder" id="social">
@@ -129,12 +154,13 @@
     <section class="cards-section" id="cards">
       <div class="section-head">
         <div>
-          <p class="kicker">Complete card image gallery</p>
-          <h2>The full Odyssey set</h2>
+          <p class="kicker">Limited-time development spoiler</p>
+          <h2>Every current candidate, while this window is open.</h2>
         </div>
-        <div class="result-count" id="resultCount">Loading cards…</div>
+        <div class="result-count" id="resultCount">Loading working file…</div>
       </div>
 
+      <div class="spoiler-notice"><strong>OPEN PREVIEW WINDOW</strong><span>This candidate file is deliberately overexposed while the design is being audited. The long-term public site will move toward curated previews while the working file enters structured testing.</span></div>
       <div class="toolbar" aria-label="Card gallery controls">
         <label class="searchbox"><span>Search</span><input id="search" type="search" placeholder="Name, rules, type, mechanic…" autocomplete="off"></label>
         <select id="colorFilter" aria-label="Filter by color">
@@ -159,8 +185,8 @@
   </main>
 
   <footer>
-    <div><strong>ODYSSEY</strong><span>Fan-made Magic set · work in progress</span></div>
-    <p>Magic: The Gathering and related marks belong to Wizards of the Coast. This project is unaffiliated and non-commercial.</p>
+    <div><strong>ODYSSEY</strong><span>Unofficial fan project · active design development · 0 cards currently locked</span></div>
+    <p>Odyssey is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p>
   </footer>
 
   <dialog id="cardDialog">
@@ -169,6 +195,6 @@
     <div class="dialog-info" id="dialogInfo"></div>
   </dialog>
 
-  <script src="./scry.js?v=20260928-2"></script>
+  <script src="./scry.js?v=20260928-3"></script>
 </body>
 </html>

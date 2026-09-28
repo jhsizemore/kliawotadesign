@@ -4,21 +4,67 @@ const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,m=
 function normFrame(c){const f=String(c.frame||c.color||'C').toUpperCase();if(['W','U','B','R','G','M','C','L'].includes(f))return f;if(/land/i.test(c.type||''))return'L';return'C'}
 function rarity(r){r=String(r||'C').toUpperCase();return r.startsWith('M')?'M':r.startsWith('R')?'R':r.startsWith('U')?'U':'C'}
 function artFor(c){const a=state.art.get(c.artId)||{};return c.imageUrl||a.imageUrl||a.thumbUrl||a.thumbnail||''}
-function cardHTML(c,{meta=true}={}){const n=Number(c.number)||0,f=normFrame(c),img=artFor(c),rules=c.rules||c.oracle||'',flavor=c.flavor||'',pt=c.pt||'',name=c.displayName||c.name||'Untitled';return `<article class="card-tile card-${f}" data-number="${n}" tabindex="0" aria-label="${esc(name)}">
+function manaTokens(cost){
+  const raw=String(cost||'').trim();if(!raw)return[];
+  if(raw.includes('{'))return [...raw.matchAll(/\{([^}]+)\}/g)].map(m=>m[1].toUpperCase());
+  const out=[];let i=0;while(i<raw.length){const num=raw.slice(i).match(/^\d+/);if(num){out.push(num[0]);i+=num[0].length;continue}const ch=raw[i].toUpperCase();if(/[WUBRGCX]/.test(ch))out.push(ch);i++}return out;
+}
+function manaPip(token){
+  token=String(token||'').toUpperCase();const base=token.split('/')[0],cls=/^\d+$/.test(token)?'generic':(/[WUBRGCX]/.test(base)?base:'generic'),hybrid=token.includes('/')?' hybrid':'';
+  const glyph={W:'☼',U:'',B:'☠',R:'♨',G:'♣',C:'◇',X:'X'}[base]||token;
+  return '<span class="mana-pip '+cls+hybrid+'" aria-label="'+esc(token)+'"><span class="element">'+esc(glyph)+'</span></span>';
+}
+function manaCostHTML(cost){return manaTokens(cost).map(manaPip).join('')}
+function richText(text){return esc(text||'').replace(/\{([^}]+)\}/g,(_,t)=>manaPip(t))}
+function cardHTML(c,{meta=true}={}){
+  const n=Number(c.number)||0,f=normFrame(c),img=artFor(c),rules=c.rules||c.oracle||'',flavor=c.flavor||'',pt=c.pt||'',name=c.displayName||c.name||'Untitled',type=c.type||'';
+  const classes=[name.length>35?'name-very-long':name.length>25?'name-long':'',type.length>38?'type-long':'',rules.length>430?'rules-extreme':rules.length>315?'rules-very-long':rules.length>205?'rules-long':''].filter(Boolean).join(' ');
+  return `<article class="card-tile card-${f} ${classes}" data-number="${n}" tabindex="0" aria-label="${esc(name)}">
 <div class="card-wrap"><div class="card-frame"><div class="card-face">
-<div class="titlebar"><div class="card-name">${esc(name)}</div><div class="mana">${esc(c.mana||'')}</div></div>
+<div class="titlebar"><div class="card-name">${esc(name)}</div><div class="mana">${manaCostHTML(c.mana||'')}</div></div>
 <div class="art"><div class="art-fallback">${esc(name)}</div>${img?'<img loading="lazy" decoding="async" referrerpolicy="no-referrer" src="'+esc(img)+'" alt="">':''}</div>
-<div class="typebar">${esc(c.type||'')}</div>
-<div class="rules">${esc(rules)}${flavor?'<span class="flavor">'+esc(flavor)+'</span>':''}</div>
+<div class="typebar">${esc(type)}</div>
+<div class="rules">${richText(rules)}${flavor?'<span class="flavor">'+richText(flavor)+'</span>':''}</div>
 <div class="footerline"><span>ODY · ${String(n).padStart(3,'0')} · ${rarity(c.rarity)}</span>${pt?'<span class="pt">'+esc(pt)+'</span>':''}</div>
-</div></div></div>${meta?'<div class="tile-meta"><div class="tile-title">'+esc(name)+'</div><div class="tile-sub">#'+String(n).padStart(3,'0')+' · '+esc(c.type||'')+'</div></div>':''}</article>`}
+</div></div></div>${meta?'<div class="tile-meta"><div class="tile-title">'+esc(name)+'</div><div class="tile-sub">#'+String(n).padStart(3,'0')+' · '+esc(type)+'</div></div>':''}</article>`}
 function hydrateArt(d){(d.artworks||[]).forEach(a=>state.art.set(a.id,a))}
 function textBlob(c){return [c.name,c.displayName,c.type,c.rules,c.flavor,c.mechanics,c.archetypes,c.story].filter(Boolean).join(' ').toLowerCase()}
 function applyFilters(reset=true){const q=$('#search').value.trim().toLowerCase(),cf=$('#colorFilter').value,rf=$('#rarityFilter').value,sort=$('#sort').value;let a=state.all.filter(c=>(!q||textBlob(c).includes(q))&&(!cf||normFrame(c)===cf)&&(!rf||rarity(c.rarity)===rf));a.sort((x,y)=>sort==='name'?String(x.displayName||x.name).localeCompare(String(y.displayName||y.name)):sort==='rarity'?rarity(x.rarity).localeCompare(rarity(y.rarity))||(+x.number-+y.number):sort==='color'?normFrame(x).localeCompare(normFrame(y))||(+x.number-+y.number):(+x.number-+y.number));state.filtered=a;if(reset){state.shown=0;$('#cardGrid').innerHTML=''}renderMore();$('#resultCount').textContent=`${a.length} of ${state.all.length} cards`;$('#activeFilters').textContent=[q&&`Search: “${q}”`,cf&&`Color: ${cf}`,rf&&`Rarity: ${rf}`].filter(Boolean).join(' · ')}
 function renderMore(){if(state.shown>=state.filtered.length){$('#loadSentinel span').textContent=state.filtered.length?'End of set':'No cards match these filters.';return}const slice=state.filtered.slice(state.shown,state.shown+state.batch);$('#cardGrid').insertAdjacentHTML('beforeend',slice.map(c=>cardHTML(c)).join(''));state.shown+=slice.length;$('#loadSentinel span').textContent=state.shown<state.filtered.length?`Loading more… ${state.shown}/${state.filtered.length}`:`All ${state.filtered.length} cards loaded`}
-function openCard(c,push=true){if(!c)return;$('#dialogCard').innerHTML=cardHTML(c);const name=c.displayName||c.name||'Untitled',mech=c.mechanics||'—';$('#dialogInfo').innerHTML=`<p class="kicker">ODY #${String(c.number).padStart(3,'0')} · ${esc(c.rarity||'')}</p><h2>${esc(name)}</h2><p><strong>${esc(c.mana||'')}</strong> · ${esc(c.type||'')}</p><div class="oracle">${esc(c.rules||'')}</div>${c.flavor?'<p><em>'+esc(c.flavor)+'</em></p>':''}<div class="story"><strong>Mechanics</strong><br>${esc(mech)}${c.story?'<br><br><strong>Story role</strong><br>'+esc(c.story):''}</div><div class="dialog-actions"><button id="copyLink">Copy card link</button><a href="/mtgtools/odyssey/" target="_blank" rel="noopener">Open Odyssey Studio ↗</a></div>`;$('#cardDialog').showModal();if(push)history.replaceState(null,'','#card-'+String(c.number).padStart(3,'0'));$('#copyLink').onclick=async()=>{await navigator.clipboard.writeText(location.href);$('#copyLink').textContent='Copied'} }
-function mechanics(){const counts=new Map();state.all.forEach(c=>String(c.mechanics||'').split(/[,;|\/]+/).map(s=>s.trim()).filter(s=>s&&s.length<42).forEach(m=>counts.set(m,(counts.get(m)||0)+1)));const top=[...counts].sort((a,b)=>b[1]-a[1]).slice(0,14);$('#mechanicChips').innerHTML=top.map(([m,n])=>`<button data-mechanic="${esc(m)}">${esc(m)} <small>×${n}</small></button>`).join('');$('#mechanicChips').onclick=e=>{const b=e.target.closest('[data-mechanic]');if(!b)return;$('#search').value=b.dataset.mechanic;location.hash='cards';applyFilters()};const picks=[];for(const [m] of top){const c=state.all.find(x=>String(x.mechanics||'').toLowerCase().includes(m.toLowerCase())&&!picks.includes(x));if(c)picks.push(c);if(picks.length===3)break}$('#mechanicExamples').innerHTML=picks.map(c=>'<div class="example-card">'+cardHTML(c)+'</div>').join('')}
-function hero(){const candidates=state.all.filter(c=>rarity(c.rarity)==='M'||rarity(c.rarity)==='R');const c=candidates[Math.floor(candidates.length*.38)]||state.all[0];$('#heroCardStage').innerHTML=cardHTML(c);$('#heroMeta').textContent=`${state.all.length} cards · current live dataset · progressive full-set gallery`}
+function openCard(c,push=true){if(!c)return;$('#dialogCard').innerHTML=cardHTML(c);const name=c.displayName||c.name||'Untitled',mech=c.mechanics||'—';$('#dialogInfo').innerHTML=`<p class="kicker">ODY #${String(c.number).padStart(3,'0')} · ${esc(c.rarity||'')}</p><h2>${esc(name)}</h2><p><span class="mana dialog-mana">${manaCostHTML(c.mana||'')}</span> · ${esc(c.type||'')}</p><div class="oracle">${esc(c.rules||'')}</div>${c.flavor?'<p><em>'+esc(c.flavor)+'</em></p>':''}<div class="story"><strong>Mechanics</strong><br>${esc(mech)}${c.story?'<br><br><strong>Story role</strong><br>'+esc(c.story):''}</div><div class="sponsor-credit"><strong>Development credit slot</strong><p>This candidate has no owner. A supporter username may be acknowledged here as a development sponsor while the free project is being finished. Sponsorship funds the process; it does not buy the card, its design, or access to the fan content.</p><span class="slot">CURRENTLY UNALLOCATED</span></div><div class="dialog-actions"><button id="copyLink">Copy card link</button><a href="/mtgtools/odyssey/" target="_blank" rel="noopener">Open Odyssey Studio ↗</a></div>`;$('#cardDialog').showModal();if(push)history.replaceState(null,'','#card-'+String(c.number).padStart(3,'0'));$('#copyLink').onclick=async()=>{await navigator.clipboard.writeText(location.href);$('#copyLink').textContent='Copied'} }
+const MECHANIC_IGNORE=new Set(['flying','first strike','double strike','deathtouch','lifelink','vigilance','trample','haste','reach','ward','flash','menace','defender','hexproof','indestructible']);
+const MECHANIC_COPY={
+  saga:'Stories become permanents with momentum: the tale advances, changes the board, then passes.',
+  devotion:'The gods care what you commit to the table. Colour intensity becomes faith made mechanical.',
+  constellation:'Enchantments are not decoration here; their arrival is an event the rest of the world notices.',
+  heroic:'A single figure becomes larger than the moment when your spells choose them.',
+  ordeal:'Survival is earned through escalating tests, not simply declared on the first turn.',
+  voyage:'The journey itself matters: movement, delay and arrival are part of the resource system.',
+  temptation:'The best offer is often the dangerous one. Power arrives attached to a decision.',
+  bargain:'Odyssey is full of exchanges whose real price appears later.',
+  escape:'Getting out is one of the story’s recurring verbs, and the graveyard can become part of the route home.'
+};
+function mechanicWords(c){return String(c.mechanics||'').split(/[,;|\/]+/).map(s=>s.trim()).filter(s=>s&&s.length<42)}
+function mechanicDescription(name,cards){
+  const key=name.toLowerCase();for(const [k,v] of Object.entries(MECHANIC_COPY))if(key.includes(k))return v;
+  const story=cards.map(c=>c.story).filter(Boolean)[0];return story?String(story).slice(0,220):'A recurring mechanical language in the current candidate file, being tested for how strongly it carries Odyssey flavour into play.';
+}
+function mechanics(){
+  const counts=new Map();state.all.forEach(c=>mechanicWords(c).forEach(m=>{if(!MECHANIC_IGNORE.has(m.toLowerCase()))counts.set(m,(counts.get(m)||0)+1)}));
+  const flavorBoost=name=>Object.keys(MECHANIC_COPY).some(k=>name.toLowerCase().includes(k))?100:0;const ranked=[...counts].filter(([,n])=>n>=2).sort((a,b)=>(flavorBoost(b[0])+b[1])-(flavorBoost(a[0])+a[1])).slice(0,6);
+  $('#mechanicChips').innerHTML=[...counts].sort((a,b)=>b[1]-a[1]).slice(0,18).map(([m,n])=>`<button data-mechanic="${esc(m)}">${esc(m)} <small>×${n}</small></button>`).join('');
+  $('#mechanicChips').onclick=e=>{const b=e.target.closest('[data-mechanic]');if(!b)return;$('#search').value=b.dataset.mechanic;location.hash='cards';applyFilters()};
+  $('#mechanicFeatures').innerHTML=ranked.map(([m,n],i)=>{
+    const cards=state.all.filter(c=>mechanicWords(c).some(x=>x.toLowerCase()===m.toLowerCase())).slice(0,3),bg=cards.find(c=>artFor(c))||cards[0],colors=[...new Set(cards.map(normFrame))];
+    return `<article class="mechanic-feature">
+      <div class="mechanic-feature-bg" style="background-image:${bg&&artFor(bg)?'url(&quot;'+esc(artFor(bg)).replace(/"/g,'%22')+'&quot;)':'none'}"></div>
+      <div class="mechanic-copy"><div class="mechanic-index">MECHANIC ${String(i+1).padStart(2,'0')} · ${n} CURRENT CANDIDATES</div><h3>${esc(m)}</h3><p>${esc(mechanicDescription(m,cards))}</p><div class="mechanic-colors">${colors.map(c=>'<span class="color-pip '+c+'" title="'+c+'"></span>').join('')}<small>${colors.join(' · ')}</small></div><button class="mechanic-action" data-mechanic="${esc(m)}">See every ${esc(m)} candidate</button></div>
+      <div class="mechanic-cards">${cards.map(c=>cardHTML(c,{meta:false})).join('')}</div>
+    </article>`;
+  }).join('');
+  $('#mechanicFeatures').addEventListener('click',e=>{const card=e.target.closest('.card-tile');if(card){openCard(state.all.find(c=>+c.number===+card.dataset.number));return}const b=e.target.closest('[data-mechanic]');if(b){$('#search').value=b.dataset.mechanic;location.hash='cards';applyFilters()}});
+}
+function hero(){const candidates=state.all.filter(c=>rarity(c.rarity)==='M'||rarity(c.rarity)==='R');const c=candidates[Math.floor(candidates.length*.38)]||state.all[0];$('#heroCardStage').innerHTML=cardHTML(c);$('#heroMeta').textContent=`${state.all.length} working candidates · 0 confirmed cards · live development file`}
 
 function promoSelected(){
   return [...document.querySelectorAll('.promo-card-select')].map(s=>state.all.find(c=>+c.number===+s.value)).filter(Boolean).slice(0,5);
