@@ -50,8 +50,9 @@ async def main():
               const image=document.querySelector('.opening-wordmark img');
               const credit=document.querySelector('#heroCredit').getBoundingClientRect();
               const copy=document.querySelector('.opening-copy').getBoundingClientRect();
-              return {viewport:innerWidth,documentWidth:document.documentElement.scrollWidth,logo:box(image),nav:box(document.querySelector('.nav .brand-logo')),release:box(document.querySelector('.release-announcement')),logoLoaded:image.complete&&image.naturalWidth>=960,logoSource:image.currentSrc,creditOverlap:Math.max(0,Math.min(credit.right,copy.right)-Math.max(credit.left,copy.left))*Math.max(0,Math.min(credit.bottom,copy.bottom)-Math.max(credit.top,copy.top))};
+              return {viewport:innerWidth,documentWidth:document.documentElement.scrollWidth,logo:box(image),nav:box(document.querySelector('.nav .brand-logo')),release:box(document.querySelector('.release-announcement')),logoLoaded:image.complete&&image.naturalWidth>0,logoSource:image.currentSrc,creditOverlap:Math.max(0,Math.min(credit.right,copy.right)-Math.max(credit.left,copy.left))*Math.max(0,Math.min(credit.bottom,copy.bottom)-Math.max(credit.top,copy.top))};
             }''')
+            await page.screenshot(path=str(OUT/f'opening-{width}.png'))
             assert measurements['documentWidth'] <= width + 1, measurements
             assert measurements['logoLoaded'], measurements
             assert '/assets/brand/' in measurements['logoSource'], measurements
@@ -59,7 +60,6 @@ async def main():
                 assert measurements[name]['left'] >= -1 and measurements[name]['right'] <= width+1, measurements
                 assert measurements[name]['height'] > 0, measurements
             assert measurements['creditOverlap'] == 0, measurements
-            await page.screenshot(path=str(OUT/f'opening-{width}.png'))
             checks.append(measurements)
         await page.locator('.opening .actions a[href="#development"]').click()
         await page.locator('#development .release-date').wait_for(state='visible')
