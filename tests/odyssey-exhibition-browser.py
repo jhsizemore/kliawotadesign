@@ -72,7 +72,7 @@ async def main():
             await page.evaluate('window.scrollTo({top:0,behavior:"instant"})')
             await page.wait_for_function('window.scrollY < 2')
             await page.wait_for_timeout(400)
-            assert await page.locator('#top h1').is_in_viewport()
+            assert await page.locator('#top h1').evaluate('(e) => {const r=e.getBoundingClientRect();return r.bottom>0 && r.top<innerHeight;}')
             assert not await page.evaluate('document.documentElement.scrollWidth > innerWidth+1'), f'Horizontal overflow at {width}'
             await page.screenshot(path=str(OUT / f'hero-{width}.png'))
         await page.goto(BASE + '?view=cards#card-' + str(first_number).zfill(3), wait_until='domcontentloaded')
