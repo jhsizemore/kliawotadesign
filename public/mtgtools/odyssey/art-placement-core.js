@@ -1,0 +1,24 @@
+/* Shared placement protocol. Geometry uses Studio's overflow-relative pan units.
+ * This is presentation data only: it cannot change artwork assignments or rules. */
+(function(root){
+'use strict';
+const SCHEMA='odyssey-art-placement/v1',SHEET_ID='1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE',TAB='Artwork Placement';
+const HEADERS=['Card ID','Artwork ID','Layout','Face','Art Height','Frame Style','Fit','Zoom','Focus X','Focus Y','Image Source','Updated At','Revision'];
+const KEYS=['cardId','artId','layout','face','artHeight','frameStyle','fit','zoom','focusX','focusY','sourceUrl','updatedAt','revision'];
+const GEOMETRY=['artHeight','frameStyle','fit','zoom','focusX','focusY'];
+const API='/mtgtools/odyssey/api/art-placement',CACHE='odyssey-placement-authoring-v1';
+const object=x=>!!x&&typeof x==='object'&&!Array.isArray(x),own=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
+const empty=()=>({schema:SCHEMA,revision:0,records:{}});
+function valid(r){return object(r)&&Object.keys(r).every(k=>KEYS.includes(k))&&/^ODY-[0-9]{3,5}$/.test(r.cardId)&&/^ART-[0-9]{3,5}$/.test(r.artId)&&/^[a-z][a-z0-9-]{0,39}$/.test(r.layout)&&['front','back'].includes(r.face)&&['normal','tall','short'].includes(r.artHeight)&&['standard','full-art'].includes(r.frameStyle)&&['cover','contain'].includes(r.fit)&&typeof r.zoom==='number'&&Number.isFinite(r.zoom)&&r.zoom>=.1&&r.zoom<=20&&['focusX','focusY'].every(k=>typeof r[k]==='number'&&Number.isFinite(r[k])&&Math.abs(r[k])<=1000000)&&typeof r.sourceUrl==='string'&&r.sourceUrl.length<=2048&&(!r.sourceUrl||/^https?:\/\/[^\s]+$/i.test(r.sourceUrl)||/^\/mtgtools\/odyssey\/assets\/artwork\/[A-Za-z0-9._-]+$/.test(r.sourceUrl))&&typeof r.updatedAt==='string'&&r.updatedAt.length<=40&&Number.isSafeInteger(r.revision)&&r.revision>=0;}
+const key=r=>r.cardId+'|'+r.face;
+function equal(a,b){return a==null||b==null?a==null&&b==null:KEYS.slice(0,-2).every(k=>a[k]===b[k]);}
+function normalize(r){if(!valid(r))throw Error('Invalid artwork placement.');return Object.fromEntries(KEYS.map(k=>[k,r[k]]));}
+function snapshot(value){if(!object(value)||value.schema!==SCHEMA||!Number.isSafeInteger(value.revision)||value.revision<0||!object(value.records)||Object.keys(value.records).length>2000)throw Error('Invalid placement snapshot.');const records={};for(const [k,r]of Object.entries(value.records)){const v=normalize(r);if(k!==key(v))throw Error('Placement key mismatch.');records[k]=v;}return{schema:SCHEMA,revision:value.revision,records};}
+function capture(m,sourceUrl=''){return normalize({cardId:m.id,artId:m.artId,layout:m.layout||'standard',face:m.faceRole==='back'?'back':'front',artHeight:m.artHeight||'normal',frameStyle:m.frameStyle||'standard',fit:m.fit||'cover',zoom:Number(m.zoom??1),focusX:Number(m.focusX??0),focusY:Number(m.focusY??0),sourceUrl:String(sourceUrl||''),updatedAt:'',revision:0});}
+function matches(m,r,sourceUrl){return valid(r)&&m.id===r.cardId&&m.artId===r.artId&&(m.layout||'standard')===r.layout&&(m.faceRole==='back'?'back':'front')===r.face&&(!r.sourceUrl||r.sourceUrl===sourceUrl);}
+function apply(m,records,sourceUrl){const r=records?.[String(m.id)+'|'+(m.faceRole==='back'?'back':'front')];return matches(m,r,sourceUrl)?{...m,...Object.fromEntries(GEOMETRY.map(k=>[k,r[k]]))}:m;}
+function parseRows(rows){if(!Array.isArray(rows)||rows.length>2001||HEADERS.some((h,i)=>rows[0]?.[i]!==h))throw Error('Artwork Placement headers do not match. Nothing was overwritten.');const records={},positions={};for(let i=1;i<rows.length;i++){const row=rows[i]||[];if(row.every(v=>v===''||v==null))continue;const r={};KEYS.forEach((k,j)=>r[k]=['zoom','focusX','focusY','revision'].includes(k)?(row[j]===''||row[j]==null?NaN:Number(row[j])):String(row[j]??''));normalize(r);const k=key(r);if(own(records,k))throw Error('Duplicate placement for '+k+'.');records[k]=r;positions[k]=i+1;}return{records,positions,lastRow:rows.length};}
+const toRow=r=>KEYS.map(k=>normalize(r)[k]);
+function analyze(records,changes){if(!Array.isArray(changes)||changes.length>620)throw Error('Invalid placement change batch.');const seen=new Set(),writes=[],already=[],conflicts=[];for(const c of changes){if(!object(c)||Object.keys(c).some(k=>!['before','after'].includes(k)))throw Error('Invalid placement change.');const after=normalize(c.after),k=key(after),before=c.before==null?null:normalize(c.before);if(seen.has(k)||(before&&key(before)!==k))throw Error('Duplicate or mismatched placement change.');seen.add(k);const live=records[k]||null;if(equal(after,live))already.push(c);else if(equal(before,live))writes.push(c);else conflicts.push({key:k,before,after,live});}return{writes,already,conflicts};}
+const api={SCHEMA,SHEET_ID,TAB,HEADERS,KEYS,GEOMETRY,API,CACHE,empty,valid,key,equal,normalize,snapshot,capture,matches,apply,parseRows,toRow,analyze};root.OdysseyPlacement=api;if(typeof module!=='undefined'&&module.exports)module.exports=api;
+})(typeof window==='undefined'?globalThis:window);
