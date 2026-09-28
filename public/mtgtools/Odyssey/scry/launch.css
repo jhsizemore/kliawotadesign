@@ -1,5 +1,6 @@
 /* Approved wordmark and release campaign. Historical artwork and Studio rendering stay unchanged. */
 .nav .brand-logo,.site-footer .brand-logo{display:inline-flex;align-items:center;flex-shrink:0;background:#142a2e;border:1px solid #9a845754;border-radius:2px;padding:8px 12px;line-height:1;letter-spacing:0;width:210px;min-height:44px;text-decoration:none}
+.brand-logo picture{display:block;width:100%;min-width:0}
 .brand-logo img{display:block;width:100%;height:auto;object-fit:contain}
 .site-footer .brand-logo{width:250px;padding:12px 16px}
 .opening .opening-copy{width:min(1100px,100%);position:relative}
