@@ -4,6 +4,7 @@
 const C=window.OdysseyExhibitionCore, $=id=>document.getElementById(id);
 const ROOT='/mtgtools/Odyssey/scry', DATA='/mtgtools/odyssey/data/odyssey-data.json';
 const IS_SOCIAL=document.body.dataset.page==='social';
+const IS_LAUNCH=document.body.dataset.page==='launch';
 let cat=null,filtered=[],shown=0,group='',lastFocus=null,modalURL='',promoBusy=false;
 const batch=36,formatSizes={landscape:[1200,630],square:[1080,1080],portrait:[1080,1350],story:[1080,1920]};
 const colourNames={W:'White',U:'Blue',B:'Black',R:'Red',G:'Green'};
@@ -170,7 +171,7 @@ async function init(){
  try{
   const response=await fetch(DATA,{cache:'no-cache',signal:AbortSignal.timeout(30000)});if(!response.ok)throw Error('Candidate file returned HTTP '+response.status);
   const data=await response.json();window.OdysseyStudioRenderer.initialize(data);cat=C.catalogue(data,window.ODYSSEY_ARTWORK_MANIFEST);
-  if(IS_SOCIAL)setupPromo();else{$('candidateCount').textContent=cat.cards.length;hero();materialChapters();mechanics();stories();backgroundSections();}
+  if(IS_SOCIAL)setupPromo();else{$('candidateCount').textContent=cat.cards.length;if(!IS_LAUNCH){hero();materialChapters();mechanics();stories();backgroundSections();}}
   bind();hydrateCards();reveal();navigate();$('loadStatus').hidden=true;
   window.OdysseyExhibition={catalogue:cat,openCard,openArt,showMode,renderPromo,exportPromo,cardHTML,expandedClone};
   document.dispatchEvent(new CustomEvent('odyssey:exhibition-ready'));
