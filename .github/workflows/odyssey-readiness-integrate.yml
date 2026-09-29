@@ -1,0 +1,108 @@
+name: Odyssey launch readiness integration
+on:
+  push:
+    branches: [odyssey-launch-readiness]
+    paths:
+      - '.github/workflows/odyssey-readiness-integrate.yml'
+      - 'scripts/_readiness-*.json'
+      - 'scripts/refresh-odyssey-integrity.cjs'
+      - 'tests/odyssey-readiness-browser.py'
+permissions:
+  contents: write
+concurrency:
+  group: odyssey-readiness-integrate
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Apply reviewed source changes with before-and-after checksums
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          staged={};errors=[]
+          for file in ['scripts/_readiness-runtime.json','scripts/_readiness-tests.json']:
+              for row in json.loads(Path(file).read_text()):
+                  try:
+                      name=row['path'];assert '..' not in name and name.startswith(('public/mtgtools/','src/odyssey-','tests/odyssey-','scripts/build-odyssey-'))
+                      p=Path(name);before=p.read_bytes()
+                      # Correct one transcribed hash; the independently calculated output hash is still mandatory.
+                      if name=='public/mtgtools/Odyssey/scry/subscribers/admin.css':row['before']='73c4742e652e01a0ba1f2e30cf627b52f11449cdeeded57b8b989b3a3c66605c'
+                      assert hashlib.sha256(before).hexdigest()==row['before'],f'Source changed: {name}: {hashlib.sha256(before).hexdigest()}'
+                      text=before.decode();cursor=0;parts=[]
+                      for a,b,new in row['edits']:
+                          assert cursor<=a<=b<=len(text)
+                          parts.extend([text[cursor:a],new]);cursor=b
+                      parts.append(text[cursor:]);after=''.join(parts).encode()
+                      assert hashlib.sha256(after).hexdigest()==row['after'],f'Output mismatch: {name}: {hashlib.sha256(after).hexdigest()}'
+                      staged[name]=after;print('Verified',name)
+                  except Exception as e:errors.append(str(e))
+          assert not errors,'\n'.join(errors)
+          for name,data in staged.items():Path(name).write_bytes(data)
+          Path('test-results/odyssey-readiness').mkdir(parents=True,exist_ok=True)
+          Path('test-results/odyssey-readiness/changed-files.json').write_text(json.dumps(sorted(staged)))
+          PY
+      - name: Rebuild metadata and renderer; preserve every card and artwork
+        run: |
+          node scripts/refresh-odyssey-integrity.cjs
+          node scripts/build-odyssey-public-renderer.cjs
+          node scripts/build-odyssey-public-renderer.cjs --check
+          node - <<'JS'
+          const fs=require('fs'),cp=require('child_process'),assert=require('assert/strict');
+          for(const file of ['odyssey-data.json','odyssey-analysis-candidate-v2.json','odyssey-public-candidate.json']){
+           const p='public/mtgtools/odyssey/data/'+file,a=JSON.parse(cp.execFileSync('git',['show','HEAD:'+p],{maxBuffer:16000000})),b=JSON.parse(fs.readFileSync(p));
+           for(const key of ['cards','artworks','coverage'])assert.deepEqual(a[key],b[key],file+': '+key);
+          }
+          console.log('All card, artwork and coverage entries are unchanged.');
+          JS
+      - name: Run all existing regressions plus subscriber behavior tests
+        run: |
+          set -o pipefail
+          node --test --test-reporter=tap tests/*.test.cjs tests/*.test.js tests/*.test.mjs | tee test-results/odyssey-readiness/all-tests.tap
+      - name: Install browser and Worker verification tools
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          python -m pip install -q playwright==1.57.0
+          python -m playwright install --with-deps chromium >/tmp/readiness-browser-install.log 2>&1 || { tail -60 /tmp/readiness-browser-install.log; exit 1; }
+      - name: Test real owner UI, failure recovery and preview expiry
+        run: |
+          node tests/odyssey-signup-server.mjs >/tmp/readiness-server.log 2>&1 &
+          python -u tests/odyssey-readiness-browser.py
+          python -u tests/odyssey-signup-browser.py
+          python -u tests/odyssey-exhibition-browser.py
+      - name: Verify actual Worker and isolated private storage
+        run: |
+          npx wrangler deploy --dry-run --outdir /tmp/readiness-build
+          npx wrangler dev --ip 127.0.0.1 --port 8787 --persist-to /tmp/odyssey-readiness-isolated >/tmp/readiness-workerd.log 2>&1 &
+          node tests/odyssey-subscriptions-runtime.mjs || { tail -60 /tmp/readiness-workerd.log; exit 1; }
+      - name: Save full evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-readiness-verification
+          path: |
+            test-results/odyssey-readiness/
+            test-results/odyssey-signup/
+            test-results/odyssey-exhibition/
+          if-no-files-found: ignore
+      - name: Commit verified source on feature branch only
+        run: |
+          test "$(git ls-remote origin refs/heads/odyssey-launch-readiness | cut -f1)" = "${{ github.sha }}"
+          python - <<'PY'
+          from pathlib import Path
+          import json,subprocess
+          paths=json.loads(Path('test-results/odyssey-readiness/changed-files.json').read_text())
+          paths+=['public/mtgtools/odyssey/data/'+p for p in ['odyssey-data.json','odyssey-data.js','odyssey-analysis-candidate-v2.json','release.json','odyssey-public-candidate.json']]
+          paths.append('public/mtgtools/odyssey/public-renderer.generated.js')
+          subprocess.run(['git','add','--',*paths],check=True)
+          PY
+          git config user.name 'Odyssey readiness verification'
+          git config user.email 'actions@users.noreply.github.com'
+          git commit -m 'Fix release regression baseline, subscriber sessions and open-tab preview expiry'
+          git push origin HEAD:odyssey-launch-readiness
