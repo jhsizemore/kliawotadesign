@@ -2,7 +2,7 @@
  * Source order is checked against the Studio app before building. */
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
-const FILES=['data/odyssey-data.js','data/reminder-review.20260927a.js','live-sheet-sync.js','live-sheet-art-patch.js'];
+const FILES=['data/odyssey-data.js','data/reminder-review.20260927a.js','live-sheet-sync.js','live-sheet-art-patch.js','data/notes-resolution.20260929.js'];
 function assemble(root){
  const dir=path.join(root,'public/mtgtools/odyssey'),app=fs.readFileSync(path.join(dir,'app.html'),'utf8');let last=-1;
  const sandbox={window:{},structuredClone};vm.createContext(sandbox);const sources=[];
