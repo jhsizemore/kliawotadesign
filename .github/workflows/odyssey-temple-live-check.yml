@@ -1,0 +1,39 @@
+name: Verify live Odyssey sanctuaries
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/odyssey-temple-live-check.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - name: Check live gallery, Studio loader and all ten images
+        run: |
+          python - <<'PY'
+          import urllib.request,json,time,concurrent.futures,pathlib
+          root='https://kliawota.design/mtgtools/odyssey/'
+          urls=[root+'app.html',root+'temple-sanctuaries.html',root+'data/temple-sanctuaries.20260929.json']+[root+'assets/sanctuaries/ART-'+str(i)+'.sanctuary-v1.jpg' for i in range(874,884)]
+          def check(url):
+              try:
+                  req=urllib.request.Request(url+'?templeverify='+str(int(time.time())),headers={'User-Agent':'OdysseySanctuaryVerification/1.0'})
+                  with urllib.request.urlopen(req,timeout=25) as r:
+                      body=r.read();ct=r.headers.get('Content-Type','');status=r.status
+                  ok=status==200
+                  if url.endswith('app.html'):ok=ok and b'temple-sanctuaries.js' in body
+                  if '/assets/' in url:ok=ok and ct.startswith('image/')
+                  if url.endswith('.json'):ok=ok and len(json.loads(body).get('artworks',[]))==10
+                  return {'url':url,'status':status,'contentType':ct,'bytes':len(body),'ok':ok}
+              except Exception as e:return {'url':url,'ok':False,'error':str(e)}
+          results=list(concurrent.futures.ThreadPoolExecutor(max_workers=4).map(check,urls))
+          report={'checkedAt':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'allPassed':all(r['ok'] for r in results),'results':results}
+          print(json.dumps(report,indent=2));pathlib.Path('live-sanctuary-check.json').write_text(json.dumps(report,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: live-sanctuary-check
+          path: live-sanctuary-check.json
+          retention-days: 14
