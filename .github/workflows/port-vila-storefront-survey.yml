@@ -1,61 +1,56 @@
-name: Port Vila storefront source inspection
+name: Port Vila storefront verification
 on:
   push:
     branches: [port-vila-storefront-survey-2026-09-29]
     paths: ['.github/workflows/port-vila-storefront-survey.yml']
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: port-vila-storefront-verification
+  cancel-in-progress: false
 jobs:
-  inspect:
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          persist-credentials: false
-      - name: Follow current primary-source download links
+          node-version: '22'
+      - name: Install isolated test dependencies
+        run: |
+          npm install --no-save --package-lock=false three@0.180.0 playwright@1.55.1
+          npx playwright install --with-deps chromium
+      - name: Build and run geometry and retained stability tests
         shell: bash
         run: |
-          mkdir -p inspection/references inspection/model/assets
-          cp public/portvilasandbox/assets/vila-kit.glb inspection/model/assets/
-          python3 - <<'PY'
-          from pathlib import Path
-          from urllib.request import urlopen,Request
-          from urllib.parse import urljoin,urlparse,unquote,quote
-          from html.parser import HTMLParser
-          import json,hashlib
-          out=Path('inspection/references'); pages=[]; downloads=[]; seen=set()
-          class Links(HTMLParser):
-              def __init__(self): super().__init__(); self.links=[]
-              def handle_starttag(self,tag,attrs):
-                  d=dict(attrs)
-                  if tag=='a' and d.get('href'): self.links.append(d['href'])
-          urls=['https://duap.gov.vu/index.php/projects/planning-frameworks-and-policies/port-vila-cbd-vision-and-concept-plan','https://duap.gov.vu/index.php/projects-urban-resilience/port-vila-cbd-redevelopment-plan-project/port-vila-cbd-recovery-and-rebuild']
-          for url in urls:
-              try:
-                  with urlopen(Request(url,headers={'User-Agent':'PortVilaSandbox-source-review/1.0'}),timeout=25) as res: text=res.read(4000000).decode('utf-8','replace')
-                  parser=Links(); parser.feed(text); links=[urljoin(url,x) for x in parser.links]
-                  pages.append({'url':url,'links':links}); (out/f'page-{len(pages)}.html').write_text(text)
-                  print(url,json.dumps(links))
-                  for target in links:
-                      target=quote(target,safe=':/?=&%+#'); suffix=Path(urlparse(target).path).suffix.lower()
-                      if suffix not in ['.rar','.zip','.pdf'] or target in seen or len(downloads)>=5: continue
-                      if urlparse(target).hostname not in ['duap.gov.vu','www.duap.gov.vu']: continue
-                      seen.add(target); name=unquote(Path(urlparse(target).path).name)
-                      try:
-                          with urlopen(Request(target,headers={'User-Agent':'PortVilaSandbox-source-review/1.0'}),timeout=45) as res:
-                              data=res.read(157286401)
-                          if len(data)>157286400: raise ValueError('Reference exceeds 150 MiB inspection limit')
-                          dest=out/(str(len(downloads))+'-'+name); dest.write_bytes(data)
-                          downloads.append({'url':target,'file':dest.name,'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})
-                      except Exception as e: downloads.append({'url':target,'error':str(e)})
-              except Exception as e: pages.append({'url':url,'error':str(e)}); print(url,str(e))
-          (out/'download-links.json').write_text(json.dumps({'pages':pages,'downloads':downloads},indent=2))
-          PY
+          set -euo pipefail
+          mkdir -p evidence/storefront-check
+          python3 scripts/build-port-vila-storefronts.py | tee evidence/storefront-check/build.json
+          node --check public/portvilasandbox/assets/index-storefront-1.js
+          node --test tests/port-vila-storefronts.test.mjs | tee evidence/storefront-check/unit-tests.txt
+          python3 scripts/port-vila-stability-build.py
+          node --test tests/port-vila-stability.test.mjs | tee evidence/storefront-check/stability-tests.txt
+          git diff --exit-code -- public/portvilasandbox/data/world.json public/portvilasandbox/data/north-v1 public/portvilasandbox/assets/index-iSZdlO1J.js
+      - name: Inspect actual desktop and mobile-viewport renders
+        shell: bash
+        run: |
+          python3 -m http.server 8765 --directory public >/tmp/port-vila-http.log 2>&1 &
+          node scripts/check-port-vila-storefronts.mjs
+      - name: Commit tested release only to the isolated branch
+        if: success() && github.ref == 'refs/heads/port-vila-storefront-survey-2026-09-29'
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/portvilasandbox/BUILD.json public/portvilasandbox/index.html
+          git add public/portvilasandbox/assets/index-storefront-1.js public/portvilasandbox/assets/research-storefront-1.js public/portvilasandbox/assets/research-data-storefront-1.js public/portvilasandbox/assets/vision-storefront-1.js
+          git diff --cached --quiet || git commit -m 'Build verified partial Fung Kuei and Aircalin photo-reference pass'
+          git push origin HEAD:port-vila-storefront-survey-2026-09-29
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: port-vila-primary-references-and-kit
-          path: inspection/
-          retention-days: 3
+          name: port-vila-storefront-verification
+          path: evidence/storefront-check/
+          retention-days: 7
