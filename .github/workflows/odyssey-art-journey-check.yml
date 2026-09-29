@@ -5,13 +5,13 @@ on:
     paths:
       - 'public/mtgtools/Odyssey/scry/**'
       - 'tests/odyssey-art-journey.py'
-      - 'tests/odyssey-launch.py'
+      - 'tests/odyssey-focused-launch.py'
       - '.github/workflows/odyssey-art-journey-check.yml'
   pull_request:
     paths:
       - 'public/mtgtools/Odyssey/scry/**'
       - 'tests/odyssey-art-journey.py'
-      - 'tests/odyssey-launch.py'
+      - 'tests/odyssey-focused-launch.py'
       - '.github/workflows/odyssey-art-journey-check.yml'
   workflow_dispatch:
 permissions:
@@ -37,15 +37,17 @@ jobs:
         run: |
           python -m pip install -q playwright==1.57.0
           python -m playwright install --with-deps chromium > /tmp/art-journey-browser-install.log 2>&1 || { tail -60 /tmp/art-journey-browser-install.log; exit 1; }
-      - name: Verify release identity and curated presentation with real images
+      - name: Verify the current launch and the separate art exhibition
         run: |
           python -m http.server 8765 --directory public > /tmp/art-journey-server.log 2>&1 &
-          python -u tests/odyssey-launch.py
-          python -u tests/odyssey-art-journey.py
+          python -u tests/odyssey-focused-launch.py
+          EXHIBITION_TEST_URL=http://127.0.0.1:8765/mtgtools/Odyssey/scry/art.html python -u tests/odyssey-art-journey.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: odyssey-art-journey-visual-checks
-          path: test-results/odyssey-art-journey/
+          path: |
+            test-results/odyssey-art-journey/
+            test-results/odyssey-focused-launch/
           if-no-files-found: ignore
           retention-days: 14
