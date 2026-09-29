@@ -31,4 +31,11 @@ for name in ['social/index.html','art.html']:
 replace('src/odyssey-worker.js',"import { routePlacements } from './odyssey-placement.mjs';", "import { routePlacements } from './odyssey-placement.mjs';\nimport { routeContact } from './odyssey-contact.mjs';")
 replace('src/odyssey-worker.js','const response = await routePlacements(request, env)', 'const response = await routeContact(request, env) || await routePlacements(request, env)')
 p=R/'tests/odyssey-exhibition-browser.py';s=p.read_text();s=s.replace("url.split('?')[0].endswith('/api/art-placement')", "url.split('?')[0].endswith(('/api/art-placement','/api/contact'))");p.write_text(s)
-print('Ship, native full-art treatment, enlarged rules, landscape direction and optional contact endpoint integrated.')
+# A large decoded image can disappear inside a rotated, clipped full-art frame
+# unless it owns a compositing layer. Geometry and all saved pan/zoom stay intact.
+p=R/'public/mtgtools/odyssey/frame-system.css';s=p.read_text();rule='\n/* Preserve full-art image painting inside rotated and clipped native frames. */\n.render-card.treatment-full-art .artbox .art-img { will-change: transform; }\n'
+if rule not in s:p.write_text(s+rule)
+p=R/'tests/odyssey-showcase-browser.py';s=p.read_text();old="   await screenshot(page,'#top','full-art-hero-1440.png');await screenshot(page,'#mechanics','ship-and-rules-1440.png')"
+new="   await screenshot(page,'#top','full-art-hero-1440.png')\n   # Loaded metadata alone is not proof that a composited image actually painted.\n   from PIL import Image,ImageStat\n   import io\n   pixels=Image.open(io.BytesIO(await page.locator('#heroCard').screenshot())).convert('RGB');w,h=pixels.size\n   deviation=ImageStat.Stat(pixels.crop((int(w*.25),int(h*.18),int(w*.75),int(h*.45)))).stddev\n   assert max(deviation)>6, 'The loaded full-art image did not paint inside its frame'\n   await screenshot(page,'#mechanics','ship-and-rules-1440.png')"
+if old in s:p.write_text(s.replace(old,new))
+print('Ship, full-art painting, exact rules, landscapes and optional contact endpoint integrated.')
