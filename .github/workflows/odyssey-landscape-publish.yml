@@ -1,0 +1,66 @@
+name: Publish Odyssey landscape library
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/odyssey-landscape-publish.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: odyssey-landscape-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+          filter: blob:none
+          sparse-checkout: |
+            scripts
+            public/mtgtools/odyssey
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Retrieve completed, visually reviewed acquisition
+        uses: actions/download-artifact@v4
+        with:
+          name: odyssey-landscape-import
+          run-id: 36528196955
+          github-token: ${{ github.token }}
+          path: landscape-import-output
+      - name: Install image metadata reader
+        run: pip install Pillow
+      - name: Build additive catalogue, same-origin previews and canonical Sheet CSV
+        run: python scripts/publish-odyssey-landscapes.py
+      - name: Verify unchanged cards, coverage and existing primary artworks
+        run: node scripts/test-odyssey-landscape-import.cjs
+      - name: Commit only the reviewed landscape library and its Studio integration
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/mtgtools/odyssey/assets/landscapes public/mtgtools/odyssey/data/landscape-import* public/mtgtools/odyssey/app.html public/mtgtools/odyssey/landscape-library.js public/mtgtools/odyssey/landscape-library.html
+          if git diff --cached --quiet; then
+            git rev-parse HEAD > landscape-publication-report/published-commit.txt
+          else
+            git commit -m 'Import 212 landscape records, enrich eight candidates, and expose the Studio landscape library'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+            git rev-parse HEAD > landscape-publication-report/published-commit.txt
+          fi
+      - name: Retain verified import rows and integration report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-landscape-publication
+          path: landscape-publication-report/
+          retention-days: 14
