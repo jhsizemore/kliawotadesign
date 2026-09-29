@@ -62,7 +62,16 @@ jobs:
         run: |
           if [ "$GITHUB_REF" = 'refs/heads/odyssey-production-handoff' ]; then
             git fetch --depth=1 origin main
-            git diff --exit-code origin/main -- public src package.json wrangler.jsonc
+            python - <<'PY'
+          import sys,subprocess
+          from pathlib import Path
+          sys.path.insert(0,'tests')
+          from odyssey_delivery import PAGES,PageContract,local_asset
+          files=set(PAGES.values())|{'public/mtgtools/odyssey/app.html','public/mtgtools/odyssey/data/odyssey-public-candidate.json','public/mtgtools/odyssey/data/release.json','src/odyssey-worker.js','src/odyssey-sync.mjs','src/odyssey-subscriptions.mjs'}
+          for page,filename in PAGES.items():
+              files.update(local_asset(a,page)[1] for a in PageContract(Path(filename).read_text()).assets)
+          subprocess.run(['git','diff','--exit-code','origin/main','--',*sorted(files)],check=True)
+          PY
             echo "sha=$(git rev-parse origin/main)" >> "$GITHUB_OUTPUT"
           elif [ "$GITHUB_REF" = 'refs/heads/main' ]; then
             echo "sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
