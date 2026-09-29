@@ -83,7 +83,7 @@ async def main():
   preview=await context.new_page();preview.on('pageerror',lambda e:error('Preview',e))
   await preview.goto(BASE+'/mtgtools/Odyssey/scry/?placementPreview=1&view=cards#card-61',wait_until='domcontentloaded')
   await wait(preview,'window.OdysseyStudioRenderer?.engine?.model(61)?.zoom===2.25')
-  assert await preview.get_by_text('LOCAL ARTWORK PREVIEW',exact=False).count()==1
+  assert await preview.get_by_text('YOUR STUDIO FRAMING PREVIEW',exact=False).count()==1
   live['ODY-061|front']['zoom']=3
   await studio.locator('#odysseyPlacementSync').click();await dialog.locator('[data-pull]').click();await status('conflicting local edits')
   assert await studio.evaluate('model(61).zoom')==2.25

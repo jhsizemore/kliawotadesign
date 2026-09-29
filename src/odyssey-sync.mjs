@@ -1,5 +1,6 @@
 import core from '../public/mtgtools/odyssey/art-sync-core.js';
 import { placementWorkspace } from './odyssey-placement.mjs';
+import { SIGNUP_API, subscriberWorkspace, cleanupSubscriptions } from './odyssey-subscriptions.mjs';
 
 const API = '/mtgtools/odyssey/api/art-sync';
 const NOTES_API = '/mtgtools/odyssey/api/review-notes';
@@ -218,6 +219,8 @@ export async function handleSync(request, env) {
 export class OdysseyArtWorkspace {
   constructor(ctx) { this.ctx = ctx; }
 
+  async alarm() { await cleanupSubscriptions(this.ctx.storage); }
+
   async fetchNotes(request) {
     let body = null;
     if (request.method === 'POST') {
@@ -330,6 +333,11 @@ export class OdysseyArtWorkspace {
 
   async fetch(request) {
     const url = new URL(request.url);
+    if (url.pathname === SIGNUP_API || url.pathname.startsWith(SIGNUP_API+'/')) {
+      const result = await subscriberWorkspace(request, this.ctx.storage);
+      if (request.method==='POST' && !await this.ctx.storage.getAlarm()) await this.ctx.storage.setAlarm(Date.now()+172800000);
+      return result;
+    }
     if (url.pathname === '/mtgtools/odyssey/api/art-placement') {
       const task = (this.placementTail || Promise.resolve()).then(() => placementWorkspace(request, this.ctx.storage));
       this.placementTail = task.catch(() => {});

@@ -46,26 +46,10 @@ async def main():
     await page.set_viewport_size({'width':width,'height':1000});await page.evaluate('window.scrollTo({top:0,behavior:"instant"})');await page.wait_for_timeout(250)
     assert not await page.evaluate('document.documentElement.scrollWidth>innerWidth+1'),width
     if width==390:await screenshot(page,'#top','full-art-hero-390.png');await screenshot(page,'#mechanics','rules-390.png');await screenshot(page,'#development','come-aboard-390.png')
-   assert await page.locator('#signupInterest').is_visible();assert await page.locator('#directInterest').count()==0
-   # No provider account is impersonated: only these test requests are simulated.
-   formpage=await browser.new_page(viewport={'width':1440,'height':1150},reduced_motion='reduce');formpage.on('pageerror',lambda e:errors.append(str(e)))
-   attempts=[];fail={'value':True}
-   async def endpoint(route):
-    if route.request.method=='GET':return await route.fulfill(json={'enabled':True,'sitekey':'mock-site-key-for-browser'})
-    payload=route.request.post_data_json;attempts.append(payload)
-    if fail['value']:return await route.fulfill(status=502,json={'error':'Test sending failure; your message was not sent.'})
-    return await route.fulfill(status=202,json={'submitted':True,'message':'Your message has been submitted to Hunter.'})
-   await formpage.route('**/api/contact',endpoint)
-   await formpage.add_init_script("window.turnstile={ready:cb=>cb(),render:(el,o)=>{window.testTurnstileCallback=o.callback;setTimeout(()=>o.callback('test-turnstile-token'),10);return'1';},reset:()=>setTimeout(()=>window.testTurnstileCallback('test-turnstile-token'),10)}")
-   await formpage.goto(BASE,wait_until='domcontentloaded');await formpage.wait_for_function('document.querySelector("#directInterest:not([hidden])")',timeout=40000)
-   form=formpage.locator('#directInterest');await form.locator('[name=name]').fill('Test visitor');await form.locator('[name=email]').fill('visitor@example.org');await form.locator('[name=role]').select_option('playtesting');await form.locator('[name=message]').fill('Please include me in a playtest.');await form.locator('[name=consent]').check();await form.get_by_role('button',name='Send my message ↗').click()
-   await formpage.wait_for_function('document.querySelector(".send-status").textContent.includes("Test sending failure")')
-   assert await form.locator('[name=message]').input_value()=='Please include me in a playtest.'
-   await screenshot(formpage,'#development','direct-form-ready-example.png')
-   fail['value']=False;await form.get_by_role('button',name='Send my message ↗').click();await formpage.wait_for_function('document.querySelector(".send-status").textContent.includes("submitted to Hunter")')
-   assert len(attempts)==2;assert attempts[0]['consent'] is True;assert attempts[0]['email']=='visitor@example.org';assert await form.locator('[name=email]').input_value()==''
+   assert await page.locator('#updatesSignup').is_visible();assert await page.locator('#directInterest,#signupInterest').count()==0
+   # Signup persistence, consent and unsubscribe are tested against the real handler separately.
    assert not errors,errors
-   result={'status':'passed','nativeFullArtHero':True,'storedCropUnaffected':True,'sharedShipSymbol':True,'eightExactRulesSpotlights':highlights,'widths':[390,768,1440],'disabledFormKeepsEmailLink':True,'failedSendPreservesMessage':True,'successfulSendResetsForm':True,'liveEmailDelivery':'not tested; Cloudflare setup required; browser delivery is mocked','pageErrors':errors}
+   result={'status':'passed','nativeFullArtHero':True,'storedCropUnaffected':True,'sharedShipSymbol':True,'eightExactRulesSpotlights':highlights,'widths':[390,768,1440],'contactReplacedByEmailList':True,'signupPersistence':'covered by real handler in dedicated signup suite','pageErrors':errors}
    (OUT/'results.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
   except Exception:
    await page.screenshot(path=str(OUT/'failure.png'));(OUT/'failure.json').write_text(json.dumps({'url':page.url,'errors':errors},indent=2));raise

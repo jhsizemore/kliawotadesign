@@ -2,7 +2,7 @@
 (function(){
 'use strict';
 const C=window.OdysseyExhibitionCore, $=id=>document.getElementById(id);
-const ROOT='/mtgtools/Odyssey/scry', DATA='/mtgtools/odyssey/data/odyssey-data.json';
+const ROOT='/mtgtools/Odyssey/scry', DATA='/mtgtools/odyssey/data/odyssey-public-candidate.json';
 const IS_SOCIAL=document.body.dataset.page==='social';
 const IS_LAUNCH=document.body.dataset.page==='launch';
 let cat=null,filtered=[],shown=0,group='',lastFocus=null,modalURL='',promoBusy=false;
@@ -58,7 +58,7 @@ function closeDialog(){if(!$('detailDialog').open)return;$('detailDialog').close
 function openCard(c,face='front',write=true){
  if(!c)return;const m=OdysseyStudioRenderer.engine.model(c.number,face),art=cat.arts.get(m.artId)||null,pair=OdysseyTransformFaces.split(c);
  const rules=String(m.rules||'').replace(/\/\/(Adventure|Prep|Prepare)\/\//g,'\n\n$1 —\n');
- const html='<p class="eyebrow">ODY '+String(c.number).padStart(3,'0')+' / UNCONFIRMED CANDIDATE'+(pair?' / '+face.toUpperCase()+' FACE':'')+'</p><h2 id="detailTitle">'+C.esc(m.displayName)+'</h2><p><span class="cost">'+C.cost(m.mana)+'</span>'+C.esc(m.type)+'</p><div class="oracle">'+C.rich(rules)+'</div>'+(m.flavor?'<p><em>'+C.esc(m.flavor)+'</em></p>':'')+'<div class="actions">'+(pair?'<button class="button" data-flip="'+c.number+'" data-face="'+(face==='front'?'back':'front')+'">Show '+(face==='front'?'back':'front')+'</button>':'')+'<button class="button" data-promo-add="'+c.number+'">Add to reveal</button><button class="button" data-share="'+c.number+'">Copy card link</button></div>'+label(art)+(c.story?'<p class="fine"><strong>Project interpretation, not museum catalogue text:</strong><br>'+C.esc(c.story)+'</p>':'')+'<p class="fine">Rendered by Odyssey Studio from the published set. Local editor drafts and unsaved crops are not included. Every card is still a candidate.</p>';
+ const html='<p class="eyebrow">ODY '+String(c.number).padStart(3,'0')+' / UNCONFIRMED CANDIDATE'+(pair?' / '+face.toUpperCase()+' FACE':'')+'</p><h2 id="detailTitle">'+C.esc(m.displayName)+'</h2><p><span class="cost">'+C.cost(m.mana)+'</span>'+C.esc(m.type)+'</p><div class="oracle">'+C.rich(rules)+'</div>'+(m.flavor?'<p><em>'+C.esc(m.flavor)+'</em></p>':'')+'<div class="actions">'+(pair?'<button class="button" data-flip="'+c.number+'" data-face="'+(face==='front'?'back':'front')+'">Show '+(face==='front'?'back':'front')+'</button>':'')+'<button class="button" data-promo-add="'+c.number+'">Add to reveal</button><button class="button" data-share="'+c.number+'">Copy card link</button></div>'+label(art)+(c.story?'<p class="fine"><strong>Project interpretation, not museum catalogue text:</strong><br>'+C.esc(c.story)+'</p>':'')+'<p class="fine">Rendered by Odyssey Studio from the published set. This is the published candidate file, not a finished set. Saved artwork placement is applied when it matches this card’s assigned art; labelled author previews may include unpublished framing.</p>';
  openDialog(cardHTML(c,false,face),html,write?'card-'+String(c.number).padStart(3,'0'):null);
 }
 function openArt(a,write=true){if(!a)return;const cards=cat.cards.filter(c=>c.artId===a.id);openDialog(image(a,'',true,true),'<p class="eyebrow">COMPLETE IMAGE / SOURCE-REPORTED METADATA</p><h2 id="detailTitle">'+C.esc(a.title)+'</h2>'+label(a,false)+(a.source?'<a class="button" target="_blank" rel="noopener noreferrer" href="'+C.esc(a.source)+'">Open source record ↗</a>':'')+'<p class="fine">The source record governs attribution and image rights. Card assignments and the exhibition narrative are project interpretations.</p>'+(cards.length?'<h3 style="font-size:25px">Used by these candidates</h3>'+cards.map(c=>'<button class="text-button" style="display:block" data-card="'+c.number+'">ODY '+String(c.number).padStart(3,'0')+' · '+C.esc(c.displayName)+'</button>').join(''):'<p class="fine">Research collection work; not currently assigned to a card.</p>'),write?'art-'+a.id:null);}
@@ -170,7 +170,7 @@ function bind(){
 async function init(){
  try{
   const response=await fetch(DATA,{cache:'no-cache',signal:AbortSignal.timeout(30000)});if(!response.ok)throw Error('Candidate file returned HTTP '+response.status);
-  const data=await response.json();window.OdysseyStudioRenderer.initialize(data);cat=C.catalogue(data,window.ODYSSEY_ARTWORK_MANIFEST);
+  const data=await response.json();if(data.publicCandidate?.schema!=='odyssey-public-candidate/v1')throw Error('Unexpected candidate source.');window.OdysseyCandidateSource=data.publicCandidate;window.OdysseyStudioRenderer.initialize(data);cat=C.catalogue(data,window.ODYSSEY_ARTWORK_MANIFEST);
   if(IS_SOCIAL)setupPromo();else{$('candidateCount').textContent=cat.cards.length;if(!IS_LAUNCH){hero();materialChapters();mechanics();stories();backgroundSections();}}
   bind();hydrateCards();reveal();navigate();$('loadStatus').hidden=true;
   window.OdysseyExhibition={catalogue:cat,openCard,openArt,showMode,renderPromo,exportPromo,cardHTML,expandedClone};

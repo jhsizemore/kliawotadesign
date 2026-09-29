@@ -10,7 +10,12 @@ function mount(){
  try{const v=JSON.parse(localStorage.getItem(P.CACHE)||'null');if(v?.schema===P.SCHEMA){state.remote=P.snapshot(v.remote);state.drafts={};for(const [k,d]of Object.entries(v.drafts||{})){P.analyze({},[d]);if(P.key(d.after)===k)state.drafts[k]=d;}state.raw=v.raw||{};}}catch(e){console.warn('Placement cache could not be read; original Studio crops are untouched.');}
  const face=m=>root.OdysseyTransformFaces.face(m,'front');
  const record=m=>P.capture(face(m),imageForArt(face(m)));
- function saveState(){try{localStorage.setItem(P.CACHE,JSON.stringify(state));}catch(_){status('Placement cache is full. Export a backup before leaving this page.');}paint();}
+ function saveState(){try{
+  localStorage.setItem(P.CACHE,JSON.stringify(state));
+  // Presentation-only projection: no card rules, names, private drafts or tokens.
+  const records={};for(const d of changes())records[P.key(d.after)]=P.normalize(d.after);
+  localStorage.setItem(P.PREVIEW_CACHE,JSON.stringify({schema:P.SCHEMA,authorPreview:true,snapshot:{...P.empty(),records}}));
+ }catch(_){status('Placement cache is full. Export a backup before leaving this page.');}paint();}
  function hasLegacy(n,m){const o=overrides[n]||{};return P.GEOMETRY.some(k=>Object.prototype.hasOwnProperty.call(o,k))||!!cropProfileFor(m);}
  function collect(initial=false){for(const c of CARDS){let r;const raw=baseModel(c.number);try{r=record(raw);}catch(_){continue;}const k=P.key(r),previous=state.raw[k];if((previous&&!P.equal(previous,r))||(!previous&&hasLegacy(c.number,raw))){if(!initial||hasLegacy(c.number,raw)){const before=state.drafts[k]?state.drafts[k].before:(state.remote.records[k]||null);if(P.equal(r,state.remote.records[k]))delete state.drafts[k];else state.drafts[k]={before,after:r};}}state.raw[k]=r;}saveState();}
  collect(true);

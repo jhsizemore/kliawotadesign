@@ -75,10 +75,8 @@ async def main():
         assert await themes.locator('.carousel-slide[inert]').count() == 2
         await settled_shot(page, '#storyChapters', 'circe-story.png')
         await settled_shot(page, '#development', 'signup-pitch.png')
-        await page.locator('#signupRole').select_option('playtesting')
-        signup = await page.locator('#signupLink').get_attribute('href')
-        assert signup.startswith('mailto:jhsizemore@gmail.com?') and 'playtesting' in signup
-        assert 'no automatic mailing-list signup' in (await page.locator('#signupNotice').inner_text()).lower()
+        assert await page.locator('#updatesSignup').count()==1
+        assert await page.locator('#updatesSignup [name=consent]').count()==1
         for width in [390,768,1440]:
             await page.set_viewport_size({'width':width,'height':950})
             await page.evaluate('window.scrollTo({top:0,behavior:"instant"})')
@@ -149,7 +147,7 @@ async def main():
             raise
         assert 'exported' in (await page.locator('#promoStatus').inner_text()).lower()
         assert not errors, '\n'.join(errors)
-        assert all(url.split('?')[0].endswith(('/api/art-placement','/api/contact')) for url in api_requests), 'The public page requested a private editor API'
+        assert all(url.split('?')[0].endswith(('/api/art-placement','/api/contact','/api/subscriptions')) for url in api_requests), 'The public page requested a private editor API'
         expiry = await context.new_page()
         await expiry.add_init_script('Date.now=()=>Date.parse("2026-11-01T00:00:00+11:00");')
         await expiry.goto(BASE+'?view=cards',wait_until='domcontentloaded')
