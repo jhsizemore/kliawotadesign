@@ -26,6 +26,41 @@
 @media (max-width:760px) and (orientation:portrait){.background-image img{object-position:44% center}.card{gap:12px}.top{align-items:center}.mark{width:54px}.brandtext .micro{display:none}.hero{max-width:100%;padding:0;align-self:center}.hero h1{font-size:clamp(56px,18vw,96px);line-height:.84}.hero p{font-size:clamp(15px,4vw,20px);max-width:34ch}.bottom{align-items:flex-end;gap:14px}.downloads{max-width:53%;display:grid;grid-template-columns:1fr 1fr;gap:9px 14px}.downloads:before{grid-column:1/-1}.downloads a{font-size:9px;line-height:1.15}.contact-wrap{gap:8px}.contact-logo{width:50px}.contact a,.contact span{font-size:8.2px}}
 @media (max-height:520px) and (orientation:landscape){.card{grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr);grid-template-rows:auto 1fr;gap:12px 28px}.top{grid-column:1/-1}.hero{grid-column:1;grid-row:2;align-self:center;max-width:100%;padding:0}.hero h1{font-size:clamp(48px,10vw,98px)}.hero p{font-size:clamp(13px,1.7vw,18px);margin-top:12px;max-width:45ch}.kicker{margin-bottom:10px}.bottom{grid-column:2;grid-row:2;border-top:0;border-left:1px solid var(--line);padding:0 0 0 24px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.downloads{max-width:100%;display:grid;grid-template-columns:1fr 1fr}.contact-wrap{margin-top:18px;justify-content:flex-start;align-items:center}.contact{text-align:left}.contact-logo{width:48px}}
 @media (min-aspect-ratio:2/1){.hero{max-width:68vw}.hero h1{font-size:min(8.5vw,145px)}}@media (prefers-reduced-motion:no-preference){.downloads a,.contact a{transition:color .16s ease,border-color .16s ease}}@media (prefers-reduced-motion:reduce){.pixel-field,.gradient-bed{display:none}}
+
+/* Ongoing projects: a native disclosure, with no framework or network dependency. */
+.site-meta{display:grid;justify-items:end;gap:12px;min-width:0}
+.projects-menu{position:relative;z-index:10}
+.projects-menu>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:44px;padding:12px 17px;border:1px solid var(--line);border-radius:24px;background:rgba(0,35,35,.8);color:var(--cream);cursor:pointer;font:700 11px/1.25 "Courier New",monospace;text-transform:uppercase;letter-spacing:.07em;-webkit-tap-highlight-color:transparent}
+.projects-menu>summary::-webkit-details-marker{display:none}
+.projects-menu>summary::after{content:"";width:7px;height:7px;flex:0 0 auto;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+.projects-menu[open]>summary{color:var(--teal);border-color:var(--teal);background:#003c39}
+.projects-menu[open]>summary::after{transform:rotate(225deg) translate(-1px,-1px)}
+.projects-menu>summary:hover{border-color:var(--teal);color:var(--teal)}
+.projects-menu>summary:focus-visible,.projects-panel a:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.projects-panel{position:fixed;z-index:20;top:var(--projects-panel-top,108px);right:max(var(--pad),env(safe-area-inset-right));width:min(420px,calc(100vw - var(--pad)*2));max-height:calc(100dvh - var(--projects-panel-top,108px) - max(var(--pad),env(safe-area-inset-bottom)));overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#70d2c5 #003b38;padding:8px;border:1px solid rgba(112,210,197,.45);border-radius:16px;background:#002e2c;box-shadow:0 20px 60px rgba(0,0,0,.4);text-align:left}
+.projects-menu:not([open]) .projects-panel{display:none}
+.projects-heading{margin:10px 12px 4px;color:var(--teal);font:700 10px/1.4 "Courier New",monospace;letter-spacing:.12em;text-transform:uppercase}
+.projects-intro{margin:0 12px 12px;color:#c5d6d0;font-size:12px;line-height:1.5}
+.projects-list{list-style:none;margin:0;padding:0}
+.projects-list>li+li{border-top:1px solid rgba(244,239,229,.13)}
+.project-link{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:12px;border-radius:9px}
+.project-link:hover,.project-link:focus-visible{background:rgba(112,210,197,.09)}
+.project-title{display:block;font-size:16px;font-weight:700;line-height:1.3;letter-spacing:-.02em}
+.project-description{display:block;margin-top:4px;color:#c5d6d0;font-size:12px;line-height:1.45}
+.project-tag{display:block;margin-bottom:4px;color:var(--teal);font:400 9px/1.4 "Courier New",monospace;letter-spacing:.08em;text-transform:uppercase}
+.project-arrow{color:var(--teal);font-size:18px;line-height:1.25;align-self:center}
+.project-tools{display:flex;flex-wrap:wrap;gap:4px 8px;padding:0 12px 10px}
+.project-tools a{display:inline-flex;align-items:center;min-height:36px;padding:7px 9px;border:1px solid rgba(244,239,229,.23);border-radius:6px;color:#e1ebe4;font-size:11px;line-height:1.4}
+.project-tools a:hover{color:var(--teal);border-color:var(--teal);background:rgba(112,210,197,.09)}
+.projects-workshop{margin-top:6px;padding-top:7px;border-top:1px solid rgba(244,239,229,.24)}
+.projects-workshop .projects-heading{margin-top:8px}
+.project-note{padding:9px 12px}
+.project-note .project-title{font-size:13px}
+.project-note .project-description{margin-top:2px;font-size:11px}
+.projects-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:760px){.top{gap:12px}.site-meta .place{display:none}.projects-menu>summary{font-size:10px;padding:11px 13px;gap:10px}}
+@media(max-width:480px){.brand{gap:8px}.mark{width:46px}.brandtext strong{font-size:14px}.projects-label{max-width:9ch}.projects-menu>summary{padding:9px 12px;min-height:46px;letter-spacing:.04em}.projects-panel{border-radius:12px}.project-title{font-size:15px}}
+@media(prefers-reduced-motion:no-preference){.projects-menu>summary,.project-link,.project-tools a{transition:color .16s ease,border-color .16s ease,background-color .16s ease}}
 </style>
 </head>
 <body>
@@ -34,10 +69,106 @@
 <div class="pixel-field" aria-hidden="true"></div>
 <div class="shade" aria-hidden="true"></div>
 <main class="card">
-<header class="top"><div class="brand"><div class="mark" aria-hidden="true"><img src="/assets/kliawota-logo.webp" alt=""></div><div class="brandtext"><strong>Kliawota Disaen</strong><div class="micro">Web · Print · Events</div></div></div><div class="micro place">Port Vila · Vanuatu · Pacific</div></header>
+<header class="top"><div class="brand"><div class="mark" aria-hidden="true"><img src="/assets/kliawota-logo.webp" alt=""></div><div class="brandtext"><strong>Kliawota Disaen</strong><div class="micro">Web · Print · Events</div></div></div><div class="site-meta"><div class="micro place">Port Vila · Vanuatu · Pacific</div>
+<details class="projects-menu" id="ongoing-projects">
+  <summary aria-controls="projects-panel"><span class="projects-label">Ongoing projects</span></summary>
+  <nav class="projects-panel" id="projects-panel" aria-label="Ongoing projects">
+    <p class="projects-heading">Ongoing projects</p>
+    <p class="projects-intro">A few things taking shape. Explore the work in progress.</p>
+    <!-- Project links live here. Keep private working documents out of public navigation. -->
+    <ul class="projects-list">
+      <li>
+        <a class="project-link" href="/mtgtools/Odyssey/scry/">
+          <span><span class="project-tag">Universes Eternal · Fan set</span><span class="project-title">The Odyssey</span><span class="project-description">World literature through world art, reimagined as Magic.</span></span>
+          <span class="project-arrow" aria-hidden="true">→</span>
+        </a>
+        <div class="project-tools" aria-label="Odyssey tools">
+          <a href="/mtgtools/odyssey/">Odyssey Studio</a>
+          <a href="/mtgtools/odyssey/landscape-library.html">Landscape library</a>
+          <a href="/mtgtools/odyssey/biome-atlas.html">Biome atlas</a>
+        </div>
+      </li>
+      <li>
+        <a class="project-link" href="https://histomaps.org" target="_blank" rel="noopener noreferrer">
+          <span><span class="project-title">Histomaps</span><span class="project-description">Interactive timelines of history and imagined worlds.</span><span class="projects-sr-only">Opens in a new tab.</span></span>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+      <li>
+        <a class="project-link" href="/portvilasandbox/">
+          <span><span class="project-title">Port Vila Sandbox</span><span class="project-description">An interactive 3D space for exploring the city and its possibilities.</span></span>
+          <span class="project-arrow" aria-hidden="true">→</span>
+        </a>
+      </li>
+      <li>
+        <a class="project-link" href="https://island-together-pacific.myriadthings.chatgpt.site" target="_blank" rel="noopener noreferrer">
+          <span><span class="project-tag">Playable prototype</span><span class="project-title">Island Together</span><span class="project-description">A cooperative Pacific climate-resilience card game.</span><span class="projects-sr-only">Opens in a new tab.</span></span>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+      <li>
+        <a class="project-link" href="https://reality-fracture-draft.myriadthings.chatgpt.site" target="_blank" rel="noopener noreferrer">
+          <span><span class="project-tag">Prototype</span><span class="project-title">Reality Fracture Draft Companion</span><span class="project-description">A visual Magic draft guide and practice tool.</span><span class="projects-sr-only">Opens in a new tab.</span></span>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+    </ul>
+    <div class="projects-workshop">
+      <p class="projects-heading">Also in development</p>
+      <ul class="projects-list">
+        <li class="project-note"><span class="project-title">Beowulf</span><span class="project-description">The next Universes Eternal literary Magic set.</span></li>
+        <li class="project-note"><span class="project-title">Spinback</span><span class="project-description">DJ remix discovery and curation.</span></li>
+      </ul>
+    </div>
+  </nav>
+</details></div></header>
 <section class="hero"><p class="kicker">Design · Communications · Creative Support</p><h1>Kliawota<br>Disaen</h1><p>Practical creative capacity, when you need it. Design and communications support for businesses, government and development organisations in Vanuatu and across the Pacific.</p></section>
-<footer class="bottom"><nav class="downloads" aria-label="Work and information"><a href="https://drive.google.com/file/d/1glP0ZFY97dr01hqtmEc8eiX-1Vbm8rB5/view" target="_blank" rel="noopener">CV</a><a href="https://drive.google.com/file/d/1nRGL9qMfbVQ8tG2cPng2EtOltsGE3Aio/view" target="_blank" rel="noopener">Selected Work</a><a href="https://drive.google.com/file/d/1bP9Haw8a5G4SV09Q-TEWAEMvI0JfnLbF/view" target="_blank" rel="noopener">Services</a><a href="https://drive.google.com/file/d/1hoZ6HJNNqxd8LUw2AuSN3KUQuo4B_7P9/view" target="_blank" rel="noopener">Pacific Design</a><a href="https://histomaps.org" target="_blank" rel="noopener">Histomaps.org ↗</a></nav><div class="contact-wrap"><img class="contact-logo" src="/assets/kliawota-logo.webp" alt="Kliawota Disaen logo"><div class="contact"><span class="name">J. Hunter Sizemore</span><span>Port Vila · Vanuatu</span><a href="tel:+6787113830">+678 711 3830</a><a href="mailto:jhsizemore@gmail.com">jhsizemore@gmail.com</a></div></div></footer>
+<footer class="bottom"><nav class="downloads" aria-label="Work and information"><a href="https://drive.google.com/file/d/1glP0ZFY97dr01hqtmEc8eiX-1Vbm8rB5/view" target="_blank" rel="noopener">CV</a><a href="https://drive.google.com/file/d/1nRGL9qMfbVQ8tG2cPng2EtOltsGE3Aio/view" target="_blank" rel="noopener">Selected Work</a><a href="https://drive.google.com/file/d/1bP9Haw8a5G4SV09Q-TEWAEMvI0JfnLbF/view" target="_blank" rel="noopener">Services</a><a href="https://drive.google.com/file/d/1hoZ6HJNNqxd8LUw2AuSN3KUQuo4B_7P9/view" target="_blank" rel="noopener">Pacific Design</a></nav><div class="contact-wrap"><img class="contact-logo" src="/assets/kliawota-logo.webp" alt="Kliawota Disaen logo"><div class="contact"><span class="name">J. Hunter Sizemore</span><span>Port Vila · Vanuatu</span><a href="tel:+6787113830">+678 711 3830</a><a href="mailto:jhsizemore@gmail.com">jhsizemore@gmail.com</a></div></div></footer>
 </main>
+<script>
+// Progressive enhancement: the native details menu also works without JavaScript.
+(() => {
+  const menu = document.getElementById('ongoing-projects');
+  const summary = menu?.querySelector('summary');
+  if (!menu || !summary) return;
+
+  const positionPanel = () => {
+    if (!menu.open) return;
+    const top = Math.max(12, Math.ceil(summary.getBoundingClientRect().bottom + 10));
+    menu.style.setProperty('--projects-panel-top', `${top}px`);
+  };
+  menu.addEventListener('toggle', positionPanel);
+  window.addEventListener('resize', positionPanel, {passive:true});
+  window.visualViewport?.addEventListener('resize', positionPanel, {passive:true});
+  document.addEventListener('click', event => {
+    if (menu.open && !menu.contains(event.target)) menu.open = false;
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menu.open) {
+      menu.open = false;
+      summary.focus();
+      event.preventDefault();
+    }
+  });
+  menu.addEventListener('focusout', () => {
+    requestAnimationFrame(() => {
+      if (menu.open && !menu.contains(document.activeElement)) menu.open = false;
+    });
+  });
+  // Scrolling the project list must not drive the homepage's background animation.
+  for (const type of ['wheel', 'touchstart', 'touchmove']) {
+    menu.addEventListener(type, event => event.stopPropagation(), {passive:true});
+  }
+  const openFromHash = () => {
+    if (window.location.hash === '#ongoing-projects') {
+      menu.open = true;
+      positionPanel();
+    }
+  };
+  window.addEventListener('hashchange', openFromHash);
+  openFromHash();
+})();
+</script>
 <script>
 (() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
