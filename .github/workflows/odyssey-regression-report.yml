@@ -1,0 +1,44 @@
+name: Odyssey remaining regression diagnostics
+on:
+  push:
+    branches: [odyssey-candidates-crops-signup]
+    paths: ['.github/workflows/odyssey-regression-report.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Compare tests and extract only relevant log context
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch origin main --depth=1
+          git worktree add /tmp/odyssey-main origin/main
+          python - <<'PY'
+          import subprocess,json,re,os,urllib.request
+          from pathlib import Path
+          out=Path('test-results/odyssey-regression-report');out.mkdir(parents=True,exist_ok=True)
+          report=[]
+          for name,cwd in [('feature','.'),('main','/tmp/odyssey-main')]:
+              p=subprocess.run('node --test tests/*.test.cjs tests/*.test.js',shell=True,cwd=cwd,capture_output=True,text=True,timeout=90)
+              lines=(p.stdout+'\n'+p.stderr).splitlines();hits=[i for i,s in enumerate(lines) if re.search(r'not ok|Error:|AssertionError|SyntaxError|Cannot find',s)]
+              excerpts=['\n'.join(lines[max(0,i-3):i+22])[:8000] for i in hits[:6]]
+              report.append({'target':name,'returncode':p.returncode,'failures':excerpts,'summary':lines[-12:]})
+          req=urllib.request.Request('https://api.github.com/repos/jhsizemore/kliawotadesign/actions/jobs/109274254871/logs',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json'})
+          try:
+              lines=urllib.request.urlopen(req,timeout=25).read().decode('utf-8-sig').splitlines();hits=[i for i,s in enumerate(lines) if re.search(r'Traceback|AssertionError|Error:|assert |not ok',s)]
+              report.append({'target':'art-journey','failures':['\n'.join(lines[max(0,i-2):i+18])[:10000] for i in hits[-6:]]})
+          except Exception as e:report.append({'target':'art-journey','error':str(e)})
+          text=json.dumps(report,indent=2);(out/'report.json').write_text(text);print(text)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-regression-report
+          path: test-results/odyssey-regression-report/
