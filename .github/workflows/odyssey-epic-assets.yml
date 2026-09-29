@@ -1,0 +1,50 @@
+name: Odyssey historical source preparation
+on:
+  push:
+    branches: [odyssey-working-rules-and-artifact]
+    paths: ['scripts/prepare-odyssey-epic-assets.py', '.github/workflows/odyssey-epic-assets.yml']
+permissions:
+  contents: write
+concurrency:
+  group: odyssey-epic-source-preparation
+  cancel-in-progress: true
+jobs:
+  sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: odyssey-working-rules-and-artifact
+      - run: python -m pip install -q requests pillow
+      - name: Fetch only named museum and public-domain sources
+        run: python -u scripts/prepare-odyssey-epic-assets.py
+      - name: Package the genuine assets for visual inspection
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          with zipfile.ZipFile('odyssey-epic-sources.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for root in ['public/mtgtools/Odyssey/scry/assets/editorial','test-results/odyssey-epic']:
+                  for p in Path(root).rglob('*'):
+                      if p.is_file():z.write(p)
+              for n in ['editorial-assets.js','editorial-assets.json']:z.write('public/mtgtools/Odyssey/scry/'+n)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-epic-real-sources
+          path: |
+            odyssey-epic-sources.zip
+            test-results/odyssey-epic/
+          if-no-files-found: ignore
+      - name: Commit source images on the review branch only
+        run: |
+          git config user.name 'Odyssey historical source preparation'
+          git config user.email 'actions@users.noreply.github.com'
+          git add public/mtgtools/Odyssey/scry/assets/editorial public/mtgtools/Odyssey/scry/editorial-assets.js public/mtgtools/Odyssey/scry/editorial-assets.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add genuine Odyssey papyrus, Leslie Autolycus and reviewed landscapes'
+            git pull --rebase origin odyssey-working-rules-and-artifact
+            git push origin HEAD:odyssey-working-rules-and-artifact
+          fi
