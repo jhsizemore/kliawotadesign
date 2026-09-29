@@ -29,7 +29,9 @@ jobs:
         with:
           node-version: 22
       - name: Build the atlas and integrate additive filters
-        run: python scripts/publish-odyssey-biome-atlas.py
+        run: |
+          python scripts/publish-odyssey-biome-atlas.py
+          python scripts/refine-odyssey-biome-atlas.py
       - name: Test all colour identities and unchanged source/card data
         run: node scripts/test-odyssey-biome-atlas.cjs
       - name: Commit only derived atlas and navigation changes
@@ -38,7 +40,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add public/mtgtools/odyssey/data/biome-* public/mtgtools/odyssey/app.html public/mtgtools/odyssey/artwork-tools.js public/mtgtools/odyssey/landscape-library.html
           if ! git diff --cached --quiet; then
-            git commit -m 'Publish all 32 colour-biome directions, existing art associations and search navigation'
+            git commit -m 'Publish all 32 colour-biome directions with bounded habitat classification and verified previews'
             git fetch origin main
             git rebase origin/main
             git push origin HEAD:main
