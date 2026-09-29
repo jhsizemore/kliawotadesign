@@ -10,7 +10,7 @@ function assemble(root){
  const data=JSON.parse(JSON.stringify(sandbox.window.ODYSSEY_DATA));
  if(!data?.cards?.length||new Set(data.cards.map(c=>c.id)).size!==data.cards.length)throw Error('Invalid candidate card identities');
  if(data.sources?.cardFile?.id!=='1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE'||data.sources.cardFile.sheet!=='Card File v1.0 Candidate')throw Error('Unexpected candidate authority');
- data.publicCandidate={schema:'odyssey-public-candidate/v1',status:'candidate',label:'Current candidate file',sourceSheet:data.sources.cardFile,sourceVersion:data.datasetVersion,sourceFingerprint:crypto.createHash('sha256').update(JSON.stringify(sources)).digest('hex'),sources};
+ data.publicCandidate={schema:'odyssey-public-candidate/v1',status:'candidate',label:'Current candidate file',sourceSheet:data.sources.cardFile,sourceVersion:data.datasetVersion,sourceFingerprint:crypto.createHash('sha256').update(JSON.stringify(sources)).digest('hex'),cardsSha256:crypto.createHash('sha256').update(JSON.stringify(data.cards)).digest('hex'),sources};
  return data;
 }
 function build({root=path.resolve(__dirname,'..'),check=false}={}){const data=assemble(root),out=path.join(root,'public/mtgtools/odyssey/data/odyssey-public-candidate.json'),text=JSON.stringify(data,null,2)+'\n';if(check){if(!fs.existsSync(out)||fs.readFileSync(out,'utf8')!==text)throw Error('Published candidate is stale. Run npm run build:renderer.');}else fs.writeFileSync(out,text);return data;}

@@ -115,8 +115,10 @@ async def main():
   social=await newpage();await social.add_init_script('(function(){const Native=Date;window.__testNow='+str(int(cutoff-60000))+';window.Date=class extends Native{constructor(...a){super(...(a.length?a:[window.__testNow]));}static now(){return window.__testNow;}};})();')
   await social.goto(BASE+'/mtgtools/Odyssey/scry/social/?cards=1,61',wait_until='domcontentloaded');await social.wait_for_function('window.OdysseyExhibition',timeout=45000)
   assert await social.locator('.promo-select').first.locator('option').count()==310
+  await social.locator('.promo-select').first.select_option('61');await social.locator('#promoHeadline').fill('A curated voyage')
   await social.evaluate('(t)=>{window.__testNow=t;window.dispatchEvent(new Event("focus"));}',cutoff+1)
   assert await social.locator('.promo-select').first.locator('option').count()<100
+  assert await social.locator('.promo-select').first.input_value()=='61';assert await social.locator('#promoHeadline').input_value()=='A curated voyage'
   nojs=await browser.new_context(java_script_enabled=False);raw=await nojs.new_page();await raw.goto(BASE+'/mtgtools/Odyssey/scry/')
   assert 'Homer' in await raw.locator('body').inner_text();assert await raw.locator('noscript').count()>0
   assert not errors,errors

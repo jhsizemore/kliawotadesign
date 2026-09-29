@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-26.2",
+  "version": "2026-09-27.1",
   "revision": "closing-act-live-20260926-v2",
   "cards": 309,
   "artworks": 582,
@@ -31,7 +31,7 @@
       "name": "Song of the Faithful Queen"
     }
   ],
-  "cardsSha256": "27de69096b6d47c80504b4373821b57ec5307b4e2557937299d6750a4341b74f",
+  "cardsSha256": "4a6a43140b5a2975190e07b0a7a5ab59d1d050206c4f084dd1d23ae37b981851",
   "actual": {
     "physicalCards": 309,
     "rarity": {

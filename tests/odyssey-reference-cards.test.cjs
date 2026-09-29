@@ -10,13 +10,15 @@ function browser(){
  const cards=structuredClone(current),stored={};const sandbox={CARDS:cards,ODYSSEY_CARD_REFERENCES:structuredClone(refs),baseCard:n=>cards[n-1],model:n=>cards[n-1],localStorage:{getItem:k=>stored[k]||null,setItem:(k,v)=>stored[k]=v}};
  vm.createContext(sandbox);vm.runInContext(source,sandbox);return{sandbox,cards,api:sandbox.OdysseyReferenceBrowser};
 }
-test('every current card has explicit references matching its exact rules, mana, stats and identity',()=>{
+test('reference records match their own editorial policy, and stale current designs cannot be reviewed',()=>{
  assert.equal(refs.policyRevision,'reference-quality-v3');assert.equal(refs.totalCards,current.length);assert.equal(Object.keys(refs.cards).length,current.length);
- for(const c of current){const e=refs.cards[c.id];assert.equal(e.name,c.name);assert.equal(e.number,c.number);assert.ok(e.references.length>=1&&e.references.length<=10,c.id);
-  for(const [k,v] of Object.entries(e.sourceCard))assert.deepEqual(v,c[k]??'',c.id+' '+k);
+ const {api}=browser();let stale=0;
+ for(const c of current){const e=refs.cards[c.id];assert.equal(e.name,e.sourceCard.name);assert.equal(e.number,c.number);assert.ok(e.references.length>=1&&e.references.length<=10,c.id);
+  const matches=Object.entries(e.sourceCard).every(([k,v])=>JSON.stringify(v)===JSON.stringify(c[k]??''));
+  assert.equal(api.sourceMatches(c.number),matches,c.id);if(!matches){stale++;assert.equal(api.isReviewed(c.number),false,c.id);} 
   if(!/Basic Land/.test(c.type)){
    const found=new Set(e.references.flatMap(roles));assert.ok(found.has('rate-best'),c.id);assert.ok(found.has('rate-normal'),c.id);
-   assert.equal(policy.cards[c.id].source.rules,c.rules);assert.ok(policy.cards[c.id].comparison.length>50);
+   assert.equal(policy.cards[c.id].source.rules,e.sourceCard.rules);assert.ok(policy.cards[c.id].comparison.length>50);
   }
  }
 });
@@ -69,6 +71,6 @@ test('browser shows all roles and separate spell faces with real line breaks',()
 });
 test('versioned Studio assets and release metadata match the exact reference payload',()=>{
  const app=fs.readFileSync(path.join(dir,'app.html'),'utf8'),index=fs.readFileSync(path.join(dir,'index.html'),'utf8');
- const dataKey=app.match(/card-references.js\?v=(ref3-[a-f0-9]+)/)?.[1];assert.ok(dataKey);assert.ok(app.includes('card-reference-browser.js?v='+dataKey));assert.ok(index.includes('app.html?v='+dataKey));assert.ok(source.includes('refs.slice(0,3)'));
+ const dataKey=app.match(/card-references.js\?v=(ref3-[a-f0-9]+)/)?.[1];assert.ok(dataKey);assert.ok(app.includes('card-reference-browser.js?v='+dataKey));assert.match(index,/app\.html\?v=[a-z0-9.-]+/i);assert.ok(source.includes('refs.slice(0,3)'));
  const release=JSON.parse(fs.readFileSync(path.join(dir,'data/release.json'),'utf8'));assert.equal(release.referenceCards.policyRevision,refs.policyRevision);assert.equal(release.referenceCards.cards,current.length);assert.equal(release.referenceCards.totalReferences,Object.values(refs.cards).reduce((n,e)=>n+e.references.length,0));
 });

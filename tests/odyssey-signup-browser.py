@@ -52,7 +52,7 @@ async def main():
    stored=await (await page.request.get(BASE+'/__test/subscribers')).json();assert len(stored)==1 and stored[0]['email']=='browser-proof@example.org';assert stored[0]['topics']==['progress','membership','playtesting'];assert stored[0]['emailVerified'] is False
    await page.screenshot(path=str(OUT/'signup-saved.png'))
    await page.reload();await ready(page);assert len(await (await page.request.get(BASE+'/__test/subscribers')).json())==1
-   unauth=await page.request.post(BASE+'/mtgtools/odyssey/api/subscriptions/admin',data={'action':'list'},headers={'Origin':BASE});assert unauth.status==403
+   unauth=await page.request.post(BASE+'/mtgtools/odyssey/api/subscriptions/admin',data={'action':'list'},headers={'Origin':BASE});assert unauth.status==401
    auth={'Origin':BASE,'Authorization':'Bearer owner-test-credential'}
    csv=await (await page.request.post(BASE+'/mtgtools/odyssey/api/subscriptions/admin',data={'action':'csv'},headers=auth)).text()
    token=re.search(r'manage.html#([a-f0-9]+\.[a-f0-9]+)',csv).group(1)

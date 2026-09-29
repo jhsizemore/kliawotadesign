@@ -35,7 +35,18 @@ export async function routeSubscriptions(request,env){const u=new URL(request.ur
  if(suffix==='/admin'&&!/^Bearer [A-Za-z0-9._~+\/-]{10,4096}$/.test(request.headers.get('authorization')||''))return j({error:'Owner sign-in required.'},401);
  try{return await env.ODYSSEY_ART_SYNC.get(env.ODYSSEY_ART_SYNC.idFromName(NAMESPACE)).fetch(request);}catch(_){return j({error:'The signup could not be saved. Please try again.'},503);}
 }
-async function ownerAuth(request,fetcher){const authorization=request.headers.get('authorization')||'';if(!/^Bearer [A-Za-z0-9._~+\/-]{10,4096}$/.test(authorization))return false;try{const r=await fetcher('https://www.googleapis.com/oauth2/v3/userinfo',{headers:{Authorization:authorization},signal:AbortSignal.timeout(10000)});if(!r.ok)return false;const profile=await r.json();return profile.email_verified===true&&String(profile.email).toLowerCase()===OWNER;}catch(_){return false;}}
+async function ownerAuth(request,fetcher){
+ const authorization=request.headers.get('authorization')||'';
+ if(!/^Bearer [A-Za-z0-9._~+\/-]{10,4096}$/.test(authorization))return {status:401,error:'Sign in to access the private list.'};
+ try{
+  const r=await fetcher('https://www.googleapis.com/oauth2/v3/userinfo',{headers:{Authorization:authorization},signal:AbortSignal.timeout(10000)});
+  if(r.status===401)return {status:401,error:'Your Google session expired. Sign in again.'};
+  if(!r.ok)return {status:503,error:'Google verification is unavailable. No subscriber data was changed.'};
+  const profile=await r.json();
+  if(profile.email_verified!==true||String(profile.email).toLowerCase()!==OWNER)return {status:403,error:'This subscriber list is private. Sign in as the owner.'};
+  return {status:200};
+ }catch(_){return {status:503,error:'Google verification is unavailable. Please retry.'};}
+}
 const success=()=>j({accepted:true,message:'Thank you for joining the voyage. New signups are saved for your selected updates. Existing preferences, including a previous unsubscribe, stay unchanged.'},202);
 export async function subscriberWorkspace(request,storage,fetcher=fetch,clock=Date.now){
  const u=new URL(request.url),suffix=u.pathname.slice(SIGNUP_API.length),now=clock(),day=Math.floor(now/DAY);
@@ -78,21 +89,35 @@ export async function subscriberWorkspace(request,storage,fetcher=fetch,clock=Da
  return success();
 }
 export async function cleanupSubscriptions(storage,now=Date.now()){
- const cutoff=Math.floor(now/DAY)-1;for(const prefix of ['rate:','used:','daily:']){const rows=await storage.list({prefix,limit:10000});const keys=[...rows.keys()].filter(k=>Number(k.split(':')[1])<cutoff);for(let i=0;i<keys.length;i+=128)await storage.delete(keys.slice(i,i+128));}
+ // A quiet list still needs the final cleanup. One alarm must re-arm itself
+ // until every short-lived abuse key has expired, then stop entirely.
+ const cutoff=Math.floor(now/DAY)-1;let earliest=Infinity;
+ for(const prefix of ['rate:','used:','daily:']){
+  const rows=await storage.list({prefix,limit:10000}),expired=[];
+  for(const key of rows.keys()){const day=Number(key.split(':')[1]);if(day<cutoff)expired.push(key);else if(Number.isFinite(day))earliest=Math.min(earliest,day);}
+  for(let i=0;i<expired.length;i+=128)await storage.delete(expired.slice(i,i+128));
+  // More than one page may remain after an old backlog; continue promptly.
+  if(rows.size===10000)return now+60000;
+ }
+ return Number.isFinite(earliest)?Math.max(now+60000,(earliest+2)*DAY+1000):null;
 }
+
 const spreadsheetCell=value=>{const s=String(value??'');return /^[\s]*[=+@-]/.test(s)?"'"+s:s;};
 export const csvCell=v=>'"'+spreadsheetCell(v).replace(/"/g,'""')+'"';
 async function admin(request,body,storage,fetcher,now){
- if(!await ownerAuth(request,fetcher))return j({error:'This subscriber list is private. Sign in as the owner.'},403);
+ const authResult=await ownerAuth(request,fetcher);if(authResult.status!==200)return j({error:authResult.error},authResult.status);
  if(!['list','csv','sheet','unsubscribe','delete'].includes(body.action)||Object.keys(body).some(k=>!['action','id','confirm'].includes(k)))return j({error:'Unknown list action.'},400);
  if(['unsubscribe','delete'].includes(body.action)){
   if(!/^[a-f0-9]{64}$/.test(body.id||'')||body.confirm!==true)return j({error:'Confirm the selected subscriber action.'},400);
-  await storage.transaction(async tx=>{const row=await tx.get('member:'+body.id);if(!row)return;if(body.action==='delete'){await tx.put('member:'+body.id,{id:body.id,status:'deleted',topics:[],updatedAt:new Date(now).toISOString()});}else{row.status='unsubscribed';row.updatedAt=new Date(now).toISOString();await tx.put('member:'+body.id,row);}await tx.put('revision',(await tx.get('revision')||0)+1);});
+  await storage.transaction(async tx=>{const row=await tx.get('member:'+body.id);if(!row||row.status==='deleted')return;if(body.action==='delete'){await tx.put('member:'+body.id,{id:body.id,status:'deleted',topics:[],updatedAt:new Date(now).toISOString()});}else{row.status='unsubscribed';row.updatedAt=new Date(now).toISOString();await tx.put('member:'+body.id,row);}await tx.put('revision',(await tx.get('revision')||0)+1);});
   return j({updated:true});
  }
  const snapshot=await storage.transaction(async tx=>({revision:await tx.get('revision')||0,rows:[...(await tx.list({prefix:'member:',limit:MAX_MEMBERS})).values()]}));
  const rows=snapshot.rows.filter(r=>r.status!=='deleted').sort((a,b)=>String(b.consentAt).localeCompare(String(a.consentAt)));
- if(body.action==='list')return j({rows,revision:snapshot.revision,total:rows.length,active:rows.filter(r=>r.status==='active').length,sheetId:SUBSCRIBER_SHEET});
+ if(body.action==='list'){
+  const lastExport=await storage.get('lastExport')||null;
+  return j({rows,revision:snapshot.revision,total:rows.length,active:rows.filter(r=>r.status==='active').length,sheetId:SUBSCRIBER_SHEET,lastExport,sheetNeedsRefresh:!lastExport||lastExport.revision!==snapshot.revision});
+ }
  const secret=await secretFor(storage),values=[];
  for(const r of rows.filter(r=>body.action!=='csv'||r.status==='active')){const unsub='https://kliawota.design/mtgtools/Odyssey/scry/updates/manage.html#'+r.id+'.'+await hmac(secret,'unsubscribe:'+r.id);values.push([r.id,r.email,r.name,r.status,...TOPICS.map(t=>r.topics.includes(t)?'YES':'NO'),r.consentAt,r.consentVersion,r.emailVerified?'YES':'NO',r.source,r.updatedAt,unsub]);}
  if(body.action==='csv'){const text='\ufeff'+[HEADERS,...values].map(r=>r.map(csvCell).join(',')).join('\r\n');return new Response(text,{headers:{'Content-Type':'text/csv; charset=utf-8','Content-Disposition':'attachment; filename="odyssey-email-signups.csv"','Cache-Control':'no-store, private'}});}

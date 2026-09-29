@@ -219,7 +219,7 @@ export async function handleSync(request, env) {
 export class OdysseyArtWorkspace {
   constructor(ctx) { this.ctx = ctx; }
 
-  async alarm() { await cleanupSubscriptions(this.ctx.storage); }
+  async alarm() { const next=await cleanupSubscriptions(this.ctx.storage); if(next!==null)await this.ctx.storage.setAlarm(next); }
 
   async fetchNotes(request) {
     let body = null;
