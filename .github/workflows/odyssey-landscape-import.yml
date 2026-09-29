@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/odyssey-landscape-import.py'
+      - 'scripts/odyssey-landscape-supplement.py'
       - '.github/workflows/odyssey-landscape-import.yml'
   workflow_dispatch:
 permissions:
@@ -36,6 +37,8 @@ jobs:
         run: pip install requests beautifulsoup4 Pillow
       - name: Acquire approved landscape collections without changing card assignments
         run: python scripts/odyssey-landscape-import.py
+      - name: Complete oil-study catalogue and museum image acquisition
+        run: python scripts/odyssey-landscape-supplement.py
       - name: Retain acquisition report, decoded images, and integration context
         if: always()
         uses: actions/upload-artifact@v4
