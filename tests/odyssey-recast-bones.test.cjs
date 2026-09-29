@@ -7,6 +7,11 @@ const data=JSON.parse(fs.readFileSync(path.join(root,'public/mtgtools/odyssey/da
 const archive=JSON.parse(fs.readFileSync(path.join(root,'public/mtgtools/odyssey/data/recast-archive.20260930.json')));
 const {numbers}=require('../public/mtgtools/odyssey/data/recast-bones.20260930.js');
 
+test('Studio applies the Recast reset after note resolution when constructing the active dataset',()=>{
+ const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
+ assert.match(app,/const ODYSSEY_DATASET=window\.OdysseyRecastBones\.apply\(window\.OdysseyNotesResolution\.apply\(/);
+});
+
 test('every explicit Recast has a complete archived design and an open structural slot',()=>{
  assert.deepEqual(numbers,[14,154,160,216,241,275,283,285,290,297]);
  assert.deepEqual(archive.cards.map(c=>c.number),numbers);
