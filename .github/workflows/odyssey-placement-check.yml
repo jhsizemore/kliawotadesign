@@ -1,0 +1,35 @@
+name: Odyssey artwork placement verification
+on:
+  push:
+    branches: [main]
+    paths: ['public/mtgtools/odyssey/**', 'public/mtgtools/Odyssey/scry/**', 'src/odyssey*', 'scripts/build-odyssey-public-renderer.cjs', 'tests/odyssey-placement*', '.github/workflows/odyssey-placement-check.yml']
+  pull_request:
+    paths: ['public/mtgtools/odyssey/**', 'public/mtgtools/Odyssey/scry/**', 'src/odyssey*', 'scripts/build-odyssey-public-renderer.cjs', 'tests/odyssey-placement*', '.github/workflows/odyssey-placement-check.yml']
+permissions:
+  contents: read
+concurrency:
+  group: odyssey-placement-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  placement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/build-odyssey-public-renderer.cjs --check
+      - run: node --test tests/odyssey-placement.test.cjs tests/odyssey-art-settings-transfer.test.cjs tests/odyssey-frame-fidelity.test.cjs tests/odyssey-transform-faces.test.cjs tests/odyssey-exhibition.cjs
+      - run: |
+          python -m pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - run: |
+          python -m http.server 8765 --directory public >/tmp/placement-http.log 2>&1 &
+          python tests/odyssey-placement-browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-placement-verification
+          path: test-results/odyssey-placement/
+          if-no-files-found: ignore
