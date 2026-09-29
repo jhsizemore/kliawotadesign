@@ -41,12 +41,14 @@
     let s = String(value ?? '').replace(/\{([^{}\n]+)\}/g, (whole, inner) => token(inner) ? `{${token(inner)}}` : whole);
     // Legacy card data uses compact costs in prose as well as in mana fields.
     // A number followed by a color code is unambiguous; do not rewrite ordinary numbers.
-    s = s.replace(/(?<![\w{])(?:\d+)?[WUBRGCX]+(?![\w}])/g, cost => normalizeCost(cost));
-    s = s.replace(/\b(Ward|Equip|Foretell|Flashback|Bestow|Escape|Miracle|Boast|Plot|Unearth|Kicker|Cycling) ([WUBRGC]+|\d+)(?=[.,;: \n]|$)/g, (_, word, cost) => word + ' ' + normalizeCost(cost));
-    s = s.replace(/\b(Add|Pay|pay|costs?) ([WUBRGC]+|\d+)(?=[.,;: \n]|$)/g, (_, word, cost) => word + ' ' + normalizeCost(cost));
+    s = s.replace(/(?<![\w{])(?:\d+[WUBRGCX]+|[WUBRGC][WUBRGCX]*|X[WUBRGC]+)(?![\w}])/g, cost => normalizeCost(cost));
+    s = s.replace(/\b(Ward|Equip|Foretell|Flashback|Bestow|Escape|Miracle|Boast|Plot|Unearth|Kicker|Cycling) ([WUBRGCX]+|\d+)(?=[.,;: \n]|$)/g, (_, word, cost) => word + ' ' + normalizeCost(cost));
+    // Do not turn a life/energy payment into a generic mana symbol. The
+    // digit boundary prevents "pay 10 life" backtracking to a partial number.
+    s = s.replace(/\b(Add|Pay|pay|costs?) ([WUBRGCX]+|\d+)(?![\w}])(?=[.,;: \n]|$)(?![ \t]+(?:life|lives|mana|energy|damage|cards?|counters?)\b)/g, (_, word, cost) => word + ' ' + normalizeCost(cost));
     // Only standalone T/Q in an activated cost, never the English instruction “Tap”.
     s = s.replace(/(^|[^A-Za-z0-9{])([TQ])(?=[ \t]*(?:,|:))/g, '$1{$2}');
-    s = s.replace(/(^|\n|[.!?] +)([ \t]*)(\d+)(?=[ \t]*(?:,[ \t]*\{[TQ]\}|:))/g, '$1$2{$3}');
+    s = s.replace(/(^|\n|[.!?] +)([ \t]*)(\d+|X)(?=[ \t]*(?:,[ \t]*\{[TQ]\}|:))/g, '$1$2{$3}');
     // An inset spell's header has an explicit cost field, unlike arbitrary rules prose.
     s = s.replace(/(^|\n)([^\n]+?[ \t]+[—–-][ \t]+)([^\n]+?)([ \t]+[—–-][ \t]+(?:Instant|Sorcery)\b)/gi,
       (whole, start, name, cost, type) => tokens(cost) === null ? whole : start + name + normalizeCost(cost) + type);

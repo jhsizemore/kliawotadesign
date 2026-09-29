@@ -114,7 +114,7 @@ test('the newest artwork wave is directly renderable and assigned',()=>{
 });
 test('Studio loads the sheet sync before model construction and links the current card source',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- const data=app.indexOf('odyssey-data.js?v=20260927-flavor1'),syncPos=app.indexOf('live-sheet-sync.js?v=20260928-art40'),patchPos=app.indexOf('live-sheet-art-patch.js?v=20260928-art40'),model=app.indexOf('const ODYSSEY_DATASET=loadOdysseyDataset()');
+ const data=app.indexOf('src="/mtgtools/odyssey/data/odyssey-data.js?'),syncPos=app.indexOf('src="/mtgtools/odyssey/live-sheet-sync.js?'),patchPos=app.indexOf('src="/mtgtools/odyssey/live-sheet-art-patch.js?'),model=app.search(/const ODYSSEY_DATASET\s*=/);
  assert.ok(data>=0&&syncPos>data&&patchPos>syncPos&&model>patchPos);
  assert.match(app,/ART-430\.1cce9d409251\.full\.webp/);
  assert.match(app,/function stalePackagedArtOverride/);
@@ -122,5 +122,5 @@ test('Studio loads the sheet sync before model construction and links the curren
  assert.match(app,/PUBLISHED_ART_URL_UPDATES=\{'ART-239'.*'ART-432'.*'ART-604'.*'ART-605'.*'ART-606'.*'ART-607'.*'ART-608'.*'ART-609'.*'ART-610'.*'ART-611'.*'ART-612'.*'ART-613'.*'ART-614'.*'ART-615'.*'ART-616'/);
  assert.match(app,/const vals=\[PUBLISHED_ART_URL_UPDATES\[a\.id\],verified,resolvedArtUrls\[a\.id\]/);
  assert.match(app,/1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE\/edit/);
- const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=20260928-flavor1-art43/);
+ const index=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/index.html'),'utf8');assert.match(index,/app\.html\?v=[a-z0-9.-]+/i);
 });

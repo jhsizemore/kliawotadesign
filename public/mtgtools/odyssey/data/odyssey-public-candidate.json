@@ -35819,7 +35819,7 @@
     }
   ],
   "integrity": {
-    "sha256": "27de69096b6d47c80504b4373821b57ec5307b4e2557937299d6750a4341b74f",
+    "sha256": "4a6a43140b5a2975190e07b0a7a5ab59d1d050206c4f084dd1d23ae37b981851",
     "cards": 309,
     "artworks": 616,
     "coverage": 309,
@@ -37355,11 +37355,12 @@
       "title": "14A2 — The Odyssey MTG — Analysis Candidate Card File v2 — FF Lattice Rebuild"
     },
     "sourceVersion": "2026-09-26.35",
-    "sourceFingerprint": "5dac39ff3b3d9c0b209b74658406050e0e4d66097e23d14eba3106bed2367e7d",
+    "sourceFingerprint": "13c079119eed7499ddfb55f61aa1b5f8ba0e0335b476efa0530682959566af79",
+    "cardsSha256": "ae613593a49199badb3b03be63ba1c09ce692478f090406766c1f0d78ba4c76c",
     "sources": [
       {
         "file": "data/odyssey-data.js",
-        "sha256": "a095ca016285021a493523acb2af32a211c81a53b4a1d088fc05d87c4e664164"
+        "sha256": "00937efe6bd0f303596590c53026fcb16a74423d3fea57482a057023a1d01e37"
       },
       {
         "file": "data/reminder-review.20260927a.js",

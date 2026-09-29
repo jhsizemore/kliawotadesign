@@ -7,7 +7,8 @@ const context={window:{}};vm.runInNewContext(source,context);const review=contex
 
 test('reminder review is a complete per-card advisory ledger',()=>{
  assert.equal(review.schema,'odyssey-reminder-review/v1');
- assert.equal(review.datasetVersion,data.datasetVersion);
+ assert.equal(review.datasetVersion,data.integrity.productionRevision); // advisory baseline, before the flavour-only release
+ assert.ok(review.datasetVersion<=data.datasetVersion);
  assert.equal(review.cards.length,40);
  assert.equal(new Set(review.cards.map(row=>row.number)).size,40);
  assert.deepEqual(Object.fromEntries(['print','inspector-only'].map(key=>[key,review.cards.filter(row=>row.proposal===key).length])),{print:19,'inspector-only':21});

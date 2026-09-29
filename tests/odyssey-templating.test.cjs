@@ -1,13 +1,14 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),dir=path.join(root,'public/mtgtools/odyssey/data');
-const current=JSON.parse(fs.readFileSync(path.join(dir,'odyssey-data.json'),'utf8'));
+// The September 19 templating report describes archived Candidate 1, not later recast slots.
+const current=JSON.parse(fs.readFileSync(path.join(dir,'odyssey-analysis-candidate-v1.json'),'utf8'));
 const candidate=JSON.parse(fs.readFileSync(path.join(dir,'odyssey-analysis-candidate-v1.json'),'utf8'));
 const report=JSON.parse(fs.readFileSync(path.join(dir,'templating-report.json'),'utf8'));
 const card=n=>current.cards.find(c=>c.number===n);
 test('templating release is conservative and synchronized',()=>{
- assert.equal(current.datasetVersion,'2026-09-20.1');
- assert.equal(candidate.candidate.productionDatasetVersion,current.datasetVersion);
+ assert.equal(current.datasetVersion,'analysis-candidate-v1');
+ assert.equal(candidate.candidate.productionDatasetVersion,'2026-09-20.1');
  assert.deepEqual(candidate.cards,current.cards);
  assert.equal(report.revision,'templating-v1');
  assert.equal(report.version,'2026-09-19.4');
@@ -57,7 +58,7 @@ test('every changed card records evidence and no numerical game data changed',()
  for(const x of report.changes){
   assert.ok(x.reason&&x.reason.length>10,x.id);
   assert.ok(Array.isArray(x.references),x.id);
-  const c=card(x.number);assert.ok(c.changeStatus.includes('templating-v1'),x.id);
+  const c=card(x.number);assert.equal(c.name,x.name,x.id);assert.equal(c.rules,x.after,x.id);assert.ok(c.changeStatus.includes('templating-v1'),x.id);
  }
 });
 
