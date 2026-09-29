@@ -12,62 +12,48 @@ jobs:
     timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
-      - name: Collect existing model and source records (no deployment)
+        with:
+          persist-credentials: false
+      - name: Recover published research images and primary download links
         shell: bash
         run: |
-          mkdir -p inspection/model inspection/references
-          python3 - <<'PY'
-          from pathlib import Path
-          import shutil, json, re
-          root=Path('public/portvilasandbox')
-          out=Path('inspection/model')
-          for p in root.rglob('*'):
-              if p.is_file() and p.suffix in ('.js','.json','.html','.css') and 'north-v1' not in p.parts:
-                  dst=out/p.relative_to(root); dst.parent.mkdir(parents=True,exist_ok=True); shutil.copyfile(p,dst)
-          for p in Path('docs').glob('port-vila*'):
-              shutil.copyfile(p,Path('inspection')/p.name)
-          build=json.loads((root/'BUILD.json').read_text())
-          entry=next(a for a in build['assets'] if a.startswith('assets/index-') and a.endswith('.js'))
-          text=(root/entry).read_text()
-          terms=['window.sandbox','demolition','BSP','BRED','Fung','facade','photographic']
-          excerpts={term:[text[max(0,m.start()-500):m.end()+1500] for m in list(re.finditer(re.escape(term),text,re.I))[-20:]] for term in terms}
-          Path('inspection/bundle-excerpts.json').write_text(json.dumps(excerpts,indent=2))
-          Path('inspection/README.txt').write_text('Read-only inspection of existing Port Vila Sandbox. No façade changes, deployment, or current-occupancy claims. DUAP July 2025 images are historical references; later demolition evidence takes priority. No Google Maps imagery is downloaded.\n')
-          PY
-      - name: Attempt official DUAP historical photo archive
-        continue-on-error: true
-        shell: bash
-        run: |
-          curl --fail --location --connect-timeout 15 --max-time 90 --max-filesize 157286400 --output /tmp/duap-photos.rar 'https://duap.gov.vu/images/Projects/Photo%20Vila_July25.rar'
-          mkdir -p /tmp/duap-photos
-          7z x -y -o/tmp/duap-photos /tmp/duap-photos.rar >/tmp/duap-extraction.log
+          mkdir -p inspection/references
           python3 -m pip install --quiet Pillow
           python3 - <<'PY'
           from pathlib import Path
           from PIL import Image,ImageOps,ImageDraw
-          import json,hashlib
-          root=Path('/tmp/duap-photos'); out=Path('inspection/references')
-          records=[]; thumbs=[]
-          paths=[p for p in root.rglob('*') if p.suffix.lower() in ('.jpg','.jpeg','.png','.webp')]
-          for i,p in enumerate(paths[:180]):
+          from urllib.request import urlopen,Request
+          from urllib.parse import urljoin
+          from html.parser import HTMLParser
+          import json,shutil
+          out=Path('inspection/references'); manifest=[]
+          for p in Path('public/portvilasandbox/research').rglob('*.webp'):
+              dest=out/p.name; shutil.copyfile(p,dest)
+              im=Image.open(p).convert('RGB'); im.thumbnail((1600,1200)); im.save(out/(p.stem+'-preview.jpg'),quality=90)
+              manifest.append({'file':p.name,'source':str(p),'pixels':list(Image.open(p).size),'scope':'Existing published DUAP report page, historical reference only'})
+          (out/'manifest.json').write_text(json.dumps(manifest,indent=2))
+          class Links(HTMLParser):
+              def __init__(self): super().__init__(); self.links=[]
+              def handle_starttag(self,tag,attrs):
+                  if tag=='a':
+                      d=dict(attrs)
+                      if d.get('href'): self.links.append(d['href'])
+          pages=[]
+          for url in ['https://duap.gov.vu/','http://duap.gov.vu/','https://www.vanuatu.travel/en/port-vila-update-july-2025']:
               try:
-                  im=ImageOps.exif_transpose(Image.open(p)).convert('RGB')
-                  rec={'id':i,'filename':str(p.relative_to(root)),'originalSize':list(im.size),'source':'DUAP Photo Vila July25 archive','captureDate':'July 2025 archive label; not independently verified'}
-                  im.thumbnail((1800,1800)); im.save(out/f'photo-{i:03d}.jpg',quality=85)
-                  tile=Image.new('RGB',(360,280),'white'); im.thumbnail((360,240)); tile.paste(im,((360-im.width)//2,0))
-                  ImageDraw.Draw(tile).text((6,245),f'{i:03d} {p.name[:42]}',fill='black'); thumbs.append(tile); records.append(rec)
-              except Exception as e:
-                  records.append({'filename':str(p.relative_to(root)),'error':str(e)})
-          for batch in range(0,len(thumbs),16):
-              sheet=Image.new('RGB',(1440,1120),'white')
-              for j,tile in enumerate(thumbs[batch:batch+16]): sheet.paste(tile,((j%4)*360,(j//4)*280))
-              sheet.save(out/f'contact-{batch//16:02d}.jpg',quality=85)
-          (out/'manifest.json').write_text(json.dumps(records,indent=2))
+                  req=Request(url,headers={'User-Agent':'PortVilaSandbox-source-review/1.0'})
+                  with urlopen(req,timeout=20) as res: text=res.read(4000000).decode('utf-8','replace')
+                  parser=Links(); parser.feed(text)
+                  links=[urljoin(url,x) for x in parser.links if any(t in x.lower() for t in ['.rar','.zip','.pdf','july','photo'])]
+                  pages.append({'url':url,'links':links})
+                  (out/f'page-{len(pages)}.html').write_text(text)
+                  print(url,json.dumps(links))
+              except Exception as e: pages.append({'url':url,'error':str(e)}); print(url,str(e))
+          (out/'download-links.json').write_text(json.dumps(pages,indent=2))
           PY
-      - name: Upload inspection material
+      - uses: actions/upload-artifact@v4
         if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: port-vila-storefront-inspection
+          name: port-vila-storefront-reference-images
           path: inspection/
           retention-days: 3
