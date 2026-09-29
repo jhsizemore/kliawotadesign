@@ -314,8 +314,8 @@
     function resultIds(n) {
       const suggested = suggestedCandidates(n);
       const source = artSearchScope === 'all' ? ART : suggested.map(id => artById[id]).filter(Boolean);
-      const rows = searchArtworks(source, artSearchQuery);
-      if (!artSearchQuery && artSearchScope === 'suggested') return [...suggested];
+      const rows = searchArtworks(source, artSearchQuery).filter(a => !root.OdysseyBiomeAtlas || root.OdysseyBiomeAtlas.matches(a));
+      if (!artSearchQuery && artSearchScope === 'suggested' && !root.OdysseyBiomeAtlas?.hasFilters()) return [...suggested];
       const suggestedSet = new Set(suggested);
       return rows.map(a => a.id).filter(Boolean).sort((a,b) => {
         const sa = artworkSearchScore(artById[a], artSearchQuery), sb = artworkSearchScore(artById[b], artSearchQuery);
@@ -348,7 +348,7 @@
       const count = tools && tools.querySelector('#artSearchCount');
       if (count) count.textContent = artSearchQuery
         ? visible.length + ' result' + (visible.length === 1 ? '' : 's') + ' · ' + (artSearchScope === 'all' ? 'all library' : 'suggested')
-        : artSearchScope === 'all' ? ART.length + ' artworks' : suggested.length + ' suggested';
+        : root.OdysseyBiomeAtlas?.hasFilters() ? visible.length + ' biome matches' : artSearchScope === 'all' ? ART.length + ' artworks' : suggested.length + ' suggested';
 
       const grid = document.getElementById('artOptionsGrid'), usage = assignedUsage();
       const order = new Map(visible.map((id,i)=>[id,i]));
