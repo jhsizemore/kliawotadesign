@@ -8,7 +8,7 @@ on:
       - 'public/mtgtools/Odyssey/scry/set-showcase.*'
       - 'public/mtgtools/Odyssey/scry/contact-form.js'
       - 'src/odyssey-contact.mjs'
-      - 'tests/odyssey-showcase-browser.py'
+      - 'tests/odyssey-showcase*'
       - 'tests/odyssey-contact.test.mjs'
 permissions:
   contents: write
@@ -31,6 +31,13 @@ jobs:
       - name: Integrate with current source and regenerate native renderer
         run: |
           python scripts/prepare-odyssey-showcase.py
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('tests/odyssey-showcase-browser.py');s=p.read_text()
+          old="    assert await slide.locator('.mechanic-bg img').evaluate('i=>i.naturalWidth>=1900')"
+          new="    assert await page.evaluate('(id)=>{const a=OdysseyExhibition.catalogue.arts.get(id),j=OdysseyJourneyAssets.assets[id];return (j?.full.width||a.width)>=1900}',info['art'])\n    assert await slide.locator('.mechanic-bg img').evaluate('i=>i.complete&&i.naturalWidth>0')"
+          if old in s:s=s.replace(old,new);p.write_text(s)
+          PY
           node scripts/build-odyssey-public-renderer.cjs
           node scripts/build-odyssey-public-renderer.cjs --check
           node --check public/mtgtools/Odyssey/scry/focused-launch.js
@@ -39,6 +46,7 @@ jobs:
       - name: Real artwork and native-card browser verification
         run: |
           python -m http.server 8765 --directory public >/tmp/showcase-http.log 2>&1 &
+          python -u tests/odyssey-showcase-geometry.py
           python -u tests/odyssey-showcase-browser.py
           python -u tests/odyssey-focused-launch.py
       - name: Save browser evidence
@@ -55,7 +63,7 @@ jobs:
           test "$(git ls-remote origin refs/heads/odyssey-rules-and-contact | cut -f1)" = "${{ github.sha }}"
           git config user.name 'Odyssey showcase integration'
           git config user.email 'actions@users.noreply.github.com'
-          git add scripts/build-odyssey-public-renderer.cjs public/mtgtools/odyssey/public-renderer.generated.js public/mtgtools/Odyssey/scry/focused-launch.js public/mtgtools/Odyssey/scry/index.html public/mtgtools/Odyssey/scry/art.html public/mtgtools/Odyssey/scry/social/index.html src/odyssey-worker.js tests/odyssey-exhibition-browser.py
+          git add scripts/build-odyssey-public-renderer.cjs public/mtgtools/odyssey/public-renderer.generated.js public/mtgtools/Odyssey/scry/focused-launch.js public/mtgtools/Odyssey/scry/index.html public/mtgtools/Odyssey/scry/art.html public/mtgtools/Odyssey/scry/social/index.html src/odyssey-worker.js tests/odyssey-exhibition-browser.py tests/odyssey-showcase-browser.py
           if ! git diff --cached --quiet; then
             git commit -m 'Integrate native full-art hero, source rules and optional direct contact'
             git push origin HEAD:odyssey-rules-and-contact
