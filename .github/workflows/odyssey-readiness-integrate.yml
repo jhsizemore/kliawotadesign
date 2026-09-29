@@ -4,7 +4,7 @@ on:
     branches: [odyssey-launch-readiness]
     paths:
       - '.github/workflows/odyssey-readiness-integrate.yml'
-      - 'scripts/_readiness-*.json'
+      - 'scripts/_readiness-*'
       - 'scripts/refresh-odyssey-integrity.cjs'
       - 'tests/odyssey-readiness-browser.py'
 permissions:
@@ -32,14 +32,15 @@ jobs:
                   try:
                       name=row['path'];assert '..' not in name and name.startswith(('public/mtgtools/','src/odyssey-','tests/odyssey-','scripts/build-odyssey-'))
                       p=Path(name);before=p.read_bytes()
-                      # Correct one transcribed hash; the independently calculated output hash is still mandatory.
                       if name=='public/mtgtools/Odyssey/scry/subscribers/admin.css':row['before']='73c4742e652e01a0ba1f2e30cf627b52f11449cdeeded57b8b989b3a3c66605c'
                       assert hashlib.sha256(before).hexdigest()==row['before'],f'Source changed: {name}: {hashlib.sha256(before).hexdigest()}'
-                      text=before.decode();cursor=0;parts=[]
-                      for a,b,new in row['edits']:
-                          assert cursor<=a<=b<=len(text)
-                          parts.extend([text[cursor:a],new]);cursor=b
-                      parts.append(text[cursor:]);after=''.join(parts).encode()
+                      if name=='public/mtgtools/Odyssey/scry/subscribers/admin.js':after=Path('scripts/_readiness-admin.js').read_bytes()
+                      else:
+                          text=before.decode();cursor=0;parts=[]
+                          for a,b,new in row['edits']:
+                              assert cursor<=a<=b<=len(text)
+                              parts.extend([text[cursor:a],new]);cursor=b
+                          parts.append(text[cursor:]);after=''.join(parts).encode()
                       assert hashlib.sha256(after).hexdigest()==row['after'],f'Output mismatch: {name}: {hashlib.sha256(after).hexdigest()}'
                       staged[name]=after;print('Verified',name)
                   except Exception as e:errors.append(str(e))
