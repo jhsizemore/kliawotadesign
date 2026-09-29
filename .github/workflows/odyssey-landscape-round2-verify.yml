@@ -1,0 +1,28 @@
+name: Verify Odyssey landscape round two
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/odyssey-landscape-round2-verify.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: scripts
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --ignore-scripts --no-save playwright && npx playwright install --with-deps chromium
+      - run: node scripts/verify-odyssey-landscape-round2.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: landscape-round2-live
+          path: landscape-round2-live/
+          retention-days: 14
