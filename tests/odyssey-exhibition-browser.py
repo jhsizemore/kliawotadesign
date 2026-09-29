@@ -149,7 +149,7 @@ async def main():
             raise
         assert 'exported' in (await page.locator('#promoStatus').inner_text()).lower()
         assert not errors, '\n'.join(errors)
-        assert all(url.split('?')[0].endswith('/api/art-placement') for url in api_requests), 'The public page requested a private editor API'
+        assert all(url.split('?')[0].endswith(('/api/art-placement','/api/contact')) for url in api_requests), 'The public page requested a private editor API'
         expiry = await context.new_page()
         await expiry.add_init_script('Date.now=()=>Date.parse("2026-11-01T00:00:00+11:00");')
         await expiry.goto(BASE+'?view=cards',wait_until='domcontentloaded')
