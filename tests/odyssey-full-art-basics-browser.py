@@ -25,8 +25,9 @@ with sync_playwright() as p:
         page.wait_for_selector('#previewShell .basic-land-full-art')
         geometry=page.evaluate("""() => {
           const c=document.querySelector('#previewShell .render-card'),box=s=>c.querySelector(s).getBoundingClientRect(),a=box('.artbox'),t=box('.typebar'),n=box('.titlebar'),d=box('.basic-land-medallion'),f=box('.footer'),text=box('.type-text');
-          return {mana:c.dataset.basicLandMana,medals:c.querySelectorAll('.basic-land-medallion').length,artHeight:a.height,barTop:t.top,nameBottom:n.bottom,medalRight:d.right,textLeft:text.left,barBottom:t.bottom,footerTop:f.top,rules:getComputedStyle(c.querySelector('.rules')).display,label:document.querySelector('#fFrameStyle option[value="full-art"]').label,modelStyle:model(selected).frameStyle,cropKey:cropProfileKey(model(selected))};
+          return {manaFilter:getComputedStyle(c.querySelector('.basic-land-medallion img')).filter,mana:c.dataset.basicLandMana,medals:c.querySelectorAll('.basic-land-medallion').length,artHeight:a.height,barTop:t.top,nameBottom:n.bottom,medalRight:d.right,textLeft:text.left,barBottom:t.bottom,footerTop:f.top,rules:getComputedStyle(c.querySelector('.rules')).display,label:document.querySelector('#fFrameStyle option[value="full-art"]').label,modelStyle:model(selected).frameStyle,cropKey:cropProfileKey(model(selected))};
         }""")
+        assert geometry['manaFilter']=='none',geometry
         assert geometry['rules']=='none',geometry
         assert geometry['medals']==1 and geometry['mana'] in 'WUBRG',geometry
         assert geometry['artHeight']>450 and geometry['barTop']-geometry['nameBottom']>350,geometry
@@ -60,11 +61,12 @@ with sync_playwright() as p:
     results['rules_guards']=guard
     page.evaluate("""n=>{const p=document.getElementById('printSheetStage');p.replaceChildren(makeCardShell({...model(n),frameStyle:'full-art'}));}""",n)
     page.emulate_media(media='print')
-    print_geometry=page.evaluate("""()=>{const s=document.querySelector('#printSheetStage .card-shell'),c=s.querySelector('.render-card'),r=s.getBoundingClientRect(),t=c.querySelector('.typebar').getBoundingClientRect(),d=c.querySelector('.basic-land-medallion').getBoundingClientRect();return {width:r.width,height:r.height,medal:d.width,rules:getComputedStyle(c.querySelector('.rules')).display,typeY:t.top-r.top};}""")
+    print_geometry=page.evaluate("""()=>{const s=document.querySelector('#printSheetStage .card-shell'),c=s.querySelector('.render-card'),r=s.getBoundingClientRect(),t=c.querySelector('.typebar').getBoundingClientRect(),d=c.querySelector('.basic-land-medallion').getBoundingClientRect();return {manaFilter:getComputedStyle(c.querySelector('.basic-land-medallion img')).filter,width:r.width,height:r.height,medal:d.width,rules:getComputedStyle(c.querySelector('.rules')).display,typeY:t.top-r.top};}""")
     assert abs(print_geometry['width']-63*96/25.4)<1,print_geometry
     assert abs(print_geometry['height']-88*96/25.4)<1,print_geometry
     assert print_geometry['rules']=='none' and print_geometry['typeY']>260,print_geometry
     page.locator('#printSheetStage .card-shell').screenshot(path=str(OUT/'print-media-basic.png'))
+    assert print_geometry['manaFilter']=='none',print_geometry
     results['print']=print_geometry
     page.emulate_media(media='screen')
     page.evaluate("""ns=>{const grid=document.createElement('div');grid.id='basicProof';grid.style.cssText='position:fixed;inset:0;z-index:99999;background:#242424;padding:20px;display:flex;gap:14px;align-items:flex-start';for(const n of ns){const wrap=document.createElement('div');wrap.style.cssText='width:295px;height:414px;position:relative';const sh=makeCardShell({...model(n),frameStyle:'full-art'});sh.style.cssText='transform:scale(.78);transform-origin:0 0;margin:0';wrap.append(sh);grid.append(wrap)}document.body.append(grid);} """,numbers)
@@ -84,10 +86,11 @@ with sync_playwright() as p:
     public.wait_for_function("window.OdysseyStudioRenderer?.engine",timeout=60000)
     public.evaluate("""n=>{const el=document.createElement('odyssey-studio-card');el.id='basicPublicProof';el.setAttribute('number',n);el.setAttribute('frame-style','full-art');el.style.cssText='position:fixed;z-index:99999;top:20px;left:20px;width:378px;height:528px';document.body.append(el);} """,n)
     public.wait_for_function("document.getElementById('basicPublicProof').shadowRoot.querySelector('.basic-land-full-art')")
-    public_check=public.evaluate("""()=>{const c=document.getElementById('basicPublicProof').shadowRoot.querySelector('.render-card');return {mana:c.dataset.basicLandMana,rules:getComputedStyle(c.querySelector('.rules')).display,medals:c.querySelectorAll('.basic-land-medallion').length};}""")
+    public_check=public.evaluate("""()=>{const c=document.getElementById('basicPublicProof').shadowRoot.querySelector('.render-card');return {manaFilter:getComputedStyle(c.querySelector('.basic-land-medallion img')).filter,mana:c.dataset.basicLandMana,rules:getComputedStyle(c.querySelector('.rules')).display,medals:c.querySelectorAll('.basic-land-medallion').length};}""")
     assert public_check['rules']=='none' and public_check['medals']==1,public_check
     public.wait_for_timeout(1500)
     public.locator('#basicPublicProof').screenshot(path=str(OUT/'public-basic.png'))
+    assert public_check['manaFilter']=='none',public_check
     results['public']=public_check
     (OUT/'results.json').write_text(json.dumps(results,indent=2))
     print(json.dumps({'success':True,'basics':basics,'results':results},indent=2),flush=True)
