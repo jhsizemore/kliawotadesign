@@ -1,0 +1,68 @@
+name: Odyssey showcase verification
+on:
+  push:
+    branches: [main, odyssey-rules-and-contact]
+    paths:
+      - '.github/workflows/odyssey-showcase-check.yml'
+      - 'public/mtgtools/Odyssey/scry/**'
+      - 'public/mtgtools/odyssey/**'
+      - 'src/odyssey-contact.mjs'
+      - 'src/odyssey-worker.js'
+      - 'scripts/build-odyssey-public-renderer.cjs'
+      - 'tests/odyssey-fullart-paint.py'
+      - 'tests/odyssey-showcase*'
+      - 'tests/odyssey-contact.test.mjs'
+  pull_request:
+    paths:
+      - 'public/mtgtools/Odyssey/scry/**'
+      - 'public/mtgtools/odyssey/**'
+      - 'src/odyssey-contact.mjs'
+      - 'src/odyssey-worker.js'
+      - 'scripts/build-odyssey-public-renderer.cjs'
+      - 'tests/odyssey-fullart-paint.py'
+      - 'tests/odyssey-showcase*'
+      - 'tests/odyssey-contact.test.mjs'
+      - '.github/workflows/odyssey-showcase-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odyssey-showcase-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  showcase:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check renderer source and email protocol
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          node scripts/build-odyssey-public-renderer.cjs --check
+          node --check public/mtgtools/Odyssey/scry/set-showcase.js
+          node --test tests/odyssey-contact.test.mjs tests/odyssey-placement.test.cjs tests/odyssey-exhibition.cjs
+      - name: Install real browser
+        run: |
+          python -m pip install -q pillow playwright==1.57.0
+          python -m playwright install --with-deps chromium > /tmp/showcase-browser.log 2>&1 || { tail -60 /tmp/showcase-browser.log; exit 1; }
+      - name: Verify first paint, native rules, landscapes and existing pages
+        run: |
+          python -m http.server 8765 --directory public > /tmp/showcase-http.log 2>&1 &
+          python -u tests/odyssey-fullart-paint.py
+          python -u tests/odyssey-showcase-browser.py
+          python -u tests/odyssey-focused-launch.py
+          python -u tests/odyssey-exhibition-browser.py
+      - name: Save screenshots and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-showcase-verified
+          path: |
+            test-results/odyssey-fullart-paint/
+            test-results/odyssey-showcase/
+            test-results/odyssey-focused-launch/
+            test-results/odyssey-exhibition/
+          if-no-files-found: ignore
