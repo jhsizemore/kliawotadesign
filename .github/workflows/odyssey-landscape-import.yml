@@ -3,43 +3,39 @@ on:
   push:
     branches: [main]
     paths:
-      - 'scripts/odyssey-landscape-import.py'
-      - 'scripts/odyssey-landscape-supplement.py'
+      - 'scripts/odyssey-landscape-finalize-acquisition.py'
       - '.github/workflows/odyssey-landscape-import.yml'
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: odyssey-landscape-import
   cancel-in-progress: false
 jobs:
   acquire:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with:
           filter: blob:none
-          sparse-checkout-cone-mode: false
-          sparse-checkout: |
-            /scripts/
-            /public/mtgtools/**/*.html
-            /public/mtgtools/**/*.js
-            /public/mtgtools/**/*.json
-            /src/
-            /tests/
-            /package.json
-            /wrangler.jsonc
+          sparse-checkout: scripts
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install image acquisition dependencies
+      - name: Reuse completed source acquisition
+        uses: actions/download-artifact@v4
+        with:
+          name: odyssey-landscape-import
+          run-id: 36527787605
+          github-token: ${{ github.token }}
+          path: landscape-import-output
+      - name: Install image decoding dependencies
         run: pip install requests beautifulsoup4 Pillow
-      - name: Acquire approved landscape collections without changing card assignments
-        run: python scripts/odyssey-landscape-import.py
-      - name: Complete oil-study catalogue and museum image acquisition
-        run: python scripts/odyssey-landscape-supplement.py
-      - name: Retain acquisition report, decoded images, and integration context
+      - name: Acquire object-specific oil-study images from cached source pages
+        run: python scripts/odyssey-landscape-finalize-acquisition.py
+      - name: Retain completed acquisition and review evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
