@@ -1,0 +1,74 @@
+name: Prepare basic-land mana colour fix
+on:
+  push:
+    branches: ['fix/odyssey-basic-mana-colour']
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix/odyssey-basic-mana-colour
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Remove only the basic-land grayscale filter and invalidate its stylesheet cache
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          def change(path, before, after):
+              p=Path(path); s=p.read_text()
+              assert s.count(before)==1, 'Source changed: '+path
+              p.write_text(s.replace(before, after))
+          change('public/mtgtools/odyssey/frame-system.css',
+                 '.render-card.treatment-full-art.basic-land-full-art .basic-land-medallion img {\n  filter: grayscale(1); border-radius: 50%;\n}',
+                 '.render-card.treatment-full-art.basic-land-full-art .basic-land-medallion img {\n  /* Preserve the approved mana artwork\'s original W/U/B/R/G colour. */\n  filter: none; border-radius: 50%;\n}')
+          change('public/mtgtools/odyssey/index.html',
+                 'frame-system.css?v=20260929-full-art-basics1',
+                 'frame-system.css?v=20260930-full-art-mana-colour1')
+          # Keep the existing cache-version regression valid with the new CSS version.
+          change('tests/odyssey-full-art-basics.test.cjs',
+                 'assert.match(loader,/frame-system\\.css\\?v=20260929-full-art-basics/);',
+                 'assert.match(loader,/frame-system\\.css\\?v=20260930-full-art-mana-colour1/);')
+          p='tests/odyssey-full-art-basics-browser.py'
+          change(p,"return {mana:c.dataset.basicLandMana,medals:",
+                 "return {manaFilter:getComputedStyle(c.querySelector('.basic-land-medallion img')).filter,mana:c.dataset.basicLandMana,medals:")
+          change(p,"        assert geometry['rules']=='none',geometry",
+                 "        assert geometry['manaFilter']=='none',geometry\n        assert geometry['rules']=='none',geometry")
+          change(p,'return {width:r.width,height:r.height,medal:d.width,',
+                 "return {manaFilter:getComputedStyle(c.querySelector('.basic-land-medallion img')).filter,width:r.width,height:r.height,medal:d.width,")
+          change(p,"    results['print']=print_geometry",
+                 "    assert print_geometry['manaFilter']=='none',print_geometry\n    results['print']=print_geometry")
+          change(p,'return {mana:c.dataset.basicLandMana,rules:',
+                 "return {manaFilter:getComputedStyle(c.querySelector('.basic-land-medallion img')).filter,mana:c.dataset.basicLandMana,rules:")
+          change(p,"    results['public']=public_check",
+                 "    assert public_check['manaFilter']=='none',public_check\n    results['public']=public_check")
+          PY
+          npm install --ignore-scripts --no-package-lock --no-audit --no-fund
+          node scripts/build-odyssey-public-renderer.cjs
+          node scripts/build-odyssey-public-renderer.cjs --check
+          node --test tests/odyssey-full-art-basics.test.cjs
+      - name: Check actual colour rendering, saved crops, print and public cards
+        run: |
+          set -o pipefail
+          python -m pip install -q playwright==1.57.0
+          python -m playwright install --with-deps chromium >/tmp/browser-install.log 2>&1 || { tail -50 /tmp/browser-install.log; exit 1; }
+          mkdir -p test-results/odyssey-full-art-basics
+          python -m http.server 8765 --directory public >/tmp/odyssey-mana-http.log 2>&1 &
+          python -u tests/odyssey-full-art-basics-browser.py | tee test-results/odyssey-full-art-basics/browser.log
+      - name: Commit tested fix and remove this one-time workflow
+        run: |
+          git add public/mtgtools/odyssey/frame-system.css public/mtgtools/odyssey/index.html public/mtgtools/odyssey/public-renderer.generated.js tests/odyssey-full-art-basics.test.cjs tests/odyssey-full-art-basics-browser.py
+          git diff --cached --stat
+          git rm .github/workflows/prepare-basic-mana-colour.yml
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Restore coloured mana symbols on full-art basics in Studio, print and public renderer'
+          git push origin HEAD:fix/odyssey-basic-mana-colour
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-coloured-mana-proof
+          path: test-results/odyssey-full-art-basics/
+          if-no-files-found: ignore
