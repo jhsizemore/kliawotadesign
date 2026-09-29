@@ -1,0 +1,84 @@
+name: Import Odyssey temple sanctuaries
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/odyssey-temple-sanctuaries.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: odyssey-landscape-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          filter: blob:none
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: pip install Pillow requests
+      - name: Acquire all ten images and verify the protected 309-card set
+        run: python scripts/odyssey-temple-sanctuaries.py
+      - name: Commit only sanctuary assets, associations and the gallery
+        run: |
+          cp temple-sanctuary-report/integration-test.json public/mtgtools/odyssey/data/temple-sanctuaries-verification.20260929.json
+          cp temple-sanctuary-report/previous-main-cards.json public/mtgtools/odyssey/data/temple-sanctuaries-previous-cards.20260929.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/mtgtools/odyssey/assets/sanctuaries public/mtgtools/odyssey/data/temple-sanctuaries.20260929.json public/mtgtools/odyssey/data/temple-sanctuaries.20260929.js public/mtgtools/odyssey/data/temple-sanctuaries-verification.20260929.json public/mtgtools/odyssey/data/temple-sanctuaries-previous-cards.20260929.json public/mtgtools/odyssey/temple-sanctuaries.html public/mtgtools/odyssey/app.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Assign five scry-land sanctuaries and catalogue ten selected temple artworks'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+          git rev-parse HEAD > temple-sanctuary-report/published-commit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: temple-sanctuary-report
+          path: temple-sanctuary-report/
+          retention-days: 14
+  deploy:
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    concurrency:
+      group: cloudflare-production
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Deploy current main with sanctuary artwork
+        run: npm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - name: Verify deployed gallery, bindings and ten image responses
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const root='https://kliawota.design/mtgtools/odyssey/';
+          const p=JSON.parse(fs.readFileSync('public/mtgtools/odyssey/data/temple-sanctuaries.20260929.json','utf8'));
+          for(const url of [root+'app.html',root+'temple-sanctuaries.html',root+'data/temple-sanctuaries.20260929.js',...p.artworks.map(a=>a.imageUrl)]){
+            const r=await fetch(url+'?verify=temple20260929');
+            if(!r.ok)throw new Error(url+' '+r.status);
+            if(url.endsWith('app.html')&&!(await r.text()).includes('temple-sanctuaries.js'))throw new Error('Studio binding missing');
+            else if(url.includes('/assets/')&&!String(r.headers.get('content-type')).startsWith('image/'))throw new Error('Not an image: '+url);
+            console.log('VERIFIED',url);
+          }
+          JS
