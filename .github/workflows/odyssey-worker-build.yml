@@ -1,0 +1,50 @@
+name: Odyssey Worker bundle verification
+on:
+  push:
+    branches: [main, odyssey-worker-build-check]
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'wrangler.jsonc'
+      - 'scripts/build-odyssey-public-renderer.cjs'
+      - '.github/workflows/odyssey-worker-build.yml'
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'wrangler.jsonc'
+      - 'scripts/build-odyssey-public-renderer.cjs'
+      - '.github/workflows/odyssey-worker-build.yml'
+permissions:
+  contents: read
+concurrency:
+  group: odyssey-worker-bundle-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  worker-bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install production build dependencies
+        run: npm install --no-audit --no-fund
+      - name: Validate source-derived renderer and server handlers
+        run: |
+          node scripts/build-odyssey-public-renderer.cjs --check
+          node --test tests/odyssey-contact.test.mjs tests/odyssey-placement.test.cjs
+      - name: Compile the exact Cloudflare Worker without publishing
+        env:
+          WRANGLER_SEND_METRICS: 'false'
+        run: |
+          mkdir -p test-results/worker-build
+          npx wrangler deploy --dry-run --outdir /tmp/odyssey-worker-bundle 2>&1 | tee test-results/worker-build/wrangler-build.txt
+      - name: Save public build diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-worker-build
+          path: test-results/worker-build/
+          if-no-files-found: ignore
