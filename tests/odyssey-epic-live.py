@@ -1,23 +1,19 @@
 """Read-only smoke test of the actual production URL after deployment.
 No network interception, form submissions, storage changes or renderer overrides.
 """
-import asyncio,io,json,time,urllib.request
+import asyncio,io,json
 from pathlib import Path
 from PIL import Image,ImageStat
 from playwright.async_api import async_playwright
+from odyssey_delivery import wait_for_delivery
 URL='https://kliawota.design/mtgtools/Odyssey/scry/'
 OUT=Path('test-results/odyssey-epic-live');OUT.mkdir(parents=True,exist_ok=True)
 async def images(page,selector):
  await page.locator(selector).evaluate('''async root=>{const all=[...root.querySelectorAll('img')].filter(i=>!i.closest('[inert]'));for(const c of root.querySelectorAll('odyssey-studio-card'))if(!c.closest('[inert]'))all.push(...c.shadowRoot.querySelectorAll('img'));await Promise.all(all.map(i=>{i.loading='eager';if(i.complete&&i.naturalWidth)return;return new Promise((ok,bad)=>{const t=setTimeout(()=>bad(Error('Image not delivered: '+i.src)),30000);i.addEventListener('load',()=>{clearTimeout(t);ok();},{once:true});i.addEventListener('error',()=>{clearTimeout(t);bad(Error('Image failed: '+i.src));},{once:true});});}));}''')
 async def main():
- # The independent Cloudflare build can finish after the GitHub regression job.
- for attempt in range(24):
-  try:
-   with urllib.request.urlopen(URL+'?verify=epic1-'+str(int(time.time())),timeout=15) as response:html=response.read().decode()
-   if 'epic-refinements.css' in html and 'editorial-assets.js' in html:break
-  except Exception:pass
-  await asyncio.sleep(10)
- else:raise AssertionError('The production page did not expose the expected release assets within four minutes.')
+ # The caller runs after Cloudflare's completed build. Verify canonical page
+ # contracts and the precise versioned URLs used by its browser first.
+ await asyncio.to_thread(wait_for_delivery)
  async with async_playwright() as p:
   browser=await p.chromium.launch();page=await browser.new_page(viewport={'width':1440,'height':1150},reduced_motion='reduce');errors=[];writes=[]
   page.on('pageerror',lambda e:errors.append(str(e)))
