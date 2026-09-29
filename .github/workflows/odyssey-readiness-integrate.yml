@@ -49,6 +49,7 @@ jobs:
           Path('test-results/odyssey-readiness').mkdir(parents=True,exist_ok=True)
           Path('test-results/odyssey-readiness/changed-files.json').write_text(json.dumps(sorted(staged)))
           PY
+          python scripts/_readiness-followthrough.py
       - name: Rebuild metadata and renderer; preserve every card and artwork
         run: |
           node scripts/refresh-odyssey-integrity.cjs
@@ -64,8 +65,8 @@ jobs:
           JS
       - name: Run all existing regressions plus subscriber behavior tests
         run: |
-          set -o pipefail
-          node --test --test-reporter=tap tests/*.test.cjs tests/*.test.js tests/*.test.mjs | tee test-results/odyssey-readiness/all-tests.tap
+          node --test --test-reporter=tap tests/*.test.cjs tests/*.test.js tests/*.test.mjs >test-results/odyssey-readiness/all-tests.tap 2>&1 || { grep -A35 '^not ok' test-results/odyssey-readiness/all-tests.tap; exit 1; }
+          tail -12 test-results/odyssey-readiness/all-tests.tap
       - name: Install browser and Worker verification tools
         run: |
           npm install --ignore-scripts --no-audit --no-fund
@@ -74,7 +75,13 @@ jobs:
       - name: Test real owner UI, failure recovery and preview expiry
         run: |
           node tests/odyssey-signup-server.mjs >/tmp/readiness-server.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
           python -u tests/odyssey-readiness-browser.py
+          kill "$server"
+          wait "$server" 2>/dev/null || true
+          node tests/odyssey-signup-server.mjs >/tmp/signup-server.log 2>&1 &
+          server=$!
           python -u tests/odyssey-signup-browser.py
           python -u tests/odyssey-exhibition-browser.py
       - name: Verify actual Worker and isolated private storage
