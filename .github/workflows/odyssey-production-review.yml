@@ -1,0 +1,51 @@
+name: Odyssey production handoff inspection
+on:
+  push:
+    branches: [odyssey-production-handoff]
+    paths: ['.github/workflows/odyssey-production-review.yml']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read final source and public production responses
+        run: |
+          python - <<'PY'
+          import json,hashlib,urllib.request,urllib.error,zipfile
+          from pathlib import Path
+          out=Path('test-results/production-handoff');out.mkdir(parents=True,exist_ok=True)
+          with zipfile.ZipFile(out/'source.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for root in ['.github/workflows','scripts','tests','src','public/mtgtools/Odyssey/scry']:
+                  for p in Path(root).rglob('*'):
+                      if p.is_file() and p.suffix in {'.js','.mjs','.cjs','.py','.yml','.json','.html','.css','.md'} and p.stat().st_size<3000000:z.write(p)
+              for p in Path('public/mtgtools/odyssey').glob('*'):
+                  if p.is_file() and p.suffix in {'.js','.html','.css'} and p.stat().st_size<3000000:z.write(p)
+              for name in ['package.json','wrangler.jsonc','public/mtgtools/odyssey/data/odyssey-public-candidate.json','public/mtgtools/odyssey/data/release.json']:
+                  p=Path(name)
+                  if p.exists():z.write(p)
+          reports=[]
+          urls=['/mtgtools/Odyssey/scry/','/mtgtools/Odyssey/scry/subscribers/','/mtgtools/Odyssey/scry/exhibition.js','/mtgtools/odyssey/api/subscriptions/health','/mtgtools/odyssey/api/art-placement','/mtgtools/odyssey/data/release.json']
+          for path in urls:
+              row={'path':path}
+              try:
+                  request=urllib.request.Request('https://kliawota.design'+path,headers={'User-Agent':'Odyssey-readonly-handoff','Cache-Control':'no-cache'})
+                  with urllib.request.urlopen(request,timeout=25) as r:
+                      body=r.read();row.update(status=r.status,contentType=r.headers.get('Content-Type'),finalUrl=r.url,bytes=len(body),sha256=hashlib.sha256(body).hexdigest(),cache=r.headers.get('CF-Cache-Status'))
+                      row['sample']=body.decode('utf-8',errors='replace')[:700] if '/api/' not in path else None
+                      if path.endswith('/art-placement'):
+                          v=json.loads(body);row['publishedPlacements']=len(v.get('records',{}));row['revision']=v.get('revision')
+                      elif path.endswith('/health'):row['config']=json.loads(body)
+              except urllib.error.HTTPError as e:row.update(status=e.code,error=str(e))
+              except Exception as e:row['error']=str(e)
+              reports.append(row)
+          (out/'production-responses.json').write_text(json.dumps(reports,indent=2))
+          print(json.dumps(reports,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-production-handoff-source
+          path: test-results/production-handoff/
+          retention-days: 3

@@ -1,0 +1,100 @@
+name: Odyssey production delivery
+on:
+  push:
+    branches: [main, odyssey-production-handoff]
+    paths:
+      - 'public/mtgtools/Odyssey/scry/**'
+      - 'public/mtgtools/odyssey/**'
+      - 'src/**'
+      - 'tests/odyssey_delivery.py'
+      - 'tests/odyssey_cloudflare_gate.py'
+      - 'tests/odyssey-delivery.test.py'
+      - 'tests/odyssey-cloudflare-gate.test.py'
+      - 'tests/odyssey-epic-live.py'
+      - '.github/workflows/odyssey-delivery-check.yml'
+  pull_request:
+    paths:
+      - 'tests/odyssey_delivery.py'
+      - 'tests/odyssey_cloudflare_gate.py'
+      - 'tests/odyssey-delivery.test.py'
+      - 'tests/odyssey-cloudflare-gate.test.py'
+      - 'tests/odyssey-epic-live.py'
+      - '.github/workflows/odyssey-delivery-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  checks: read
+concurrency:
+  group: odyssey-delivery-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verification-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Test delivery decisions without external requests
+        run: |
+          python tests/odyssey-delivery.test.py
+          python tests/odyssey-cloudflare-gate.test.py
+      - name: Keep the full regression suite green
+        run: |
+          set -o pipefail
+          mkdir -p test-results/odyssey-delivery
+          node --test tests/*.test.cjs tests/*.test.js tests/*.test.mjs | tee test-results/odyssey-delivery/regressions.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-delivery-regressions
+          path: test-results/odyssey-delivery/
+  production:
+    needs: verification-contract
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve the release under test
+        id: release
+        run: |
+          if [ "$GITHUB_REF" = 'refs/heads/odyssey-production-handoff' ]; then
+            # Only the disposable runner working copy is updated. There is no push.
+            git fetch --depth=1 origin e865753eaf68a67248823590363ba81de328be6c
+            git diff --exit-code e865753eaf68a67248823590363ba81de328be6c -- public src package.json wrangler.jsonc
+            git fetch --depth=1 origin main
+            git restore --source=origin/main --worktree public src package.json wrangler.jsonc
+            echo "sha=$(git rev-parse origin/main)" >> "$GITHUB_OUTPUT"
+          elif [ "$GITHUB_REF" = 'refs/heads/main' ]; then
+            echo "sha=$GITHUB_SHA" >> "$GITHUB_OUTPUT"
+          else
+            echo 'Run production verification on main only.' >&2
+            exit 1
+          fi
+      - name: Wait for the matching native Cloudflare deployment
+        id: deployed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ODYSSEY_TARGET_SHA: ${{ steps.release.outputs.sha }}
+        run: python -u tests/odyssey_cloudflare_gate.py
+      - name: Install read-only browser checks
+        if: steps.deployed.outputs.ready == 'true'
+        run: |
+          python -m pip install -q pillow playwright==1.57.0
+          python -m playwright install --with-deps chromium >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
+      - name: Inspect actual production assets and browser rendering
+        if: steps.deployed.outputs.ready == 'true'
+        env:
+          ODYSSEY_TARGET_SHA: ${{ steps.release.outputs.sha }}
+        run: python -u tests/odyssey-epic-live.py
+      - name: Save deployment decision, delivery evidence and real screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-production-delivery
+          path: |
+            test-results/odyssey-delivery/
+            test-results/odyssey-epic-live/
+          if-no-files-found: ignore
