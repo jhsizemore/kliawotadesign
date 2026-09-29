@@ -13,6 +13,10 @@ on:
       - 'scripts/build-odyssey-public-renderer.cjs'
       - 'tests/odyssey-full-art-basics*'
       - '.github/workflows/odyssey-full-art-basics.yml'
+  workflow_run:
+    workflows: ['Deploy to Cloudflare']
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
     inputs:
       base_url:
@@ -23,10 +27,13 @@ permissions:
   contents: read
 jobs:
   verify:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -41,7 +48,7 @@ jobs:
           python -m playwright install --with-deps chromium > /tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
       - name: Desktop, print, mobile, persistence and public-renderer checks
         env:
-          ODYSSEY_BASE_URL: ${{ inputs.base_url || 'http://127.0.0.1:8765' }}
+          ODYSSEY_BASE_URL: ${{ inputs.base_url || (github.event_name == 'workflow_run' && 'https://kliawota.design') || 'http://127.0.0.1:8765' }}
         run: |
           python -m http.server 8765 --directory public >/tmp/odyssey-basics-http.log 2>&1 &
           python -u tests/odyssey-full-art-basics-browser.py
