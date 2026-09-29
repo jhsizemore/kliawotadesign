@@ -1,0 +1,63 @@
+name: Odyssey epic presentation verification
+on:
+  push:
+    branches: [main]
+    paths: ['public/mtgtools/Odyssey/scry/**','public/mtgtools/odyssey/**','tests/odyssey-epic*','tests/odyssey-fullart-paint.py','.github/workflows/odyssey-epic-check.yml']
+  pull_request:
+    paths: ['public/mtgtools/Odyssey/scry/**','public/mtgtools/odyssey/**','tests/odyssey-epic*','tests/odyssey-fullart-paint.py','.github/workflows/odyssey-epic-check.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odyssey-epic-verification-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  epic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify the existing native renderer and protocols
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          node scripts/build-odyssey-public-renderer.cjs --check
+          node --test tests/odyssey-contact.test.mjs tests/odyssey-placement.test.cjs tests/odyssey-exhibition.cjs
+      - name: Install real browser
+        run: |
+          python -m pip install -q pillow playwright==1.57.0
+          python -m playwright install --with-deps chromium >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
+      - name: Check the website, all eight definitions and genuine sources
+        run: |
+          python -m http.server 8765 --directory public >/tmp/epic-http.log 2>&1 &
+          python -u tests/odyssey-epic-browser.py
+          python -u tests/odyssey-fullart-paint.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-epic-verified
+          path: |
+            test-results/odyssey-epic/
+            test-results/odyssey-fullart-paint/
+          if-no-files-found: ignore
+  live-site:
+    needs: epic
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install browser tools
+        run: |
+          python -m pip install -q pillow playwright==1.57.0
+          python -m playwright install --with-deps chromium >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
+      - name: Inspect the actual public URL without submitting data
+        run: python -u tests/odyssey-epic-live.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-epic-live-site
+          path: test-results/odyssey-epic-live/
+          if-no-files-found: ignore
