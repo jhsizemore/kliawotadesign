@@ -1,0 +1,20 @@
+const fs=require('fs'),{chromium}=require('playwright'),assert=require('node:assert/strict');
+(async()=>{const out='landscape-live-verification';fs.mkdirSync(out,{recursive:true});const base='https://kliawota.design/mtgtools/odyssey';let payload;
+for(let n=0;n<24;n++){try{const r=await fetch(base+'/data/landscape-import.20260929.json?verify='+Date.now());if(r.ok){const p=await r.json();if(p.summary?.totalLibrary===836){payload=p;break;}}}catch{}await new Promise(r=>setTimeout(r,10000));}
+assert(payload,'New landscape payload is not live');
+const delivery=[];let index=0;const images=payload.artworks.filter(a=>a.imageUrl);await Promise.all(Array.from({length:6},async()=>{while(index<images.length){const a=images[index++];try{const r=await fetch(a.imageUrl,{method:'HEAD',signal:AbortSignal.timeout(30000)});delivery.push({id:a.id,status:r.status,type:r.headers.get('content-type'),ok:r.ok&&String(r.headers.get('content-type')).startsWith('image/')});}catch(e){delivery.push({id:a.id,ok:false,error:e.message})}}}));
+fs.writeFileSync(out+'/delivery.json',JSON.stringify(delivery,null,2));assert(delivery.every(x=>x.ok),'Some same-origin previews failed');
+const browser=await chromium.launch({headless:true});const page=await browser.newPage({viewport:{width:1500,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.goto(base+'/?library=landscapes',{waitUntil:'domcontentloaded',timeout:120000});
+await page.waitForFunction(()=>typeof ART!=='undefined'&&ART.length===836&&typeof CARDS!=='undefined'&&CARDS.length===309,{timeout:90000});
+const before=await page.evaluate(()=>JSON.stringify(CARDS));
+await page.waitForSelector('#openLandscapeLibrary',{timeout:30000});await page.click('#openLandscapeLibrary');
+await page.waitForSelector('#artOptionSearch');await page.fill('#artOptionSearch','collectionlearionian');await page.waitForTimeout(700);
+const studio=await page.evaluate(()=>({cards:CARDS.length,artworks:ART.length,button:!!document.getElementById('openLandscapeLibrary'),search:document.getElementById('artOptionSearch')?.value,tiles:document.querySelectorAll('#artOptionsGrid [data-art-option]').length,count:document.getElementById('artSearchCount')?.textContent,choices:document.querySelectorAll('#landscapeCollectionPicker option').length}));
+await page.screenshot({path:out+'/studio-landscape-picker.png',fullPage:false});assert(studio.tiles>0,'Landscape collection search has no results');
+await page.selectOption('#landscapeCollectionPicker','localeolympus');await page.waitForTimeout(700);const olympus=await page.locator('#artOptionsGrid [data-art-option]').count();assert(olympus>=2,'Olympus filter misses existing and new works');
+assert.equal(await page.evaluate(()=>JSON.stringify(CARDS)),before,'Browsing changed cards');
+await page.goto(base+'/landscape-library.html',{waitUntil:'domcontentloaded',timeout:90000});await page.waitForSelector('article[data-art-id]');await page.waitForTimeout(1200);const gallery=await page.evaluate(()=>({records:document.querySelectorAll('article[data-art-id]').length,status:document.getElementById('status').textContent,visibleImages:[...document.images].filter(i=>i.complete&&i.naturalWidth>0).length}));assert.equal(gallery.records,220);assert(gallery.visibleImages>0);await page.screenshot({path:out+'/landscape-library.png',fullPage:false});
+await page.selectOption('#group','collectiontruetonature');await page.waitForTimeout(700);await page.screenshot({path:out+'/oil-study-library.png',fullPage:false});
+const result={live:true,studio,olympusResults:olympus,gallery,previewsAvailable:delivery.filter(x=>x.ok).length,cardAssignmentsChanged:0,pageErrors:errors,checkedAt:new Date().toISOString()};fs.writeFileSync(out+'/result.json',JSON.stringify(result,null,2));console.log(result);await browser.close();
+})().catch(e=>{console.error(e);process.exitCode=1;});
