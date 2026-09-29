@@ -55,7 +55,7 @@ jobs:
         run: |
           git config user.name 'Odyssey website integration'
           git config user.email 'actions@users.noreply.github.com'
-          git add public/mtgtools/Odyssey/scry/index.html public/mtgtools/Odyssey/scry/focused-launch.js public/mtgtools/Odyssey/scry/set-showcase.js tests/odyssey-focused-launch.py
+          git add public/mtgtools/Odyssey/scry/index.html public/mtgtools/Odyssey/scry/focused-launch.js public/mtgtools/Odyssey/scry/set-showcase.js public/mtgtools/Odyssey/scry/EPIC_REVISION.md tests/odyssey-focused-launch.py tests/odyssey-epic-browser.py
           if ! git diff --cached --quiet; then
             git commit -m 'Integrate tilted native hero, real Odyssey fragment and working rules on Scry'
             git pull --rebase origin odyssey-working-rules-and-artifact
