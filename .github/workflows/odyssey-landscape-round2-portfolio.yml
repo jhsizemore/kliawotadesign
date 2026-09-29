@@ -1,0 +1,35 @@
+name: Odyssey landscape round two portfolio
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/odyssey-landscape-round2-portfolio.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: landscape-round2
+          run-id: 36540750036
+          github-token: ${{ github.token }}
+          path: landscape-round2
+      - run: pip install requests beautifulsoup4 Pillow
+      - run: python scripts/odyssey-landscape-round2-portfolio.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: landscape-round2
+          path: landscape-round2/
+          retention-days: 14
