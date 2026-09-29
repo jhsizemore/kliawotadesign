@@ -348,7 +348,7 @@
       const count = tools && tools.querySelector('#artSearchCount');
       if (count) count.textContent = artSearchQuery
         ? visible.length + ' result' + (visible.length === 1 ? '' : 's') + ' · ' + (artSearchScope === 'all' ? 'all library' : 'suggested')
-        : root.OdysseyBiomeAtlas?.hasFilters() ? visible.length + ' biome matches' : artSearchScope === 'all' ? ART.length + ' artworks' : suggested.length + ' suggested';
+        : root.OdysseyBiomeAtlas?.hasFilters() ? visible.length + ' biome matches' : root.OdysseyBiomeAtlas?.hasFilters() ? visible.length + ' biome matches' : artSearchScope === 'all' ? ART.length + ' artworks' : suggested.length + ' suggested';
 
       const grid = document.getElementById('artOptionsGrid'), usage = assignedUsage();
       const order = new Map(visible.map((id,i)=>[id,i]));
