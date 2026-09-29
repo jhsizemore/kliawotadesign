@@ -1,0 +1,32 @@
+name: Verify live Odyssey landscape library
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/odyssey-landscape-live-verify.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: scripts
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install browser test dependencies
+        run: npm install --ignore-scripts --no-save playwright && npx playwright install --with-deps chromium
+      - name: Verify production data, image delivery and searchable artwork collections
+        run: node scripts/verify-live-odyssey-landscapes.cjs
+      - name: Save production screenshots and checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-landscape-live-verification
+          path: landscape-live-verification/
+          retention-days: 14
