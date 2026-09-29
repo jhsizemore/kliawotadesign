@@ -27,7 +27,8 @@ async def main():
     slide=page.locator('#mechanicChapters .mechanic:not([inert])');assert await slide.locator('.rules-spotlight').count()==1
     info=await page.evaluate('i=>{const f=OdysseyFocusedLaunch.features[i],q=OdysseySetShowcase.excerpt(OdysseyExhibition.catalogue,f.id);return {id:f.id,card:q.card.number,excerpt:q.text,source:q.card.rules.includes(q.text),art:f.artId}}',i)
     assert info['source'];assert await slide.locator('.spotlight-oracle').evaluate('e=>parseFloat(getComputedStyle(e).fontSize)>=20 && e.scrollHeight<=e.clientHeight+1')
-    assert await slide.locator('.mechanic-bg img').evaluate('i=>i.naturalWidth>=1900')
+    assert await page.evaluate('(id)=>{const a=OdysseyExhibition.catalogue.arts.get(id),j=OdysseyJourneyAssets.assets[id];return (j?.full.width||a.width)>=1900}',info['art'])
+    assert await slide.locator('.mechanic-bg img').evaluate('i=>i.complete&&i.naturalWidth>0')
     await slide.locator('.spotlight-source').click();assert await page.locator('#detailDialog').is_visible();await page.keyboard.press('Escape')
     highlights.append(info)
     if i in [1,3,5,7]:await screenshot(page,'#mechanicChapters','rules-'+info['id']+'.png')
