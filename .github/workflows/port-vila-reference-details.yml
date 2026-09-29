@@ -1,0 +1,83 @@
+name: Port Vila architectural reference details
+on:
+  push:
+    branches: [port-vila-storefront-survey-2026-09-29]
+    paths: ['.github/workflows/port-vila-reference-details.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - run: python3 -m pip install --quiet requests beautifulsoup4 Pillow
+      - name: Collect limited research previews only
+        shell: bash
+        run: |
+          mkdir -p details/images
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.parse import urljoin
+          from concurrent.futures import ThreadPoolExecutor
+          from bs4 import BeautifulSoup
+          from PIL import Image,ImageOps,ImageDraw
+          import requests,json,io,hashlib
+          out=Path('details');headers={'User-Agent':'PortVilaSandboxReferenceResearch/1.0'}
+          sources={
+            'pbeg-bred':'https://pbeg.vu/project/bred-refurbishment-project/',
+            'pbeg-rossi':'https://pbeg.vu/project/rossi-ocean-walk-restaurant/',
+            'pbeg-waterfront':'https://pbeg.vu/project/vanuatu-tourism-infrastructure-project/',
+            'pbase-neighbour-before':'https://www.pbase.com/bmcmorrow/image/146981681',
+            'pbase-neighbour-after':'https://www.pbase.com/bmcmorrow/image/146981684',
+            'pbase-gallery':'https://www.pbase.com/bmcmorrow/efateportvila&page=4'
+          }
+          def get(url):
+            r=requests.get(url,headers=headers,timeout=20);r.raise_for_status();return r
+          pages=[];images=[]
+          for key,url in sources.items():
+            rec={'key':key,'page_url':url,'retrieved':'2026-09-29','images':[]}
+            try:
+              r=get(url);soup=BeautifulSoup(r.content,'html.parser');rec['title']=soup.title.get_text(' ',strip=True) if soup.title else key
+              rec['text']=soup.get_text(' ',strip=True)[:20000]
+              rec['links']=[{'url':urljoin(url,a['href']),'text':a.get_text(' ',strip=True)[:180],'title':a.get('title','')} for a in soup.select('a[href]') if '/image/' in a['href']]
+              rec['meta']=[m.attrs for m in soup.find_all('meta') if any(t in str(m.get('property',''))+str(m.get('name','')) for t in ['date','time','author','image'])]
+              if key!='pbase-gallery':
+                seen=set()
+                for img in soup.find_all('img'):
+                  src=img.get('data-src') or img.get('src','')
+                  if not src or src.startswith('data:') or any(t in src.lower() for t in ['logo','avatar','icon','flag','badge']):continue
+                  target=urljoin(url,src)
+                  if target in seen:continue
+                  seen.add(target);rec['images'].append({'image_url':target,'alt':img.get('alt','')})
+                  if len(rec['images'])>=8:break
+            except Exception as e:rec['error']=str(e)
+            pages.append(rec)
+          for page in pages:
+            for i,img in enumerate(page['images']):
+              rec={'id':page['key']+'-'+str(i).zfill(2),'page_url':page['page_url'],**img}
+              try:
+                data=get(img['image_url']).content
+                if len(data)>15000000:raise ValueError('Over research size limit')
+                im=ImageOps.exif_transpose(Image.open(io.BytesIO(data))).convert('RGB')
+                rec['original_dimensions']=list(im.size)
+                if im.width<260 or im.height<140:raise ValueError('Small graphic')
+                rec['sha256_original']=hashlib.sha256(data).hexdigest();im.thumbnail((1000,800))
+                p=out/'images'/(rec['id']+'.jpg');im.save(p,quality=85);rec['preview_file']=str(p.relative_to(out));rec['preview_dimensions']=list(im.size)
+              except Exception as e:rec['error']=str(e)
+              images.append(rec)
+          good=[r for r in images if r.get('preview_file')]
+          for start in range(0,len(good),16):
+            canvas=Image.new('RGB',(1440,1080),'white');draw=ImageDraw.Draw(canvas)
+            for j,r in enumerate(good[start:start+16]):
+              im=Image.open(out/r['preview_file']);im.thumbnail((350,225));x=j%4*360;y=j//4*270;canvas.paste(im,(x+(350-im.width)//2,y));draw.text((x+4,y+232),r['id'],fill='black');draw.text((x+4,y+248),r['alt'][:42],fill='black')
+            canvas.save(out/f'contact-{start//16:02}.jpg',quality=88)
+          (out/'pages.json').write_text(json.dumps(pages,indent=2,ensure_ascii=False));(out/'images.json').write_text(json.dumps(images,indent=2,ensure_ascii=False))
+          print(json.dumps({'sources':len(pages),'previews':len(good)},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: port-vila-architectural-reference-details
+          path: details/
+          retention-days: 7
