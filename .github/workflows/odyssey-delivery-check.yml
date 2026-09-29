@@ -77,7 +77,7 @@ jobs:
         id: deployed
         env:
           GH_TOKEN: ${{ github.token }}
-          GITHUB_SHA: ${{ steps.release.outputs.sha }}
+          ODYSSEY_TARGET_SHA: ${{ steps.release.outputs.sha }}
         run: python -u tests/odyssey_cloudflare_gate.py
       - name: Install read-only browser checks
         if: steps.deployed.outputs.ready == 'true'
@@ -87,7 +87,7 @@ jobs:
       - name: Inspect actual production assets and browser rendering
         if: steps.deployed.outputs.ready == 'true'
         env:
-          GITHUB_SHA: ${{ steps.release.outputs.sha }}
+          ODYSSEY_TARGET_SHA: ${{ steps.release.outputs.sha }}
         run: python -u tests/odyssey-epic-live.py
       - name: Save deployment decision, delivery evidence and real screenshots
         if: always()
