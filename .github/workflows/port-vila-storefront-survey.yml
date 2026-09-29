@@ -2,7 +2,11 @@ name: Port Vila storefront verification
 on:
   push:
     branches: [port-vila-storefront-survey-2026-09-29]
-    paths: ['.github/workflows/port-vila-storefront-survey.yml']
+    paths:
+      - '.github/workflows/port-vila-storefront-survey.yml'
+      - 'scripts/*port-vila-storefronts*'
+      - 'tests/port-vila-storefronts.test.mjs'
+      - 'source/port-vila/storefront-observations-2026-09-29.json'
   workflow_dispatch:
 permissions:
   contents: write
@@ -13,6 +17,8 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      PW_TEST_SCREENSHOT_NO_FONTS_READY: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
