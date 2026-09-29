@@ -122,6 +122,48 @@
     stat.innerHTML = `<span class="defense-label">DEFENSE</span><span class="defense-value">${defense}</span>`;
   }
 
+
+  // Use the actual basic-land type, never the title or brown land frame. A
+  // nonbasic temple, or a basic with custom abilities, must keep its rules box.
+  function basicLandMana(model) {
+    const type = frontType(model), parts = type.split(/\s*[—–-]\s*/);
+    const head = parts[0].trim().split(/\s+/);
+    if (!head.some(t => /^Basic$/i.test(t)) || !head.some(t => /^Land$/i.test(t)) ||
+        head.some(t => !/^(Basic|Snow|Land)$/i.test(t)) ||
+        !['standard', ''].includes(String(model.layout || 'standard').toLowerCase())) return null;
+    const subtypes = (parts[1] || '').trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const colors = {plains:'W', island:'U', swamp:'B', mountain:'R', forest:'G'};
+    let mana = subtypes.length === 1 ? colors[subtypes[0]] : null;
+    if (!subtypes.length && /^Wastes$/i.test(String(model.name || model.displayName || '').trim())) mana = 'C';
+    if (!mana) return null;
+    const rules = String(model.rules || '').trim().replace(/^\((.*)\)$/s, '$1').trim();
+    const reminder = new RegExp('^\\{T\\}\\s*:\\s*Add\\s+\\{' + mana + '\\}\\.?$', 'i');
+    return !rules || reminder.test(rules) ? mana : null;
+  }
+
+  function isFullArtBasic(model) {
+    return model.frameStyle === 'full-art' && !!basicLandMana(model);
+  }
+
+  function decorateBasicLand(card, model) {
+    card.classList.remove('basic-land-full-art');
+    delete card.dataset.basicLandMana;
+    card.querySelectorAll('.basic-land-medallion').forEach(el => el.remove());
+    if (!isFullArtBasic(model)) return;
+    const typebar = card.querySelector('.typebar');
+    if (!typebar) return;
+    const mana = basicLandMana(model);
+    const medal = card.ownerDocument.createElement('span');
+    medal.className = 'basic-land-medallion';
+    medal.setAttribute('role', 'img');
+    medal.setAttribute('aria-label', ({W:'White',U:'Blue',B:'Black',R:'Red',G:'Green',C:'Colorless'})[mana] + ' mana');
+    // Reuse Studio's approved mana artwork in both editor and public renderer.
+    medal.innerHTML = '<span aria-hidden="true">' + manaHTML(mana) + '</span>';
+    typebar.before(medal);
+    card.classList.add('basic-land-full-art');
+    card.dataset.basicLandMana = mana;
+  }
+
   function applyFrameSystem(card, model) {
     if (!card || !model) return card;
     card.classList.remove(...FRAME_CLASSES);
@@ -132,13 +174,14 @@
     card.dataset.frameLabel = familyLabel(family);
     if (family === 'saga' || family === 'saga-creature') decorateSaga(card, model);
     if (family === 'battle') decorateBattleStats(card, model);
+    decorateBasicLand(card, model);
     return card;
   }
 
   function frameSummary(model) {
     const family = frameFamily(model);
     const traits = frameTraits(model).map(t => t[0].toUpperCase() + t.slice(1));
-    const treatment = model.frameStyle === 'full-art' ? 'Full art' : 'Standard art';
+    const treatment = isFullArtBasic(model) ? 'Full art — FF basic land' : model.frameStyle === 'full-art' ? 'Full art' : 'Standard art';
     return [familyLabel(family), ...traits, treatment].join(' · ');
   }
 
@@ -154,6 +197,23 @@
   }
 
   function updateReadout(model) {
+    const select = document.getElementById('fFrameStyle');
+    const option = select && [...select.options].find(o => o.value === 'full-art');
+    if (option && model) {
+      option.textContent = basicLandMana(model) ? 'Full art — FF basic land' : 'Full art';
+      option.label = option.textContent;
+    }
+    let hint = document.getElementById('basicLandFrameHint');
+    if (!hint && select) {
+      hint = document.createElement('div');
+      hint.id = 'basicLandFrameHint';
+      hint.className = 'hint';
+      select.closest('label')?.after(hint);
+    }
+    if (hint && model) {
+      hint.hidden = !basicLandMana(model);
+      hint.textContent = 'Full art uses a floating name bar, low type bar and mana medallion. Mana reminder and flavour stay in the editor, not on the full-art card. Custom abilities keep their rules box.';
+    }
     const readout = document.getElementById('frameSystemReadout');
     if (readout && model) {
       readout.innerHTML = `<span>AUTO FRAME</span><strong>${frameSummary(model)}</strong>`;
@@ -239,7 +299,7 @@
     window.renderPreview();
   }
 
-  if (typeof module !== 'undefined' && module.exports) module.exports = {frameFamily, frameTraits, parseSagaText};
+  if (typeof module !== 'undefined' && module.exports) module.exports = {frameFamily, frameTraits, parseSagaText, basicLandMana, isFullArtBasic, frameSummary, applyFrameSystem};
   if (typeof document === 'undefined') return;
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', install, { once: true });

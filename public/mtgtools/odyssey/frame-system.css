@@ -870,3 +870,98 @@
 
 /* Preserve full-art image painting inside rotated and clipped native frames. */
 .render-card.treatment-full-art .artbox .art-img { will-change: transform; }
+
+
+/* FF-style full-art basics. Selection remains the existing per-card full-art
+   treatment, sharing its crop profile, export and rendering pipeline. */
+.render-card.treatment-full-art.basic-land-full-art {
+  --bl-unit: 1px;
+  --bl-tint: #e9e2ce;
+}
+.render-card.basic-land-full-art[data-basic-land-mana="U"] { --bl-tint: #cadbe2; }
+.render-card.basic-land-full-art[data-basic-land-mana="B"] { --bl-tint: #d3cfce; }
+.render-card.basic-land-full-art[data-basic-land-mana="R"] { --bl-tint: #e6c8b8; }
+.render-card.basic-land-full-art[data-basic-land-mana="G"] { --bl-tint: #cfdbbf; }
+.render-card.basic-land-full-art[data-basic-land-mana="C"] { --bl-tint: #d8d6ce; }
+.render-card.treatment-full-art.basic-land-full-art .frame {
+  background: #171716 !important;
+}
+.render-card.treatment-full-art.basic-land-full-art .inner {
+  background: #242722 !important;
+}
+.render-card.treatment-full-art.basic-land-full-art .inner::before,
+.render-card.treatment-full-art.basic-land-full-art .inner::after,
+.render-card.treatment-full-art.basic-land-full-art .rules,
+.render-card.treatment-full-art.basic-land-full-art .pt,
+.render-card.treatment-full-art.basic-land-full-art .titlebar > .mana {
+  display: none !important;
+}
+.render-card.treatment-full-art.basic-land-full-art .artbox {
+  inset: 0 !important; height: auto !important; border: 0 !important;
+  border-radius: 0 !important; clip-path: none !important;
+}
+.render-card.treatment-full-art.basic-land-full-art .titlebar,
+.render-card.treatment-full-art.basic-land-full-art .typebar,
+.render-card.treatment-full-art.basic-land-full-art .basic-land-medallion {
+  color: #242320 !important;
+  border: calc(1.2 * var(--bl-unit)) solid #292923 !important;
+  background: linear-gradient(115deg, #f7f5e9 0%, var(--bl-tint) 28%, #fbf9ec 46%, var(--bl-tint) 72%, #eeeade 100%) !important;
+  box-shadow: inset 0 0 0 calc(1 * var(--bl-unit)) #fffdf3,
+    0 0 0 calc(1.8 * var(--bl-unit)) #e9e9dd,
+    0 0 0 calc(3.1 * var(--bl-unit)) #272823,
+    0 calc(3 * var(--bl-unit)) calc(5 * var(--bl-unit)) #0009 !important;
+  backdrop-filter: none !important;
+}
+.render-card.treatment-full-art.basic-land-full-art .titlebar {
+  top: calc(7 * var(--bl-unit)) !important;
+  left: calc(7 * var(--bl-unit)) !important; right: calc(7 * var(--bl-unit)) !important;
+  height: calc(36 * var(--bl-unit)) !important;
+  padding: 0 calc(10 * var(--bl-unit)) !important;
+  border-radius: calc(12 * var(--bl-unit)) / calc(18 * var(--bl-unit)) !important;
+}
+.render-card.treatment-full-art.basic-land-full-art .name {
+  color: #242320 !important; text-shadow: none !important; text-transform: none !important;
+}
+.render-card.treatment-full-art.basic-land-full-art .under-name { color: #555249 !important; }
+.render-card.treatment-full-art.basic-land-full-art .typebar {
+  top: auto !important; bottom: calc(36 * var(--bl-unit)) !important;
+  left: calc(40 * var(--bl-unit)) !important; right: calc(7 * var(--bl-unit)) !important;
+  height: calc(34 * var(--bl-unit)) !important;
+  padding: 0 calc(7 * var(--bl-unit)) 0 calc(16 * var(--bl-unit)) !important;
+  border-radius: 0 calc(9 * var(--bl-unit)) calc(9 * var(--bl-unit)) 0 !important;
+  z-index: 5 !important;
+}
+.render-card.treatment-full-art.basic-land-full-art .basic-land-medallion {
+  position: absolute; left: calc(4 * var(--bl-unit)); bottom: calc(29 * var(--bl-unit));
+  width: calc(48 * var(--bl-unit)); height: calc(48 * var(--bl-unit));
+  display: grid; place-items: center; border-radius: 50% !important;
+  z-index: 6; pointer-events: none;
+}
+.render-card.treatment-full-art.basic-land-full-art .basic-land-medallion > span {
+  width: calc(38 * var(--bl-unit)); height: calc(38 * var(--bl-unit)); display: grid; place-items: center;
+}
+.render-card.treatment-full-art.basic-land-full-art .basic-land-medallion .mana-symbol {
+  width: calc(38 * var(--bl-unit)) !important; height: calc(38 * var(--bl-unit)) !important;
+  background: transparent !important; border: 0 !important; box-shadow: none !important;
+  margin: 0 !important; padding: 0 !important;
+}
+.render-card.treatment-full-art.basic-land-full-art .basic-land-medallion img {
+  filter: grayscale(1); border-radius: 50%;
+}
+.render-card.treatment-full-art.basic-land-full-art .footer {
+  left: 0 !important; right: 0 !important; bottom: 0 !important;
+  height: calc(31 * var(--bl-unit)) !important;
+  padding: calc(3 * var(--bl-unit)) calc(8 * var(--bl-unit)) calc(2 * var(--bl-unit)) !important;
+  background: linear-gradient(180deg, #141514aa, #141514 35%) !important; z-index: 4;
+}
+.render-card.treatment-full-art.basic-land-full-art .credit {
+  color: #f5f0df !important; font-size: calc(7.5 * var(--bl-unit)) !important;
+  line-height: 1.1 !important; margin: 0 0 calc(2 * var(--bl-unit)) !important;
+  -webkit-line-clamp: 2;
+}
+.render-card.treatment-full-art.basic-land-full-art .collector-line {
+  color: #f5f0df !important; font-size: calc(7.6 * var(--bl-unit)) !important;
+}
+@media print {
+  .print-sheet .render-card.treatment-full-art.basic-land-full-art { --bl-unit: .166667mm; }
+}
