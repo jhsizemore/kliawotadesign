@@ -4,13 +4,14 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/odyssey-landscape-live-verify.yml'
+      - 'scripts/verify-live-odyssey-landscapes.cjs'
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
         with:
