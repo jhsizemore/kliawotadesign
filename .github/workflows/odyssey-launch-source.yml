@@ -1,0 +1,35 @@
+name: Odyssey launch source review
+on:
+  push:
+    branches: [odyssey-focused-launch]
+    paths: ['.github/workflows/odyssey-launch-source.yml']
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package current sources and approved logo
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          roots=['public/mtgtools/Odyssey/scry','public/mtgtools/odyssey','scripts','tests','src','.github/workflows']
+          with zipfile.ZipFile('launch-source.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for r in roots:
+                  for p in Path(r).rglob('*'):
+                      if not p.is_file():continue
+                      source=p.suffix in {'.js','.json','.cjs','.mjs','.html','.css','.py','.md','.yml','.ts'} and p.stat().st_size<10000000
+                      logo='/assets/brand/' in str(p)
+                      thumb=p.name.endswith('.thumb.webp') or '/assets/mana-pips/' in str(p)
+                      if source or logo or thumb:z.write(p)
+              for name in ['package.json','wrangler.jsonc']:
+                  p=Path(name)
+                  if p.exists():z.write(p)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-focused-launch-source
+          path: launch-source.zip
+          retention-days: 3
