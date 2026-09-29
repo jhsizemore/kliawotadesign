@@ -67,7 +67,7 @@ async def main():
    assert await page.locator('#developmentImage img').evaluate('(i)=>i.naturalWidth')>=2000
    assert await page.locator('#development .participation-panel').evaluate('(e)=>getComputedStyle(e).backgroundColor')=='rgba(0, 0, 0, 0)'
    assert await page.locator('#development').evaluate('(e)=>getComputedStyle(e,"::after").backgroundImage.includes("linear-gradient")')
-   await page.locator('#signupRole').select_option('playtesting');assert 'mailto:' in await page.locator('#signupLink').get_attribute('href')
+   assert await page.locator('#updatesSignup').count()==1;assert await page.locator('#updatesSignup [name=email]').count()==1;assert await page.locator('#signupLink').count()==0
    await shot(page,'#preview','autolycus-spoiler.png');await shot(page,'footer','footer-logo.png')
    for width in [320,390,768,1440]:
     await page.set_viewport_size({'width':width,'height':1000});await page.evaluate('window.scrollTo({top:0,behavior:"instant"})');await page.wait_for_timeout(250)
