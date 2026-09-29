@@ -867,3 +867,6 @@
   .print-sheet .kind-saga-creature .rules { top: 70mm !important; left: 1.3mm !important; right: 1.3mm !important; bottom: 7.2mm !important; padding: 1.3mm 12.5mm .8mm 1.8mm !important; font-size: 2.3mm !important; }
   .print-sheet .kind-saga-creature .pt { min-width: 10mm !important; }
 }
+
+/* Preserve full-art image painting inside rotated and clipped native frames. */
+.render-card.treatment-full-art .artbox .art-img { will-change: transform; }

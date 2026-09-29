@@ -20,7 +20,14 @@ async def main():
    assert await page.evaluate("OdysseyStudioRenderer.engine.model(61).frameStyle!=='full-art'"),'Editorial treatment must not change the stored candidate'
    assert await page.evaluate("(()=>{const a=document.querySelector('.ship-emblem svg path').getAttribute('d'),b=document.querySelector('#heroCard odyssey-studio-card').shadowRoot.querySelector('.set-symbol svg path').getAttribute('d');return a===b})()")
    assert await page.locator('.ship-emblem svg').evaluate('e=>e.getBoundingClientRect().width>=100')
-   await screenshot(page,'#top','full-art-hero-1440.png');await screenshot(page,'#mechanics','ship-and-rules-1440.png')
+   await screenshot(page,'#top','full-art-hero-1440.png')
+   # Loaded metadata alone is not proof that a composited image actually painted.
+   from PIL import Image,ImageStat
+   import io
+   pixels=Image.open(io.BytesIO(await page.locator('#heroCard').screenshot())).convert('RGB');w,h=pixels.size
+   deviation=ImageStat.Stat(pixels.crop((int(w*.25),int(h*.18),int(w*.75),int(h*.45)))).stddev
+   assert max(deviation)>6, 'The loaded full-art image did not paint inside its frame'
+   await screenshot(page,'#mechanics','ship-and-rules-1440.png')
    highlights=[]
    for i in range(8):
     await page.evaluate('i=>OdysseyMechanicCarousel.go(i)',i);await settle(page,'#mechanicChapters')
