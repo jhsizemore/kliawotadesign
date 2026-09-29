@@ -1,0 +1,60 @@
+name: Odyssey launch readiness verification
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'public/mtgtools/Odyssey/scry/**'
+      - 'public/mtgtools/odyssey/**'
+      - 'src/odyssey-*'
+      - 'scripts/build-odyssey-*'
+      - 'tests/odyssey-readiness*'
+      - 'tests/odyssey-signup-server.mjs'
+      - '.github/workflows/odyssey-readiness-check.yml'
+  pull_request:
+    paths:
+      - 'public/mtgtools/Odyssey/scry/**'
+      - 'public/mtgtools/odyssey/**'
+      - 'src/odyssey-*'
+      - 'scripts/build-odyssey-*'
+      - 'tests/odyssey-readiness*'
+      - 'tests/odyssey-signup-server.mjs'
+      - '.github/workflows/odyssey-readiness-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odyssey-readiness-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check the committed candidate and rendering source
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          node scripts/build-odyssey-public-renderer.cjs --check
+          node --test tests/odyssey-subscriptions.test.mjs tests/odyssey-candidate-source.test.cjs
+      - name: Install test browser
+        run: |
+          python -m pip install -q playwright==1.57.0
+          python -m playwright install --with-deps chromium >/tmp/readiness-browser-install.log 2>&1 || { tail -60 /tmp/readiness-browser-install.log; exit 1; }
+      - name: Verify owner sessions, exports, failures and open-tab expiry
+        run: |
+          node tests/odyssey-signup-server.mjs >/tmp/readiness-server.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          python -u tests/odyssey-readiness-browser.py
+      - name: Read-only verification of delivered production files
+        if: github.ref == 'refs/heads/main'
+        run: python -u tests/odyssey-readiness-live.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-readiness-results
+          path: test-results/odyssey-readiness/
+          if-no-files-found: ignore

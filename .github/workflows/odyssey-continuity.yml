@@ -7,6 +7,7 @@ on:
       - 'src/**'
       - 'tests/odyssey-*'
       - 'scripts/odyssey-release*'
+      - 'scripts/refresh-odyssey-integrity.cjs'
       - 'wrangler.jsonc'
       - 'package.json'
       - '.github/workflows/odyssey-continuity.yml'
@@ -16,6 +17,7 @@ on:
       - 'src/**'
       - 'tests/odyssey-*'
       - 'scripts/odyssey-release*'
+      - 'scripts/refresh-odyssey-integrity.cjs'
       - 'wrangler.jsonc'
       - 'package.json'
       - '.github/workflows/odyssey-continuity.yml'
@@ -34,9 +36,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Card data, rendering notation and artwork-sync regression
-        run: node --test tests/*.test.cjs tests/*.test.js
+      - name: All card, renderer, artwork, subscriber and repository regressions
+        run: |
+          mkdir -p test-results/odyssey-continuity
+          node --test --test-reporter=tap tests/*.test.cjs tests/*.test.js tests/*.test.mjs >test-results/odyssey-continuity/all-tests.tap 2>&1 || { grep -A35 '^not ok' test-results/odyssey-continuity/all-tests.tap; exit 1; }
+          tail -12 test-results/odyssey-continuity/all-tests.tap
       - name: Install existing build dependencies
-        run: npm install --no-package-lock
-      - name: Verify the complete Worker and asset build without deploying
-        run: npx wrangler deploy --dry-run --outdir /tmp/odyssey-verified-build
+        run: npm install --ignore-scripts --no-package-lock --no-audit --no-fund
+      - name: Verify source parity and the complete build without deploying
+        run: |
+          node scripts/build-odyssey-public-renderer.cjs --check
+          npx wrangler deploy --dry-run --outdir /tmp/odyssey-verified-build
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-continuity-results
+          path: test-results/odyssey-continuity/
