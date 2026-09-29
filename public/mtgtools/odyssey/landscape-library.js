@@ -13,12 +13,13 @@ function merge(dataset, payload=root.ODYSSEY_LANDSCAPE_IMPORT){
   const existing=artworks[i];
   if(sourceKey(existing.source)!==sourceKey(incoming.source)){conflicts.push(incoming.id);continue;}
   // Preserve existing curatorial edits. Add acquired delivery only to the eight previous research records.
-  const next={...existing,tags:[existing.tags,'landscape','import20260929',incoming.collectionTag||'',incoming.legendaryTags||''].filter(Boolean).join('; '),landscapeCollection:incoming.landscapeCollection};
+  const next={...existing,tags:[...new Set([existing.tags,'landscape','import20260929',incoming.collectionTag||'',incoming.legendaryTags||''].flatMap(s=>String(s||'').split(';').map(t=>t.trim())).filter(Boolean))].join('; '),landscapeCollection:incoming.landscapeCollection};
   if(/^ART-61[7-9]$|^ART-62[0-4]$/.test(incoming.id)){
    for(const key of ['imageUrl','imageWidth','imageHeight','imageChecked','originalImageUrl','acquisitionStatus','landscapeCollection'])if(incoming[key])next[key]=incoming[key];
   }
   artworks[i]=next;
  }
+ for(const [id,tags] of Object.entries(payload.existingTags||{})){const i=byId.get(id);if(i!==undefined)artworks[i]={...artworks[i],tags:[...new Set([artworks[i].tags,tags].flatMap(s=>String(s||'').split(';').map(t=>t.trim())).filter(Boolean))].join('; ')};}
  return {...dataset,artworks,integrity:{...dataset.integrity,artworks:artworks.length},landscapeImport:{version:VERSION,...payload.summary,conflicts}};
 }
 function registerWithSheetSync(payload=root.ODYSSEY_LANDSCAPE_IMPORT){

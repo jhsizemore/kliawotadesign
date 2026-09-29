@@ -1,0 +1,171 @@
+{
+  "summary": {
+    "newRecords": 212,
+    "enrichedExisting": 8,
+    "reusedExisting": 3,
+    "reviewedExclusions": 12,
+    "batchRecords": 220,
+    "previewImages": 217,
+    "sourceOnly": 3,
+    "baselineLibrary": 624,
+    "totalLibrary": 836,
+    "firstNewId": "ART-625",
+    "lastNewId": "ART-836",
+    "cardAssignmentsChanged": 0,
+    "cards": 309,
+    "harvardArchive": "Two exact source records retained; full geographically filtered archive sweep remains blocked."
+  },
+  "collections": [
+    {
+      "label": "Lear — Ionian Islands",
+      "tag": "collectionlearionian",
+      "count": 20
+    },
+    {
+      "label": "Dodwell — Greece",
+      "tag": "collectiondodwell",
+      "count": 20
+    },
+    {
+      "label": "Gell — Troy",
+      "tag": "collectiongelltroy",
+      "count": 39
+    },
+    {
+      "label": "Gell — Ithaca",
+      "tag": "collectiongellithaca",
+      "count": 8
+    },
+    {
+      "label": "Cartwright — Ionian Islands",
+      "tag": "collectioncartwright",
+      "count": 8
+    },
+    {
+      "label": "Italian museum landscapes",
+      "tag": "collectionitalianmuseums",
+      "count": 8
+    },
+    {
+      "label": "Kellogg — Egypt",
+      "tag": "collectionkellogg",
+      "count": 5
+    },
+    {
+      "label": "Cole — Etna",
+      "tag": "collectioncoleetna",
+      "count": 3
+    },
+    {
+      "label": "Lear — original drawings",
+      "tag": "collectionlearoriginals",
+      "count": 2
+    },
+    {
+      "label": "Harvard — Lear source records",
+      "tag": "collectionharvardlear",
+      "count": 2
+    },
+    {
+      "label": "True to Nature — oil studies",
+      "tag": "collectiontruetonature",
+      "count": 105
+    }
+  ],
+  "reused": [
+    {
+      "reviewId": "LIMP-058",
+      "existingId": "ART-568",
+      "source": "https://eng.travelogues.gr/item.php?view=50862",
+      "title": "The confluence of Karamenderes (anc. Scamander) with Simoes river. In the background the hills of the village Çıplak, area where part of Troy VII is found."
+    },
+    {
+      "reviewId": "LIMP-069",
+      "existingId": "ART-586",
+      "source": "https://eng.travelogues.gr/item.php?view=50873",
+      "title": "Landscape around the shores of Simoes river in the plain of Troy."
+    },
+    {
+      "reviewId": "LIMP-118",
+      "existingId": "ART-546",
+      "source": "https://www.metmuseum.org/art/collection/search/355390",
+      "title": "Mount Olympus from Larissa, Thessaly, Greece"
+    }
+  ],
+  "excluded": [
+    {
+      "reviewId": "LIMP-026",
+      "source": "https://eng.travelogues.gr/item.php?view=54217",
+      "title": "View of the Parthenon from the Propylaea. Seated on the ground is Disdar Aga,the governor of the fortress of Acropolis. He has just been surprised by another member of the guard as he was sipping a glass of wine which he took from the travellers.",
+      "reason": "Architecture-led Parthenon scene"
+    },
+    {
+      "reviewId": "LIMP-027",
+      "source": "https://eng.travelogues.gr/item.php?view=54218",
+      "title": "The west front of the Parthenon and the Erechtheion, from the Propylaea.",
+      "reason": "Architecture-led Parthenon scene"
+    },
+    {
+      "reviewId": "LIMP-028",
+      "source": "https://eng.travelogues.gr/item.php?view=54219",
+      "title": "The Erechtheion from the southwest. In the distance, on the left, a group of Turkish musician who customarily performed on the Acropolis every day at three o'clock in the afternoon.",
+      "reason": "Architecture-led Erechtheion scene"
+    },
+    {
+      "reviewId": "LIMP-029",
+      "source": "https://eng.travelogues.gr/item.php?view=54223",
+      "title": "The Gate of Mesogeia or Gate of Boubounistra, which was situated at the present-day junction of Amalias avenue with Othonos street. In the background, the fountain of Boubounistra.",
+      "reason": "Later city gate rather than landscape"
+    },
+    {
+      "reviewId": "LIMP-034",
+      "source": "https://eng.travelogues.gr/item.php?view=54228",
+      "title": "The interior of the temple of Aphaia at Aegina island.",
+      "reason": "Temple interior rather than landscape"
+    },
+    {
+      "reviewId": "LIMP-041",
+      "source": "https://eng.travelogues.gr/item.php?view=54235",
+      "title": "Sepulchre of Hassan Baba, at the entrance of the Vale of Tempe.",
+      "reason": "Later religious building dominates"
+    },
+    {
+      "reviewId": "LIMP-126",
+      "source": "https://www.fondationcustodia.fr/5-Louise-Josephine-Sarazin-de-Belmont-1440",
+      "title": "Views of the Pyrenees",
+      "reason": "Composite display of nine paintings; individual works require separate sources"
+    },
+    {
+      "reviewId": "LIMP-169",
+      "source": "https://www.fondationcustodia.fr/51-Eugene-Isabey-1488",
+      "title": "View of the Fort de Bertheaume ",
+      "reason": "Later coastal fortress dominates"
+    },
+    {
+      "reviewId": "LIMP-173",
+      "source": "https://www.fondationcustodia.fr/55-Odilon-Redon-1492",
+      "title": "Village on the Coast of Brittany ",
+      "reason": "Later town dominates"
+    },
+    {
+      "reviewId": "LIMP-183",
+      "source": "https://www.fondationcustodia.fr/76-Leon-Fleury-1514",
+      "title": "The Tomb of Caecilia Metella ",
+      "reason": "Roman tomb and medieval fortification dominate"
+    },
+    {
+      "reviewId": "LIMP-206",
+      "source": "https://www.fondationcustodia.fr/99-August-Kopisch-1539",
+      "title": "View of Capri",
+      "reason": "Later Capri buildings dominate"
+    },
+    {
+      "reviewId": "LIMP-211",
+      "source": "https://www.fondationcustodia.fr/104-Thomas-Fearnley-1544",
+      "title": "Loggia in Sorrento ",
+      "reason": "Later domestic interior, not landscape"
+    }
+  ],
+  "acquisitionRun": 36528196955,
+  "reviews": "All twelve acquisition contact sheets inspected; artwork selection remains RESEARCH. No card-specific crop approvals."
+}
