@@ -1,12 +1,13 @@
 name: Odyssey exhibition verification
 on:
   push:
-    branches: [main, odyssey-exhibition-studio-polish]
+    branches: [main]
     paths:
       - 'public/mtgtools/Odyssey/scry/**'
       - 'public/mtgtools/odyssey/**'
       - 'scripts/build-odyssey-public-renderer.cjs'
       - 'tests/odyssey-exhibition*'
+      - 'tests/odyssey-focused-launch.py'
       - 'package.json'
       - '.github/workflows/odyssey-exhibition-check.yml'
   pull_request:
@@ -15,6 +16,7 @@ on:
       - 'public/mtgtools/odyssey/**'
       - 'scripts/build-odyssey-public-renderer.cjs'
       - 'tests/odyssey-exhibition*'
+      - 'tests/odyssey-focused-launch.py'
       - 'package.json'
       - '.github/workflows/odyssey-exhibition-check.yml'
   workflow_dispatch:
@@ -42,14 +44,17 @@ jobs:
         run: |
           python -m pip install -q playwright==1.57.0
           python -m playwright install --with-deps chromium > /tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
-      - name: Run real-data browser checks
+      - name: Run focused-launch and full-exhibition browser checks
         run: |
           python -m http.server 8765 --directory public > /tmp/odyssey-exhibition-http.log 2>&1 &
+          python -u tests/odyssey-focused-launch.py
           python -u tests/odyssey-exhibition-browser.py
       - name: Save visual checks
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: odyssey-exhibition-visual-checks
-          path: test-results/odyssey-exhibition/
+          path: |
+            test-results/odyssey-focused-launch/
+            test-results/odyssey-exhibition/
           if-no-files-found: ignore

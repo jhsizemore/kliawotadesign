@@ -33,7 +33,7 @@ async def main():
         page.on('pageerror', lambda e: errors.append(str(e)))
         page.on('console', lambda m: print('BROWSER ERROR:', m.text, flush=True) if m.type=='error' else None)
         page.on('request', lambda req: api_requests.append(req.url) if '/odyssey/api/' in req.url else None)
-        await page.goto(BASE, wait_until='domcontentloaded')
+        await page.goto(BASE+'art.html', wait_until='domcontentloaded')
         await page.wait_for_function('window.OdysseyExhibition?.catalogue.cards.length > 0', timeout=45000)
         total = await page.evaluate('window.OdysseyExhibition.catalogue.cards.length')
         assert await page.locator('#social').count() == 0, 'The composer must not be on the landing page'
