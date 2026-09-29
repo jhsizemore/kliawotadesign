@@ -1,0 +1,45 @@
+name: Odyssey landscape import
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/odyssey-landscape-import.py'
+      - '.github/workflows/odyssey-landscape-import.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: odyssey-landscape-import
+  cancel-in-progress: false
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /scripts/
+            /public/mtgtools/**/*.html
+            /public/mtgtools/**/*.js
+            /public/mtgtools/**/*.json
+            /src/
+            /tests/
+            /package.json
+            /wrangler.jsonc
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image acquisition dependencies
+        run: pip install requests beautifulsoup4 Pillow
+      - name: Acquire approved landscape collections without changing card assignments
+        run: python scripts/odyssey-landscape-import.py
+      - name: Retain acquisition report, decoded images, and integration context
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-landscape-import
+          path: landscape-import-output/
+          retention-days: 7
