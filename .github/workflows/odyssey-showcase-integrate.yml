@@ -1,65 +1,34 @@
-name: Odyssey showcase integration
+name: Odyssey showcase source check
 on:
   push:
     branches: [odyssey-rules-and-contact]
-    paths:
-      - '.github/workflows/odyssey-showcase-integrate.yml'
-      - 'scripts/prepare-odyssey-showcase.py'
-      - 'public/mtgtools/Odyssey/scry/set-showcase.*'
-      - 'public/mtgtools/Odyssey/scry/contact-form.js'
-      - 'src/odyssey-contact.mjs'
-      - 'tests/odyssey-showcase*'
-      - 'tests/odyssey-contact.test.mjs'
+    paths: ['.github/workflows/odyssey-showcase-integrate.yml']
 permissions:
-  contents: write
-concurrency:
-  group: odyssey-showcase-integration
-  cancel-in-progress: true
+  contents: read
 jobs:
-  integrate:
+  inspect:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Package source and existing flagship artwork for visual inspection
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          roots=['public/mtgtools/odyssey','public/mtgtools/Odyssey/scry','src','scripts','tests','.github/workflows']
+          with zipfile.ZipFile('showcase-source.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for root in roots:
+                  for p in Path(root).rglob('*'):
+                      if not p.is_file(): continue
+                      source=p.suffix in {'.html','.js','.json','.css','.mjs','.cjs','.py','.md','.yml','.ts'} and p.stat().st_size<10000000
+                      asset=('/assets/brand/' in str(p) or '/assets/mana-pips/' in str(p) or p.suffix in {'.woff','.woff2'} or (p.name.startswith('ART-162.') and p.suffix=='.webp'))
+                      if source or asset:z.write(p)
+              for n in ['package.json','wrangler.jsonc']:
+                  if Path(n).exists():z.write(n)
+          PY
+      - uses: actions/upload-artifact@v4
         with:
-          node-version: 22
-      - name: Install browser tools
-        run: |
-          python -m pip install -q beautifulsoup4 pillow playwright==1.57.0
-          python -m playwright install --with-deps chromium >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
-      - name: Integrate with current source and regenerate native renderer
-        run: |
-          python scripts/prepare-odyssey-showcase.py
-          node scripts/build-odyssey-public-renderer.cjs
-          node scripts/build-odyssey-public-renderer.cjs --check
-          node --check public/mtgtools/Odyssey/scry/focused-launch.js
-          node --check public/mtgtools/Odyssey/scry/contact-form.js
-          node --test tests/odyssey-contact.test.mjs tests/odyssey-placement.test.cjs tests/odyssey-exhibition.cjs
-      - name: Real artwork and native-card browser verification
-        run: |
-          python -m http.server 8765 --directory public >/tmp/showcase-http.log 2>&1 &
-          python -u tests/odyssey-showcase-geometry.py
-          python -u tests/odyssey-showcase-browser.py
-          python -u tests/odyssey-focused-launch.py
-          python -u tests/odyssey-exhibition-browser.py
-      - name: Save browser evidence
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: odyssey-showcase-review
-          path: |
-            test-results/odyssey-showcase/
-            test-results/odyssey-focused-launch/
-            test-results/odyssey-exhibition/
-          if-no-files-found: ignore
-      - name: Commit verified integration on the feature branch only
-        run: |
-          test "$(git ls-remote origin refs/heads/odyssey-rules-and-contact | cut -f1)" = "${{ github.sha }}"
-          git config user.name 'Odyssey showcase integration'
-          git config user.email 'actions@users.noreply.github.com'
-          git add scripts/build-odyssey-public-renderer.cjs public/mtgtools/odyssey/public-renderer.generated.js public/mtgtools/odyssey/frame-system.css public/mtgtools/Odyssey/scry/focused-launch.js public/mtgtools/Odyssey/scry/index.html public/mtgtools/Odyssey/scry/art.html public/mtgtools/Odyssey/scry/social/index.html src/odyssey-worker.js tests/odyssey-exhibition-browser.py tests/odyssey-showcase-browser.py
-          if ! git diff --cached --quiet; then
-            git commit -m 'Keep the native full-art hero visible and verify all showcase features'
-            git push origin HEAD:odyssey-rules-and-contact
-          fi
+          name: odyssey-showcase-source-current
+          path: showcase-source.zip
+          retention-days: 3
