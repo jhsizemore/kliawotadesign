@@ -42,5 +42,5 @@ test('the public renderer contains the same basic-land helpers and CSS as Studio
   assert.ok(generated.includes('basic-land-full-art'));
   const loader=fs.readFileSync('public/mtgtools/odyssey/index.html','utf8');
   assert.match(loader,/frame-system\.js\?v=20260929-full-art-basics/);
-  assert.match(loader,/frame-system\.css\?v=20260929-full-art-basics/);
+  assert.match(loader,/frame-system\.css\?v=20260930-full-art-mana-colour1/);
 });

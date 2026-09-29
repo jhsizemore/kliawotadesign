@@ -946,7 +946,8 @@
   margin: 0 !important; padding: 0 !important;
 }
 .render-card.treatment-full-art.basic-land-full-art .basic-land-medallion img {
-  filter: grayscale(1); border-radius: 50%;
+  /* Preserve the approved mana artwork's original W/U/B/R/G colour. */
+  filter: none; border-radius: 50%;
 }
 .render-card.treatment-full-art.basic-land-full-art .footer {
   left: 0 !important; right: 0 !important; bottom: 0 !important;
