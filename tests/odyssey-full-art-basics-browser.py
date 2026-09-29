@@ -74,6 +74,9 @@ with sync_playwright() as p:
     page.set_viewport_size({'width':390,'height':844})
     page.evaluate('(n)=>selectCard(n)',n)
     assert page.locator('#previewShell .basic-land-medallion').count()==1
+    page.wait_for_function("document.querySelector('#previewShell .art-img')?.complete && document.querySelector('#previewShell .art-img')?.naturalWidth > 0")
+    page.wait_for_timeout(600)
+    page.screenshot(path=str(OUT/'mobile-studio.png'),full_page=True)
     page.locator('#previewShell').screenshot(path=str(OUT/'mobile-basic.png'))
     results['mobile']='390 px viewport: native frame visible'
     public=context.new_page()
