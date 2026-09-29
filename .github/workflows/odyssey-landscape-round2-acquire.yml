@@ -1,0 +1,31 @@
+name: Odyssey landscape round two acquisition
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/odyssey-landscape-round2-acquire.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          filter: blob:none
+          sparse-checkout: |
+            scripts
+            public/mtgtools/odyssey/data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4 Pillow
+      - run: python scripts/odyssey-landscape-round2-acquire.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: landscape-round2
+          path: landscape-round2/
+          retention-days: 14
