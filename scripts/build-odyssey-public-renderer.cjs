@@ -16,7 +16,7 @@ function declarations(source){const list=nodes(parse(source));return {fn(name){c
 const base=declarations(code),frame=declarations(frames),pol=declarations(polish);
 const names=['baseCard','cov','defaultsFor','cropProfileKey','cropProfileFor','stalePackagedArtOverride','model','esc','splitSpecial','parseSub','artMetaFor','visibleArtCredit','playtestRemindersFor','reminderHTMLFor','fitDown','fitCardTypography','setSymbolHTML','isLegendaryCard','legendaryTitleHTML','cardInnerHTML','artViewportMetrics','clampPanValue','artPanPixels','applyArtView','imageForArt','directArtUrl','staticArtCandidates','sizedMuseumUrl','dedupeUrls','wikimediaOriginalUrl','ngaOfficialUrls','isBadUrl','badKeyUrl'];
 const constants=['MANA_PIP_DATA','PLAYTEST_REMINDERS','KNOWN_IMAGE_URLS','NGA_UUIDS','PUBLISHED_ART_URL_UPDATES','CROP_KEYS','ART_PREVIEW_PX'];
-const frameNames=['frontType','frameFamily','isLegendary','frameTraits','familyLabel','escapeHTML','parseSagaText','decorateSaga','decorateBattleStats','applyFrameSystem'];
+const frameNames=['frontType','frameFamily','isLegendary','frameTraits','familyLabel','escapeHTML','parseSagaText','decorateSaga','decorateBattleStats','basicLandMana','isFullArtBasic','decorateBasicLand','applyFrameSystem'];
 const fitAssignment=pol.list.find(n=>n.type==='AssignmentExpression'&&n.left.type==='MemberExpression'&&n.left.object.name==='root'&&n.left.property.name==='fitCardTypography');if(!fitAssignment)throw Error('Studio typography enhancement missing');
 const override=polish.slice(fitAssignment.right.start,fitAssignment.right.end);
 // Include published corrections to the URL map, but no editor initialization statements.
