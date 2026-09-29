@@ -1,0 +1,57 @@
+name: Odyssey colour and biome atlas
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/odyssey-biome-atlas.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: odyssey-biome-atlas
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          filter: blob:none
+          sparse-checkout: |
+            scripts
+            public/mtgtools/odyssey
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build the atlas and integrate additive filters
+        run: python scripts/publish-odyssey-biome-atlas.py
+      - name: Test all colour identities and unchanged source/card data
+        run: node scripts/test-odyssey-biome-atlas.cjs
+      - name: Commit only derived atlas and navigation changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/mtgtools/odyssey/data/biome-* public/mtgtools/odyssey/app.html public/mtgtools/odyssey/artwork-tools.js public/mtgtools/odyssey/landscape-library.html
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish all 32 colour-biome directions, existing art associations and search navigation'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
+          git rev-parse HEAD > biome-atlas-report/commit.txt
+      - name: Install browser testing
+        run: npm install --ignore-scripts --no-save playwright && npx playwright install --with-deps chromium
+      - name: Verify production navigation and empty states
+        run: node scripts/verify-live-odyssey-biomes.cjs
+      - name: Retain catalogue, sheet import tables, search brief and verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-biome-atlas
+          path: biome-atlas-report/
+          retention-days: 14
