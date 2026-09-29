@@ -1,35 +1,56 @@
-name: Odyssey launch source review
+name: Odyssey focused launch integration
 on:
   push:
     branches: [odyssey-focused-launch]
-    paths: ['.github/workflows/odyssey-launch-source.yml']
+    paths:
+      - '.github/workflows/odyssey-launch-source.yml'
+      - 'scripts/focus-odyssey-launch.py'
+      - 'public/mtgtools/Odyssey/scry/focused-launch.*'
+      - 'tests/odyssey-focused-launch.py'
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: focused-launch-integration
+  cancel-in-progress: true
 jobs:
-  source:
+  integrate:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - name: Package current sources and approved logo
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import zipfile
-          roots=['public/mtgtools/Odyssey/scry','public/mtgtools/odyssey','scripts','tests','src','.github/workflows']
-          with zipfile.ZipFile('launch-source.zip','w',zipfile.ZIP_DEFLATED) as z:
-              for r in roots:
-                  for p in Path(r).rglob('*'):
-                      if not p.is_file():continue
-                      source=p.suffix in {'.js','.json','.cjs','.mjs','.html','.css','.py','.md','.yml','.ts'} and p.stat().st_size<10000000
-                      logo='/assets/brand/' in str(p)
-                      thumb=p.name.endswith('.thumb.webp') or '/assets/mana-pips/' in str(p)
-                      if source or logo or thumb:z.write(p)
-              for name in ['package.json','wrangler.jsonc']:
-                  p=Path(name)
-                  if p.exists():z.write(p)
-          PY
-      - uses: actions/upload-artifact@v4
+      - uses: actions/setup-node@v4
         with:
-          name: odyssey-focused-launch-source
-          path: launch-source.zip
-          retention-days: 3
+          node-version: 22
+      - name: Install test dependencies
+        run: |
+          python -m pip install -q beautifulsoup4 playwright==1.57.0
+          python -m playwright install --with-deps chromium >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
+      - name: Prepare focused landing without editing canonical data
+        run: |
+          python scripts/focus-odyssey-launch.py
+          node --check public/mtgtools/Odyssey/scry/focused-launch.js
+          node --check public/mtgtools/Odyssey/scry/exhibition.js
+          node scripts/build-odyssey-public-renderer.cjs --check
+          node tests/odyssey-exhibition.cjs
+          node --test tests/odyssey-placement.test.cjs
+      - name: Verify current data, native cards and actual delivered artwork
+        run: |
+          python -m http.server 8765 --directory public >/tmp/launch-http.log 2>&1 &
+          python -u tests/odyssey-focused-launch.py
+      - name: Save real browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: odyssey-focused-launch-review
+          path: test-results/odyssey-focused-launch/
+          if-no-files-found: ignore
+      - name: Commit verified migration to the feature branch only
+        run: |
+          test "$(git ls-remote origin refs/heads/odyssey-focused-launch | cut -f1)" = "${{ github.sha }}"
+          git config user.name 'Odyssey launch integration'
+          git config user.email 'actions@users.noreply.github.com'
+          git add public/mtgtools/Odyssey/scry/index.html public/mtgtools/Odyssey/scry/art.html public/mtgtools/Odyssey/scry/launch.css public/mtgtools/Odyssey/scry/exhibition.js public/mtgtools/Odyssey/scry/social/index.html tests/odyssey-exhibition-browser.py
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish a focused four-section Odyssey launch with native hero card'
+            git push origin HEAD:odyssey-focused-launch
+          fi
