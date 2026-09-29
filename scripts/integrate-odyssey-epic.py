@@ -33,4 +33,15 @@ p.write_text(s)
 replace('tests/odyssey-epic-browser.py',"assert await slide.locator('.spotlight-oracle').inner_text()==info['definition'] or info['id']=='relics'","assert ' '.join((await slide.locator('.spotlight-oracle').inner_text()).split())==' '.join(info['definition'].split()) or info['id']=='relics'")
 replace('public/mtgtools/Odyssey/scry/EPIC_REVISION.md','1. Manifest Fate — John Robert Cozens, **An Italian Coast Scene**.','1. Manifest Fate — Josephus Augustus Knip, **The Gulf of Naples with the Island of Ischia in the Distance**.')
 replace('public/mtgtools/Odyssey/scry/EPIC_REVISION.md','6. Homecoming — Josephus Augustus Knip, **The Gulf of Naples with the Island of Ischia in the Distance**.','6. Homecoming — John ‘Warwick’ Smith, **An Italian Coast Scene**.')
+# IntersectionObserver can complete a batch during Playwright's click/scroll.
+# Tolerate only a proved increase in loaded cards, never a stuck or blocked button.
+old="   while await page.locator('#loadMore').is_visible():await page.locator('#loadMore').click();await page.wait_for_timeout(80)"
+new="""   for attempt in range(20):
+    before=await page.locator('#cardGrid odyssey-studio-card').count()
+    if before==309:break
+    try:await page.locator('#loadMore').click(timeout=2500)
+    except Exception:
+     assert await page.locator('#cardGrid odyssey-studio-card').count()>before,'Neither manual nor automatic loading progressed'
+    await page.wait_for_timeout(120)"""
+for name in ['tests/odyssey-focused-launch.py','tests/odyssey-epic-browser.py']:replace(name,old,new)
 print('Integrated genuine fragment, working definitions, eight landscapes, native tilt and inset Leslie artwork.')
