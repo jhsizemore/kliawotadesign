@@ -1,7 +1,7 @@
 /* Additive landscape catalogue. Never changes cards, coverage, assignments or saved crops. */
 (function(root){
 'use strict';
-const VERSION='landscapes-20260929-v1';
+const VERSION='landscapes-20260929-v2';
 const KEYS=['id','tags','title','artist','date','period','medium','institution','objectId','rights','source','credit','matchType','heroScore','candidateCards','cropNotes','status','imageUrl','imageWidth','imageHeight','imageChecked'];
 const sourceKey=x=>String(x||'').replace('http://','https://').replace('/en/art/','/art/').replace(/\/$/,'');
 function merge(dataset, payload=root.ODYSSEY_LANDSCAPE_IMPORT){
@@ -49,7 +49,7 @@ function mount(){
  actions.insertBefore(button,actions.firstChild);
  const chooser=document.createElement('select');chooser.id='landscapeCollectionPicker';chooser.className='dataset-picker';chooser.setAttribute('aria-label','Browse landscape collection');
  const option=(label,value)=>{const el=document.createElement('option');el.textContent=label;el.value=value;chooser.appendChild(el)};
- option('Landscape collections…','');option('All new landscapes','import20260929');
+ option('Landscape collections…','');option('All new landscapes','import20260929');option('Round 2 — latest 37','landscaperound2');
  for(const group of payload.collections||[])option(group.label+' ('+group.count+')',group.tag);
  for(const [label,tag] of [['Legendary: Olympus','localeolympus'],['Legendary: Ithaca','localeithaca'],['Legendary: Scheria','localescheria'],['Legendary: Aeaea','localeaeaea'],['Legendary: Underworld approaches','localeunderworld'],['Legendary: Aeolia','localeaeolia']])option(label,tag);
  chooser.onchange=()=>{if(chooser.value)open(chooser.value)};button.after(chooser);
@@ -68,7 +68,7 @@ function mount(){
  };
  if(grid)new MutationObserver(decorate).observe(grid,{childList:true});
  if(overlay){const head=overlay.querySelector('.art-options-head');if(head){const n=document.createElement('div');n.className='landscape-note';n.textContent='Landscape imports retain their real-world source titles. Research previews are not final card selections; rights and print-crop checks remain visible on each record.';head.after(n);}}
- if(new URLSearchParams(location.search).get('library')==='landscapes')setTimeout(()=>open(),250);
+ if(new URLSearchParams(location.search).get('library')==='landscapes')setTimeout(()=>open(new URLSearchParams(location.search).get('round')==='2'?'landscaperound2':'import20260929'),250);
 }
 registerWithSheetSync();
 if(root.ODYSSEY_DATA)root.ODYSSEY_DATA=merge(root.ODYSSEY_DATA);

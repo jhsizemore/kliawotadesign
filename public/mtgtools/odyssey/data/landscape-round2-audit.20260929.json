@@ -1,0 +1,86 @@
+{
+  "summary": {
+    "round": 2,
+    "newRecords": 37,
+    "previewImages": 37,
+    "firstNewId": "ART-837",
+    "lastNewId": "ART-873",
+    "baselineLibrary": 836,
+    "totalLibrary": 873,
+    "existingArtworkChanged": 0,
+    "cardAssignmentsChanged": 0,
+    "excludedAfterVisualReview": 8,
+    "unresolvedExistingImages": [
+      "ART-726",
+      "ART-728",
+      "ART-729"
+    ],
+    "collections": {
+      "Lear — Southern Calabria": 1,
+      "Lear — original museum landscapes": 2,
+      "Stackelberg — Greek landscapes": 23,
+      "Wordsworth — Greek landscapes": 11
+    }
+  },
+  "excluded": [
+    {
+      "reviewId": "R2-014",
+      "reason": "Temple dominates rather than landscape",
+      "source": "https://eng.travelogues.gr/item.php?view=50297"
+    },
+    {
+      "reviewId": "R2-021",
+      "reason": "Temple columns dominate rather than landscape",
+      "source": "https://eng.travelogues.gr/item.php?view=50305"
+    },
+    {
+      "reviewId": "R2-025",
+      "reason": "Built tombs dominate the immediate foreground",
+      "source": "https://eng.travelogues.gr/item.php?view=50311"
+    },
+    {
+      "reviewId": "R2-035",
+      "reason": "Roman aqueduct dominates; not a natural landscape",
+      "source": "https://eng.travelogues.gr/item.php?view=47737"
+    },
+    {
+      "reviewId": "R2-039",
+      "reason": "Later village dominates; printed prose intrudes",
+      "source": "https://eng.travelogues.gr/item.php?view=47770"
+    },
+    {
+      "reviewId": "R2-041",
+      "reason": "Temple study rather than landscape",
+      "source": "https://eng.travelogues.gr/item.php?view=47806"
+    },
+    {
+      "reviewId": "R2-042",
+      "reason": "Christian monastery dominates foreground",
+      "source": "https://eng.travelogues.gr/item.php?view=47845"
+    },
+    {
+      "reviewId": "R2-047",
+      "reason": "Sculpted relief, not a landscape",
+      "source": "https://eng.travelogues.gr/item.php?view=47860"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "ART-728",
+      "source": "https://iiif.lib.harvard.edu/manifests/ids:28324351",
+      "error": "429 Client Error: Too Many Requests for url: https://ids.lib.harvard.edu/ids/iiif/28324351/info.json"
+    },
+    {
+      "id": "ART-729",
+      "source": "https://iiif.lib.harvard.edu/manifests/ids:28324352",
+      "error": "429 Client Error: Too Many Requests for url: https://ids.lib.harvard.edu/ids/iiif/28324352/info.json"
+    },
+    {
+      "id": "ART-726",
+      "source": "https://emuseum.toledomuseum.org/objects/49104/canea-crete",
+      "error": "403 Client Error: Forbidden for url: https://emuseum.toledomuseum.org/objects/49104/canea-crete"
+    }
+  ],
+  "review": "All four contact sheets visually inspected. Research import only; not final card-art approval.",
+  "acquisitionRun": 36541143939
+}
