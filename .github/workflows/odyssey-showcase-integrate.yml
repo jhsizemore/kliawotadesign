@@ -26,18 +26,11 @@ jobs:
           node-version: 22
       - name: Install browser tools
         run: |
-          python -m pip install -q beautifulsoup4 playwright==1.57.0
+          python -m pip install -q beautifulsoup4 pillow playwright==1.57.0
           python -m playwright install --with-deps chromium >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
       - name: Integrate with current source and regenerate native renderer
         run: |
           python scripts/prepare-odyssey-showcase.py
-          python - <<'PY'
-          from pathlib import Path
-          p=Path('tests/odyssey-showcase-browser.py');s=p.read_text()
-          old="    assert await slide.locator('.mechanic-bg img').evaluate('i=>i.naturalWidth>=1900')"
-          new="    assert await page.evaluate('(id)=>{const a=OdysseyExhibition.catalogue.arts.get(id),j=OdysseyJourneyAssets.assets[id];return (j?.full.width||a.width)>=1900}',info['art'])\n    assert await slide.locator('.mechanic-bg img').evaluate('i=>i.complete&&i.naturalWidth>0')"
-          if old in s:s=s.replace(old,new);p.write_text(s)
-          PY
           node scripts/build-odyssey-public-renderer.cjs
           node scripts/build-odyssey-public-renderer.cjs --check
           node --check public/mtgtools/Odyssey/scry/focused-launch.js
@@ -49,6 +42,7 @@ jobs:
           python -u tests/odyssey-showcase-geometry.py
           python -u tests/odyssey-showcase-browser.py
           python -u tests/odyssey-focused-launch.py
+          python -u tests/odyssey-exhibition-browser.py
       - name: Save browser evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -57,14 +51,15 @@ jobs:
           path: |
             test-results/odyssey-showcase/
             test-results/odyssey-focused-launch/
+            test-results/odyssey-exhibition/
           if-no-files-found: ignore
       - name: Commit verified integration on the feature branch only
         run: |
           test "$(git ls-remote origin refs/heads/odyssey-rules-and-contact | cut -f1)" = "${{ github.sha }}"
           git config user.name 'Odyssey showcase integration'
           git config user.email 'actions@users.noreply.github.com'
-          git add scripts/build-odyssey-public-renderer.cjs public/mtgtools/odyssey/public-renderer.generated.js public/mtgtools/Odyssey/scry/focused-launch.js public/mtgtools/Odyssey/scry/index.html public/mtgtools/Odyssey/scry/art.html public/mtgtools/Odyssey/scry/social/index.html src/odyssey-worker.js tests/odyssey-exhibition-browser.py tests/odyssey-showcase-browser.py
+          git add scripts/build-odyssey-public-renderer.cjs public/mtgtools/odyssey/public-renderer.generated.js public/mtgtools/odyssey/frame-system.css public/mtgtools/Odyssey/scry/focused-launch.js public/mtgtools/Odyssey/scry/index.html public/mtgtools/Odyssey/scry/art.html public/mtgtools/Odyssey/scry/social/index.html src/odyssey-worker.js tests/odyssey-exhibition-browser.py tests/odyssey-showcase-browser.py
           if ! git diff --cached --quiet; then
-            git commit -m 'Integrate native full-art hero, source rules and optional direct contact'
+            git commit -m 'Keep the native full-art hero visible and verify all showcase features'
             git push origin HEAD:odyssey-rules-and-contact
           fi
