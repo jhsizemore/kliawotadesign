@@ -12,7 +12,8 @@ async def capture(page,name):
  await page.wait_for_function('document.querySelector("#heroCard odyssey-studio-card")?.dataset.artPaint==="ready"',timeout=45000)
  rect=await page.locator('#heroCard').bounding_box()
  assert rect and rect['width']>100
- image=Image.open(io.BytesIO(await page.screenshot(path=str(OUT/(name+'.png')))))).convert('RGB')
+ pixels=await page.screenshot(path=str(OUT/(name+'.png')))
+ image=Image.open(io.BytesIO(pixels)).convert('RGB')
  x,y,w,h=(rect[k] for k in ['x','y','width','height'])
  box=(round(x+w*.3),round(y+h*.25),round(x+w*.7),round(y+h*.5))
  assert box[0]>=0 and box[1]>=0 and box[2]<=image.width and box[3]<=image.height,'Art sample is outside the captured viewport'
