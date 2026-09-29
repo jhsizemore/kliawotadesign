@@ -10,41 +10,45 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
-      - name: Check published asset markers without attempting a deployment
+        with:
+          ref: 5de500ce5bf3407d9bc3bb9d8b1a9fe0eb16009b
+      - name: Wait for the merged colour fix to be published
         run: |
           mkdir -p test-results/odyssey-full-art-basics
           python - <<'PY'
-          import urllib.request,hashlib,json,os
+          import urllib.request,hashlib,json,time
           from pathlib import Path
           checks={
-            '/mtgtools/odyssey/':'20260929-full-art-basics1',
-            '/mtgtools/odyssey/frame-system.js':'function decorateBasicLand(',
-            '/mtgtools/odyssey/frame-system.css':'FF-style full-art basics',
-            '/mtgtools/odyssey/public-renderer.generated.js':'function decorateBasicLand('
+            '/mtgtools/odyssey/':'frame-system.css?v=20260930-full-art-mana-colour1',
+            '/mtgtools/odyssey/frame-system.css':"Preserve the approved mana artwork's original W/U/B/R/G colour.",
+            '/mtgtools/odyssey/public-renderer.generated.js':"Preserve the approved mana artwork's original W/U/B/R/G colour."
           }
           results={}
-          for path,marker in checks.items():
-            try:
-              url='https://kliawota.design'+path+'?verify_full_art='+os.environ['GITHUB_SHA'][:12]
-              req=urllib.request.Request(url,headers={'Cache-Control':'no-cache','User-Agent':'Odyssey-ReadOnly-Verification/1.0'})
-              with urllib.request.urlopen(req,timeout=30) as response:
-                data=response.read()
-                results[path]={'status':response.status,'marker_present':marker in data.decode('utf-8'),'sha256':hashlib.sha256(data).hexdigest()}
-            except Exception as error:
-              results[path]={'error':str(error),'marker_present':False}
+          for attempt in range(16):
+            for path,marker in checks.items():
+              try:
+                req=urllib.request.Request('https://kliawota.design'+path+'?verify_mana_colour='+str(time.time_ns()),headers={'Cache-Control':'no-cache','User-Agent':'Odyssey-ReadOnly-Verification/1.0'})
+                with urllib.request.urlopen(req,timeout=20) as response:
+                  data=response.read()
+                  results[path]={'status':response.status,'marker_present':marker in data.decode('utf-8'),'sha256':hashlib.sha256(data).hexdigest()}
+              except Exception as error:
+                results[path]={'error':str(error),'marker_present':False}
+            print(json.dumps({'attempt':attempt+1,'assets':results}),flush=True)
+            if all(r['marker_present'] for r in results.values()): break
+            time.sleep(15)
           Path('test-results/odyssey-full-art-basics/live-assets.json').write_text(json.dumps(results,indent=2))
-          print(json.dumps(results,indent=2),flush=True)
-          assert all(r['marker_present'] for r in results.values()),'The live origin does not yet serve all merged full-art frame assets'
+          assert all(r['marker_present'] for r in results.values()),'Live mana-colour assets have not arrived'
           PY
-      - name: Verify actual live Studio and public renderer with isolated local edits
+      - name: Verify actual live colour, print and public renderer in an isolated browser
         env:
           ODYSSEY_BASE_URL: https://kliawota.design
         run: |
+          set -o pipefail
           python -m pip install -q playwright==1.57.0
           python -m playwright install --with-deps chromium >/tmp/browser-install.log 2>&1 || { tail -50 /tmp/browser-install.log; exit 1; }
           python -u tests/odyssey-full-art-basics-browser.py 2>&1 | tee test-results/odyssey-full-art-basics/browser.log
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: odyssey-full-art-live-proof
+          name: odyssey-coloured-mana-live-proof
           path: test-results/odyssey-full-art-basics/
