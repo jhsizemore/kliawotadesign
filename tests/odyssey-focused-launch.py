@@ -31,8 +31,9 @@ async def main():
    assert len(alloc)==11 and len({a['artId'] for a in alloc})==11
    assert next(a['artId'] for a in alloc if a['slot']=='hero')=='ART-239'
    assert next(a['artId'] for a in alloc if a['slot']=='participation')=='ART-236'
-   assert await page.evaluate("OdysseyExhibition.catalogue.cards.find(c=>c.id==='ODY-303').artId") == next(a['artId'] for a in alloc if a['slot']=='spoiler')
-   assert 'Mercury' in await page.locator('#spoilerCredit').inner_text()
+   assert next(a['artId'] for a in alloc if a['slot']=='spoiler')=='EXH-AUTOLYCUS'
+   assert 'Charles Robert Leslie' in await page.locator('#spoilerCredit').inner_text()
+   assert 'The Winter’s Tale' in await page.locator('#spoilerCredit').inner_text()
    assert 'Herbert James Draper' in await page.locator('#developmentCredit').inner_text()
    for sel in ['header .brand-logo','footer .brand-logo']:
     style=await page.locator(sel).evaluate('(e)=>({background:getComputedStyle(e).backgroundColor,border:getComputedStyle(e).borderTopWidth,src:e.querySelector("img").getAttribute("src"),filter:getComputedStyle(e.querySelector("img")).filter})')
@@ -77,7 +78,13 @@ async def main():
    # This public page must still apply the published native Studio framing.
    assert await page.evaluate('''()=>{const R=OdysseyStudioRenderer,P=OdysseyPlacement,m=R.engine.model(61),r=P.capture(m,R.engine.imageForArt(m));r.zoom=1.6;r.focusX=12;r.focusY=-15;const s=P.empty();s.records[P.key(r)]=r;R.setPlacements(s);const ok=document.querySelector('#heroCard odyssey-studio-card').model.zoom===1.6;R.setPlacements(P.empty());return ok;}''')
    await page.get_by_role('button',name='Open spoiler ↗',exact=True).click();await page.locator('#clearFilters').click()
-   while await page.locator('#loadMore').is_visible():await page.locator('#loadMore').click();await page.wait_for_timeout(80)
+   for attempt in range(20):
+    before=await page.locator('#cardGrid odyssey-studio-card').count()
+    if before==309:break
+    await page.locator('#loadMore').focus()
+    await page.keyboard.press('Enter')
+    await page.wait_for_function('(n)=>document.querySelectorAll("#cardGrid odyssey-studio-card").length>n',arg=before,timeout=15000)
+    await page.wait_for_timeout(150)
    assert await page.locator('#cardGrid odyssey-studio-card').count()==309
    bad=await page.locator('#cardGrid odyssey-studio-card').evaluate_all('(cs)=>cs.filter(c=>c.dataset.renderError).map(c=>c.getAttribute("number"))');assert not bad,bad
    await page.goto(BASE+'art.html',wait_until='domcontentloaded');await page.wait_for_function('window.OdysseyArtJourney',timeout=45000)

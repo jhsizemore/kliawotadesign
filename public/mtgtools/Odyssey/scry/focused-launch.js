@@ -27,9 +27,12 @@ FEATURES.forEach(feature=>Object.assign(feature,window.OdysseySetShowcase.featur
 C.mechanics=FEATURES;
 function mount(){
  const api=window.OdysseyExhibition,cat=api.catalogue,$=id=>document.getElementById(id);
+ window.OdysseySetShowcase.register(cat);
  const allocations=[];
  function artwork(id){
   const a=cat.arts.get(id);if(!a||!a.image||!a.source||a.blocked)throw Error('Source-linked launch artwork unavailable: '+id);
+  const editorial=window.OdysseyEditorialAssets?.[id];
+  if(editorial&&editorial.title===a.title&&editorial.source===a.source)return editorial;
   const j=window.OdysseyJourneyAssets?.assets?.[id];
   if(j&&j.title===a.title&&j.catalogueSource===a.source)return {...a,image:j.full.url,display:j.display,thumb:j.thumb.url,width:j.full.width,height:j.full.height};
   return a;
@@ -60,7 +63,7 @@ function mount(){
  window.OdysseyMechanicCarousel=OdysseyCarousels.mount($('mechanicChapters'),{label:'Set highlights',titles:FEATURES.map(f=>f.tab)});
  const invitation=artwork(PLAN.participation.artId);place($('developmentImage'),invitation,'participation',PLAN.participation.position);$('developmentCredit').innerHTML=credit(invitation,'Cropped background composition; the complete painting is linked below.');
  const autolycus=cat.cards.find(c=>c.id===PLAN.spoiler.cardId);if(!autolycus?.artId)throw Error('Autolycus artwork assignment is missing.');
- const thiefArt=artwork(autolycus.artId);place($('spoilerImage'),thiefArt,'spoiler',PLAN.spoiler.position);$('spoilerCredit').innerHTML=credit(thiefArt,'Artwork used on '+autolycus.displayName+'; the historical work depicts Mercury.');
+ const thiefArt=artwork('EXH-AUTOLYCUS');place($('spoilerImage'),thiefArt,'spoiler',PLAN.spoiler.position);$('spoilerCredit').innerHTML=credit(thiefArt,thiefArt.context);
  if(new Set(allocations.map(x=>x.artId)).size!==allocations.length)throw Error('A launch background has been repeated.');
  document.querySelectorAll('odyssey-studio-card').forEach(el=>el.fit?.());
  window.OdysseyFocusedLaunch={plan:PLAN,features:FEATURES,allocations,heroCard:headline.id};document.dispatchEvent(new CustomEvent('odyssey:focused-launch-ready'));

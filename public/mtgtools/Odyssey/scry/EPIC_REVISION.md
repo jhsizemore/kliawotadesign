@@ -34,12 +34,12 @@ This reproduction is 705 × 537 pixels, displayed as a contained inset rather th
 
 ## Landscapes
 
-1. Manifest Fate — John Robert Cozens, **An Italian Coast Scene**.
+1. Manifest Fate — Josephus Augustus Knip, **The Gulf of Naples with the Island of Ischia in the Distance**.
 2. Survival & Ordeals — Winslow Homer, **Northeaster**.
 3. Living Sagas — Adrien Manglard, **A Shipwreck in Stormy Seas**.
 4. Gods & Devotion — Hubert Robert, **The Cascades at Tivoli with the Temple of Vesta**.
 5. Omens — John Robert Cozens, **Monte Circeo at Sunset**.
-6. Homecoming — Josephus Augustus Knip, **The Gulf of Naples with the Island of Ischia in the Distance**.
+6. Homecoming — John ‘Warwick’ Smith, **An Italian Coast Scene**.
 7. Troy to Ithaca — Claude Lorrain, **Odysseus Returns Chryseis to Her Father**, a harbour composition based on the *Iliad*, not the fall of Troy.
 8. Divine Relics — John Martin, **Ruins of an Ancient City**, an imagined architectural landscape.
 

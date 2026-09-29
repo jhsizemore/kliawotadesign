@@ -41,7 +41,7 @@ async def main():
     slide=page.locator('#mechanicChapters .mechanic:not([inert])');assert await slide.count()==1
     info=await page.evaluate('i=>{const f=OdysseyFocusedLaunch.features[i],q=OdysseySetShowcase.excerpt(OdysseyExhibition.catalogue,f.id),a=OdysseyEditorialAssets[f.artId];return{id:f.id,definition:q.definition,kind:q.kind,sourceCard:q.card.number,sourceExcerpt:q.text,sourceMatches:q.card.rules.includes(q.text),artId:a.id,source:a.source,landscape:a.landscape,width:a.width}}',i)
     assert info['sourceMatches'] and info['landscape'] and info['width']>=1900
-    assert await slide.locator('.spotlight-oracle').inner_text()==info['definition'] or info['id']=='relics'
+    assert ' '.join((await slide.locator('.spotlight-oracle').inner_text()).split())==' '.join(info['definition'].split()) or info['id']=='relics'
     assert 'may change during development' in await slide.locator('.spotlight-development').inner_text()
     if i==0:
      text=await slide.locator('.spotlight-oracle').inner_text();assert 'top two cards' in text and '2/2 creature' in text and 'exile the other' in text
@@ -66,7 +66,13 @@ async def main():
     if width in [390,768]:
      paints.append(await fullart(page,'hero-tilted-'+str(width)));await shot(page,'.epic-introduction','fragment-'+str(width)+'.png');await shot(page,'#preview','inset-'+str(width)+'.png')
    await page.get_by_role('button',name='Open spoiler ↗',exact=True).click();await page.locator('#clearFilters').click()
-   while await page.locator('#loadMore').is_visible():await page.locator('#loadMore').click();await page.wait_for_timeout(80)
+   for attempt in range(20):
+    before=await page.locator('#cardGrid odyssey-studio-card').count()
+    if before==309:break
+    await page.locator('#loadMore').focus()
+    await page.keyboard.press('Enter')
+    await page.wait_for_function('(n)=>document.querySelectorAll("#cardGrid odyssey-studio-card").length>n',arg=before,timeout=15000)
+    await page.wait_for_timeout(150)
    assert await page.locator('#cardGrid odyssey-studio-card').count()==309
    assert not errors,errors
    result={'status':'passed','site':BASE,'nativeHeroTiltPaint':paints,'genuineArtifact':'The Met 09.182.50, Odyssey Book 20','noExcavatedFlagshipClaim':True,'workingRules':highlights,'autolycus':'Charles Robert Leslie, ca. 1836; Shakespeare namesake identified','artworkInset':True,'canonicalCardsUnchanged':309,'widths':[320,390,768,1440],'noGeneratedArtDeployed':True,'pageErrors':errors}
