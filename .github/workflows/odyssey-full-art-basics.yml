@@ -1,0 +1,53 @@
+name: Odyssey full-art basic lands
+on:
+  pull_request:
+    paths:
+      - 'public/mtgtools/odyssey/**'
+      - 'scripts/build-odyssey-public-renderer.cjs'
+      - 'tests/odyssey-full-art-basics*'
+      - '.github/workflows/odyssey-full-art-basics.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'public/mtgtools/odyssey/**'
+      - 'scripts/build-odyssey-public-renderer.cjs'
+      - 'tests/odyssey-full-art-basics*'
+      - '.github/workflows/odyssey-full-art-basics.yml'
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: 'Optional deployed origin to verify; empty verifies local source'
+        required: false
+        default: ''
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --ignore-scripts --no-package-lock --no-audit --no-fund
+      - name: Source parity and basic-land regression tests
+        run: |
+          node scripts/build-odyssey-public-renderer.cjs --check
+          node --test tests/odyssey-full-art-basics.test.cjs
+      - name: Browser dependency
+        run: |
+          python -m pip install -q playwright==1.57.0
+          python -m playwright install --with-deps chromium > /tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
+      - name: Desktop, print, mobile, persistence and public-renderer checks
+        env:
+          ODYSSEY_BASE_URL: ${{ inputs.base_url || 'http://127.0.0.1:8765' }}
+        run: |
+          python -m http.server 8765 --directory public >/tmp/odyssey-basics-http.log 2>&1 &
+          python -u tests/odyssey-full-art-basics-browser.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-full-art-basics-proof
+          path: test-results/odyssey-full-art-basics/
+          if-no-files-found: ignore
