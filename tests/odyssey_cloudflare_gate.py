@@ -38,7 +38,7 @@ def wait(target,repo,fetch,timeout=900,sleep=time.sleep,clock=time.monotonic,out
 
 
 def main():
-    repo=os.environ['GITHUB_REPOSITORY'];target=os.environ['GITHUB_SHA'];token=os.environ.get('GH_TOKEN')
+    repo=os.environ['GITHUB_REPOSITORY'];target=os.environ.get('ODYSSEY_TARGET_SHA') or os.environ['GITHUB_SHA'];token=os.environ.get('GH_TOKEN')
     def fetch(path):
         headers={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'Odyssey-deployment-gate'}
         if token:headers['Authorization']='Bearer '+token
