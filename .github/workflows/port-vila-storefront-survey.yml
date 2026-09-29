@@ -1,10 +1,11 @@
-name: Port Vila storefront verification
+name: Port Vila storefront candidate verification
 on:
   push:
     branches: [port-vila-storefront-survey-2026-09-29]
     paths:
       - '.github/workflows/port-vila-storefront-survey.yml'
       - 'scripts/*port-vila-storefronts*'
+      - 'scripts/render-port-vila-storefront-proof.mjs'
       - 'tests/port-vila-storefronts.test.mjs'
       - 'source/port-vila/storefront-observations-2026-09-29.json'
   workflow_dispatch:
@@ -12,22 +13,18 @@ permissions:
   contents: write
 concurrency:
   group: port-vila-storefront-verification
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
-  verify:
+  verify-candidate:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    env:
-      PW_TEST_SCREENSHOT_NO_FONTS_READY: '1'
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install isolated test dependencies
-        run: |
-          npm install --no-save --package-lock=false three@0.180.0 playwright@1.55.1
-          npx playwright install --with-deps chromium
+      - name: Install geometry-test dependencies
+        run: npm install --no-save --package-lock=false three@0.180.0 jsdom@26.1.0
       - name: Build and run geometry and retained stability tests
         shell: bash
         run: |
@@ -39,12 +36,11 @@ jobs:
           python3 scripts/port-vila-stability-build.py
           node --test tests/port-vila-stability.test.mjs | tee evidence/storefront-check/stability-tests.txt
           git diff --exit-code -- public/portvilasandbox/data/world.json public/portvilasandbox/data/north-v1 public/portvilasandbox/assets/index-iSZdlO1J.js
-      - name: Inspect actual desktop and mobile-viewport renders
-        shell: bash
+      - name: Render isolated facade geometry for review
         run: |
-          python3 -m http.server 8765 --directory public >/tmp/port-vila-http.log 2>&1 &
-          node scripts/check-port-vila-storefronts.mjs
-      - name: Commit tested release only to the isolated branch
+          node scripts/render-port-vila-storefront-proof.mjs
+          printf '%s\n' 'Full-city GPU browser verification has not completed. These are isolated geometry previews, not live Sandbox screenshots. Keep this candidate in draft review; do not infer a production visual-test pass.' > evidence/storefront-check/verification-limit.txt
+      - name: Commit runnable candidate to isolated branch only
         if: success() && github.ref == 'refs/heads/port-vila-storefront-survey-2026-09-29'
         shell: bash
         run: |
@@ -52,11 +48,11 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add public/portvilasandbox/BUILD.json public/portvilasandbox/index.html
           git add public/portvilasandbox/assets/index-storefront-1.js public/portvilasandbox/assets/research-storefront-1.js public/portvilasandbox/assets/research-data-storefront-1.js public/portvilasandbox/assets/vision-storefront-1.js
-          git diff --cached --quiet || git commit -m 'Build verified partial Fung Kuei and Aircalin photo-reference pass'
+          git diff --cached --quiet || git commit -m 'Build partial facade candidate for visual review; not a verified production release'
           git push origin HEAD:port-vila-storefront-survey-2026-09-29
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: port-vila-storefront-verification
+          name: port-vila-storefront-candidate-proof
           path: evidence/storefront-check/
           retention-days: 7
