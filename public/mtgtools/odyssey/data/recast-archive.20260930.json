@@ -1,0 +1,2396 @@
+{
+  "schema": "odyssey-recast-archive/v1",
+  "datasetVersion": "2026-09-29.1",
+  "createdAt": "2026-09-30",
+  "source": {
+    "studio": "https://kliawota.design/mtgtools/odyssey/",
+    "sheetId": "1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE",
+    "sheetName": "Card File v1.0 Candidate",
+    "sheetIdNumeric": 1177419692,
+    "productionManifestExportedAt": "2026-09-29T20:53:12.943Z"
+  },
+  "policy": "Complete prior card design retained before active candidate is reduced to the structural slot.",
+  "cards": [
+    {
+      "number": 14,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing filter, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-014",
+        "number": 14,
+        "name": "Poseidon's Storm",
+        "displayName": "Poseidon's Storm",
+        "underlyingName": "",
+        "mana": "{2}{U}",
+        "mv": 3,
+        "color": "U",
+        "frame": "U",
+        "type": "Instant",
+        "pt": "",
+        "rarity": "C",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Stun; cantrip",
+        "rules": "Tap target creature. Put a stun counter on it. Draw a card.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "UR/WU",
+        "story": "Book V / Poseidon sees Odysseus at sea after he leaves Calypso and raises the storm that halts his homeward progress.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-044",
+        "credit": "Art: Theodoor van Thulden · Rijksmuseum",
+        "source": "https://www.rijksmuseum.nl/en/collection/object/Neptunus%2Bwakkert%2Been%2Bstorm%2Baan--e4459d7c044e1a8484d712bd2daad144",
+        "imageUrl": "",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "story.book-v-storm",
+          "story.ogygia",
+          "cast.poseidon",
+          "group.gods"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 18,
+        "changeStatus": "carried-from-analysis-candidate-v1 · flavor-redesign-v1 · art-p2-direct-v1 · studio-notes-pass-20260921",
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Book V / Poseidon raises a storm after Odysseus leaves Ogygia; the sea holds his ship fast.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Book V / Poseidon sees Odysseus at sea after he leaves Calypso and raises the storm that halts his homeward progress.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "The stun counter and cantrip make Poseidon’s storm halt progress without a separate Foretell setup.",
+        "artPath": "HOMER CUE",
+        "alternateArtIds": [
+          "ART-194",
+          "ART-061"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {
+        "zoom": 3.21,
+        "focusX": -3.6,
+        "focusY": -13.4,
+        "displayName": "Poseidon's Storm",
+        "rules": "Tap target creature. Put a stun counter on it. Draw a card."
+      },
+      "studioEffective": {
+        "id": "ODY-014",
+        "number": 14,
+        "name": "Poseidon's Storm",
+        "displayName": "Poseidon's Storm",
+        "underlyingName": "",
+        "mana": "{2}{U}",
+        "mv": 3,
+        "color": "U",
+        "frame": "U",
+        "type": "Instant",
+        "pt": "",
+        "rarity": "C",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Stun; cantrip",
+        "rules": "Tap target creature. Put a stun counter on it. Draw a card.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "UR/WU",
+        "story": "Book V / Poseidon sees Odysseus at sea after he leaves Calypso and raises the storm that halts his homeward progress.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-044",
+        "credit": "Art: Theodoor van Thulden · Rijksmuseum",
+        "source": "https://www.rijksmuseum.nl/en/collection/object/Neptunus%2Bwakkert%2Been%2Bstorm%2Baan--e4459d7c044e1a8484d712bd2daad144",
+        "imageUrl": "",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "story.book-v-storm",
+          "story.ogygia",
+          "cast.poseidon",
+          "group.gods"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 18,
+        "changeStatus": "carried-from-analysis-candidate-v1 · flavor-redesign-v1 · art-p2-direct-v1 · studio-notes-pass-20260921",
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Book V / Poseidon raises a storm after Odysseus leaves Ogygia; the sea holds his ship fast.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Book V / Poseidon sees Odysseus at sea after he leaves Calypso and raises the storm that halts his homeward progress.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "The stun counter and cantrip make Poseidon’s storm halt progress without a separate Foretell setup.",
+        "artPath": "HOMER CUE",
+        "alternateArtIds": [
+          "ART-194",
+          "ART-061"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "zoom": 3.21,
+        "focusX": -3.6,
+        "focusY": -13.4
+      },
+      "canonicalSheet": {
+        "row": 15,
+        "values": {
+          "#": {
+            "numberValue": 14
+          },
+          "Name": {
+            "stringValue": "Poseidon's Storm"
+          },
+          "Mana Cost": {
+            "stringValue": "{2}{U}"
+          },
+          "MV": {
+            "numberValue": 3
+          },
+          "Color": {
+            "stringValue": "U"
+          },
+          "Type": {
+            "stringValue": "Instant"
+          },
+          "P/T": {
+            "stringValue": "—"
+          },
+          "Rarity": {
+            "stringValue": "C"
+          },
+          "Origin": {
+            "stringValue": "New"
+          },
+          "Mechanics": {
+            "stringValue": "Stun; cantrip"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "Tap target creature. Put a stun counter on it. Draw a card."
+          },
+          "Archetypes": {
+            "stringValue": "UR/WU"
+          },
+          "Story / Book": {
+            "stringValue": "Book V / Poseidon sees Odysseus at sea after he leaves Calypso and raises the storm that halts his homeward progress."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "Poseidon's Storm"
+          },
+          "Underlying Oracle Name": null,
+          "Treatment": null,
+          "Primary Art ID": {
+            "stringValue": "ART-044"
+          },
+          "Art Credit": {
+            "stringValue": "Art: Theodoor van Thulden · Rijksmuseum"
+          },
+          "Art Source URL": {
+            "stringValue": "https://www.rijksmuseum.nl/en/collection/object/Neptunus%2Bwakkert%2Been%2Bstorm%2Baan--e4459d7c044e1a8484d712bd2daad144"
+          },
+          "Skeleton Class": {
+            "stringValue": "standard"
+          },
+          "Cycle IDs": {
+            "stringValue": "story.book-v-storm; story.ogygia; cast.poseidon; group.gods"
+          },
+          "Showcase Programs": null,
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 18
+          },
+          "Change Status": {
+            "stringValue": "carried-from-analysis-candidate-v1 · flavor-redesign-v1 · art-p2-direct-v1 · studio-notes-pass-20260921"
+          },
+          "Narrative Era": {
+            "stringValue": "Odyssey"
+          },
+          "Story Target": {
+            "stringValue": "Book V / Poseidon raises a storm after Odysseus leaves Ogygia; the sea holds his ship fast."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Odyssey Books I–XXIV"
+          },
+          "Art Review Required": {
+            "stringValue": "NO"
+          },
+          "Art Path": {
+            "stringValue": "HOMER CUE"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "ART-194, ART-061"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "Book V / Poseidon sees Odysseus at sea after he leaves Calypso and raises the storm that halts his homeward progress."
+          },
+          "Flavour Match /5": {
+            "numberValue": 5
+          },
+          "Flavour Rationale": {
+            "stringValue": "The stun counter and cantrip make Poseidon’s storm halt progress without a separate Foretell setup."
+          }
+        }
+      }
+    },
+    {
+      "number": 154,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing filter, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-154",
+        "number": 154,
+        "name": "Circe Warns of Scylla",
+        "displayName": "Circe Warns of Scylla",
+        "underlyingName": "Saw It Coming",
+        "mana": "{1}{U}{U}",
+        "mv": 3,
+        "color": "U",
+        "frame": "U",
+        "type": "Instant",
+        "pt": "",
+        "rarity": "U",
+        "origin": "RPR",
+        "originFull": "Reprint",
+        "mechanics": "Counterspell; scry",
+        "rules": "Counter target spell. Scry 1.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "UR/WU",
+        "story": "Book XII / Circe tells Odysseus in advance that Scylla cannot simply be fought like an ordinary enemy.",
+        "status": "KEEP",
+        "treatment": "GODZILLA",
+        "layout": "standard",
+        "primaryArt": "ART-004",
+        "credit": "Art: after John Flaxman, engr. James Parker · The Met",
+        "source": "https://www.metmuseum.org/art/collection/search/705224",
+        "imageUrl": "https://images.metmuseum.org/CRDImages/dp/original/DP104992.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "story.circe-aeaea",
+          "story.scylla-charybdis",
+          "cast.circe",
+          "group.monsters"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 4,
+        "changeStatus": "carried-from-analysis-candidate-v1 · flavor-redesign-v1 · art-sweep-v1 · art-p2-review-v2",
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Book XII / Circe tells Odysseus in advance that Scylla cannot simply be fought like an ordinary enemy.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Book XII / Circe tells Odysseus in advance that Scylla cannot simply be fought like an ordinary enemy.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "The warning is now scrying after the counterspell; the set no longer asks this card to support Foretell.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "ART-386",
+          "ART-309"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {
+        "artId": "",
+        "credit": "",
+        "source": "",
+        "zoom": 3.399563600545619,
+        "focusX": 19.05294319215105,
+        "focusY": 15.554392264757208,
+        "fit": "contain",
+        "displayName": "Circe Warns of Scylla",
+        "rules": "Counter target spell. Scry 1."
+      },
+      "studioEffective": {
+        "id": "ODY-154",
+        "number": 154,
+        "name": "Circe Warns of Scylla",
+        "displayName": "Circe Warns of Scylla",
+        "underlyingName": "Saw It Coming",
+        "mana": "{1}{U}{U}",
+        "mv": 3,
+        "color": "U",
+        "frame": "U",
+        "type": "Instant",
+        "pt": "",
+        "rarity": "U",
+        "origin": "RPR",
+        "originFull": "Reprint",
+        "mechanics": "Counterspell; scry",
+        "rules": "Counter target spell. Scry 1.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "UR/WU",
+        "story": "Book XII / Circe tells Odysseus in advance that Scylla cannot simply be fought like an ordinary enemy.",
+        "status": "KEEP",
+        "treatment": "GODZILLA",
+        "layout": "standard",
+        "primaryArt": "ART-004",
+        "credit": "",
+        "source": "",
+        "imageUrl": "https://images.metmuseum.org/CRDImages/dp/original/DP104992.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "story.circe-aeaea",
+          "story.scylla-charybdis",
+          "cast.circe",
+          "group.monsters"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 4,
+        "changeStatus": "carried-from-analysis-candidate-v1 · flavor-redesign-v1 · art-sweep-v1 · art-p2-review-v2",
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Book XII / Circe tells Odysseus in advance that Scylla cannot simply be fought like an ordinary enemy.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Book XII / Circe tells Odysseus in advance that Scylla cannot simply be fought like an ordinary enemy.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "The warning is now scrying after the counterspell; the set no longer asks this card to support Foretell.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "ART-386",
+          "ART-309"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "artId": "",
+        "zoom": 3.399563600545619,
+        "focusX": 19.05294319215105,
+        "focusY": 15.554392264757208,
+        "fit": "contain"
+      },
+      "canonicalSheet": {
+        "row": 155,
+        "values": {
+          "#": {
+            "numberValue": 154
+          },
+          "Name": {
+            "stringValue": "Circe Warns of Scylla"
+          },
+          "Mana Cost": {
+            "stringValue": "{1}{U}{U}"
+          },
+          "MV": {
+            "numberValue": 3
+          },
+          "Color": {
+            "stringValue": "U"
+          },
+          "Type": {
+            "stringValue": "Instant"
+          },
+          "P/T": {
+            "stringValue": "—"
+          },
+          "Rarity": {
+            "stringValue": "U"
+          },
+          "Origin": {
+            "stringValue": "Reprint"
+          },
+          "Mechanics": {
+            "stringValue": "Counterspell; scry"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "Counter target spell. Scry 1."
+          },
+          "Archetypes": {
+            "stringValue": "UR/WU"
+          },
+          "Story / Book": {
+            "stringValue": "Book XII / Circe tells Odysseus in advance that Scylla cannot simply be fought like an ordinary enemy."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "Circe Warns of Scylla"
+          },
+          "Underlying Oracle Name": {
+            "stringValue": "Saw It Coming"
+          },
+          "Treatment": {
+            "stringValue": "Godzilla-style renamed reprint"
+          },
+          "Primary Art ID": {
+            "stringValue": "ART-004"
+          },
+          "Art Credit": {
+            "stringValue": "Art: after John Flaxman, engr. James Parker · The Met"
+          },
+          "Art Source URL": {
+            "stringValue": "https://www.metmuseum.org/art/collection/search/705224"
+          },
+          "Skeleton Class": {
+            "stringValue": "standard"
+          },
+          "Cycle IDs": {
+            "stringValue": "story.circe-aeaea; story.scylla-charybdis; cast.circe; group.monsters"
+          },
+          "Showcase Programs": null,
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 4
+          },
+          "Change Status": {
+            "stringValue": "carried-from-analysis-candidate-v1 · flavor-redesign-v1 · art-sweep-v1 · art-p2-review-v2"
+          },
+          "Narrative Era": {
+            "stringValue": "Odyssey"
+          },
+          "Story Target": {
+            "stringValue": "Book XII / Circe tells Odysseus in advance that Scylla cannot simply be fought like an ordinary enemy."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Odyssey Books I–XXIV"
+          },
+          "Art Review Required": {
+            "stringValue": "NO"
+          },
+          "Art Path": {
+            "stringValue": "GENERIC OK"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "ART-386, ART-309"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "Book XII / Circe tells Odysseus in advance that Scylla cannot simply be fought like an ordinary enemy."
+          },
+          "Flavour Match /5": {
+            "numberValue": 5
+          },
+          "Flavour Rationale": {
+            "stringValue": "The warning is now scrying after the counterspell; the set no longer asks this card to support Foretell."
+          }
+        }
+      }
+    },
+    {
+      "number": 160,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing filter, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-160",
+        "number": 160,
+        "name": "Storm over Limestone",
+        "displayName": "Storm over Limestone",
+        "underlyingName": "",
+        "mana": "{4}{R}{R}",
+        "mv": 6,
+        "color": "R",
+        "frame": "R",
+        "type": "Enchantment",
+        "pt": "",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "ETB damage; can't block",
+        "rules": "When this enchantment enters, it deals 4 damage to target creature.\nAt the beginning of combat on your turn, up to one target creature can't block this turn.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "BR/RG/UR — removal / attacks",
+        "story": "Mediterranean natural world / sudden hard storms break over pale headlands and make exposed country dangerous in minutes.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-060",
+        "credit": "Art: Jean Pillement · The Met",
+        "source": "https://www.metmuseum.org/art/collection/search/437292",
+        "imageUrl": "",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "flavor.mediterranean-natural-world",
+          "flavor.homeric-similes"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 28,
+        "changeStatus": "candidate2-world-wave-v1 · art-review · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "Sudden storm over limestone coast.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Mediterranean natural world / composite",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Sudden storm over limestone coast.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "A high-end red enchantment supplies removal on arrival and then leaves a persistent weather effect that opens attacks.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "ART-119",
+          "ART-272"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {
+        "artId": "",
+        "credit": "",
+        "source": "",
+        "fit": "contain"
+      },
+      "studioEffective": {
+        "id": "ODY-160",
+        "number": 160,
+        "name": "Storm over Limestone",
+        "displayName": "Storm over Limestone",
+        "underlyingName": "",
+        "mana": "{4}{R}{R}",
+        "mv": 6,
+        "color": "R",
+        "frame": "R",
+        "type": "Enchantment",
+        "pt": "",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "ETB damage; can't block",
+        "rules": "When this enchantment enters, it deals 4 damage to target creature.\nAt the beginning of combat on your turn, up to one target creature can't block this turn.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "BR/RG/UR — removal / attacks",
+        "story": "Mediterranean natural world / sudden hard storms break over pale headlands and make exposed country dangerous in minutes.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-060",
+        "credit": "",
+        "source": "",
+        "imageUrl": "",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "flavor.mediterranean-natural-world",
+          "flavor.homeric-similes"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 28,
+        "changeStatus": "candidate2-world-wave-v1 · art-review · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "Sudden storm over limestone coast.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Mediterranean natural world / composite",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Sudden storm over limestone coast.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "A high-end red enchantment supplies removal on arrival and then leaves a persistent weather effect that opens attacks.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "ART-119",
+          "ART-272"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "artId": "",
+        "fit": "contain"
+      },
+      "canonicalSheet": {
+        "row": 161,
+        "values": {
+          "#": {
+            "numberValue": 160
+          },
+          "Name": {
+            "stringValue": "Storm over Limestone"
+          },
+          "Mana Cost": {
+            "stringValue": "{4}{R}{R}"
+          },
+          "MV": {
+            "numberValue": 6
+          },
+          "Color": {
+            "stringValue": "R"
+          },
+          "Type": {
+            "stringValue": "Enchantment"
+          },
+          "P/T": {
+            "stringValue": "—"
+          },
+          "Rarity": {
+            "stringValue": "U"
+          },
+          "Origin": {
+            "stringValue": "New"
+          },
+          "Mechanics": {
+            "stringValue": "ETB damage; can't block"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "When this enchantment enters, it deals 4 damage to target creature.\nAt the beginning of combat on your turn, up to one target creature can't block this turn."
+          },
+          "Archetypes": {
+            "stringValue": "BR/RG/UR — removal / attacks"
+          },
+          "Story / Book": {
+            "stringValue": "Mediterranean natural world / sudden hard storms break over pale headlands and make exposed country dangerous in minutes."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "Storm over Limestone"
+          },
+          "Underlying Oracle Name": null,
+          "Treatment": null,
+          "Primary Art ID": {
+            "stringValue": "ART-060"
+          },
+          "Art Credit": {
+            "stringValue": "Art: Jean Pillement · The Met"
+          },
+          "Art Source URL": {
+            "stringValue": "https://www.metmuseum.org/art/collection/search/437292"
+          },
+          "Skeleton Class": {
+            "stringValue": "standard"
+          },
+          "Cycle IDs": {
+            "stringValue": "flavor.mediterranean-natural-world; flavor.homeric-similes"
+          },
+          "Showcase Programs": null,
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 28
+          },
+          "Change Status": {
+            "stringValue": "candidate2-world-wave-v1 · art-review · art-acceptance-v1"
+          },
+          "Narrative Era": {
+            "stringValue": "Homeric world"
+          },
+          "Story Target": {
+            "stringValue": "Sudden storm over limestone coast."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Mediterranean natural world / composite"
+          },
+          "Art Review Required": {
+            "stringValue": "NO"
+          },
+          "Art Path": {
+            "stringValue": "GENERIC OK"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "ART-119, ART-272"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "Sudden storm over limestone coast."
+          },
+          "Flavour Match /5": {
+            "stringValue": "5"
+          },
+          "Flavour Rationale": {
+            "stringValue": "A high-end red enchantment supplies removal on arrival and then leaves a persistent weather effect that opens attacks."
+          }
+        }
+      }
+    },
+    {
+      "number": 216,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing filter, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-216",
+        "number": 216,
+        "name": "Lay of the Hidden King",
+        "displayName": "Lay of the Hidden King",
+        "underlyingName": "",
+        "mana": "{1}{W}{U}",
+        "mv": 3,
+        "color": "WU",
+        "frame": "M",
+        "type": "Enchantment — Saga",
+        "pt": "",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Saga; tempo; protection; blink",
+        "rules": "I — Tap up to one target creature an opponent controls.\nII — Up to one target creature you control gains ward {2} until your next turn.\nIII — Exile up to one target creature you control, then return it to the battlefield under its owner's control.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "WU/UB/WB/GW",
+        "story": "A song about Odysseus returning to his own household in disguise (Books XIII–XVII).",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "saga",
+        "primaryArt": "ART-007",
+        "credit": "Art: Greek, Melian, ca. 460–450 BCE · The Met",
+        "source": "https://www.metmuseum.org/art/collection/search/253053",
+        "imageUrl": "https://images.metmuseum.org/CRDImages/gr/original/gr30.11.9.R.jpg",
+        "skeletonClass": "saga",
+        "cycleIds": [
+          "ff-analog-saga-fifteen",
+          "story.return-disguise"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 40,
+        "changeStatus": "rebuilt-ff-saga-structure · art-sweep-v2 · mainset-cycles-v1 · candidate2-song-cycle-v1",
+        "narrativeEra": "Odyssey",
+        "storyTarget": "A song about Odysseus returning to his own household in disguise (Books XIII–XVII).",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV",
+        "artReviewRequired": false,
+        "flavorStoryElement": "A song about Odysseus returning to his own household in disguise (Books XIII–XVII).",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Preserved as an ordinary WU Saga after leaving the hybrid song cycle. Its tap, ward and blink sequence remains a clean disguise-and-recognition story and no longer has to satisfy single-colour hybrid constraints.",
+        "artPath": "HOMER CUE",
+        "alternateArtIds": [
+          "ART-493",
+          "ART-177"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {
+        "zoom": 1.2624769600000003,
+        "focusX": -69.88609244011994,
+        "focusY": 13.390657300545355
+      },
+      "studioEffective": {
+        "id": "ODY-216",
+        "number": 216,
+        "name": "Lay of the Hidden King",
+        "displayName": "Lay of the Hidden King",
+        "underlyingName": "",
+        "mana": "{1}{W}{U}",
+        "mv": 3,
+        "color": "WU",
+        "frame": "M",
+        "type": "Enchantment — Saga",
+        "pt": "",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Saga; tempo; protection; blink",
+        "rules": "I — Tap up to one target creature an opponent controls.\nII — Up to one target creature you control gains ward {2} until your next turn.\nIII — Exile up to one target creature you control, then return it to the battlefield under its owner's control.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "WU/UB/WB/GW",
+        "story": "A song about Odysseus returning to his own household in disguise (Books XIII–XVII).",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "saga",
+        "primaryArt": "ART-007",
+        "credit": "Art: Greek, Melian, ca. 460–450 BCE · The Met",
+        "source": "https://www.metmuseum.org/art/collection/search/253053",
+        "imageUrl": "https://images.metmuseum.org/CRDImages/gr/original/gr30.11.9.R.jpg",
+        "skeletonClass": "saga",
+        "cycleIds": [
+          "ff-analog-saga-fifteen",
+          "story.return-disguise"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 40,
+        "changeStatus": "rebuilt-ff-saga-structure · art-sweep-v2 · mainset-cycles-v1 · candidate2-song-cycle-v1",
+        "narrativeEra": "Odyssey",
+        "storyTarget": "A song about Odysseus returning to his own household in disguise (Books XIII–XVII).",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Books I–XXIV",
+        "artReviewRequired": false,
+        "flavorStoryElement": "A song about Odysseus returning to his own household in disguise (Books XIII–XVII).",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Preserved as an ordinary WU Saga after leaving the hybrid song cycle. Its tap, ward and blink sequence remains a clean disguise-and-recognition story and no longer has to satisfy single-colour hybrid constraints.",
+        "artPath": "HOMER CUE",
+        "alternateArtIds": [
+          "ART-493",
+          "ART-177"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "zoom": 1.2624769600000003,
+        "focusX": -69.88609244011994,
+        "focusY": 13.390657300545355
+      },
+      "canonicalSheet": {
+        "row": 217,
+        "values": {
+          "#": {
+            "numberValue": 216
+          },
+          "Name": {
+            "stringValue": "Lay of the Hidden King"
+          },
+          "Mana Cost": {
+            "stringValue": "{1}{W}{U}"
+          },
+          "MV": {
+            "numberValue": 3
+          },
+          "Color": {
+            "stringValue": "WU"
+          },
+          "Type": {
+            "stringValue": "Enchantment — Saga"
+          },
+          "P/T": {
+            "stringValue": "—"
+          },
+          "Rarity": {
+            "stringValue": "U"
+          },
+          "Origin": {
+            "stringValue": "New"
+          },
+          "Mechanics": {
+            "stringValue": "Saga; tempo; protection; blink"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "I — Tap up to one target creature an opponent controls.\nII — Up to one target creature you control gains ward {2} until your next turn.\nIII — Exile up to one target creature you control, then return it to the battlefield under its owner's control."
+          },
+          "Archetypes": {
+            "stringValue": "WU/UB/WB/GW"
+          },
+          "Story / Book": {
+            "stringValue": "A song about Odysseus returning to his own household in disguise (Books XIII–XVII)."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "Lay of the Hidden King"
+          },
+          "Underlying Oracle Name": null,
+          "Treatment": null,
+          "Primary Art ID": {
+            "stringValue": "ART-007"
+          },
+          "Art Credit": {
+            "stringValue": "Art: Greek, Melian, ca. 460–450 BCE · The Met"
+          },
+          "Art Source URL": {
+            "stringValue": "https://www.metmuseum.org/art/collection/search/253053"
+          },
+          "Skeleton Class": {
+            "stringValue": "saga"
+          },
+          "Cycle IDs": {
+            "stringValue": "ff-analog-saga-fifteen; story.return-disguise"
+          },
+          "Showcase Programs": null,
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 40
+          },
+          "Change Status": {
+            "stringValue": "rebuilt-ff-saga-structure · art-sweep-v2 · mainset-cycles-v1 · candidate2-song-cycle-v1"
+          },
+          "Narrative Era": {
+            "stringValue": "Odyssey"
+          },
+          "Story Target": {
+            "stringValue": "A song about Odysseus returning to his own household in disguise (Books XIII–XVII)."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Odyssey Books I–XXIV"
+          },
+          "Art Review Required": {
+            "stringValue": "NO"
+          },
+          "Art Path": {
+            "stringValue": "HOMER CUE"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "ART-493, ART-177"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "A song about Odysseus returning to his own household in disguise (Books XIII–XVII)."
+          },
+          "Flavour Match /5": {
+            "numberValue": 5
+          },
+          "Flavour Rationale": {
+            "stringValue": "Preserved as an ordinary WU Saga after leaving the hybrid song cycle. Its tap, ward and blink sequence remains a clean disguise-and-recognition story and no longer has to satisfy single-colour hybrid constraints."
+          }
+        }
+      }
+    },
+    {
+      "number": 241,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing filter, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-241",
+        "number": 241,
+        "name": "A Name Kept Hidden",
+        "displayName": "A Name Kept Hidden",
+        "underlyingName": "",
+        "mana": "{1}{U}{B}",
+        "mv": 3,
+        "color": "UB",
+        "frame": "M",
+        "type": "Enchantment",
+        "pt": "",
+        "rarity": "R",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Face-down; graveyard; surveil",
+        "rules": "Face-down creatures you control have menace.\nWhenever one or more face-down creatures you control deal combat damage to a player, surveil 2. This ability triggers only once each turn.\n{3}{U}{B}: Manifest fate.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "UB — masks / graveyard / Manifest Fate",
+        "story": "A concealed identity can be protection, weapon and source of dangerous knowledge; the hidden name and the hidden card share the same strategic space.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-083",
+        "credit": "Art: Giovanni Paolo Negroli · National Gallery of Art",
+        "source": "https://www.nga.gov/artworks/1515-helmet-burgonet-form-dolphin-mask",
+        "imageUrl": "https://api.nga.gov/iiif/cb873ca3-10c6-42e1-8e65-0f6224adde0a/full/1857,/0/default.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "rare.pair-buildarounds",
+          "structure.connective-tissue"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 32,
+        "changeStatus": "candidate2-high-rarity-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Odyssey",
+        "storyTarget": "UB rare masks/graveyard engine.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey-wide / disguise and hidden identity",
+        "artReviewRequired": false,
+        "flavorStoryElement": "UB rare masks/graveyard engine.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Menace gives hidden creatures a route to connect; surveil turns successful disguise into graveyard selection; the mana sink self-enables.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "ART-164",
+          "ART-365"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {
+        "zoom": 1.123599999999998,
+        "focusX": 78.43432391697368,
+        "focusY": 13.263037533239263
+      },
+      "studioEffective": {
+        "id": "ODY-241",
+        "number": 241,
+        "name": "A Name Kept Hidden",
+        "displayName": "A Name Kept Hidden",
+        "underlyingName": "",
+        "mana": "{1}{U}{B}",
+        "mv": 3,
+        "color": "UB",
+        "frame": "M",
+        "type": "Enchantment",
+        "pt": "",
+        "rarity": "R",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Face-down; graveyard; surveil",
+        "rules": "Face-down creatures you control have menace.\nWhenever one or more face-down creatures you control deal combat damage to a player, surveil 2. This ability triggers only once each turn.\n{3}{U}{B}: Manifest fate.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "UB — masks / graveyard / Manifest Fate",
+        "story": "A concealed identity can be protection, weapon and source of dangerous knowledge; the hidden name and the hidden card share the same strategic space.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-083",
+        "credit": "Art: Giovanni Paolo Negroli · National Gallery of Art",
+        "source": "https://www.nga.gov/artworks/1515-helmet-burgonet-form-dolphin-mask",
+        "imageUrl": "https://api.nga.gov/iiif/cb873ca3-10c6-42e1-8e65-0f6224adde0a/full/1857,/0/default.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "rare.pair-buildarounds",
+          "structure.connective-tissue"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 32,
+        "changeStatus": "candidate2-high-rarity-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Odyssey",
+        "storyTarget": "UB rare masks/graveyard engine.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey-wide / disguise and hidden identity",
+        "artReviewRequired": false,
+        "flavorStoryElement": "UB rare masks/graveyard engine.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Menace gives hidden creatures a route to connect; surveil turns successful disguise into graveyard selection; the mana sink self-enables.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "ART-164",
+          "ART-365"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "zoom": 1.123599999999998,
+        "focusX": 78.43432391697368,
+        "focusY": 13.263037533239263
+      },
+      "canonicalSheet": {
+        "row": 242,
+        "values": {
+          "#": {
+            "numberValue": 241
+          },
+          "Name": {
+            "stringValue": "A Name Kept Hidden"
+          },
+          "Mana Cost": {
+            "stringValue": "{1}{U}{B}"
+          },
+          "MV": {
+            "numberValue": 3
+          },
+          "Color": {
+            "stringValue": "UB"
+          },
+          "Type": {
+            "stringValue": "Enchantment"
+          },
+          "P/T": {
+            "stringValue": "—"
+          },
+          "Rarity": {
+            "stringValue": "R"
+          },
+          "Origin": {
+            "stringValue": "New"
+          },
+          "Mechanics": {
+            "stringValue": "Face-down; graveyard; surveil"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "Face-down creatures you control have menace.\nWhenever one or more face-down creatures you control deal combat damage to a player, surveil 2. This ability triggers only once each turn.\n{3}{U}{B}: Manifest fate."
+          },
+          "Archetypes": {
+            "stringValue": "UB — masks / graveyard / Manifest Fate"
+          },
+          "Story / Book": {
+            "stringValue": "A concealed identity can be protection, weapon and source of dangerous knowledge; the hidden name and the hidden card share the same strategic space."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "A Name Kept Hidden"
+          },
+          "Underlying Oracle Name": null,
+          "Treatment": null,
+          "Primary Art ID": {
+            "stringValue": "ART-083"
+          },
+          "Art Credit": {
+            "stringValue": "Art: Giovanni Paolo Negroli · National Gallery of Art"
+          },
+          "Art Source URL": {
+            "stringValue": "https://www.nga.gov/artworks/1515-helmet-burgonet-form-dolphin-mask"
+          },
+          "Skeleton Class": {
+            "stringValue": "standard"
+          },
+          "Cycle IDs": {
+            "stringValue": "rare.pair-buildarounds; structure.connective-tissue"
+          },
+          "Showcase Programs": null,
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 32
+          },
+          "Change Status": {
+            "stringValue": "candidate2-high-rarity-v1 · art-review · art-remap-v1 · art-acceptance-v1"
+          },
+          "Narrative Era": {
+            "stringValue": "Odyssey"
+          },
+          "Story Target": {
+            "stringValue": "UB rare masks/graveyard engine."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Odyssey-wide / disguise and hidden identity"
+          },
+          "Art Review Required": {
+            "stringValue": "NO"
+          },
+          "Art Path": {
+            "stringValue": "GENERIC OK"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "ART-164, ART-365"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "UB rare masks/graveyard engine."
+          },
+          "Flavour Match /5": {
+            "stringValue": "5"
+          },
+          "Flavour Rationale": {
+            "stringValue": "Menace gives hidden creatures a route to connect; surveil turns successful disguise into graveyard selection; the mana sink self-enables."
+          }
+        }
+      }
+    },
+    {
+      "number": 275,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing filter, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-275",
+        "number": 275,
+        "name": "Penelope's Unending Loom",
+        "displayName": "Penelope's Unending Loom",
+        "underlyingName": "",
+        "mana": "{2}{U}",
+        "mv": 3,
+        "color": "U",
+        "frame": "U",
+        "type": "Legendary Enchantment",
+        "pt": "",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Discard; lore counters; recursion",
+        "rules": "Whenever you discard one or more cards, put a lore counter on this enchantment. This ability triggers only once each turn.\nRemove three lore counters from this enchantment: Return target instant, sorcery, or enchantment card from your graveyard to your hand. Activate only as a sorcery.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "WU/GU — graveyard / enchantments / filtering",
+        "story": "Later reception / Penelope's weaving becomes a symbol not only of delay but of revision, authorship and repeatedly remaking the same story.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-208",
+        "credit": "Art: “Penelope” · John Roddam Spencer Stanhope · Private collection · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:John_Roddam_Spencer_Stanhope_Penelope.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/John_Roddam_Spencer_Stanhope_Penelope.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "reception.later",
+          "cast.penelope",
+          "flavor.crafts-making"
+        ],
+        "showcase": [
+          "extended-art-legend"
+        ],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 46,
+        "changeStatus": "candidate2-reception-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Modern Retellings & Reception",
+        "storyTarget": "Later reception / Penelope's weaving becomes a symbol not only of delay but of revision, authorship and repeatedly remaking the same story.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Later reception — Penelope's weaving",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Later reception / Penelope's weaving becomes a symbol not only of delay but of revision, authorship and repeatedly remaking the same story.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Discarded stories accumulate shared lore counters, which later recover a spell or enchantment.",
+        "artPath": "HOMER CUE",
+        "alternateArtIds": [
+          "ART-207",
+          "ART-051"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {
+        "artId": "ART-209",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Bela_%C4%8Ciko%C5%A1_Sesija_-_Penelopa.jpg",
+        "credit": "Art: “Penelope” · Bela Čikoš Sesija · National Museum of Modern Art, Zagreb · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Bela_%C4%8Ciko%C5%A1_Sesija_-_Penelopa.jpg",
+        "zoom": 2.0121964718355514,
+        "focusX": 98.71289176204205,
+        "focusY": 75.06854306136368,
+        "rules": "Whenever you discard one or more cards, put a lore counter on this enchantment. This ability triggers only once each turn.\nRemove three lore counters from this enchantment: Return target instant, sorcery, or enchantment card from your graveyard to your hand. Activate only as a sorcery."
+      },
+      "studioEffective": {
+        "id": "ODY-275",
+        "number": 275,
+        "name": "Penelope's Unending Loom",
+        "displayName": "Penelope's Unending Loom",
+        "underlyingName": "",
+        "mana": "{2}{U}",
+        "mv": 3,
+        "color": "U",
+        "frame": "U",
+        "type": "Legendary Enchantment",
+        "pt": "",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Discard; lore counters; recursion",
+        "rules": "Whenever you discard one or more cards, put a lore counter on this enchantment. This ability triggers only once each turn.\nRemove three lore counters from this enchantment: Return target instant, sorcery, or enchantment card from your graveyard to your hand. Activate only as a sorcery.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "WU/GU — graveyard / enchantments / filtering",
+        "story": "Later reception / Penelope's weaving becomes a symbol not only of delay but of revision, authorship and repeatedly remaking the same story.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-208",
+        "credit": "Art: “Penelope” · Bela Čikoš Sesija · National Museum of Modern Art, Zagreb · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Bela_%C4%8Ciko%C5%A1_Sesija_-_Penelopa.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Bela_%C4%8Ciko%C5%A1_Sesija_-_Penelopa.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "reception.later",
+          "cast.penelope",
+          "flavor.crafts-making"
+        ],
+        "showcase": [
+          "extended-art-legend"
+        ],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 46,
+        "changeStatus": "candidate2-reception-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Modern Retellings & Reception",
+        "storyTarget": "Later reception / Penelope's weaving becomes a symbol not only of delay but of revision, authorship and repeatedly remaking the same story.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Later reception — Penelope's weaving",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Later reception / Penelope's weaving becomes a symbol not only of delay but of revision, authorship and repeatedly remaking the same story.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Discarded stories accumulate shared lore counters, which later recover a spell or enchantment.",
+        "artPath": "HOMER CUE",
+        "alternateArtIds": [
+          "ART-207",
+          "ART-051"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "artId": "ART-209",
+        "zoom": 2.0121964718355514,
+        "focusX": 98.71289176204205,
+        "focusY": 75.06854306136368
+      },
+      "canonicalSheet": {
+        "row": 276,
+        "values": {
+          "#": {
+            "numberValue": 275
+          },
+          "Name": {
+            "stringValue": "Penelope's Unending Loom"
+          },
+          "Mana Cost": {
+            "stringValue": "{2}{U}"
+          },
+          "MV": {
+            "numberValue": 3
+          },
+          "Color": {
+            "stringValue": "U"
+          },
+          "Type": {
+            "stringValue": "Legendary Enchantment"
+          },
+          "P/T": {
+            "stringValue": "—"
+          },
+          "Rarity": {
+            "stringValue": "U"
+          },
+          "Origin": {
+            "stringValue": "New"
+          },
+          "Mechanics": {
+            "stringValue": "Discard; lore counters; recursion"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "Whenever you discard one or more cards, put a lore counter on this enchantment. This ability triggers only once each turn.\nRemove three lore counters from this enchantment: Return target instant, sorcery, or enchantment card from your graveyard to your hand. Activate only as a sorcery."
+          },
+          "Archetypes": {
+            "stringValue": "WU/GU — graveyard / enchantments / filtering"
+          },
+          "Story / Book": {
+            "stringValue": "Later reception / Penelope's weaving becomes a symbol not only of delay but of revision, authorship and repeatedly remaking the same story."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "Penelope's Unending Loom"
+          },
+          "Underlying Oracle Name": null,
+          "Treatment": null,
+          "Primary Art ID": {
+            "stringValue": "ART-208"
+          },
+          "Art Credit": {
+            "stringValue": "Art: “Penelope” · John Roddam Spencer Stanhope · Private collection · Wikimedia Commons"
+          },
+          "Art Source URL": {
+            "stringValue": "https://commons.wikimedia.org/wiki/File:John_Roddam_Spencer_Stanhope_Penelope.jpg"
+          },
+          "Skeleton Class": {
+            "stringValue": "standard"
+          },
+          "Cycle IDs": {
+            "stringValue": "reception.later; cast.penelope; flavor.crafts-making"
+          },
+          "Showcase Programs": {
+            "stringValue": "extended-art-legend"
+          },
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 46
+          },
+          "Change Status": {
+            "stringValue": "candidate2-reception-v1 · art-review · art-remap-v1 · art-acceptance-v1"
+          },
+          "Narrative Era": {
+            "stringValue": "Modern Retellings & Reception"
+          },
+          "Story Target": {
+            "stringValue": "Later reception / Penelope's weaving becomes a symbol not only of delay but of revision, authorship and repeatedly remaking the same story."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Later reception — Penelope's weaving"
+          },
+          "Art Review Required": {
+            "stringValue": "NO"
+          },
+          "Art Path": {
+            "stringValue": "HOMER CUE"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "ART-207, ART-051"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "Later reception / Penelope's weaving becomes a symbol not only of delay but of revision, authorship and repeatedly remaking the same story."
+          },
+          "Flavour Match /5": {
+            "stringValue": "5"
+          },
+          "Flavour Rationale": {
+            "stringValue": "Discarded stories accumulate shared lore counters, which later recover a spell or enchantment."
+          }
+        }
+      }
+    },
+    {
+      "number": 283,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing filter, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-283",
+        "number": 283,
+        "name": "Leatherworker's Awl",
+        "displayName": "Leatherworker's Awl",
+        "underlyingName": "",
+        "mana": "{2}",
+        "mv": 2,
+        "color": "C",
+        "frame": "C",
+        "type": "Artifact — Equipment",
+        "pt": "",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Equipment; Survival support",
+        "rules": "Equipped creature gets +1/+1.\nWhenever equipped creature becomes tapped, you may pay {1}. If you do, scry 1. This ability triggers only once each turn.\nEquip {1}",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "All / GW / RW — crafts / Survival",
+        "story": "Crafts & making / leatherwork supplies sandals, straps, containers, harness and practical fittings throughout ordinary life.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-473",
+        "credit": "Art: Pieter Cornelisz van Slingelandt · Staatliches Museum Schwerin",
+        "source": "https://commons.wikimedia.org/wiki/File:Pieter_Cornelisz._van_Slingelandt_-_Een_schoenmaker_in_zijn_werkplaats_-_G_138_-_Staatliches_Museum_Schwerin.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Pieter_Cornelisz._van_Slingelandt_-_Een_schoenmaker_in_zijn_werkplaats_-_G_138_-_Staatliches_Museum_Schwerin.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "flavor.crafts-making",
+          "flavor.odysseus-world"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 27,
+        "changeStatus": "candidate2-final-reserve-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "Crafts & making / leatherwork supplies sandals, straps, containers, harness and practical fittings throughout ordinary life.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Ancient Mediterranean leatherworking / composite",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Crafts & making / leatherwork supplies sandals, straps, containers, harness and practical fittings throughout ordinary life.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Final pre-Weavers fill: ordinary-world/structural card occupying a previously cut or blank physical row.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "OPEN HUNT"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {
+        "zoom": 1.2624769599999992,
+        "focusX": 88.17748696950144,
+        "focusY": -59.0178567664297
+      },
+      "studioEffective": {
+        "id": "ODY-283",
+        "number": 283,
+        "name": "Leatherworker's Awl",
+        "displayName": "Leatherworker's Awl",
+        "underlyingName": "",
+        "mana": "{2}",
+        "mv": 2,
+        "color": "C",
+        "frame": "C",
+        "type": "Artifact — Equipment",
+        "pt": "",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Equipment; Survival support",
+        "rules": "Equipped creature gets +1/+1.\nWhenever equipped creature becomes tapped, you may pay {1}. If you do, scry 1. This ability triggers only once each turn.\nEquip {1}",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "All / GW / RW — crafts / Survival",
+        "story": "Crafts & making / leatherwork supplies sandals, straps, containers, harness and practical fittings throughout ordinary life.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-473",
+        "credit": "Art: Pieter Cornelisz van Slingelandt · Staatliches Museum Schwerin",
+        "source": "https://commons.wikimedia.org/wiki/File:Pieter_Cornelisz._van_Slingelandt_-_Een_schoenmaker_in_zijn_werkplaats_-_G_138_-_Staatliches_Museum_Schwerin.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Pieter_Cornelisz._van_Slingelandt_-_Een_schoenmaker_in_zijn_werkplaats_-_G_138_-_Staatliches_Museum_Schwerin.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "flavor.crafts-making",
+          "flavor.odysseus-world"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 27,
+        "changeStatus": "candidate2-final-reserve-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "Crafts & making / leatherwork supplies sandals, straps, containers, harness and practical fittings throughout ordinary life.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Ancient Mediterranean leatherworking / composite",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Crafts & making / leatherwork supplies sandals, straps, containers, harness and practical fittings throughout ordinary life.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Final pre-Weavers fill: ordinary-world/structural card occupying a previously cut or blank physical row.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "OPEN HUNT"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "zoom": 1.2624769599999992,
+        "focusX": 88.17748696950144,
+        "focusY": -59.0178567664297
+      },
+      "canonicalSheet": {
+        "row": 284,
+        "values": {
+          "#": {
+            "numberValue": 283
+          },
+          "Name": {
+            "stringValue": "Leatherworker's Awl"
+          },
+          "Mana Cost": {
+            "stringValue": "{2}"
+          },
+          "MV": {
+            "numberValue": 2
+          },
+          "Color": {
+            "stringValue": "C"
+          },
+          "Type": {
+            "stringValue": "Artifact — Equipment"
+          },
+          "P/T": {
+            "stringValue": "—"
+          },
+          "Rarity": {
+            "stringValue": "U"
+          },
+          "Origin": {
+            "stringValue": "New"
+          },
+          "Mechanics": {
+            "stringValue": "Equipment; Survival support"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "Equipped creature gets +1/+1.\nWhenever equipped creature becomes tapped, you may pay {1}. If you do, scry 1. This ability triggers only once each turn.\nEquip {1}"
+          },
+          "Archetypes": {
+            "stringValue": "All / GW / RW — crafts / Survival"
+          },
+          "Story / Book": {
+            "stringValue": "Crafts & making / leatherwork supplies sandals, straps, containers, harness and practical fittings throughout ordinary life."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "Leatherworker's Awl"
+          },
+          "Underlying Oracle Name": null,
+          "Treatment": null,
+          "Primary Art ID": {
+            "stringValue": "ART-473"
+          },
+          "Art Credit": {
+            "stringValue": "Art: Pieter Cornelisz van Slingelandt · Staatliches Museum Schwerin"
+          },
+          "Art Source URL": {
+            "stringValue": "https://commons.wikimedia.org/wiki/File:Pieter_Cornelisz._van_Slingelandt_-_Een_schoenmaker_in_zijn_werkplaats_-_G_138_-_Staatliches_Museum_Schwerin.jpg"
+          },
+          "Skeleton Class": {
+            "stringValue": "standard"
+          },
+          "Cycle IDs": {
+            "stringValue": "flavor.crafts-making; flavor.odysseus-world"
+          },
+          "Showcase Programs": null,
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 27
+          },
+          "Change Status": {
+            "stringValue": "candidate2-final-reserve-v1 · art-review · art-remap-v1 · art-acceptance-v1"
+          },
+          "Narrative Era": {
+            "stringValue": "Homeric world"
+          },
+          "Story Target": {
+            "stringValue": "Crafts & making / leatherwork supplies sandals, straps, containers, harness and practical fittings throughout ordinary life."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Ancient Mediterranean leatherworking / composite"
+          },
+          "Art Review Required": {
+            "stringValue": "NO"
+          },
+          "Art Path": {
+            "stringValue": "GENERIC OK"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "OPEN HUNT"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "Crafts & making / leatherwork supplies sandals, straps, containers, harness and practical fittings throughout ordinary life."
+          },
+          "Flavour Match /5": {
+            "stringValue": "5"
+          },
+          "Flavour Rationale": {
+            "stringValue": "Final pre-Weavers fill: ordinary-world/structural card occupying a previously cut or blank physical row."
+          }
+        }
+      }
+    },
+    {
+      "number": 285,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing filter, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-285",
+        "number": 285,
+        "name": "Vineyard Fence-Mender",
+        "displayName": "Vineyard Fence-Mender",
+        "underlyingName": "",
+        "mana": "{2}{G}",
+        "mv": 3,
+        "color": "G",
+        "frame": "G",
+        "type": "Creature — Human Peasant",
+        "pt": "3/3",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Land recovery",
+        "rules": "When this creature enters, you may return a land card from your graveyard to your hand.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "GW/GU/BG — lands / ordinary work",
+        "story": "Book XXIV / the worked estate is maintained through ordinary agricultural labor, including gathering material and tending the vineyard’s boundaries.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-609",
+        "credit": "Art: Jean-François Millet · J. Paul Getty Museum · Public Domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_L%27Homme_%C3%A0_la_houe_%281860-62%29.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Jean-Fran%C3%A7ois_Millet_-_L%27Homme_%C3%A0_la_houe_%281860-62%29.jpg/1920px-Jean-Fran%C3%A7ois_Millet_-_L%27Homme_%C3%A0_la_houe_%281860-62%29.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "flavor.odysseus-world",
+          "flavor.crafts-making",
+          "story.reconciliation",
+          "cast.laertes"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 16,
+        "changeStatus": "candidate2-uncommon-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1 · source-repair-v1-20260924",
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Book XXIV / maintenance of Laertes’s cultivated vineyard and estate.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Book XXIV",
+        "artReviewRequired": true,
+        "flavorStoryElement": "The poem gives careful vineyard and estate maintenance rather than stone-terrace construction.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "The land-recovery ETB still reads as repair and maintenance, but the worker is now attached to an agricultural task Homer actually gives the estate.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "OPEN HUNT"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {
+        "artId": "",
+        "credit": "",
+        "source": "",
+        "zoom": 1.3382255776000005,
+        "focusX": -73.95841905368506,
+        "focusY": 15.756280644883148,
+        "fit": "contain"
+      },
+      "studioEffective": {
+        "id": "ODY-285",
+        "number": 285,
+        "name": "Vineyard Fence-Mender",
+        "displayName": "Vineyard Fence-Mender",
+        "underlyingName": "",
+        "mana": "{2}{G}",
+        "mv": 3,
+        "color": "G",
+        "frame": "G",
+        "type": "Creature — Human Peasant",
+        "pt": "3/3",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Land recovery",
+        "rules": "When this creature enters, you may return a land card from your graveyard to your hand.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "GW/GU/BG — lands / ordinary work",
+        "story": "Book XXIV / the worked estate is maintained through ordinary agricultural labor, including gathering material and tending the vineyard’s boundaries.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-609",
+        "credit": "",
+        "source": "",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Jean-Fran%C3%A7ois_Millet_-_L%27Homme_%C3%A0_la_houe_%281860-62%29.jpg/1920px-Jean-Fran%C3%A7ois_Millet_-_L%27Homme_%C3%A0_la_houe_%281860-62%29.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "flavor.odysseus-world",
+          "flavor.crafts-making",
+          "story.reconciliation",
+          "cast.laertes"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 16,
+        "changeStatus": "candidate2-uncommon-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1 · source-repair-v1-20260924",
+        "narrativeEra": "Odyssey",
+        "storyTarget": "Book XXIV / maintenance of Laertes’s cultivated vineyard and estate.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Odyssey Book XXIV",
+        "artReviewRequired": true,
+        "flavorStoryElement": "The poem gives careful vineyard and estate maintenance rather than stone-terrace construction.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "The land-recovery ETB still reads as repair and maintenance, but the worker is now attached to an agricultural task Homer actually gives the estate.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "OPEN HUNT"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "artId": "",
+        "zoom": 1.3382255776000005,
+        "focusX": -73.95841905368506,
+        "focusY": 15.756280644883148,
+        "fit": "contain"
+      },
+      "canonicalSheet": {
+        "row": 286,
+        "values": {
+          "#": {
+            "numberValue": 285
+          },
+          "Name": {
+            "stringValue": "Vineyard Fence-Mender"
+          },
+          "Mana Cost": {
+            "stringValue": "{2}{G}"
+          },
+          "MV": {
+            "numberValue": 3
+          },
+          "Color": {
+            "stringValue": "G"
+          },
+          "Type": {
+            "stringValue": "Creature — Human Peasant"
+          },
+          "P/T": {
+            "stringValue": "3/3"
+          },
+          "Rarity": {
+            "stringValue": "U"
+          },
+          "Origin": {
+            "stringValue": "New"
+          },
+          "Mechanics": {
+            "stringValue": "Land recovery"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "When this creature enters, you may return a land card from your graveyard to your hand."
+          },
+          "Archetypes": {
+            "stringValue": "GW/GU/BG — lands / ordinary work"
+          },
+          "Story / Book": {
+            "stringValue": "Book XXIV / the worked estate is maintained through ordinary agricultural labor, including gathering material and tending the vineyard’s boundaries."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "Vineyard Fence-Mender"
+          },
+          "Underlying Oracle Name": null,
+          "Treatment": null,
+          "Primary Art ID": {
+            "stringValue": "ART-609"
+          },
+          "Art Credit": {
+            "stringValue": "Art: Jean-François Millet · J. Paul Getty Museum · Public Domain"
+          },
+          "Art Source URL": {
+            "stringValue": "https://commons.wikimedia.org/wiki/File:Jean-Fran%C3%A7ois_Millet_-_L%27Homme_%C3%A0_la_houe_%281860-62%29.jpg"
+          },
+          "Skeleton Class": {
+            "stringValue": "standard"
+          },
+          "Cycle IDs": {
+            "stringValue": "flavor.odysseus-world; flavor.crafts-making; story.reconciliation; cast.laertes"
+          },
+          "Showcase Programs": null,
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 16
+          },
+          "Change Status": {
+            "stringValue": "candidate2-uncommon-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1 · source-repair-v1-20260924"
+          },
+          "Narrative Era": {
+            "stringValue": "Odyssey"
+          },
+          "Story Target": {
+            "stringValue": "Book XXIV / maintenance of Laertes’s cultivated vineyard and estate."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Odyssey Book XXIV"
+          },
+          "Art Review Required": {
+            "stringValue": "YES"
+          },
+          "Art Path": {
+            "stringValue": "GENERIC OK"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "OPEN HUNT"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "The poem gives careful vineyard and estate maintenance rather than stone-terrace construction."
+          },
+          "Flavour Match /5": {
+            "stringValue": "5"
+          },
+          "Flavour Rationale": {
+            "stringValue": "The land-recovery ETB still reads as repair and maintenance, but the worker is now attached to an agricultural task Homer actually gives the estate."
+          }
+        }
+      }
+    },
+    {
+      "number": 290,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing filter, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-290",
+        "number": 290,
+        "name": "The House Endures",
+        "displayName": "The House Endures",
+        "underlyingName": "",
+        "mana": "{1}{G}{W}",
+        "mv": 3,
+        "color": "GW",
+        "frame": "M",
+        "type": "Enchantment",
+        "pt": "",
+        "rarity": "R",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Tapped creatures; enchantments; counters",
+        "rules": "At the beginning of your second main phase, if one or more creatures you control are tapped, put a +1/+1 counter on up to one target creature you control.\nWhenever an enchantment you control enters, untap up to one target creature you control. This ability triggers only once each turn.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "GW — Survival / enchantments / household",
+        "story": "A functioning house survives absence because work continues: people tap themselves to labor, rituals repeat and the structure refreshes those who sustain it.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-040",
+        "credit": "Art: Theodoor van Thulden · Rijksmuseum",
+        "source": "https://www.rijksmuseum.nl/en/collection/object/Minerva%2Bneemt%2Bde%2Btwijfels%2Bvan%2BPenelope%2Bweg--6e7e97a86cf7497e0b39f9dd109f4f11",
+        "imageUrl": "",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "rare.pair-buildarounds",
+          "flavor.odysseus-world"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 50,
+        "changeStatus": "candidate2-high-rarity-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "GW rare Survival/enchantment engine.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Homeric household world / composite",
+        "artReviewRequired": false,
+        "flavorStoryElement": "GW rare Survival/enchantment engine.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Both triggers are independently useful and together make GW's civilization-through-work identity explicit.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "ART-036",
+          "ART-451"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {
+        "zoom": 1.2624769599999996,
+        "focusX": 102.96420454844342,
+        "focusY": 6.6497392607740275
+      },
+      "studioEffective": {
+        "id": "ODY-290",
+        "number": 290,
+        "name": "The House Endures",
+        "displayName": "The House Endures",
+        "underlyingName": "",
+        "mana": "{1}{G}{W}",
+        "mv": 3,
+        "color": "GW",
+        "frame": "M",
+        "type": "Enchantment",
+        "pt": "",
+        "rarity": "R",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Tapped creatures; enchantments; counters",
+        "rules": "At the beginning of your second main phase, if one or more creatures you control are tapped, put a +1/+1 counter on up to one target creature you control.\nWhenever an enchantment you control enters, untap up to one target creature you control. This ability triggers only once each turn.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "GW — Survival / enchantments / household",
+        "story": "A functioning house survives absence because work continues: people tap themselves to labor, rituals repeat and the structure refreshes those who sustain it.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-040",
+        "credit": "Art: Theodoor van Thulden · Rijksmuseum",
+        "source": "https://www.rijksmuseum.nl/en/collection/object/Minerva%2Bneemt%2Bde%2Btwijfels%2Bvan%2BPenelope%2Bweg--6e7e97a86cf7497e0b39f9dd109f4f11",
+        "imageUrl": "",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "rare.pair-buildarounds",
+          "flavor.odysseus-world"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 50,
+        "changeStatus": "candidate2-high-rarity-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "GW rare Survival/enchantment engine.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Homeric household world / composite",
+        "artReviewRequired": false,
+        "flavorStoryElement": "GW rare Survival/enchantment engine.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Both triggers are independently useful and together make GW's civilization-through-work identity explicit.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "ART-036",
+          "ART-451"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "zoom": 1.2624769599999996,
+        "focusX": 102.96420454844342,
+        "focusY": 6.6497392607740275
+      },
+      "canonicalSheet": {
+        "row": 291,
+        "values": {
+          "#": {
+            "numberValue": 290
+          },
+          "Name": {
+            "stringValue": "The House Endures"
+          },
+          "Mana Cost": {
+            "stringValue": "{1}{G}{W}"
+          },
+          "MV": {
+            "numberValue": 3
+          },
+          "Color": {
+            "stringValue": "GW"
+          },
+          "Type": {
+            "stringValue": "Enchantment"
+          },
+          "P/T": {
+            "stringValue": "—"
+          },
+          "Rarity": {
+            "stringValue": "R"
+          },
+          "Origin": {
+            "stringValue": "New"
+          },
+          "Mechanics": {
+            "stringValue": "Tapped creatures; enchantments; counters"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "At the beginning of your second main phase, if one or more creatures you control are tapped, put a +1/+1 counter on up to one target creature you control.\nWhenever an enchantment you control enters, untap up to one target creature you control. This ability triggers only once each turn."
+          },
+          "Archetypes": {
+            "stringValue": "GW — Survival / enchantments / household"
+          },
+          "Story / Book": {
+            "stringValue": "A functioning house survives absence because work continues: people tap themselves to labor, rituals repeat and the structure refreshes those who sustain it."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "The House Endures"
+          },
+          "Underlying Oracle Name": null,
+          "Treatment": null,
+          "Primary Art ID": {
+            "stringValue": "ART-040"
+          },
+          "Art Credit": {
+            "stringValue": "Art: Theodoor van Thulden · Rijksmuseum"
+          },
+          "Art Source URL": {
+            "stringValue": "https://www.rijksmuseum.nl/en/collection/object/Minerva%2Bneemt%2Bde%2Btwijfels%2Bvan%2BPenelope%2Bweg--6e7e97a86cf7497e0b39f9dd109f4f11"
+          },
+          "Skeleton Class": {
+            "stringValue": "standard"
+          },
+          "Cycle IDs": {
+            "stringValue": "rare.pair-buildarounds; flavor.odysseus-world"
+          },
+          "Showcase Programs": null,
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 50
+          },
+          "Change Status": {
+            "stringValue": "candidate2-high-rarity-v1 · art-review · art-remap-v1 · art-acceptance-v1"
+          },
+          "Narrative Era": {
+            "stringValue": "Homeric world"
+          },
+          "Story Target": {
+            "stringValue": "GW rare Survival/enchantment engine."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Homeric household world / composite"
+          },
+          "Art Review Required": {
+            "stringValue": "NO"
+          },
+          "Art Path": {
+            "stringValue": "GENERIC OK"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "ART-036, ART-451"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "GW rare Survival/enchantment engine."
+          },
+          "Flavour Match /5": {
+            "stringValue": "5"
+          },
+          "Flavour Rationale": {
+            "stringValue": "Both triggers are independently useful and together make GW's civilization-through-work identity explicit."
+          }
+        }
+      }
+    },
+    {
+      "number": 297,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing filter, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-297",
+        "number": 297,
+        "name": "Memory Beneath the Earth",
+        "displayName": "Memory Beneath the Earth",
+        "underlyingName": "",
+        "mana": "{1}{B}{G}",
+        "mv": 3,
+        "color": "BG",
+        "frame": "M",
+        "type": "Enchantment",
+        "pt": "",
+        "rarity": "R",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Graveyard; charge counters; recursion",
+        "rules": "Whenever one or more permanent cards leave your graveyard, put a charge counter on this enchantment. This ability triggers only once each turn.\nRemove three charge counters from this enchantment: Return target permanent card from your graveyard to your hand.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "BG — graveyard / Escape / recursion",
+        "story": "Burial does not erase relationship: graves, ancestors and recovered objects keep the past materially present beneath ordinary life.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-295",
+        "credit": "Art: “The Elysian Fields” · Arnold Böcklin · Kunst Museum Winterthur | Reinhart am Stadtgarten · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Die_Gefilde_der_Seligen.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Arnold_B%C3%B6cklin_-_Die_Gefilde_der_Seligen.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "rare.pair-buildarounds",
+          "flavor.gesture-social-ritual"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 40,
+        "changeStatus": "candidate2-high-rarity-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "BG rare graveyard-resource engine.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Homeric funerary/social world / composite",
+        "artReviewRequired": false,
+        "flavorStoryElement": "BG rare graveyard-resource engine.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Charge counters now track the repeated return of cards from the graveyard without a unique memory-counter type.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "ART-127"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {
+        "artId": "",
+        "credit": "",
+        "source": "",
+        "fit": "contain",
+        "rules": "Whenever one or more permanent cards leave your graveyard, put a charge counter on this enchantment. This ability triggers only once each turn.\nRemove three charge counters from this enchantment: Return target permanent card from your graveyard to your hand."
+      },
+      "studioEffective": {
+        "id": "ODY-297",
+        "number": 297,
+        "name": "Memory Beneath the Earth",
+        "displayName": "Memory Beneath the Earth",
+        "underlyingName": "",
+        "mana": "{1}{B}{G}",
+        "mv": 3,
+        "color": "BG",
+        "frame": "M",
+        "type": "Enchantment",
+        "pt": "",
+        "rarity": "R",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Graveyard; charge counters; recursion",
+        "rules": "Whenever one or more permanent cards leave your graveyard, put a charge counter on this enchantment. This ability triggers only once each turn.\nRemove three charge counters from this enchantment: Return target permanent card from your graveyard to your hand.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "BG — graveyard / Escape / recursion",
+        "story": "Burial does not erase relationship: graves, ancestors and recovered objects keep the past materially present beneath ordinary life.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-295",
+        "credit": "",
+        "source": "",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/25/Arnold_B%C3%B6cklin_-_Die_Gefilde_der_Seligen.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "rare.pair-buildarounds",
+          "flavor.gesture-social-ritual"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 40,
+        "changeStatus": "candidate2-high-rarity-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "BG rare graveyard-resource engine.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Homeric funerary/social world / composite",
+        "artReviewRequired": false,
+        "flavorStoryElement": "BG rare graveyard-resource engine.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "Charge counters now track the repeated return of cards from the graveyard without a unique memory-counter type.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "ART-127"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "artId": "",
+        "fit": "contain"
+      },
+      "canonicalSheet": {
+        "row": 298,
+        "values": {
+          "#": {
+            "numberValue": 297
+          },
+          "Name": {
+            "stringValue": "Memory Beneath the Earth"
+          },
+          "Mana Cost": {
+            "stringValue": "{1}{B}{G}"
+          },
+          "MV": {
+            "numberValue": 3
+          },
+          "Color": {
+            "stringValue": "BG"
+          },
+          "Type": {
+            "stringValue": "Enchantment"
+          },
+          "P/T": {
+            "stringValue": "—"
+          },
+          "Rarity": {
+            "stringValue": "R"
+          },
+          "Origin": {
+            "stringValue": "New"
+          },
+          "Mechanics": {
+            "stringValue": "Graveyard; charge counters; recursion"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "Whenever one or more permanent cards leave your graveyard, put a charge counter on this enchantment. This ability triggers only once each turn.\nRemove three charge counters from this enchantment: Return target permanent card from your graveyard to your hand."
+          },
+          "Archetypes": {
+            "stringValue": "BG — graveyard / Escape / recursion"
+          },
+          "Story / Book": {
+            "stringValue": "Burial does not erase relationship: graves, ancestors and recovered objects keep the past materially present beneath ordinary life."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "Memory Beneath the Earth"
+          },
+          "Underlying Oracle Name": null,
+          "Treatment": null,
+          "Primary Art ID": {
+            "stringValue": "ART-295"
+          },
+          "Art Credit": {
+            "stringValue": "Art: “The Elysian Fields” · Arnold Böcklin · Kunst Museum Winterthur | Reinhart am Stadtgarten · Wikimedia Commons"
+          },
+          "Art Source URL": {
+            "stringValue": "https://commons.wikimedia.org/wiki/File:Arnold_B%C3%B6cklin_-_Die_Gefilde_der_Seligen.jpg"
+          },
+          "Skeleton Class": {
+            "stringValue": "standard"
+          },
+          "Cycle IDs": {
+            "stringValue": "rare.pair-buildarounds; flavor.gesture-social-ritual"
+          },
+          "Showcase Programs": null,
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 40
+          },
+          "Change Status": {
+            "stringValue": "candidate2-high-rarity-v1 · art-review · art-remap-v1 · art-acceptance-v1"
+          },
+          "Narrative Era": {
+            "stringValue": "Homeric world"
+          },
+          "Story Target": {
+            "stringValue": "BG rare graveyard-resource engine."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Homeric funerary/social world / composite"
+          },
+          "Art Review Required": {
+            "stringValue": "NO"
+          },
+          "Art Path": {
+            "stringValue": "GENERIC OK"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "ART-127"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "BG rare graveyard-resource engine."
+          },
+          "Flavour Match /5": {
+            "stringValue": "5"
+          },
+          "Flavour Rationale": {
+            "stringValue": "Charge counters now track the repeated return of cards from the graveyard without a unique memory-counter type."
+          }
+        }
+      }
+    }
+  ]
+}
