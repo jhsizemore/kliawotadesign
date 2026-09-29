@@ -1,0 +1,55 @@
+name: Publish Odyssey landscape round two
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/odyssey-landscape-round2-publish.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: odyssey-landscape-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          filter: blob:none
+          sparse-checkout: |
+            scripts
+            public/mtgtools/odyssey
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@v4
+        with:
+          name: landscape-round2
+          run-id: 36541143939
+          github-token: ${{ github.token }}
+          path: landscape-round2
+      - run: pip install Pillow
+      - name: Publish selected landscapes and verify preservation of 836 existing artworks
+        run: python scripts/odyssey-landscape-round2-publish.py
+      - name: Commit only the new landscape batch and its discovery controls
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/mtgtools/odyssey/assets/landscapes public/mtgtools/odyssey/data/landscape-import.20260929.json public/mtgtools/odyssey/data/landscape-import.20260929.js public/mtgtools/odyssey/data/landscape-round2-audit.20260929.json public/mtgtools/odyssey/landscape-library.js public/mtgtools/odyssey/landscape-library.html public/mtgtools/odyssey/app.html
+          git commit -m 'Import 37 Greek and Sicilian landscapes; preserve all prior artwork and card assignments'
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
+          git rev-parse HEAD > landscape-round2-publication/published-commit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: landscape-round2-publication
+          path: landscape-round2-publication/
+          retention-days: 14
