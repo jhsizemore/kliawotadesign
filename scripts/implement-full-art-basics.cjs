@@ -3,7 +3,7 @@
 const fs=require('node:fs'), path=require('node:path');
 const root=process.cwd(), dir=path.join(root,'public/mtgtools/odyssey');
 const read=n=>fs.readFileSync(path.join(dir,n),'utf8');
-function replaceOnce(s,before,after,label){if(s.split(before).length!==2)throw Error('Source changed: '+label);return s.replace(before,after)}
+function replaceOnce(s,before,after,label){if(s.split(before).length!==2)throw Error('Source changed: '+label);return s.replace(before,()=>after)}
 const helpers=String.raw`
   // Use the actual basic-land type, never the title or brown land frame. A
   // nonbasic temple, or a basic with custom abilities, must keep its rules box.
