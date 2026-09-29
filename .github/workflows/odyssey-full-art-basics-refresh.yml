@@ -1,0 +1,63 @@
+name: Refresh Odyssey full-art integration
+on:
+  push:
+    branches: ['codex/odyssey-ff-basic-lands']
+permissions:
+  contents: write
+concurrency:
+  group: odyssey-full-art-integration
+  cancel-in-progress: true
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: codex/odyssey-ff-basic-lands
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Take GitHub's conflict-free combined PR tree without dropping either parent's work
+        run: |
+          git fetch origin refs/pull/62/merge --depth=2
+          git merge-base --is-ancestor "$GITHUB_SHA" FETCH_HEAD
+          git checkout -B codex/odyssey-ff-basic-lands FETCH_HEAD
+      - name: Finish spacing and wait for mobile artwork before capturing visual proof
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('public/mtgtools/odyssey/frame-system.css')
+          s=p.read_text()
+          old='padding: 0 calc(7 * var(--bl-unit)) 0 calc(11 * var(--bl-unit)) !important;'
+          assert s.count(old)==1
+          p.write_text(s.replace(old,'padding: 0 calc(7 * var(--bl-unit)) 0 calc(16 * var(--bl-unit)) !important;'))
+          p=Path('tests/odyssey-full-art-basics-browser.py')
+          s=p.read_text()
+          old="    page.locator('#previewShell').screenshot(path=str(OUT/'mobile-basic.png'))"
+          assert s.count(old)==1
+          new="    page.wait_for_function(\"document.querySelector('#previewShell .art-img')?.complete && document.querySelector('#previewShell .art-img')?.naturalWidth > 0\")\n    page.wait_for_timeout(600)\n    page.screenshot(path=str(OUT/'mobile-studio.png'),full_page=True)\n"+old
+          p.write_text(s.replace(old,new))
+          PY
+          npm install --ignore-scripts --no-package-lock --no-audit --no-fund
+          node scripts/build-odyssey-public-renderer.cjs
+          node scripts/build-odyssey-public-renderer.cjs --check
+          node --test tests/odyssey-full-art-basics.test.cjs
+      - name: Verify combined source in the actual browser
+        run: |
+          python -m pip install -q playwright==1.57.0
+          python -m playwright install --with-deps chromium >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
+          mkdir -p test-results/odyssey-full-art-basics
+          python -m http.server 8765 --directory public >/tmp/odyssey-basics-http.log 2>&1 &
+          python -u tests/odyssey-full-art-basics-browser.py 2>&1 | tee test-results/odyssey-full-art-basics/browser.log
+      - name: Commit tested integration and remove this temporary workflow
+        run: |
+          git add public/mtgtools/odyssey/frame-system.css public/mtgtools/odyssey/public-renderer.generated.js tests/odyssey-full-art-basics-browser.py
+          git rm .github/workflows/odyssey-full-art-basics-refresh.yml
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Rebuild full-art basic-land renderer against latest Studio and verify combined source'
+          git push origin HEAD:codex/odyssey-ff-basic-lands
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: odyssey-full-art-integration-proof
+          path: test-results/odyssey-full-art-basics/
