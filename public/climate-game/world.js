@@ -3,6 +3,8 @@
    presentation can be tested before the rules engine is fully migrated. */
 let worldDrawer = null;
 let worldZoneId = null;
+let pendingPlacementCard = null;
+let pendingPlacementZone = null;
 
 function worldScenario(){ return ISLAND_SCENARIOS[ACTIVE_SCENARIO_ID]; }
 function worldNode(id){ return worldScenario().nodes.find(n=>n.id===id); }
@@ -16,7 +18,10 @@ function builtProjectIds(){
 }
 function projectTargetsFor(id){ return worldScenario().projectTargets[id] || []; }
 function projectsAtZone(zoneId){
-  return builtProjectIds().filter(id=>projectTargetsFor(id).includes(zoneId));
+  const placed=(state?.placements||[]).filter(p=>p.zoneId===zoneId).map(p=>p.cardId);
+  if(placed.length) return [...new Set(placed)];
+  // Older saves predate spatial placement. Keep them visible at their first sensible target.
+  return builtProjectIds().filter(id=>(projectTargetsFor(id)[0]||'')===zoneId);
 }
 function zoneCondition(zone){
   if(!state) return 3;
@@ -41,6 +46,7 @@ function worldLinkPath(a,b){
 function worldMapMarkup(opts={}){
   const s=worldScenario(), hazardIds=opts.hazardId?[opts.hazardId]:(state?.forecast||[]);
   const risks=riskZones(hazardIds);
+  const placementTargets=new Set(pendingPlacementCard?projectTargetsFor(pendingPlacementCard):[]);
   const shippingRisk=hazardIds.some(id=>['shipping','cyclone','fuel'].includes(id));
   return `<section class="world-board ${opts.resolving?'resolving':''}" aria-label="${s.name} map">
     <svg class="world-map-art" viewBox="0 0 1080 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -82,8 +88,8 @@ function worldMapMarkup(opts={}){
     </svg>
     <div class="world-scenario-label"><span>Scenario</span><strong>${s.name}</strong><small>${s.strap}</small></div>
     ${s.nodes.map(z=>{
-      const projects=projectsAtZone(z.id), risk=risks.has(z.id);
-      return `<button class="world-node ${zoneStateClass(z)} ${risk?'at-risk':''} ${projects.length?'developed':''}" style="--x:${z.x}%;--y:${z.y}%;" data-world-zone="${z.id}" aria-label="${z.label}. ${risk?'Forecast risk. ':''}${projects.length?projects.length+' project present. ':''}">
+      const projects=projectsAtZone(z.id), risk=risks.has(z.id), buildTarget=placementTargets.has(z.id);
+      return `<button class="world-node ${zoneStateClass(z)} ${risk?'at-risk':''} ${projects.length?'developed':''} ${buildTarget?'build-target':''}" style="--x:${z.x}%;--y:${z.y}%;" data-world-zone="${z.id}" aria-label="${z.label}. ${risk?'Forecast risk. ':''}${buildTarget?'Valid project location. ':''}${projects.length?projects.length+' project present. ':''}">
         <span class="node-pin">${icon(worldNodeIcon(z.kind))}</span>
         <span class="node-label">${z.short}</span>
         ${projects.length?`<span class="node-project-count">+${projects.length}</span>`:''}
@@ -107,6 +113,32 @@ function worldProjectSheet(){
     <div class="world-focus-zone"><button class="cycle-button" data-focus="-1" aria-label="Previous project">‹</button>${focusedProject()}<button class="cycle-button" data-focus="1" aria-label="Next project">›</button></div>
     <div class="world-project-tabs">${state.hand.map((id,i)=>`<button data-card-index="${i}" aria-pressed="${i===((focusIndex%state.hand.length)+state.hand.length)%state.hand.length}"><span>${String(i+1).padStart(2,'0')}</span><b>${CARDS.find(c=>c.id===id).name}</b></button>`).join('')}</div>
   </section>`;
+}
+function worldPlacementSheet(){
+  if(worldDrawer!=='placement'||!pendingPlacementCard) return '';
+  const card=CARDS.find(c=>c.id===pendingPlacementCard);
+  const targets=projectTargetsFor(card.id).map(worldNode).filter(Boolean);
+  return `<section class="world-sheet placement-sheet" aria-label="Choose where to build">
+    <header><div><span class="eyebrow">Place this project</span><strong>${card.name}</strong></div><button data-world-action="close" aria-label="Cancel placement">×</button></header>
+    <div class="placement-copy"><span class="placement-icon">${icon(TYPE_ICONS[card.type])}</span><p>Choose the community or site where this project will operate. Its marker will stay on the island after it is built.</p></div>
+    <div class="placement-options">${targets.map(z=>`<button data-world-zone="${z.id}" class="placement-option">${icon(worldNodeIcon(z.kind))}<span><b>${z.label}</b><small>${z.note}</small></span></button>`).join('')}</div>
+  </section>`;
+}
+function worldPlaceAndBuild(cardId,zoneId){
+  pendingPlacementZone=zoneId;
+  pendingPlacementCard=cardId;
+  worldDrawer=null;
+  playCard(cardId);
+  if(state.pendingRetire){
+    // Replacement is still unresolved; keep the intended location until the player retires a project.
+    return;
+  }
+  state.placements??=[];
+  state.placements.push({cardId,zoneId,round:state.round});
+  pendingPlacementCard=null;
+  pendingPlacementZone=null;
+  save();
+  render();
 }
 function worldZoneSheet(){
   if(worldDrawer!=='zone'||!worldZoneId) return '';
@@ -135,7 +167,7 @@ gameHtml = function(){
     ${worldResourceStrip()}
     <button class="world-forecast" data-panel="forecast">${icon('forecast')}<span><small>Forecast · one arrives</small><b>${watches.join(' · ')}</b></span></button>
     <button class="world-service" data-panel="active"><small>In service</small><b>${state.active.length}/${ACTIVE_LIMIT}</b></button>
-  </main>${worldBottomBar()}${worldProjectSheet()}${worldZoneSheet()}</div>`;
+  </main>${worldBottomBar()}${worldProjectSheet()}${worldZoneSheet()}${worldPlacementSheet()}</div>`;
 };
 
 eventHtml = function(){
@@ -154,9 +186,33 @@ eventHtml = function(){
   </main></div>`;
 };
 
+// Spatial build interception runs in capture phase so the legacy card handler
+// cannot complete a project before the player has chosen its place.
+app.addEventListener('click',e=>{
+  const play=e.target.closest('[data-play]');
+  if(!play||!state||state.phase!=='play') return;
+  const id=play.dataset.play, targets=projectTargetsFor(id);
+  if(!targets.length) return;
+  e.preventDefault();
+  e.stopImmediatePropagation();
+  if(targets.length===1) worldPlaceAndBuild(id,targets[0]);
+  else {
+    pendingPlacementCard=id;
+    pendingPlacementZone=null;
+    worldDrawer='placement';
+    worldZoneId=null;
+    render();
+  }
+},true);
+
 app.addEventListener('click',e=>{
   const zone=e.target.closest('[data-world-zone]');
   if(zone){
+    if(worldDrawer==='placement'&&pendingPlacementCard){
+      const target=zone.dataset.worldZone;
+      if(projectTargetsFor(pendingPlacementCard).includes(target)) worldPlaceAndBuild(pendingPlacementCard,target);
+      return;
+    }
     worldZoneId=zone.dataset.worldZone;
     worldDrawer='zone';
     render();
@@ -164,7 +220,7 @@ app.addEventListener('click',e=>{
   }
   const action=e.target.closest('[data-world-action]');
   if(action){
-    if(action.dataset.worldAction==='close'){worldDrawer=null;worldZoneId=null;render();return}
+    if(action.dataset.worldAction==='close'){worldDrawer=null;worldZoneId=null;pendingPlacementCard=null;pendingPlacementZone=null;render();return}
     if(action.dataset.worldAction==='projects'){
       worldDrawer='projects';worldZoneId=null;
       if(action.dataset.worldFocusId){
@@ -174,9 +230,12 @@ app.addEventListener('click',e=>{
       render();return;
     }
   }
-  const played=e.target.closest('[data-play]');
-  if(played&&worldDrawer){
-    worldDrawer=null;worldZoneId=null;
+  const replaced=e.target.closest('[data-replace-retire]');
+  if(replaced&&pendingPlacementCard&&pendingPlacementZone&&!state.pendingRetire){
+    state.placements??=[];
+    state.placements.push({cardId:pendingPlacementCard,zoneId:pendingPlacementZone,round:state.round});
+    pendingPlacementCard=null;pendingPlacementZone=null;
+    save();
     queueMicrotask(()=>render());
   }
 });
