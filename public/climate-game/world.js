@@ -196,10 +196,10 @@ function worldMapMarkup(opts={}){
       </defs>
       <rect width="1080" height="720" fill="url(#ocean)"/>
       ${scenarioLandSvg(s)}
+      ${scenarioRoadSvg(s)}
       ${scenarioSettlementSvg(s)}
       ${projectLandscapeSvg()}
       ${constructionLandscapeSvg()}
-      ${scenarioRoadSvg(s)}
       <g class="routes ${shippingRisk?'route-risk':''}" fill="none">
         ${s.links.filter(l=>l.mode==='boat').map(l=>`<path d="${l.d||worldLinkPath(l.a,l.b)}" class="boat-route ${freightTargets.has(l.b)?'freight-active':''}"/>`).join('')}
       </g>
