@@ -23,10 +23,15 @@ function projectsAtZone(zoneId){
   // Older saves predate spatial placement. Keep them visible at their first sensible target.
   return builtProjectIds().filter(id=>(projectTargetsFor(id)[0]||'')===zoneId);
 }
+function constructionAtZone(zoneId){
+  return (state?.construction||[]).filter(q=>q.zoneId===zoneId);
+}
 function zoneCondition(zone){
   if(!state) return 3;
   const keys=zone.stats.filter(k=>state.stats[k]!==undefined);
-  return keys.length?Math.min(...keys.map(k=>state.stats[k])):3;
+  const base=keys.length?Math.min(...keys.map(k=>state.stats[k])):3;
+  const stress=Number(state.zoneStress?.[zone.id]||0);
+  return Math.max(0,base-stress);
 }
 function zoneStateClass(zone){
   const v=zoneCondition(zone);
@@ -124,17 +129,15 @@ function worldPlacementSheet(){
     <div class="placement-options">${targets.map(z=>`<button data-world-zone="${z.id}" class="placement-option">${icon(worldNodeIcon(z.kind))}<span><b>${z.label}</b><small>${z.note}</small></span></button>`).join('')}</div>
   </section>`;
 }
-function worldPlaceAndBuild(cardId,zoneId){
+function worldPlaceAndBuild(cardId,zoneId,retireId){
   pendingPlacementZone=zoneId;
   pendingPlacementCard=cardId;
   worldDrawer=null;
-  playCard(cardId);
+  playCard(cardId,retireId,zoneId);
   if(state.pendingRetire){
     // Replacement is still unresolved; keep the intended location until the player retires a project.
     return;
   }
-  state.placements??=[];
-  state.placements.push({cardId,zoneId,round:state.round});
   pendingPlacementCard=null;
   pendingPlacementZone=null;
   save();
