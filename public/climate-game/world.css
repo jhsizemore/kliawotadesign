@@ -78,3 +78,29 @@
   .world-sheet{right:24px;bottom:96px;width:500px}
 }
 @media (prefers-reduced-motion:reduce){.boat-route,.sea-lines,.world-node.at-risk .node-pin{animation:none!important}}
+
+/* Spatial project placement */
+.world-node.build-target .node-pin{
+  border-color:#65f0d1;
+  background:#0b625f;
+  box-shadow:0 0 0 8px rgba(83,235,204,.18),0 0 36px rgba(83,235,204,.55);
+  animation:buildTarget 1.25s ease-in-out infinite;
+}
+.world-node.build-target .node-label{background:#0d655f;color:#f4fffb}
+@keyframes buildTarget{50%{transform:translateY(-4px) scale(1.1);box-shadow:0 0 0 14px rgba(83,235,204,.05),0 0 42px rgba(83,235,204,.68)}}
+.placement-copy{display:grid;grid-template-columns:56px 1fr;align-items:center;gap:12px;padding:15px 16px 10px}
+.placement-copy p{margin:0;color:#45676b;font-size:13px;line-height:1.45}
+.placement-icon{width:54px;height:54px;border-radius:15px;background:#0d4b55;color:#74e1ce;display:grid;place-items:center}
+.placement-icon .ui-icon{width:31px;height:31px}
+.placement-options{display:grid;gap:8px;padding:4px 16px 16px}
+.placement-option{border:1px solid #9fc2ba;background:#f7f8f2;border-radius:13px;padding:10px;display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:center;color:#143e44;text-align:left}
+.placement-option:hover,.placement-option:focus-visible{background:#ddf4ec;border-color:#2b9f91;outline:none;box-shadow:inset 0 0 0 1px #2b9f91}
+.placement-option>.ui-icon{width:28px;height:28px;color:#138f83}
+.placement-option span{display:grid;gap:2px}.placement-option b{font-size:13px}.placement-option small{font-size:10px;line-height:1.3;color:#617c7e}
+@media (max-width:760px){
+  .placement-sheet{max-height:58dvh}
+  .placement-copy{grid-template-columns:46px 1fr;padding:12px}
+  .placement-icon{width:44px;height:44px}.placement-icon .ui-icon{width:25px;height:25px}
+  .placement-options{padding:2px 12px 12px}
+}
+@media (prefers-reduced-motion:reduce){.world-node.build-target .node-pin{animation:none!important}}
