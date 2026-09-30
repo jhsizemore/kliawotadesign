@@ -4,6 +4,7 @@ No writes are made to any existing user workspace or card dataset.
 import concurrent.futures, hashlib, io, json, os, re, threading, time
 from pathlib import Path
 import requests
+import subprocess
 from PIL import Image
 from playwright.sync_api import sync_playwright
 ROOT=Path(__file__).resolve().parents[1];APP=ROOT/'public/mtgtools/odyssey'
@@ -14,7 +15,9 @@ sync_text=(APP/'live-sheet-sync.js').read_text()
 sync_match=re.search(r'const META=(\{.*?\});\s*const CARD_ROWS=',sync_text,re.S)
 if not sync_match:raise RuntimeError('Could not read live sheet-sync metadata')
 sync_meta=json.loads(sync_match.group(1))
-report={'commit':os.environ.get('GITHUB_SHA'),'checkedAt':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'summary':manifest['summary'],'liveSync':sync_meta,'errors':[]}
+# The Sheet sync is one input; Studio then applies artwork and design overlays.
+expected_runtime=json.loads(subprocess.check_output(['node',str(ROOT/'scripts/odyssey-studio-runtime-contract.cjs')],text=True,cwd=ROOT))
+report={'commit':os.environ.get('GITHUB_SHA'),'checkedAt':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'summary':manifest['summary'],'liveSync':sync_meta,'expectedRuntime':expected_runtime,'errors':[]}
 local=threading.local()
 def sha(data):return hashlib.sha256(data).hexdigest()
 def session():
@@ -102,8 +105,7 @@ try:
    page.goto(URL,wait_until='domcontentloaded',timeout=60000)
    page.wait_for_function("typeof CARDS!=='undefined'&&CARDS.length===309&&typeof OdysseyArtDelivery!=='undefined'&&typeof OdysseySheetSync!=='undefined'",timeout=60000)
    runtime=page.evaluate("({version:ODYSSEY_DATASET.datasetVersion,cards:CARDS.length,artworks:ART.length,coverage:COVERAGE.length,newArt:ART.filter(a=>Number(String(a.id||'').replace('ART-',''))>553).length,assigned:CARDS.filter(c=>c.primaryArt).length})")
-   expected={'version':sync_meta['version'],'cards':sync_meta['cards'],'artworks':sync_meta['artworks'],'coverage':sync_meta['coverage'],'assigned':sync_meta['cards']}
-   for key,value in expected.items():assert runtime[key]==value,(runtime,expected)
+   for key,value in expected_runtime.items():assert runtime[key]==value,(runtime,expected_runtime)
    initial=wait_for_painted_art(page)
    missing=page.evaluate("[...new Set(CARDS.map(c=>c.primaryArt).filter(Boolean))].filter(id=>!directArtUrl(id))")
    if missing:

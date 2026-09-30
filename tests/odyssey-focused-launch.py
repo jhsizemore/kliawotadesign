@@ -49,7 +49,9 @@ async def main():
     await loaded(page,'#mechanicChapters')
     visible=page.locator('#mechanicChapters .mechanic:not([inert])')
     assert await visible.count()==1
-    info=await page.evaluate('(i)=>{const f=OdysseyFocusedLaunch.features[i];return{id:f.id,name:f.tab,count:OdysseyExhibition.catalogue.cards.filter(f.match).length,cards:f.featured,art:f.artId}}',i)
+    # The collection includes featured examples even when a rule-text matcher
+    # does not cover their wording (Homecoming's Penelope is one such example).
+    info=await page.evaluate('(i)=>{const f=OdysseyFocusedLaunch.features[i],cards=OdysseyExhibition.catalogue.cards,matching=cards.filter(f.match),related=cards.filter(c=>f.match(c)||f.featured.includes(c.number));return{id:f.id,name:f.tab,count:related.length,matchingCount:matching.length,numbers:related.map(c=>c.number).sort((a,b)=>a-b),cards:f.featured,art:f.artId}}',i)
     assert info['count']>0
     assert await visible.locator('odyssey-studio-card').count()==2
     highlights.append(info)
@@ -57,6 +59,12 @@ async def main():
     await visible.get_by_role('button',name='Explore these candidates ↗',exact=True).click()
     assert await page.locator('#spoiler').is_visible()
     assert await page.locator('#resultCount').inner_text()==f"{info['count']} of 309 candidates"
+    while await page.locator('#cardGrid odyssey-studio-card').count()<info['count']:
+     before=await page.locator('#cardGrid odyssey-studio-card').count()
+     await page.locator('#loadMore').click()
+     await page.wait_for_function('(n)=>document.querySelectorAll("#cardGrid odyssey-studio-card").length>n',arg=before,timeout=15000)
+    actual=await page.locator('#cardGrid odyssey-studio-card').evaluate_all('(cards)=>cards.map(c=>Number(c.getAttribute("number"))).sort((a,b)=>a-b)')
+    assert actual==info['numbers'],{'highlight':info['id'],'expected':info['numbers'],'actual':actual}
     await page.locator('#backExhibition').click()
    await page.locator('#mechanicChapters .carousel-viewport').focus();await page.keyboard.press('Home')
    assert await page.evaluate('OdysseyMechanicCarousel.index')==0
