@@ -48,6 +48,34 @@ function worldLinkPath(a,b){
   const mx=(x1+x2)/2, lift=Math.abs(x2-x1)>.24*1080?-70:-20;
   return `M ${x1} ${y1} Q ${mx} ${(y1+y2)/2+lift} ${x2} ${y2}`;
 }
+function sceneSymbolDefs(){
+  return `
+<g id="scene-house"><rect x="-11" y="-5" width="22" height="14" rx="1.5" fill="#dbc79e" stroke="#5a4938" stroke-width="1.4"/><path d="M-14 -5 L0 -15 L14 -5 Z" fill="#9b573f" stroke="#583b31" stroke-width="1.4"/><rect x="-2" y="1" width="5" height="8" fill="#705646"/><rect x="-8" y="-1" width="4" height="4" fill="#75a7a1"/></g>
+<g id="scene-reinforced-house"><use href="#scene-house"/><path d="M-13 -4 L-8 9 M13 -4 L8 9 M-7 -10 L-4 9 M7 -10 L4 9" fill="none" stroke="#e4d17f" stroke-width="1.5"/></g>
+<g id="scene-market"><rect x="-15" y="-3" width="30" height="13" rx="2" fill="#d7c49c" stroke="#5f4936" stroke-width="1.2"/><path d="M-18 -3 L-10 -13 L12 -13 L18 -3 Z" fill="#b36b49" stroke="#644331" stroke-width="1.2"/><path d="M-10 10 V15 M10 10 V15" stroke="#614d3a" stroke-width="2"/></g>
+<g id="scene-clinic"><rect x="-14" y="-8" width="28" height="18" rx="2" fill="#e4e2cf" stroke="#56615a" stroke-width="1.3"/><path d="M-16 -8 L0 -16 L16 -8 Z" fill="#80998a"/><path d="M0 -5 V5 M-5 0 H5" stroke="#b05757" stroke-width="2.3"/><rect x="-11" y="2" width="5" height="8" fill="#6f7268"/></g>
+<g id="scene-school"><rect x="-18" y="-7" width="36" height="18" rx="2" fill="#d7c899" stroke="#5b4f3d" stroke-width="1.3"/><path d="M-21 -7 L0 -16 L21 -7 Z" fill="#885a43"/><rect x="-4" y="1" width="8" height="10" fill="#655243"/><rect x="-14" y="-2" width="6" height="5" fill="#7ba7a3"/><rect x="8" y="-2" width="6" height="5" fill="#7ba7a3"/></g>
+<g id="scene-workshop"><rect x="-15" y="-5" width="30" height="16" fill="#b79e76" stroke="#594837" stroke-width="1.3"/><path d="M-18 -5 L-7 -14 L17 -8 L18 -5 Z" fill="#77766a"/><path d="M8 2 l5 5 M13 2 l-5 5" stroke="#443e35" stroke-width="1.5"/></g>
+<g id="scene-palm"><path d="M0 17 Q-2 5 2 -8" fill="none" stroke="#735c38" stroke-width="3" stroke-linecap="round"/><path d="M1 -8 Q-13 -12 -17 -5 M1 -8 Q14 -15 18 -7 M1 -8 Q-10 -20 -15 -18 M1 -8 Q10 -21 15 -18 M1 -8 Q0 -22 2 -24" fill="none" stroke="#2e7456" stroke-width="3.2" stroke-linecap="round"/><circle cx="1" cy="-9" r="3" fill="#8a6b35"/></g>
+<g id="scene-tree"><path d="M0 14 V2" stroke="#695239" stroke-width="3"/><circle cx="-5" cy="-2" r="8" fill="#32694f"/><circle cx="6" cy="-4" r="9" fill="#3e7956"/><circle cx="0" cy="-10" r="8" fill="#4b845b"/></g>
+<g id="scene-garden"><rect x="-17" y="-11" width="34" height="22" rx="3" fill="#829252" stroke="#d2c982" stroke-width="1.2"/><path d="M-13 -7 H13 M-13 -1 H13 M-13 5 H13" stroke="#d9cf83" stroke-width="2" opacity=".75"/></g>
+<g id="scene-wharf"><path d="M-3 -18 V11 M-3 -3 H15 M-3 4 H12" stroke="#a67e52" stroke-width="4" stroke-linecap="round"/><path d="M-7 -18 H1 M-7 11 H1" stroke="#dbc08c" stroke-width="2"/><path d="M11 14 q7 3 13 0 l-2 5 q-6 4 -13 0z" fill="#714d37" stroke="#342f2a" stroke-width="1"/></g>
+<g id="scene-canoe"><path d="M-18 0 Q0 8 18 0 Q7 12 -12 7 Z" fill="#7c5135" stroke="#342d28" stroke-width="1.2"/><path d="M-12 -2 H13" stroke="#d7c289" stroke-width="1.5"/><path d="M10 6 H22 M22 6 V10 M18 10 H26" stroke="#d2ba7f" stroke-width="1.5"/></g>
+<g id="scene-workboat"><path d="M-19 2 H19 L13 11 H-14 Z" fill="#d5c68c" stroke="#3e4a48" stroke-width="1.4"/><rect x="-8" y="-7" width="14" height="9" fill="#e8e5d4" stroke="#51615f" stroke-width="1"/><path d="M1 -7 L9 -13 L12 2" fill="#8da8a5" stroke="#4d6360"/></g>
+<g id="scene-tank"><ellipse cx="0" cy="-7" rx="10" ry="4" fill="#b7d6d2" stroke="#506f6f"/><rect x="-10" y="-7" width="20" height="15" fill="#8fb9b6" stroke="#506f6f"/><ellipse cx="0" cy="8" rx="10" ry="4" fill="#719f9d" stroke="#506f6f"/><path d="M-6 11 V16 M6 11 V16" stroke="#5e675d" stroke-width="2"/></g>
+<g id="scene-radio"><path d="M0 -20 L-9 15 H9 Z M-6 6 H6 M-4 -2 H4 M-2 -10 H2" fill="none" stroke="#d2cda8" stroke-width="1.5"/><path d="M-13 -14 Q0 -24 13 -14 M-17 -8 Q0 -25 17 -8" fill="none" stroke="#74d4c6" stroke-width="1.4" opacity=".8"/></g>
+<g id="scene-crates"><rect x="-13" y="-5" width="11" height="11" fill="#a8794a" stroke="#5b4432"/><rect x="1" y="-8" width="12" height="14" fill="#b18454" stroke="#5b4432"/><path d="M-11 -2 L-4 4 M-4 -2 L-11 4 M3 -4 L11 3 M11 -4 L3 3" stroke="#d2b07c" stroke-width="1"/></g>
+<g id="scene-mangrove"><path d="M-12 9 Q-8 -3 -4 -9 M0 10 Q1 -5 5 -12 M12 8 Q8 -2 9 -9" fill="none" stroke="#6b553a" stroke-width="2"/><circle cx="-5" cy="-9" r="8" fill="#2f7258"/><circle cx="5" cy="-12" r="9" fill="#3f805e"/><circle cx="10" cy="-6" r="7" fill="#2f6d52"/><path d="M-10 8 L-15 14 M-5 8 L-3 15 M5 8 L2 15 M10 7 L15 13" stroke="#6b553a" stroke-width="1.5"/></g>
+<g id="scene-reef"><path d="M-21 2 C-15 -12 -2 -15 4 -5 C12 -14 24 -8 21 3 C18 15 5 18 -3 11 C-9 18 -21 14 -21 2Z" fill="none" stroke="#73cfc0" stroke-width="3" stroke-dasharray="3 4" opacity=".7"/><circle cx="-7" cy="1" r="3" fill="#8bcab6" opacity=".65"/><circle cx="8" cy="5" r="2.5" fill="#d2b47c" opacity=".65"/></g>
+<g id="scene-spring"><ellipse cx="0" cy="7" rx="13" ry="7" fill="#5cb4c0" opacity=".8"/><path d="M-4 4 Q0 -9 6 -14 Q12 -7 8 4" fill="none" stroke="#85d5d7" stroke-width="2"/><path d="M-11 8 Q0 2 11 8" fill="none" stroke="#d8e1b2" stroke-width="1.2"/></g>
+<g id="scene-meeting"><circle cx="0" cy="2" r="12" fill="none" stroke="#d6c997" stroke-width="2" stroke-dasharray="2 3"/><circle cx="-8" cy="-4" r="2.6" fill="#795843"/><circle cx="7" cy="-6" r="2.6" fill="#75523e"/><circle cx="8" cy="8" r="2.6" fill="#825b40"/><circle cx="-7" cy="9" r="2.6" fill="#6c4d3c"/></g>
+<g id="scene-bridge"><path d="M-16 5 H16" stroke="#855f3e" stroke-width="5"/><path d="M-13 0 V10 M-6 0 V10 M1 0 V10 M8 0 V10 M15 0 V10" stroke="#d1b27c" stroke-width="1.7"/><path d="M-18 14 Q0 6 18 14" fill="none" stroke="#5eb7c5" stroke-width="2"/></g>
+<g id="scene-drain"><path d="M-18 -6 Q-8 1 0 -5 T18 -4 M-18 4 Q-8 11 0 5 T18 6" fill="none" stroke="#71c5cf" stroke-width="2"/><path d="M-18 -10 V10 M18 -9 V11" stroke="#bea97a" stroke-width="2"/></g>
+<g id="scene-foundation"><path d="M-14 -7 L11 -9 L15 8 L-10 10 Z" fill="#c8bea0" stroke="#806f55" stroke-width="1.3" stroke-dasharray="3 2"/><path d="M-12 -5 L13 6 M12 -7 L-8 8" stroke="#9a8767" stroke-width="1"/></g>
+<g id="scene-scaffold"><use href="#scene-foundation"/><path d="M-13 -13 V10 M0 -16 V9 M13 -13 V9 M-15 -6 H15 M-15 2 H15" fill="none" stroke="#b78a57" stroke-width="1.4"/></g>
+  `;
+}
+
 function scenarioFeatureSvg(f){
   return `<path class="terrain-feature feature-${f.kind}" d="${f.d}"/>`;
 }
@@ -163,9 +191,13 @@ function worldMapMarkup(opts={}){
         <pattern id="gardenPattern" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)"><path d="M0 3 H14 M0 9 H14" stroke="#d8d28a" stroke-width="2" opacity=".62"/></pattern>
         <pattern id="settlementPattern" width="18" height="18" patternUnits="userSpaceOnUse"><rect x="2" y="4" width="6" height="5" rx="1" fill="#e8d9b6" opacity=".75"/><rect x="10" y="10" width="6" height="5" rx="1" fill="#caa97d" opacity=".68"/></pattern>
         <filter id="islandShadow"><feDropShadow dx="0" dy="9" stdDeviation="10" flood-color="#001b23" flood-opacity=".42"/></filter>
+        ${sceneSymbolDefs()}
       </defs>
       <rect width="1080" height="720" fill="url(#ocean)"/>
       ${scenarioLandSvg(s)}
+      ${scenarioSettlementSvg(s)}
+      ${projectLandscapeSvg()}
+      ${constructionLandscapeSvg()}
       ${scenarioRoadSvg(s)}
       <g class="routes ${shippingRisk?'route-risk':''}" fill="none">
         ${s.links.filter(l=>l.mode==='boat').map(l=>`<path d="${l.d||worldLinkPath(l.a,l.b)}" class="boat-route ${freightTargets.has(l.b)?'freight-active':''}"/>`).join('')}
