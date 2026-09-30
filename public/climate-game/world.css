@@ -466,3 +466,34 @@
   stroke-opacity:.17;
   stroke-dasharray:4 7;
 }
+
+/* Inhabited landscape layer */
+.settlement-layer,.project-landscape,.construction-landscape{pointer-events:none}
+.scene-use{vector-effect:non-scaling-stroke;filter:drop-shadow(0 2px 2px rgba(0,24,27,.22))}
+.node-scenery{opacity:.92}
+.scenic-cluster{opacity:.88}
+.scenic-forest{opacity:.76}
+.scenic-palms{opacity:.9}
+.scenic-reef{opacity:.72}
+.scenic-canoe,.scenic-workboat{opacity:.86}
+.project-scenery{
+  filter:drop-shadow(0 2px 2px rgba(0,24,27,.2)) drop-shadow(0 0 5px rgba(96,231,206,.28));
+}
+.construction-scenery{opacity:.9;filter:drop-shadow(0 2px 2px rgba(0,24,27,.24))}
+.project-tank{filter:drop-shadow(0 0 5px rgba(95,193,207,.45))}
+.project-reef{filter:drop-shadow(0 0 5px rgba(74,177,132,.4))}
+.project-radio{filter:drop-shadow(0 0 6px rgba(112,226,207,.42))}
+.project-roofs,.project-school,.project-wharf{filter:drop-shadow(0 0 5px rgba(235,210,128,.38))}
+.scenario-atoll_water .node-scenery{opacity:.84}
+.scenario-atoll_water .scenic-palms{opacity:.82}
+.scenario-atoll_water .scene-use{filter:drop-shadow(0 1px 1px rgba(0,24,27,.18))}
+@media (max-width:760px){
+  .node-scenery{opacity:.82}
+  .scenic-cluster{opacity:.76}
+  .project-scenery{opacity:.92}
+}
+@media (max-width:420px){
+  .scenic-forest{opacity:.58}
+  .scenic-reef{opacity:.5}
+  .scenario-atoll_water .scenic-palms{opacity:.68}
+}
