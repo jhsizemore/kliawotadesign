@@ -336,6 +336,7 @@ function worldMissionSheet(){
   return `<section class="world-sheet mission-sheet" aria-label="${s.name} mission">
     <header><div><span class="eyebrow">Scenario mission</span><strong>${s.name}</strong></div><button data-world-action="close" aria-label="Close mission">×</button></header>
     <p class="mission-briefing">${s.briefing||s.summary}</p>
+    ${s.geographyBasis?`<p class="mission-geography"><b>Geography:</b> ${s.geographyBasis}</p>`:''}
     <div class="mission-goals">${goals.map(x=>`<div class="${x.done?'complete':''}"><span>${x.done?'✓':'○'}</span><b>${x.goal.label}</b><small>${x.goal.kind==='max_stress'?'Current max pressure '+x.value:'Progress '+x.value+' / '+x.goal.target}</small></div>`).join('')}</div>
     <p class="mission-note">The map is fictional. The scenario combines real categories of Pacific development and climate risk for play and discussion.</p>
   </section>`;
