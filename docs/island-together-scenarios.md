@@ -62,3 +62,14 @@ The prototype supports several topology types with the same engine:
 - **Relocation Pathways** — an exposed home community and two fictional receiving sites, with explicit limits on what the game model can represent.
 
 The point of the scenario system is not to declare one "Pacific island model". Different countries and communities can have materially different island counts, distances, topography, service networks and climate pressures while still using the same underlying game engine.
+
+
+## Landscape layer
+
+Scenario geography can include a lightweight `landscape` array in addition to physical terrain. These are deliberately simple board-game scenery pieces rather than GIS features. Current kinds include forest, palm clusters, reef patches, canoes, workboats, gardens and village clusters.
+
+The runtime also derives small settlement scenes from playable nodes: ports show wharves and freight, towns show houses and market structures, clinics and schools appear as distinct buildings, gardens show cultivation, and outer-island communities mix contemporary and island-style buildings with palms and canoes.
+
+Completed projects alter this scenery. Rain tanks, strengthened roofs, gardens, mangroves, radio towers, stored materials, drainage, bridges, clinics and wharf works appear on the map after they come into service. Construction sites show scaffolding while work is underway. Local pressure adds visible flooding and damage, and planned relocation grows the receiving site into a visible settlement.
+
+This layer should remain subordinate to strategic readability. If scenery obscures routes, exposed places or game markers, reduce or move it rather than adding more.
