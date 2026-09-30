@@ -8867,12 +8867,12 @@
       "rarity": "U",
       "origin": "NEW",
       "originFull": "New",
-      "mechanics": "Tapped-matters damage",
-      "rules": "Whenever one or more creatures you control become tapped, this enchantment deals 1 damage to each opponent. This ability triggers only once each turn.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "mechanics": "",
+      "rules": "",
+      "rulesSource": "Recast skeleton · archived 2026-09-30",
       "archetypes": "RW/RG/BR — Survival / combat",
       "story": "Mediterranean natural world / hard summer heat makes labor, marches and exposed stone country exhausting.",
-      "status": "KEEP",
+      "status": "REVISE",
       "treatment": "",
       "layout": "standard",
       "primaryArt": "ART-471",
@@ -8888,21 +8888,23 @@
       "productLayer": "main",
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
-      "functionalWords": 24,
-      "changeStatus": "candidate2-world-wave-v2 · art-review · art-remap-v1 · art-acceptance-v1",
+      "functionalWords": 0,
+      "changeStatus": "candidate2-world-wave-v2 · art-review · art-remap-v1 · art-acceptance-v1 · recast-archived-20260930",
       "narrativeEra": "Homeric world",
       "storyTarget": "Summer heat as persistent environmental pressure.",
       "storyRethemeRequired": false,
       "storySourceBand": "Mediterranean natural world / composite",
-      "artReviewRequired": false,
+      "artReviewRequired": true,
       "flavorStoryElement": "Summer heat as persistent environmental pressure.",
-      "flavorMatchScore": 5,
-      "flavorMatchRationale": "The enchantment turns tapping creatures for attacks, crew or work into measured red pressure without another episode-specific hazard.",
+      "flavorMatchScore": null,
+      "flavorMatchRationale": "Prior design archived; structural slot retained for a new design.",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
         "OPEN HUNT"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "flavor": "",
+      "designDisposition": "RECAST"
     },
     {
       "id": "ODY-166",
@@ -8968,16 +8970,16 @@
       "color": "G",
       "frame": "G",
       "type": "Creature — Lion",
-      "pt": "6/5",
+      "pt": "",
       "rarity": "U",
       "origin": "NEW",
       "originFull": "New",
-      "mechanics": "Trample",
-      "rules": "Trample.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "mechanics": "",
+      "rules": "",
+      "rulesSource": "Recast skeleton · archived 2026-09-30",
       "archetypes": "RG/GW — big creatures",
       "story": "Homeric simile / heroes and predators are repeatedly likened to a lion falling upon livestock.",
-      "status": "KEEP",
+      "status": "REVISE",
       "treatment": "",
       "layout": "standard",
       "primaryArt": "ART-107",
@@ -8993,22 +8995,23 @@
       "productLayer": "main",
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
-      "functionalWords": 8,
-      "changeStatus": "candidate2-world-wave-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+      "functionalWords": 0,
+      "changeStatus": "candidate2-world-wave-v1 · art-review · art-remap-v1 · art-acceptance-v1 · recast-archived-20260930",
       "narrativeEra": "Homeric world",
       "storyTarget": "Lion-among-the-flock simile.",
       "storyRethemeRequired": false,
       "storySourceBand": "Homeric simile tradition",
-      "artReviewRequired": false,
+      "artReviewRequired": true,
       "flavorStoryElement": "Lion-among-the-flock simile.",
-      "flavorMatchScore": 5,
-      "flavorMatchRationale": "A deliberately simple six-drop restores late-game density and lets an iconic Homeric comparison become a real creature at uncommon.",
-      "flavor": "He looked like some lion of the wilderness",
+      "flavorMatchScore": null,
+      "flavorMatchRationale": "Prior design archived; structural slot retained for a new design.",
+      "flavor": "",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
         "OPEN HUNT"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "designDisposition": "RECAST"
     },
     {
       "id": "ODY-168",
@@ -37371,8 +37374,8 @@
       "title": "14A2 — The Odyssey MTG — Analysis Candidate Card File v2 — FF Lattice Rebuild"
     },
     "sourceVersion": "2026-09-29.1",
-    "sourceFingerprint": "34de8adca639ad774e6e0fdb7bd4a7237490adc4bf245aefbbbb3fd46291898b",
-    "cardsSha256": "8e6abd09268379ee95dae8dc4481b70a5ed609ceb36c5fb7f4da74545b4285dd",
+    "sourceFingerprint": "88ad077442a4d38f78f29128e8759f43071ca90210a886ffbb31f749473deaf9",
+    "cardsSha256": "6d3250b2a8a5eb6d69ba9fcf064a8005ebe79cac9995ae280f31833f8cb32d9e",
     "sources": [
       {
         "file": "data/odyssey-data.js",
@@ -37396,7 +37399,7 @@
       },
       {
         "file": "data/recast-bones.20260930.js",
-        "sha256": "069bc4ea844b6e6c336ad574a3b765feff89445e07ab5f507c0f2a292e60482e"
+        "sha256": "356f61355400613719e5620f3374660cc9fa90180bac67e0a5546648495aa9a5"
       }
     ]
   }

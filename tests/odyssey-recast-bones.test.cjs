@@ -13,7 +13,7 @@ test('Studio applies the Recast reset after note resolution when constructing th
 });
 
 test('every explicit Recast has a complete archived design and an open structural slot',()=>{
- assert.deepEqual(numbers,[14,154,160,216,241,275,283,285,290,297]);
+ assert.deepEqual(numbers,[14,154,160,165,167,216,241,275,283,285,290,297]);
  assert.deepEqual(archive.cards.map(c=>c.number),numbers);
  for(const a of archive.cards){
   const c=data.cards.find(x=>x.number===a.number);

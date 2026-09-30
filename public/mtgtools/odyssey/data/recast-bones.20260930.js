@@ -4,7 +4,7 @@
  */
 (function(root){
 'use strict';
-const NUMBERS=[14,154,160,216,241,275,283,285,290,297];
+const NUMBERS=[14,154,160,165,167,216,241,275,283,285,290,297];
 const SET=new Set(NUMBERS);
 function apply(data){
  if(!data||!Array.isArray(data.cards))return data;
