@@ -1,16 +1,18 @@
-name: Deploy to Cloudflare
+name: CI checks
 
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
-  group: cloudflare-production
+  group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  checks:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -26,6 +28,12 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
+      - name: Build Odyssey public renderer
+        run: npm run build:renderer
+
+      - name: Verify Worker bundle
+        run: npx wrangler deploy --dry-run
+
       - name: Island Together syntax check
         run: node -e "const fs=require('fs'); for (const f of ['public/climate-game/scenarios.js','public/climate-game/game.js','public/climate-game/logistics.js','public/climate-game/world.js']) new Function(fs.readFileSync(f,'utf8'));"
 
@@ -34,9 +42,3 @@ jobs:
 
       - name: Test Island Together runtime
         run: npm run test:island
-
-      - name: Deploy Worker and assets
-        run: npm run deploy
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
