@@ -263,6 +263,48 @@
     },
     "geographyBasis": {
       "type": "string"
+    },
+    "landscape": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "x",
+          "y"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "forest",
+              "palms",
+              "reef",
+              "canoe",
+              "boat",
+              "garden",
+              "village"
+            ]
+          },
+          "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "scale": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "rotate": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": true
+      }
     }
   },
   "additionalProperties": true
