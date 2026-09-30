@@ -83,5 +83,7 @@ assert.equal(scenicMap.includes('scene-house'),true);
 assert.equal(scenicMap.includes('project-tank'),true);
 assert.equal(scenicMap.includes('project-reef'),true);
 assert.equal(scenicMap.includes('scene-person'),true);
+assert.equal(scenicMap.includes('route-traffic'),true);
+assert.equal(scenicMap.includes('animateMotion'),true);
 
 console.log('Island Together runtime tests passed.');
