@@ -285,3 +285,161 @@
 .weather-reefheat{background:radial-gradient(ellipse at 50% 95%,rgba(117,230,211,.18),transparent 47%)}.weather-reefheat i{position:absolute;left:0;right:0;bottom:0;height:28%;background:linear-gradient(transparent,rgba(88,210,192,.12));animation:reefShimmer 2s ease-in-out infinite alternate}@keyframes reefShimmer{to{opacity:.35;transform:scaleY(1.14)}}
 .weather-shipping .ui-icon,.weather-fuel .ui-icon,.weather-illness .ui-icon{position:absolute;right:8%;top:13%;width:68px;height:68px;opacity:.22;filter:drop-shadow(0 0 18px rgba(255,255,255,.18));animation:signalPulse 2.4s ease-in-out infinite}.weather-fuel .ui-icon{color:#f0bf68}.weather-illness .ui-icon{color:#c6a3da}@keyframes signalPulse{50%{transform:scale(1.15);opacity:.38}}
 @media (prefers-reduced-motion:reduce){.hazard-atmosphere *,.hazard-atmosphere:after{animation:none!important}}
+
+/* Geography pass — believable Pacific terrain rather than abstract blobs */
+.world-board{
+  background:
+    radial-gradient(ellipse at 48% 48%,rgba(41,112,124,.26) 0 24%,transparent 55%),
+    radial-gradient(ellipse at 78% 28%,rgba(44,110,119,.16),transparent 38%),
+    linear-gradient(180deg,#0b4050 0%,#082f3e 58%,#062a37 100%);
+}
+.world-map-art{filter:saturate(.94) contrast(1.02)}
+.scenario-island{
+  fill:url(#land);
+  stroke:#d4ddb0;
+  stroke-width:2.2;
+  stroke-linejoin:round;
+  vector-effect:non-scaling-stroke;
+}
+.land-texture{fill:url(#landTexture);pointer-events:none;opacity:.95}
+.reef-shelf{fill:none;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.reef-shelf-outer{stroke:#42b7b3;stroke-width:42;stroke-opacity:.11}
+.reef-shelf-inner{stroke:#7ad8c9;stroke-width:24;stroke-opacity:.18}
+.coast-surf{
+  fill:none;
+  stroke:#f1f0dc;
+  stroke-width:2;
+  stroke-opacity:.55;
+  stroke-dasharray:2 9;
+  stroke-linecap:round;
+  pointer-events:none;
+}
+.terrain-feature{pointer-events:none;vector-effect:non-scaling-stroke}
+.feature-reef-flat{
+  fill:none;
+  stroke:#5ec9c1;
+  stroke-width:72;
+  stroke-opacity:.17;
+  stroke-linejoin:round;
+}
+.feature-lagoon{
+  fill:url(#lagoonWater);
+  fill-opacity:.76;
+  stroke:#78d3d0;
+  stroke-width:4;
+  stroke-opacity:.22;
+}
+.feature-highland{
+  fill:url(#highland);
+  fill-opacity:.72;
+  stroke:#244f49;
+  stroke-width:2;
+  stroke-opacity:.28;
+}
+.feature-ridge{
+  fill:none;
+  stroke:#173f3c;
+  stroke-width:5;
+  stroke-opacity:.35;
+  stroke-linecap:round;
+}
+.feature-ridge + .feature-ridge{stroke-width:3.5;stroke-opacity:.26}
+.feature-river{
+  fill:none;
+  stroke:#68bed0;
+  stroke-width:5;
+  stroke-opacity:.72;
+  stroke-linecap:round;
+}
+.feature-harbour{
+  fill:#2f7f8d;
+  fill-opacity:.68;
+  stroke:#78d6cf;
+  stroke-width:2;
+  stroke-opacity:.32;
+}
+.feature-mangrove{
+  fill:none;
+  stroke:#1f6657;
+  stroke-width:13;
+  stroke-opacity:.68;
+  stroke-linecap:round;
+  stroke-dasharray:2 6;
+}
+.feature-garden{
+  fill:#899a56;
+  fill-opacity:.72;
+  stroke:#d3ca82;
+  stroke-width:1.5;
+}
+.feature-garden{fill:url(#gardenPattern)}
+.feature-settlement{
+  fill:url(#settlementPattern);
+  stroke:#d8c59d;
+  stroke-width:1.4;
+  stroke-opacity:.58;
+}
+.feature-beach{
+  fill:none;
+  stroke:#e4cf9f;
+  stroke-width:8;
+  stroke-opacity:.72;
+  stroke-linecap:round;
+}
+.feature-reef-pass{
+  fill:none;
+  stroke:#0a3d4a;
+  stroke-width:15;
+  stroke-opacity:.62;
+  stroke-linecap:round;
+}
+.roads{fill:none;pointer-events:none}
+.roads .world-road{
+  stroke:#e4d7aa;
+  stroke-width:6;
+  stroke-opacity:.78;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:2 9;
+}
+.roads .world-path{
+  stroke:#d4c593;
+  stroke-width:3.5;
+  stroke-opacity:.62;
+  stroke-linecap:round;
+  stroke-dasharray:2 7;
+}
+.boat-route{
+  stroke:#8ee6d6;
+  stroke-width:3.4;
+  stroke-opacity:.58;
+  stroke-dasharray:10 12;
+}
+.scenario-atoll_water .scenario-island{
+  fill:#9cac73;
+  stroke:#eadca9;
+  stroke-width:2;
+}
+.scenario-atoll_water .land-texture{opacity:.38}
+.scenario-atoll_water .coast-surf{stroke-opacity:.78}
+.scenario-atoll_water .feature-lagoon{fill-opacity:.82}
+.scenario-relocation_pathways .island-source-main,
+.scenario-relocation_pathways .island-source-motu{
+  fill:#a8b67b;
+  stroke:#e5d8aa;
+}
+.scenario-relocation_pathways .island-host{fill:url(#land)}
+.scenario-archipelago_logistics .island-north,
+.scenario-archipelago_logistics .island-east{fill:#5d8b67}
+@media (max-width:760px){
+  .world-game.scenario-archipelago_logistics .world-map-art{width:112%;left:-6%}
+  .world-game.scenario-atoll_water .world-map-art{width:106%;left:-3%}
+  .world-game.scenario-relocation_pathways .world-map-art{width:110%;left:-5%}
+  .reef-shelf-outer{stroke-width:34}.reef-shelf-inner{stroke-width:20}
+  .feature-reef-flat{stroke-width:58}
+}
+@media (max-width:420px){
+  .world-game.scenario-archipelago_logistics .world-map-art{width:118%;left:-9%}
+  .world-game.scenario-atoll_water .world-map-art{width:112%;left:-6%}
+  .world-game.scenario-relocation_pathways .world-map-art{width:116%;left:-8%}
+}
