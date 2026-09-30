@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "status": "partial photo-reference pass; not Street View reconstruction",
+  "baselineChecksum": "ebafee2a7c9e4cb3fb72e39230b4c65a96e5b67f4118a970f9a94cdf416fbf7e",
+  "reference": {
+    "url": "https://duap.gov.vu/images/Projects/250825_a3_Report_Port%20Vila_FINAL.pdf",
+    "publication": "July 2025",
+    "page": 22,
+    "photoCredit": "Paul Walter, 2025",
+    "exactCaptureDate": null,
+    "checkedAt": "2026-09-29",
+    "sha256": "742de99f3b9997276f1520268496666e21df9b6872608ce83ada910ed5f93546"
+  },
+  "target": {
+    "workingAssumption": "Former Olympic block, the largest mapped downtown clearance cluster",
+    "sourceIds": ["319762716", "319762680", "319762663"],
+    "confirmation": "inferred from the existing model, not user-confirmed"
+  },
+  "limits": [
+    "No Google Maps imagery used.",
+    "No claim about September 2026 occupancy, signage or repainting.",
+    "Unseen faces retain their existing schematic treatment.",
+    "No footprints, levels, foundations, demolition states or roof envelopes change.",
+    "Window proportions, pane subdivision and doorway dimensions are interpreted, not surveyed."
+  ],
+  "buildings": {
+    "319762715": {
+      "name": "Fung Kuei — photographed parking-facing wall",
+      "observedLevels": 4,
+      "kind": "paired-window-wall",
+      "footprint": [[-259.93,-457.96],[-268.52,-473.33],[-253.28,-481.75],[-249.67,-475.28],[-243.66,-475.37],[-240.06,-468.93],[-259.93,-457.96]],
+      "palette": {"wall":"#d0b33f","trim":"#d0b33f","roof":"#b7aea0","glass":"#344247"},
+      "faces": [{"edge":5,"centres":[0.22,0.5,0.78],"entranceCentre":0.58,"tallWindowCentre":0.78}],
+      "observations": [
+        "Mustard-yellow wall with three columns of paired small windows over three upper rows.",
+        "Upper-left opening is taller than the other pairs.",
+        "Large unglazed wall areas and a ground-level arched opening; no continuous canopy on this face."
+      ],
+      "pending": ["Business-facing shop wings and signs are not reconstructed.","Rear and side fenestration needs independent photographs."]
+    },
+    "332685581": {
+      "name": "Aircalin — photographed white corner block",
+      "observedLevels": 3,
+      "kind": "ribbon-windows",
+      "footprint": [[-223.38,-432.11],[-212.93,-439.84],[-199.7,-448.94],[-185.87,-431.05],[-205.67,-416.44],[-214.74,-420.4],[-223.38,-432.11]],
+      "palette": {"wall":"#e4e5df","trim":"#e4e5df","roof":"#d9dfdc","glass":"#344a54"},
+      "faces": [{"edge":2,"widthRatio":0.84},{"edge":3,"widthRatio":0.87}],
+      "observations": ["White exterior with narrow horizontal glazing on two upper floors.","Two visible street-facing elevations matched to the existing corner footprint."],
+      "pending": ["Ground-floor tenants and signs remain unverified.","Folded roof and exact pane counts need a more detailed reference; roof geometry retained."]
+    }
+  }
+}
