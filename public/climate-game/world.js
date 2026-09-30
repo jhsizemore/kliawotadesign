@@ -170,6 +170,26 @@ function worldZoneSheet(){
     <div class="zone-relevant"><span>Useful options in the deck</span><div>${relevant.map(c=>`<button data-world-action="projects" data-world-focus-id="${c.id}">${icon(TYPE_ICONS[c.type])}<span>${c.name}</span></button>`).join('')}</div></div>
   </section>`;
 }
+function evaluateScenarioGoal(goal){
+  if(!state) return {done:false,value:0};
+  if(typeof ensureSpatialState==='function') ensureSpatialState();
+  if(goal.kind==='condition'){const value=Number(state.stats?.[goal.key]||0);return {done:value>=goal.target,value};}
+  if(goal.kind==='min_condition'){const value=Math.min(...CONDITIONS.map(k=>Number(state.stats?.[k]||0)));return {done:value>=goal.target,value};}
+  if(goal.kind==='max_stress'){const value=Math.max(0,...Object.values(state.zoneStress||{}).map(Number));return {done:value<=goal.target,value};}
+  if(goal.kind==='remote_projects'){const zones=new Set((state.placements||[]).filter(p=>typeof isRemoteLocation==='function'&&isRemoteLocation(p.zoneId)).map(p=>p.zoneId));return {done:zones.size>=goal.target,value:zones.size};}
+  return {done:false,value:0};
+}
+function scenarioGoalResults(){return (worldScenario().goals||[]).map(goal=>({goal,...evaluateScenarioGoal(goal)}));}
+function worldMissionSheet(){
+  if(worldDrawer!=='mission') return '';
+  const s=worldScenario(),goals=scenarioGoalResults();
+  return `<section class="world-sheet mission-sheet" aria-label="${s.name} mission">
+    <header><div><span class="eyebrow">Scenario mission</span><strong>${s.name}</strong></div><button data-world-action="close" aria-label="Close mission">×</button></header>
+    <p class="mission-briefing">${s.briefing||s.summary}</p>
+    <div class="mission-goals">${goals.map(x=>`<div class="${x.done?'complete':''}"><span>${x.done?'✓':'○'}</span><b>${x.goal.label}</b><small>${x.goal.kind==='max_stress'?'Current max pressure '+x.value:'Progress '+x.value+' / '+x.goal.target}</small></div>`).join('')}</div>
+    <p class="mission-note">The map is fictional. The scenario combines real categories of Pacific development and climate risk for play and discussion.</p>
+  </section>`;
+}
 function worldBottomBar(){
   const role=currentRole(),slots=2-state.played.length,i=(state.round-1)%state.players;
   return `<footer class="world-action-bar">
@@ -184,9 +204,10 @@ gameHtml = function(){
   return `<div class="frame world-game">${compactHeader()}<main class="world-stage">
     ${worldMapMarkup()}
     ${worldResourceStrip()}
+    ${(()=>{const g=scenarioGoalResults(),done=g.filter(x=>x.done).length;return `<button class="world-mission" data-world-action="mission"><small>Mission</small><b>${done}/${g.length}</b></button>`})()}
     <button class="world-forecast" data-panel="forecast">${icon('forecast')}<span><small>Forecast · one arrives</small><b>${watches.join(' · ')}</b></span></button>
     <button class="world-service" data-panel="active"><small>In service</small><b>${state.active.length}/${ACTIVE_LIMIT}</b></button>
-  </main>${worldBottomBar()}${worldProjectSheet()}${worldZoneSheet()}${worldPlacementSheet()}</div>`;
+  </main>${worldBottomBar()}${worldProjectSheet()}${worldZoneSheet()}${worldPlacementSheet()}${worldMissionSheet()}</div>`;
 };
 
 eventHtml = function(){
@@ -250,6 +271,7 @@ app.addEventListener('click',e=>{
   const action=e.target.closest('[data-world-action]');
   if(action){
     if(action.dataset.worldAction==='close'){worldDrawer=null;worldZoneId=null;pendingPlacementCard=null;pendingPlacementZone=null;render();return}
+    if(action.dataset.worldAction==='mission'){worldDrawer='mission';worldZoneId=null;render();return}
     if(action.dataset.worldAction==='projects'){
       worldDrawer='projects';worldZoneId=null;
       if(action.dataset.worldFocusId){
