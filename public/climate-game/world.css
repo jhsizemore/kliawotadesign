@@ -104,3 +104,90 @@
   .placement-options{padding:2px 12px 12px}
 }
 @media (prefers-reduced-motion:reduce){.world-node.build-target .node-pin{animation:none!important}}
+
+
+/* Spatial logistics simulation */
+.boat-route.freight-active{
+  stroke:#67efd2;
+  stroke-width:6;
+  stroke-opacity:.95;
+  filter:drop-shadow(0 0 7px rgba(93,239,210,.55));
+  animation:routeDash 3.6s linear infinite;
+}
+.world-node.constructing .node-pin{
+  box-shadow:0 0 0 7px rgba(244,184,91,.16),0 0 28px rgba(244,184,91,.32);
+}
+.node-construction,.node-cache{
+  position:absolute;
+  display:flex;
+  align-items:center;
+  gap:2px;
+  border-radius:10px;
+  padding:2px 5px;
+  font-size:9px;
+  font-weight:900;
+  border:1px solid rgba(255,255,255,.5);
+  box-shadow:0 3px 10px rgba(0,24,30,.28);
+}
+.node-construction{left:-4px;top:-3px;background:#efb45f;color:#15343b}
+.node-cache{left:-4px;bottom:0;background:#59d8c1;color:#0b343a}
+.node-construction .ui-icon,.node-cache .ui-icon{width:12px;height:12px}
+.zone-logistics{
+  margin:0 16px 12px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:7px;
+}
+.zone-logistics>div{
+  background:#d8e8e1;
+  border-radius:11px;
+  padding:9px;
+  display:grid;
+  gap:3px;
+}
+.zone-logistics span{
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:8px;
+  color:#5a7778;
+}
+.zone-logistics b{font-size:13px;color:#183f44}
+.zone-construction{
+  margin:0 16px 12px;
+  padding:12px;
+  background:#f2e6cb;
+  border:1px solid #dcb978;
+  border-radius:12px;
+  display:grid;
+  gap:8px;
+}
+.zone-construction>span{
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-size:9px;
+  color:#7d6034;
+}
+.zone-construction>div{
+  display:grid;
+  grid-template-columns:24px 1fr;
+  gap:2px 8px;
+  align-items:center;
+}
+.zone-construction .ui-icon{width:21px;height:21px;color:#9f7135;grid-row:1/3}
+.zone-construction b{font-size:12px}
+.zone-construction small{font-size:10px;color:#765f42}
+.local-impact-summary{
+  margin:8px 0 12px;
+  padding:9px 10px;
+  border-radius:9px;
+  background:#e9dcc2;
+  color:#664e2b;
+  font-size:11px;
+}
+.local-impact-summary b{font-size:15px}
+@media(max-width:760px){
+  .node-construction,.node-cache{font-size:8px;padding:2px 4px}
+  .zone-logistics{margin:0 12px 10px;gap:5px}
+  .zone-logistics>div{padding:7px}
+  .zone-construction{margin:0 12px 10px}
+}
