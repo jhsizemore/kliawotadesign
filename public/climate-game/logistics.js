@@ -5,6 +5,11 @@ const legacyResolveRound = resolveRound;
 const legacyAdvance = advance;
 const legacySnapshot = snapshot;
 
+const PROJECT_BUILD_TIME = Object.freeze({
+  tank:1, spring:1, beds:1, roofs:1, school:1, drain:1, paths:1, wharf:1
+});
+function projectBuildTime(card){ return Math.max(0,PROJECT_BUILD_TIME[card?.id]||0); }
+
 function activeScenarioData(){
   return typeof ISLAND_SCENARIOS!=='undefined' ? ISLAND_SCENARIOS[ACTIVE_SCENARIO_ID] : null;
 }
@@ -69,13 +74,23 @@ function queueSpatialProject(card,zoneId,materialFromPort,cacheUsed){
   ensureSpatialState();
   state.construction.push({
     cardId:card.id,zoneId,startedRound:state.round,eta:1,status:'in-transit',
-    materialFromPort,cacheUsed,delays:0
+    materialFromPort,cacheUsed,delays:0,buildRemaining:projectBuildTime(card)
   });
   const place=scenarioNodeData(zoneId)?.label||'outer island';
   state.log.unshift({
     title:`${card.name} dispatched`,
     detail:`${materialFromPort} material${materialFromPort===1?'':'s'} sent from the main wharf to ${place}. The project will begin when freight arrives.`
   });
+}
+function queueLocalConstruction(card,zoneId,cacheUsed){
+  ensureSpatialState();
+  const eta=projectBuildTime(card);
+  state.construction.push({
+    cardId:card.id,zoneId,startedRound:state.round,eta,status:'building',
+    materialFromPort:0,cacheUsed,delays:0,buildRemaining:0
+  });
+  const place=scenarioNodeData(zoneId)?.label||'site';
+  state.log.unshift({title:`${card.name} started`,detail:`Work began at ${place}. The project should come online next season.`});
 }
 function playSpatialCard(id,retireId,zoneId){
   if(!state||state.phase!=='play') throw Error('Start a game first.');
@@ -104,7 +119,9 @@ function playSpatialCard(id,retireId,zoneId){
   state.played.push(id);
 
   const needsFreight=remote&&portMaterial>0;
+  const buildTime=projectBuildTime(card);
   if(needsFreight) queueSpatialProject(card,zoneId,portMaterial,cached);
+  else if(buildTime>0) queueLocalConstruction(card,zoneId,cached);
   else completeSpatialProject(card,zoneId,state.round,cached?'local-cache':'local');
 
   save();render();return snapshot();
@@ -175,7 +192,7 @@ function progressConstruction(hazardId){
   const remaining=[],seasonNotes=[];
   for(const item of state.construction){
     const card=projectCard(item.cardId), place=scenarioNodeData(item.zoneId)?.label||item.zoneId;
-    if(freightIsDisrupted(item,hazardId)){
+    if((item.status==='in-transit'||item.status==='delayed')&&freightIsDisrupted(item,hazardId)){
       item.delays=(item.delays||0)+1;
       item.status='delayed';
       remaining.push(item);
@@ -184,11 +201,32 @@ function progressConstruction(hazardId){
       state.log.unshift({title:'Freight delayed',detail:msg});
       continue;
     }
+
     item.eta=Math.max(0,(item.eta||1)-1);
+
+    if(item.status==='building'){
+      if(item.eta<=0){
+        completeSpatialProject(card,item.zoneId,item.startedRound,'construction');
+        const msg=`${card.name} finished at ${place}; the project is now operating.`;
+        seasonNotes.push({type:'complete',cardId:item.cardId,zoneId:item.zoneId,text:msg});
+      }else remaining.push(item);
+      continue;
+    }
+
     if(item.eta<=0){
-      completeSpatialProject(card,item.zoneId,item.startedRound,'freight');
-      const msg=`${card.name} materials arrived at ${place}; the project is now operating.`;
-      seasonNotes.push({type:'arrival',cardId:item.cardId,zoneId:item.zoneId,text:msg});
+      if((item.buildRemaining||0)>0){
+        item.status='building';
+        item.eta=item.buildRemaining;
+        item.buildRemaining=0;
+        remaining.push(item);
+        const msg=`${card.name} materials reached ${place}; local construction is underway.`;
+        seasonNotes.push({type:'arrival',cardId:item.cardId,zoneId:item.zoneId,text:msg});
+        state.log.unshift({title:'Materials arrived',detail:msg});
+      }else{
+        completeSpatialProject(card,item.zoneId,item.startedRound,'freight');
+        const msg=`${card.name} materials arrived at ${place}; the project is now operating.`;
+        seasonNotes.push({type:'complete',cardId:item.cardId,zoneId:item.zoneId,text:msg});
+      }
     }else{
       item.status='in-transit';
       remaining.push(item);
