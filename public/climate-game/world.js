@@ -67,9 +67,12 @@ function scenarioRoadSvg(s){
   return `<g class="roads">${(s.links||[]).filter(l=>l.mode!=='boat').map(l=>`<path d="${l.d||worldLinkPath(l.a,l.b)}" class="world-${l.mode||'path'}"/>`).join('')}</g>`;
 }
 function scenarioMiniMap(s){
-  const lagoon=(s.features||[]).filter(f=>f.kind==='lagoon').map(f=>`<path d="${f.d}" fill="#3a8790" opacity=".5"/>`).join('');
+  const features=s.features||[];
+  const reef=features.filter(f=>f.kind==='reef-flat').map(f=>`<path d="${f.d}" fill="none" stroke="#4fb6b0" stroke-width="42" opacity=".22"/>`).join('');
+  const lagoon=features.filter(f=>f.kind==='lagoon').map(f=>`<path d="${f.d}" fill="#3a8790" opacity=".62"/>`).join('');
+  const highland=features.filter(f=>f.kind==='highland').map(f=>`<path d="${f.d}" fill="#315d54" opacity=".68"/>`).join('');
   const boats=(s.links||[]).filter(l=>l.mode==='boat').map(l=>`<path d="${l.d||worldLinkPath(l.a,l.b)}" stroke="#91e4d7" stroke-width="5" stroke-dasharray="12 12" fill="none"/>`).join('');
-  return `<svg viewBox="0 0 1080 720" aria-hidden="true"><rect width="1080" height="720" fill="#0a3442"/>${lagoon}${(s.landforms||[]).map(x=>`<path d="${x.d}" fill="#5d9672" stroke="#96d5c6" stroke-width="4"/>`).join('')}${boats}</svg>`;
+  return `<svg viewBox="0 0 1080 720" aria-hidden="true"><rect width="1080" height="720" fill="#0a3442"/>${reef}${lagoon}${(s.landforms||[]).map(x=>`<path d="${x.d}" fill="#5d9672" stroke="#96d5c6" stroke-width="4"/>`).join('')}${highland}${boats}</svg>`;
 }
 function hazardAtmosphere(id){
   if(!id) return '';
