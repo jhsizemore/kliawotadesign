@@ -1,0 +1,22 @@
+name: Odyssey Studio Notes Snapshot
+
+on:
+  push:
+    paths:
+      - '.github/workflows/odyssey-notes-snapshot.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch shared Studio review notes
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '---ODYSSEY_NOTES_BEGIN---'
+          curl --fail --silent --show-error --retry 3 'https://kliawota.design/mtgtools/odyssey/api/review-notes'
+          echo
+          echo '---ODYSSEY_NOTES_END---'
