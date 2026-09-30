@@ -120,16 +120,17 @@ function sceneUse(kind,x,y,scale=1,rotate=0,className=''){
   return `<use href="#scene-${kind}" class="scene-use ${className}" transform="translate(${Number(x).toFixed(1)} ${Number(y).toFixed(1)}) rotate(${rotate}) scale(${scale})"/>`;
 }
 function nodeSceneSvg(node,index=0){
-  const x=node.x*10.8,y=node.y*7.2,seed=(index%3)-1;
-  if(node.kind==='port') return `<g class="node-scenery scenery-port">${sceneUse('wharf',x-17,y+9,.85,-8)}${sceneUse('canoe',x+24,y+23,.65,-10)}${sceneUse('crates',x-5,y-18,.65)}</g>`;
-  if(node.kind==='town') return `<g class="node-scenery scenery-town">${sceneUse('house',x-28,y+13,.78,-5)}${sceneUse('house',x+24,y+17,.7,4)}${sceneUse('house',x-18,y-19,.66,7)}${sceneUse('market',x+18,y-18,.75,-4)}${sceneUse('palm',x+41,y-4,.72)}${sceneUse('person',x+1,y+20,.7)}${sceneUse('person',x+10,y+12,.62)}</g>`;
-  if(node.kind==='clinic') return `<g class="node-scenery scenery-clinic">${sceneUse('clinic',x+18,y+12,.76,-4)}${sceneUse('house',x-20,y+15,.55,3)}${sceneUse('palm',x+34,y-15,.58)}</g>`;
-  if(node.kind==='school') return `<g class="node-scenery scenery-school">${sceneUse('school',x+18,y+13,.76,-3)}${sceneUse('tree',x-23,y+7,.7)}${sceneUse('tree',x+34,y-12,.55)}${sceneUse('person',x+1,y+22,.58)}${sceneUse('person',x+9,y+24,.52)}</g>`;
-  if(node.kind==='gardens') return `<g class="node-scenery scenery-gardens">${sceneUse('garden',x-22,y+12,.72,-8)}${sceneUse('garden',x+22,y+5,.68,8)}${sceneUse('palm',x+34,y-17,.55)}</g>`;
-  if(node.kind==='water') return `<g class="node-scenery scenery-water">${sceneUse('spring',x+16,y+14,.72)}${sceneUse('tree',x-24,y+9,.74)}${sceneUse('tree',x+30,y-13,.52)}</g>`;
-  if(node.kind==='site') return `<g class="node-scenery scenery-site">${sceneUse('foundation',x-17,y+13,.65,-5)}${sceneUse('foundation',x+22,y+8,.55,7)}${sceneUse('tree',x+34,y-12,.55)}</g>`;
+  const x=node.x*10.8,y=node.y*7.2,seed=(index%3)-1,compact=worldScenario().id==='atoll_water'?.68:1;
+  const u=(kind,dx,dy,scale,rotate=0,className='')=>sceneUse(kind,x+dx*compact,y+dy*compact,scale*compact,rotate,className);
+  if(node.kind==='port') return `<g class="node-scenery scenery-port">${u('wharf',-17,9,.85,-8)}${u('canoe',24,23,.65,-10)}${u('crates',-5,-18,.65)}</g>`;
+  if(node.kind==='town') return `<g class="node-scenery scenery-town">${u('house',-28,13,.78,-5)}${u('house',24,17,.7,4)}${u('house',-18,-19,.66,7)}${u('market',18,-18,.75,-4)}${u('palm',41,-4,.72)}${u('person',1,20,.7)}${u('person',10,12,.62)}</g>`;
+  if(node.kind==='clinic') return `<g class="node-scenery scenery-clinic">${u('clinic',18,12,.76,-4)}${u('house',-20,15,.55,3)}${u('palm',34,-15,.58)}</g>`;
+  if(node.kind==='school') return `<g class="node-scenery scenery-school">${u('school',18,13,.76,-3)}${u('tree',-23,7,.7)}${u('tree',34,-12,.55)}${u('person',1,22,.58)}${u('person',9,24,.52)}</g>`;
+  if(node.kind==='gardens') return `<g class="node-scenery scenery-gardens">${u('garden',-22,12,.72,-8)}${u('garden',22,5,.68,8)}${u('palm',34,-17,.55)}</g>`;
+  if(node.kind==='water') return `<g class="node-scenery scenery-water">${u('spring',16,14,.72)}${u('tree',-24,9,.74)}${u('tree',30,-13,.52)}</g>`;
+  if(node.kind==='site') return `<g class="node-scenery scenery-site">${u('foundation',-17,13,.65,-5)}${u('foundation',22,8,.55,7)}${u('tree',34,-12,.55)}</g>`;
   const villageHouse=worldScenario().id==='atoll_water'?'house':'island-house';
-  return `<g class="node-scenery scenery-village">${sceneUse(villageHouse,x-24,y+14,.65,-6)}${sceneUse('house',x+20,y+15,.58,5)}${sceneUse('community-house',x-8,y-17,.48,2)}${sceneUse('palm',x+35,y-7,.65)}${sceneUse('palm',x-38,y-3,.52)}${sceneUse('person',x+3,y+21,.58)}${node.kind==='outer'?sceneUse('canoe',x+36,y+26,.55,seed*8):''}</g>`;
+  return `<g class="node-scenery scenery-village">${u(villageHouse,-24,14,.65,-6)}${u('house',20,15,.58,5)}${u('community-house',-8,-17,.48,2)}${u('palm',35,-7,.65)}${u('palm',-38,-3,.52)}${u('person',3,21,.58)}${node.kind==='outer'?u('canoe',36,26,.55,seed*8):''}</g>`;
 }
 function landscapeItemSvg(item){
   const x=item.x*10.8,y=item.y*7.2,s=item.scale??1,r=item.rotate??0,k=item.kind;
@@ -149,14 +150,14 @@ function scenarioSettlementSvg(s){
 }
 function projectLandscapeSvg(){
   if(!state) return '';
-  const offsets=[[-27,-17],[27,-15],[-27,22],[27,23],[0,31],[-4,-31]];
+  const compact=worldScenario().id==='atoll_water'?.72:1,offsets=[[-27,-17],[27,-15],[-27,22],[27,23],[0,31],[-4,-31]].map(([x,y])=>[x*compact,y*compact]);
   const byZone=new Map();
   return `<g class="project-landscape">${(state.placements||[]).map(p=>{
     const node=worldNode(p.zoneId),card=CARDS.find(c=>c.id===p.cardId),kind=PROJECT_SCENE[p.cardId];
     if(!node||!kind||!card) return '';
     const count=byZone.get(p.zoneId)||0;byZone.set(p.zoneId,count+1);
     const [dx,dy]=offsets[count%offsets.length],x=node.x*10.8+dx,y=node.y*7.2+dy;
-    const scale=['wharf','school'].includes(kind)?.72:['meeting','canoe'].includes(kind)?.58:.62;
+    const scale=(['wharf','school'].includes(kind)?.72:['meeting','canoe'].includes(kind)?.58:.62)*compact;
     return sceneUse(kind,x,y,scale,(count%2?5:-5),`project-scenery project-${p.cardId}`);
   }).join('')}</g>`;
 }
@@ -164,7 +165,7 @@ function constructionLandscapeSvg(){
   if(!state?.construction?.length) return '';
   return `<g class="construction-landscape">${state.construction.filter(q=>q.status==='building').map((q,i)=>{
     const node=worldNode(q.zoneId);if(!node)return '';
-    return sceneUse('scaffold',node.x*10.8+(i%2?22:-22),node.y*7.2+24,.62,i%2?6:-6,'construction-scenery');
+    const compact=worldScenario().id==='atoll_water'?.72:1;return sceneUse('scaffold',node.x*10.8+(i%2?22:-22)*compact,node.y*7.2+24*compact,.62*compact,i%2?6:-6,'construction-scenery');
   }).join('')}</g>`;
 }
 
