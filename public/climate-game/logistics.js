@@ -24,6 +24,15 @@ function ensureSpatialState(){
   state.logistics.caches ??= {};
   state.logistics.history ??= [];
   state.logistics.lastSeason ??= [];
+  const special=activeScenarioData()?.special;
+  if(special?.kind==='relocation'){
+    state.relocation ??= {households:special.households||3,moved:0,sites:{},usedThisSeason:false,unplannedEvents:0,lastForcedRound:null};
+    state.relocation.sites ??= {};
+    state.relocation.households ??= special.households||3;
+    state.relocation.moved ??= Object.values(state.relocation.sites).reduce((a,b)=>a+Number(b||0),0);
+    state.relocation.usedThisSeason ??= false;
+    state.relocation.unplannedEvents ??= 0;
+  }
 }
 function isRemoteLocation(zoneId){
   const n=scenarioNodeData(zoneId);
@@ -47,6 +56,40 @@ function completedProjectAt(zoneId,cardId){
   ensureSpatialState();
   return state.placements.some(p=>p.zoneId===zoneId&&p.cardId===cardId);
 }
+function relocationReadiness(zoneId){
+  ensureSpatialState();
+  const special=activeScenarioData()?.special;
+  if(special?.kind!=='relocation'||!special.candidates?.includes(zoneId)) return null;
+  const have=new Set(special.baseline?.[zoneId]||[]);
+  for(const p of state.placements.filter(p=>p.zoneId===zoneId)){
+    const card=projectCard(p.cardId);
+    if(card?.type==='Water') have.add('water');
+    if(card?.type==='Shelter') have.add('shelter');
+    if(card?.type==='Community'||card?.type==='Logistics') have.add('access');
+  }
+  const required=['water','shelter','access'];
+  return {zoneId,have:[...have],required,ready:required.every(x=>have.has(x)),missing:required.filter(x=>!have.has(x))};
+}
+function moveRelocationHousehold(zoneId){
+  if(!state||state.phase!=='play') throw Error('Relocation decisions happen during planning.');
+  ensureSpatialState();
+  const special=activeScenarioData()?.special,ready=relocationReadiness(zoneId);
+  if(special?.kind!=='relocation'||!ready) throw Error('This is not a receiving site.');
+  if(!ready.ready) throw Error('The receiving site still needs water, shelter and access.');
+  if(state.relocation.moved>=state.relocation.households) throw Error('All households in this scenario already have a planned pathway.');
+  if(state.relocation.usedThisSeason) throw Error('Only one household transition can be supported per season.');
+  if(state.played.length>=2) throw Error('The council has already used both actions this season.');
+  if(state.stats.budget<1) throw Error('Supporting a household transition needs 1 fund.');
+  state.stats.budget-=1;
+  state.played.push(`relocation:${zoneId}`);
+  state.relocation.usedThisSeason=true;
+  state.relocation.sites[zoneId]=Number(state.relocation.sites[zoneId]||0)+1;
+  state.relocation.moved+=1;
+  const place=scenarioNodeData(zoneId)?.label||zoneId;
+  state.log.unshift({title:'Planned transition',detail:`One household moved through a prepared pathway to ${place}.`});
+  save();render();return snapshot();
+}
+
 function completeSpatialProject(card,zoneId,startedRound=state.round,source='local'){
   ensureSpatialState();
   let effect={...card.effect};
@@ -210,6 +253,14 @@ resolveRound = function(){
   const result=legacyResolveRound();
   if(state?.phase==='event'&&state.lastEvent?.id){
     const local=applyLocalHazard(state.lastEvent.id);
+    const special=activeScenarioData()?.special;
+    if(special?.kind==='relocation'&&Number(state.zoneStress?.[special.sourceZone]||0)>=3&&state.relocation?.lastForcedRound!==state.round){
+      state.relocation.lastForcedRound=state.round;
+      state.relocation.unplannedEvents=Number(state.relocation.unplannedEvents||0)+1;
+      changeStats({community:-1});
+      state.log.unshift({title:'Unplanned displacement',detail:'Severe pressure at the home community forced an unplanned temporary move. Community capacity fell by 1.'});
+      state.lastEvent.displacement={zoneId:special.sourceZone,communityLoss:1};
+    }
     const protectedCount=local.filter(x=>x.protectedBy.length).length;
     const hitCount=local.length-protectedCount;
     state.logistics.lastSeason=[{
@@ -287,6 +338,7 @@ advance = function(){
   if(state?.phase==='play'&&state.round===previousRound+1){
     ensureSpatialState();
     progressConstruction(hazardId);
+    if(state.relocation) state.relocation.usedThisSeason=false;
     applyNetworkConsequences();
     save();render();
   }
@@ -313,7 +365,8 @@ snapshot = function(){
     construction:state.construction.map(x=>({...x})),
     placements:state.placements.map(x=>({...x})),
     zoneStress:{...state.zoneStress},
-    localCaches:{...state.logistics.caches}
+    localCaches:{...state.logistics.caches},
+    relocation:state.relocation?JSON.parse(JSON.stringify(state.relocation)):null
   };
 };
 
