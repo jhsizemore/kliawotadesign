@@ -104,11 +104,6 @@ function worldMapMarkup(opts={}){
         <filter id="islandShadow"><feDropShadow dx="0" dy="9" stdDeviation="10" flood-color="#001b23" flood-opacity=".42"/></filter>
       </defs>
       <rect width="1080" height="720" fill="url(#ocean)"/>
-      <g class="sea-lines" fill="none" stroke="#5fb7bb" stroke-opacity=".11" stroke-width="2">
-        <path d="M0 110 C210 90 290 145 470 122 S790 92 1080 118"/>
-        <path d="M0 190 C180 175 330 220 520 194 S850 165 1080 196"/>
-        <path d="M0 610 C250 580 360 640 590 610 S875 574 1080 604"/>
-      </g>
       ${scenarioLandSvg(s)}
       ${scenarioRoadSvg(s)}
       <g class="routes ${shippingRisk?'route-risk':''}" fill="none">
