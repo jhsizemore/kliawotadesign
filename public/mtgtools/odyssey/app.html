@@ -556,6 +556,7 @@ Object.assign(window.ODYSSEY_ARTWORK_MANIFEST.artworks['ART-430'],{
 <script src="/mtgtools/odyssey/live-sheet-art-patch.js?v=20260928-art40"></script>
 <script src="/mtgtools/odyssey/data/notes-resolution.20260929.js?v=notes1"></script>
 <script src="/mtgtools/odyssey/data/recast-bones.20260930.js?v=recast2"></script>
+<script src="/mtgtools/odyssey/data/locale-lands.20260930.js?v=locale1"></script>
 <script src="/mtgtools/odyssey/data/landscape-import.20260929.js?v=landscapes2"></script>
 <script src="/mtgtools/odyssey/landscape-library.js?v=landscapes2"></script>
 <script src="data/temple-sanctuaries.20260929.js?v=sanctuaries1"></script>
@@ -597,7 +598,7 @@ function loadOdysseyDataset(){
   if(!validOdysseyDataset(d))throw new Error('Odyssey dataset missing or invalid');
   return d;
 }
-const ODYSSEY_DATASET=window.OdysseyRecastBones.apply(window.OdysseyNotesResolution.apply(window.OdysseyLandscapeLibrary ? window.OdysseyLandscapeLibrary.merge(loadOdysseyDataset()) : loadOdysseyDataset()));
+const ODYSSEY_DATASET=window.OdysseyLocaleLands.apply(window.OdysseyRecastBones.apply(window.OdysseyNotesResolution.apply(window.OdysseyLandscapeLibrary ? window.OdysseyLandscapeLibrary.merge(loadOdysseyDataset()) : loadOdysseyDataset())));
 const CARDS=ODYSSEY_DATASET.cards;
 const CARD_NUMBERS=CARDS.map(card=>Number(card.number));
 const cardByNum=Object.fromEntries(CARDS.map(card=>[Number(card.number),card]));
