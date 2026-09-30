@@ -233,7 +233,7 @@ function worldBottomBar(){
 }
 gameHtml = function(){
   const watches=state.forecast.map(id=>HAZARDS.find(h=>h.id===id).watch);
-  return `<div class="frame world-game">${compactHeader()}<main class="world-stage">
+  return `<div class="frame world-game scenario-${worldScenario().id}">${compactHeader()}<main class="world-stage">
     ${worldMapMarkup()}
     ${worldResourceStrip()}
     ${(()=>{const g=scenarioGoalResults(),done=g.filter(x=>x.done).length;return `<button class="world-mission" data-world-action="mission"><small>Mission</small><b>${done}/${g.length}</b></button>`})()}
@@ -268,11 +268,11 @@ resultHtml=function(){
 eventHtml = function(){
   const e=HAZARDS.find(x=>x.id===state.lastEvent.id),r=state.lastEvent;
   if(state.eventStage==='reveal'){
-    return `<div class="frame world-game world-event">${compactHeader()}<main class="world-stage">${worldMapMarkup({hazardId:e.id,resolving:true})}
+    return `<div class="frame world-game world-event scenario-${worldScenario().id}">${compactHeader()}<main class="world-stage">${worldMapMarkup({hazardId:e.id,resolving:true})}
       <section class="world-hazard-card"><span class="hazard-glyph">${icon('warning')}</span><div><span class="eyebrow">The season turns</span><h1>${e.name}</h1><p>${e.story}</p></div><button class="primary" data-action="impact">See the impact</button></section>
     </main></div>`;
   }
-  return `<div class="frame world-game world-event world-impact">${compactHeader()}<main class="world-stage">${worldMapMarkup({hazardId:e.id,resolving:true})}
+  return `<div class="frame world-game world-event world-impact scenario-${worldScenario().id}">${compactHeader()}<main class="world-stage">${worldMapMarkup({hazardId:e.id,resolving:true})}
     <section class="world-impact-sheet"><header><div><span class="eyebrow">Season ${state.round} impact</span><h1>${e.name}</h1></div></header>
       <div class="impact-mini-grid">${Object.entries(e.base).map(([k])=>`<div>${icon(STAT_ICONS[k])}<span>${LABELS[k]}</span><strong>${r.actual[k]===0?'Held':r.actual[k]}</strong></div>`).join('')}</div>
       <p class="impact-protection">${r.mitigated.length?`Protected by ${r.mitigated.join(', ')}.`:'No active project blocked this hazard.'}</p>
