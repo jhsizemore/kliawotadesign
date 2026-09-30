@@ -48,22 +48,28 @@ function worldLinkPath(a,b){
   const mx=(x1+x2)/2, lift=Math.abs(x2-x1)>.24*1080?-70:-20;
   return `M ${x1} ${y1} Q ${mx} ${(y1+y2)/2+lift} ${x2} ${y2}`;
 }
+function scenarioFeatureSvg(f){
+  return `<path class="terrain-feature feature-${f.kind}" d="${f.d}"/>`;
+}
 function scenarioLandSvg(s){
+  const features=s.features||[];
+  const under=features.filter(f=>['reef-flat','lagoon'].includes(f.kind)).map(scenarioFeatureSvg).join('');
   const land=(s.landforms||[]).map((shape,i)=>{
-    const reef=shape.reef?`<path class="island reef-ring" d="${shape.d}" fill="none" stroke="#6ad0c0" stroke-opacity=".28" stroke-width="22"/>`:'';
-    return `${reef}<path class="island scenario-island island-${shape.id||i}" d="${shape.d}" fill="url(#land)"/>`;
+    const shelf=shape.reef?`<path class="reef-shelf reef-shelf-outer" d="${shape.d}"/><path class="reef-shelf reef-shelf-inner" d="${shape.d}"/>`:'';
+    const surf=shape.surf?`<path class="coast-surf" d="${shape.d}"/>`:'';
+    return `${shelf}<g filter="url(#islandShadow)"><path class="island scenario-island island-${shape.id||i}" d="${shape.d}"/><path class="land-texture" d="${shape.d}"/></g>${surf}`;
   }).join('');
-  const features=(s.features||[]).map(f=>f.kind==='water'
-    ?`<path class="scenario-water" d="${f.d}" fill="none" stroke="#71c4d0" stroke-width="11" stroke-linecap="round" opacity=".64"/>`
-    :`<path class="scenario-feature" d="${f.d}" fill="none" stroke="#d8ddb4" stroke-width="5" opacity=".55"/>`).join('');
-  return `<g filter="url(#shadow)">${land}</g>${features}`;
+  const waterTop=features.filter(f=>['harbour','reef-pass'].includes(f.kind)).map(scenarioFeatureSvg).join('');
+  const terrain=features.filter(f=>!['reef-flat','lagoon','harbour','reef-pass'].includes(f.kind)).map(scenarioFeatureSvg).join('');
+  return `<g class="scenario-geography">${under}${land}${waterTop}${terrain}</g>`;
 }
 function scenarioRoadSvg(s){
-  return `<g class="roads" fill="none" stroke="#e8ddaf" stroke-opacity=".75" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 9">${(s.links||[]).filter(l=>l.mode!=='boat').map(l=>`<path d="${worldLinkPath(l.a,l.b)}" class="world-${l.mode||'path'}"/>`).join('')}</g>`;
+  return `<g class="roads">${(s.links||[]).filter(l=>l.mode!=='boat').map(l=>`<path d="${l.d||worldLinkPath(l.a,l.b)}" class="world-${l.mode||'path'}"/>`).join('')}</g>`;
 }
 function scenarioMiniMap(s){
-  const boats=(s.links||[]).filter(l=>l.mode==='boat').map(l=>{const a=s.nodes.find(n=>n.id===l.a),b=s.nodes.find(n=>n.id===l.b);return a&&b?`<path d="M ${a.x*10.8} ${a.y*7.2} L ${b.x*10.8} ${b.y*7.2}" stroke="#91e4d7" stroke-width="5" stroke-dasharray="12 12" fill="none"/>`:''}).join('');
-  return `<svg viewBox="0 0 1080 720" aria-hidden="true"><rect width="1080" height="720" fill="#0a3442"/>${(s.landforms||[]).map(x=>`<path d="${x.d}" fill="#5d9672" stroke="#84d0bf" stroke-width="9"/>`).join('')}${boats}</svg>`;
+  const lagoon=(s.features||[]).filter(f=>f.kind==='lagoon').map(f=>`<path d="${f.d}" fill="#3a8790" opacity=".5"/>`).join('');
+  const boats=(s.links||[]).filter(l=>l.mode==='boat').map(l=>`<path d="${l.d||worldLinkPath(l.a,l.b)}" stroke="#91e4d7" stroke-width="5" stroke-dasharray="12 12" fill="none"/>`).join('');
+  return `<svg viewBox="0 0 1080 720" aria-hidden="true"><rect width="1080" height="720" fill="#0a3442"/>${lagoon}${(s.landforms||[]).map(x=>`<path d="${x.d}" fill="#5d9672" stroke="#96d5c6" stroke-width="4"/>`).join('')}${boats}</svg>`;
 }
 function hazardAtmosphere(id){
   if(!id) return '';
@@ -89,9 +95,13 @@ function worldMapMarkup(opts={}){
     <svg class="world-map-art" viewBox="0 0 1080 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <defs>
         <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b4050"/><stop offset="1" stop-color="#062b38"/></linearGradient>
-        <linearGradient id="land" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#87b77e"/><stop offset=".58" stop-color="#4e8c6d"/><stop offset="1" stop-color="#2e675b"/></linearGradient>
-        <linearGradient id="highland" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557e61"/><stop offset="1" stop-color="#275b54"/></linearGradient>
-        <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#001b23" flood-opacity=".45"/></filter>
+        <linearGradient id="land" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#9dbe7a"/><stop offset=".46" stop-color="#5f966b"/><stop offset="1" stop-color="#32675a"/></linearGradient>
+        <linearGradient id="highland" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#698665"/><stop offset="1" stop-color="#244f4c"/></linearGradient>
+        <radialGradient id="lagoonWater" cx="48%" cy="45%" r="60%"><stop offset="0" stop-color="#47aab0"/><stop offset=".72" stop-color="#2f7e88"/><stop offset="1" stop-color="#276873"/></radialGradient>
+        <pattern id="landTexture" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="5" cy="6" r="1.3" fill="#d5dda1" opacity=".16"/><circle cx="16" cy="13" r="1.1" fill="#153f3e" opacity=".14"/><path d="M2 19 Q8 14 14 18" fill="none" stroke="#173f3c" stroke-width="1" opacity=".08"/></pattern>
+        <pattern id="gardenPattern" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)"><path d="M0 3 H14 M0 9 H14" stroke="#d8d28a" stroke-width="2" opacity=".62"/></pattern>
+        <pattern id="settlementPattern" width="18" height="18" patternUnits="userSpaceOnUse"><rect x="2" y="4" width="6" height="5" rx="1" fill="#e8d9b6" opacity=".75"/><rect x="10" y="10" width="6" height="5" rx="1" fill="#caa97d" opacity=".68"/></pattern>
+        <filter id="islandShadow"><feDropShadow dx="0" dy="9" stdDeviation="10" flood-color="#001b23" flood-opacity=".42"/></filter>
       </defs>
       <rect width="1080" height="720" fill="url(#ocean)"/>
       <g class="sea-lines" fill="none" stroke="#5fb7bb" stroke-opacity=".11" stroke-width="2">
@@ -102,11 +112,7 @@ function worldMapMarkup(opts={}){
       ${scenarioLandSvg(s)}
       ${scenarioRoadSvg(s)}
       <g class="routes ${shippingRisk?'route-risk':''}" fill="none">
-        ${s.links.filter(l=>l.mode==='boat').map(l=>`<path d="${worldLinkPath(l.a,l.b)}" class="boat-route ${freightTargets.has(l.b)?'freight-active':''}"/>`).join('')}
-      </g>
-      <g class="map-decor" opacity=".8">
-        <circle cx="523" cy="188" r="5" fill="#d6e9a4"/><circle cx="550" cy="167" r="4" fill="#d6e9a4"/><circle cx="609" cy="205" r="5" fill="#d6e9a4"/>
-        <circle cx="930" cy="508" r="4" fill="#d6e9a4"/><circle cx="169" cy="173" r="4" fill="#d6e9a4"/>
+        ${s.links.filter(l=>l.mode==='boat').map(l=>`<path d="${l.d||worldLinkPath(l.a,l.b)}" class="boat-route ${freightTargets.has(l.b)?'freight-active':''}"/>`).join('')}
       </g>
     </svg>
     ${opts.hazardId?hazardAtmosphere(opts.hazardId):''}
