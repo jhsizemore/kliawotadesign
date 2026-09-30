@@ -57,6 +57,8 @@ run("state.placements.push({cardId:'tank',zoneId:'north',round:1},{cardId:'roofs
 assert.equal(run("relocationReadiness('north').ready"),true);
 run("state.stats.budget=4; state.played=[]; state.relocation.usedThisSeason=false; moveRelocationHousehold('north');");
 assert.equal(run('state.relocation.moved'),1);
+const relocationMap=run('worldMapMarkup()');
+assert.equal(relocationMap.includes('relocation-home'),true);
 
 reset('relocation_pathways','quick');
 run("state.zoneStress.coast=2; state.pendingEvent='tide'; state.forecast=['tide','dry'];");
