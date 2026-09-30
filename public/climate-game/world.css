@@ -497,3 +497,11 @@
   .scenic-reef{opacity:.5}
   .scenario-atoll_water .scenic-palms{opacity:.68}
 }
+
+/* Local pressure also appears directly on the landscape. */
+.stress-landscape{pointer-events:none}
+.stress-scenery{opacity:.72;filter:drop-shadow(0 2px 2px rgba(0,22,28,.18))}
+.stress-scenery.stress-1{opacity:.42}
+.stress-scenery.stress-2{opacity:.72}
+.stress-scenery.stress-3{opacity:.95;filter:drop-shadow(0 0 5px rgba(214,108,105,.28))}
+.world-event .stress-scenery{opacity:1}
