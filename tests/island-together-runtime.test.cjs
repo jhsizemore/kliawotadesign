@@ -37,7 +37,7 @@ function reset(scenario,mode){
 reset('atoll_water','workshop');
 assert.equal(run('state.scenarioId'),'atoll_water');
 assert.equal(run('state.workshopMode'),true);
-assert.equal(run('worldScenario().landforms.length'),4);
+assert.ok(run('worldScenario().landforms.length')>=10);
 
 run("state.hand=['tank','roofs','stock','wharf']; state.stats.budget=8; state.stats.supplies=6; state.played=[]; state.active=[]; state.tags=[]; state.construction=[]; state.placements=[]; state.logistics.caches={};");
 run("worldPlaceAndBuild('tank','north')");
@@ -71,6 +71,8 @@ assert.equal(app.innerHTML.includes('Workshop'),true);
 
 reset('atoll_water','quick');
 const map=run('worldMapMarkup()');
-assert.equal(map.includes('island-west'),true);
+assert.equal(map.includes('island-west-1'),true);
+assert.equal(map.includes('feature-lagoon'),true);
+assert.equal(map.includes('feature-reef-flat'),true);
 
 console.log('Island Together runtime tests passed.');
