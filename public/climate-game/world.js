@@ -65,6 +65,20 @@ function scenarioMiniMap(s){
   const boats=(s.links||[]).filter(l=>l.mode==='boat').map(l=>{const a=s.nodes.find(n=>n.id===l.a),b=s.nodes.find(n=>n.id===l.b);return a&&b?`<path d="M ${a.x*10.8} ${a.y*7.2} L ${b.x*10.8} ${b.y*7.2}" stroke="#91e4d7" stroke-width="5" stroke-dasharray="12 12" fill="none"/>`:''}).join('');
   return `<svg viewBox="0 0 1080 720" aria-hidden="true"><rect width="1080" height="720" fill="#0a3442"/>${(s.landforms||[]).map(x=>`<path d="${x.d}" fill="#5d9672" stroke="#84d0bf" stroke-width="9"/>`).join('')}${boats}</svg>`;
 }
+function hazardAtmosphere(id){
+  if(!id) return '';
+  if(id==='cyclone'||id==='rain'){
+    const drops=Array.from({length:id==='cyclone'?22:14},(_,i)=>`<i style="--i:${i};--x:${(i*37)%100}%"></i>`).join('');
+    return `<div class="hazard-atmosphere weather-${id}" aria-hidden="true"><div class="storm-cloud cloud-a"></div><div class="storm-cloud cloud-b"></div><div class="rain-field">${drops}</div></div>`;
+  }
+  if(id==='tide') return `<div class="hazard-atmosphere weather-tide" aria-hidden="true"><i></i><i></i><i></i></div>`;
+  if(id==='dry') return `<div class="hazard-atmosphere weather-dry" aria-hidden="true"><i class="heat-disc"></i><i class="heat-haze"></i></div>`;
+  if(id==='reefheat') return `<div class="hazard-atmosphere weather-reefheat" aria-hidden="true"><i></i></div>`;
+  if(id==='shipping') return `<div class="hazard-atmosphere weather-shipping" aria-hidden="true">${icon('shipping')}</div>`;
+  if(id==='fuel') return `<div class="hazard-atmosphere weather-fuel" aria-hidden="true">${icon('fuel')}</div>`;
+  if(id==='illness') return `<div class="hazard-atmosphere weather-illness" aria-hidden="true">${icon('health')}</div>`;
+  return '';
+}
 function worldMapMarkup(opts={}){
   const s=worldScenario(), hazardIds=opts.hazardId?[opts.hazardId]:(state?.forecast||[]);
   const risks=riskZones(hazardIds);
@@ -95,6 +109,7 @@ function worldMapMarkup(opts={}){
         <circle cx="930" cy="508" r="4" fill="#d6e9a4"/><circle cx="169" cy="173" r="4" fill="#d6e9a4"/>
       </g>
     </svg>
+    ${opts.hazardId?hazardAtmosphere(opts.hazardId):''}
     <div class="world-scenario-label"><span>Scenario</span><strong>${s.name}</strong><small>${s.strap}</small></div>
     ${(state?.construction||[]).filter(q=>q.status==='in-transit'||q.status==='delayed').map((q,i)=>{
       const from=worldNode('port'),to=worldNode(q.zoneId);
