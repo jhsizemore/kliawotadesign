@@ -17,6 +17,12 @@ Island Together treats geography as game data rather than a live map service. A 
 
 The runtime structure is documented by `public/climate-game/scenario.schema.json`.
 
+## Recommended geographic source material
+
+For public-domain base geography, prefer Natural Earth 1:10m physical vectors for regional coastlines, major and minor islands, and reefs. The game should simplify those shapes aggressively rather than render raw GIS geometry. For a named workshop scenario, supplement the coastline with locally reviewed infrastructure and service information instead of assuming a global dataset knows the practical road, landing, water or settlement network.
+
+The current fictional maps are hand-authored composites rather than traced named islands. Their shapes are intended to evoke recognizable Pacific geographic types while keeping the gameplay clearly fictional.
+
 ## GeoJSON authoring conventions
 
 Polygon and MultiPolygon features become landforms. Point features become playable nodes. A point can use these optional properties:
