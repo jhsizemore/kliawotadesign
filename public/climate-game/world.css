@@ -512,3 +512,8 @@
 .scenario-atoll_water .route-traffic{opacity:.58}
 .route-risk + .route-traffic{opacity:.22}
 @media (prefers-reduced-motion:reduce){.route-traffic{display:none}}
+
+/* Receiving sites visibly become settlements in the relocation scenario. */
+.relocation-landscape{pointer-events:none}
+.relocation-home{filter:drop-shadow(0 2px 2px rgba(0,22,28,.18)) drop-shadow(0 0 5px rgba(202,183,231,.34))}
+.relocation-community-house{filter:drop-shadow(0 2px 2px rgba(0,22,28,.2)) drop-shadow(0 0 5px rgba(202,183,231,.38))}
