@@ -167,6 +167,17 @@ function constructionLandscapeSvg(){
   }).join('')}</g>`;
 }
 
+function relocationLandscapeSvg(){
+  const special=worldScenario().special;
+  if(!state?.relocation||special?.kind!=='relocation') return '';
+  const offsets=[[-22,18],[21,18],[-2,-22],[35,-5],[-34,-5]];
+  return `<g class="relocation-landscape">${Object.entries(state.relocation.sites||{}).map(([zoneId,count])=>{
+    const node=worldNode(zoneId);if(!node)return '';
+    const x=node.x*10.8,y=node.y*7.2,n=Math.min(offsets.length,Number(count||0));
+    return Array.from({length:n},(_,i)=>{const [dx,dy]=offsets[i];return sceneUse('house',x+dx,y+dy,.58,i%2?5:-5,'relocation-home');}).join('')+(n>=3?sceneUse('community-house',x,y+31,.46,0,'relocation-community-house'):'');
+  }).join('')}</g>`;
+}
+
 function stressLandscapeSvg(){
   if(!state?.zoneStress) return '';
   return `<g class="stress-landscape">${Object.entries(state.zoneStress).map(([zoneId,value],i)=>{
