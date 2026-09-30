@@ -6,7 +6,8 @@
     "deploy": "npm run build:renderer && wrangler deploy",
     "dev": "wrangler dev",
     "build:renderer": "node scripts/build-odyssey-public-renderer.cjs",
-    "prepare": "npm run build:renderer"
+    "prepare": "npm run build:renderer",
+    "test:island": "node tests/island-together-runtime.test.cjs"
   },
   "devDependencies": {
     "wrangler": "^4.0.0",
