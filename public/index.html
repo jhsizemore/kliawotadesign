@@ -61,6 +61,19 @@
 @media(max-width:760px){.top{gap:12px}.site-meta .place{display:none}.projects-menu>summary{font-size:10px;padding:11px 13px;gap:10px}}
 @media(max-width:480px){.brand{gap:8px}.mark{width:46px}.brandtext strong{font-size:14px}.projects-label{max-width:9ch}.projects-menu>summary{padding:9px 12px;min-height:46px;letter-spacing:.04em}.projects-panel{border-radius:12px}.project-title{font-size:15px}}
 @media(prefers-reduced-motion:no-preference){.projects-menu>summary,.project-link,.project-tools a{transition:color .16s ease,border-color .16s ease,background-color .16s ease}}
+
+/* Dated public aggregates only; the underlying working index stays private. */
+.project-status{padding:12px}
+.project-metrics{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.project-metric{display:inline-flex;align-items:baseline;gap:5px;padding:6px 8px;border:1px solid rgba(112,210,197,.3);border-radius:6px;background:rgba(112,210,197,.07);color:#c5d6d0;font-size:11px;line-height:1.4}
+.project-metric strong{color:var(--teal);font-size:15px;font-variant-numeric:tabular-nums}
+.project-snapshot,.projects-reviewed{color:#adc3bc;font:400 10px/1.5 "Courier New",monospace}
+.project-snapshot{margin:7px 0 0}
+.projects-social{margin-top:8px;padding-top:8px;border-top:1px solid rgba(244,239,229,.24)}
+.projects-social .projects-intro{margin-bottom:8px}
+.project-social-links{gap:6px;padding-bottom:4px}
+.project-social-links a{min-height:44px;padding:8px 10px}
+.projects-reviewed{margin:10px 12px 6px}
 </style>
 </head>
 <body>
@@ -95,6 +108,12 @@
         </a>
       </li>
       <li>
+        <a class="project-link" href="https://histomaps.org/starwars/" target="_blank" rel="noopener noreferrer">
+          <span><span class="project-tag">Histomaps · Interactive timeline</span><span class="project-title">Star Wars Histomap</span><span class="project-description">The rise and fall of galactic powers, alongside the stories that shape them.</span><span class="projects-sr-only">Opens in a new tab.</span></span>
+          <span class="project-arrow" aria-hidden="true">↗</span>
+        </a>
+      </li>
+      <li>
         <a class="project-link" href="/portvilasandbox/">
           <span><span class="project-title">Port Vila Sandbox</span><span class="project-description">An interactive 3D space for exploring the city and its possibilities.</span></span>
           <span class="project-arrow" aria-hidden="true">→</span>
@@ -112,14 +131,41 @@
           <span class="project-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
+      <li>
+        <div class="project-status" id="dj-radar">
+          <span class="project-tag">Music discovery · Active index</span>
+          <span class="project-title">DJ Radar</span>
+          <span class="project-description">Remixes, edits and mashups for the next set. Daily discovery and link recovery.</span>
+          <!-- Count actual populated track/version records, not sheet capacity or unique songs.
+               The source count describes the planned rotation, not successful source scans. -->
+          <div class="project-metrics" aria-label="DJ Radar activity snapshot">
+            <span class="project-metric"><strong><data data-dj-radar-count value="697">697</data></strong> indexed entries</span>
+            <span class="project-metric"><strong><data data-dj-radar-source-count value="7">7</data></strong> sources in rotation</span>
+          </div>
+          <p class="project-snapshot">Index snapshot: <time data-dj-radar-as-of datetime="2026-09-30">30 Sep 2026</time></p>
+        </div>
+      </li>
     </ul>
     <div class="projects-workshop">
       <p class="projects-heading">Also in development</p>
       <ul class="projects-list">
         <li class="project-note"><span class="project-title">Beowulf</span><span class="project-description">The next Universes Eternal literary Magic set.</span></li>
-        <li class="project-note"><span class="project-title">Spinback</span><span class="project-description">DJ remix discovery and curation.</span></li>
       </ul>
     </div>
+    <section class="projects-social" aria-labelledby="projects-social-heading">
+      <h2 class="projects-heading" id="projects-social-heading">Follow &amp; connect</h2>
+      <p class="projects-intro">Hunter, the work, and the communities around it.</p>
+      <div class="project-tools project-social-links">
+        <a href="https://www.facebook.com/jhsizemore" target="_blank" rel="me noopener noreferrer">Facebook<span class="projects-sr-only"> · Hunter. Opens in a new tab.</span></a>
+        <a href="https://www.linkedin.com/in/jhsizemore" target="_blank" rel="me noopener noreferrer">LinkedIn<span class="projects-sr-only"> · Hunter. Opens in a new tab.</span></a>
+        <a href="https://www.reddit.com/user/MyriadThings/" target="_blank" rel="me noopener noreferrer">Reddit · MyriadThings<span class="projects-sr-only">. Opens in a new tab.</span></a>
+        <a href="https://soundcloud.com/myriadthings" target="_blank" rel="me noopener noreferrer">SoundCloud · MyriadThings<span class="projects-sr-only">. Opens in a new tab.</span></a>
+        <a href="https://github.com/jhsizemore" target="_blank" rel="me noopener noreferrer">GitHub<span class="projects-sr-only"> · Hunter. Opens in a new tab.</span></a>
+        <a href="https://www.reddit.com/r/histomaps/" target="_blank" rel="noopener noreferrer">r/histomaps<span class="projects-sr-only"> · Community. Opens in a new tab.</span></a>
+        <a href="https://www.reddit.com/user/histomaps/" target="_blank" rel="me noopener noreferrer">Reddit · Histomaps<span class="projects-sr-only">. Opens in a new tab.</span></a>
+      </div>
+    </section>
+    <p class="projects-reviewed">Menu reviewed <time data-projects-reviewed datetime="2026-09-30">30 Sep 2026</time></p>
   </nav>
 </details></div></header>
 <section class="hero"><p class="kicker">Design · Communications · Creative Support</p><h1>Kliawota<br>Disaen</h1><p>Practical creative capacity, when you need it. Design and communications support for businesses, government and development organisations in Vanuatu and across the Pacific.</p></section>
