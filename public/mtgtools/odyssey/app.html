@@ -320,6 +320,10 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}
 /* The image is an independent, proportionally sized object; only its frame clips it. */
 .render-card .artbox .art-img{position:absolute;left:50%;top:50%;max-width:none;max-height:none;object-fit:fill;transform-origin:center;}
 .artbox.has-loaded-art .art-fallback{visibility:hidden}
+/* Native aperture continuation. Both layers stay underneath the sharp source.
+   Sampling through drawImage also works for museum images without CORS. */
+.artbox .art-edge-fill{position:absolute;max-width:none;max-height:none;pointer-events:none;user-select:none;}
+.artbox:not(.has-loaded-art) .art-edge-fill{display:none}
 .crop-overview{position:relative;height:210px;margin:10px 0;background:#10120f;border:1px solid #505848;border-radius:8px;overflow:hidden;touch-action:none;cursor:crosshair;isolation:isolate}
 .crop-overview img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;user-select:none}
 .crop-overview-window{position:absolute;border:2px solid #efcb69;box-shadow:0 0 0 999px rgba(0,0,0,.3);pointer-events:none}
@@ -969,14 +973,77 @@ function artViewportMetrics(img,artbox,m){
 function clampPanValue(v){v=Number(v);return Number.isFinite(v)?v:0}
 function artPanPixels(metrics,m){return metrics?{x:metrics.maxX*clampPanValue(m.focusX)/100,y:metrics.maxY*clampPanValue(m.focusY)/100}:{x:0,y:0}}
 function setArtPan(m,met,x,y){m.focusX=x/met.maxX*100;m.focusY=y/met.maxY*100}
+function artEdgeGeometry(met,pan){
+ const left=(met.W-met.rw)/2+pan.x,top=(met.H-met.rh)/2+pan.y;
+ const right=left+met.rw,bottom=top+met.rh;
+ const gaps={left:Math.max(0,Math.min(met.W,left)),right:Math.max(0,Math.min(met.W,met.W-right)),top:Math.max(0,Math.min(met.H,top)),bottom:Math.max(0,Math.min(met.H,met.H-bottom))};
+ return {left,top,right,bottom,gaps,exposed:Object.values(gaps).some(gap=>gap>1e-6)};
+}
+function clearArtEdgeFill(artbox){
+ const state=artbox?._artEdgeFill;if(!state)return;
+ state.sample.remove();state.blur.remove();delete artbox._artEdgeFill;
+}
+function drawArtEdgeSamples(ctx,img,met,geo,width,height,pad,scale){
+ // Nine slices clamp the source at its edge, retaining the colours at each
+ // position along that edge. No pixel reads, network request or source edit.
+ const xs=[[-pad,geo.left,0,1],[geo.left,geo.right,0,met.iw],[geo.right,met.W+pad,met.iw-1,1]];
+ const ys=[[-pad,geo.top,0,1],[geo.top,geo.bottom,0,met.ih],[geo.bottom,met.H+pad,met.ih-1,1]];
+ ctx.clearRect(0,0,width,height);ctx.setTransform(scale,0,0,scale,pad*scale,pad*scale);
+ for(const [x0,x1,sx,sw]of xs)for(const [y0,y1,sy,sh]of ys){
+  const l=Math.max(-pad,x0),r=Math.min(met.W+pad,x1),t=Math.max(-pad,y0),b=Math.min(met.H+pad,y1);
+  if(r<=l||b<=t)continue;
+  ctx.drawImage(img,sx+(l-x0)/(x1-x0)*sw,sy+(t-y0)/(y1-y0)*sh,(r-l)/(x1-x0)*sw,(b-t)/(y1-y0)*sh,l,t,r-l,b-t);
+ }
+ ctx.resetTransform();
+}
+function applyArtEdgeFill(img,artbox,met,pan){
+ const geo=artEdgeGeometry(met,pan);
+ if(!geo.exposed){clearArtEdgeFill(artbox);return;}
+ const source=img.currentSrc||img.src,key=[source,met.iw,met.ih,met.W,met.H,met.rw,met.rh,pan.x,pan.y].join('|');
+ let state=artbox._artEdgeFill;if(state?.key===key)return;
+ if(!state){
+  const sample=img.ownerDocument.createElement('canvas'),blur=img.ownerDocument.createElement('canvas');
+  for(const el of [sample,blur]){el.className='art-edge-fill';el.setAttribute('aria-hidden','true');}
+  artbox.insertBefore(sample,img);artbox.insertBefore(blur,img);state=artbox._artEdgeFill={sample,blur};
+ }
+ // Strength varies continuously with exposed width. Scale relative to the
+ // aperture so print and screen keep the same proportions.
+ const unit=Math.min(met.W,met.H)/350,gap=Math.max(...Object.values(geo.gaps));
+ const radius=Math.min(26*unit,.65*unit+gap*.4),pad=3*radius;
+ const scale=Math.min(4,Math.max(2,1056/met.H)),width=Math.ceil((met.W+pad*2)*scale),height=Math.ceil((met.H+pad*2)*scale);
+ for(const el of [state.sample,state.blur]){
+  el.width=width;el.height=height;
+  Object.assign(el.style,{left:(-pad/met.W*100)+'%',top:(-pad/met.H*100)+'%',width:((met.W+pad*2)/met.W*100)+'%',height:((met.H+pad*2)/met.H*100)+'%'});
+ }
+ const ctx=state.sample.getContext('2d'),blurCtx=state.blur.getContext('2d');
+ if(!ctx||!blurCtx){clearArtEdgeFill(artbox);return;}
+ drawArtEdgeSamples(ctx,img,met,geo,width,height,pad,scale);blurCtx.drawImage(state.sample,0,0);
+ // Keep even transparent source pixels unchanged: the crisp continuation
+ // occupies only the area outside the original image rectangle.
+ ctx.clearRect((geo.left+pad)*scale,(geo.top+pad)*scale,met.rw*scale,met.rh*scale);
+ state.blur.style.filter=`blur(${radius}px)`;
+ // At the source boundary the continuation uses the exact sampled edge;
+ // further out it feathers into Gaussian blur. The original has no mask.
+ const masks=[];
+ for(const [side,extent]of Object.entries(geo.gaps))if(extent>0){
+  const horizontal=side==='left'||side==='right',length=(horizontal?met.W:met.H)+pad*2;
+  const end=side==='left'?geo.left:side==='right'?met.W-geo.right:side==='top'?geo.top:met.H-geo.bottom;
+  const feather=Math.min(end,8*unit,Math.max(1.2*unit,extent*.18));
+  const direction={left:'right',right:'left',top:'bottom',bottom:'top'}[side];
+  masks.push(`linear-gradient(to ${direction},#000 ${(pad+end-feather)/length*100}%,transparent ${(pad+end)/length*100}%)`);
+ }
+ state.blur.style.maskImage=masks.join(',');state.blur.style.webkitMaskImage=masks.join(',');
+ state.key=key;
+}
 function applyArtView(img,m,artbox=img?.closest('.artbox')){
  if(!img)return;
- const met=artViewportMetrics(img,artbox,m);if(!met)return;
+ const met=artViewportMetrics(img,artbox,m);if(!met){clearArtEdgeFill(artbox);return;}
  artbox.classList.add('has-loaded-art');
  const pan=artPanPixels(met,m);
  // Give the element the full source aspect ratio before clipping. Never object-fit:cover inside a frame-sized img.
  img.style.objectFit='fill';img.style.width=(met.rw/met.W*100)+'%';img.style.height=(met.rh/met.H*100)+'%';
  img.style.transform=`translate(-50%,-50%) translate(${pan.x/met.rw*100}%,${pan.y/met.rh*100}%)`;
+ applyArtEdgeFill(img,artbox,met,pan);
  if(artbox.closest('#previewShell'))updateCropOverview(img,m,met);
 }
 function syncPanControl(id,value){const el=$(id);if(!el)return;const extent=Math.max(100,Math.ceil(Math.abs(value)/100)*100);el.min=-extent;el.max=extent;el.value=value}

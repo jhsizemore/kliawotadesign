@@ -25,6 +25,22 @@ visible. Existing and newly opened cards use the native Studio renderer's exact
 image geometry, not a separate object-fit approximation. Publication does not
 require a Git commit or a site rebuild.
 
+## Automatic edge continuation
+
+Every artwork aperture inherits automatic edge fill from `applyArtView`. When
+the placed source covers the aperture, the renderer adds nothing. Exposed sides
+and corners are filled underneath the original with samples from that source's
+nearest edge. A gradient blends those samples into Gaussian blur further into
+the gap; blur strength follows the gap size continuously. The sharp original is
+never filtered or masked, including transparent artwork.
+
+Dragging, zooming, changing fit and resizing recompute the continuation. The
+source-derived public renderer and print preparation use the same functions.
+There is no card property, opt-in, additional image download or change to saved
+placement records. Sampling uses canvas drawing without reading image pixels,
+so externally hosted museum images do not need CORS permission for display or
+printing.
+
 ## Data and safety
 
 The canonical workbook is `1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE`.
@@ -54,3 +70,9 @@ conflicts, reset, source/face guards, authorization and failed-readback safety.
 Serve `public/` on port 8765 and run `python tests/odyssey-placement-browser.py`
 with Playwright Chromium to test real Studio and Scry pages. Browser publication
 uses a mocked authorized boundary; it does not write the real workbook.
+
+`node --test tests/odyssey-edge-fill-browser.cjs` uses Playwright and Sharp to
+check actual source pixels, tiny and multi-edge gaps, transparent and non-CORS
+images, native frame families, the public renderer, and physical print geometry.
+It creates its own local server and blocks remote writes. An existing Chromium
+binary can be supplied as `ODYSSEY_CHROME_EXECUTABLE`.
