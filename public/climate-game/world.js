@@ -129,8 +129,8 @@ function worldPlacementSheet(){
   const targets=projectTargetsFor(card.id).map(worldNode).filter(Boolean);
   return `<section class="world-sheet placement-sheet" aria-label="Choose where to build">
     <header><div><span class="eyebrow">Place this project</span><strong>${card.name}</strong></div><button data-world-action="close" aria-label="Cancel placement">×</button></header>
-    <div class="placement-copy"><span class="placement-icon">${icon(TYPE_ICONS[card.type])}</span><p>Choose the community or site where this project will operate. Its marker will stay on the island after it is built.</p></div>
-    <div class="placement-options">${targets.map(z=>`<button data-world-zone="${z.id}" class="placement-option">${icon(worldNodeIcon(z.kind))}<span><b>${z.label}</b><small>${z.note}</small></span></button>`).join('')}</div>
+    <div class="placement-copy"><span class="placement-icon">${icon(TYPE_ICONS[card.type])}</span><p>Choose where this project will operate. Outer-island projects that need materials must wait for freight unless a local cache can cover the material cost.</p></div>
+    <div class="placement-options">${targets.map(z=>{const cache=Number(state?.logistics?.caches?.[z.id]||0),cost=effectiveCost(card)[1],remote=isRemoteLocation(z.id),needs=Math.max(0,cost-cache);const note=remote&&cost?(cache>=cost?'Local cache · build now':`Needs ${needs} material${needs===1?'':'s'} by boat · about 1 season`):(remote?'No material freight needed':'Road-connected');return `<button data-world-zone="${z.id}" class="placement-option">${icon(worldNodeIcon(z.kind))}<span><b>${z.label}</b><small>${note}</small></span></button>`}).join('')}</div>
   </section>`;
 }
 function worldPlaceAndBuild(cardId,zoneId,retireId){
@@ -150,10 +150,13 @@ function worldPlaceAndBuild(cardId,zoneId,retireId){
 function worldZoneSheet(){
   if(worldDrawer!=='zone'||!worldZoneId) return '';
   const z=worldNode(worldZoneId), projects=projectsAtZone(z.id), value=zoneCondition(z);
+  const construction=constructionAtZone(z.id),cache=Number(state?.logistics?.caches?.[z.id]||0),stress=Number(state?.zoneStress?.[z.id]||0);
   const relevant=CARDS.filter(c=>projectTargetsFor(c.id).includes(z.id)).slice(0,4);
   return `<section class="world-sheet zone-sheet" aria-label="${z.label}">
     <header><div><span class="eyebrow">${z.kind==='outer'?'Outer-island community':'Island place'}</span><strong>${z.label}</strong></div><button data-world-action="close" aria-label="Close place">×</button></header>
     <div class="zone-state-row"><span class="zone-big-icon">${icon(worldNodeIcon(z.kind))}</span><div><b class="zone-condition ${zoneStateClass(z)}">${value<=1?'Critical':value<=2?'Under pressure':value>=5?'Strong':'Holding'}</b><p>${z.note}</p></div></div>
+    <div class="zone-logistics"><div><span>Local pressure</span><b>${stress?stress+' / 3':'None'}</b></div><div><span>Stored materials</span><b>${cache}</b></div><div><span>Freight / works</span><b>${construction.length}</b></div></div>
+    ${construction.length?`<div class="zone-construction"><span>On the way</span>${construction.map(q=>`<div>${icon('shipping')}<b>${CARDS.find(c=>c.id===q.cardId)?.name}</b><small>${q.status==='delayed'?'Delayed by this season':'Expected next season if the route stays open'}</small></div>`).join('')}</div>`:''}
     <div class="zone-projects"><span>Projects here</span>${projects.length?projects.map(id=>`<b>${CARDS.find(c=>c.id===id).name}</b>`).join(''):'<small>Nothing built here yet.</small>'}</div>
     <div class="zone-relevant"><span>Useful options in the deck</span><div>${relevant.map(c=>`<button data-world-action="projects" data-world-focus-id="${c.id}">${icon(TYPE_ICONS[c.type])}<span>${c.name}</span></button>`).join('')}</div></div>
   </section>`;
@@ -188,6 +191,7 @@ eventHtml = function(){
     <section class="world-impact-sheet"><header><div><span class="eyebrow">Season ${state.round} impact</span><h1>${e.name}</h1></div></header>
       <div class="impact-mini-grid">${Object.entries(e.base).map(([k])=>`<div>${icon(STAT_ICONS[k])}<span>${LABELS[k]}</span><strong>${r.actual[k]===0?'Held':r.actual[k]}</strong></div>`).join('')}</div>
       <p class="impact-protection">${r.mitigated.length?`Protected by ${r.mitigated.join(', ')}.`:'No active project blocked this hazard.'}</p>
+      ${r.local?.length?`<div class="local-impact-summary"><b>${r.local.filter(x=>!x.protectedBy.length).length}</b> places took local pressure · <b>${r.local.filter(x=>x.protectedBy.length).length}</b> protected locally</div>`:''}
       <div class="impact-actions"><a href="${SOURCES.find(s=>s.id===e.source).url}" target="_blank" rel="noopener noreferrer">Why this matters ↗</a><button class="primary" data-action="advance">${state.round===6?'See score card':'Next season'}</button></div>
     </section>
   </main></div>`;
