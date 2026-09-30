@@ -9,7 +9,7 @@ let pendingPlacementZone = null;
 function worldScenario(){ const id=state?.scenarioId || (typeof selectedScenarioId!=='undefined'?selectedScenarioId:ACTIVE_SCENARIO_ID); return ISLAND_SCENARIOS[id] || ISLAND_SCENARIOS[ACTIVE_SCENARIO_ID]; }
 function worldNode(id){ return worldScenario().nodes.find(n=>n.id===id); }
 function worldNodeIcon(kind){
-  return ({port:'shipping',town:'community',clinic:'health',school:'shelter',gardens:'food',water:'water',village:'shelter',outer:'outrigger'})[kind] || 'community';
+  return ({port:'shipping',town:'community',clinic:'health',school:'shelter',gardens:'food',water:'water',village:'shelter',outer:'outrigger',site:'shelter'})[kind] || 'community';
 }
 function builtProjectIds(){
   if(!state) return [];
@@ -177,6 +177,7 @@ function evaluateScenarioGoal(goal){
   if(goal.kind==='min_condition'){const value=Math.min(...CONDITIONS.map(k=>Number(state.stats?.[k]||0)));return {done:value>=goal.target,value};}
   if(goal.kind==='max_stress'){const value=Math.max(0,...Object.values(state.zoneStress||{}).map(Number));return {done:value<=goal.target,value};}
   if(goal.kind==='remote_projects'){const zones=new Set((state.placements||[]).filter(p=>typeof isRemoteLocation==='function'&&isRemoteLocation(p.zoneId)).map(p=>p.zoneId));return {done:zones.size>=goal.target,value:zones.size};}
+  if(goal.kind==='relocation_planned'){const value=Number(state.relocation?.moved||0);return {done:value>=goal.target,value};}
   return {done:false,value:0};
 }
 function scenarioGoalResults(){return (worldScenario().goals||[]).map(goal=>({goal,...evaluateScenarioGoal(goal)}));}
