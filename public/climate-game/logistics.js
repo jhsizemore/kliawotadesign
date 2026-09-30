@@ -119,9 +119,10 @@ function playSpatialCard(id,retireId,zoneId){
   state.hand=state.hand.filter(x=>x!==id);
   state.played.push(id);
 
-  const needsFreight=remote&&portMaterial>0;
+  const needsFreight=remote&&(portMaterial>0||card.id==='stock');
+  const freightPayload=card.id==='stock'&&remote?Math.max(1,card.effect?.supplies||2):portMaterial;
   const buildTime=projectBuildTime(card);
-  if(needsFreight) queueSpatialProject(card,zoneId,portMaterial,cached);
+  if(needsFreight) queueSpatialProject(card,zoneId,freightPayload,cached);
   else if(buildTime>0) queueLocalConstruction(card,zoneId,cached);
   else completeSpatialProject(card,zoneId,state.round,cached?'local-cache':'local');
 
