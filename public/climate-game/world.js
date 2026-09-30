@@ -273,6 +273,7 @@ eventHtml = function(){
       <div class="impact-mini-grid">${Object.entries(e.base).map(([k])=>`<div>${icon(STAT_ICONS[k])}<span>${LABELS[k]}</span><strong>${r.actual[k]===0?'Held':r.actual[k]}</strong></div>`).join('')}</div>
       <p class="impact-protection">${r.mitigated.length?`Protected by ${r.mitigated.join(', ')}.`:'No active project blocked this hazard.'}</p>
       ${r.local?.length?`<div class="local-impact-summary"><b>${r.local.filter(x=>!x.protectedBy.length).length}</b> places took local pressure · <b>${r.local.filter(x=>x.protectedBy.length).length}</b> protected locally</div>`:''}
+      ${state.workshopMode?`<div class="workshop-impact-question"><span>Discuss</span><b>${workshopDebriefPrompt()}</b></div>`:''}
       ${state?.logistics?.lastSeason?.some(x=>x.type==='delay')?`<div class="freight-impact">${icon('shipping')}<span><b>Freight interrupted</b><small>${state.logistics.lastSeason.filter(x=>x.type==='delay').map(x=>x.text).join(' ')}</small></span></div>`:''}
       <div class="impact-actions"><a href="${SOURCES.find(s=>s.id===e.source).url}" target="_blank" rel="noopener noreferrer">Why this matters ↗</a><button class="primary" data-action="advance">${state.round===6?'See score card':'Next season'}</button></div>
     </section>
@@ -284,6 +285,12 @@ eventHtml = function(){
 app.addEventListener('click',e=>{
   const scenario=e.target.closest('[data-scenario]');
   if(scenario&&!state){selectedScenarioId=scenario.dataset.scenario;render();return;}
+  const mode=e.target.closest('[data-play-mode]');
+  if(mode&&!state){selectedPlayMode=mode.dataset.playMode;render();return;}
+  const workshopContinue=e.target.closest('[data-workshop-continue]');
+  if(workshopContinue&&state?.workshopMode){e.preventDefault();e.stopImmediatePropagation();state.workshopReadyRound=state.round;worldDrawer=null;save();resolveRound();return;}
+  const resolve=e.target.closest('[data-action="resolve"]');
+  if(resolve&&state?.phase==='play'&&state.workshopMode&&state.workshopReadyRound!==state.round){e.preventDefault();e.stopImmediatePropagation();worldDrawer='workshop';render();return;}
 },true);
 
 app.addEventListener('click',e=>{
