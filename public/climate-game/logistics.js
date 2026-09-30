@@ -11,7 +11,8 @@ const PROJECT_BUILD_TIME = Object.freeze({
 function projectBuildTime(card){ return Math.max(0,PROJECT_BUILD_TIME[card?.id]||0); }
 
 function activeScenarioData(){
-  return typeof ISLAND_SCENARIOS!=='undefined' ? ISLAND_SCENARIOS[ACTIVE_SCENARIO_ID] : null;
+  const id=state?.scenarioId || (typeof selectedScenarioId!=='undefined'?selectedScenarioId:ACTIVE_SCENARIO_ID);
+  return typeof ISLAND_SCENARIOS!=='undefined' ? ISLAND_SCENARIOS[id] : null;
 }
 function scenarioNodeData(id){ return activeScenarioData()?.nodes?.find(n=>n.id===id) || null; }
 function ensureSpatialState(){
@@ -252,7 +253,7 @@ advance = function(){
 startGame = function(n=selectedPlayers){
   const result=legacyStartGame(n);
   ensureSpatialState();
-  state.scenarioId=ACTIVE_SCENARIO_ID;
+  state.scenarioId=(typeof selectedScenarioId!=='undefined'?selectedScenarioId:ACTIVE_SCENARIO_ID);
   save();render();
   return snapshot();
 };
@@ -263,7 +264,7 @@ snapshot = function(){
   ensureSpatialState();
   return {
     ...base,
-    scenarioId:state.scenarioId||ACTIVE_SCENARIO_ID,
+    scenarioId:state.scenarioId||(typeof selectedScenarioId!=='undefined'?selectedScenarioId:ACTIVE_SCENARIO_ID),
     construction:state.construction.map(x=>({...x})),
     placements:state.placements.map(x=>({...x})),
     zoneStress:{...state.zoneStress},
@@ -272,4 +273,4 @@ snapshot = function(){
 };
 
 ensureSpatialState();
-if(state){ state.scenarioId??=ACTIVE_SCENARIO_ID; save(); }
+if(state){ state.scenarioId??=(typeof selectedScenarioId!=='undefined'?selectedScenarioId:ACTIVE_SCENARIO_ID); save(); }
