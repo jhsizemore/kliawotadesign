@@ -7,6 +7,16 @@ const NOTES_API = '/mtgtools/odyssey/api/review-notes';
 const NOTES_SCHEMA = 'odyssey-review-notes/v1';
 const FINISH_API = '/mtgtools/odyssey/api/finishing';
 const FINISH_SCHEMA = 'odyssey-finishing-queue/v1';
+const RESOLVED_NOTE_MIGRATION_20261001 = new Set([
+  '2026-09-29.1:ODY-001','2026-09-29.1:ODY-016','2026-09-29.1:ODY-031',
+  '2026-09-29.1:ODY-074','2026-09-29.1:ODY-104','2026-09-29.1:ODY-110',
+  '2026-09-29.1:ODY-111','2026-09-29.1:ODY-113','2026-09-29.1:ODY-114',
+  '2026-09-29.1:ODY-122','2026-09-29.1:ODY-128','2026-09-29.1:ODY-135',
+  '2026-09-29.1:ODY-137','2026-09-29.1:ODY-144','2026-09-29.1:ODY-170',
+  '2026-09-29.1:ODY-172','2026-09-29.1:ODY-183','2026-09-29.1:ODY-187',
+  '2026-09-29.1:ODY-196','2026-09-29.1:ODY-233','2026-09-29.1:ODY-240',
+  '2026-09-29.1:ODY-245'
+]);
 const FINISH_KEYS = new Set([
   'name','displayName','underlyingName','mana','mv','color','frame','type','rules','rarity','pt',
   'origin','originFull','mechanics','archetypes','story','status','treatment','skeletonClass',
@@ -238,6 +248,16 @@ export class OdysseyArtWorkspace {
         if (request.method === 'GET') {
           const stored = await txn.list({prefix:'note:',limit:4000});
           const notes = [...stored.values()].filter(row=>row && typeof row === 'object');
+          const migratedAt = new Date().toISOString();
+          for (const row of notes) {
+            const migrationKey = String(row.datasetVersion||'')+':'+String(row.cardId||'');
+            if (row.status === 'OPEN' && RESOLVED_NOTE_MIGRATION_20261001.has(migrationKey)) {
+              row.status = 'RESOLVED';
+              row.updatedAt = migratedAt;
+              row.resolution = 'studio-notes-pass-20261001';
+              await txn.put(noteStorageKey(row.datasetVersion,row.cardId),row);
+            }
+          }
           notes.sort((a,b)=>(a.number||0)-(b.number||0)||String(a.cardId||'').localeCompare(String(b.cardId||'')));
           return {schema:NOTES_SCHEMA,notes};
         }
