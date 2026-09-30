@@ -54,6 +54,7 @@ function apply(data){
    card.flavorStoryElement=RESERVE[n].story;card.archetypes='';
    card.rules='';
    card.mechanics='';
+   card.flavor='';
    card.pt='';
    card.status='REVISE';
    card.designDisposition='REASSIGN';

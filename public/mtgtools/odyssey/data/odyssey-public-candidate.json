@@ -3955,7 +3955,7 @@
       "flavorStoryElement": "A coastal sanctuary to the god who opposes the homeward voyage.",
       "flavorMatchScore": null,
       "flavorMatchRationale": "Former overlapping dual design archived; story and artwork slot reserved for a new non-dual design.",
-      "flavor": "in the tenth shall take the town",
+      "flavor": "",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
         "ART-149",
@@ -10433,7 +10433,7 @@
       "flavorStoryElement": "The burial and remembrance of Achilles after the fighting at Troy.",
       "flavorMatchScore": null,
       "flavorMatchRationale": "Former overlapping dual design archived; story and artwork slot reserved for a new non-dual design.",
-      "flavor": "there are tokens with which we two are alone acquainted",
+      "flavor": "",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
         "ART-065",
@@ -10493,6 +10493,7 @@
         "ART-277"
       ],
       "reviewArtworkOptions": "Open art choices",
+      "flavor": "",
       "designDisposition": "REASSIGN"
     },
     {
@@ -10546,6 +10547,7 @@
         "ART-067"
       ],
       "reviewArtworkOptions": "Open art choices",
+      "flavor": "",
       "designDisposition": "REASSIGN"
     },
     {
@@ -10599,6 +10601,7 @@
         "ART-372"
       ],
       "reviewArtworkOptions": "Open art choices",
+      "flavor": "",
       "designDisposition": "REASSIGN"
     },
     {
@@ -37394,8 +37397,8 @@
       "title": "14A2 — The Odyssey MTG — Analysis Candidate Card File v2 — FF Lattice Rebuild"
     },
     "sourceVersion": "2026-09-29.1",
-    "sourceFingerprint": "6b95a1af3030c770dee43dc1f1165a00ce18d594d4d7adbb879c3ef6c7f6a457",
-    "cardsSha256": "d8d53abc032b808b55716e54c038cc48f407bf23fb4a62ae1276ffcb5dd3fdf8",
+    "sourceFingerprint": "e03843b3e14767278e4a61d2d42a11fed45058ddd223021a9e8906c3b65238b4",
+    "cardsSha256": "5416d66bbd969b333f80497fb5f143a5570a117e1b83b06dbbec04bbf8c229af",
     "sources": [
       {
         "file": "data/odyssey-data.js",
@@ -37423,7 +37426,7 @@
       },
       {
         "file": "data/locale-lands.20260930.js",
-        "sha256": "bbaf15bc2aab6438d844ac7b96b6126f6ecc0f59396141c4f6642a49424182dc"
+        "sha256": "8c232f83ab788acb3e8839384a1db72c32b81f6ce33e5ccb008d5584ab485e12"
       }
     ]
   }

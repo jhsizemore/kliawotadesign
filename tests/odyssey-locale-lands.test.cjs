@@ -19,14 +19,14 @@ test('the five overlapping dual designs are archived and await reassignment',()=
  assert.deepEqual(retired,[72,193,194,195,196]);
  assert.deepEqual(archive.sourceCards.map(c=>c.number),retired);
  for(const n of retired){const c=card(n),old=archive.sourceCards.find(x=>x.number===n);
-  assert(old.rules.includes('scry 1'),n);assert.equal(c.rules,'');assert.equal(c.status,'REVISE');
+  assert(old.rules.includes('scry 1'),n);assert.equal(c.rules,'');assert.equal(c.flavor,'');assert.equal(c.status,'REVISE');
   assert.equal(c.designDisposition,'REASSIGN');assert(!c.cycleIds.includes('cycle.enemy-temple-scry-lands'));
  }
  assert.deepEqual(data.emptySlots.slots,retired);
 });
 test('the sanctuary artwork library registers before the land designs are retired',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- assert(app.indexOf('temple-sanctuaries.js?v=sanctuaries2')<app.indexOf('locale-lands.20260930.js?v=locale3'));
+ assert(app.indexOf('temple-sanctuaries.js?v=sanctuaries2')<app.indexOf('locale-lands.20260930.js?v=locale4'));
  const base=structuredClone(data);
  for(const old of archive.sourceCards)base.cards[base.cards.findIndex(c=>c.number===old.number)]=old;
  const sandbox={window:{ODYSSEY_DATA:base}};vm.createContext(sandbox);
