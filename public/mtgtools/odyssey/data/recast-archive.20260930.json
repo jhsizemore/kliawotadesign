@@ -7,7 +7,8 @@
     "sheetId": "1-OTRpW8vrSJWcXcL06l3eMJESwFtt6hQqCEl9J3sdEE",
     "sheetName": "Card File v1.0 Candidate",
     "sheetIdNumeric": 1177419692,
-    "productionManifestExportedAt": "2026-09-29T20:53:12.943Z"
+    "productionManifestExportedAt": "2026-09-29T20:53:12.943Z",
+    "finishingChangesetExportedAt": "2026-09-30T01:21:17.921Z"
   },
   "policy": "Complete prior card design retained before active candidate is reduced to the structural slot.",
   "cards": [
@@ -731,6 +732,464 @@
           },
           "Flavour Rationale": {
             "stringValue": "A high-end red enchantment supplies removal on arrival and then leaves a persistent weather effect that opens attacks."
+          }
+        }
+      }
+    },
+    {
+      "number": 165,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing rating, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-165",
+        "number": 165,
+        "name": "Summer Heat on Stone",
+        "displayName": "Summer Heat on Stone",
+        "underlyingName": "",
+        "mana": "{3}{R}",
+        "mv": 4,
+        "color": "R",
+        "frame": "R",
+        "type": "Enchantment",
+        "pt": "",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Tapped-matters damage",
+        "rules": "Whenever one or more creatures you control become tapped, this enchantment deals 1 damage to each opponent. This ability triggers only once each turn.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "RW/RG/BR — Survival / combat",
+        "story": "Mediterranean natural world / hard summer heat makes labor, marches and exposed stone country exhausting.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-471",
+        "credit": "Art: Paul Guigou · Cleveland Museum of Art",
+        "source": "https://commons.wikimedia.org/wiki/File:Landscape_at_Saint-Andr%C3%A9,_Near_Marseilles,_by_Paul_Guigou,_Cleveland_Museum_of_Art,_1980.265.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Landscape_at_Saint-Andr%C3%A9,_Near_Marseilles,_by_Paul_Guigou,_Cleveland_Museum_of_Art,_1980.265.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "flavor.mediterranean-natural-world",
+          "structure.connective-tissue"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 24,
+        "changeStatus": "candidate2-world-wave-v2 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "Summer heat as persistent environmental pressure.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Mediterranean natural world / composite",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Summer heat as persistent environmental pressure.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "The enchantment turns tapping creatures for attacks, crew or work into measured red pressure without another episode-specific hazard.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "OPEN HUNT"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {},
+      "studioEffective": {
+        "id": "ODY-165",
+        "number": 165,
+        "name": "Summer Heat on Stone",
+        "displayName": "Summer Heat on Stone",
+        "underlyingName": "",
+        "mana": "{3}{R}",
+        "mv": 4,
+        "color": "R",
+        "frame": "R",
+        "type": "Enchantment",
+        "pt": "",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Tapped-matters damage",
+        "rules": "Whenever one or more creatures you control become tapped, this enchantment deals 1 damage to each opponent. This ability triggers only once each turn.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "RW/RG/BR — Survival / combat",
+        "story": "Mediterranean natural world / hard summer heat makes labor, marches and exposed stone country exhausting.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-471",
+        "credit": "Art: Paul Guigou · Cleveland Museum of Art",
+        "source": "https://commons.wikimedia.org/wiki/File:Landscape_at_Saint-Andr%C3%A9,_Near_Marseilles,_by_Paul_Guigou,_Cleveland_Museum_of_Art,_1980.265.jpg",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Landscape_at_Saint-Andr%C3%A9,_Near_Marseilles,_by_Paul_Guigou,_Cleveland_Museum_of_Art,_1980.265.jpg",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "flavor.mediterranean-natural-world",
+          "structure.connective-tissue"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 24,
+        "changeStatus": "candidate2-world-wave-v2 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "Summer heat as persistent environmental pressure.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Mediterranean natural world / composite",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Summer heat as persistent environmental pressure.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "The enchantment turns tapping creatures for attacks, crew or work into measured red pressure without another episode-specific hazard.",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "OPEN HUNT"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "zoom": 1,
+        "focusX": 0,
+        "focusY": 0
+      },
+      "canonicalSheet": {
+        "row": 166,
+        "values": {
+          "#": {
+            "numberValue": 165
+          },
+          "Name": {
+            "stringValue": "Summer Heat on Stone"
+          },
+          "Mana Cost": {
+            "stringValue": "{3}{R}"
+          },
+          "MV": {
+            "numberValue": 4
+          },
+          "Color": {
+            "stringValue": "R"
+          },
+          "Type": {
+            "stringValue": "Enchantment"
+          },
+          "P/T": {
+            "stringValue": "—"
+          },
+          "Rarity": {
+            "stringValue": "U"
+          },
+          "Origin": {
+            "stringValue": "New"
+          },
+          "Mechanics": {
+            "stringValue": "Tapped-matters damage"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "Whenever one or more creatures you control become tapped, this enchantment deals 1 damage to each opponent. This ability triggers only once each turn."
+          },
+          "Archetypes": {
+            "stringValue": "RW/RG/BR — Survival / combat"
+          },
+          "Story / Book": {
+            "stringValue": "Mediterranean natural world / hard summer heat makes labor, marches and exposed stone country exhausting."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "Summer Heat on Stone"
+          },
+          "Underlying Oracle Name": null,
+          "Treatment": null,
+          "Primary Art ID": {
+            "stringValue": "ART-471"
+          },
+          "Art Credit": {
+            "stringValue": "Art: Paul Guigou · Cleveland Museum of Art"
+          },
+          "Art Source URL": {
+            "stringValue": "https://commons.wikimedia.org/wiki/File:Landscape_at_Saint-Andr%C3%A9,_Near_Marseilles,_by_Paul_Guigou,_Cleveland_Museum_of_Art,_1980.265.jpg"
+          },
+          "Skeleton Class": {
+            "stringValue": "standard"
+          },
+          "Cycle IDs": {
+            "stringValue": "flavor.mediterranean-natural-world; structure.connective-tissue"
+          },
+          "Showcase Programs": null,
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 24
+          },
+          "Change Status": {
+            "stringValue": "candidate2-world-wave-v2 · art-review · art-remap-v1 · art-acceptance-v1"
+          },
+          "Narrative Era": {
+            "stringValue": "Homeric world"
+          },
+          "Story Target": {
+            "stringValue": "Summer heat as persistent environmental pressure."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Mediterranean natural world / composite"
+          },
+          "Art Review Required": {
+            "stringValue": "NO"
+          },
+          "Art Path": {
+            "stringValue": "GENERIC OK"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "OPEN HUNT"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "Summer heat as persistent environmental pressure."
+          },
+          "Flavour Match /5": {
+            "stringValue": "5"
+          },
+          "Flavour Rationale": {
+            "stringValue": "The enchantment turns tapping creatures for attacks, crew or work into measured red pressure without another episode-specific hazard."
+          }
+        }
+      }
+    },
+    {
+      "number": 167,
+      "confidence": {
+        "value": 0,
+        "label": "Recast",
+        "source": "Odyssey Studio finishing rating, 30 Sep 2026"
+      },
+      "candidate": {
+        "id": "ODY-167",
+        "number": 167,
+        "name": "Lion Among the Flock",
+        "displayName": "Lion Among the Flock",
+        "underlyingName": "",
+        "mana": "{5}{G}",
+        "mv": 6,
+        "color": "G",
+        "frame": "G",
+        "type": "Creature — Lion",
+        "pt": "6/5",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Trample",
+        "rules": "Trample.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "RG/GW — big creatures",
+        "story": "Homeric simile / heroes and predators are repeatedly likened to a lion falling upon livestock.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-107",
+        "credit": "Art: Greek, early 7th century BCE · The Met",
+        "source": "https://www.metmuseum.org/art/collection/search/254448",
+        "imageUrl": "",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "flavor.homeric-similes",
+          "flavor.mediterranean-natural-world"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 8,
+        "changeStatus": "candidate2-world-wave-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "Lion-among-the-flock simile.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Homeric simile tradition",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Lion-among-the-flock simile.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "A deliberately simple six-drop restores late-game density and lets an iconic Homeric comparison become a real creature at uncommon.",
+        "flavor": "He looked like some lion of the wilderness",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "OPEN HUNT"
+        ],
+        "reviewArtworkOptions": "Open art choices"
+      },
+      "studioOverride": {},
+      "studioEffective": {
+        "id": "ODY-167",
+        "number": 167,
+        "name": "Lion Among the Flock",
+        "displayName": "Lion Among the Flock",
+        "underlyingName": "",
+        "mana": "{5}{G}",
+        "mv": 6,
+        "color": "G",
+        "frame": "G",
+        "type": "Creature — Lion",
+        "pt": "6/5",
+        "rarity": "U",
+        "origin": "NEW",
+        "originFull": "New",
+        "mechanics": "Trample",
+        "rules": "Trample.",
+        "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+        "archetypes": "RG/GW — big creatures",
+        "story": "Homeric simile / heroes and predators are repeatedly likened to a lion falling upon livestock.",
+        "status": "KEEP",
+        "treatment": "",
+        "layout": "standard",
+        "primaryArt": "ART-107",
+        "credit": "Art: Greek, early 7th century BCE · The Met",
+        "source": "https://www.metmuseum.org/art/collection/search/254448",
+        "imageUrl": "",
+        "skeletonClass": "standard",
+        "cycleIds": [
+          "flavor.homeric-similes",
+          "flavor.mediterranean-natural-world"
+        ],
+        "showcase": [],
+        "productLayer": "main",
+        "singleFaceSpecialPlan": "",
+        "signpostPair": "",
+        "functionalWords": 8,
+        "changeStatus": "candidate2-world-wave-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+        "narrativeEra": "Homeric world",
+        "storyTarget": "Lion-among-the-flock simile.",
+        "storyRethemeRequired": false,
+        "storySourceBand": "Homeric simile tradition",
+        "artReviewRequired": false,
+        "flavorStoryElement": "Lion-among-the-flock simile.",
+        "flavorMatchScore": 5,
+        "flavorMatchRationale": "A deliberately simple six-drop restores late-game density and lets an iconic Homeric comparison become a real creature at uncommon.",
+        "flavor": "He looked like some lion of the wilderness",
+        "artPath": "GENERIC OK",
+        "alternateArtIds": [
+          "OPEN HUNT"
+        ],
+        "reviewArtworkOptions": "Open art choices",
+        "zoom": 1,
+        "focusX": 0,
+        "focusY": 0
+      },
+      "canonicalSheet": {
+        "row": 168,
+        "values": {
+          "#": {
+            "numberValue": 167
+          },
+          "Name": {
+            "stringValue": "Lion Among the Flock"
+          },
+          "Mana Cost": {
+            "stringValue": "{5}{G}"
+          },
+          "MV": {
+            "numberValue": 6
+          },
+          "Color": {
+            "stringValue": "G"
+          },
+          "Type": {
+            "stringValue": "Creature — Lion"
+          },
+          "P/T": {
+            "stringValue": "6/5"
+          },
+          "Rarity": {
+            "stringValue": "U"
+          },
+          "Origin": {
+            "stringValue": "New"
+          },
+          "Mechanics": {
+            "stringValue": "Trample"
+          },
+          "Rules / Playtest Text": {
+            "stringValue": "Trample."
+          },
+          "Archetypes": {
+            "stringValue": "RG/GW — big creatures"
+          },
+          "Story / Book": {
+            "stringValue": "Homeric simile / heroes and predators are repeatedly likened to a lion falling upon livestock."
+          },
+          "Status": {
+            "stringValue": "KEEP"
+          },
+          "Odyssey Display Name": {
+            "stringValue": "Lion Among the Flock"
+          },
+          "Underlying Oracle Name": null,
+          "Treatment": null,
+          "Primary Art ID": {
+            "stringValue": "ART-107"
+          },
+          "Art Credit": {
+            "stringValue": "Art: Greek, early 7th century BCE · The Met"
+          },
+          "Art Source URL": {
+            "stringValue": "https://www.metmuseum.org/art/collection/search/254448"
+          },
+          "Skeleton Class": {
+            "stringValue": "standard"
+          },
+          "Cycle IDs": {
+            "stringValue": "flavor.homeric-similes; flavor.mediterranean-natural-world"
+          },
+          "Showcase Programs": null,
+          "Product Layer": {
+            "stringValue": "main"
+          },
+          "Single-Face Special Plan": null,
+          "Signpost Pair": null,
+          "Functional Words": {
+            "numberValue": 8
+          },
+          "Change Status": {
+            "stringValue": "candidate2-world-wave-v1 · art-review · art-remap-v1 · art-acceptance-v1"
+          },
+          "Narrative Era": {
+            "stringValue": "Homeric world"
+          },
+          "Story Target": {
+            "stringValue": "Lion-among-the-flock simile."
+          },
+          "Retheme Required": {
+            "stringValue": "NO"
+          },
+          "Story Source Band": {
+            "stringValue": "Homeric simile tradition"
+          },
+          "Art Review Required": {
+            "stringValue": "NO"
+          },
+          "Art Path": {
+            "stringValue": "GENERIC OK"
+          },
+          "Alternate Art IDs": {
+            "stringValue": "OPEN HUNT"
+          },
+          "Review Artwork Options": {
+            "stringValue": "Open art choices"
+          },
+          "Flavour Story Element": {
+            "stringValue": "Lion-among-the-flock simile."
+          },
+          "Flavour Match /5": {
+            "stringValue": "5"
+          },
+          "Flavour Rationale": {
+            "stringValue": "A deliberately simple six-drop restores late-game density and lets an iconic Homeric comparison become a real creature at uncommon."
           }
         }
       }
@@ -2392,5 +2851,6 @@
         }
       }
     }
-  ]
+  ],
+  "amendedAt": "2026-09-30T01:21:17.941Z"
 }
