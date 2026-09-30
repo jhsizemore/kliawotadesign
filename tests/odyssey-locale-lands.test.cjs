@@ -24,3 +24,7 @@ test('the five overlapping dual designs are archived and await reassignment',()=
  }
  assert.deepEqual(data.emptySlots.slots,retired);
 });
+test('the sanctuary artwork library registers before the land designs are retired',()=>{
+ const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
+ assert(app.indexOf('temple-sanctuaries.js?v=sanctuaries1')<app.indexOf('locale-lands.20260930.js?v=locale2'));
+});
