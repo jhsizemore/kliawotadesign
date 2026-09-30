@@ -21,9 +21,7 @@ jobs:
           node <<'NODE'
           const mod=require('./public/mtgtools/odyssey/data/notes-resolution.20261001.js');
           const expected=[1,16,31,74,104,110,111,113,114,122,128,135,137,144,170,172,183,187,196,233,240,245];
-          for(const n of expected){
-            if(!mod.patches[n]) throw new Error('Missing note patch for #'+n);
-          }
+          for(const n of expected) if(!mod.patches[n]) throw new Error('Missing note patch for #'+n);
           if(mod.patches[111].designDisposition!=='RECAST') throw new Error('#111 duplicate not reclaimed');
           if(mod.patches[187].designDisposition!=='RECAST') throw new Error('#187 duplicate not reclaimed');
           if(mod.patches[9].primaryArt!=='ART-543') throw new Error('Argos art transfer missing');
@@ -34,46 +32,65 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python3 <<'PY'
-          import json, urllib.request
           endpoint='https://kliawota.design/mtgtools/odyssey/api/review-notes'
-          notes=[
-            (1,'The Olive-Wood Test'),(16,'Singer at the Hearth'),(31,'Eumaeus Shares His Supper'),
-            (74,'Duel of Hector and Ajax'),(104,'Hide the Weapons'),(110,"Andromache's Farewell"),
-            (111,'Faithful Old Hound'),(113,'Grip of Charybdis'),(114,'Holy Moly'),(122,'Hector Falls'),
-            (128,"Laocoön's Serpents"),(135,'Omen of the Bellowing Meat'),(137,'Limestone Goat'),
-            (144,'Obol for the Dead'),(170,'Seals on the Sunlit Rocks'),(172,"Hound's Protective Fury"),
-            (183,"Athena's Golden Lamp"),(187,'Scheria, Harbor of Strangers'),(196,'Palace of Circe'),
-            (233,'Ever-Tormented'),(240,'Circe, Self-Made Witch'),(245,"Demodocus's Song of Ares and Aphrodite")
+          cat > /tmp/notes.json <<'JSON'
+          [
+            {"number":1,"name":"The Olive-Wood Test"},
+            {"number":16,"name":"Singer at the Hearth"},
+            {"number":31,"name":"Eumaeus Shares His Supper"},
+            {"number":74,"name":"Duel of Hector and Ajax"},
+            {"number":104,"name":"Hide the Weapons"},
+            {"number":110,"name":"Andromache's Farewell"},
+            {"number":111,"name":"Faithful Old Hound"},
+            {"number":113,"name":"Grip of Charybdis"},
+            {"number":114,"name":"Holy Moly"},
+            {"number":122,"name":"Hector Falls"},
+            {"number":128,"name":"Laocoön's Serpents"},
+            {"number":135,"name":"Omen of the Bellowing Meat"},
+            {"number":137,"name":"Limestone Goat"},
+            {"number":144,"name":"Obol for the Dead"},
+            {"number":170,"name":"Seals on the Sunlit Rocks"},
+            {"number":172,"name":"Hound's Protective Fury"},
+            {"number":183,"name":"Athena's Golden Lamp"},
+            {"number":187,"name":"Scheria, Harbor of Strangers"},
+            {"number":196,"name":"Palace of Circe"},
+            {"number":233,"name":"Ever-Tormented"},
+            {"number":240,"name":"Circe, Self-Made Witch"},
+            {"number":245,"name":"Demodocus's Song of Ares and Aphrodite"}
           ]
-          for number,name in notes:
-            payload=json.dumps({
-              'action':'status','datasetVersion':'2026-09-29.1',
-              'cardId':f'ODY-{number:03d}','number':number,'name':name,'status':'RESOLVED'
-            }).encode()
-            req=urllib.request.Request(endpoint,data=payload,headers={'Content-Type':'application/json','Accept':'application/json'},method='POST')
-            with urllib.request.urlopen(req,timeout=20) as resp:
-              body=json.load(resp)
-              if body.get('schema')!='odyssey-review-notes/v1':
-                raise RuntimeError(f'Unexpected response for #{number}: {body}')
-          with urllib.request.urlopen(endpoint,timeout=20) as resp:
-            queue=json.load(resp)
-          open_notes=[n for n in queue.get('notes',[]) if n.get('status')=='OPEN']
-          targeted_open=[n for n in open_notes if n.get('datasetVersion')=='2026-09-29.1']
-          if targeted_open:
-            raise RuntimeError('Captured note queue still has open notes: '+json.dumps(targeted_open))
-          verification={
-            'schema':'odyssey-notes-resolution-verification/v1',
-            'verified':True,
-            'syntax':'ok',
-            'resolvedCount':len(notes),
-            'remainingOpenCapturedNotes':len(targeted_open)
+          JSON
+          while IFS= read -r note; do
+            number="$(jq -r '.number' <<<"$note")"
+            name="$(jq -r '.name' <<<"$note")"
+            card_id="$(printf 'ODY-%03d' "$number")"
+            payload="$(jq -nc --arg dv '2026-09-29.1' --arg id "$card_id" --arg name "$name" --argjson n "$number" '{action:"status",datasetVersion:$dv,cardId:$id,number:$n,name:$name,status:"RESOLVED"}')"
+            response="$(curl --fail-with-body --silent --show-error --retry 2 \
+              -X POST "$endpoint" \
+              -H 'Accept: application/json' \
+              -H 'Content-Type: application/json' \
+              -H 'Origin: https://kliawota.design' \
+              -H 'Referer: https://kliawota.design/mtgtools/odyssey/' \
+              -H 'Sec-Fetch-Site: same-origin' \
+              -H 'User-Agent: Mozilla/5.0 OdysseyStudioNotes/20261001' \
+              --data-binary "$payload")"
+            test "$(jq -r '.schema' <<<"$response")" = 'odyssey-review-notes/v1'
+          done < <(jq -c '.[]' /tmp/notes.json)
+
+          curl --fail --silent --show-error --retry 2 \
+            -H 'Accept: application/json' \
+            -H 'User-Agent: Mozilla/5.0 OdysseyStudioNotes/20261001' \
+            "$endpoint" > /tmp/queue.json
+          remaining="$(jq '[.notes[] | select(.datasetVersion=="2026-09-29.1" and .status=="OPEN")] | length' /tmp/queue.json)"
+          test "$remaining" = '0'
+          cat > public/mtgtools/odyssey/data/notes-resolution-verification.20261001.json <<JSON
+          {
+            "schema": "odyssey-notes-resolution-verification/v1",
+            "verified": true,
+            "syntax": "ok",
+            "resolvedCount": 22,
+            "remainingOpenCapturedNotes": 0
           }
-          with open('public/mtgtools/odyssey/data/notes-resolution-verification.20261001.json','w') as fh:
-            json.dump(verification,fh,indent=2)
-            fh.write('\n')
-          print(json.dumps(verification))
-          PY
+          JSON
       - name: Commit verification marker
         shell: bash
         run: |
