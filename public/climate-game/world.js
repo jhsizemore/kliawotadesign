@@ -199,6 +199,26 @@ function worldSystemsSheet(){
     <div class="systems-list">${items.length?items.map(x=>`<button data-world-zone="${x.zoneId}" class="${x.stress>=3?'critical':'warning'}"><span>${icon(worldNodeIcon(worldNode(x.zoneId)?.kind))}</span><span><b>${worldNode(x.zoneId)?.label||x.zoneId}</b><small>${x.stress}/3 pressure · ${x.stress>=3?x.rule.detail:'one step from a system penalty'}</small></span></button>`).join(''):'<p>Nothing is at pressure 2 or 3.</p>'}</div>
   </section>`;
 }
+function workshopDebriefPrompt(){
+  const e=state?.lastEvent&&HAZARDS.find(h=>h.id===state.lastEvent.id),local=state?.lastEvent?.local||[];
+  const exposed=local.filter(x=>!x.protectedBy?.length).length,protectedCount=local.length-exposed;
+  if(state?.logistics?.lastSeason?.some(x=>x.type==='delay')) return 'What did the freight delay change? Which investments would have reduced dependence on just-in-time delivery?';
+  if(exposed>protectedCount) return 'Where did pressure accumulate, and was that a planning gap, a logistics constraint or a deliberate trade-off?';
+  if(protectedCount) return 'Which earlier investment changed this outcome, and would you make the same choice with a different forecast?';
+  return e?`What did ${e.name} reveal about how the island systems are connected?`:'What trade-off is the council making this season?';
+}
+function worldWorkshopSheet(){
+  if(worldDrawer!=='workshop'||!state?.workshopMode) return '';
+  const s=worldScenario(),role=currentRole(),watches=state.forecast.map(id=>HAZARDS.find(h=>h.id===id)?.watch).filter(Boolean);
+  const chosen=state.played.map(id=>id==='effort'?'Community effort':CARDS.find(c=>c.id===id)?.name).filter(Boolean);
+  return `<section class="world-sheet workshop-sheet" aria-label="Workshop discussion">
+    <header><div><span class="eyebrow">Workshop pause · season ${state.round}</span><strong>Talk before the season turns</strong></div><button data-world-action="close" aria-label="Close workshop prompt">×</button></header>
+    <div class="workshop-brief"><span>${roleIconMarkup(role)}</span><div><small>Player ${(state.round-1)%state.players+1} leads</small><b>${role.name}</b></div></div>
+    <div class="workshop-context"><div><small>Scenario</small><b>${s.name}</b></div><div><small>Forecast</small><b>${watches.join(' · ')}</b></div><div><small>Chosen this season</small><b>${chosen.length?chosen.join(' · '):'No project yet'}</b></div></div>
+    <div class="workshop-questions"><p><b>1.</b> What are you trying to protect this season?</p><p><b>2.</b> Who benefits from the projects you chose, and who is still exposed?</p><p><b>3.</b> What are you giving up by spending those funds and materials now?</p></div>
+    <button class="primary workshop-continue" data-workshop-continue>Continue · face the season</button>
+  </section>`;
+}
 function worldBottomBar(){
   const role=currentRole(),slots=2-state.played.length,i=(state.round-1)%state.players;
   return `<footer class="world-action-bar">
@@ -217,7 +237,7 @@ gameHtml = function(){
     ${typeof networkStrains==='function'&&networkStrains().length?`<button class="world-systems ${networkStrains().some(x=>x.stress>=3)?'critical':''}" data-world-action="systems"><small>Systems</small><b>${networkStrains().length}</b></button>`:''}
     <button class="world-forecast" data-panel="forecast">${icon('forecast')}<span><small>Forecast · one arrives</small><b>${watches.join(' · ')}</b></span></button>
     <button class="world-service" data-panel="active"><small>In service</small><b>${state.active.length}/${ACTIVE_LIMIT}</b></button>
-  </main>${worldBottomBar()}${worldProjectSheet()}${worldZoneSheet()}${worldPlacementSheet()}${worldMissionSheet()}${worldSystemsSheet()}</div>`;
+  </main>${worldBottomBar()}${worldProjectSheet()}${worldZoneSheet()}${worldPlacementSheet()}${worldMissionSheet()}${worldSystemsSheet()}${worldWorkshopSheet()}</div>`;
 };
 
 const legacySetupHtmlWorld=setupHtml;
