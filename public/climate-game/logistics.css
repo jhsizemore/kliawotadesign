@@ -21,3 +21,9 @@
   .dispatch-grid{padding:0 10px 10px;gap:6px}.dispatch-grid button{grid-template-columns:25px 1fr;padding:7px}.dispatch-grid .ui-icon{width:22px}.freight-rule{margin:4px 10px 9px}.shipment-list{margin:0 10px}
 }
 @media (prefers-reduced-motion:reduce){.freight-boat{animation:none!important}}
+
+.freight-dot{background:#7fe1d1}
+.freight-boat.delayed{border-color:#f1b765;color:#ffe6b2;background:rgba(86,55,29,.9);animation:none}
+.freight-impact{margin:9px 0;padding:10px 11px;border-radius:10px;background:#fff0ca;border:1px solid #dfbf73;color:#634c1c;display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:center}
+.freight-impact>.ui-icon{width:24px;height:24px}
+.freight-impact span{display:grid;gap:2px}.freight-impact b{font-size:11px}.freight-impact small{font-size:9px;line-height:1.35}
