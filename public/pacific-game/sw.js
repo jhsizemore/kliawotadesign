@@ -1,4 +1,4 @@
-const CACHE='island-together-v8-pacific';
+const CACHE='island-together-v9-pacific';
 const CORE=[
   "/climate-game/",
   "/climate-game/index.html",
