@@ -182,10 +182,11 @@ function relocationLandscapeSvg(){
 
 function stressLandscapeSvg(){
   if(!state?.zoneStress) return '';
+  const compact=worldScenario().id==='atoll_water'?.72:1;
   return `<g class="stress-landscape">${Object.entries(state.zoneStress).map(([zoneId,value],i)=>{
     const stress=Number(value||0),node=worldNode(zoneId);if(!node||stress<=0)return '';
     const x=node.x*10.8,y=node.y*7.2;
-    return `${sceneUse('flood',x+18,y+27,.56,0,`stress-scenery stress-${stress}`)}${stress>=2?sceneUse('damage',x-24,y-18,.58,i%2?8:-8,`stress-scenery stress-${stress}`):''}${stress>=3?sceneUse('fallen-tree',x+31,y-22,.62,-10,'stress-scenery stress-3'):''}`;
+    return `${sceneUse('flood',x+18*compact,y+27*compact,.56*compact,0,`stress-scenery stress-${stress}`)}${stress>=2?sceneUse('damage',x-24*compact,y-18*compact,.58*compact,i%2?8:-8,`stress-scenery stress-${stress}`):''}${stress>=3?sceneUse('fallen-tree',x+31*compact,y-22*compact,.62*compact,-10,'stress-scenery stress-3'):''}`;
   }).join('')}</g>`;
 }
 
