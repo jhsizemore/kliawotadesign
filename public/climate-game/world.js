@@ -52,7 +52,7 @@ function worldMapMarkup(opts={}){
   const s=worldScenario(), hazardIds=opts.hazardId?[opts.hazardId]:(state?.forecast||[]);
   const risks=riskZones(hazardIds);
   const placementTargets=new Set(pendingPlacementCard?projectTargetsFor(pendingPlacementCard):[]);
-  const freightTargets=new Set((state?.construction||[]).map(q=>q.zoneId));
+  const freightTargets=new Set((state?.construction||[]).filter(q=>q.status==='in-transit'||q.status==='delayed').map(q=>q.zoneId));
   const shippingRisk=hazardIds.some(id=>['shipping','cyclone','fuel'].includes(id));
   return `<section class="world-board ${opts.resolving?'resolving':''}" aria-label="${s.name} map">
     <svg class="world-map-art" viewBox="0 0 1080 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -132,11 +132,11 @@ function worldProjectSheet(){
 function worldPlacementSheet(){
   if(worldDrawer!=='placement'||!pendingPlacementCard) return '';
   const card=CARDS.find(c=>c.id===pendingPlacementCard);
-  const targets=projectTargetsFor(card.id).map(worldNode).filter(Boolean);
+  const targets=projectTargetsFor(card.id).map(worldNode).filter(Boolean), buildTime=typeof projectBuildTime==='function'?projectBuildTime(card):0;
   return `<section class="world-sheet placement-sheet" aria-label="Choose where to build">
     <header><div><span class="eyebrow">Place this project</span><strong>${card.name}</strong></div><button data-world-action="close" aria-label="Cancel placement">×</button></header>
     <div class="placement-copy"><span class="placement-icon">${icon(TYPE_ICONS[card.type])}</span><p>Choose where this project will operate. Outer-island projects that need materials must wait for freight unless a local cache can cover the material cost.</p></div>
-    <div class="placement-options">${targets.map(z=>{const cache=Number(state?.logistics?.caches?.[z.id]||0),cost=effectiveCost(card)[1],remote=isRemoteLocation(z.id),needs=Math.max(0,cost-cache);const note=remote&&cost?(cache>=cost?'Local cache · build now':`Needs ${needs} material${needs===1?'':'s'} by boat · about 1 season`):(remote?'No material freight needed':'Road-connected');return `<button data-world-zone="${z.id}" class="placement-option">${icon(worldNodeIcon(z.kind))}<span><b>${z.label}</b><small>${note}</small></span></button>`}).join('')}</div>
+    <div class="placement-options">${targets.map(z=>{const cache=Number(state?.logistics?.caches?.[z.id]||0),cost=effectiveCost(card)[1],remote=isRemoteLocation(z.id),needs=Math.max(0,cost-cache);const note=remote&&cost?(cache>=cost?(buildTime?'Local cache · about 1 season to build':'Local cache · build now'):`Needs ${needs} material${needs===1?'':'s'} by boat · ${buildTime?'freight + construction':'about 1 season'}`):(remote?(buildTime?'No freight needed · about 1 season to build':'No material freight needed'):(buildTime?'Road-connected · about 1 season to build':'Road-connected'));return `<button data-world-zone="${z.id}" class="placement-option">${icon(worldNodeIcon(z.kind))}<span><b>${z.label}</b><small>${note}</small></span></button>`}).join('')}</div>
   </section>`;
 }
 function worldPlaceAndBuild(cardId,zoneId,retireId){
@@ -162,7 +162,7 @@ function worldZoneSheet(){
     <header><div><span class="eyebrow">${z.kind==='outer'?'Outer-island community':'Island place'}</span><strong>${z.label}</strong></div><button data-world-action="close" aria-label="Close place">×</button></header>
     <div class="zone-state-row"><span class="zone-big-icon">${icon(worldNodeIcon(z.kind))}</span><div><b class="zone-condition ${zoneStateClass(z)}">${value<=1?'Critical':value<=2?'Under pressure':value>=5?'Strong':'Holding'}</b><p>${z.note}</p></div></div>
     <div class="zone-logistics"><div><span>Local pressure</span><b>${stress?stress+' / 3':'None'}</b></div><div><span>Stored materials</span><b>${cache}</b></div><div><span>Freight / works</span><b>${construction.length}</b></div></div>
-    ${construction.length?`<div class="zone-construction"><span>On the way</span>${construction.map(q=>`<div>${icon('shipping')}<b>${CARDS.find(c=>c.id===q.cardId)?.name}</b><small>${q.status==='delayed'?'Delayed by this season':'Expected next season if the route stays open'}</small></div>`).join('')}</div>`:''}
+    ${construction.length?`<div class="zone-construction"><span>Freight / works</span>${construction.map(q=>`<div>${icon(q.status==='building'?'builder':'shipping')}<b>${CARDS.find(c=>c.id===q.cardId)?.name}</b><small>${q.status==='building'?'Under construction · expected next season':q.status==='delayed'?'Freight delayed by this season':'Materials at sea · expected next season if the route stays open'}</small></div>`).join('')}</div>`:''}
     <div class="zone-projects"><span>Projects here</span>${projects.length?projects.map(id=>`<b>${CARDS.find(c=>c.id===id).name}</b>`).join(''):'<small>Nothing built here yet.</small>'}</div>
     <div class="zone-relevant"><span>Useful options in the deck</span><div>${relevant.map(c=>`<button data-world-action="projects" data-world-focus-id="${c.id}">${icon(TYPE_ICONS[c.type])}<span>${c.name}</span></button>`).join('')}</div></div>
   </section>`;
