@@ -74,6 +74,64 @@ function scenarioMiniMap(s){
   const boats=(s.links||[]).filter(l=>l.mode==='boat').map(l=>`<path d="${l.d||worldLinkPath(l.a,l.b)}" stroke="#91e4d7" stroke-width="5" stroke-dasharray="12 12" fill="none"/>`).join('');
   return `<svg viewBox="0 0 1080 720" aria-hidden="true"><rect width="1080" height="720" fill="#0a3442"/>${reef}${lagoon}${(s.landforms||[]).map(x=>`<path d="${x.d}" fill="#5d9672" stroke="#96d5c6" stroke-width="4"/>`).join('')}${highland}${boats}</svg>`;
 }
+const PROJECT_SCENE = Object.freeze({
+  tank:'tank',repair:'reinforced-house',spring:'spring',waterplan:'meeting',
+  beds:'garden',seeds:'garden',crops:'garden',reef:'mangrove',
+  roofs:'reinforced-house',school:'school',drain:'drain',paths:'bridge',
+  radio:'radio',training:'workshop',plan:'meeting',health:'clinic',
+  stock:'crates',wharf:'wharf',savings:'meeting',aid:'canoe'
+});
+function sceneUse(kind,x,y,scale=1,rotate=0,className=''){
+  return `<use href="#scene-${kind}" class="scene-use ${className}" transform="translate(${Number(x).toFixed(1)} ${Number(y).toFixed(1)}) rotate(${rotate}) scale(${scale})"/>`;
+}
+function nodeSceneSvg(node,index=0){
+  const x=node.x*10.8,y=node.y*7.2,seed=(index%3)-1;
+  if(node.kind==='port') return `<g class="node-scenery scenery-port">${sceneUse('wharf',x-17,y+9,.85,-8)}${sceneUse('canoe',x+24,y+23,.65,-10)}${sceneUse('crates',x-5,y-18,.65)}</g>`;
+  if(node.kind==='town') return `<g class="node-scenery scenery-town">${sceneUse('house',x-28,y+13,.78,-5)}${sceneUse('house',x+24,y+17,.7,4)}${sceneUse('house',x-18,y-19,.66,7)}${sceneUse('market',x+18,y-18,.75,-4)}${sceneUse('palm',x+41,y-4,.72)}</g>`;
+  if(node.kind==='clinic') return `<g class="node-scenery scenery-clinic">${sceneUse('clinic',x+18,y+12,.76,-4)}${sceneUse('house',x-20,y+15,.55,3)}${sceneUse('palm',x+34,y-15,.58)}</g>`;
+  if(node.kind==='school') return `<g class="node-scenery scenery-school">${sceneUse('school',x+18,y+13,.76,-3)}${sceneUse('tree',x-23,y+7,.7)}${sceneUse('tree',x+34,y-12,.55)}</g>`;
+  if(node.kind==='gardens') return `<g class="node-scenery scenery-gardens">${sceneUse('garden',x-22,y+12,.72,-8)}${sceneUse('garden',x+22,y+5,.68,8)}${sceneUse('palm',x+34,y-17,.55)}</g>`;
+  if(node.kind==='water') return `<g class="node-scenery scenery-water">${sceneUse('spring',x+16,y+14,.72)}${sceneUse('tree',x-24,y+9,.74)}${sceneUse('tree',x+30,y-13,.52)}</g>`;
+  if(node.kind==='site') return `<g class="node-scenery scenery-site">${sceneUse('foundation',x-17,y+13,.65,-5)}${sceneUse('foundation',x+22,y+8,.55,7)}${sceneUse('tree',x+34,y-12,.55)}</g>`;
+  return `<g class="node-scenery scenery-village">${sceneUse('house',x-24,y+14,.65,-6)}${sceneUse('house',x+20,y+15,.62,5)}${sceneUse('house',x-9,y-18,.54,2)}${sceneUse('palm',x+35,y-7,.65)}${sceneUse('palm',x-38,y-3,.52)}${node.kind==='outer'?sceneUse('canoe',x+36,y+26,.55,seed*8):''}</g>`;
+}
+function landscapeItemSvg(item){
+  const x=item.x*10.8,y=item.y*7.2,s=item.scale??1,r=item.rotate??0,k=item.kind;
+  if(k==='forest') return `<g class="scenic-cluster scenic-forest">${sceneUse('tree',x-17*s,y+7*s,.78*s)}${sceneUse('tree',x+1*s,y-7*s,.96*s)}${sceneUse('tree',x+19*s,y+9*s,.72*s)}${sceneUse('tree',x+30*s,y-10*s,.58*s)}</g>`;
+  if(k==='palms') return `<g class="scenic-cluster scenic-palms">${sceneUse('palm',x-14*s,y+5*s,.8*s,r)}${sceneUse('palm',x+5*s,y-5*s,.95*s,r+4)}${sceneUse('palm',x+22*s,y+7*s,.7*s,r-5)}</g>`;
+  if(k==='reef') return `<g class="scenic-cluster scenic-reef">${sceneUse('reef',x,y,s,r)}</g>`;
+  if(k==='canoe') return sceneUse('canoe',x,y,s,r,'scenic-canoe');
+  if(k==='boat') return sceneUse('workboat',x,y,s,r,'scenic-workboat');
+  if(k==='garden') return sceneUse('garden',x,y,s,r,'scenic-garden');
+  if(k==='village') return `<g class="scenic-cluster scenic-village">${sceneUse('house',x-16*s,y+5*s,.62*s,r-4)}${sceneUse('house',x+15*s,y+6*s,.58*s,r+5)}${sceneUse('palm',x+28*s,y-9*s,.62*s,r)}</g>`;
+  return '';
+}
+function scenarioSettlementSvg(s){
+  const authored=(s.landscape||[]).map(landscapeItemSvg).join('');
+  const nodes=(s.nodes||[]).map((n,i)=>nodeSceneSvg(n,i)).join('');
+  return `<g class="settlement-layer">${authored}${nodes}</g>`;
+}
+function projectLandscapeSvg(){
+  if(!state) return '';
+  const offsets=[[-27,-17],[27,-15],[-27,22],[27,23],[0,31],[-4,-31]];
+  const byZone=new Map();
+  return `<g class="project-landscape">${(state.placements||[]).map(p=>{
+    const node=worldNode(p.zoneId),card=CARDS.find(c=>c.id===p.cardId),kind=PROJECT_SCENE[p.cardId];
+    if(!node||!kind||!card) return '';
+    const count=byZone.get(p.zoneId)||0;byZone.set(p.zoneId,count+1);
+    const [dx,dy]=offsets[count%offsets.length],x=node.x*10.8+dx,y=node.y*7.2+dy;
+    const scale=['wharf','school'].includes(kind)?.72:['meeting','canoe'].includes(kind)?.58:.62;
+    return sceneUse(kind,x,y,scale,(count%2?5:-5),`project-scenery project-${p.cardId}`);
+  }).join('')}</g>`;
+}
+function constructionLandscapeSvg(){
+  if(!state?.construction?.length) return '';
+  return `<g class="construction-landscape">${state.construction.filter(q=>q.status==='building').map((q,i)=>{
+    const node=worldNode(q.zoneId);if(!node)return '';
+    return sceneUse('scaffold',node.x*10.8+(i%2?22:-22),node.y*7.2+24,.62,i%2?6:-6,'construction-scenery');
+  }).join('')}</g>`;
+}
+
 function hazardAtmosphere(id){
   if(!id) return '';
   if(id==='cyclone'||id==='rain'){
