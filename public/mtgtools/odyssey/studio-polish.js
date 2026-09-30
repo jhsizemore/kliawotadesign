@@ -217,7 +217,7 @@
       });
     });
     const label = document.querySelector('.topbar .version');
-    if (label) label.textContent = 'v3.24 · empty slots';
+    if (label) label.textContent = 'v3.25 · rare prototypes';
     refinement.mount();
     root.renderPreview();
     document.fonts?.ready.then(() => document.querySelectorAll('.render-card').forEach(root.fitCardTypography));
