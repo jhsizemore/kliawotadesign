@@ -32,6 +32,9 @@ jobs:
       - name: Island Together logistics tests
         run: node --test tests/island-together-logistics.test.cjs
 
+      - name: Test Island Together runtime
+        run: npm run test:island
+
       - name: Deploy Worker and assets
         run: npm run deploy
         env:
