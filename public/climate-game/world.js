@@ -210,6 +210,27 @@ gameHtml = function(){
   </main>${worldBottomBar()}${worldProjectSheet()}${worldZoneSheet()}${worldPlacementSheet()}${worldMissionSheet()}</div>`;
 };
 
+const legacySetupHtmlWorld=setupHtml;
+setupHtml=function(){
+  const scenarios=Object.values(ISLAND_SCENARIOS);
+  return `<div class="frame scenario-setup-screen"><header class="game-top"><a class="game-brand" href="/"><span class="brand-wave">${icon('outrigger')}</span><span>Island Together</span></a><span class="setup-label">Pacific climate game</span></header>
+    <main class="scenario-setup-main"><section class="scenario-intro"><div class="eyebrow">Choose a fictional Pacific scenario</div><h1>Build together before the season turns.</h1><p>Each map changes what matters: distance, freshwater, freight and exposure shape the projects your council needs.</p></section>
+    <section class="scenario-picker">${scenarios.map(s=>`<button data-scenario="${s.id}" aria-pressed="${selectedScenarioId===s.id}"><span class="scenario-preview">${scenarioMiniMap(s)}</span><span class="scenario-copy"><small>${s.topology.replaceAll('-',' ')}</small><b>${s.name}</b><em>${s.summary}</em></span></button>`).join('')}</section>
+    <section class="setup-controls scenario-controls" aria-label="New game"><span>How many players?</span><div class="player-choice" role="group" aria-label="Players">${[2,3,4].map(n=>`<button data-players="${n}" aria-pressed="${selectedPlayers===n}">${n}</button>`).join('')}</div><button class="primary" data-action="start">Start ${ISLAND_SCENARIOS[selectedScenarioId]?.shortName||'scenario'}</button><small>About 15–25 minutes · pass one device or project it for a group</small></section></main></div>`;
+};
+
+const legacyResultHtmlWorld=resultHtml;
+resultHtml=function(){
+  const s=worldScenario(),goals=scenarioGoalResults(),completed=goals.filter(x=>x.done).length;
+  const values=CONDITIONS.map(k=>state.stats[k]),sum=values.reduce((a,b)=>a+b,0),min=Math.min(...values);
+  const grade=min===0?'Strained':sum>=19&&min>=3?'Resilient':sum>=12?'Holding on':'Strained';
+  return `<div class="frame result-screen world-result"><header class="game-top"><span class="game-brand"><span class="brand-wave">${icon('outrigger')}</span>Island Together</span><span class="season-marker">Six seasons complete</span></header>
+    <main class="world-result-main"><div class="eyebrow">${s.name}</div><div class="result-header"><div><span>Island outcome</span><h1>${grade}</h1></div><div class="total-score"><strong>${sum}</strong><span>/ 24</span></div></div>
+    <div class="result-grid">${CONDITIONS.map(k=>`<div style="--accent:${COLORS[k]}"><span class="result-name">${icon(STAT_ICONS[k])}${LABELS[k]}</span><strong>${state.stats[k]} <small>/ 6</small></strong><i><em style="width:${state.stats[k]/6*100}%"></em></i></div>`).join('')}</div>
+    <section class="result-mission"><div><span>Scenario objectives</span><strong>${completed} / ${goals.length}</strong></div>${goals.map(x=>`<p class="${x.done?'complete':''}"><span>${x.done?'✓':'○'}</span><b>${x.goal.label}</b></p>`).join('')}</section>
+    <div class="result-foot"><p>${state.placements?.length||0} projects operating · ${state.construction?.length||0} still in freight or construction</p><p>The score is a game summary, not a real-world resilience assessment. Compare the choices your group made and what the map exposed.</p></div>
+    <button class="primary" data-action="restart">Choose another scenario</button></main></div>`;
+};
 eventHtml = function(){
   const e=HAZARDS.find(x=>x.id===state.lastEvent.id),r=state.lastEvent;
   if(state.eventStage==='reveal'){
@@ -230,6 +251,11 @@ eventHtml = function(){
 
 // Spatial build interception runs in capture phase so the legacy card handler
 // cannot complete a project before the player has chosen its place.
+app.addEventListener('click',e=>{
+  const scenario=e.target.closest('[data-scenario]');
+  if(scenario&&!state){selectedScenarioId=scenario.dataset.scenario;render();return;}
+},true);
+
 app.addEventListener('click',e=>{
   const replace=e.target.closest('[data-replace-retire]');
   if(replace&&pendingPlacementCard&&pendingPlacementZone&&state?.pendingRetire){
