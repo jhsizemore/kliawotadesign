@@ -93,6 +93,12 @@ function worldMapMarkup(opts={}){
       </g>
     </svg>
     <div class="world-scenario-label"><span>Scenario</span><strong>${s.name}</strong><small>${s.strap}</small></div>
+    \${(state?.construction||[]).map((q,i)=>{
+      const from=worldNode('port'),to=worldNode(q.zoneId);
+      if(!to) return '';
+      const x=from.x+(to.x-from.x)*.52,y=from.y+(to.y-from.y)*.52;
+      return \`<button class="freight-boat \${q.status==='delayed'?'delayed':''}" style="--x:\${x}%;--y:\${y}%;--delay:\${i*.18}s" data-world-zone="\${q.zoneId}" aria-label="Freight for \${CARDS.find(card=>card.id===q.cardId)?.name||'project'} to \${to.label}">\${icon('outrigger')}<span>\${q.materialFromPort||1}</span></button>\`;
+    }).join('')}
     ${s.nodes.map(z=>{
       const projects=projectsAtZone(z.id), construction=constructionAtZone(z.id), risk=risks.has(z.id), buildTarget=placementTargets.has(z.id);
       const cache=Number(state?.logistics?.caches?.[z.id]||0);
@@ -104,7 +110,7 @@ function worldMapMarkup(opts={}){
         ${cache?`<span class="node-cache">${icon('materials')}<b>${cache}</b></span>`:''}
       </button>`;
     }).join('')}
-    <div class="map-legend"><span><i class="risk-dot"></i> forecast exposure</span><span><i class="project-dot"></i> project built</span></div>
+    <div class="map-legend"><span><i class="risk-dot"></i> forecast exposure</span><span><i class="project-dot"></i> project built</span>\${state?.construction?.length?\`<span><i class="freight-dot"></i> \${state.construction.length} freight at sea</span>\`:''}</div>
   </section>`;
 }
 function worldResourceStrip(){
@@ -192,6 +198,7 @@ eventHtml = function(){
       <div class="impact-mini-grid">${Object.entries(e.base).map(([k])=>`<div>${icon(STAT_ICONS[k])}<span>${LABELS[k]}</span><strong>${r.actual[k]===0?'Held':r.actual[k]}</strong></div>`).join('')}</div>
       <p class="impact-protection">${r.mitigated.length?`Protected by ${r.mitigated.join(', ')}.`:'No active project blocked this hazard.'}</p>
       ${r.local?.length?`<div class="local-impact-summary"><b>${r.local.filter(x=>!x.protectedBy.length).length}</b> places took local pressure · <b>${r.local.filter(x=>x.protectedBy.length).length}</b> protected locally</div>`:''}
+      \${state?.logistics?.lastSeason?.some(x=>x.type==='delay')?\`<div class="freight-impact">\${icon('shipping')}<span><b>Freight interrupted</b><small>\${state.logistics.lastSeason.filter(x=>x.type==='delay').map(x=>x.text).join(' ')}</small></span></div>\`:''}
       <div class="impact-actions"><a href="${SOURCES.find(s=>s.id===e.source).url}" target="_blank" rel="noopener noreferrer">Why this matters ↗</a><button class="primary" data-action="advance">${state.round===6?'See score card':'Next season'}</button></div>
     </section>
   </main></div>`;
