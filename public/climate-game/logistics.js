@@ -142,7 +142,7 @@ function applyLocalHazard(hazardId){
     if(!protectors.length) state.zoneStress[zoneId]=Math.min(3,Number(state.zoneStress[zoneId]||0)+1);
     local.push({zoneId,protectedBy:protectors,stress:Number(state.zoneStress[zoneId]||0)});
   }
-  state.lastEvent.local=local;
+  if(state.lastEvent) state.lastEvent.local=local;
   return local;
 }
 
