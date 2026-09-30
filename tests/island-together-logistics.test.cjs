@@ -72,7 +72,7 @@ test('outer-island material projects enter freight instead of resolving immediat
   assert.deepEqual([...out.hand], []);
 });
 
-test('shipping disruption delays remote freight, while a maintained wharf keeps it moving', () => {
+test('shipping disruption delays remote freight, while a maintained wharf lets it arrive and construction continue', () => {
   const c = makeContext();
   const out = run(c, `
     startGame(2);
@@ -90,8 +90,16 @@ test('shipping disruption delays remote freight, while a maintained wharf keeps 
     state.tags=['wharf'];
     state.placements=[{cardId:'wharf',zoneId:'port',round:1}];
     progressConstruction('shipping');
+    const arrived={
+      count:state.construction.length,
+      status:state.construction[0]?.status,
+      shelter:state.stats.shelter,
+      placed:state.placements.some(p=>p.cardId==='roofs'&&p.zoneId==='north')
+    };
+    progressConstruction('dry');
     ({
       delayed,
+      arrived,
       after:{
         count:state.construction.length,
         shelter:state.stats.shelter,
@@ -103,13 +111,17 @@ test('shipping disruption delays remote freight, while a maintained wharf keeps 
   assert.equal(out.delayed.count, 1);
   assert.equal(out.delayed.status, 'delayed');
   assert.equal(out.delayed.shelter, 3);
+  assert.equal(out.arrived.count, 1);
+  assert.equal(out.arrived.status, 'building');
+  assert.equal(out.arrived.shelter, 3);
+  assert.equal(out.arrived.placed, false);
   assert.equal(out.after.count, 0);
   assert.equal(out.after.shelter, 5);
   assert.equal(out.after.roofsActive, true);
   assert.equal(out.after.placed, true);
 });
 
-test('pre-positioned supplies become a local cache that can bypass freight', () => {
+test('pre-positioned supplies travel first, then create a cache that lets later construction avoid freight', () => {
   const c = makeContext();
   const out = run(c, `
     startGame(2);
@@ -117,21 +129,33 @@ test('pre-positioned supplies become a local cache that can bypass freight', () 
     state.stats.budget=8;
     state.stats.supplies=0;
     playCard('stock',null,'north');
+    const stockInTransit={cache:localCache('north'),count:state.construction.length,status:state.construction[0]?.status};
+    progressConstruction('dry');
     const cachedBefore=localCache('north');
     const suppliesBefore=state.stats.supplies;
     playCard('roofs',null,'north');
+    const roofsBuilding={cache:localCache('north'),count:state.construction.length,status:state.construction[0]?.status,shelter:state.stats.shelter};
+    progressConstruction('dry');
     ({
+      stockInTransit,
       cachedBefore,
-      cacheAfter:localCache('north'),
       suppliesBefore,
+      roofsBuilding,
+      cacheAfter:localCache('north'),
       suppliesAfter:state.stats.supplies,
       construction:state.construction.length,
       shelter:state.stats.shelter,
       placed:state.placements.map(p=>p.cardId+':'+p.zoneId)
     });
   `);
+  assert.equal(out.stockInTransit.cache, 0);
+  assert.equal(out.stockInTransit.count, 1);
+  assert.equal(out.stockInTransit.status, 'in-transit');
   assert.equal(out.cachedBefore, 2);
-  assert.equal(out.cacheAfter, 0);
+  assert.equal(out.roofsBuilding.cache, 0);
+  assert.equal(out.roofsBuilding.count, 1);
+  assert.equal(out.roofsBuilding.status, 'building');
+  assert.equal(out.roofsBuilding.shelter, 3);
   assert.equal(out.suppliesBefore, 0);
   assert.equal(out.suppliesAfter, 0);
   assert.equal(out.construction, 0);
