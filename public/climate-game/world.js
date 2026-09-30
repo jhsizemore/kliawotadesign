@@ -192,6 +192,14 @@ eventHtml = function(){
 // Spatial build interception runs in capture phase so the legacy card handler
 // cannot complete a project before the player has chosen its place.
 app.addEventListener('click',e=>{
+  const replace=e.target.closest('[data-replace-retire]');
+  if(replace&&pendingPlacementCard&&pendingPlacementZone&&state?.pendingRetire){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    const cardId=pendingPlacementCard,zoneId=pendingPlacementZone;
+    worldPlaceAndBuild(cardId,zoneId,replace.dataset.replaceRetire);
+    return;
+  }
   const play=e.target.closest('[data-play]');
   if(!play||!state||state.phase!=='play') return;
   const id=play.dataset.play, targets=projectTargetsFor(id);
@@ -232,14 +240,6 @@ app.addEventListener('click',e=>{
       }
       render();return;
     }
-  }
-  const replaced=e.target.closest('[data-replace-retire]');
-  if(replaced&&pendingPlacementCard&&pendingPlacementZone&&!state.pendingRetire){
-    state.placements??=[];
-    state.placements.push({cardId:pendingPlacementCard,zoneId:pendingPlacementZone,round:state.round});
-    pendingPlacementCard=null;pendingPlacementZone=null;
-    save();
-    queueMicrotask(()=>render());
   }
 });
 render();
