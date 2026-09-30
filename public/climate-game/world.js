@@ -83,6 +83,7 @@ function sceneSymbolDefs(){
 }
 
 function scenarioFeatureSvg(f){
+  if(f.kind==='reef-flat') return `<path class="terrain-feature feature-reef-flat" d="${f.d}"/><path class="reef-break" d="${f.d}"/>`;
   return `<path class="terrain-feature feature-${f.kind}" d="${f.d}"/>`;
 }
 function scenarioLandSvg(s){
