@@ -1,7 +1,7 @@
 {
   "schema": "odyssey-studio-data/v1",
   "datasetVersion": "analysis-candidate-v1",
-  "generatedAt": "2026-09-30T04:21:00Z",
+  "generatedAt": "2026-09-30T04:28:00Z",
   "set": {
     "name": "The Odyssey",
     "code": "ODY",
@@ -26,7 +26,7 @@
     }
   },
   "integrity": {
-    "sha256": "e8624854dd94960678d107a2bce5ab37e02067abe26be36e937bfb619237b493",
+    "sha256": "9f160b114681ce958ef5ba5ba494c620d925a4131dad91fe66b8ffa6c83da1d5",
     "cards": 309,
     "artworks": 458,
     "coverage": 309,
@@ -39,9 +39,9 @@
     "missingMomentsRevision": "missing-moments-v4",
     "sha256Scope": "cards-json-stringify-utf8-v1",
     "cycleRevision": "mainset-song-cycles-v1",
-    "refinementRevision": "flavour-promotions-2026-09-30",
+    "refinementRevision": "empty-slot-fill-2026-09-30",
     "templatingRevision": "templating-v1",
-    "emptySlotRevision": "empty-slot-collection-v1"
+    "emptySlotRevision": "empty-slot-fill-2026-09-30"
   },
   "candidate": {
     "branch": "main",
@@ -7685,45 +7685,45 @@
     {
       "id": "ODY-168",
       "number": 168,
-      "name": "Tell Me, O Muse",
-      "displayName": "Tell Me, O Muse",
-      "underlyingName": "Once Upon a Time",
-      "mana": "{1}{G}",
-      "mv": 2,
+      "name": "Calypso's Orchard",
+      "displayName": "Calypso's Orchard",
+      "underlyingName": "",
+      "mana": "{2}{G}",
+      "mv": 3,
       "color": "G",
       "frame": "G",
-      "type": "Instant",
+      "type": "Legendary Enchantment",
       "pt": "",
       "rarity": "R",
-      "origin": "REPRINT",
-      "originFull": "Reprint",
-      "mechanics": "Opening spell / creature-or-land selection",
-      "rules": "If this spell is the first spell you've cast this game, you may cast it without paying its mana cost.\nLook at the top five cards of your library. You may reveal a creature or land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
-      "rulesSource": "oracle-reprint-once-upon-a-time",
-      "archetypes": "Gx — creatures / lands / fixing",
-      "story": "Book I / the Odyssey opens by asking the Muse to tell of the man of many devices and to begin the story where she chooses.",
-      "status": "KEEP",
-      "treatment": "Godzilla-style renamed reprint",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Constellation / Food / untap",
+      "rules": "When Calypso's Orchard enters, create a Food token.\nConstellation — Whenever an enchantment you control enters, untap up to one target creature you control. That creature gets +1/+1 until end of turn. This ability triggers only once each turn.",
+      "rulesSource": "mainset-cycles-v1",
+      "archetypes": "GU/GW",
+      "story": "Book V / supernatural abundance",
+      "status": "PROTOTYPE",
+      "treatment": "",
       "layout": "standard",
-      "primaryArt": "ART-177",
-      "credit": "Art: “Blind Homer” · J.-B.-R.-U. Massard, after François Gérard · National Gallery of Art",
-      "source": "https://www.nga.gov/artworks/157097-blind-homer",
-      "imageUrl": "",
+      "primaryArt": "ART-346",
+      "credit": "Art: “Odysseus as a Guest of the Nymph Calypso” · Hendrick van Balen the Elder · Academy of Fine Arts Vienna · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Hendrick_van_Balen_-_Odysseus_as_guest_of_the_nymph_Calypso.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Hendrick_van_Balen_-_Odysseus_as_guest_of_the_nymph_Calypso.jpg",
       "productLayer": "main",
       "skeletonClass": "standard",
-      "functionalWords": 59,
-      "changeStatus": "flavour-promotions-2026-09-30 · replaces Calypso's Orchard",
+      "functionalWords": 39,
+      "changeStatus": "carried-from-analysis-candidate-v1 · art-sweep-v2 · art-p2-direct-v12 · mainset-cycles-v1 · templating-v1",
       "narrativeEra": "Odyssey",
-      "storyTarget": "Book I / invocation to the Muse at the opening of the Odyssey.",
+      "storyTarget": "Book V / supernatural abundance",
       "storyRethemeRequired": false,
       "storySourceBand": "Odyssey Books I–XXIV",
-      "flavorStoryElement": "Book I / “Tell me, O Muse” — the poem's opening invocation and the Muse's freedom to begin the tale where she chooses.",
-      "flavorMatchScore": 5,
-      "flavorMatchRationale": "The exact opening invocation becomes a first-spell card: it can begin before ordinary mana development, then lets the Muse choose a creature or land from the next five cards—the next person or place in the story.",
+      "flavorStoryElement": "Book V / supernatural abundance",
+      "flavorMatchScore": 4,
+      "flavorMatchRationale": "The singular orchard is a rare legendary place: its arrival supplies Food and recurring enchantments refresh a creature. This provides one compensating legendary slot when the Oath becomes a nonlegendary hybrid Saga, without adding a card or altering artwork.",
       "artReviewRequired": false,
       "cycleIds": [
-        "story.invocation",
-        "theme.storytelling"
+        "story.ogygia",
+        "cast.calypso"
       ]
     },
     {
@@ -13530,56 +13530,53 @@
     {
       "id": "ODY-291",
       "number": 291,
-      "name": "Athena, Opponent of Ares",
-      "displayName": "Athena, Opponent of Ares",
+      "name": "Proteus, Reluctant Oracle",
+      "displayName": "Proteus, Reluctant Oracle",
       "underlyingName": "",
-      "mana": "{4}{G}{W}{U}",
-      "mv": 7,
-      "color": "WUG",
+      "mana": "{3}{G}{U}",
+      "mv": 5,
+      "color": "GU",
       "frame": "M",
-      "type": "Legendary Enchantment Creature — God",
-      "pt": "6/5",
+      "type": "Legendary Enchantment Creature — Saga Shapeshifter",
+      "pt": "4/4",
       "rarity": "R",
       "origin": "NEW",
       "originFull": "New",
-      "mechanics": "God; combat control",
-      "rules": "Vigilance, ward {2}. When Athena enters, tap up to two target creatures. Whenever one or more creatures attack you, put a +1/+1 counter on up to one target creature you control.",
-      "rulesSource": "story-retheme-v2",
-      "archetypes": "WUG — counters / combat control",
-      "story": "Athena confronts Ares during the war between the Thesprotians and Brygians.",
-      "status": "CUT",
-      "treatment": "",
-      "layout": "standard",
-      "primaryArt": "ART-407",
-      "credit": "Art: Jacques-Louis David · Musée des Beaux-Arts de Lyon",
-      "source": "https://commons.wikimedia.org/wiki/File:The_Combat_of_Mars_and_Minerva_by_Jacques-Louis_David.jpg",
-      "imageUrl": "",
+      "mechanics": "Saga creature / shapeshifting / route prophecy",
+      "rules": "I — Until your next turn, Proteus has base power and toughness 1/6 and hexproof.\nII — Until your next turn, Proteus has base power and toughness 6/3 and trample.\nIII — Search your library for a land card and a Saga card, reveal them, put them into your hand, then shuffle.",
+      "rulesSource": "encounter-suite-reserve-promoted-2026-09-30",
+      "archetypes": "GU — Sagas / lands / journey",
+      "story": "Book IV / Menelaus and his companions hold the shape-changing Proteus until he stops transforming and reveals the route home and the fates of the returning Achaeans.",
+      "status": "KEEP",
+      "treatment": "Saga creature frame",
+      "layout": "saga",
+      "primaryArt": "ART-450",
+      "credit": "Art: Giulio Bonasone · Symbolicarum quaestionum, 1574 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Menelaus_Proteus_engraving_achillis_1574.jpg",
+      "imageUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Menelaus_Proteus_engraving_achillis_1574.jpg",
       "productLayer": "main",
       "cycleIds": [
-        "story.post-odyssey",
-        "story.thesprotia",
-        "cast.athena",
-        "group.gods"
+        "story.telemachy",
+        "story.proteus",
+        "cast.menelaus",
+        "group.saga-creatures"
       ],
-      "changeStatus": "story-retheme-v2 · art-review · art-sweep-v1 · empty-slot-collection-v1",
-      "skeletonClass": "standard",
+      "changeStatus": "empty-slot-fill-2026-09-30 · promotes encounter-suite reserve",
+      "skeletonClass": "saga",
       "showcase": [
-        "extended-art-legend"
+        "extended-art-legend",
+        "character-showcase"
       ],
-      "functionalWords": 31,
+      "functionalWords": 51,
       "lateGameRole": "seven-plus showcase payoff",
-      "narrativeEra": "Old Odysseus beyond the Odyssey",
-      "storyTarget": "Athena confronts Ares during the war between the Thesprotians and Brygians.",
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Book IV / Proteus changes shape while Menelaus holds fast, then yields the route home.",
       "storyRethemeRequired": false,
-      "storySourceBand": "Telegony / post-Odyssey tradition",
+      "storySourceBand": "Odyssey Books I–XXIV",
       "artReviewRequired": false,
-      "flavorStoryElement": "Athena confronts Ares during the war between the Thesprotians and Brygians.",
+      "flavorStoryElement": "Book IV / Proteus passes through defensive and violent forms before surrendering prophetic knowledge.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "Excellent match: God; combat control directly dramatizes a defining feature of Athena confronts Ares during the war between the Thesprotians and Brygians.",
-      "slotState": "EMPTY",
-      "replacementNeeded": true,
-      "cutReason": "empty-slot-collection-v1",
-      "formerDesignName": "Athena, Opponent of Ares"
+      "flavorMatchRationale": "The three chapters enact the encounter in sequence: Proteus first becomes hard to seize, then dangerous to hold, then gives up the route and the next story once Menelaus has endured the transformations."
     },
     {
       "id": "ODY-292",
@@ -14065,53 +14062,46 @@
     {
       "id": "ODY-302",
       "number": 302,
-      "name": "Poliporthes, Son of Penelope",
-      "displayName": "Poliporthes, Son of Penelope",
-      "underlyingName": "",
-      "mana": "{5}{G}{W}",
-      "mv": 7,
-      "color": "GW",
-      "frame": "M",
-      "type": "Legendary Creature — Human Noble",
-      "pt": "5/6",
+      "name": "Tell Me, O Muse",
+      "displayName": "Tell Me, O Muse",
+      "underlyingName": "Once Upon a Time",
+      "mana": "{1}{G}",
+      "mv": 2,
+      "color": "G",
+      "frame": "G",
+      "type": "Instant",
+      "pt": "",
       "rarity": "R",
-      "origin": "NEW",
-      "originFull": "New",
-      "mechanics": "Survival; Go wide",
-      "rules": "Vigilance. Survival — At the beginning of your second main phase, if Poliporthes is tapped, put a +1/+1 counter on up to two other target creatures you control. Those creatures gain vigilance until your next turn.",
-      "rulesSource": "story-retheme-v2",
-      "archetypes": "GW — Survival / go wide",
-      "story": "Later mythography names Poliporthes as a son of Odysseus and Penelope after the homecoming; the surviving tradition gives dynastic continuity rather than a detailed adventure.",
-      "status": "CUT",
-      "treatment": "",
+      "origin": "REPRINT",
+      "originFull": "Reprint",
+      "mechanics": "Opening spell / creature-or-land selection",
+      "rules": "If this spell is the first spell you've cast this game, you may cast it without paying its mana cost.\nLook at the top five cards of your library. You may reveal a creature or land card from among them and put it into your hand. Put the rest on the bottom of your library in a random order.",
+      "rulesSource": "oracle-reprint-once-upon-a-time",
+      "archetypes": "Gx — creatures / lands / fixing",
+      "story": "Book I / the Odyssey opens by asking the Muse to tell of the man of many devices and to begin the story where she chooses.",
+      "status": "KEEP",
+      "treatment": "Godzilla-style renamed reprint",
       "layout": "standard",
-      "primaryArt": "ART-001",
-      "credit": "Art: Ugo da Carpi, after Raphael · The Met",
-      "source": "https://www.metmuseum.org/art/collection/search/359855",
-      "imageUrl": "https://images.metmuseum.org/CRDImages/dp/original/DP864192.jpg",
+      "primaryArt": "ART-177",
+      "credit": "Art: “Blind Homer” · J.-B.-R.-U. Massard, after François Gérard · National Gallery of Art",
+      "source": "https://www.nga.gov/artworks/157097-blind-homer",
+      "imageUrl": "",
       "productLayer": "main",
       "cycleIds": [
-        "story.post-odyssey",
-        "story.return-disguise",
-        "cast.penelope",
-        "group.ithacan-household"
+        "story.invocation",
+        "theme.storytelling"
       ],
-      "changeStatus": "story-retheme-v2 · art-review · flavor-redesign-v1 · art-sweep-v1 · art-p1-exhausted-v1 · empty-slot-collection-v1",
+      "changeStatus": "empty-slot-fill-2026-09-30 · replaces stripped Poliporthes slot",
       "skeletonClass": "standard",
-      "functionalWords": 36,
-      "lateGameRole": "seven-plus showcase payoff",
-      "narrativeEra": "Old Odysseus beyond the Odyssey",
-      "storyTarget": "Later mythography names Poliporthes as a son of Odysseus and Penelope after the homecoming; the surviving tradition gives dynastic continuity rather than a detailed adventure.",
+      "functionalWords": 59,
+      "narrativeEra": "Odyssey",
+      "storyTarget": "Book I / invocation to the Muse at the opening of the Odyssey.",
       "storyRethemeRequired": false,
-      "storySourceBand": "Thesprotis / Apollodorus Epitome 7.35 note",
+      "storySourceBand": "Odyssey Books I–XXIV",
       "artReviewRequired": false,
-      "flavorStoryElement": "Later mythography names Poliporthes as a son of Odysseus and Penelope after the homecoming; the surviving tradition gives dynastic continuity rather than a detailed adventure.",
-      "flavorMatchScore": 4,
-      "flavorMatchRationale": "Strong match: The card therefore models inheritance—vigilance and strengthening the next rank of creatures—without pretending that a lost source records specific exploits.",
-      "slotState": "EMPTY",
-      "replacementNeeded": true,
-      "cutReason": "empty-slot-collection-v1",
-      "formerDesignName": "Poliporthes, Son of Penelope"
+      "flavorStoryElement": "Book I / “Tell me, O Muse” — the poem's opening invocation and the Muse's freedom to begin the tale where she chooses.",
+      "flavorMatchScore": 5,
+      "flavorMatchRationale": "The exact opening invocation becomes a first-spell card: it can begin before ordinary mana development, then lets the Muse choose a creature or land from the next five cards—the next person or place in the story."
     },
     {
       "id": "ODY-303",
@@ -14253,26 +14243,26 @@
     {
       "id": "ODY-306",
       "number": 306,
-      "name": "Proteus, Reluctant Oracle",
-      "displayName": "Proteus, Reluctant Oracle",
+      "name": "Wrest the Road from Proteus",
+      "displayName": "Wrest the Road from Proteus",
       "underlyingName": "",
-      "mana": "{3}{G}{U}",
-      "mv": 5,
+      "mana": "{5}{G}{U}",
+      "mv": 7,
       "color": "GU",
       "frame": "M",
-      "type": "Legendary Enchantment Creature — Saga Shapeshifter",
-      "pt": "4/4",
+      "type": "Sorcery",
+      "pt": "",
       "rarity": "R",
       "origin": "NEW",
       "originFull": "New",
-      "mechanics": "Saga creature / shapeshifting / route prophecy",
-      "rules": "I — Until your next turn, Proteus has base power and toughness 1/6 and hexproof.\nII — Until your next turn, Proteus has base power and toughness 6/3 and trample.\nIII — Search your library for a land card and a Saga card, reveal them, put them into your hand, then shuffle.",
-      "rulesSource": "encounter-suite-reserve-promoted-2026-09-30",
-      "archetypes": "GU — Sagas / lands / journey",
-      "story": "Book IV / Menelaus and his companions hold the shape-changing Proteus until he stops transforming and reveals the route home and the fates of the returning Achaeans.",
-      "status": "KEEP",
-      "treatment": "Saga creature frame",
-      "layout": "saga",
+      "mechanics": "Ramp / exile / wrested prophecy",
+      "rules": "Search your library for up to two basic land cards, put one onto the battlefield tapped and the other into your hand, then shuffle. Exile the top two cards of your library. You may play one of them until the end of your next turn.",
+      "rulesSource": "ff-skeleton-candidate",
+      "archetypes": "GU — ramp / journey",
+      "story": "Book IV / Menelaus and his companions seize Proteus and hold fast through the sea-god’s changing forms until he reveals the route home and the fates of the returning Achaeans.",
+      "status": "PROTOTYPE",
+      "treatment": "",
+      "layout": "standard",
       "primaryArt": "ART-450",
       "credit": "Art: Giulio Bonasone · Symbolicarum quaestionum, 1574 · Wikimedia Commons",
       "source": "https://commons.wikimedia.org/wiki/File:Menelaus_Proteus_engraving_achillis_1574.jpg",
@@ -14283,21 +14273,21 @@
         "story.proteus",
         "cast.menelaus"
       ],
-      "changeStatus": "flavour-promotions-2026-09-30 · promotes encounter-suite reserve over Wrest the Road from Proteus",
-      "skeletonClass": "saga",
+      "changeStatus": "story-retheme-v2 · art-review · art-sweep-v1 · missing-moments-v2",
+      "skeletonClass": "standard",
       "showcase": [
         "master-artist"
       ],
-      "functionalWords": 51,
-      "lateGameRole": "",
+      "functionalWords": 45,
+      "lateGameRole": "seven-plus showcase payoff",
       "narrativeEra": "Odyssey",
-      "storyTarget": "Book IV / Proteus changes shape while Menelaus holds fast, then yields the route home.",
+      "storyTarget": "Book IV / Menelaus wrestles the shape-changing Proteus into revealing the road home.",
       "storyRethemeRequired": false,
       "storySourceBand": "Odyssey Books I–XXIV",
       "artReviewRequired": false,
-      "flavorStoryElement": "Book IV / Proteus passes through defensive and violent forms before surrendering prophetic knowledge.",
+      "flavorStoryElement": "Book IV / Menelaus wrestles the shape-changing Proteus into revealing the road home.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "The three chapters enact the encounter in sequence: Proteus first becomes hard to seize, then dangerous to hold, then gives up the route and the next story once Menelaus has endured the transformations."
+      "flavorMatchRationale": "Excellent match: searching for two lands turns Proteus’s forced prophecy into literal route-finding, while the extra exiled cards represent additional knowledge extracted after Menelaus holds through the sea-god’s transformations."
     },
     {
       "id": "ODY-307",
@@ -14513,14 +14503,14 @@
         }
       },
       "lands": 40,
-      "legendaryCards": 103,
+      "legendaryCards": 102,
       "legendaryByRarity": {
         "C": 2,
         "U": 36,
         "R": 47,
         "M": 18
       },
-      "sixPlusManaValue": 31,
+      "sixPlusManaValue": 30,
       "goldUncommonLegendarySignposts": 20,
       "signpostPairs": {
         "WU": 2,
@@ -14537,11 +14527,11 @@
       "manaCurve": {
         "1": 18,
         "2": 58,
-        "3": 92,
+        "3": 93,
         "4": 48,
         "5": 22,
         "6": 18,
-        "7+": 13
+        "7+": 12
       },
       "sagaCards": 16
     },
@@ -14800,7 +14790,7 @@
       },
       {
         "id": "character-showcase",
-        "count": 31,
+        "count": 32,
         "rarity": {
           "U": 4,
           "R": 19,
@@ -14837,7 +14827,8 @@
           "ODY-233",
           "ODY-234",
           "ODY-240",
-          "ODY-241"
+          "ODY-241",
+          "ODY-291"
         ]
       },
       {
@@ -15455,11 +15446,11 @@
       },
       "typeTexture": {
         "actual": {
-          "Creature": 166,
+          "Creature": 164,
           "Artifact": 23,
           "Enchantment": 56,
           "Instant": 32,
-          "Sorcery": 21,
+          "Sorcery": 22,
           "Land": 40
         },
         "benchmark": {
@@ -15475,11 +15466,11 @@
         "actual": {
           "1": 18,
           "2": 58,
-          "3": 92,
+          "3": 93,
           "4": 48,
           "5": 22,
           "6": 18,
-          "7+": 13
+          "7+": 12
         },
         "benchmark": {
           "1": 29,
@@ -15707,13 +15698,12 @@
         ]
       },
       "Athena": {
-        "count": 2,
-        "decision": "KEEP — ERA SPLIT",
-        "allowedCount": 2,
-        "rationale": "Core Odyssey guide and later opponent of Ares are different narrative eras and jobs.",
+        "count": 1,
+        "decision": "KEEP — CORE ODYSSEY GUIDE",
+        "allowedCount": 1,
+        "rationale": "The stripped post-Odyssey Athena/Ares slot has been repurposed; the main set retains Athena's core Odyssey representation.",
         "cardIds": [
-          "ODY-062",
-          "ODY-291"
+          "ODY-062"
         ]
       },
       "Calypso": {
@@ -15781,7 +15771,7 @@
       "The 15 Saga type cards include the sole double-faced Troy card. Layout buckets are exclusive: 14 single-faced Saga layouts plus one double-faced battle.",
       "Legacy benchmark totals remain targets. Actual counts are recomputed from card records, not forced by unrequested card redesigns."
     ],
-    "appRevision": "flavour-promotions-2026-09-30",
+    "appRevision": "empty-slot-fill-2026-09-30",
     "refinementReport": "data/refinement-report.json"
   },
   "rulesPresentation": {
@@ -15822,8 +15812,8 @@
     "report": "data/templating-report.json"
   },
   "emptySlots": {
-    "revision": "empty-slot-collection-v1",
-    "count": 20,
+    "revision": "empty-slot-fill-2026-09-30",
+    "count": 18,
     "slots": [
       {
         "number": 11,
@@ -15916,12 +15906,6 @@
         "color": "BR"
       },
       {
-        "number": 291,
-        "formerName": "Athena, Opponent of Ares",
-        "rarity": "R",
-        "color": "WUG"
-      },
-      {
         "number": 295,
         "formerName": "Apollo, Separator of Gods",
         "rarity": "R",
@@ -15932,12 +15916,6 @@
         "formerName": "Polypoetes, Inheritor of Thesprotia",
         "rarity": "R",
         "color": "BG"
-      },
-      {
-        "number": 302,
-        "formerName": "Poliporthes, Son of Penelope",
-        "rarity": "R",
-        "color": "GW"
       },
       {
         "number": 307,
