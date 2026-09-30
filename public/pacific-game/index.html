@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#071f2c">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="./manifest.webmanifest">
   <meta name="description" content="Island Together — a cooperative Pacific climate resilience game.">
   <title>Island Together — Pacific climate resilience game</title>
   <base href="/climate-game/">
@@ -19,5 +21,8 @@
 </head>
 <body>
   <div id="app" class="app"></div>
+  <script>
+    if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/pacific-game/sw.js', {scope:'/pacific-game/'}).catch(()=>{}));
+  </script>
 </body>
 </html>
