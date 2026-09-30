@@ -14,6 +14,27 @@ const RESERVE={
  196:{name:"Naiads' Grotto",story:'Book XIII / the grotto on Ithaca shelters the gifts Odysseus brings home.',cycleIds:['story.return-disguise']}
 };
 const MARKER='one-locale-scry-cycle-20260930';
+const RESERVE_REASON='Former overlapping dual design archived; story and artwork slot reserved for a new non-dual design.';
+function updateSheetRows(sync){
+ if(!Array.isArray(sync?.cardRows))return;
+ for(const row of sync.cardRows){
+  const n=Number(row[0]),pair=PAIRS[n];
+  if(pair){
+   if(LOCALE_NAMES[n])row[1]=row[14]=LOCALE_NAMES[n];
+   row[9]='Tapped dual land; scry 1; color fixing';
+   row[10]=`This land enters tapped.\nWhen this land enters, scry 1.\n{T}: Add {${pair[0]}} or {${pair[1]}}.`;
+   row[26]='11';
+  }else if(RETIRED.has(n)){
+   const d=RESERVE[n];
+   row[1]=row[14]=d.name;row[8]='New';row[9]=row[10]=row[11]='';
+   row[12]=row[29]=row[36]=d.story;row[13]='REVISE';
+   row[15]=row[16]='';row[21]=d.cycleIds.join('; ');row[26]='0';
+   row[30]='YES';row[31]='To be sourced for redesign';row[37]='';row[38]=RESERVE_REASON;
+  }else continue;
+  if(!String(row[27]||'').includes(MARKER))row[27]=[row[27],MARKER].filter(Boolean).join(' · ');
+ }
+ if(sync.META?.templeSanctuaries)sync.META.templeSanctuaries={...sync.META.templeSanctuaries,mainAssignments:0,reserveCandidates:10};
+}
 function apply(data){
  if(!data||!Array.isArray(data.cards))return data;
  for(const card of data.cards){
@@ -38,7 +59,7 @@ function apply(data){
    card.designDisposition='REASSIGN';
    card.functionalWords=0;
    card.flavorMatchScore=null;
-   card.flavorMatchRationale='Former overlapping dual design archived; keep this story and artwork slot open for a new non-dual design.';
+   card.flavorMatchRationale=RESERVE_REASON;
    card.rulesSource='Retired dual skeleton · archived 2026-09-30';
    card.cycleIds=RESERVE[n].cycleIds;
   }else continue;
@@ -46,10 +67,12 @@ function apply(data){
  }
  data.localeCycle={id:'cycle.odyssean-locales',name:'Odyssey locales',count:10,rarity:'C',rulesType:'Land',sharedAbility:'This land enters tapped. When this land enters, scry 1.',numbers:Object.keys(PAIRS).map(Number),names:Object.fromEntries(Object.keys(PAIRS).map(n=>[n,data.cards.find(c=>Number(c.number)===Number(n)).displayName]))};
  data.emptySlots={revision:MARKER,count:RETIRED.size,slots:[...RETIRED],reason:'Retired duplicate rare dual designs; story and artwork held for non-dual reassignment.'};
+ if(data.templeSanctuaryImport)data.templeSanctuaryImport={...data.templeSanctuaryImport,mainAssignments:0,reserveCandidates:10,status:'archived artwork and design reference'};
  data.candidate=Object.assign({},data.candidate,{landCycle:'one ten-card tapped scry dual cycle',retiredDualArchive:'retired-dual-archive.20260930.json'});
  return data;
 }
 root.OdysseyLocaleLands={pairs:PAIRS,retired:[...RETIRED],apply};
+updateSheetRows(root.OdysseySheetSync);
 if(root.ODYSSEY_DATA)root.ODYSSEY_DATA=apply(root.ODYSSEY_DATA);
 if(typeof module!=='undefined'&&module.exports)module.exports={pairs:PAIRS,retired:[...RETIRED],apply};
 })(typeof window!=='undefined'?window:globalThis);

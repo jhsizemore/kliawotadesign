@@ -1,5 +1,5 @@
 'use strict';
-const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const root=path.resolve(__dirname,'..'),dir=path.join(root,'public/mtgtools/odyssey/data');
 const data=JSON.parse(fs.readFileSync(path.join(dir,'odyssey-public-candidate.json'),'utf8'));
 const archive=JSON.parse(fs.readFileSync(path.join(dir,'retired-dual-archive.20260930.json'),'utf8'));
@@ -26,5 +26,19 @@ test('the five overlapping dual designs are archived and await reassignment',()=
 });
 test('the sanctuary artwork library registers before the land designs are retired',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- assert(app.indexOf('temple-sanctuaries.js?v=sanctuaries1')<app.indexOf('locale-lands.20260930.js?v=locale2'));
+ assert(app.indexOf('temple-sanctuaries.js?v=sanctuaries2')<app.indexOf('locale-lands.20260930.js?v=locale3'));
+ const base=structuredClone(data);
+ for(const old of archive.sourceCards)base.cards[base.cards.findIndex(c=>c.number===old.number)]=old;
+ const sandbox={window:{ODYSSEY_DATA:base}};vm.createContext(sandbox);
+ for(const file of ['data/temple-sanctuaries.20260929.js','temple-sanctuaries.js','data/locale-lands.20260930.js'])
+  vm.runInContext(fs.readFileSync(path.join(root,'public/mtgtools/odyssey',file),'utf8'),sandbox,{filename:file});
+ const result=sandbox.window.ODYSSEY_DATA;
+ assert.equal(result.artworks.length,data.artworks.length+10);
+ assert.equal(result.templeSanctuaryImport.mainAssignments,0);
+ assert.equal(result.cards.find(c=>c.number===72).rules,'');
+ const reloaded=sandbox.window.OdysseyTempleSanctuaries.apply(result);
+ assert.equal(reloaded.cards.find(c=>c.number===72).rules,'');
+ assert.equal(reloaded.artworks.length,result.artworks.length);
+ const archivePage=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/temple-sanctuaries.html'),'utf8');
+ assert(archivePage.includes('Sanctuary artwork and retired dual designs'));
 });

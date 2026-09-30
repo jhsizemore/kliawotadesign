@@ -1,5 +1,5 @@
-/* Ten god-sanctuaries: five existing main-file temples, five separate candidates.
- * No rules, colour, rarity, slot, user storage, or Adventure land is changed. */
+/* Ten researched sanctuary artworks and historical dual designs.
+ * The later locale overlay retires the five former main-file duals. */
 (function(root){
 'use strict';
 const VERSION='sanctuaries-20260929-v1';
@@ -22,13 +22,14 @@ function fieldValues(d,old){
 }
 function register(sync=root.OdysseySheetSync){
  if(!sync)return;
+ const retired=new Set(root.OdysseyLocaleLands?.retired||[]);
  const ids=new Map(sync.artRows.map((r,i)=>[r[0],i]));
  for(const a of payload.artworks){
   const idx=ids.get(a.id);
   if(idx===undefined){ids.set(a.id,sync.artRows.length);sync.artRows.push(ART_KEYS.map(k=>a[k]??''));}
   else if(sync.artRows[idx][10]!==a.source)throw new Error('Sanctuary artwork ID collision: '+a.id);
  }
- for(const d of payload.designs.filter(d=>d.number)){
+ for(const d of payload.designs.filter(d=>d.number&&!retired.has(d.number))){
   const r=sync.cardRows.find(r=>Number(r[0])===d.number);
   if(!r||r[4]!==d.pair||!String(r[10]).includes('scry 1')||!String(r[10]).includes('enters tapped'))throw new Error('Sanctuary slot changed: '+d.number);
   if(r[1]!==d.underlyingName&&r[15]!==d.underlyingName)throw new Error('Sanctuary identity changed: '+d.number);
@@ -41,13 +42,14 @@ function register(sync=root.OdysseySheetSync){
    if(!String(cov[7]).includes(VERSION))cov[7]=VERSION+': '+d.displayName+' uses '+p.primaryArt+'. '+d.rationale+' Final crop remains editable.\n\nPrevious record: '+(cov[7]||'');}
  }
  sync.META.artworks=sync.artRows.length;
- sync.META.templeSanctuaries={version:VERSION,artworks:10,mainAssignments:5,reserveCandidates:5};
+ sync.META.templeSanctuaries={version:VERSION,artworks:10,mainAssignments:5-retired.size,reserveCandidates:5+retired.size};
 }
 function apply(data){
  if(!data||!Array.isArray(data.cards))return data;
+ const retired=new Set(root.OdysseyLocaleLands?.retired||[]);
  const artworks=(data.artworks||[]).slice(),ids=new Map(artworks.map((a,i)=>[a.id,i]));
  for(const a of payload.artworks){const i=ids.get(a.id);if(i===undefined){ids.set(a.id,artworks.length);artworks.push({...a});}else{if(artworks[i].source!==a.source)throw new Error('Sanctuary artwork conflict: '+a.id);artworks[i]={...artworks[i],...a};}}
- const designs=new Map(payload.designs.filter(d=>d.number).map(d=>[d.number,d]));
+ const designs=new Map(payload.designs.filter(d=>d.number&&!retired.has(d.number)).map(d=>[d.number,d]));
  const cards=data.cards.map(old=>{const d=designs.get(Number(old.number));if(!d)return old;
   if(old.color!==d.pair||!String(old.rules).includes('scry 1')||!String(old.rules).includes('enters tapped'))throw new Error('Sanctuary main-card guard: '+old.number);
   return {...old,...fieldValues(d,old)};});
@@ -55,12 +57,12 @@ function apply(data){
   const prefix=VERSION+': '+d.displayName+' uses '+d.primaryArt+'. '+d.rationale+' Final crop remains editable.';
   return {...old,status:'SELECTED',layer:d.matchLayer,candidateIds:unique([old.candidateIds||[],d.primaryArt]),primary:d.primaryArt,creditReady:'YES',notes:String(old.notes||'').includes(VERSION)?old.notes:prefix+'\n\nPrevious record: '+(old.notes||'')};});
  return {...data,cards,artworks,coverage,templeSanctuaries:payload.designs,
-  integrity:{...data.integrity,artworks:artworks.length},templeSanctuaryImport:{version:VERSION,artworks:10,mainAssignments:5,reserveCandidates:5}};
+  integrity:{...data.integrity,artworks:artworks.length},templeSanctuaryImport:{version:VERSION,artworks:10,mainAssignments:designs.size,reserveCandidates:10-designs.size}};
 }
 function mount(){
  if(document.getElementById('openTempleSanctuaries'))return;
  const bar=document.querySelector('.top-actions');if(!bar)return;
- const a=document.createElement('a');a.id='openTempleSanctuaries';a.className='btn secondary';a.textContent='Temple cycle';a.href='temple-sanctuaries.html';a.style.textDecoration='none';bar.appendChild(a);
+ const a=document.createElement('a');a.id='openTempleSanctuaries';a.className='btn secondary';a.textContent='Sanctuary archive';a.href='temple-sanctuaries.html';a.style.textDecoration='none';bar.appendChild(a);
 }
 register();
 if(root.OdysseySheetSync&&!root.OdysseySheetSync._templeSanctuaryApply){

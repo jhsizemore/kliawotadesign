@@ -3954,7 +3954,7 @@
       "artReviewRequired": false,
       "flavorStoryElement": "A coastal sanctuary to the god who opposes the homeward voyage.",
       "flavorMatchScore": null,
-      "flavorMatchRationale": "Former overlapping dual design archived; keep this story and artwork slot open for a new non-dual design.",
+      "flavorMatchRationale": "Former overlapping dual design archived; story and artwork slot reserved for a new non-dual design.",
       "flavor": "in the tenth shall take the town",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
@@ -10432,7 +10432,7 @@
       "artReviewRequired": false,
       "flavorStoryElement": "The burial and remembrance of Achilles after the fighting at Troy.",
       "flavorMatchScore": null,
-      "flavorMatchRationale": "Former overlapping dual design archived; keep this story and artwork slot open for a new non-dual design.",
+      "flavorMatchRationale": "Former overlapping dual design archived; story and artwork slot reserved for a new non-dual design.",
       "flavor": "there are tokens with which we two are alone acquainted",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
@@ -10487,7 +10487,7 @@
       "artReviewRequired": false,
       "flavorStoryElement": "A shadowed grove suggesting passage between the living world and the dead.",
       "flavorMatchScore": null,
-      "flavorMatchRationale": "Former overlapping dual design archived; keep this story and artwork slot open for a new non-dual design.",
+      "flavorMatchRationale": "Former overlapping dual design archived; story and artwork slot reserved for a new non-dual design.",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
         "ART-277"
@@ -10539,7 +10539,7 @@
       "artReviewRequired": true,
       "flavorStoryElement": "The ruins of a sanctuary become a sign of time and fading divine favor.",
       "flavorMatchScore": null,
-      "flavorMatchRationale": "Former overlapping dual design archived; keep this story and artwork slot open for a new non-dual design.",
+      "flavorMatchRationale": "Former overlapping dual design archived; story and artwork slot reserved for a new non-dual design.",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
         "ART-065",
@@ -10592,7 +10592,7 @@
       "artReviewRequired": false,
       "flavorStoryElement": "Book XIII / the grotto on Ithaca shelters the gifts Odysseus brings home.",
       "flavorMatchScore": null,
-      "flavorMatchRationale": "Former overlapping dual design archived; keep this story and artwork slot open for a new non-dual design.",
+      "flavorMatchRationale": "Former overlapping dual design archived; story and artwork slot reserved for a new non-dual design.",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
         "ART-071",
@@ -37394,8 +37394,8 @@
       "title": "14A2 — The Odyssey MTG — Analysis Candidate Card File v2 — FF Lattice Rebuild"
     },
     "sourceVersion": "2026-09-29.1",
-    "sourceFingerprint": "79c1b8f699f5c75768d13df5f078abd13fc2859f1d12e85d24adc8f525a4c644",
-    "cardsSha256": "432cb92144646247f4d6282f7a027a5a1c3c805630494906ef8d4879cc6a31e6",
+    "sourceFingerprint": "6b95a1af3030c770dee43dc1f1165a00ce18d594d4d7adbb879c3ef6c7f6a457",
+    "cardsSha256": "d8d53abc032b808b55716e54c038cc48f407bf23fb4a62ae1276ffcb5dd3fdf8",
     "sources": [
       {
         "file": "data/odyssey-data.js",
@@ -37423,7 +37423,7 @@
       },
       {
         "file": "data/locale-lands.20260930.js",
-        "sha256": "450cbbe702142dc184bdc808b428700ef50a8bb16459121a4b9922e85bd2c389"
+        "sha256": "bbaf15bc2aab6438d844ac7b96b6126f6ecc0f59396141c4f6642a49424182dc"
       }
     ]
   }
