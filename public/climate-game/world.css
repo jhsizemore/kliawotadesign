@@ -520,3 +520,15 @@
 
 .mission-geography{margin:0 16px 10px;padding:9px 11px;border-radius:10px;background:#dce9e3;color:#4d686a;font-size:10px;line-height:1.4}
 .mission-geography b{color:#1b6f66}
+
+.reef-break{
+  fill:none;
+  stroke:#f0f2df;
+  stroke-width:3;
+  stroke-opacity:.52;
+  stroke-dasharray:2 10;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  pointer-events:none;
+}
+.scenario-atoll_water .reef-break{stroke-opacity:.72}
