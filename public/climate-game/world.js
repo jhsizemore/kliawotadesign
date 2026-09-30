@@ -173,6 +173,15 @@ function stressLandscapeSvg(){
   }).join('')}</g>`;
 }
 
+function scenarioRouteTrafficSvg(s){
+  const routes=(s.links||[]).filter(l=>l.mode==='boat');
+  if(!routes.length) return '';
+  return `<g class="route-traffic" aria-hidden="true">${routes.map((l,i)=>{
+    const d=l.d||worldLinkPath(l.a,l.b),dur=15+(i%3)*4,begin=-(i*4+2);
+    return `<g class="route-boat"><use href="#scene-canoe" transform="scale(.48)"/><animateMotion dur="${dur}s" repeatCount="indefinite" begin="${begin}s" path="${d}"/></g>`;
+  }).join('')}</g>`;
+}
+
 function hazardAtmosphere(id){
   if(!id) return '';
   if(id==='cyclone'||id==='rain'){
@@ -215,6 +224,7 @@ function worldMapMarkup(opts={}){
       <g class="routes ${shippingRisk?'route-risk':''}" fill="none">
         ${s.links.filter(l=>l.mode==='boat').map(l=>`<path d="${l.d||worldLinkPath(l.a,l.b)}" class="boat-route ${freightTargets.has(l.b)?'freight-active':''}"/>`).join('')}
       </g>
+      ${scenarioRouteTrafficSvg(s)}
     </svg>
     ${opts.hazardId?hazardAtmosphere(opts.hazardId):''}
     <div class="world-scenario-label"><span>Scenario</span><strong>${s.name}</strong><small>${s.strap}</small></div>
