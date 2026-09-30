@@ -52,6 +52,8 @@ function sceneSymbolDefs(){
   return `
 <g id="scene-house"><rect x="-11" y="-5" width="22" height="14" rx="1.5" fill="#dbc79e" stroke="#5a4938" stroke-width="1.4"/><path d="M-14 -5 L0 -15 L14 -5 Z" fill="#9b573f" stroke="#583b31" stroke-width="1.4"/><rect x="-2" y="1" width="5" height="8" fill="#705646"/><rect x="-8" y="-1" width="4" height="4" fill="#75a7a1"/></g>
 <g id="scene-reinforced-house"><use href="#scene-house"/><path d="M-13 -4 L-8 9 M13 -4 L8 9 M-7 -10 L-4 9 M7 -10 L4 9" fill="none" stroke="#e4d17f" stroke-width="1.5"/></g>
+<g id="scene-island-house"><rect x="-10" y="-3" width="20" height="12" rx="1" fill="#c7ae7c" stroke="#654e35" stroke-width="1.2"/><path d="M-15 -3 L0 -18 L15 -3 Z" fill="#87704b" stroke="#59452f" stroke-width="1.2"/><path d="M-10 -8 L10 -8 M-7 -12 L7 -12" stroke="#c2aa77" stroke-width="1" opacity=".7"/><path d="M-8 1 H8 M-8 5 H8" stroke="#8d7047" stroke-width=".8" opacity=".65"/><rect x="-2" y="2" width="4" height="7" fill="#5f4936"/></g>
+<g id="scene-community-house"><path d="M-19 -4 L0 -18 L19 -4 Z" fill="#8b7048" stroke="#58452f" stroke-width="1.4"/><path d="M-15 -4 V10 M-5 -4 V10 M5 -4 V10 M15 -4 V10 M-17 10 H17" fill="none" stroke="#74583b" stroke-width="2"/><path d="M-11 3 H11" stroke="#d0b47d" stroke-width="2"/></g>
 <g id="scene-market"><rect x="-15" y="-3" width="30" height="13" rx="2" fill="#d7c49c" stroke="#5f4936" stroke-width="1.2"/><path d="M-18 -3 L-10 -13 L12 -13 L18 -3 Z" fill="#b36b49" stroke="#644331" stroke-width="1.2"/><path d="M-10 10 V15 M10 10 V15" stroke="#614d3a" stroke-width="2"/></g>
 <g id="scene-clinic"><rect x="-14" y="-8" width="28" height="18" rx="2" fill="#e4e2cf" stroke="#56615a" stroke-width="1.3"/><path d="M-16 -8 L0 -16 L16 -8 Z" fill="#80998a"/><path d="M0 -5 V5 M-5 0 H5" stroke="#b05757" stroke-width="2.3"/><rect x="-11" y="2" width="5" height="8" fill="#6f7268"/></g>
 <g id="scene-school"><rect x="-18" y="-7" width="36" height="18" rx="2" fill="#d7c899" stroke="#5b4f3d" stroke-width="1.3"/><path d="M-21 -7 L0 -16 L21 -7 Z" fill="#885a43"/><rect x="-4" y="1" width="8" height="10" fill="#655243"/><rect x="-14" y="-2" width="6" height="5" fill="#7ba7a3"/><rect x="8" y="-2" width="6" height="5" fill="#7ba7a3"/></g>
@@ -125,7 +127,8 @@ function nodeSceneSvg(node,index=0){
   if(node.kind==='gardens') return `<g class="node-scenery scenery-gardens">${sceneUse('garden',x-22,y+12,.72,-8)}${sceneUse('garden',x+22,y+5,.68,8)}${sceneUse('palm',x+34,y-17,.55)}</g>`;
   if(node.kind==='water') return `<g class="node-scenery scenery-water">${sceneUse('spring',x+16,y+14,.72)}${sceneUse('tree',x-24,y+9,.74)}${sceneUse('tree',x+30,y-13,.52)}</g>`;
   if(node.kind==='site') return `<g class="node-scenery scenery-site">${sceneUse('foundation',x-17,y+13,.65,-5)}${sceneUse('foundation',x+22,y+8,.55,7)}${sceneUse('tree',x+34,y-12,.55)}</g>`;
-  return `<g class="node-scenery scenery-village">${sceneUse('house',x-24,y+14,.65,-6)}${sceneUse('house',x+20,y+15,.62,5)}${sceneUse('house',x-9,y-18,.54,2)}${sceneUse('palm',x+35,y-7,.65)}${sceneUse('palm',x-38,y-3,.52)}${sceneUse('person',x+3,y+21,.58)}${node.kind==='outer'?sceneUse('canoe',x+36,y+26,.55,seed*8):''}</g>`;
+  const villageHouse=worldScenario().id==='atoll_water'?'house':'island-house';
+  return `<g class="node-scenery scenery-village">${sceneUse(villageHouse,x-24,y+14,.65,-6)}${sceneUse('house',x+20,y+15,.58,5)}${sceneUse('community-house',x-8,y-17,.48,2)}${sceneUse('palm',x+35,y-7,.65)}${sceneUse('palm',x-38,y-3,.52)}${sceneUse('person',x+3,y+21,.58)}${node.kind==='outer'?sceneUse('canoe',x+36,y+26,.55,seed*8):''}</g>`;
 }
 function landscapeItemSvg(item){
   const x=item.x*10.8,y=item.y*7.2,s=item.scale??1,r=item.rotate??0,k=item.kind;
