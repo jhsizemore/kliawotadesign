@@ -73,6 +73,7 @@ function sceneSymbolDefs(){
 <g id="scene-drain"><path d="M-18 -6 Q-8 1 0 -5 T18 -4 M-18 4 Q-8 11 0 5 T18 6" fill="none" stroke="#71c5cf" stroke-width="2"/><path d="M-18 -10 V10 M18 -9 V11" stroke="#bea97a" stroke-width="2"/></g>
 <g id="scene-foundation"><path d="M-14 -7 L11 -9 L15 8 L-10 10 Z" fill="#c8bea0" stroke="#806f55" stroke-width="1.3" stroke-dasharray="3 2"/><path d="M-12 -5 L13 6 M12 -7 L-8 8" stroke="#9a8767" stroke-width="1"/></g>
 <g id="scene-scaffold"><use href="#scene-foundation"/><path d="M-13 -13 V10 M0 -16 V9 M13 -13 V9 M-15 -6 H15 M-15 2 H15" fill="none" stroke="#b78a57" stroke-width="1.4"/></g>
+<g id="scene-person"><circle cx="0" cy="-4" r="2.4" fill="#5d3d2d"/><path d="M0 -1 V6 M0 2 L-4 5 M0 2 L4 5 M0 6 L-3 11 M0 6 L3 11" fill="none" stroke="#704b36" stroke-width="1.8" stroke-linecap="round"/></g>
   `;
 }
 
@@ -115,13 +116,13 @@ function sceneUse(kind,x,y,scale=1,rotate=0,className=''){
 function nodeSceneSvg(node,index=0){
   const x=node.x*10.8,y=node.y*7.2,seed=(index%3)-1;
   if(node.kind==='port') return `<g class="node-scenery scenery-port">${sceneUse('wharf',x-17,y+9,.85,-8)}${sceneUse('canoe',x+24,y+23,.65,-10)}${sceneUse('crates',x-5,y-18,.65)}</g>`;
-  if(node.kind==='town') return `<g class="node-scenery scenery-town">${sceneUse('house',x-28,y+13,.78,-5)}${sceneUse('house',x+24,y+17,.7,4)}${sceneUse('house',x-18,y-19,.66,7)}${sceneUse('market',x+18,y-18,.75,-4)}${sceneUse('palm',x+41,y-4,.72)}</g>`;
+  if(node.kind==='town') return `<g class="node-scenery scenery-town">${sceneUse('house',x-28,y+13,.78,-5)}${sceneUse('house',x+24,y+17,.7,4)}${sceneUse('house',x-18,y-19,.66,7)}${sceneUse('market',x+18,y-18,.75,-4)}${sceneUse('palm',x+41,y-4,.72)}${sceneUse('person',x+1,y+20,.7)}${sceneUse('person',x+10,y+12,.62)}</g>`;
   if(node.kind==='clinic') return `<g class="node-scenery scenery-clinic">${sceneUse('clinic',x+18,y+12,.76,-4)}${sceneUse('house',x-20,y+15,.55,3)}${sceneUse('palm',x+34,y-15,.58)}</g>`;
-  if(node.kind==='school') return `<g class="node-scenery scenery-school">${sceneUse('school',x+18,y+13,.76,-3)}${sceneUse('tree',x-23,y+7,.7)}${sceneUse('tree',x+34,y-12,.55)}</g>`;
+  if(node.kind==='school') return `<g class="node-scenery scenery-school">${sceneUse('school',x+18,y+13,.76,-3)}${sceneUse('tree',x-23,y+7,.7)}${sceneUse('tree',x+34,y-12,.55)}${sceneUse('person',x+1,y+22,.58)}${sceneUse('person',x+9,y+24,.52)}</g>`;
   if(node.kind==='gardens') return `<g class="node-scenery scenery-gardens">${sceneUse('garden',x-22,y+12,.72,-8)}${sceneUse('garden',x+22,y+5,.68,8)}${sceneUse('palm',x+34,y-17,.55)}</g>`;
   if(node.kind==='water') return `<g class="node-scenery scenery-water">${sceneUse('spring',x+16,y+14,.72)}${sceneUse('tree',x-24,y+9,.74)}${sceneUse('tree',x+30,y-13,.52)}</g>`;
   if(node.kind==='site') return `<g class="node-scenery scenery-site">${sceneUse('foundation',x-17,y+13,.65,-5)}${sceneUse('foundation',x+22,y+8,.55,7)}${sceneUse('tree',x+34,y-12,.55)}</g>`;
-  return `<g class="node-scenery scenery-village">${sceneUse('house',x-24,y+14,.65,-6)}${sceneUse('house',x+20,y+15,.62,5)}${sceneUse('house',x-9,y-18,.54,2)}${sceneUse('palm',x+35,y-7,.65)}${sceneUse('palm',x-38,y-3,.52)}${node.kind==='outer'?sceneUse('canoe',x+36,y+26,.55,seed*8):''}</g>`;
+  return `<g class="node-scenery scenery-village">${sceneUse('house',x-24,y+14,.65,-6)}${sceneUse('house',x+20,y+15,.62,5)}${sceneUse('house',x-9,y-18,.54,2)}${sceneUse('palm',x+35,y-7,.65)}${sceneUse('palm',x-38,y-3,.52)}${sceneUse('person',x+3,y+21,.58)}${node.kind==='outer'?sceneUse('canoe',x+36,y+26,.55,seed*8):''}</g>`;
 }
 function landscapeItemSvg(item){
   const x=item.x*10.8,y=item.y*7.2,s=item.scale??1,r=item.rotate??0,k=item.kind;
