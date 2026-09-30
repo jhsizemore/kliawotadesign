@@ -104,6 +104,54 @@ const ISLAND_SCENARIOS = Object.freeze({
       {id:'food',kind:'condition',key:'food',target:3,label:'Keep food at 3 or more'},
       {id:'pressure',kind:'max_stress',target:1,label:'Finish with no motu above pressure 1'}
     ]
+  },
+  relocation_pathways:{
+    id:'relocation_pathways',
+    name:'Relocation Pathways',
+    shortName:'Relocation',
+    strap:'One exposed community · two receiving sites · six seasons',
+    topology:'climate-relocation',
+    summary:'Prepare a safe receiving site while an exposed low-island community faces repeated climate pressure and difficult timing decisions.',
+    briefing:'Relocation is not only an engineering problem. The game asks what enabling investments must exist before a move, while keeping community choice, livelihoods and cultural continuity visible as things a technical model cannot decide.',
+    landforms:[
+      {id:'source-island',d:'M95 285 C150 247 232 252 275 297 C307 331 292 377 246 402 C195 430 119 411 82 370 C52 337 60 307 95 285Z',reef:true},
+      {id:'host-island',d:'M430 162 C540 99 700 111 812 174 C911 230 945 338 895 433 C847 524 747 589 621 588 C510 588 404 533 378 438 C352 344 342 213 430 162Z',reef:true}
+    ],
+    features:[{kind:'water',d:'M615 208 C592 263 590 322 612 371 C630 410 622 452 594 496'}],
+    nodes:[
+      {id:'port',island:'main',label:'Host island landing',short:'Landing',kind:'port',x:55,y:72,stats:['supplies','community'],note:'People, materials and services arrive through the host island landing.'},
+      {id:'town',island:'main',label:'Host community',short:'Host village',kind:'town',x:63,y:55,stats:['food','community'],note:'The receiving community has its own priorities, services and land constraints.'},
+      {id:'clinic',island:'main',label:'Host clinic',short:'Clinic',kind:'clinic',x:72,y:51,stats:['water','community'],note:'Health services must support both existing residents and any arriving households.'},
+      {id:'school',island:'main',label:'School & shared hall',short:'School',kind:'school',x:73,y:65,stats:['shelter','community'],note:'A shared facility can support shelter and community continuity during transition.'},
+      {id:'gardens',island:'main',label:'Host food gardens',short:'Gardens',kind:'gardens',x:64,y:35,stats:['food','water'],note:'Receiving more people increases the importance of reliable local food systems.'},
+      {id:'source',island:'main',label:'Host freshwater source',short:'Water',kind:'water',x:56,y:29,stats:['water'],note:'Any receiving site needs dependable water without undermining existing users.'},
+      {id:'coast',island:'source',label:'Low-island home community',short:'Home island',kind:'outer',x:18,y:49,stats:['shelter','water','community'],note:'A fictional community facing repeated coastal pressure. Relocation remains a community decision, not an automatic hazard response.'},
+      {id:'north',island:'main',label:'Ridge receiving site',short:'Ridge site',kind:'site',x:50,y:43,stats:['water','shelter','community'],note:'Higher ground with road access, but services and housing still need investment.'},
+      {id:'east',island:'main',label:'Coastal receiving site',short:'Coastal site',kind:'site',x:82,y:43,stats:['water','shelter','community'],note:'Closer to livelihoods and the host village, but more exposed to coastal hazards.'}
+    ],
+    links:[
+      {a:'coast',b:'port',mode:'boat'},{a:'port',b:'town',mode:'road'},{a:'town',b:'clinic',mode:'road'},
+      {a:'town',b:'school',mode:'road'},{a:'town',b:'gardens',mode:'road'},{a:'gardens',b:'source',mode:'path'},
+      {a:'town',b:'north',mode:'road'},{a:'town',b:'east',mode:'road'}
+    ],
+    projectTargets:{
+      tank:['coast','north','east'],repair:['town','coast','north','east'],spring:['source'],waterplan:['coast','north','east'],
+      beds:['gardens'],seeds:['gardens'],crops:['gardens'],reef:['coast','east'],
+      roofs:['coast','north','east'],school:['school'],drain:['town','east'],paths:['clinic','north','east','coast'],
+      radio:['town','coast','north','east'],training:['town','north','east'],plan:['school','north','east'],health:['clinic','coast','north','east'],
+      stock:['coast','north','east','school','port'],wharf:['port'],savings:['town'],aid:['coast','north','east']
+    },
+    logistics:{hub:'port',remoteZones:['coast'],baseTravelSeasons:1,disruptionHazards:['shipping','cyclone']},
+    hazardTargets:{
+      dry:['source','gardens','coast','north','east'],tide:['coast','east'],cyclone:['coast','school','port','east'],
+      shipping:['port','coast'],rain:['town','gardens','east'],reefheat:['coast','east'],fuel:['port','town','coast'],illness:['clinic','coast','north','east']
+    },
+    special:{kind:'relocation',sourceZone:'coast',candidates:['north','east'],households:3,baseline:{north:['access'],east:['access']}},
+    goals:[
+      {id:'planned',kind:'relocation_planned',target:3,label:'Move 3 households through a prepared pathway'},
+      {id:'community',kind:'condition',key:'community',target:3,label:'Keep community capacity at 3 or more'},
+      {id:'pressure',kind:'max_stress',target:1,label:'Finish with no place above pressure 1'}
+    ]
   }
 });
 const ACTIVE_SCENARIO_ID='archipelago_logistics';
