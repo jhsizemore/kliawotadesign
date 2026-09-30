@@ -59,6 +59,9 @@
           },
           "reef": {
             "type": "boolean"
+          },
+          "surf": {
+            "type": "boolean"
           }
         },
         "additionalProperties": true
@@ -74,7 +77,22 @@
         ],
         "properties": {
           "kind": {
-            "type": "string"
+            "type": "string",
+            "enum": [
+              "reef-flat",
+              "lagoon",
+              "highland",
+              "ridge",
+              "river",
+              "harbour",
+              "mangrove",
+              "garden",
+              "settlement",
+              "beach",
+              "reef-pass",
+              "feature",
+              "water"
+            ]
           },
           "d": {
             "type": "string"
@@ -158,6 +176,9 @@
               "path",
               "boat"
             ]
+          },
+          "d": {
+            "type": "string"
           }
         },
         "additionalProperties": true
@@ -238,6 +259,9 @@
     },
     "special": {
       "type": "object"
+    },
+    "geographyBasis": {
+      "type": "string"
     }
   },
   "additionalProperties": true
