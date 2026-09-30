@@ -1,0 +1,81 @@
+{
+  "source": {
+    "commit": "7a77341bbfc56863bf747fbb93b06f30e9a834b3",
+    "path": "public/mtgtools/odyssey/data/odyssey-analysis-candidate-v1.json",
+    "gitBlobSha1": "23cad297215578005206d20415b7f886e44e2ae0",
+    "fileSha256": "8a4eac15f9d254f9aaf6470a41cd23c9e32797258204586ea10cc16207464cf7"
+  },
+  "hashes": {
+    "cards": "eac77d3db8b86799a6a36006d4d62d84815fbe5d2b941049990021a6d8818e81",
+    "protectedData": "d21b80017d97b7cd2992395201a2a4d6dca46f18c8bb5586edbf2eda60e8f45b"
+  },
+  "datasets": {
+    "odyssey-analysis-candidate-v1.json": {
+      "cards": "eac77d3db8b86799a6a36006d4d62d84815fbe5d2b941049990021a6d8818e81",
+      "artworks": null,
+      "coverage": null
+    },
+    "odyssey-data.json": {
+      "cards": "4a6a43140b5a2975190e07b0a7a5ab59d1d050206c4f084dd1d23ae37b981851",
+      "artworks": "bc445c4a390fd5235f867e64e6acfd763fad7be831113e622b4cad886ea86272",
+      "coverage": "a6ba71eb5366fda522d7f95363cc075e739c986867e98145d1c6443b41157b12"
+    },
+    "odyssey-analysis-candidate-v2.json": {
+      "cards": "4a6a43140b5a2975190e07b0a7a5ab59d1d050206c4f084dd1d23ae37b981851",
+      "artworks": "bc445c4a390fd5235f867e64e6acfd763fad7be831113e622b4cad886ea86272",
+      "coverage": "a6ba71eb5366fda522d7f95363cc075e739c986867e98145d1c6443b41157b12"
+    }
+  },
+  "designs": [
+    {
+      "number": 11,
+      "name": "Hollow Ships",
+      "sha256": "392286bbbade411037bba53a16aeb753cca0781d1ae5b85894df66f1539a6f17"
+    },
+    {
+      "number": 17,
+      "name": "Winged Words",
+      "sha256": "9c0436e518332e2a153c2626262e16db993cbef7583ad524664d2e64128ebe42"
+    },
+    {
+      "number": 59,
+      "name": "Much-Enduring",
+      "sha256": "b1c8e3da55d39175aea90dbc905af63890b044b6ac619951efe550d42446bd81"
+    },
+    {
+      "number": 93,
+      "name": "Rosy-Fingered Dawn",
+      "sha256": "57d9197ad8763449f0d3fca5de907f5f6bf354669026b5e2ff6ad6bc390b4280"
+    },
+    {
+      "number": 115,
+      "name": "The Unresting Sea",
+      "sha256": "37db64578fc4332b8d1497394e6b7562d6385a27decb84cfabfb8fb7ca3b78ce"
+    },
+    {
+      "number": 307,
+      "name": "The Wine-Dark Sea",
+      "sha256": "0e572ca873ce2825ccdec57579c5d4ae4c0ebb11e04a08920b05160efcc76a03"
+    },
+    {
+      "number": 62,
+      "name": "Athena, Flashing-Eyed",
+      "sha256": "22e25b049b9cc9904ddc3725d8143dfa21db6febf4e4914c623cefcda5f3cb3d"
+    },
+    {
+      "number": 242,
+      "name": "Zeus, Cloud-Gatherer",
+      "sha256": "43bf4866f099132456b131292e13106da70393e996a9b8c0da7a85c372187609"
+    },
+    {
+      "number": 291,
+      "name": "Proteus, Reluctant Oracle",
+      "sha256": "d50bb5f49b6be2f2c3002aaefe367c27cb0312f1773622aa2d79e929ea5caca9"
+    },
+    {
+      "number": 302,
+      "name": "Tell Me, O Muse",
+      "sha256": "352bafad7e66606e48ff5481624a30d108269641675669f70a405dd35747f7fc"
+    }
+  ]
+}

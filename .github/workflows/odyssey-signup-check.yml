@@ -52,9 +52,8 @@ jobs:
           python -m playwright install --with-deps chromium >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
           node tests/odyssey-signup-server.mjs >/tmp/odyssey-signup-server.log 2>&1 &
           python -u tests/odyssey-signup-browser.py
-      - name: Verify production delivery after merge
-        if: github.ref == 'refs/heads/main'
-        run: python -u tests/odyssey-signup-live.py
+      # Production bytes and public service configuration are checked after the
+      # matching Cloudflare build in odyssey-delivery-check.yml.
       - uses: actions/upload-artifact@v4
         if: always()
         with:

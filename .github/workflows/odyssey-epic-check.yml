@@ -42,22 +42,5 @@ jobs:
             test-results/odyssey-epic/
             test-results/odyssey-fullart-paint/
           if-no-files-found: ignore
-  live-site:
-    needs: epic
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    timeout-minutes: 12
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install browser tools
-        run: |
-          python -m pip install -q pillow playwright==1.57.0
-          python -m playwright install --with-deps chromium >/tmp/browser-install.log 2>&1 || { tail -60 /tmp/browser-install.log; exit 1; }
-      - name: Inspect the actual public URL without submitting data
-        run: python -u tests/odyssey-epic-live.py
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: odyssey-epic-live-site
-          path: test-results/odyssey-epic-live/
-          if-no-files-found: ignore
+# The same real-site browser assertions run in odyssey-delivery-check.yml,
+# after the matching native Cloudflare deployment, not concurrently with it.

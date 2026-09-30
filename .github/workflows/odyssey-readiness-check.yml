@@ -49,9 +49,7 @@ jobs:
           server=$!
           trap 'kill "$server" 2>/dev/null || true' EXIT
           python -u tests/odyssey-readiness-browser.py
-      - name: Read-only verification of delivered production files
-        if: github.ref == 'refs/heads/main'
-        run: python -u tests/odyssey-readiness-live.py
+      # Delivered release/owner assets are verified centrally after deployment.
       - uses: actions/upload-artifact@v4
         if: always()
         with:

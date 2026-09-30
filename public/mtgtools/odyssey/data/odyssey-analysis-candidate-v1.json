@@ -14531,10 +14531,10 @@
       "lands": 40,
       "legendaryCards": 101,
       "legendaryByRarity": {
+        "C": 2,
         "U": 35,
         "R": 46,
-        "M": 18,
-        "C": 2
+        "M": 18
       },
       "sixPlusManaValue": 30,
       "goldUncommonLegendarySignposts": 19,
@@ -14566,7 +14566,7 @@
         "master-artist": 9,
         "adventure-land-showcase": 5,
         "extended-art-legend": 92,
-        "odysseus-many-faces": 0
+        "odysseus-many-faces": 1
       }
     },
     "systemMapping": {
@@ -14767,7 +14767,7 @@
         "count": 47,
         "rarity": {
           "C": 3,
-          "U": 13,
+          "U": 12,
           "R": 26,
           "M": 6
         },
@@ -14826,7 +14826,7 @@
         "count": 32,
         "rarity": {
           "U": 4,
-          "R": 19,
+          "R": 20,
           "M": 8
         },
         "cardIds": [
@@ -14868,7 +14868,7 @@
         "id": "master-artist",
         "count": 9,
         "rarity": {
-          "R": 3,
+          "R": 2,
           "M": 7
         },
         "cardIds": [
@@ -14898,7 +14898,7 @@
         "id": "extended-art-legend",
         "count": 92,
         "rarity": {
-          "U": 36,
+          "U": 35,
           "R": 43,
           "M": 14
         },
@@ -15002,7 +15002,7 @@
         "physicalCardId": "ODY-061",
         "artVariantCount": 15,
         "note": "one physical card, 15 art treatments",
-        "count": 0
+        "count": 1
       }
     ],
     "bonusSheet": {
@@ -15460,20 +15460,20 @@
     "softAudit": {
       "functionalWordMeans": {
         "C": {
-          "count": 90,
-          "mean": 17.5
+          "count": 89,
+          "mean": 17.1
         },
         "U": {
           "count": 109,
-          "mean": 27.4
+          "mean": 27
         },
         "R": {
-          "count": 74,
-          "mean": 35.5
+          "count": 75,
+          "mean": 35.9
         },
         "M": {
           "count": 20,
-          "mean": 49.9
+          "mean": 50.5
         }
       },
       "typeTexture": {
@@ -15566,7 +15566,7 @@
       "completedAt": "2026-09-18T23:57:15.444Z",
       "cardsRethemed": 92,
       "artReviewRequired": 14,
-      "outerEraCards": 91,
+      "outerEraCards": 85,
       "outerEraArtReviewRequired": 11,
       "apportionmentRevision": "source-weighted-v1"
     },
@@ -15580,25 +15580,25 @@
     "rubric": "0–5: 5 scene/character/object is taught through identity and mechanics; 4 strong direct match; 3 recognizable but generic; 2 weak/analogue; 1 mostly cosmetic; 0 no defensible specific element.",
     "auditedAt": "2026-09-19T01:33:27.789Z",
     "cards": 309,
-    "average": 4.35,
+    "average": 4.37,
     "distribution": {
       "0": 0,
       "1": 0,
       "2": 0,
       "3": 13,
-      "4": 176,
-      "5": 120
+      "4": 169,
+      "5": 127
     },
     "averageByEra": {
-      "Iliad + young Odysseus": 4.26,
-      "Odyssey": 4.39,
-      "Old Odysseus beyond the Odyssey": 4.24
+      "Iliad + young Odysseus": 4.27,
+      "Odyssey": 4.42,
+      "Old Odysseus beyond the Odyssey": 4.22
     },
     "averageByRarity": {
       "C": 4.15,
-      "U": 4.35,
-      "R": 4.53,
-      "M": 4.7
+      "U": 4.37,
+      "R": 4.56,
+      "M": 4.8
     },
     "lowMatchCards": [],
     "redesignedAt": "2026-09-19T01:33:27.793Z",
@@ -15797,7 +15797,7 @@
         "master-artist": 9,
         "adventure-land-showcase": 5,
         "extended-art-legend": 92,
-        "odysseus-many-faces": 0
+        "odysseus-many-faces": 1
       }
     },
     "notes": [

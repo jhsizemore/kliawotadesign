@@ -1,29 +1,33 @@
-name: Deploy to Cloudflare
-
+# Normal production publishing is the native Cloudflare GitHub integration.
+# This explicitly requested fallback is not a second automatic deployment.
+name: Manual Cloudflare deployment fallback
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
-
 concurrency:
-  group: cloudflare-production
-  cancel-in-progress: true
-
+  group: cloudflare-production-manual
+  cancel-in-progress: false
+permissions:
+  contents: read
 jobs:
   deploy:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
+    timeout-minutes: 15
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - name: Require explicit fallback credentials
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo 'Fallback credentials are not configured. Normal publishing uses the native Cloudflare integration; this manual fallback did not deploy anything.' >&2
+            exit 1
+          fi
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - name: Install dependencies
+      - name: Install and regenerate the published renderer
         run: npm install --no-audit --no-fund
 
       - name: Island Together syntax check
@@ -35,6 +39,13 @@ jobs:
       - name: Test Island Together runtime
         run: npm run test:island
 
+      - name: Refuse a superseded manual deployment
+        run: |
+          current_main=$(git ls-remote --exit-code origin refs/heads/main | cut -f1)
+          if [ "$current_main" != "$GITHUB_SHA" ]; then
+            echo 'Main changed after this workflow started. Dispatch a new fallback run on current main; this older commit was not deployed.' >&2
+            exit 1
+          fi
       - name: Deploy Worker and assets
         run: npm run deploy
         env:
