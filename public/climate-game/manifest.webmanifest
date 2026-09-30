@@ -1,0 +1,14 @@
+{
+  "name": "Island Together — Pacific climate resilience game",
+  "short_name": "Island Together",
+  "description": "A cooperative Pacific climate development and resilience game.",
+  "start_url": "/climate-game/",
+  "scope": "/climate-game/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#071f2c",
+  "theme_color": "#071f2c",
+  "icons": [
+    {"src": "/climate-game/app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}
