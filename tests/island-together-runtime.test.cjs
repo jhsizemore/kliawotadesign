@@ -75,4 +75,13 @@ assert.equal(map.includes('island-west-1'),true);
 assert.equal(map.includes('feature-lagoon'),true);
 assert.equal(map.includes('feature-reef-flat'),true);
 
+reset('archipelago_logistics','quick');
+run("state.placements=[{cardId:'tank',zoneId:'coast',round:1},{cardId:'reef',zoneId:'coast',round:1}];");
+const scenicMap=run('worldMapMarkup()');
+assert.equal(scenicMap.includes('settlement-layer'),true);
+assert.equal(scenicMap.includes('scene-house'),true);
+assert.equal(scenicMap.includes('project-tank'),true);
+assert.equal(scenicMap.includes('project-reef'),true);
+assert.equal(scenicMap.includes('scene-person'),true);
+
 console.log('Island Together runtime tests passed.');
