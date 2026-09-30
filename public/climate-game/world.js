@@ -159,12 +159,12 @@ function worldPlaceAndBuild(cardId,zoneId,retireId){
 function worldZoneSheet(){
   if(worldDrawer!=='zone'||!worldZoneId) return '';
   const z=worldNode(worldZoneId), projects=projectsAtZone(z.id), value=zoneCondition(z);
-  const construction=constructionAtZone(z.id),cache=Number(state?.logistics?.caches?.[z.id]||0),stress=Number(state?.zoneStress?.[z.id]||0);
+  const construction=constructionAtZone(z.id),cache=Number(state?.logistics?.caches?.[z.id]||0),stress=Number(state?.zoneStress?.[z.id]||0),networkRule=typeof NETWORK_RULES!=='undefined'?NETWORK_RULES[z.id]:null;
   const relevant=CARDS.filter(c=>projectTargetsFor(c.id).includes(z.id)).slice(0,4);
   return `<section class="world-sheet zone-sheet" aria-label="${z.label}">
     <header><div><span class="eyebrow">${z.kind==='outer'?'Outer-island community':'Island place'}</span><strong>${z.label}</strong></div><button data-world-action="close" aria-label="Close place">×</button></header>
     <div class="zone-state-row"><span class="zone-big-icon">${icon(worldNodeIcon(z.kind))}</span><div><b class="zone-condition ${zoneStateClass(z)}">${value<=1?'Critical':value<=2?'Under pressure':value>=5?'Strong':'Holding'}</b><p>${z.note}</p></div></div>
-    <div class="zone-logistics"><div><span>Local pressure</span><b>${stress?stress+' / 3':'None'}</b></div><div><span>Stored materials</span><b>${cache}</b></div><div><span>Freight / works</span><b>${construction.length}</b></div></div>
+    <div class="zone-logistics"><div><span>Local pressure</span><b>${stress?stress+' / 3':'None'}</b></div><div><span>Stored materials</span><b>${cache}</b></div><div><span>Freight / works</span><b>${construction.length}</b></div></div>${networkRule?`<div class="zone-system-rule ${stress>=3?'critical':stress>=2?'warning':''}"><b>${networkRule.label}</b><small>${stress>=3?networkRule.detail:'If pressure reaches 3: '+networkRule.detail}</small></div>`:''}${stress>0?`<button class="zone-recover" data-recover-zone="${z.id}" ${state.recoveryUsed||state.played.length>=2?'disabled':''}>${icon('effort')}<span><b>Community recovery</b><small>Use one action to reduce local pressure by 1</small></span></button>`:''}
     ${construction.length?`<div class="zone-construction"><span>Freight / works</span>${construction.map(q=>`<div>${icon(q.status==='building'?'builder':'shipping')}<b>${CARDS.find(c=>c.id===q.cardId)?.name}</b><small>${q.status==='building'?'Under construction · expected next season':q.status==='delayed'?'Freight delayed by this season':'Materials at sea · expected next season if the route stays open'}</small></div>`).join('')}</div>`:''}
     <div class="zone-projects"><span>Projects here</span>${projects.length?projects.map(id=>`<b>${CARDS.find(c=>c.id===id).name}</b>`).join(''):'<small>Nothing built here yet.</small>'}</div>
     <div class="zone-relevant"><span>Useful options in the deck</span><div>${relevant.map(c=>`<button data-world-action="projects" data-world-focus-id="${c.id}">${icon(TYPE_ICONS[c.type])}<span>${c.name}</span></button>`).join('')}</div></div>
@@ -190,6 +190,15 @@ function worldMissionSheet(){
     <p class="mission-note">The map is fictional. The scenario combines real categories of Pacific development and climate risk for play and discussion.</p>
   </section>`;
 }
+function worldSystemsSheet(){
+  if(worldDrawer!=='systems'||typeof networkStrains!=='function') return '';
+  const items=networkStrains();
+  return `<section class="world-sheet systems-sheet" aria-label="Island systems">
+    <header><div><span class="eyebrow">Connected systems</span><strong>${items.length?items.length+' system'+(items.length===1?'':'s')+' under strain':'Systems holding'}</strong></div><button data-world-action="close" aria-label="Close systems">×</button></header>
+    <p class="systems-intro">Local pressure becomes a network problem at 3. Repair the place or use community recovery before the next season compounds it.</p>
+    <div class="systems-list">${items.length?items.map(x=>`<button data-world-zone="${x.zoneId}" class="${x.stress>=3?'critical':'warning'}"><span>${icon(worldNodeIcon(worldNode(x.zoneId)?.kind))}</span><span><b>${worldNode(x.zoneId)?.label||x.zoneId}</b><small>${x.stress}/3 pressure · ${x.stress>=3?x.rule.detail:'one step from a system penalty'}</small></span></button>`).join(''):'<p>Nothing is at pressure 2 or 3.</p>'}</div>
+  </section>`;
+}
 function worldBottomBar(){
   const role=currentRole(),slots=2-state.played.length,i=(state.round-1)%state.players;
   return `<footer class="world-action-bar">
@@ -205,9 +214,10 @@ gameHtml = function(){
     ${worldMapMarkup()}
     ${worldResourceStrip()}
     ${(()=>{const g=scenarioGoalResults(),done=g.filter(x=>x.done).length;return `<button class="world-mission" data-world-action="mission"><small>Mission</small><b>${done}/${g.length}</b></button>`})()}
+    ${typeof networkStrains==='function'&&networkStrains().length?`<button class="world-systems ${networkStrains().some(x=>x.stress>=3)?'critical':''}" data-world-action="systems"><small>Systems</small><b>${networkStrains().length}</b></button>`:''}
     <button class="world-forecast" data-panel="forecast">${icon('forecast')}<span><small>Forecast · one arrives</small><b>${watches.join(' · ')}</b></span></button>
     <button class="world-service" data-panel="active"><small>In service</small><b>${state.active.length}/${ACTIVE_LIMIT}</b></button>
-  </main>${worldBottomBar()}${worldProjectSheet()}${worldZoneSheet()}${worldPlacementSheet()}${worldMissionSheet()}</div>`;
+  </main>${worldBottomBar()}${worldProjectSheet()}${worldZoneSheet()}${worldPlacementSheet()}${worldMissionSheet()}${worldSystemsSheet()}</div>`;
 };
 
 const legacySetupHtmlWorld=setupHtml;
@@ -282,6 +292,8 @@ app.addEventListener('click',e=>{
 },true);
 
 app.addEventListener('click',e=>{
+  const recover=e.target.closest('[data-recover-zone]');
+  if(recover){e.preventDefault();e.stopImmediatePropagation();worldDrawer=null;worldZoneId=null;recoverSpatialZone(recover.dataset.recoverZone);return;}
   const zone=e.target.closest('[data-world-zone]');
   if(zone){
     if(worldDrawer==='placement'&&pendingPlacementCard){
@@ -298,6 +310,7 @@ app.addEventListener('click',e=>{
   if(action){
     if(action.dataset.worldAction==='close'){worldDrawer=null;worldZoneId=null;pendingPlacementCard=null;pendingPlacementZone=null;render();return}
     if(action.dataset.worldAction==='mission'){worldDrawer='mission';worldZoneId=null;render();return}
+    if(action.dataset.worldAction==='systems'){worldDrawer='systems';worldZoneId=null;render();return}
     if(action.dataset.worldAction==='projects'){
       worldDrawer='projects';worldZoneId=null;
       if(action.dataset.worldFocusId){
