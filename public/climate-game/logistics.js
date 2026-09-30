@@ -297,6 +297,8 @@ startGame = function(n=selectedPlayers){
   const result=legacyStartGame(n);
   ensureSpatialState();
   state.scenarioId=(typeof selectedScenarioId!=='undefined'?selectedScenarioId:ACTIVE_SCENARIO_ID);
+  state.workshopMode=(typeof selectedPlayMode!=='undefined'&&selectedPlayMode==='workshop');
+  state.workshopReadyRound=null;
   save();render();
   return snapshot();
 };
