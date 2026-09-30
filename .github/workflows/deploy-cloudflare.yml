@@ -26,6 +26,9 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
+      - name: Island Together syntax check
+        run: node -e "const fs=require('fs'); for (const f of ['public/climate-game/scenarios.js','public/climate-game/game.js','public/climate-game/logistics.js','public/climate-game/world.js']) new Function(fs.readFileSync(f,'utf8'));"
+
       - name: Island Together logistics tests
         run: node --test tests/island-together-logistics.test.cjs
 
