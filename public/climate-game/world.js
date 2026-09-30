@@ -74,6 +74,9 @@ function sceneSymbolDefs(){
 <g id="scene-foundation"><path d="M-14 -7 L11 -9 L15 8 L-10 10 Z" fill="#c8bea0" stroke="#806f55" stroke-width="1.3" stroke-dasharray="3 2"/><path d="M-12 -5 L13 6 M12 -7 L-8 8" stroke="#9a8767" stroke-width="1"/></g>
 <g id="scene-scaffold"><use href="#scene-foundation"/><path d="M-13 -13 V10 M0 -16 V9 M13 -13 V9 M-15 -6 H15 M-15 2 H15" fill="none" stroke="#b78a57" stroke-width="1.4"/></g>
 <g id="scene-person"><circle cx="0" cy="-4" r="2.4" fill="#5d3d2d"/><path d="M0 -1 V6 M0 2 L-4 5 M0 2 L4 5 M0 6 L-3 11 M0 6 L3 11" fill="none" stroke="#704b36" stroke-width="1.8" stroke-linecap="round"/></g>
+<g id="scene-flood"><ellipse cx="0" cy="3" rx="19" ry="8" fill="#4eabc0" opacity=".45"/><path d="M-15 1 Q-8 -3 -1 1 T13 1 M-11 6 Q-4 2 3 6 T15 6" fill="none" stroke="#a0dce2" stroke-width="1.4" opacity=".8"/></g>
+<g id="scene-damage"><path d="M-13 8 L-4 -5 L4 1 L13 -12 M-10 -8 L-2 -2 M5 -9 L12 -4" fill="none" stroke="#d0a16d" stroke-width="3" stroke-linecap="round"/><circle cx="13" cy="-12" r="3" fill="#d96d5d"/></g>
+<g id="scene-fallen-tree"><path d="M-17 8 L14 -6" stroke="#76573b" stroke-width="4" stroke-linecap="round"/><circle cx="16" cy="-7" r="8" fill="#467857"/><circle cx="10" cy="-12" r="6" fill="#39704f"/></g>
   `;
 }
 
@@ -158,6 +161,15 @@ function constructionLandscapeSvg(){
   return `<g class="construction-landscape">${state.construction.filter(q=>q.status==='building').map((q,i)=>{
     const node=worldNode(q.zoneId);if(!node)return '';
     return sceneUse('scaffold',node.x*10.8+(i%2?22:-22),node.y*7.2+24,.62,i%2?6:-6,'construction-scenery');
+  }).join('')}</g>`;
+}
+
+function stressLandscapeSvg(){
+  if(!state?.zoneStress) return '';
+  return `<g class="stress-landscape">${Object.entries(state.zoneStress).map(([zoneId,value],i)=>{
+    const stress=Number(value||0),node=worldNode(zoneId);if(!node||stress<=0)return '';
+    const x=node.x*10.8,y=node.y*7.2;
+    return `${sceneUse('flood',x+18,y+27,.56,0,`stress-scenery stress-${stress}`)}${stress>=2?sceneUse('damage',x-24,y-18,.58,i%2?8:-8,`stress-scenery stress-${stress}`):''}${stress>=3?sceneUse('fallen-tree',x+31,y-22,.62,-10,'stress-scenery stress-3'):''}`;
   }).join('')}</g>`;
 }
 
