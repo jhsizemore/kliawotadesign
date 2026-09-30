@@ -562,6 +562,7 @@ Object.assign(window.ODYSSEY_ARTWORK_MANIFEST.artworks['ART-430'],{
 <script src="temple-sanctuaries.js?v=sanctuaries2"></script>
 <script src="/mtgtools/odyssey/data/locale-lands.20260930.js?v=locale4"></script>
 <script src="/mtgtools/odyssey/data/reassigned-rare-slots.20260930.js?v=rare1"></script>
+<script src="/mtgtools/odyssey/data/notes-resolution.20261001.js?v=notes1001a"></script>
 <script src="/mtgtools/odyssey/data/biome-atlas.20260929.js?v=biomes1"></script>
 <script src="/mtgtools/odyssey/biome-navigation.js?v=biomes1"></script>
 <script src="/mtgtools/odyssey/transform-faces.js?v=20260927-battle1"></script>
@@ -599,7 +600,7 @@ function loadOdysseyDataset(){
   if(!validOdysseyDataset(d))throw new Error('Odyssey dataset missing or invalid');
   return d;
 }
-const ODYSSEY_DATASET=window.OdysseyReassignedRareSlots.apply(window.OdysseyLocaleLands.apply(window.OdysseyRecastBones.apply(window.OdysseyNotesResolution.apply(window.OdysseyLandscapeLibrary ? window.OdysseyLandscapeLibrary.merge(loadOdysseyDataset()) : loadOdysseyDataset()))));
+const ODYSSEY_DATASET=window.OdysseyNotesResolution20261001.apply(window.OdysseyReassignedRareSlots.apply(window.OdysseyLocaleLands.apply(window.OdysseyRecastBones.apply(window.OdysseyNotesResolution.apply(window.OdysseyLandscapeLibrary ? window.OdysseyLandscapeLibrary.merge(loadOdysseyDataset()) : loadOdysseyDataset())))));
 const CARDS=ODYSSEY_DATASET.cards;
 const CARD_NUMBERS=CARDS.map(card=>Number(card.number));
 const cardByNum=Object.fromEntries(CARDS.map(card=>[Number(card.number),card]));
