@@ -227,3 +227,13 @@
   .scenario-intro h1{font-size:34px}.scenario-intro p{margin-bottom:0}
   .world-mission{top:87px}
 }
+
+/* Connected-system pressure + community recovery */
+.world-systems{position:absolute;z-index:11;left:18px;top:135px;border:1px solid rgba(242,188,104,.45);border-radius:13px;background:rgba(67,52,31,.84);color:#fff;backdrop-filter:blur(11px);padding:8px 10px;display:flex;align-items:baseline;gap:7px}
+.world-systems small{text-transform:uppercase;letter-spacing:.12em;color:#efcb8e;font-size:8px}.world-systems b{font-size:14px}
+.world-systems.critical{background:rgba(91,42,42,.91);border-color:#ee8d88;box-shadow:0 0 0 4px rgba(224,96,88,.08),0 9px 26px rgba(28,8,8,.25)}
+.systems-intro{margin:14px 16px 10px;color:#46676b;font-size:12px;line-height:1.45}
+.systems-list{display:grid;gap:7px;padding:0 16px 16px}.systems-list>button{border:1px solid #d8c68d;background:#f6edd2;border-radius:12px;padding:9px 10px;display:grid;grid-template-columns:34px 1fr;gap:9px;align-items:center;text-align:left;color:#51451f}.systems-list>button.critical{border-color:#d48b86;background:#f4dad7;color:#73383a}.systems-list>button>span:first-child{width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,.55);display:grid;place-items:center}.systems-list .ui-icon{width:21px;height:21px}.systems-list>button>span:last-child{display:grid;gap:2px}.systems-list b{font-size:12px}.systems-list small{font-size:9px;line-height:1.35}
+.zone-system-rule{margin:0 16px 9px;padding:9px 10px;border-radius:10px;background:#e5ece5;color:#4d686a;display:grid;gap:3px}.zone-system-rule.warning{background:#f6eacb;color:#6d5925}.zone-system-rule.critical{background:#f2d5d2;color:#73383b}.zone-system-rule b{font-size:11px}.zone-system-rule small{font-size:9px;line-height:1.35}
+.zone-recover{margin:0 16px 10px;width:calc(100% - 32px);min-height:50px;border:1px solid #7bbfb3;border-radius:11px;background:#daf1e8;color:#155d55;padding:8px 10px;display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:center;text-align:left}.zone-recover:disabled{opacity:.45}.zone-recover>.ui-icon{width:24px;height:24px}.zone-recover span{display:grid;gap:2px}.zone-recover b{font-size:11px}.zone-recover small{font-size:9px;color:#557b76}
+@media (max-width:760px){.world-systems{left:10px;top:132px;padding:6px 8px}.world-systems small{font-size:7px}.world-systems b{font-size:12px}}
