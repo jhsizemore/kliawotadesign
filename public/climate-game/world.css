@@ -443,3 +443,18 @@
   .world-game.scenario-atoll_water .world-map-art{width:112%;left:-6%}
   .world-game.scenario-relocation_pathways .world-map-art{width:116%;left:-8%}
 }
+
+/* Let the new geography read through the game markers */
+.world-game .world-node{padding:5px}
+.world-game .node-pin{width:36px;height:36px;border-width:1.5px;box-shadow:0 4px 12px rgba(0,24,30,.34),0 0 0 3px rgba(5,47,59,.28)}
+.world-game .node-pin .ui-icon{width:20px;height:20px}
+.world-game .node-label{font-size:9px;padding:4px 6px;background:rgba(5,35,44,.70)}
+.scenario-atoll_water .node-pin{width:31px;height:31px}
+.scenario-atoll_water .node-pin .ui-icon{width:17px;height:17px}
+.scenario-atoll_water .node-label{font-size:8px}
+@media (max-width:760px){
+  .world-game .node-pin{width:31px;height:31px}
+  .world-game .node-pin .ui-icon{width:17px;height:17px}
+  .world-game .node-label{font-size:8px;padding:3px 5px}
+  .scenario-atoll_water .node-pin{width:28px;height:28px}
+}
