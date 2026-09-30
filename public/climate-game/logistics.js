@@ -165,6 +165,47 @@ function applyLocalHazard(hazardId){
   return local;
 }
 
+const NETWORK_RULES=Object.freeze({
+  port:{stat:'supplies',loss:1,label:'Port bottleneck',detail:'Critical pressure at the main landing costs 1 incoming material next season.'},
+  town:{stat:'budget',loss:1,label:'Market disruption',detail:'Critical pressure at the main settlement costs 1 fund next season.'},
+  source:{stat:'water',loss:1,label:'Water system failure',detail:'Critical pressure at the freshwater source costs 1 water next season.'},
+  gardens:{stat:'food',loss:1,label:'Food-system loss',detail:'Critical pressure at the gardens costs 1 food next season.'},
+  clinic:{stat:'community',loss:1,label:'Health services strained',detail:'Critical pressure at the clinic costs 1 community next season.'},
+  school:{stat:'shelter',loss:1,label:'Safe shelter unavailable',detail:'Critical pressure at the school/shelter costs 1 shelter next season.'}
+});
+function networkStrains(){
+  ensureSpatialState();
+  return Object.entries(NETWORK_RULES).map(([zoneId,rule])=>({zoneId,rule,stress:Number(state.zoneStress?.[zoneId]||0)})).filter(x=>x.stress>=2);
+}
+function applyNetworkConsequences(){
+  ensureSpatialState();
+  const critical=networkStrains().filter(x=>x.stress>=3),notes=[];
+  for(const item of critical){
+    const before=Number(state.stats?.[item.rule.stat]||0);
+    if(before<=0) continue;
+    changeStats({[item.rule.stat]:-item.rule.loss});
+    const place=scenarioNodeData(item.zoneId)?.label||item.zoneId;
+    const text=`${place}: ${item.rule.detail}`;
+    notes.push({type:'network',zoneId:item.zoneId,text});
+    state.log.unshift({title:item.rule.label,detail:text});
+  }
+  if(notes.length){state.logistics.lastSeason=notes;state.logistics.history.push(...notes.map(x=>({...x,round:state.round})));}
+  return notes;
+}
+function recoverSpatialZone(zoneId){
+  if(!state||state.phase!=='play') throw Error('Recovery happens during planning.');
+  ensureSpatialState();
+  const stress=Number(state.zoneStress?.[zoneId]||0);
+  if(stress<=0) throw Error('This place has no local pressure to recover.');
+  if(state.recoveryUsed||state.played.length>=2) throw Error('Community recovery is available once per season and uses one project action.');
+  state.zoneStress[zoneId]=Math.max(0,stress-1);
+  state.recoveryUsed=true;
+  state.played.push('effort');
+  const place=scenarioNodeData(zoneId)?.label||zoneId;
+  state.log.unshift({title:'Community recovery',detail:`People restored local capacity at ${place}; pressure fell by 1.`});
+  save();render();return snapshot();
+}
+
 resolveRound = function(){
   const result=legacyResolveRound();
   if(state?.phase==='event'&&state.lastEvent?.id){
@@ -246,6 +287,7 @@ advance = function(){
   if(state?.phase==='play'&&state.round===previousRound+1){
     ensureSpatialState();
     progressConstruction(hazardId);
+    applyNetworkConsequences();
     save();render();
   }
   return snapshot();
