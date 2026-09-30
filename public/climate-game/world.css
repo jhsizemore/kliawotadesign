@@ -458,3 +458,11 @@
   .world-game .node-label{font-size:8px;padding:3px 5px}
   .scenario-atoll_water .node-pin{width:28px;height:28px}
 }
+
+.feature-contour{
+  fill:none;
+  stroke:#d5dda9;
+  stroke-width:1.5;
+  stroke-opacity:.17;
+  stroke-dasharray:4 7;
+}
