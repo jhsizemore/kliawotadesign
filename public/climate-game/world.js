@@ -6,7 +6,7 @@ let worldZoneId = null;
 let pendingPlacementCard = null;
 let pendingPlacementZone = null;
 
-function worldScenario(){ return ISLAND_SCENARIOS[ACTIVE_SCENARIO_ID]; }
+function worldScenario(){ const id=state?.scenarioId || (typeof selectedScenarioId!=='undefined'?selectedScenarioId:ACTIVE_SCENARIO_ID); return ISLAND_SCENARIOS[id] || ISLAND_SCENARIOS[ACTIVE_SCENARIO_ID]; }
 function worldNode(id){ return worldScenario().nodes.find(n=>n.id===id); }
 function worldNodeIcon(kind){
   return ({port:'shipping',town:'community',clinic:'health',school:'shelter',gardens:'food',water:'water',village:'shelter',outer:'outrigger'})[kind] || 'community';
@@ -48,6 +48,23 @@ function worldLinkPath(a,b){
   const mx=(x1+x2)/2, lift=Math.abs(x2-x1)>.24*1080?-70:-20;
   return `M ${x1} ${y1} Q ${mx} ${(y1+y2)/2+lift} ${x2} ${y2}`;
 }
+function scenarioLandSvg(s){
+  const land=(s.landforms||[]).map((shape,i)=>{
+    const reef=shape.reef?`<path class="island reef-ring" d="${shape.d}" fill="none" stroke="#6ad0c0" stroke-opacity=".28" stroke-width="22"/>`:'';
+    return `${reef}<path class="island scenario-island island-${shape.id||i}" d="${shape.d}" fill="url(#land)"/>`;
+  }).join('');
+  const features=(s.features||[]).map(f=>f.kind==='water'
+    ?`<path class="scenario-water" d="${f.d}" fill="none" stroke="#71c4d0" stroke-width="11" stroke-linecap="round" opacity=".64"/>`
+    :`<path class="scenario-feature" d="${f.d}" fill="none" stroke="#d8ddb4" stroke-width="5" opacity=".55"/>`).join('');
+  return `<g filter="url(#shadow)">${land}</g>${features}`;
+}
+function scenarioRoadSvg(s){
+  return `<g class="roads" fill="none" stroke="#e8ddaf" stroke-opacity=".75" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 9">${(s.links||[]).filter(l=>l.mode!=='boat').map(l=>`<path d="${worldLinkPath(l.a,l.b)}" class="world-${l.mode||'path'}"/>`).join('')}</g>`;
+}
+function scenarioMiniMap(s){
+  const boats=(s.links||[]).filter(l=>l.mode==='boat').map(l=>{const a=s.nodes.find(n=>n.id===l.a),b=s.nodes.find(n=>n.id===l.b);return a&&b?`<path d="M ${a.x*10.8} ${a.y*7.2} L ${b.x*10.8} ${b.y*7.2}" stroke="#91e4d7" stroke-width="5" stroke-dasharray="12 12" fill="none"/>`:''}).join('');
+  return `<svg viewBox="0 0 1080 720" aria-hidden="true"><rect width="1080" height="720" fill="#0a3442"/>${(s.landforms||[]).map(x=>`<path d="${x.d}" fill="#5d9672" stroke="#84d0bf" stroke-width="9"/>`).join('')}${boats}</svg>`;
+}
 function worldMapMarkup(opts={}){
   const s=worldScenario(), hazardIds=opts.hazardId?[opts.hazardId]:(state?.forecast||[]);
   const risks=riskZones(hazardIds);
@@ -68,22 +85,8 @@ function worldMapMarkup(opts={}){
         <path d="M0 190 C180 175 330 220 520 194 S850 165 1080 196"/>
         <path d="M0 610 C250 580 360 640 590 610 S875 574 1080 604"/>
       </g>
-      <g filter="url(#shadow)">
-        <path class="island reef-ring" d="M238 178 C330 110 480 90 655 126 C783 152 866 235 838 330 C815 411 746 454 712 530 C672 616 552 637 446 590 C351 548 292 489 278 409 C264 333 190 287 238 178Z" fill="none" stroke="#6ad0c0" stroke-opacity=".30" stroke-width="25"/>
-        <path class="island main-island" d="M250 179 C337 118 474 105 641 137 C754 159 826 235 806 317 C786 396 714 446 687 519 C661 590 560 607 465 568 C371 529 317 474 302 401 C289 336 221 276 250 179Z" fill="url(#land)"/>
-        <path d="M395 185 C472 133 585 145 664 190 C715 219 734 263 708 304 C682 344 621 335 588 372 C548 417 511 450 454 418 C401 388 368 326 356 266 C349 231 366 205 395 185Z" fill="url(#highland)" opacity=".74"/>
-        <path d="M570 200 C546 249 532 298 522 355 C516 394 503 431 469 472" fill="none" stroke="#71c4d0" stroke-width="11" stroke-linecap="round" opacity=".64"/>
-        <path class="island reef-ring" d="M90 104 C145 66 235 78 273 128 C304 169 277 231 226 256 C171 284 89 261 63 207 C43 166 55 129 90 104Z" fill="none" stroke="#6ad0c0" stroke-opacity=".27" stroke-width="19"/>
-        <path class="island north-island" d="M95 115 C145 83 220 90 250 132 C276 169 252 217 211 237 C164 260 101 239 80 201 C62 168 67 134 95 115Z" fill="url(#land)"/>
-        <path class="island reef-ring" d="M865 405 C933 379 1010 409 1033 468 C1055 523 1010 583 945 597 C884 610 824 568 820 510 C817 463 831 423 865 405Z" fill="none" stroke="#6ad0c0" stroke-opacity=".27" stroke-width="20"/>
-        <path class="island east-island" d="M873 421 C929 399 987 420 1007 469 C1026 515 991 561 941 572 C891 582 846 550 842 506 C839 468 848 435 873 421Z" fill="url(#land)"/>
-      </g>
-      <g class="roads" fill="none" stroke="#e8ddaf" stroke-opacity=".75" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 9">
-        <path d="M464 482 Q527 404 562 353 Q622 315 691 309"/>
-        <path d="M562 353 Q688 368 734 412"/>
-        <path d="M562 353 Q516 286 508 239"/>
-        <path d="M562 353 Q420 344 335 338"/>
-      </g>
+      ${scenarioLandSvg(s)}
+      ${scenarioRoadSvg(s)}
       <g class="routes ${shippingRisk?'route-risk':''}" fill="none">
         ${s.links.filter(l=>l.mode==='boat').map(l=>`<path d="${worldLinkPath(l.a,l.b)}" class="boat-route ${freightTargets.has(l.b)?'freight-active':''}"/>`).join('')}
       </g>
