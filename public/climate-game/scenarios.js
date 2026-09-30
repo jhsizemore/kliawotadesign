@@ -33,6 +33,12 @@ const ISLAND_SCENARIOS = Object.freeze({
       {kind:'beach',d:'M598 369 C607 390 615 413 601 438'},
       {kind:'reef-pass',d:'M530 513 C547 507 560 495 574 479'}
     ],
+    landscape:[
+      {kind:'forest',x:37,y:28,scale:1.0},{kind:'forest',x:42,y:37,scale:.9},{kind:'forest',x:34,y:53,scale:.8},
+      {kind:'palms',x:29,y:64,scale:.75,rotate:-5},{kind:'palms',x:54,y:70,scale:.65},{kind:'palms',x:15,y:34,scale:.55},
+      {kind:'palms',x:88,y:72,scale:.55},{kind:'reef',x:21,y:28,scale:.8},{kind:'reef',x:91,y:61,scale:.75},
+      {kind:'canoe',x:45,y:77,scale:.65,rotate:-8},{kind:'canoe',x:24,y:44,scale:.5,rotate:12},{kind:'boat',x:56,y:78,scale:.52,rotate:-4}
+    ],
     nodes:[
       {id:'port',island:'main',label:'Main wharf',short:'Wharf',kind:'port',x:49,y:72,stats:['supplies','community'],note:'Most imported materials enter through a protected southern anchorage before moving by road or boat.'},
       {id:'town',island:'main',label:'Town & market',short:'Town',kind:'town',x:46,y:59,stats:['food','community'],note:'The island’s main exchange point sits on a lower coastal terrace connected to the wharf.'},
@@ -108,6 +114,14 @@ const ISLAND_SCENARIOS = Object.freeze({
       {kind:'settlement',d:'M316 574 C348 588 389 596 427 596 C410 610 378 614 347 606 C329 601 317 591 316 574Z'},
       {kind:'settlement',d:'M631 121 C661 126 697 138 724 153 C705 165 675 164 650 154 C636 148 628 137 631 121Z'}
     ],
+    landscape:[
+      {kind:'palms',x:17,y:27,scale:.46},{kind:'palms',x:33,y:19,scale:.48},{kind:'palms',x:49,y:16,scale:.48},
+      {kind:'palms',x:65,y:21,scale:.46},{kind:'palms',x:80,y:33,scale:.44},{kind:'palms',x:84,y:58,scale:.43},
+      {kind:'palms',x:69,y:79,scale:.44},{kind:'palms',x:50,y:84,scale:.45},{kind:'palms',x:29,y:80,scale:.44},
+      {kind:'palms',x:17,y:65,scale:.43},{kind:'reef',x:51,y:49,scale:1.25},{kind:'reef',x:37,y:43,scale:.9},
+      {kind:'canoe',x:47,y:53,scale:.58,rotate:12},{kind:'canoe',x:66,y:43,scale:.52,rotate:-12},{kind:'canoe',x:35,y:58,scale:.5,rotate:6},
+      {kind:'boat',x:56,y:69,scale:.48,rotate:-8}
+    ],
     nodes:[
       {id:'port',island:'main',label:'South lagoon landing',short:'Landing',kind:'port',x:52,y:84,stats:['supplies','community'],note:'Most freight is unloaded on the lagoon side of the largest southern motu.'},
       {id:'town',island:'main',label:'Main village',short:'Village',kind:'town',x:38,y:81,stats:['food','community'],note:'The largest settlement occupies a narrow strip between lagoon and ocean.'},
@@ -180,6 +194,12 @@ const ISLAND_SCENARIOS = Object.freeze({
       {kind:'settlement',d:'M645 420 C666 406 696 407 717 421 C734 433 734 452 716 465 C695 480 662 476 645 459 C633 448 632 430 645 420Z'},
       {kind:'beach',d:'M795 352 C808 379 838 395 855 420'},
       {kind:'reef-pass',d:'M501 602 C522 593 543 588 565 586'}
+    ],
+    landscape:[
+      {kind:'forest',x:48,y:27,scale:1.0},{kind:'forest',x:55,y:38,scale:.9},{kind:'forest',x:46,y:57,scale:.78},
+      {kind:'forest',x:68,y:31,scale:.72},{kind:'palms',x:16,y:44,scale:.56},{kind:'palms',x:18,y:53,scale:.5},
+      {kind:'palms',x:52,y:78,scale:.66},{kind:'palms',x:74,y:71,scale:.55},{kind:'reef',x:16,y:58,scale:.8},
+      {kind:'canoe',x:31,y:61,scale:.56,rotate:18},{kind:'boat',x:47,y:82,scale:.52,rotate:-4},{kind:'garden',x:60,y:45,scale:.7,rotate:-10}
     ],
     nodes:[
       {id:'port',island:'main',label:'Host island landing',short:'Landing',kind:'port',x:50,y:82,stats:['supplies','community'],note:'People, materials and services arrive through a protected southern landing.'},
