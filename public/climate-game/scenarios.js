@@ -108,3 +108,4 @@ const ISLAND_SCENARIOS = Object.freeze({
 });
 const ACTIVE_SCENARIO_ID='archipelago_logistics';
 let selectedScenarioId=ACTIVE_SCENARIO_ID;
+let selectedPlayMode='quick';
