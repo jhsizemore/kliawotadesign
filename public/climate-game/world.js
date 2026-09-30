@@ -104,13 +104,14 @@ function worldMapMarkup(opts={}){
     }).join('')}
     ${s.nodes.map(z=>{
       const projects=projectsAtZone(z.id), construction=constructionAtZone(z.id), risk=risks.has(z.id), buildTarget=placementTargets.has(z.id);
-      const cache=Number(state?.logistics?.caches?.[z.id]||0);
+      const cache=Number(state?.logistics?.caches?.[z.id]||0), relocated=Number(state?.relocation?.sites?.[z.id]||0);
       return `<button class="world-node ${zoneStateClass(z)} ${risk?'at-risk':''} ${projects.length?'developed':''} ${construction.length?'constructing':''} ${cache?'cached':''} ${buildTarget?'build-target':''}" style="--x:${z.x}%;--y:${z.y}%;" data-world-zone="${z.id}" aria-label="${z.label}. ${risk?'Forecast risk. ':''}${construction.length?'Freight underway. ':''}${cache?'Local materials '+cache+'. ':''}${buildTarget?'Valid project location. ':''}${projects.length?projects.length+' project present. ':''}">
         <span class="node-pin">${icon(worldNodeIcon(z.kind))}</span>
         <span class="node-label">${z.short}</span>
         ${projects.length?`<span class="node-project-count">+${projects.length}</span>`:''}
         ${construction.length?`<span class="node-construction">${icon('builder')}<b>${construction.length}</b></span>`:''}
         ${cache?`<span class="node-cache">${icon('materials')}<b>${cache}</b></span>`:''}
+        ${relocated?`<span class="node-relocated">${icon('community')}<b>${relocated}</b></span>`:''}
       </button>`;
     }).join('')}
     <div class="map-legend"><span><i class="risk-dot"></i> forecast exposure</span><span><i class="project-dot"></i> project built</span>${state?.construction?.some(q=>q.status==='in-transit'||q.status==='delayed')?`<span><i class="freight-dot"></i> ${state.construction.filter(q=>q.status==='in-transit'||q.status==='delayed').length} freight at sea</span>`:''}</div>
@@ -160,11 +161,12 @@ function worldZoneSheet(){
   if(worldDrawer!=='zone'||!worldZoneId) return '';
   const z=worldNode(worldZoneId), projects=projectsAtZone(z.id), value=zoneCondition(z);
   const construction=constructionAtZone(z.id),cache=Number(state?.logistics?.caches?.[z.id]||0),stress=Number(state?.zoneStress?.[z.id]||0),networkRule=typeof NETWORK_RULES!=='undefined'?NETWORK_RULES[z.id]:null;
+  const special=worldScenario().special, relocation=typeof relocationReadiness==='function'?relocationReadiness(z.id):null, sourceRelocation=special?.kind==='relocation'&&special.sourceZone===z.id;
   const relevant=CARDS.filter(c=>projectTargetsFor(c.id).includes(z.id)).slice(0,4);
   return `<section class="world-sheet zone-sheet" aria-label="${z.label}">
     <header><div><span class="eyebrow">${z.kind==='outer'?'Outer-island community':'Island place'}</span><strong>${z.label}</strong></div><button data-world-action="close" aria-label="Close place">×</button></header>
     <div class="zone-state-row"><span class="zone-big-icon">${icon(worldNodeIcon(z.kind))}</span><div><b class="zone-condition ${zoneStateClass(z)}">${value<=1?'Critical':value<=2?'Under pressure':value>=5?'Strong':'Holding'}</b><p>${z.note}</p></div></div>
-    <div class="zone-logistics"><div><span>Local pressure</span><b>${stress?stress+' / 3':'None'}</b></div><div><span>Stored materials</span><b>${cache}</b></div><div><span>Freight / works</span><b>${construction.length}</b></div></div>${networkRule?`<div class="zone-system-rule ${stress>=3?'critical':stress>=2?'warning':''}"><b>${networkRule.label}</b><small>${stress>=3?networkRule.detail:'If pressure reaches 3: '+networkRule.detail}</small></div>`:''}${stress>0?`<button class="zone-recover" data-recover-zone="${z.id}" ${state.recoveryUsed||state.played.length>=2?'disabled':''}>${icon('effort')}<span><b>Community recovery</b><small>Use one action to reduce local pressure by 1</small></span></button>`:''}
+    <div class="zone-logistics"><div><span>Local pressure</span><b>${stress?stress+' / 3':'None'}</b></div><div><span>Stored materials</span><b>${cache}</b></div><div><span>Freight / works</span><b>${construction.length}</b></div></div>${sourceRelocation?`<div class="relocation-source"><span>${icon('community')}</span><div><small>Home community</small><b>${state.relocation?.moved||0} / ${state.relocation?.households||special.households} planned transitions prepared</b><em>${state.relocation?.unplannedEvents||0} unplanned displacement event${(state.relocation?.unplannedEvents||0)===1?'':'s'} so far</em></div></div>`:''}${relocation?`<div class="relocation-readiness"><div><span>Receiving-site readiness</span><b>${relocation.ready?'Ready':relocation.have.length+' / 3'}</b></div><div class="readiness-pips">${['water','shelter','access'].map(k=>`<span class="${relocation.have.includes(k)?'ready':''}">${k}</span>`).join('')}</div><small>${relocation.ready?'Water, shelter and access are in place. A planned household transition costs 1 fund and one action.':'Still needed: '+relocation.missing.join(', ')}</small>${relocation.ready&&state.relocation?.moved<state.relocation?.households?`<button data-relocate-zone="${z.id}" ${state.relocation?.usedThisSeason||state.played.length>=2||state.stats.budget<1?'disabled':''}>${icon('community')}<span><b>Support one household transition</b><small>1 fund · 1 action · one per season</small></span></button>`:''}</div>`:''}${networkRule?`<div class="zone-system-rule ${stress>=3?'critical':stress>=2?'warning':''}"><b>${networkRule.label}</b><small>${stress>=3?networkRule.detail:'If pressure reaches 3: '+networkRule.detail}</small></div>`:''}${stress>0?`<button class="zone-recover" data-recover-zone="${z.id}" ${state.recoveryUsed||state.played.length>=2?'disabled':''}>${icon('effort')}<span><b>Community recovery</b><small>Use one action to reduce local pressure by 1</small></span></button>`:''}
     ${construction.length?`<div class="zone-construction"><span>Freight / works</span>${construction.map(q=>`<div>${icon(q.status==='building'?'builder':'shipping')}<b>${CARDS.find(c=>c.id===q.cardId)?.name}</b><small>${q.status==='building'?'Under construction · expected next season':q.status==='delayed'?'Freight delayed by this season':'Materials at sea · expected next season if the route stays open'}</small></div>`).join('')}</div>`:''}
     <div class="zone-projects"><span>Projects here</span>${projects.length?projects.map(id=>`<b>${CARDS.find(c=>c.id===id).name}</b>`).join(''):'<small>Nothing built here yet.</small>'}</div>
     <div class="zone-relevant"><span>Useful options in the deck</span><div>${relevant.map(c=>`<button data-world-action="projects" data-world-focus-id="${c.id}">${icon(TYPE_ICONS[c.type])}<span>${c.name}</span></button>`).join('')}</div></div>
@@ -216,7 +218,7 @@ function worldWorkshopSheet(){
     <header><div><span class="eyebrow">Workshop pause · season ${state.round}</span><strong>Talk before the season turns</strong></div><button data-world-action="close" aria-label="Close workshop prompt">×</button></header>
     <div class="workshop-brief"><span>${roleIconMarkup(role)}</span><div><small>Player ${(state.round-1)%state.players+1} leads</small><b>${role.name}</b></div></div>
     <div class="workshop-context"><div><small>Scenario</small><b>${s.name}</b></div><div><small>Forecast</small><b>${watches.join(' · ')}</b></div><div><small>Chosen this season</small><b>${chosen.length?chosen.join(' · '):'No project yet'}</b></div></div>
-    <div class="workshop-questions"><p><b>1.</b> What are you trying to protect this season?</p><p><b>2.</b> Who benefits from the projects you chose, and who is still exposed?</p><p><b>3.</b> What are you giving up by spending those funds and materials now?</p></div>
+    <div class="workshop-questions"><p><b>1.</b> What are you trying to protect this season?</p><p><b>2.</b> Who benefits from the projects you chose, and who is still exposed?</p><p><b>3.</b> ${s.special?.kind==='relocation'?'Who should decide when a receiving site is truly ready, and what important social or cultural factors are outside this game model?':'What are you giving up by spending those funds and materials now?'}</p></div>
     <button class="primary workshop-continue" data-workshop-continue>Continue · face the season</button>
   </section>`;
 }
@@ -259,6 +261,7 @@ resultHtml=function(){
     <main class="world-result-main"><div class="eyebrow">${s.name}</div><div class="result-header"><div><span>Island outcome</span><h1>${grade}</h1></div><div class="total-score"><strong>${sum}</strong><span>/ 24</span></div></div>
     <div class="result-grid">${CONDITIONS.map(k=>`<div style="--accent:${COLORS[k]}"><span class="result-name">${icon(STAT_ICONS[k])}${LABELS[k]}</span><strong>${state.stats[k]} <small>/ 6</small></strong><i><em style="width:${state.stats[k]/6*100}%"></em></i></div>`).join('')}</div>
     <section class="result-mission"><div><span>Scenario objectives</span><strong>${completed} / ${goals.length}</strong></div>${goals.map(x=>`<p class="${x.done?'complete':''}"><span>${x.done?'✓':'○'}</span><b>${x.goal.label}</b></p>`).join('')}</section>
+    ${s.special?.kind==='relocation'?`<section class="relocation-result"><div><span>Planned transitions</span><b>${state.relocation?.moved||0} / ${state.relocation?.households||s.special.households}</b></div><div><span>Unplanned displacement events</span><b>${state.relocation?.unplannedEvents||0}</b></div><p>This simplified scenario treats water, shelter and access as enabling conditions only. Real relocation also involves land rights, consent, culture, livelihoods, governance and long-term relationships that cannot be reduced to a game score.</p></section>`:''}
     <div class="result-foot"><p>${state.placements?.length||0} projects operating · ${state.construction?.length||0} still in freight or construction</p><p>The score is a game summary, not a real-world resilience assessment. Compare the choices your group made and what the map exposed.</p></div>
     <button class="primary" data-action="restart">Choose another scenario</button></main></div>`;
 };
@@ -274,6 +277,7 @@ eventHtml = function(){
       <div class="impact-mini-grid">${Object.entries(e.base).map(([k])=>`<div>${icon(STAT_ICONS[k])}<span>${LABELS[k]}</span><strong>${r.actual[k]===0?'Held':r.actual[k]}</strong></div>`).join('')}</div>
       <p class="impact-protection">${r.mitigated.length?`Protected by ${r.mitigated.join(', ')}.`:'No active project blocked this hazard.'}</p>
       ${r.local?.length?`<div class="local-impact-summary"><b>${r.local.filter(x=>!x.protectedBy.length).length}</b> places took local pressure · <b>${r.local.filter(x=>x.protectedBy.length).length}</b> protected locally</div>`:''}
+      ${r.displacement?`<div class="displacement-impact">${icon('community')}<span><b>Unplanned displacement</b><small>Severe pressure at the home community forced a temporary unplanned move and reduced community capacity.</small></span></div>`:''}
       ${state.workshopMode?`<div class="workshop-impact-question"><span>Discuss</span><b>${workshopDebriefPrompt()}</b></div>`:''}
       ${state?.logistics?.lastSeason?.some(x=>x.type==='delay')?`<div class="freight-impact">${icon('shipping')}<span><b>Freight interrupted</b><small>${state.logistics.lastSeason.filter(x=>x.type==='delay').map(x=>x.text).join(' ')}</small></span></div>`:''}
       <div class="impact-actions"><a href="${SOURCES.find(s=>s.id===e.source).url}" target="_blank" rel="noopener noreferrer">Why this matters ↗</a><button class="primary" data-action="advance">${state.round===6?'See score card':'Next season'}</button></div>
@@ -320,6 +324,8 @@ app.addEventListener('click',e=>{
 },true);
 
 app.addEventListener('click',e=>{
+  const relocate=e.target.closest('[data-relocate-zone]');
+  if(relocate){e.preventDefault();e.stopImmediatePropagation();worldDrawer=null;worldZoneId=null;moveRelocationHousehold(relocate.dataset.relocateZone);return;}
   const recover=e.target.closest('[data-recover-zone]');
   if(recover){e.preventDefault();e.stopImmediatePropagation();worldDrawer=null;worldZoneId=null;recoverSpatialZone(recover.dataset.recoverZone);return;}
   const zone=e.target.closest('[data-world-zone]');
