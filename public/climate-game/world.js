@@ -104,7 +104,7 @@ function worldMapMarkup(opts={}){
     }).join('')}
     ${s.nodes.map(z=>{
       const projects=projectsAtZone(z.id), construction=constructionAtZone(z.id), risk=risks.has(z.id), buildTarget=placementTargets.has(z.id);
-      const cache=Number(state?.logistics?.caches?.[z.id]||0), relocated=Number(state?.relocation?.sites?.[z.id]||0);
+      const cache=Number(state?.logistics?.caches?.[z.id]||0), relocated=Number(state?.relocation?.sites?.[z.id]||0), pressure=Number(state?.zoneStress?.[z.id]||0);
       return `<button class="world-node ${zoneStateClass(z)} ${risk?'at-risk':''} ${projects.length?'developed':''} ${construction.length?'constructing':''} ${cache?'cached':''} ${buildTarget?'build-target':''}" style="--x:${z.x}%;--y:${z.y}%;" data-world-zone="${z.id}" aria-label="${z.label}. ${risk?'Forecast risk. ':''}${construction.length?'Freight underway. ':''}${cache?'Local materials '+cache+'. ':''}${buildTarget?'Valid project location. ':''}${projects.length?projects.length+' project present. ':''}">
         <span class="node-pin">${icon(worldNodeIcon(z.kind))}</span>
         <span class="node-label">${z.short}</span>
@@ -112,6 +112,7 @@ function worldMapMarkup(opts={}){
         ${construction.length?`<span class="node-construction">${icon('builder')}<b>${construction.length}</b></span>`:''}
         ${cache?`<span class="node-cache">${icon('materials')}<b>${cache}</b></span>`:''}
         ${relocated?`<span class="node-relocated">${icon('community')}<b>${relocated}</b></span>`:''}
+        ${pressure?`<span class="node-pressure pressure-${pressure}">${icon('warning')}<b>${pressure}</b></span>`:''}
       </button>`;
     }).join('')}
     <div class="map-legend"><span><i class="risk-dot"></i> forecast exposure</span><span><i class="project-dot"></i> project built</span>${state?.construction?.some(q=>q.status==='in-transit'||q.status==='delayed')?`<span><i class="freight-dot"></i> ${state.construction.filter(q=>q.status==='in-transit'||q.status==='delayed').length} freight at sea</span>`:''}</div>
@@ -222,6 +223,11 @@ function worldWorkshopSheet(){
     <button class="primary workshop-continue" data-workshop-continue>Continue · face the season</button>
   </section>`;
 }
+function worldSeasonFeed(){
+  const notes=(state?.logistics?.lastSeason||[]).filter(x=>['arrival','complete','delay','network'].includes(x.type)).slice(-2);
+  if(!notes.length) return '';
+  return `<div class="world-season-feed" aria-live="polite"><small>Since last season</small>${notes.map(n=>`<div class="${n.type}">${icon(n.type==='delay'?'shipping':n.type==='network'?'warning':'builder')}<span>${n.text}</span></div>`).join('')}</div>`;
+}
 function worldBottomBar(){
   const role=currentRole(),slots=2-state.played.length,i=(state.round-1)%state.players;
   return `<footer class="world-action-bar">
@@ -238,6 +244,7 @@ gameHtml = function(){
     ${worldResourceStrip()}
     ${(()=>{const g=scenarioGoalResults(),done=g.filter(x=>x.done).length;return `<button class="world-mission" data-world-action="mission"><small>Mission</small><b>${done}/${g.length}</b></button>`})()}
     ${typeof networkStrains==='function'&&networkStrains().length?`<button class="world-systems ${networkStrains().some(x=>x.stress>=3)?'critical':''}" data-world-action="systems"><small>Systems</small><b>${networkStrains().length}</b></button>`:''}
+    ${worldSeasonFeed()}
     <button class="world-forecast" data-panel="forecast">${icon('forecast')}<span><small>Forecast · one arrives</small><b>${watches.join(' · ')}</b></span></button>
     <button class="world-service" data-panel="active"><small>In service</small><b>${state.active.length}/${ACTIVE_LIMIT}</b></button>
   </main>${worldBottomBar()}${worldProjectSheet()}${worldZoneSheet()}${worldPlacementSheet()}${worldMissionSheet()}${worldSystemsSheet()}${worldWorkshopSheet()}</div>`;
@@ -267,6 +274,8 @@ resultHtml=function(){
 };
 eventHtml = function(){
   const e=HAZARDS.find(x=>x.id===state.lastEvent.id),r=state.lastEvent;
+  const avoidedGlobal=Object.entries(e.base).reduce((sum,[k,v])=>sum+Math.max(0,Math.abs(v)-Math.abs(r.actual?.[k]??v)),0);
+  const protectedLocal=(r.local||[]).filter(x=>x.protectedBy?.length).length;
   if(state.eventStage==='reveal'){
     return `<div class="frame world-game world-event scenario-${worldScenario().id}">${compactHeader()}<main class="world-stage">${worldMapMarkup({hazardId:e.id,resolving:true})}
       <section class="world-hazard-card"><span class="hazard-glyph">${icon('warning')}</span><div><span class="eyebrow">The season turns</span><h1>${e.name}</h1><p>${e.story}</p></div><button class="primary" data-action="impact">See the impact</button></section>
@@ -276,6 +285,7 @@ eventHtml = function(){
     <section class="world-impact-sheet"><header><div><span class="eyebrow">Season ${state.round} impact</span><h1>${e.name}</h1></div></header>
       <div class="impact-mini-grid">${Object.entries(e.base).map(([k])=>`<div>${icon(STAT_ICONS[k])}<span>${LABELS[k]}</span><strong>${r.actual[k]===0?'Held':r.actual[k]}</strong></div>`).join('')}</div>
       <p class="impact-protection">${r.mitigated.length?`Protected by ${r.mitigated.join(', ')}.`:'No active project blocked this hazard.'}</p>
+      <div class="counterfactual-box ${avoidedGlobal||protectedLocal?'helped':'exposed'}"><span>${avoidedGlobal||protectedLocal?'Preparation changed the outcome':'This season exposed a gap'}</span><div><b>${avoidedGlobal}</b><small>condition loss${avoidedGlobal===1?'':'es'} avoided</small></div><div><b>${protectedLocal}</b><small>place${protectedLocal===1?'':'s'} protected locally</small></div></div>
       ${r.local?.length?`<div class="local-impact-summary"><b>${r.local.filter(x=>!x.protectedBy.length).length}</b> places took local pressure · <b>${r.local.filter(x=>x.protectedBy.length).length}</b> protected locally</div>`:''}
       ${r.displacement?`<div class="displacement-impact">${icon('community')}<span><b>Unplanned displacement</b><small>Severe pressure at the home community forced a temporary unplanned move and reduced community capacity.</small></span></div>`:''}
       ${state.workshopMode?`<div class="workshop-impact-question"><span>Discuss</span><b>${workshopDebriefPrompt()}</b></div>`:''}
