@@ -9,7 +9,7 @@ const {numbers}=require('../public/mtgtools/odyssey/data/recast-bones.20260930.j
 
 test('Studio applies the Recast reset after note resolution when constructing the active dataset',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- assert.match(app,/const ODYSSEY_DATASET=window\.OdysseyLocaleLands\.apply\(window\.OdysseyRecastBones\.apply\(window\.OdysseyNotesResolution\.apply\(/);
+ assert.match(app,/const ODYSSEY_DATASET=window\.OdysseyReassignedRareSlots\.apply\(window\.OdysseyLocaleLands\.apply\(window\.OdysseyRecastBones\.apply\(window\.OdysseyNotesResolution\.apply\(/);
 });
 
 test('every explicit Recast has a complete archived design and an open structural slot',()=>{
