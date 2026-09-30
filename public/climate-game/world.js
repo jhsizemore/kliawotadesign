@@ -52,6 +52,7 @@ function worldMapMarkup(opts={}){
   const s=worldScenario(), hazardIds=opts.hazardId?[opts.hazardId]:(state?.forecast||[]);
   const risks=riskZones(hazardIds);
   const placementTargets=new Set(pendingPlacementCard?projectTargetsFor(pendingPlacementCard):[]);
+  const freightTargets=new Set((state?.construction||[]).map(q=>q.zoneId));
   const shippingRisk=hazardIds.some(id=>['shipping','cyclone','fuel'].includes(id));
   return `<section class="world-board ${opts.resolving?'resolving':''}" aria-label="${s.name} map">
     <svg class="world-map-art" viewBox="0 0 1080 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
@@ -84,7 +85,7 @@ function worldMapMarkup(opts={}){
         <path d="M562 353 Q420 344 335 338"/>
       </g>
       <g class="routes ${shippingRisk?'route-risk':''}" fill="none">
-        ${s.links.filter(l=>l.mode==='boat').map(l=>`<path d="${worldLinkPath(l.a,l.b)}" class="boat-route"/>`).join('')}
+        ${s.links.filter(l=>l.mode==='boat').map(l=>`<path d="${worldLinkPath(l.a,l.b)}" class="boat-route ${freightTargets.has(l.b)?'freight-active':''}"/>`).join('')}
       </g>
       <g class="map-decor" opacity=".8">
         <circle cx="523" cy="188" r="5" fill="#d6e9a4"/><circle cx="550" cy="167" r="4" fill="#d6e9a4"/><circle cx="609" cy="205" r="5" fill="#d6e9a4"/>
@@ -93,11 +94,14 @@ function worldMapMarkup(opts={}){
     </svg>
     <div class="world-scenario-label"><span>Scenario</span><strong>${s.name}</strong><small>${s.strap}</small></div>
     ${s.nodes.map(z=>{
-      const projects=projectsAtZone(z.id), risk=risks.has(z.id), buildTarget=placementTargets.has(z.id);
-      return `<button class="world-node ${zoneStateClass(z)} ${risk?'at-risk':''} ${projects.length?'developed':''} ${buildTarget?'build-target':''}" style="--x:${z.x}%;--y:${z.y}%;" data-world-zone="${z.id}" aria-label="${z.label}. ${risk?'Forecast risk. ':''}${buildTarget?'Valid project location. ':''}${projects.length?projects.length+' project present. ':''}">
+      const projects=projectsAtZone(z.id), construction=constructionAtZone(z.id), risk=risks.has(z.id), buildTarget=placementTargets.has(z.id);
+      const cache=Number(state?.logistics?.caches?.[z.id]||0);
+      return `<button class="world-node ${zoneStateClass(z)} ${risk?'at-risk':''} ${projects.length?'developed':''} ${construction.length?'constructing':''} ${cache?'cached':''} ${buildTarget?'build-target':''}" style="--x:${z.x}%;--y:${z.y}%;" data-world-zone="${z.id}" aria-label="${z.label}. ${risk?'Forecast risk. ':''}${construction.length?'Freight underway. ':''}${cache?'Local materials '+cache+'. ':''}${buildTarget?'Valid project location. ':''}${projects.length?projects.length+' project present. ':''}">
         <span class="node-pin">${icon(worldNodeIcon(z.kind))}</span>
         <span class="node-label">${z.short}</span>
         ${projects.length?`<span class="node-project-count">+${projects.length}</span>`:''}
+        ${construction.length?`<span class="node-construction">${icon('builder')}<b>${construction.length}</b></span>`:''}
+        ${cache?`<span class="node-cache">${icon('materials')}<b>${cache}</b></span>`:''}
       </button>`;
     }).join('')}
     <div class="map-legend"><span><i class="risk-dot"></i> forecast exposure</span><span><i class="project-dot"></i> project built</span></div>
