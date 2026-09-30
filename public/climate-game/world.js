@@ -236,6 +236,8 @@ function worldMapMarkup(opts={}){
       ${scenarioSettlementSvg(s)}
       ${projectLandscapeSvg()}
       ${constructionLandscapeSvg()}
+      ${relocationLandscapeSvg()}
+      ${stressLandscapeSvg()}
       <g class="routes ${shippingRisk?'route-risk':''}" fill="none">
         ${s.links.filter(l=>l.mode==='boat').map(l=>`<path d="${l.d||worldLinkPath(l.a,l.b)}" class="boat-route ${freightTargets.has(l.b)?'freight-active':''}"/>`).join('')}
       </g>
