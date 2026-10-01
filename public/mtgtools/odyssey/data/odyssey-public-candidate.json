@@ -146,9 +146,9 @@
     {
       "id": "ODY-003",
       "number": 3,
-      "name": "Traveler's Amulet",
+      "name": "Inland Shrine",
       "displayName": "Inland Shrine",
-      "underlyingName": "Traveler's Amulet",
+      "underlyingName": "",
       "mana": "{1}",
       "mv": 1,
       "color": "C",
@@ -156,15 +156,15 @@
       "type": "Artifact",
       "pt": "",
       "rarity": "C",
-      "origin": "RPR",
-      "originFull": "Reprint",
-      "mechanics": "Fixing",
-      "rules": "{1}, Sacrifice this artifact: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "origin": "NEW",
+      "originFull": "New",
+      "mechanics": "Basic land fixing; sacrifice; life gain",
+      "rules": "{1}, Sacrifice this artifact: Search your library for a basic land card, reveal it, put it into your hand, then shuffle. You gain 2 life.",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
       "archetypes": "All",
       "story": "At the inland end of Tiresias’s prophecy, Odysseus plants the oar and establishes a shrine to Poseidon, completing the ritual that carries a seafarer’s burden into a land that does not know the sea.",
       "status": "KEEP",
-      "treatment": "GODZILLA",
+      "treatment": "",
       "layout": "standard",
       "primaryArt": "ART-149",
       "credit": "Art: Nikias Painter, late 5th c. BCE · The Met",
@@ -182,8 +182,8 @@
       "productLayer": "main",
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
-      "functionalWords": 20,
-      "changeStatus": "story-retheme-v2 · art-review · flavor-redesign-v1 · task5-post-odyssey-collapse-v1 · inland-shrine-rebuild-v1 · art-acceptance-v1",
+      "functionalWords": 25,
+      "changeStatus": "story-retheme-v2 · art-review · flavor-redesign-v1 · task5-post-odyssey-collapse-v1 · inland-shrine-rebuild-v1 · art-acceptance-v1 · studio-notes-pass-20261001b",
       "narrativeEra": "Old Odysseus beyond the Odyssey",
       "storyTarget": "At the inland end of Tiresias’s prophecy, Odysseus plants the oar and establishes a shrine to Poseidon, completing the ritual that carries a seafarer’s burden into a land that does not know the sea.",
       "storyRethemeRequired": false,
@@ -191,12 +191,19 @@
       "artReviewRequired": true,
       "flavorStoryElement": "The inland-oar journey ends in a shrine and sacrifice to Poseidon among people who do not know the sea.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "Excellent mechanical match: the carried object is sacrificed to find a new land, so Traveler's Amulet's real rules become a literal pilgrimage-and-shrine fixing card while the inland-oar package collapses to one identity.",
+      "flavorMatchRationale": "The inland-oar offering finds new land and grants the rest promised at the end of the journey. Adding 2 life makes this its own common design rather than a renamed Traveler's Amulet.",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
         "ART-088"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "artId": "ART-149",
+      "fit": "cover",
+      "zoom": 2.5339836735770587,
+      "focusX": 0.24284126176551507,
+      "focusY": 15.658981643777475,
+      "artHeight": "normal",
+      "frameStyle": "standard"
     },
     {
       "id": "ODY-004",
@@ -325,16 +332,16 @@
       "originFull": "New",
       "mechanics": "Strive; multi-target combat trick; delayed untap",
       "rules": "Strive — This spell costs {1}{W} more to cast for each target beyond the first.\nAny number of target creatures each get +1/+1 until end of turn. Untap those creatures at the beginning of the next end step.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
       "archetypes": "RW/WU",
       "story": "Book XII / the crew rows past the Sirens with their ears stopped while Odysseus is bound to the mast.",
       "status": "KEEP",
       "treatment": "",
       "layout": "standard",
-      "primaryArt": "ART-236",
-      "credit": "Art: Herbert James Draper · Ferens Art Gallery · Wikimedia Commons",
-      "source": "https://commons.wikimedia.org/wiki/File:Draper-Ulysses_and_Sirens.jpg",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Draper-Ulysses_and_Sirens.jpg",
+      "primaryArt": "ART-425",
+      "credit": "Art: Siren Painter · British Museum · photo Jastrow",
+      "source": "https://commons.wikimedia.org/wiki/File:Odysseus_Sirens_BM_E440_n2.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/99/Odysseus_Sirens_BM_E440_n2.jpg",
       "skeletonClass": "standard",
       "cycleIds": [
         "story.sirens",
@@ -345,7 +352,7 @@
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
       "functionalWords": 36,
-      "changeStatus": "carried-from-analysis-candidate-v1 · flavor-redesign-v1 · art-sweep-v3 · studio-notes-pass-20260921",
+      "changeStatus": "carried-from-analysis-candidate-v1 · flavor-redesign-v1 · art-sweep-v3 · studio-notes-pass-20260921 · studio-notes-pass-20261001b",
       "narrativeEra": "Odyssey",
       "storyTarget": "Book XII / the crew rows past the Sirens with their ears stopped while Odysseus is bound to the mast.",
       "storyRethemeRequired": false,
@@ -359,7 +366,14 @@
         "ART-019",
         "ART-236"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "artId": "ART-425",
+      "fit": "cover",
+      "zoom": 1.8982985583354248,
+      "focusX": -66.62421075358827,
+      "focusY": -13.52044607992945,
+      "artHeight": "normal",
+      "frameStyle": "standard"
     },
     {
       "id": "ODY-007",
@@ -1005,16 +1019,16 @@
       "originFull": "New",
       "mechanics": "Ordeal / Survival / Manifest Fate / restraint",
       "rules": "Enchant creature\nWhen Ordeal of the Sirens enters, tap enchanted creature.\nSurvival — At the beginning of your second main phase, if enchanted creature is tapped, put a +1/+1 counter on it. Then if it has three or more +1/+1 counters on it, sacrifice this Aura.\nWhen you sacrifice this Aura, manifest fate.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
       "archetypes": "WU/GU/UR",
       "story": "Book XII / Odysseus survives the Sirens only by planning the trial in advance, hearing the song while bound to the mast as his crew rows on.",
       "status": "KEEP",
       "treatment": "",
       "layout": "standard",
-      "primaryArt": "ART-245",
-      "credit": "Art: “Ulysses and the Sirens” · John William Waterhouse · National Gallery of Victoria · Wikimedia Commons",
-      "source": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_Ulysses_and_the_Sirens_%281891%29.jpg",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/John_William_Waterhouse_-_Ulysses_and_the_Sirens_%281891%29.jpg",
+      "primaryArt": "ART-236",
+      "credit": "Art: Herbert James Draper · Ferens Art Gallery · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Draper-Ulysses_and_Sirens.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Draper-Ulysses_and_Sirens.jpg",
       "skeletonClass": "standard",
       "cycleIds": [
         "cycle.survivor-ordeals-v1",
@@ -1025,7 +1039,7 @@
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
       "functionalWords": 54,
-      "changeStatus": "replacement-slot · survivor-ordeals-v3-tuned · restored-to-14A2-20260922 · mechanics-reconcile-v1-20260924 · studio-notes-20260925-v1 · wave-a-live-20260926",
+      "changeStatus": "replacement-slot · survivor-ordeals-v3-tuned · restored-to-14A2-20260922 · mechanics-reconcile-v1-20260924 · studio-notes-20260925-v1 · wave-a-live-20260926 · studio-notes-pass-20261001b",
       "narrativeEra": "Odyssey",
       "storyTarget": "Book XII / Odysseus survives the Sirens only by planning the trial in advance, hearing the song while bound to the mast as his crew rows on.",
       "storyRethemeRequired": false,
@@ -1039,7 +1053,21 @@
         "ART-019",
         "ART-223"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "artId": "ART-236",
+      "fit": "cover",
+      "zoom": 3.2071354722128467,
+      "focusX": 75.5446386918958,
+      "focusY": 58.56869668272869,
+      "artHeight": "normal",
+      "frameStyle": "standard",
+      "artReuse": {
+        "allowedWith": [
+          44
+        ],
+        "reason": "User chose distinct subject crops from Draper's Ulysses and the Sirens: the Ordeal focuses on Odysseus, Pull as One on the rowers.",
+        "source": "Shared Studio finishing queue snapshot, 2026-10-01"
+      }
     },
     {
       "id": "ODY-018",
@@ -1099,7 +1127,7 @@
       "id": "ODY-019",
       "number": 19,
       "name": "Voyage's End",
-      "displayName": "Voyage's End",
+      "displayName": "Carried Home Asleep",
       "underlyingName": "Voyage's End",
       "mana": "{1}{U}",
       "mv": 2,
@@ -1112,11 +1140,11 @@
       "originFull": "Reprint",
       "mechanics": "Scry",
       "rules": "Return target creature to its owner's hand. Scry 1.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
       "archetypes": "UR/WU",
       "story": "Book XIII / the Phaeacians set the sleeping Odysseus on Ithaca with his gifts; he wakes unable at first to recognize home.",
       "status": "KEEP",
-      "treatment": "STRAIGHT",
+      "treatment": "GODZILLA",
       "layout": "standard",
       "primaryArt": "ART-427",
       "credit": "Art: Theodoor van Thulden, after Francesco Primaticcio · Rijksmuseum",
@@ -1132,21 +1160,28 @@
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
       "functionalWords": 9,
-      "changeStatus": "flavor-redesign-v1 · art-review · art-sweep-v1 · art-p1-upgrade-v1 · task9-scheria-pruning-v1 · homeward-package-reclassification-v1 · studio-notes-20260922-v1",
+      "changeStatus": "flavor-redesign-v1 · art-review · art-sweep-v1 · art-p1-upgrade-v1 · task9-scheria-pruning-v1 · homeward-package-reclassification-v1 · studio-notes-20260922-v1 · studio-notes-pass-20261001b",
       "narrativeEra": "Odyssey",
       "storyTarget": "Book XIII / the Phaeacians set the sleeping Odysseus on Ithaca with his gifts; he wakes unable at first to recognize home.",
       "storyRethemeRequired": false,
       "storySourceBand": "Odyssey Books I–XXIV",
       "artReviewRequired": false,
-      "flavorStoryElement": "Book XIII / the Phaeacians set the sleeping Odysseus on Ithaca with his gifts; he wakes unable at first to recognize home.",
+      "flavorStoryElement": "Book XIII / the Phaeacians lift the sleeping Odysseus from their ship and lay him on Ithaca with his gifts.",
       "flavorMatchScore": 4,
-      "flavorMatchRationale": "Strong match after redesign: the card identity is specific to Book XIII / the Phaeacians set the sleeping Odysseus on Ithaca with his gifts; he wakes unable at first to recognize home., and its mechanics now reinforce the story beat rather than serving as a generic Greek analogue.",
+      "flavorMatchRationale": "The existing return-to-hand and scry rules retain Voyage's End as the underlying reprint. The display title names the sleeping homecoming shown in the selected artwork.",
       "artPath": "HOMER CUE",
       "alternateArtIds": [
         "ART-174",
         "ART-397"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "artId": "ART-427",
+      "fit": "cover",
+      "zoom": 3.3995636005456173,
+      "focusX": 20.04694323367976,
+      "focusY": 37.61871500058921,
+      "artHeight": "normal",
+      "frameStyle": "standard"
     },
     {
       "id": "ODY-020",
@@ -2139,8 +2174,8 @@
       "origin": "NEW",
       "originFull": "New",
       "mechanics": "Damage; tapped Vehicle",
-      "rules": "Shipyard Sparks deals 2 damage to target creature. If you control a tapped Vehicle, it deals 3 damage instead.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "rules": "Shipyard Sparks deals 2 damage to target creature. If you control a tapped Vehicle, it deals 4 damage instead.",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
       "archetypes": "UR/RW — Vehicles / removal",
       "story": "Working shore / metal tools and fittings are repaired beside hauled-up ships, turning the shipyard's forge into a practical hazard.",
       "status": "KEEP",
@@ -2159,8 +2194,8 @@
       "productLayer": "main",
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
-      "functionalWords": 21,
-      "changeStatus": "candidate2-common-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1 · studio-notes-20260922-v1",
+      "functionalWords": 19,
+      "changeStatus": "candidate2-common-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1 · studio-notes-20260922-v1 · studio-notes-pass-20261001b",
       "narrativeEra": "Homeric world",
       "storyTarget": "Shipbuilding and repair / hot metalwork on the working shore.",
       "storyRethemeRequired": false,
@@ -2168,7 +2203,7 @@
       "artReviewRequired": true,
       "flavorStoryElement": "A working shipyard joins carpentry, metal fittings, tools and vessels in the same practical space.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "The damage spell now keys off a tapped Vehicle, tying red removal directly to the set's ship/crew play rather than rewarding an arbitrary artifact entering.",
+      "flavorMatchRationale": "The tapped-ship condition now upgrades the spell to 4 damage, giving the Vehicle deck a substantial removal reward while keeping the unassisted rate at 2 damage.",
       "nameAliases": [
         "Forge-Sparks"
       ],
@@ -2177,7 +2212,14 @@
         "ART-462",
         "ART-461"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "artId": "ART-192",
+      "fit": "cover",
+      "zoom": 3.6035374165783516,
+      "focusX": -55.21302338655033,
+      "focusY": 31.012520993346488,
+      "artHeight": "normal",
+      "frameStyle": "standard"
     },
     {
       "id": "ODY-039",
@@ -2455,8 +2497,8 @@
     {
       "id": "ODY-044",
       "number": 44,
-      "name": "Rowing Chant",
-      "displayName": "Rowing Chant",
+      "name": "Pull as One",
+      "displayName": "Pull as One",
       "underlyingName": "",
       "mana": "{1}{R}",
       "mv": 2,
@@ -2467,21 +2509,21 @@
       "rarity": "C",
       "origin": "NEW",
       "originFull": "New",
-      "mechanics": "Team combat; delayed untap; rowing",
-      "rules": "Up to two target creatures each get +1/+0 until end of turn. Untap those creatures at the beginning of the next end step.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "mechanics": "Team combat; first strike; delayed untap; Survival support",
+      "rules": "Up to two target creatures each get +2/+0 and gain first strike until end of turn. Untap those creatures at the beginning of the next end step.",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
       "archetypes": "RW/UR — Vehicles / Survival",
-      "story": "Practical rowing rhythm / a shouted cadence keeps many rowers striking together as one body.",
+      "story": "Book XII / with wax stopping their ears, the crew pulls together past the Sirens while Odysseus is bound to the mast.",
       "status": "KEEP",
       "treatment": "",
       "layout": "standard",
-      "primaryArt": "ART-176",
-      "credit": "Art: “Oarsmen at Chatou” · Auguste Renoir · National Gallery of Art",
-      "source": "https://www.nga.gov/artworks/39759-oarsmen-chatou",
-      "imageUrl": "https://api.nga.gov/iiif/1153f2b7-bfe6-4159-8ca4-211ce86564b1/full/3216,/0/default.jpg",
+      "primaryArt": "ART-236",
+      "credit": "Art: Herbert James Draper · Ferens Art Gallery · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Draper-Ulysses_and_Sirens.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Draper-Ulysses_and_Sirens.jpg",
       "skeletonClass": "standard",
       "cycleIds": [
-        "rebuild.build-raft-stars",
+        "story.sirens",
         "flavor.sailor-knowledge",
         "group.wandering-crew"
       ],
@@ -2489,16 +2531,16 @@
       "productLayer": "main",
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
-      "functionalWords": 24,
-      "changeStatus": "candidate2-major-story-v2 · art-review · art-remap-v1 · art-acceptance-v1 · studio-notes-20260922-v1 · mechanics-reconcile-v1-20260924 · wave-a-live-20260926",
+      "functionalWords": 27,
+      "changeStatus": "candidate2-major-story-v2 · art-review · art-remap-v1 · art-acceptance-v1 · studio-notes-20260922-v1 · mechanics-reconcile-v1-20260924 · wave-a-live-20260926 · studio-notes-pass-20261001b",
       "narrativeEra": "Homeric world",
-      "storyTarget": "Coordinated rowing as ordinary sailor knowledge.",
+      "storyTarget": "Book XII / the wax-deafened rowers pull in unison past the Sirens; their strength lies in coordinated effort, not a song.",
       "storyRethemeRequired": false,
-      "storySourceBand": "Homeric maritime world / composite",
+      "storySourceBand": "Odyssey Book XII / passage of the Sirens",
       "artReviewRequired": false,
-      "flavorStoryElement": "The chant synchronizes effort now; the delayed untap represents the crew resetting after exertion.",
+      "flavorStoryElement": "The crew cannot hear the Sirens or a rowing chant: they pull together by discipline and reset after the exertion.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "The stronger Rowing Chant identity now owns the team-pump and delayed-untap mechanics, eliminating the duplicate rowing spell.",
+      "flavorMatchRationale": "Two creatures can win combat with +2/+0 and first strike. Waiting until the end step to untap preserves their second-main Survival triggers. Pull as One avoids both song/Saga space and the already-used Row Past the Sirens title.",
       "nameAliases": [
         "Pull Together at the Oars"
       ],
@@ -2507,7 +2549,21 @@
         "ART-539",
         "ART-425"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "artId": "ART-236",
+      "fit": "cover",
+      "zoom": 3.3995636005456142,
+      "focusX": 28.692279329876268,
+      "focusY": 20.77510280797445,
+      "artHeight": "normal",
+      "frameStyle": "standard",
+      "artReuse": {
+        "allowedWith": [
+          17
+        ],
+        "reason": "User chose distinct subject crops from Draper's Ulysses and the Sirens: the Ordeal focuses on Odysseus, Pull as One on the rowers.",
+        "source": "Shared Studio finishing queue snapshot, 2026-10-01"
+      }
     },
     {
       "id": "ODY-045",
@@ -3187,9 +3243,9 @@
       "rarity": "U",
       "origin": "NEW",
       "originFull": "New",
-      "mechanics": "Vehicle crew bonus",
-      "rules": "Whenever this creature crews a Vehicle, that Vehicle gets +2/+0 until end of turn.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "mechanics": "Vehicle recovery; Vehicle crew bonus",
+      "rules": "When this creature enters, return up to one target Vehicle card from your graveyard to your hand.\nWhenever this creature crews a Vehicle, that Vehicle gets +2/+0 until end of turn.",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
       "archetypes": "RW/UR — Vehicles / crafts",
       "story": "Shipboard repair / a carpenter's work continues after launch, keeping planks, thole-pins, spars and fittings usable at sea.",
       "status": "KEEP",
@@ -3208,8 +3264,8 @@
       "productLayer": "main",
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
-      "functionalWords": 14,
-      "changeStatus": "candidate2-uncommon-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1 · studio-notes-20260925-v1",
+      "functionalWords": 31,
+      "changeStatus": "candidate2-uncommon-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1 · studio-notes-20260925-v1 · studio-notes-pass-20261001b",
       "narrativeEra": "Homeric world",
       "storyTarget": "Shipboard repair / a carpenter's work continues after launch, keeping planks, thole-pins, spars and fittings usable at sea.",
       "storyRethemeRequired": false,
@@ -3217,13 +3273,20 @@
       "artReviewRequired": false,
       "flavorStoryElement": "Shipboard repair / a carpenter's work continues after launch, keeping planks, thole-pins, spars and fittings usable at sea.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "Uncommon rebuild: structural role preserved while obscure/sequel identity remains cut.",
+      "flavorMatchRationale": "The carpenter repairs a lost ship by recovering a Vehicle to hand, then improves it while crewing. A 3/2 for three mana keeps the stronger uncommon effect tied to the Vehicle deck.",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
         "ART-462",
         "ART-489"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "artId": "ART-595",
+      "fit": "cover",
+      "zoom": 1.8982985583354208,
+      "focusX": 59.791888121511214,
+      "focusY": 51.096551922131205,
+      "artHeight": "normal",
+      "frameStyle": "standard"
     },
     {
       "id": "ODY-058",
@@ -3355,16 +3418,16 @@
       "originFull": "New",
       "mechanics": "Manifest Fate; exile; ramp; card draw",
       "rules": "When this enchantment enters, scry 2.\nWhenever you manifest fate for the first time each turn, you may put a land card from your hand onto the battlefield tapped. At the beginning of your end step, if you own four or more cards in exile, draw a card.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
       "archetypes": "GU — Manifest Fate / ramp / permanents",
       "story": "The homeward voyage repeatedly reveals one road while leaving another unrealized, carrying Odysseus from one unknown shore to the next.",
       "status": "KEEP",
       "treatment": "",
       "layout": "standard",
-      "primaryArt": "ART-122",
-      "credit": "Art: Ludolf Backhuysen · The Met",
-      "source": "https://www.metmuseum.org/art/collection/search/335058",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/A_Ship_at_Sea_MET_DP800095.jpg",
+      "primaryArt": "ART-713",
+      "credit": "Art: Robert Havell, after Joseph Cartwright · Aikaterini Laskaridis Foundation / Travelogues",
+      "source": "https://eng.travelogues.gr/item.php?view=53943",
+      "imageUrl": "https://kliawota.design/mtgtools/odyssey/assets/landscapes/ART-713.4429b3ba94d1.jpg",
       "skeletonClass": "standard",
       "cycleIds": [
         "ff-analog-gold-signposts",
@@ -3376,7 +3439,7 @@
       "singleFaceSpecialPlan": "",
       "signpostPair": "GU",
       "functionalWords": 48,
-      "changeStatus": "candidate2-hard-chassis-v1 · signpost-gu-v1 · closing-act-promoted-20260927-v1",
+      "changeStatus": "candidate2-hard-chassis-v1 · signpost-gu-v1 · closing-act-promoted-20260927-v1 · studio-notes-pass-20261001b",
       "narrativeEra": "Odyssey",
       "storyTarget": "Whole-poem wandering and arrival at unfamiliar shores.",
       "storyRethemeRequired": false,
@@ -3384,13 +3447,20 @@
       "artReviewRequired": false,
       "flavorStoryElement": "Manifest Fate makes the chosen route and the road not taken visible; the ramp turns discovery into new landfall and the exile threshold pays off the accumulated alternatives.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "Recasting the old Telegonus signpost as the voyage itself keeps the strong GU mechanical skeleton while removing an extra sequel character and adding an enchantment to the set's intended texture.",
+      "flavorMatchRationale": "Retained as the uncommon GU signpost. The rare #299 repeats its mana cost and first-Manifest-Fate land trigger and is nominated for recasting instead; #018 and #042 have different quest, interaction and story roles. Specific homecoming titles reduce the broad voyage cluster.",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
         "ART-425",
         "ART-539"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "artId": "ART-713",
+      "fit": "cover",
+      "zoom": 2.540351684685673,
+      "focusX": -84.12407515809126,
+      "focusY": -4.9587067260227595,
+      "artHeight": "normal",
+      "frameStyle": "standard"
     },
     {
       "id": "ODY-061",
@@ -11908,7 +11978,7 @@
       "originFull": "New",
       "mechanics": "Charge counters; exile; Vehicles; draw",
       "rules": "Whenever you cast a spell from exile or one or more Vehicles you control attack, put a charge counter on this enchantment. This ability triggers only once each turn.\nRemove three charge counters from it: Draw a card.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
       "archetypes": "UR/GU/WU — exile / Vehicles / journey",
       "story": "Whole-poem journey / each crossing leaves a trace even when the shoreline disappears; accumulated routes become knowledge about the next passage.",
       "status": "KEEP",
@@ -11928,7 +11998,7 @@
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
       "functionalWords": 38,
-      "changeStatus": "candidate2-rare-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+      "changeStatus": "candidate2-rare-fill-v1 · art-review · art-remap-v1 · art-acceptance-v1 · studio-notes-pass-20261001b · saved-art-dependency",
       "narrativeEra": "Odyssey",
       "storyTarget": "Whole-poem journey / each crossing leaves a trace even when the shoreline disappears; accumulated routes become knowledge about the next passage.",
       "storyRethemeRequired": false,
@@ -11942,7 +12012,21 @@
         "ART-470",
         "ART-533"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "artId": "ART-239",
+      "fit": "cover",
+      "zoom": 6.088100643288049,
+      "focusX": -65.51936324665473,
+      "focusY": -60.66603900658407,
+      "artHeight": "normal",
+      "frameStyle": "standard",
+      "artReuse": {
+        "allowedWith": [
+          250
+        ],
+        "reason": "Preserve the two existing user-selected Turner crops: Odysseus and the homeward ship.",
+        "source": "Shared Studio finishing queue snapshot, 2026-10-01"
+      }
     },
     {
       "id": "ODY-207",
@@ -14374,18 +14458,18 @@
       "rarity": "M",
       "origin": "NEW",
       "originFull": "New",
-      "mechanics": "Flying; forced attacks; mill",
-      "rules": "Flying\nCreatures your opponents control attack each combat if able.\nWhenever one or more creatures attack you, that player mills three cards and you gain 1 life.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
-      "archetypes": "UB/UR — attack control / mill",
+      "mechanics": "Flying; forced attacks; permanent control theft",
+      "rules": "Flying\nCreatures your opponents control attack each combat if able.\nWhenever one or more creatures attack you, gain control of target creature attacking you with the least power among creatures attacking you. Untap it.",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
+      "archetypes": "UB/UR — attack control / theft",
       "story": "Later visual and literary reception / Sirens increasingly become beautiful, seductive women whose allure eclipses the stranger bird-bodied figures of early Greek art.",
       "status": "KEEP",
       "treatment": "",
       "layout": "standard",
-      "primaryArt": "ART-223",
-      "credit": "Art: “Ulysses and the Sirens” · Léon Belly · Musée de l’hôtel Sandelin · Wikimedia Commons",
-      "source": "https://commons.wikimedia.org/wiki/File:Ulysses_And_The_Sirens_by_L%C3%A9on_Belly.jpg",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Ulysses_And_The_Sirens_by_L%C3%A9on_Belly.jpg",
+      "primaryArt": "ART-245",
+      "credit": "Art: “Ulysses and the Sirens” · John William Waterhouse · National Gallery of Victoria · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_Ulysses_and_the_Sirens_%281891%29.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/John_William_Waterhouse_-_Ulysses_and_the_Sirens_%281891%29.jpg",
       "skeletonClass": "standard",
       "cycleIds": [
         "reception.later",
@@ -14397,22 +14481,29 @@
       "productLayer": "main",
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
-      "functionalWords": 27,
-      "changeStatus": "candidate2-reception-v1 · art-review · art-acceptance-v1",
+      "functionalWords": 34,
+      "changeStatus": "candidate2-reception-v1 · art-review · art-acceptance-v1 · studio-notes-pass-20261001b",
       "narrativeEra": "Modern Retellings & Reception",
       "storyTarget": "Later visual and literary reception / Sirens increasingly become beautiful, seductive women whose allure eclipses the stranger bird-bodied figures of early Greek art.",
       "storyRethemeRequired": false,
       "storySourceBand": "Later visual/literary reception — Sirens",
       "artReviewRequired": false,
-      "flavorStoryElement": "Later visual and literary reception / Sirens increasingly become beautiful, seductive women whose allure eclipses the stranger bird-bodied figures of early Greek art.",
+      "flavorStoryElement": "The Sirens lure attackers out of their own company; the most vulnerable attacker becomes yours before blockers are declared.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "The mythic version represents reception's fatal beauty: creatures are compelled toward them and lose pieces of themselves as they approach.",
+      "flavorMatchRationale": "The mythic now permanently steals the lowest-power creature attacking you and untaps it. Tied lowest-power attackers are legal choices. Control changing removes that creature from combat; untapping lets it block. The trigger is one per attack declaration, so a group attack does not steal the whole group.",
       "artPath": "HOMER CUE",
       "alternateArtIds": [
         "ART-019",
         "ART-236"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "artId": "ART-245",
+      "fit": "cover",
+      "zoom": 1.689478959002689,
+      "focusX": 76.16526067109605,
+      "focusY": 3.962771550052117,
+      "artHeight": "normal",
+      "frameStyle": "standard"
     },
     {
       "id": "ODY-249",
@@ -14484,16 +14575,16 @@
       "originFull": "New",
       "mechanics": "Crew / Manifest Fate / revelation",
       "rules": "Ward {2}. Whenever The Black-Hulled Ship attacks, manifest fate. At the beginning of your second main phase, if The Black-Hulled Ship attacked this turn, you may exile up to one tapped creature you control, then return that card to the battlefield under its owner's control at the beginning of the next end step. Crew 3.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
       "archetypes": "WUR/RW/UR/WU",
       "story": "Whole voyage / the homeward ship",
       "status": "KEEP",
       "treatment": "",
       "layout": "vehicle",
-      "primaryArt": "ART-425",
-      "credit": "Art: Siren Painter · British Museum · photo Jastrow",
-      "source": "https://commons.wikimedia.org/wiki/File:Odysseus_Sirens_BM_E440_n2.jpg",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/99/Odysseus_Sirens_BM_E440_n2.jpg",
+      "primaryArt": "ART-239",
+      "credit": "Art: “Ulysses Deriding Polyphemus” · J. M. W. Turner · National Gallery, London · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Turner_-_Ulysses_deriding_Polyphemus_1829.jpg",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/de/Turner_-_Ulysses_deriding_Polyphemus_1829.jpg",
       "skeletonClass": "vehicle",
       "cycleIds": [
         "story.homeward-journey"
@@ -14503,7 +14594,7 @@
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
       "functionalWords": 54,
-      "changeStatus": "ff-skeleton-high-end · art-sweep-v2",
+      "changeStatus": "ff-skeleton-high-end · art-sweep-v2 · studio-notes-pass-20261001b · saved-art-dependency",
       "narrativeEra": "Odyssey",
       "storyTarget": "Whole voyage / the homeward ship",
       "storyRethemeRequired": false,
@@ -14516,7 +14607,21 @@
       "alternateArtIds": [
         "ART-539"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "artId": "ART-239",
+      "fit": "cover",
+      "zoom": 1.593848074530839,
+      "focusX": 53.859162240214374,
+      "focusY": -27.330645871790534,
+      "artHeight": "normal",
+      "frameStyle": "standard",
+      "artReuse": {
+        "allowedWith": [
+          206
+        ],
+        "reason": "Preserve the two existing user-selected Turner crops: Odysseus and the homeward ship.",
+        "source": "Shared Studio finishing queue snapshot, 2026-10-01"
+      }
     },
     {
       "id": "ODY-251",
@@ -17483,10 +17588,10 @@
       "originFull": "New",
       "mechanics": "Manifest Fate; lands; face-down permanents",
       "rules": "Face-down creatures you control have \"{T}: Add {G} or {U}.\"\nWhenever you manifest fate for the first time each turn, you may put a land card from your hand onto the battlefield tapped.",
-      "rulesSource": "14A2 · Card File v1.0 Candidate · revision 256",
+      "rulesSource": "Studio notes resolution · 2026-10-01 · second pass",
       "archetypes": "GU — Manifest Fate / permanents / ramp",
       "story": "Unknown shores are both destination and possibility: what has not yet been revealed can still carry the resources needed for the next stage of the voyage.",
-      "status": "KEEP",
+      "status": "REVISE",
       "treatment": "",
       "layout": "standard",
       "primaryArt": "ART-395",
@@ -17503,7 +17608,7 @@
       "singleFaceSpecialPlan": "",
       "signpostPair": "",
       "functionalWords": 33,
-      "changeStatus": "candidate2-high-rarity-v1 · art-review · art-remap-v1 · art-acceptance-v1",
+      "changeStatus": "candidate2-high-rarity-v1 · art-review · art-remap-v1 · art-acceptance-v1 · studio-notes-pass-20261001b · recast-nominee-299: preserve #060 signpost",
       "narrativeEra": "Homeric world",
       "storyTarget": "GU rare Manifest Fate/permanents engine.",
       "storyRethemeRequired": false,
@@ -17511,12 +17616,22 @@
       "artReviewRequired": false,
       "flavorStoryElement": "GU rare Manifest Fate/permanents engine.",
       "flavorMatchScore": 5,
-      "flavorMatchRationale": "Face-down cards become provisional resources and each new fate can open actual land, making GU's permanent-heavy growth distinct from generic ramp.",
+      "flavorMatchRationale": "Recast nominee, not an emptied slot: this rare repeats #060's cost and land trigger. Its original rules, art and crop remain available for review; preserve #060 as the uncommon GU signpost.",
       "artPath": "GENERIC OK",
       "alternateArtIds": [
         "ART-169"
       ],
-      "reviewArtworkOptions": "Open art choices"
+      "reviewArtworkOptions": "Open art choices",
+      "recastNomination": {
+        "status": "NOMINATED",
+        "reason": "Same {1}{G}{U} cost, broad unknown-shore identity and first-Manifest-Fate land trigger as uncommon signpost #060. Retain the uncommon signpost and use this rare budget for a distinct GU build-around.",
+        "retain": [
+          60
+        ],
+        "preserveCurrentDesign": true,
+        "suggestedFill": "A specific Odyssey episode with a rare GU role distinct from another Manifest Fate-to-land engine.",
+        "basis": "Studio note on #060, 2026-10-01; comparative review of current #018, #042, #060 and #299."
+      }
     },
     {
       "id": "ODY-300",
@@ -32921,7 +33036,7 @@
     },
     {
       "number": 3,
-      "name": "Traveler's Amulet",
+      "name": "Inland Shrine",
       "status": "SELECTED",
       "layer": "2 — Historical / generic",
       "candidateIds": [
@@ -32929,7 +33044,7 @@
       ],
       "primary": "ART-149",
       "creditReady": "YES",
-      "notes": "28 Sep 2026 closeout: SELECTED under the project’s generic-subject rule. The current card’s Odyssey display name is ‘Inland Shrine,’ and ART-149 is an authentic late-5th-century-BCE Attic sacrifice at a prepared altar, so it is both period-appropriate and directly legible as the shrine ritual. The Met verifies the Nikias Painter attribution, Greek/Attic context, altar sacrifice, object 41.162.4 and Public Domain image. A literal winnowing-oar scene would be a welcome alternate, but its absence is no longer treated as a subject mismatch for this generic artifact/reprint."
+      "notes": "28 Sep 2026 closeout: SELECTED under the project’s generic-subject rule. The current card’s Odyssey display name is ‘Inland Shrine,’ and ART-149 is an authentic late-5th-century-BCE Attic sacrifice at a prepared altar, so it is both period-appropriate and directly legible as the shrine ritual. The Met verifies the Nikias Painter attribution, Greek/Attic context, altar sacrifice, object 41.162.4 and Public Domain image. A literal winnowing-oar scene would be a welcome alternate, but its absence is no longer treated as a subject mismatch for this generic artifact/reprint. · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 4,
@@ -32970,9 +33085,9 @@
         "ART-089",
         "ART-113"
       ],
-      "primary": "ART-236",
+      "primary": "ART-425",
       "creditReady": "YES",
-      "notes": "26 Sep 2026: Selected for #6 Row Past the Sirens, replacing ART-425 shared with #250. Crew rowing, bound Odysseus and approaching Sirens make the group action legible. Draper's later human/mermaid Siren convention differs from ancient bird-bodied Sirens. Artist, title, 1909 date and ownership corroborated by Hull Museums: https://www.hullmuseums.co.uk/downloads/file/168/air-call-out . Commons PD-Art rights checked; 2074×1704 JPEG downloaded and visually inspected. Keep rowing hands/oars, the bound captain and approaching Sirens together; trim surplus sky/water. Distinct from Waterhouse and the Siren Painter vase compositions. Studio crop/publication pending."
+      "notes": "26 Sep 2026: Selected for #6 Row Past the Sirens, replacing ART-425 shared with #250. Crew rowing, bound Odysseus and approaching Sirens make the group action legible. Draper's later human/mermaid Siren convention differs from ancient bird-bodied Sirens. Artist, title, 1909 date and ownership corroborated by Hull Museums: https://www.hullmuseums.co.uk/downloads/file/168/air-call-out . Commons PD-Art rights checked; 2074×1704 JPEG downloaded and visually inspected. Keep rowing hands/oars, the bound captain and approaching Sirens together; trim surplus sky/water. Distinct from Waterhouse and the Siren Painter vase compositions. Studio crop/publication pending. · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 7,
@@ -33125,14 +33240,15 @@
       "status": "SELECTED",
       "layer": "3 — Evocative / abstract",
       "candidateIds": [
+        "ART-236",
         "ART-077",
         "ART-122",
         "ART-361",
         "ART-245"
       ],
-      "primary": "ART-245",
+      "primary": "ART-236",
       "creditReady": "YES",
-      "notes": "Review complete: the voyage to Elis survives in fragmentary post-Odyssey tradition without a stable visual cycle. ART-122 is a direct ship-at-sea image and cleanly carries the card’s quieter voyage/navigation identity.\n\n24 Sep 2026 Art Hunt 60 [KEEP]: Ulysses and the Sirens. Waterhouse puts bound Odysseus and the rowing crew within one readable encounter. Preserve the mast and singers in the crop. Gate: Existing library source; inspect crop and rights before release. Source/reference: https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_Ulysses_and_the_Sirens_%281891%29.jpg"
+      "notes": "Review complete: the voyage to Elis survives in fragmentary post-Odyssey tradition without a stable visual cycle. ART-122 is a direct ship-at-sea image and cleanly carries the card’s quieter voyage/navigation identity.\n\n24 Sep 2026 Art Hunt 60 [KEEP]: Ulysses and the Sirens. Waterhouse puts bound Odysseus and the rowing crew within one readable encounter. Preserve the mast and singers in the crop. Gate: Existing library source; inspect crop and rights before release. Source/reference: https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_Ulysses_and_the_Sirens_%281891%29.jpg · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 18,
@@ -33152,7 +33268,7 @@
     },
     {
       "number": 19,
-      "name": "Voyage's End",
+      "name": "Carried Home Asleep",
       "status": "COVERED",
       "layer": "3 — Evocative / abstract",
       "candidateIds": [
@@ -33164,7 +33280,7 @@
       ],
       "primary": "ART-427",
       "creditReady": "YES",
-      "notes": "Exact/strong primary accepted."
+      "notes": "Exact/strong primary accepted. · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 20,
@@ -33445,7 +33561,7 @@
       ],
       "primary": "ART-192",
       "creditReady": "YES",
-      "notes": "27 Sep 2026: SELECTED after source and composition review. ART-192 is a strong generic forge-action analogue: multiple smiths, raised hammers, furnaces and workshop hazards make the card’s sparks/damage concept readable. Limitation: mythic forge, not a literal shoreline shipyard; retain as the strongest verified historic composition until an equally legible period shipyard-metalwork scene is found. NGA public-domain master verified at 4,096×3,046."
+      "notes": "27 Sep 2026: SELECTED after source and composition review. ART-192 is a strong generic forge-action analogue: multiple smiths, raised hammers, furnaces and workshop hazards make the card’s sparks/damage concept readable. Limitation: mythic forge, not a literal shoreline shipyard; retain as the strongest verified historic composition until an equally legible period shipyard-metalwork scene is found. NGA public-domain master verified at 4,096×3,046. · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 39,
@@ -33524,10 +33640,11 @@
     },
     {
       "number": 44,
-      "name": "Rowing Chant",
+      "name": "Pull as One",
       "status": "SELECTED",
       "layer": "2 — Historical / generic",
       "candidateIds": [
+        "ART-236",
         "ART-078",
         "ART-059",
         "ART-145",
@@ -33535,9 +33652,9 @@
         "ART-113",
         "ART-176"
       ],
-      "primary": "ART-176",
+      "primary": "ART-236",
       "creditReady": "YES",
-      "notes": "Duplicate resolved with a visually checked oarsman gripping a long oar. Crop around the foreground boat and rower while retaining enough river to read as coordinated travel."
+      "notes": "Duplicate resolved with a visually checked oarsman gripping a long oar. Crop around the foreground boat and rower while retaining enough river to read as coordinated travel. · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 45,
@@ -33708,7 +33825,7 @@
       ],
       "primary": "ART-595",
       "creditReady": "YES",
-      "notes": "27 Sep 2026: ART-595 selected. Ancient Roman relief identifies shipwright P. Longidienus working directly on a hull; public-domain source and 3804×2542 image verified."
+      "notes": "27 Sep 2026: ART-595 selected. Ancient Roman relief identifies shipwright P. Longidienus working directly on a hull; public-domain source and 3804×2542 image verified. · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 58,
@@ -33745,15 +33862,16 @@
       "status": "SELECTED",
       "layer": "3 — Evocative / abstract",
       "candidateIds": [
+        "ART-713",
         "ART-419",
         "ART-087",
         "ART-077",
         "ART-156",
         "ART-122"
       ],
-      "primary": "ART-122",
+      "primary": "ART-713",
       "creditReady": "YES",
-      "notes": "26 Sep 2026: ART-122 selected. A lone public-domain ship at full sea under an expansive overcast sky gives this generic voyage card a distinct, readable composition. Met 60.79; 2647×3845 image verified. Replaces shared ART-419. Studio crop/publication pending."
+      "notes": "26 Sep 2026: ART-122 selected. A lone public-domain ship at full sea under an expansive overcast sky gives this generic voyage card a distinct, readable composition. Met 60.79; 2647×3845 image verified. Replaces shared ART-419. Studio crop/publication pending. · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 61,
@@ -35816,7 +35934,7 @@
       ],
       "primary": "ART-239",
       "creditReady": "YES",
-      "notes": "27 Sep 2026 [SELECTED]: ART-239 · J. M. W. Turner, “Ulysses Deriding Polyphemus” (1829), National Gallery, London. Exact Odyssey Book IX seascape: Odysseus’s ship advances through churned water, making the card’s remembered wake and accumulating voyages visible. Public-domain artwork and reproduction. Original 6,493×4,226 visually inspected; crop preserves ship, white wake and open sea."
+      "notes": "27 Sep 2026 [SELECTED]: ART-239 · J. M. W. Turner, “Ulysses Deriding Polyphemus” (1829), National Gallery, London. Exact Odyssey Book IX seascape: Odysseus’s ship advances through churned water, making the card’s remembered wake and accumulating voyages visible. Public-domain artwork and reproduction. Original 6,493×4,226 visually inspected; crop preserves ship, white wake and open sea. · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 207,
@@ -36387,13 +36505,14 @@
       "status": "COVERED",
       "layer": "1 — Direct / iconic",
       "candidateIds": [
+        "ART-245",
         "ART-019",
         "ART-223",
         "ART-366"
       ],
-      "primary": "ART-223",
+      "primary": "ART-245",
       "creditReady": "YES",
-      "notes": "Exact/strong primary accepted."
+      "notes": "Exact/strong primary accepted. · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 249,
@@ -36419,9 +36538,9 @@
         "ART-049",
         "ART-239"
       ],
-      "primary": "ART-425",
+      "primary": "ART-239",
       "creditReady": "YES",
-      "notes": "Exact/strong primary accepted."
+      "notes": "Exact/strong primary accepted. · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 251,
@@ -37058,7 +37177,7 @@
       ],
       "primary": "ART-395",
       "creditReady": "YES",
-      "notes": "Exact/strong primary accepted."
+      "notes": "Exact/strong primary accepted. · studio-notes-pass-20261001b · exact saved Studio artwork/crop retained"
     },
     {
       "number": 300,
@@ -38654,7 +38773,8 @@
     "retiredDualArchive": "retired-dual-archive.20260930.json",
     "studioNotesResolution": "notes-resolution.20261001.js",
     "openSlotRevision": "open-slots-20261001",
-    "openSlotArchive": "data/open-slot-archive.20261001.json"
+    "openSlotArchive": "data/open-slot-archive.20261001.json",
+    "studioNotesResolutionSecondPass": "notes-resolution.20261001b.js"
   },
   "survivorOrdealCycle": {
     "revision": "survivor-ordeals-v3-tuned",
@@ -39019,8 +39139,8 @@
       "title": "14A2 — The Odyssey MTG — Analysis Candidate Card File v2 — FF Lattice Rebuild"
     },
     "sourceVersion": "2026-09-29.1",
-    "sourceFingerprint": "8dfe8d98797526ced7b7b120569bea311667c1819c98b35025160de72b212514",
-    "cardsSha256": "d4634f3b241892d2749c7912d914819ea8e9b1b9265741dba1177c3a36a160a8",
+    "sourceFingerprint": "068cf4e72bd7de483cbfc7a550cf6f1b46f5ce80b0814008069e7a73490e04c6",
+    "cardsSha256": "813aa914e17758bd6767b557b8de159e18532feea16bf5a88cc26f595e6c5c78",
     "sources": [
       {
         "file": "data/odyssey-data.js",
@@ -39065,6 +39185,10 @@
       {
         "file": "data/open-slots.20261001.js",
         "sha256": "b543958fc1e4140ffd570720edeee5ad1a3eb33d038efbe6d550d846bf9229cf"
+      },
+      {
+        "file": "data/notes-resolution.20261001b.js",
+        "sha256": "d0fc4179ba3822567dcffeb7f1754795abb0588c61d4cb8d6e3ba83507dc6b48"
       }
     ]
   }

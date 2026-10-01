@@ -25,10 +25,11 @@ test('all 18 observed Recast marks have consistent empty placeholders and comple
 });
 test('normalization preserves every other current design and is idempotent',()=>{
  const sandbox={window:{},structuredClone};vm.createContext(sandbox);
- for(const file of FILES.slice(0,-2))vm.runInContext(fs.readFileSync(path.join(dir,file),'utf8'),sandbox);
+ for(const file of FILES.slice(0,FILES.indexOf('open-slot-core.js')))vm.runInContext(fs.readFileSync(path.join(dir,file),'utf8'),sandbox);
  const before=JSON.parse(JSON.stringify(sandbox.window.ODYSSEY_DATA));
- for(const c of data.cards.filter(c=>!numbers.includes(c.number)))assert.deepEqual(c,before.cards.find(x=>x.id===c.id),c.id);
- const copy=structuredClone(data);core.apply(copy,manifest);assert.deepEqual(copy,data);
+ const normalized=structuredClone(before);core.apply(normalized,manifest);
+ for(const c of normalized.cards.filter(c=>!numbers.includes(c.number)))assert.deepEqual(c,before.cards.find(x=>x.id===c.id),c.id);
+ const copy=structuredClone(normalized);core.apply(copy,manifest);assert.deepEqual(copy,normalized);
 });
 test('reclaimed duplicate slots refer to their surviving designs and drop obsolete reprint identities',()=>{
  const hound=data.cards.find(c=>c.number===111),land=data.cards.find(c=>c.number===187);
