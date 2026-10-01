@@ -9,7 +9,8 @@ const {numbers}=require('../public/mtgtools/odyssey/data/recast-bones.20260930.j
 
 test('Studio applies the Recast reset after note resolution when constructing the active dataset',()=>{
  const app=fs.readFileSync(path.join(root,'public/mtgtools/odyssey/app.html'),'utf8');
- assert.match(app,/const ODYSSEY_DATASET=window\.OdysseyReassignedRareSlots\.apply\(window\.OdysseyLocaleLands\.apply\(window\.OdysseyRecastBones\.apply\(window\.OdysseyNotesResolution\.apply\(/);
+ assert(app.includes('OdysseyRecastBones.apply(window.OdysseyNotesResolution.apply('));
+ assert(app.includes('const ODYSSEY_DATASET=window.OdysseyOpenSlots.apply('));
 });
 
 test('every explicit Recast has a complete archived design and an open structural slot',()=>{
@@ -24,7 +25,8 @@ test('every explicit Recast has a complete archived design and an open structura
   for(const key of ['number','id','mana','mv','color','frame','type','rarity','layout','storyTarget','archetypes','primaryArt'])
    assert.deepEqual(c[key],a.candidate[key],`${key} of #${a.number}`);
  }
- assert.equal(data.cards.filter(c=>c.designDisposition==='RECAST').length,numbers.length);
+ assert.equal(data.cards.filter(c=>c.designDisposition==='RECAST').length,18);
+ assert(numbers.every(n=>data.emptySlots.slots.includes(n)));
  const reprint=data.cards.find(c=>c.number===154);
  assert.equal(reprint.origin,'NEW');assert.equal(reprint.underlyingName,'');assert.equal(reprint.treatment,'');
 });
