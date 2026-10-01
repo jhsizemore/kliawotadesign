@@ -34,7 +34,7 @@ function esc(value){return String(value==null?'':value).replace(/[&<>"']/g,c=>({
 function datasetVersion(){return String(root.ODYSSEY_DATASET?.datasetVersion||'unversioned')}
 function storageKey(){return STORAGE_PREFIX+':'+datasetVersion()}
 function baseId(n){const b=baseCard(Number(n))||{};return String(b.id||b.cardId||('ODY-'+String(n).padStart(3,'0')))}
-function cardName(n){const m=model(Number(n));return String(m?.displayName||m?.name||('Card '+n))}
+function cardName(n){const m=model(Number(n));return String(m?.displayName||m?.name||m?.placeholder?.label||('Card '+n))}
 function clone(value){return value==null?value:JSON.parse(JSON.stringify(value))}
 function cleanObject(value){return value&&typeof value==='object'&&!Array.isArray(value)?value:{}}
 
@@ -109,7 +109,7 @@ function recordFor(n){
   n=Number(n);return {
     schema:SCHEMA,datasetVersion:datasetVersion(),cardId:baseId(n),number:n,name:cardName(n),
     artState:artState(n),confidence:confidence(n),confidenceExplicit:confidenceExplicit(n),workState:confidenceLabel(confidence(n)),
-    cycle:cycleKey(n),suite:suiteKey(n),changes:clone(cleanObject(overrides[n])),art:artSnapshot(n),
+    cycle:cycleKey(n),suite:suiteKey(n),changes:clone(Object.assign({},cleanObject(overrides[n]),baseCard(n)?.placeholder?{changeStatus:model(n).changeStatus}:{})),art:artSnapshot(n),
     updatedAt:new Date().toISOString()
   };
 }
@@ -132,9 +132,9 @@ async function request(method,body){
 }
 function mergeRemoteIntoEmptyLocal(record){
   const n=Number(record.number);if(!cardByNum[n]||record.datasetVersion!==datasetVersion())return;
-  const remoteChanges=cleanObject(record.changes),localChanges=cleanObject(overrides[n]);
-  if(!Object.keys(localChanges).length&&Object.keys(remoteChanges).length){
-    const m=model(n);Object.assign(m,clone(remoteChanges));diffOverride(n,m);
+  const remoteChanges=cleanObject(root.OdysseyOpenSlots?root.OdysseyOpenSlots.remoteChanges(record,baseCard(n),localStorage,datasetVersion()):record.changes),localChanges=cleanObject(overrides[n]);
+  if((!Object.keys(localChanges).length||baseCard(n)?.placeholder)&&Object.keys(remoteChanges).length){
+    const m=model(n);Object.assign(m,clone(Object.fromEntries(Object.entries(remoteChanges).filter(([key])=>!Object.prototype.hasOwnProperty.call(localChanges,key)))));diffOverride(n,m);
   }
   if(!state.cards[n]&&ART_STATES.includes(record.artState))state.cards[n]={artState:record.artState,updatedAt:record.updatedAt||new Date().toISOString()};
   if(record.confidenceExplicit===true&&!confidenceExplicit(n)){
