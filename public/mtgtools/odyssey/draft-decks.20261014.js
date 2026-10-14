@@ -14,6 +14,7 @@
   Object.freeze(DECKS);
   const ORIGIN = root.location.protocol === 'https:' ? root.location.origin : 'https://kliawota.design';
   const SCALE = 63 * 96 / 25.4 / 378;
+  const PRINT_PDF_URL = 'https://kliawota.design/mtgtools/odyssey/downloads/Odyssey_Four_Draft_Decks_Studio_2026-10-14.pdf';
   const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
   const cssSafe = value => String(value).replace(/<\/style/gi, '<\\/style');
   const scriptSafe = value => JSON.stringify(value).replace(/</g, '\\u003c');
@@ -92,13 +93,13 @@
   }
   function cardSnapshot(shell, model, edgePaints) {
     const clone = shell.cloneNode(true);
-    // The capture shell fixes transform:none inline with !important. Set the
-    // physical export transform inline too, so native capture geometry cannot
-    // override the 63 x 88 mm card in the downloaded file.
+    // Zoom scales both layout and paint. Chromium otherwise fragments a
+    // transformed 528px layout box before painting its 88mm card.
     clone.style.setProperty('position', 'absolute', 'important');
     clone.style.setProperty('left', '0', 'important');
     clone.style.setProperty('top', '0', 'important');
-    clone.style.setProperty('transform', 'scale(' + SCALE + ')', 'important');
+    clone.style.setProperty('transform', 'none', 'important');
+    clone.style.setProperty('zoom', String(SCALE), 'important');
     clone.style.setProperty('transform-origin', '0 0', 'important');
     clone.querySelectorAll('.art-options-trigger').forEach(node => node.remove());
     const originals = [...shell.querySelectorAll('img')];
@@ -163,8 +164,8 @@
       .od-deck-page>header{position:absolute;left:10.5mm;top:5mm;font:9pt Arial,sans-serif;color:#333}
       .od-deck-page>footer{position:absolute;left:10.5mm;bottom:5mm;font:7pt Arial,sans-serif;color:#555}
       .od-deck-grid{display:grid;grid-template-columns:repeat(3,63mm);grid-template-rows:repeat(3,88mm);width:189mm;height:264mm;gap:0}
-      .od-deck-slot{box-sizing:border-box;position:relative;width:63mm;height:88mm;outline:.15mm solid #777;overflow:hidden}
-      .od-deck-slot>.card-shell{position:absolute!important;left:0!important;top:0!important;width:378px!important;height:528px!important;max-width:none!important;max-height:none!important;transform:scale(${SCALE})!important;transform-origin:0 0!important;filter:none!important;margin:0!important}
+      .od-deck-slot{box-sizing:border-box;position:relative;width:63mm;height:88mm;outline:.15mm solid #777;overflow:hidden;break-inside:avoid}
+      .od-deck-slot>.card-shell{position:absolute!important;left:0!important;top:0!important;width:378px!important;height:528px!important;max-width:none!important;max-height:none!important;transform:none!important;zoom:${SCALE}!important;transform-origin:0 0!important;filter:none!important;margin:0!important}
       .od-deck-slot>.card-shell>.render-card{width:378px!important;height:528px!important;inset:0!important}
       .od-deck-grid .art-options-trigger{display:none!important}
       *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
@@ -173,7 +174,7 @@
     const boot = `
       (function(){
         const status=document.getElementById('odDeckFileStatus'),button=document.getElementById('odDeckFilePrint');
-        button.onclick=()=>window.print();
+        button.onclick=()=>{location.href=${scriptSafe(PRINT_PDF_URL)};};
         const paints=${scriptSafe(edgePaints)};
         const drawArtEdgeSamples=${edgePaints.length ? '(' + root.drawArtEdgeSamples.toString() + ')' : 'null'};
         const images=[...document.images];
@@ -206,7 +207,7 @@
         }).catch(error=>{status.textContent='Could not paint current Studio artwork: '+error.message;button.disabled=true;window.__odysseyDeckSheetsReady=false;window.__odysseyDeckSheetsIssues=[error.message];});
       })();
     `;
-    return '<!doctype html><html lang="en" class="' + escapeHTML(document.documentElement.className) + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>Odyssey — four prepared draft decks</title><style>' + cssSafe(css) + '</style><style>' + cssSafe(exportCSS) + '</style></head><body class="' + escapeHTML(document.body.className) + '"><div class="od-deck-toolbar"><button id="odDeckFilePrint" disabled>Print / save PDF</button><span id="odDeckFileStatus">Loading current Studio artwork…</span></div>' + guide + sheets + '<script>' + boot.replace(/<\/script/gi, '<\\/script') + '</script></body></html>';
+    return '<!doctype html><html lang="en" class="' + escapeHTML(document.documentElement.className) + '"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>Odyssey — four prepared draft decks</title><style>' + cssSafe(css) + '</style><style>' + cssSafe(exportCSS) + '</style></head><body class="' + escapeHTML(document.body.className) + '"><div class="od-deck-toolbar"><a href="' + escapeHTML(PRINT_PDF_URL) + '" download>Download print PDF</a> <button id="odDeckFilePrint" disabled>Open print PDF</button><span id="odDeckFileStatus">Loading current Studio artwork…</span></div>' + guide + sheets + '<script>' + boot.replace(/<\/script/gi, '<\\/script') + '</script></body></html>';
   }
   function showIssues(issues) {
     const notes = [];
@@ -309,7 +310,7 @@
   function createDialog() {
     dialog = document.createElement('dialog'); dialog.id = 'odDraftDeckDialog';
     dialog.setAttribute('aria-labelledby', 'odDraftDeckTitle');
-    dialog.innerHTML = '<div class="od-draft-head"><div><h2 id="odDraftDeckTitle">Four Odyssey draft decks</h2><p>40 cards each · 23 spells + 17 lands · deck selection 14 October 2026</p></div><button class="btn secondary" data-close>Close</button></div><p>Prepare the cards using the text, artwork and crops currently shown in your Studio. Print A4, single-sided, at 100% / Actual Size, with Background graphics On and browser Headers and footers Off.</p><div class="od-draft-actions"><button class="btn" data-download disabled>Download prepared deck sheets</button><button class="btn secondary" data-print disabled>Print / save PDF</button><button class="btn secondary" data-retry>Prepare / retry</button></div><p data-status role="status" aria-live="polite"></p><div class="od-draft-lists"></div><iframe title="Prepared Odyssey deck sheets" hidden></iframe>';
+    dialog.innerHTML = '<div class="od-draft-head"><div><h2 id="odDraftDeckTitle">Four Odyssey draft decks</h2><p>40 cards each · 23 spells + 17 lands · deck selection 14 October 2026</p></div><button class="btn secondary" data-close>Close</button></div><p>The print PDF was prepared from Studio on 14 October 2026, with artwork and frames embedded. Download it directly, or prepare editable HTML sheets from your current Studio.</p><p>Prepare the cards using the text, artwork and crops currently shown in your Studio. Print A4, single-sided, at 100% / Actual Size, with Background graphics On and browser Headers and footers Off.</p><div class="od-draft-actions"><a class="btn" href="' + escapeHTML(PRINT_PDF_URL) + '" download>Download print PDF</a><button class="btn secondary" data-download disabled>Download prepared deck sheets</button><button class="btn secondary" data-print>Open print PDF</button><button class="btn secondary" data-retry>Prepare / retry</button></div><p data-status role="status" aria-live="polite"></p><div class="od-draft-lists"></div><iframe title="Prepared Odyssey deck sheets" hidden></iframe>';
     const lists = dialog.querySelector('.od-draft-lists');
     for (const deck of DECKS) {
       const section = document.createElement('section');
@@ -324,20 +325,13 @@
     dialog.querySelector('[data-close]').onclick = () => dialog.close();
     downloadButton.onclick = download;
     retryButton.onclick = () => prepare().catch(() => {});
-    printButton.onclick = () => {
-      if (!prepared) return;
-      if (!preview.contentWindow?.__odysseyDeckSheetsReady) {
-        status.textContent = 'The prepared preview is still loading its current Studio artwork. Wait for its ready message, then print.';
-        return;
-      }
-      preview.contentWindow.focus(); preview.contentWindow.print();
-    };
+    printButton.onclick = () => { root.open(PRINT_PDF_URL, '_blank', 'noopener'); };
     document.body.append(dialog);
   }
   function open() {
     if (!dialog) createDialog();
     if (!dialog.open) dialog.showModal();
-    if (!prepared && !pending) prepare().catch(() => {});
+    if (!prepared && !pending) { status.textContent = 'The print PDF is ready. It contains 160 cards and the Wooden Horse reverse on 21 A4 pages. Use Prepare / retry for current HTML sheets.'; printButton.disabled = false; }
   }
   function install(attempt = 0) {
     if (!root.model || !root.makeCardShell || !root.fitCardTypography || !document.querySelector('.top-actions')) {
@@ -346,7 +340,7 @@
     }
     if (document.getElementById('odDraftDeckButton')) return;
     const style = document.createElement('style'); style.id = 'odDraftDeckStyles';
-    style.textContent = '#odDraftDeckDialog{box-sizing:border-box;width:min(1200px,calc(100vw - 28px));max-height:92dvh;overflow:auto;border:1px solid #716446;border-radius:12px;padding:22px;background:#1b1e18;color:#efefe7;font:14px/1.45 system-ui,sans-serif}#odDraftDeckDialog::backdrop{background:#000b}#odDraftDeckDialog h2{margin:0;font-size:23px}#odDraftDeckDialog h3{margin:0 0 5px;font-size:17px}#odDraftDeckDialog p{margin:7px 0 12px}.od-draft-head{display:flex;align-items:start;justify-content:space-between;gap:18px}.od-draft-actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.od-draft-lists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.od-draft-lists>section{padding:15px;border:1px solid #484e40;border-radius:8px}.od-draft-lists ul{list-style:none;padding:0;margin:12px 0;font-size:13px}.od-draft-lists li{margin:3px 0}.od-draft-lists li>b{display:inline-block;min-width:18px}#odDraftDeckDialog [data-status][data-state=error]{color:#f1ba9f}#odDraftDeckDialog iframe{display:block;width:100%;height:460px;border:1px solid #777;background:white;margin-top:20px}#odDraftDeckDialog iframe[hidden]{display:none}@media(max-width:650px){.od-draft-lists{grid-template-columns:1fr}#odDraftDeckDialog{padding:15px}}';
+    style.textContent = '#odDraftDeckDialog{box-sizing:border-box;width:min(1200px,calc(100vw - 28px));max-height:92dvh;overflow:auto;border:1px solid #716446;border-radius:12px;padding:22px;background:#1b1e18;color:#efefe7;font:14px/1.45 system-ui,sans-serif}#odDraftDeckDialog a.btn{text-decoration:none;display:inline-flex;align-items:center}#odDraftDeckDialog::backdrop{background:#000b}#odDraftDeckDialog h2{margin:0;font-size:23px}#odDraftDeckDialog h3{margin:0 0 5px;font-size:17px}#odDraftDeckDialog p{margin:7px 0 12px}.od-draft-head{display:flex;align-items:start;justify-content:space-between;gap:18px}.od-draft-actions{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.od-draft-lists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.od-draft-lists>section{padding:15px;border:1px solid #484e40;border-radius:8px}.od-draft-lists ul{list-style:none;padding:0;margin:12px 0;font-size:13px}.od-draft-lists li{margin:3px 0}.od-draft-lists li>b{display:inline-block;min-width:18px}#odDraftDeckDialog [data-status][data-state=error]{color:#f1ba9f}#odDraftDeckDialog iframe{display:block;width:100%;height:460px;border:1px solid #777;background:white;margin-top:20px}#odDraftDeckDialog iframe[hidden]{display:none}@media(max-width:650px){.od-draft-lists{grid-template-columns:1fr}#odDraftDeckDialog{padding:15px}}';
     document.head.append(style);
     const button = document.createElement('button');
     button.id = 'odDraftDeckButton'; button.className = 'btn secondary'; button.textContent = 'Draft decks'; button.onclick = open;
