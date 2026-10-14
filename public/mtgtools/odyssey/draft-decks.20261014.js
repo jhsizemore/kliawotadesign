@@ -14,7 +14,7 @@
   Object.freeze(DECKS);
   const ORIGIN = root.location.protocol === 'https:' ? root.location.origin : 'https://kliawota.design';
   const SCALE = 63 * 96 / 25.4 / 378;
-  const PRINT_PDF_URL = 'https://kliawota.design/mtgtools/odyssey/downloads/Odyssey_Four_Draft_Decks_Studio_2026-10-14.pdf';
+  const PRINT_PDF_URL = 'https://kliawota.design/mtgtools/odyssey/downloads/Odyssey_Four_Draft_Decks_Varied_Lands_2026-10-14.pdf';
   const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[c]);
   const cssSafe = value => String(value).replace(/<\/style/gi, '<\\/style');
   const scriptSafe = value => JSON.stringify(value).replace(/</g, '\\u003c');
@@ -310,7 +310,7 @@
   function createDialog() {
     dialog = document.createElement('dialog'); dialog.id = 'odDraftDeckDialog';
     dialog.setAttribute('aria-labelledby', 'odDraftDeckTitle');
-    dialog.innerHTML = '<div class="od-draft-head"><div><h2 id="odDraftDeckTitle">Four Odyssey draft decks</h2><p>40 cards each · 23 spells + 17 lands · deck selection 14 October 2026</p></div><button class="btn secondary" data-close>Close</button></div><p>The print PDF was prepared from Studio on 14 October 2026, with artwork and frames embedded. Download it directly, or prepare editable HTML sheets from your current Studio.</p><p>Prepare the cards using the text, artwork and crops currently shown in your Studio. Print A4, single-sided, at 100% / Actual Size, with Background graphics On and browser Headers and footers Off.</p><div class="od-draft-actions"><a class="btn" href="' + escapeHTML(PRINT_PDF_URL) + '" download>Download print PDF</a><button class="btn secondary" data-download disabled>Download prepared deck sheets</button><button class="btn secondary" data-print>Open print PDF</button><button class="btn secondary" data-retry>Prepare / retry</button></div><p data-status role="status" aria-live="polite"></p><div class="od-draft-lists"></div><iframe title="Prepared Odyssey deck sheets" hidden></iframe>';
+    dialog.innerHTML = '<div class="od-draft-head"><div><h2 id="odDraftDeckTitle">Four Odyssey draft decks</h2><p>40 cards each · 23 spells + 17 lands · deck selection 14 October 2026</p></div><button class="btn secondary" data-close>Close</button></div><p>The print PDF was prepared from Studio on 14 October 2026, with artwork and frames embedded. All 16 chosen basic-land versions and their saved crops are included. Download it directly, or prepare editable HTML sheets from your current Studio.</p><p>Prepare the cards using the text, artwork and crops currently shown in your Studio. Print A4, single-sided, at 100% / Actual Size, with Background graphics On and browser Headers and footers Off.</p><div class="od-draft-actions"><a class="btn" href="' + escapeHTML(PRINT_PDF_URL) + '" download>Download print PDF</a><button class="btn secondary" data-download disabled>Download prepared deck sheets</button><button class="btn secondary" data-print>Open print PDF</button><button class="btn secondary" data-retry>Prepare / retry</button></div><p data-status role="status" aria-live="polite"></p><div class="od-draft-lists"></div><iframe title="Prepared Odyssey deck sheets" hidden></iframe>';
     const lists = dialog.querySelector('.od-draft-lists');
     for (const deck of DECKS) {
       const section = document.createElement('section');
@@ -331,7 +331,7 @@
   function open() {
     if (!dialog) createDialog();
     if (!dialog.open) dialog.showModal();
-    if (!prepared && !pending) { status.textContent = 'The print PDF is ready. It contains 160 cards and the Wooden Horse reverse on 21 A4 pages. Use Prepare / retry for current HTML sheets.'; printButton.disabled = false; }
+    if (!prepared && !pending) { status.textContent = 'The print PDF is ready, with varied basic-land artwork. It contains 160 cards and the Wooden Horse reverse on 21 A4 pages. Use Prepare / retry for current HTML sheets.'; printButton.disabled = false; }
   }
   function install(attempt = 0) {
     if (!root.model || !root.makeCardShell || !root.fitCardTypography || !document.querySelector('.top-actions')) {
