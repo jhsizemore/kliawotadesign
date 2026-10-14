@@ -52,7 +52,7 @@
       const syncCore = '<script src="./art-sync-core.js?v=20260921-1"><' + '/script>';
       const syncScript = '<script src="./art-sync.js?v=20260921-1"><' + '/script>';
       const mount = '<script>document.addEventListener("DOMContentLoaded",function(){try{OdysseyPolish.install();OdysseyArtSync.mount(ODYSSEY_ART_STATE);}catch(error){console.error("Odyssey continuity tools:",error);if(window.toast)toast("Device tools did not start; local editor is still available.");}},{once:true});<' + '/script>';
-      const draftDeckScript = '<script src="./draft-decks.20261014.js?v=20261014a"><' + '/script>';
+      const draftDeckScript = '<script src="./draft-decks.20261014.js?v=20261014b"><' + '/script>';
       markup = markup.replace('</body>', frameScript + artworkScript + transferMount + mobileScript + polishScript + mechanicsScript + syncCore + syncScript + mount + draftDeckScript + '</body>');
       document.open();
       document.write(markup);

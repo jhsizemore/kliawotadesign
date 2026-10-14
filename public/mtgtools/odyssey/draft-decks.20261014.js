@@ -92,6 +92,14 @@
   }
   function cardSnapshot(shell, model, edgePaints) {
     const clone = shell.cloneNode(true);
+    // The capture shell fixes transform:none inline with !important. Set the
+    // physical export transform inline too, so native capture geometry cannot
+    // override the 63 x 88 mm card in the downloaded file.
+    clone.style.setProperty('position', 'absolute', 'important');
+    clone.style.setProperty('left', '0', 'important');
+    clone.style.setProperty('top', '0', 'important');
+    clone.style.setProperty('transform', 'scale(' + SCALE + ')', 'important');
+    clone.style.setProperty('transform-origin', '0 0', 'important');
     clone.querySelectorAll('.art-options-trigger').forEach(node => node.remove());
     const originals = [...shell.querySelectorAll('img')];
     clone.querySelectorAll('img').forEach((image, index) => {
