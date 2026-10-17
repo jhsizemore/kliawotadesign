@@ -1,9 +1,11 @@
 {
   "app": "djhunter-wedding",
-  "version": "171026-v1",
-  "builtAt": "2026-10-16T10:33:34.608Z",
-  "snapshotAt": "2026-10-16T10:26:29.894810Z",
-  "tracks": 972,
-  "playlists": 5,
-  "dataSha256": "f70effaef48f2595532a61b9a2f9648fb05881dacb05b22d55a7aa572d2898ca"
+  "version": "171026-v2-mobile",
+  "builtAt": "2026-10-17T01:35:13.219Z",
+  "snapshotAt": "2026-10-17T01:24:36.050649Z",
+  "tracks": 1956,
+  "playlists": 122,
+  "mainPlayOrder": 172,
+  "requestsAndOriginals": 1263,
+  "dataSha256": "248107162d5b19adffc10f656f7f3cc216260debf45d3494b69fb2d6370aa667"
 }

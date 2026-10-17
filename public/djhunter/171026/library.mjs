@@ -1,19 +1,32 @@
 export const normalize = value => String(value ?? '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase().replace(/[’‘]/g, "'");
 export const formatDuration = value => Number.isFinite(value) && value > 0 ? `${Math.floor(Math.round(value) / 60)}:${String(Math.round(value) % 60).padStart(2, '0')}` : '—';
 const collator = new Intl.Collator('en', { sensitivity: 'base', numeric: true });
+export function collectionViews(data) {
+  return [...data.playlists, ...(data.views || []).filter(view => !data.playlists.some(p => p.id === view.id))];
+}
+export function mainPlaylistId(data) {
+  const collections = collectionViews(data);
+  return collections.some(p => p.id === data.presentation?.mainPlaylistId) ? data.presentation.mainPlaylistId : data.rootPlaylistId;
+}
+export function requestsPlaylistId(data) {
+  return collectionViews(data).some(p => p.id === data.presentation?.requestPlaylistId) ? data.presentation.requestPlaylistId : null;
+}
 export function validateLibrary(data) {
   if (data?.schemaVersion !== 1 || !Array.isArray(data.tracks) || !Array.isArray(data.playlists)) throw new Error('Unsupported library');
   const ids = new Set(data.tracks.map(t => t.id));
   if (ids.size !== data.tracks.length || !data.playlists.some(p => p.id === data.rootPlaylistId)) throw new Error('Invalid library identities');
-  if (data.playlists.some(p => !Array.isArray(p.trackIds) || new Set(p.trackIds).size !== p.trackIds.length || p.trackIds.some(id => !ids.has(id)))) throw new Error('Invalid playlist memberships');
+  if (data.views !== undefined && !Array.isArray(data.views)) throw new Error('Invalid collection views');
+  if (collectionViews(data).some(p => !Array.isArray(p.trackIds) || new Set(p.trackIds).size !== p.trackIds.length || p.trackIds.some(id => !ids.has(id)))) throw new Error('Invalid playlist memberships');
   return data;
 }
 export function selectTracks(data, state, shortlist = {}) {
-  const playlist = data.playlists.find(p => p.id === state.playlist) || data.playlists.find(p => p.id === data.rootPlaylistId);
+  const collections = collectionViews(data);
+  const playlist = collections.find(p => p.id === state.playlist) || collections.find(p => p.id === data.rootPlaylistId);
   const order = state.playlist === 'shortlist' ? Object.keys(shortlist).filter(id => shortlist[id]?.starred).sort((a, b) => (shortlist[a].addedAt || 0) - (shortlist[b].addedAt || 0)) : playlist.trackIds;
   const positions = new Map(order.map((id, i) => [id, i]));
   const queries = normalize(state.q).trim().split(/\s+/).filter(Boolean);
   const names = new Map(data.playlists.map(p => [p.id, p.name]));
+  const viewNames = (data.views || []).map(view => ({ name: view.name, ids: new Set(view.trackIds) }));
   const min = state.min === '' ? null : Number(state.min);
   const max = state.max === '' ? null : Number(state.max);
   const rows = data.tracks.filter(t => {
@@ -22,7 +35,7 @@ export function selectTracks(data, state, shortlist = {}) {
     if (max !== null && (!Number.isFinite(t.bpm) || t.bpm > max)) return false;
     if (state.key && t.key !== state.key) return false;
     if (state.genre && t.genre !== state.genre) return false;
-    const haystack = normalize([t.title, t.artist, t.remixer, t.version, t.album, t.genre, t.year, ...(t.playlistIds || []).map(id => names.get(id) || '')].join(' '));
+    const haystack = normalize([t.title, t.artist, t.remixer, t.version, t.album, t.genre, t.year, ...(t.playlistIds || []).map(id => names.get(id) || ''), ...viewNames.filter(view => view.ids.has(t.id)).map(view => view.name)].join(' '));
     return queries.every(q => haystack.includes(q));
   });
   const sort = state.sort || 'order', direction = state.dir === 'desc' ? -1 : 1;
