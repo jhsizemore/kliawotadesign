@@ -1,0 +1,323 @@
+{
+  "reviewedAt": "2026-10-19",
+  "timezone": "Pacific/Efate",
+  "projects": [
+    {
+      "id": "odyssey",
+      "title": "The Odyssey",
+      "status": "Public preview · Set unreleased",
+      "description": "World literature through world art, reimagined as Magic. A fan set in development toward a planned January 2027 reveal.",
+      "href": "/mtgtools/Odyssey/scry/",
+      "tools": [
+        {
+          "label": "Odyssey Studio",
+          "href": "/mtgtools/odyssey/"
+        },
+        {
+          "label": "Landscape library",
+          "href": "/mtgtools/odyssey/landscape-library.html"
+        },
+        {
+          "label": "Biome atlas",
+          "href": "/mtgtools/odyssey/biome-atlas.html"
+        }
+      ]
+    },
+    {
+      "id": "histomaps",
+      "title": "Histomaps",
+      "status": "Public preview",
+      "description": "History seen as flowing streams, with interactive timelines and mobile reading experiments.",
+      "href": "https://histomaps.org/"
+    },
+    {
+      "id": "star-wars-histomap",
+      "title": "Star Wars Histomap",
+      "status": "Public fan project",
+      "description": "The rise and fall of galactic powers, alongside the stories that shape them.",
+      "href": "https://histomaps.org/starwars/"
+    },
+    {
+      "id": "port-vila",
+      "title": "Port Vila Sandbox",
+      "status": "Public prototype",
+      "description": "An interactive 3D space for exploring the city, planning layers and possible futures.",
+      "href": "/portvilasandbox/"
+    },
+    {
+      "id": "island-together",
+      "title": "Island Together",
+      "status": "Public playable prototype",
+      "description": "A cooperative Pacific climate-resilience game exploring shared resources, logistics and island scenarios.",
+      "href": "/climate-game/"
+    },
+    {
+      "id": "dj-radar",
+      "title": "DJ Radar",
+      "status": "Active development · Aggregate snapshot",
+      "description": "A music-discovery workflow for remixes, edits and mashups. The working catalogue remains private.",
+      "metric": {
+        "count": 2008,
+        "sourceCount": 7,
+        "asOf": "2026-10-19"
+      }
+    },
+    {
+      "id": "reality-fracture",
+      "title": "Reality Fracture Draft Companion",
+      "status": "Unreleased · Private prototype",
+      "description": "A visual Magic draft guide with card comparison, pool tracking and practice tools.",
+      "unreleased": true
+    },
+    {
+      "id": "tanna",
+      "title": "Vanuatu Tourism Map / Tanna Island Explorer",
+      "status": "Unreleased · Private prototype",
+      "description": "Source-led island maps, routes and terrain exploration, with trail accuracy still under review.",
+      "unreleased": true
+    },
+    {
+      "id": "pango",
+      "title": "Pango Field Atlas",
+      "status": "Unreleased · Private prototype",
+      "description": "An editable outdoor map exploring coastal places and reef shapes. Map geometry remains provisional.",
+      "unreleased": true
+    },
+    {
+      "id": "constitution",
+      "title": "Vanuatu Constitution Reader",
+      "status": "Unreleased · Private prototype",
+      "description": "A connected reading experience with article navigation, reading trails and personal notes.",
+      "unreleased": true
+    },
+    {
+      "id": "tao",
+      "title": "Tao · A Quiet Reading",
+      "status": "Unreleased · Private prototype",
+      "description": "A calm, illustrated reader for the Tao Te Ching, with multiple translations.",
+      "unreleased": true
+    },
+    {
+      "id": "halloween",
+      "title": "Halloween Performance Atlas",
+      "status": "Unreleased · Private prototype",
+      "description": "An illustrated atlas for themed music collections and performance worlds.",
+      "unreleased": true
+    },
+    {
+      "id": "fakebook",
+      "title": "Guitar Fakebook",
+      "status": "Unreleased · Local prototype",
+      "description": "A performance songbook with transposition, capo controls, imports and saved sets.",
+      "unreleased": true
+    },
+    {
+      "id": "beowulf",
+      "title": "Beowulf",
+      "status": "In development",
+      "description": "A further Universes Eternal literary Magic fan-set project. No release date announced here.",
+      "unreleased": true
+    }
+  ],
+  "posts": [
+    {
+      "id": "2026-08-25",
+      "from": "2026-08-19",
+      "through": "2026-08-25",
+      "title": "A small home for the work",
+      "publishedAt": "2026-10-19",
+      "retrospective": true,
+      "paragraphs": [
+        "The Kliawota site took shape as a compact digital business card. The 24 August launch brought together the coral mark, a high-resolution teal background, contact details and a small set of work and information links. The same day's revisions explored several ways for the background to respond to scrolling, before settling on a pixel-mosaic transition. Initial image loading also received a specific repair.",
+        "Alongside that portfolio work, Histomap development concentrated on how to read a stream of history: exact-year event positions, persistent markers and labels, and the relationship between the chart and its visual texture. The shared design problem was making a strong visual idea useful at the scale of an actual screen."
+      ],
+      "status": "The Kliawota homepage and Histomaps were public work in progress. The mobile release belongs to the following week.",
+      "sources": [
+        {
+          "label": "Homepage launch",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/ce57de8f3ce010493df0cee20533751c65e1d340"
+        },
+        {
+          "label": "Histomaps journal",
+          "href": "https://github.com/jhsizemore/Histomaps/commit/ad6159eaff0afbcfa3a23141713830c68b43e7b0"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-01",
+      "from": "2026-08-26",
+      "through": "2026-09-01",
+      "title": "History that works in the hand",
+      "publishedAt": "2026-10-19",
+      "retrospective": true,
+      "paragraphs": [
+        "Histomaps moved from a mobile redesign into a public mobile preview on 28 August. The documented changes included lifelines and biography cards, giving readers ways to follow individual people alongside the larger historical streams. Those additions made the chart less dependent on seeing everything at once.",
+        "The portfolio also received a clearer statement of its purpose on 31 August, with revised positioning and public metadata. The background reveal was adjusted so that the first tiles were already active when the page opened. These were small changes to first impressions: help a visitor understand the work quickly, then make the visual experience feel responsive from the start."
+      ],
+      "status": "Histomaps had a public mobile preview by 28 August. A preview is an invitation to explore work in progress, rather than a claim that development is finished.",
+      "sources": [
+        {
+          "label": "Mobile preview",
+          "href": "https://github.com/jhsizemore/Histomaps/commit/e45929c904ddb7fe3ac4b669dec3b9614db4eadf"
+        },
+        {
+          "label": "Portfolio positioning",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/e795e238b7d9feb8f718ebf43c9b43d519845703"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-08",
+      "from": "2026-09-02",
+      "through": "2026-09-08",
+      "title": "A timeline for imagined worlds",
+      "publishedAt": "2026-10-19",
+      "retrospective": true,
+      "paragraphs": [
+        "The historical-stream approach expanded into Star Wars. A public repository release was recorded on 5 September, followed by canon lifelines, faction insignia and a stream-first interface on 6 September. Films and television stories gained their own lane, while the next two days brought mobile refinements, shareable poster assets and concise story and character synopses.",
+        "The useful distinction is between a visual history and a list of events. Streams can show changing power and continuity, while story summaries provide points of entry. This week’s recorded work belongs to that ongoing experiment in reading a large narrative through a compact interactive chart. The public project now has its own canonical route and a clear place in the portfolio."
+      ],
+      "status": "Star Wars Histomap was published as a public fan project. A separate private hosted prototype is not the public destination linked from Projects.",
+      "sources": [
+        {
+          "label": "Star Wars publication",
+          "href": "https://github.com/jhsizemore/Histomaps/commit/983b1510c19e1caf0d3b8c388583ef6218730e4b"
+        },
+        {
+          "label": "Story synopses",
+          "href": "https://github.com/jhsizemore/Histomaps/commit/396f0ff5555540a0e60a36d4872f0aecb083b985"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-15",
+      "from": "2026-09-09",
+      "through": "2026-09-15",
+      "title": "From maps to places you can explore",
+      "publishedAt": "2026-10-19",
+      "retrospective": true,
+      "paragraphs": [
+        "A Port Vila Sandbox hosted beta entered the public repository on 11 September in Vanuatu time. Its early changes built a geographic skeleton: terrain, harbour water, roads, building identity and street-life layers. By 15 September, conversation records also described local 3D and planning work. The audience-facing idea was to make the city something people could explore and use to discuss possibilities, rather than only a finished illustration.",
+        "A separate strand began on 15 September with the private Reality Fracture Draft Companion. Its brief centred on visual card comparison, tracking a draft pool and improving a set of ratings over time. These projects serve different audiences, but both use an interface to make a complicated collection easier to inspect. The Sandbox beta in the public repository and the private draft tool were at different stages; they should not be given the same release label."
+      ],
+      "status": "The Sandbox had a public-repository beta; its live publication was explicitly verified on 18 September. Reality Fracture remained a private prototype.",
+      "sources": [
+        {
+          "label": "Sandbox beta",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/d01f41e4c500fbbb654cf5976036540896ffc4c3"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-22",
+      "from": "2026-09-16",
+      "through": "2026-09-22",
+      "title": "A city model needs a dependable way in",
+      "publishedAt": "2026-10-19",
+      "retrospective": true,
+      "paragraphs": [
+        "The Port Vila Sandbox gained concept-plan layers on 17 September, followed by a public release and DUAP Vision work on 18 September in Vanuatu time. This gave the city model a clearer planning context: visitors could inspect ideas in relation to places, rather than view the model as a standalone scene.",
+        "The Odyssey Studio entered the public site on 17 September. The following days added artwork synchronization, a changing card skeleton, design references and persistent review notes. The result was a workshop for inspecting and revising the fan set, while the set itself remained in development.",
+        "On 22 September, attention turned to stability. The recorded repair addressed duplicate module loading, navigation state, delayed storage and graphics failures. It also provided a plan-view fallback when 3D could not start. That work changes what access means: a visitor should still have a useful route into the planning material when a device cannot render the full scene. The available checks did not establish a measured frame-rate improvement on real phones."
+      ],
+      "status": "Port Vila Sandbox was a public prototype by 18 September. The stability work had targeted checks; those checks should not be confused with a complete device-performance study.",
+      "sources": [
+        {
+          "label": "Odyssey Studio",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/7233182cb59d80f0209fab045ab418ecbcdefafc"
+        },
+        {
+          "label": "Sandbox recovery",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/170547855a896976b567f8218c687d14b1ab5405"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-29",
+      "from": "2026-09-23",
+      "through": "2026-09-29",
+      "title": "Grounding the worlds in evidence",
+      "publishedAt": "2026-10-19",
+      "retrospective": true,
+      "paragraphs": [
+        "Port Vila work became more specific during 23–25 September: floor-level evidence, lagoons, scalable tree detail, the northern and airport area, and roof forms all received attention. The recorded changes reflect the difference between a convincing overview and a model whose individual places can withstand closer inspection.",
+        "The Odyssey's late-September work developed its artwork and landscape tools, including a browsable landscape library and biome atlas. Island Together also reached a private hosted prototype on 29 September. Across these strands, the artifacts show an interest in systems that can be explored: a city with planning evidence, a literary fan set with an art vocabulary, and a cooperative game built around Pacific climate resilience. The public game build followed in the next period."
+      ],
+      "status": "The Sandbox and Odyssey's development tools were public work in progress. The Odyssey set remained unreleased; Island Together's 29 September hosted version was private.",
+      "sources": [
+        {
+          "label": "Place evidence",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/dd6f37fe34d7f36a46e4e3772af4ddf96c408fb0"
+        },
+        {
+          "label": "Odyssey gallery",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/f94b99235101974a2e6bd63d7a7a76073f146dc7"
+        },
+        {
+          "label": "Biome atlas",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/0ac9c6104d06f3cfdc5472252d2476c04db46603"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-06",
+      "from": "2026-09-30",
+      "through": "2026-10-06",
+      "title": "Opening the workshop door",
+      "publishedAt": "2026-10-19",
+      "retrospective": true,
+      "paragraphs": [
+        "The homepage gained its Ongoing projects menu on 30 September in Vanuatu time. The same day's work brought the public Island Together game into the site and added a dated DJ Radar aggregate, alongside established social and community links. The game continued through revisions to runtime behaviour, island scenarios and logistics. The menu gave these different projects a shared point of entry.",
+        "Private prototypes also developed: Tao became an illustrated reader on 3–4 October, with all 81 chapters and a choice of translations; the Halloween Performance Atlas was staged on 4 October; and the local Guitar Fakebook gained performance-oriented controls such as transposition, capo settings and saved sets. Their inclusion in this retrospective describes development, without opening access to private working material."
+      ],
+      "status": "Island Together was a public playable prototype. Tao, the Halloween atlas and Guitar Fakebook remained unreleased prototypes. DJ Radar's public figure was a dated aggregate, not its private catalogue.",
+      "sources": [
+        {
+          "label": "Projects menu",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/73f04d9bd516e9a24a19dbae5e43df88afd87c74"
+        },
+        {
+          "label": "Island Together",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/56388512c1f0b813c0f37c04e605d21303753890"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-13",
+      "from": "2026-10-07",
+      "through": "2026-10-13",
+      "title": "Readers, reefs and honest status",
+      "publishedAt": "2026-10-19",
+      "retrospective": true,
+      "paragraphs": [
+        "On 7 October in Vanuatu time, Pango Field Atlas work produced an editable outdoor map and reef shapes. The geometry was provisional: approximate alignment and unmeasured depths should not become precise-looking claims simply because they appear on a map. A private Vanuatu Constitution reader was also staged that day, using a 2020 edition with later amendments explicitly not incorporated.",
+        "The existing project-refresh reviews on 7 and 13 October found newer DJ Radar aggregates and continuing work across the portfolio, but the attempted homepage writes were blocked. The public menu therefore still displayed its original 30 September snapshot. This is part of the development history too: an audit can find a change without successfully publishing it. No public release for the private readers or atlas is inferred from those reviews."
+      ],
+      "status": "Pango Field Atlas and the Constitution reader remained private prototypes. The older homepage metric was not silently relabelled as current."
+    },
+    {
+      "id": "2026-10-19",
+      "from": "2026-10-14",
+      "through": "2026-10-19",
+      "title": "Making the next step inspectable",
+      "publishedAt": "2026-10-19",
+      "retrospective": true,
+      "paragraphs": [
+        "The Odyssey's 14 October work added draft-deck and printable-card material to its public development tools. These provide ways to inspect and play with a set that is still in development toward its planned January 2027 reveal. A public Studio or showcase does not by itself mean the fan set has been released.",
+        "Vanuatu Tourism Map work then concentrated on source-led terrain, routes and trail accuracy. A private Tanna Island Explorer was staged on 18 October, with further review through 19 October. The mapping work remained a prototype, especially where trail geometry still needed checking. This retrospective closes with the portfolio inventory and weekly log taking shape: a way to follow what has changed, while keeping private prototypes and public previews clearly identified.",
+        "The 19 October inventory review also verified DJ Radar at 2,008 populated track/version records. Its seven sources describe the planned weekly rotation, not seven confirmed successful scans. Only this aggregate is presented publicly."
+      ],
+      "status": "The Odyssey set and Tanna project remained unreleased. This final backfill period ends on 19 October; future notes follow the Friday refresh cadence.",
+      "sources": [
+        {
+          "label": "Draft-deck tools",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/a81f21fe507dce1c9a2bd8c959fc4630b362bef9"
+        },
+        {
+          "label": "Printable playtest cards",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/db2a9eafbbdf30c384e425f4f8827980ab86ffd6"
+        }
+      ]
+    }
+  ]
+}

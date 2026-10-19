@@ -6,6 +6,8 @@
     "deploy": "npm run build:renderer && wrangler deploy",
     "dev": "wrangler dev",
     "build:renderer": "node scripts/build-odyssey-public-renderer.cjs",
+    "build:portfolio": "node scripts/build-portfolio.cjs",
+    "check:portfolio": "node scripts/build-portfolio.cjs --check && node tests/portfolio-content.test.cjs",
     "prepare": "npm run build:renderer",
     "test:island": "node tests/island-together-runtime.test.cjs"
   },

@@ -31,6 +31,9 @@ jobs:
       - name: Build Odyssey public renderer
         run: npm run build:renderer
 
+      - name: Verify portfolio content and archive
+        run: npm run check:portfolio
+
       - name: Verify Worker bundle
         run: npx wrangler deploy --dry-run
 
