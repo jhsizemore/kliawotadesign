@@ -18,6 +18,36 @@ export default {
         }
       });
     }
+    if (url.pathname === "/tanna") {
+      const canonicalUrl = new URL(request.url);
+      canonicalUrl.pathname = "/tanna/";
+      return Response.redirect(canonicalUrl, 308);
+    }
+    if (url.pathname.startsWith("/tanna/")) {
+      const upstreamUrl = new URL(request.url);
+      upstreamUrl.protocol = "https:";
+      upstreamUrl.hostname = "tanna-island-explorer.myriadthings.chatgpt.site";
+      upstreamUrl.port = "";
+      upstreamUrl.pathname = url.pathname.slice("/tanna".length) || "/";
+      const headers = new Headers(request.headers);
+      headers.delete("cookie");
+      headers.delete("authorization");
+      headers.delete("host");
+      headers.delete("referer");
+      const init = { method: request.method, headers, redirect: "manual" };
+      if (request.method !== "GET" && request.method !== "HEAD") init.body = request.body;
+      const upstream = await fetch(new Request(upstreamUrl, init));
+      if (request.method !== "HEAD" && upstream.headers.get("content-type")?.includes("text/html")) {
+        return new HTMLRewriter()
+          .on("head", {
+            element(element) {
+              element.prepend('<base href="/tanna/">', { html: true });
+            }
+          })
+          .transform(upstream);
+      }
+      return upstream;
+    }
     const response = await env.ASSETS.fetch(request);
     if ((url.pathname === "/mtgtools/odyssey" || url.pathname === "/mtgtools/odyssey/") &&
         response.headers.get("content-type")?.includes("text/html")) {
