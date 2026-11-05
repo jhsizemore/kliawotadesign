@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-10-30",
+  "reviewedAt": "2026-11-06",
   "timezone": "Pacific/Efate",
   "projects": [
     {
@@ -57,9 +57,9 @@
       "status": "Active development · Aggregate snapshot",
       "description": "A music-discovery workflow for remixes, edits and mashups. The working catalogue remains private.",
       "metric": {
-        "count": 2319,
+        "count": 2533,
         "sourceCount": 7,
-        "asOf": "2026-10-29"
+        "asOf": "2026-11-05"
       }
     },
     {
@@ -72,8 +72,8 @@
     {
       "id": "tanna",
       "title": "Vanuatu Tourism Map / Tanna Island Explorer",
-      "status": "Unreleased · Private prototype",
-      "description": "Source-led island maps, routes and terrain exploration, with trail accuracy still under review.",
+      "status": "In development · Public-site route committed, live unverified",
+      "description": "A source-led Tanna Island explorer of mapped places, terrain and walking routes. A site route is in the public codebase; live access and trail accuracy are still unverified.",
       "unreleased": true
     },
     {
@@ -351,6 +351,33 @@
         "Halloween research continued through discovering unusual contemporary dance tracks and exploring a geometric, half-face performance look. The larger Halloween site and Haunted Decks rules remained audience-facing intentions, but the available record does not establish that event interactions, the simulations or public routes were deployed and tested. Selection and design work are distinct from a finished live experience."
       ],
       "status": "Reality Fracture remained a private prototype; DJ Radar remains a private working catalogue represented here only by its aggregate. No Halloween platform launch or live-event outcome is claimed."
+    },
+    {
+      "id": "2026-11-06",
+      "from": "2026-10-31",
+      "through": "2026-11-06",
+      "title": "Bringing the island explorer closer to home",
+      "publishedAt": "2026-11-06",
+      "paragraphs": [
+        "Tanna Island Explorer moved from private staging into the public site's code during this period. On 2 November (Vanuatu time), the repository gained an explorer page and then a Worker route for /tanna/, followed by an ordering fix to route those requests through the Worker before static assets. The implementation is recorded in commits, but this review could not independently reach the deployed site. The route should not yet be described as a verified public launch, and mapped walking records still need source checks.",
+        "DJ Radar's private Remix Index advanced from 2,319 populated track/version-and-artist records in the 29 October snapshot to 2,533 in the latest bounded review. The maximum First Seen date is 5 November 2026. Settings still names seven planned rotation sources; that does not mean seven successful scans. The index represents recorded versions, not unique songs, and individual entries and acquisition research remain private.",
+        "The week's accessible evidence shows tangible work on island mapping and continued music-discovery maintenance, but not a verified new release for the wider prototype portfolio. Public tools and previews for The Odyssey remain separate from the unreleased fan set; Reality Fracture and the Halloween audience-system prototypes also retain their earlier status."
+      ],
+      "status": "Tanna routing is committed but live deployment and route behavior were not independently verified. DJ Radar's aggregate is verified as of 5 November. No Odyssey set release is claimed.",
+      "sources": [
+        {
+          "label": "Tanna explorer page",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/9d3c34e819151f26b161b2888edb3cfa1d848aec"
+        },
+        {
+          "label": "Tanna Worker route",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/52b768a3a334389c84d825d29bb9b1ab45dba1b3"
+        },
+        {
+          "label": "Route ordering fix",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/74399bcb57f5b4e0079ecebc5cebf5ee78538bbb"
+        }
+      ]
     }
   ]
 }
