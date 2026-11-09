@@ -1,0 +1,65 @@
+name: Port Vila architectural reference details
+on:
+  push:
+    branches: [port-vila-storefront-survey-2026-09-29]
+    paths: ['.github/workflows/port-vila-reference-details.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - run: python3 -m pip install --quiet requests beautifulsoup4 Pillow
+      - name: Recover a small named-building photo-walk subset
+        shell: bash
+        run: |
+          mkdir -p walk/images
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.parse import urljoin
+          from bs4 import BeautifulSoup
+          from PIL import Image,ImageOps,ImageDraw
+          import requests,json,io,hashlib,re,time
+          out=Path('walk');headers={'User-Agent':'PortVilaSandboxReferenceResearch/1.0'}
+          def get(url):
+            r=requests.get(url,headers=headers,timeout=18);r.raise_for_status();return r
+          gallery='https://www.pbase.com/bmcmorrow/efateportvila&page=4'
+          soup=BeautifulSoup(get(gallery).content,'html.parser');chosen=[];seen=set()
+          for a in soup.select('a[href]'):
+            if '/image/' not in a['href']:continue
+            im=a.find('img');caption=im.get('alt','') if im else a.get_text(' ',strip=True)
+            if not any(t in caption.lower() for t in ['olympic','mok store','early morning','main street','banque','chew store','fung kuei','downtown','bred','rossi']):continue
+            url=urljoin(gallery,a['href'])
+            if url in seen:continue
+            seen.add(url);chosen.append({'url':url,'caption':caption})
+            if len(chosen)>=14:break
+          pages=[];images=[]
+          for item in chosen:
+            url=item['url'];key='pbase-'+url.rsplit('/',1)[-1];rec={'key':key,'page_url':url,'retrieved':'2026-09-29','gallery_caption':item['caption'],'images':[]}
+            try:
+              soup=BeautifulSoup(get(url).content,'html.parser');rec['title']=soup.title.get_text(' ',strip=True);rec['text']=soup.get_text(' ',strip=True)[:10000]
+              og=soup.select_one('meta[property="og:image"]')
+              if not og:raise ValueError('No lead image')
+              target=urljoin(url,og['content']);rec['images']=[{'image_url':target,'alt':item['caption']}]
+              data=get(target).content
+              if len(data)>15000000:raise ValueError('Over preview research limit')
+              im=ImageOps.exif_transpose(Image.open(io.BytesIO(data))).convert('RGB');dims=list(im.size);im.thumbnail((1000,800));path=out/'images'/(key+'-00.jpg');im.save(path,quality=85)
+              images.append({'id':key+'-00','page_url':url,'image_url':target,'alt':item['caption'],'original_dimensions':dims,'sha256_original':hashlib.sha256(data).hexdigest(),'preview_file':str(path.relative_to(out)),'preview_dimensions':list(im.size)})
+            except Exception as e:rec['error']=str(e)
+            pages.append(rec);time.sleep(.2)
+          for start in range(0,len(images),12):
+            canvas=Image.new('RGB',(1440,840),'white');draw=ImageDraw.Draw(canvas)
+            for j,r in enumerate(images[start:start+12]):
+              im=Image.open(out/r['preview_file']);im.thumbnail((350,225));x=j%4*360;y=j//4*280;canvas.paste(im,(x+(350-im.width)//2,y));draw.text((x+4,y+232),r['id'],fill='black');draw.text((x+4,y+248),r['alt'][:45],fill='black')
+            canvas.save(out/f'contact-{start//12:02}.jpg',quality=88)
+          (out/'pages.json').write_text(json.dumps(pages,indent=2,ensure_ascii=False));(out/'images.json').write_text(json.dumps(images,indent=2,ensure_ascii=False));(out/'selection.json').write_text(json.dumps(chosen,indent=2))
+          print(json.dumps({'photo_pages':len(pages),'previews':len(images)},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: port-vila-olympic-photo-walk
+          path: walk/
+          retention-days: 7

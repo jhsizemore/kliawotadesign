@@ -1,15 +1,15 @@
 {
-  "version": "0.1.24",
-  "publishedAt": "2026-09-24T23:51:42.644Z",
+  "version": "0.1.25",
+  "publishedAt": "2026-09-29T01:15:00.000Z",
   "baseline": "cbd-demolition-2026-09-17.1",
-  "release": "downtown-aerial-1",
-  "note": "Refine 71 downtown roof palettes, selected roof forms, waterfront lawns and wooded areas using a user-supplied aerial estimated Q2 2025. Retain later demolition evidence, original foundations and saved proposals; northern expansion remains available.",
+  "release": "north-frontage-photo-1",
+  "note": "Partial photo-reference pass on Fung Kuei and Aircalin near the former Olympic clearance. Independent DUAP July 2025 report, page 22; no Street View imagery, current-occupancy claim, footprint, floor, foundation or demolition change.",
   "assets": [
     "assets/index-DtJow0-l.css",
-    "assets/index-iSZdlO1J.js",
-    "assets/research-CJAMIhjN.js",
-    "assets/research-data-DXfJnZDb.js",
-    "assets/vision-CScsXS3G.js"
+    "assets/index-storefront-1.js",
+    "assets/research-storefront-1.js",
+    "assets/research-data-storefront-1.js",
+    "assets/vision-storefront-1.js"
   ],
   "districtTiles": [
     "data/north-v1/-960_-5280-1e1d637cb5f7.json",

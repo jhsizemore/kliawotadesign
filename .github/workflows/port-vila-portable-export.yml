@@ -1,0 +1,48 @@
+name: Port Vila portable snapshot export
+on:
+  push:
+    branches: [port-vila-storefront-survey-2026-09-29]
+    paths: ['.github/workflows/port-vila-portable-export.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 3628fb1f5869ff0cf70e2f24bcecf9b859affe8e
+          persist-credentials: false
+      - name: Export application, data, source notes and verification fixtures
+        shell: bash
+        run: |
+          mkdir -p portable-payload/site/portvilasandbox portable-payload/source portable-payload/tests portable-payload/docs
+          cp -a public/portvilasandbox/. portable-payload/site/portvilasandbox/
+          git fetch --depth=1 origin 826e3f94535a11c1eec13d757ebc7caf6c80ea25
+          git show 826e3f94535a11c1eec13d757ebc7caf6c80ea25:public/portvilasandbox/index.html > portable-payload/site/portvilasandbox/live.html
+          git show 826e3f94535a11c1eec13d757ebc7caf6c80ea25:public/portvilasandbox/BUILD.json > portable-payload/site/portvilasandbox/BUILD-live.json
+          cp portable-payload/site/portvilasandbox/index.html portable-payload/site/portvilasandbox/draft.html
+          cp portable-payload/site/portvilasandbox/BUILD.json portable-payload/site/portvilasandbox/BUILD-draft.json
+          cp portable-payload/site/portvilasandbox/live.html portable-payload/site/portvilasandbox/index.html
+          cp portable-payload/site/portvilasandbox/BUILD-live.json portable-payload/site/portvilasandbox/BUILD.json
+          cp source/port-vila/*2026-09-29.json portable-payload/source/
+          cp scripts/*port-vila-storefront* portable-payload/source/
+          cp tests/port-vila-stability.test.mjs tests/port-vila-storefronts.test.mjs portable-payload/tests/
+          cp scripts/port-vila-stability-build.py portable-payload/source/
+          cp docs/port-vila* portable-payload/docs/
+          test ! -f LICENSE || cp LICENSE portable-payload/source/REPOSITORY-LICENSE.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,hashlib
+          root=Path('portable-payload')
+          meta={'exportedAt':'2026-09-29','liveCommit':'826e3f94535a11c1eec13d757ebc7caf6c80ea25','draftCommit':'3628fb1f5869ff0cf70e2f24bcecf9b859affe8e','draftStatus':'Draft PR 55; not published to live site','files':{str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in root.rglob('*') if p.is_file()}}
+          (root/'SNAPSHOT.json').write_text(json.dumps(meta,indent=2)+'\n')
+          print(json.dumps({'files':len(meta['files']),'bytes':sum(p.stat().st_size for p in root.rglob('*') if p.is_file())},indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: port-vila-portable-payload
+          path: portable-payload/
+          retention-days: 7
