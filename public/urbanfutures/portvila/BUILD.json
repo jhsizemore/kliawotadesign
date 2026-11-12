@@ -1,8 +1,8 @@
 {
-  "version": "0.1.26",
+  "version": "0.1.27",
   "project": "Port Vila CBD Redevelopment Simulator",
-  "release": "market-people-mural-2026-11-12",
-  "publishedAt": "2026-11-12T02:38:08.722Z",
+  "release": "market-unique-people-2026-11-12",
+  "publishedAt": "2026-11-12T03:03:54.231Z",
   "basePath": "/urbanfutures/portvila/",
   "baseline": "cbd-demolition-2026-09-17.1",
   "features": [
@@ -10,7 +10,10 @@
     "Guided navigation",
     "Photo-informed Market House and surrounding frontages",
     "Four long trading rows",
-    "16 dedicated market shoppers and vendors, including seated figures",
+    "52 original market character cutouts",
+    "44 unique market placements with no repeated individual",
+    "Six distinct seated vendors",
+    "Caregiver carrying a baby",
     "Market crowd excludes retired placeholder artwork",
     "Mural photograph with cast shadows removed",
     "Market road vehicles and minibus-bay animation",

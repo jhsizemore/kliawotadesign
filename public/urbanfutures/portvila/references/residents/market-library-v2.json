@@ -1,0 +1,929 @@
+{
+  "schema": 1,
+  "title": "Port Vila market people: unique cast",
+  "source": "Original fictional AI-generated people, informed by the user’s 10 November 2026 Market House photographs; poses illustrate documented market activities and plausible everyday interactions. Expanded to 52 distinct original cutouts so the market can place 44 figures without repeating an identity; one caregiver includes a baby.",
+  "references": [
+    {
+      "url": "https://pacificfarmers.com/wp-content/uploads/2017/04/Better-postharvest-handling-for-Samoan-smallholder-farmers-A-practical-guide.pdf",
+      "note": "Page 32 specifically documents Port Vila produce bundling and wrapping; page 37 documents produce washing."
+    },
+    {
+      "url": "https://www.vanuatu.travel/en/about-vanuatu/handicrafts",
+      "note": "Vanuatu Tourism Office context for mission dresses and woven pandanus bags; the produce hall remains a produce setting."
+    }
+  ],
+  "sheets": [
+    {
+      "file": "port-vila-market-people-v1.png",
+      "cols": 4,
+      "rows": 4,
+      "cells": [
+        {
+          "id": "market-elder-seated-greens",
+          "lifeStage": "elder",
+          "pose": "seated",
+          "facing": "right",
+          "heightM": 1.23,
+          "marketRole": "vendor",
+          "task": "Sorting leafy produce on a white plastic stool",
+          "column": 0,
+          "row": 0,
+          "crop": [
+            0,
+            28,
+            280,
+            338
+          ]
+        },
+        {
+          "id": "market-arranging-greens",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "heightM": 1.64,
+          "marketRole": "vendor",
+          "task": "Leaning forward to arrange leafy vegetables",
+          "column": 1,
+          "row": 0,
+          "crop": [
+            280,
+            28,
+            281,
+            338
+          ]
+        },
+        {
+          "id": "market-counting-coins",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "front",
+          "heightM": 1.61,
+          "marketRole": "vendor",
+          "task": "Counting coins in one palm",
+          "column": 2,
+          "row": 0,
+          "crop": [
+            561,
+            28,
+            280,
+            338
+          ]
+        },
+        {
+          "id": "market-offering-bananas",
+          "lifeStage": "adult",
+          "pose": "talking",
+          "facing": "left",
+          "heightM": 1.65,
+          "marketRole": "vendor",
+          "task": "Offering a hand of green bananas",
+          "column": 3,
+          "row": 0,
+          "crop": [
+            841,
+            28,
+            281,
+            338
+          ]
+        },
+        {
+          "id": "market-elder-seated-basket",
+          "lifeStage": "elder",
+          "pose": "seated",
+          "facing": "right",
+          "heightM": 1.21,
+          "marketRole": "vendor",
+          "task": "Seated with a woven pandanus basket",
+          "column": 0,
+          "row": 1,
+          "crop": [
+            0,
+            375,
+            280,
+            341
+          ]
+        },
+        {
+          "id": "market-bundling-greens",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "heightM": 1.66,
+          "marketRole": "vendor",
+          "task": "Bundling leafy produce",
+          "column": 1,
+          "row": 1,
+          "crop": [
+            280,
+            375,
+            281,
+            341
+          ]
+        },
+        {
+          "id": "market-carrying-crate",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "front",
+          "heightM": 1.75,
+          "marketRole": "vendor",
+          "task": "Carrying a blue produce crate",
+          "column": 2,
+          "row": 1,
+          "crop": [
+            561,
+            375,
+            280,
+            341
+          ]
+        },
+        {
+          "id": "market-wrapping-roots",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "left",
+          "heightM": 1.62,
+          "marketRole": "vendor",
+          "task": "Wrapping produce in a broad leaf",
+          "column": 3,
+          "row": 1,
+          "crop": [
+            841,
+            375,
+            281,
+            341
+          ]
+        },
+        {
+          "id": "market-basket-walking",
+          "lifeStage": "adult",
+          "pose": "walking",
+          "facing": "left",
+          "heightM": 1.64,
+          "marketRole": "shopper",
+          "task": "Walking with a woven shopping basket",
+          "column": 0,
+          "row": 2,
+          "crop": [
+            0,
+            728,
+            280,
+            307
+          ]
+        },
+        {
+          "id": "market-bag-walking",
+          "lifeStage": "adult",
+          "pose": "walking",
+          "facing": "right",
+          "heightM": 1.74,
+          "marketRole": "shopper",
+          "task": "Walking with a reusable shopping bag",
+          "column": 1,
+          "row": 2,
+          "crop": [
+            280,
+            728,
+            281,
+            307
+          ]
+        },
+        {
+          "id": "market-elder-cane-shopping",
+          "lifeStage": "elder",
+          "pose": "walking",
+          "facing": "left",
+          "heightM": 1.57,
+          "marketRole": "shopper",
+          "task": "Shopping with a cane and light bag",
+          "column": 2,
+          "row": 2,
+          "crop": [
+            561,
+            728,
+            280,
+            307
+          ]
+        },
+        {
+          "id": "market-teen-boy-browsing",
+          "lifeStage": "teen",
+          "pose": "standing",
+          "facing": "left",
+          "heightM": 1.64,
+          "marketRole": "shopper",
+          "task": "Browsing produce",
+          "column": 3,
+          "row": 2,
+          "crop": [
+            841,
+            728,
+            281,
+            307
+          ]
+        },
+        {
+          "id": "market-mother-choosing",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "heightM": 1.64,
+          "marketRole": "shopper",
+          "task": "Pointing toward produce while carrying a cloth bag",
+          "column": 0,
+          "row": 3,
+          "crop": [
+            0,
+            1054,
+            280,
+            310
+          ]
+        },
+        {
+          "id": "market-child-fruit-bag",
+          "lifeStage": "child",
+          "pose": "standing",
+          "facing": "right",
+          "heightM": 1.19,
+          "marketRole": "shopper",
+          "task": "Accompanying an adult with a small fruit bag",
+          "column": 1,
+          "row": 3,
+          "crop": [
+            280,
+            1054,
+            281,
+            310
+          ]
+        },
+        {
+          "id": "market-teen-girl-browsing",
+          "lifeStage": "teen",
+          "pose": "standing",
+          "facing": "right",
+          "heightM": 1.59,
+          "marketRole": "shopper",
+          "task": "Browsing with a shoulder bag",
+          "column": 2,
+          "row": 3,
+          "crop": [
+            561,
+            1054,
+            280,
+            310
+          ]
+        },
+        {
+          "id": "market-elder-spring-onions",
+          "lifeStage": "elder",
+          "pose": "standing",
+          "facing": "right",
+          "heightM": 1.68,
+          "marketRole": "shopper",
+          "task": "Holding a bunch of spring onions",
+          "column": 3,
+          "row": 3,
+          "crop": [
+            841,
+            1054,
+            281,
+            310
+          ]
+        }
+      ]
+    },
+    {
+      "file": "port-vila-market-vendors-b-v1.png",
+      "cols": 4,
+      "rows": 3,
+      "cells": [
+        {
+          "id": "market-vendor-b-tomatoes",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "marketRole": "vendor",
+          "heightM": 1.62,
+          "task": "Woman about 45, broad face and close natural curls, faded coral floral island dress, leaning slightly forward to place a small bowl of tomatoes at waist height.",
+          "column": 0,
+          "row": 0,
+          "crop": [
+            52,
+            44,
+            228,
+            407
+          ]
+        },
+        {
+          "id": "market-vendor-b-greens",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "left",
+          "marketRole": "vendor",
+          "heightM": 1.68,
+          "task": "Tall slim woman about 35, hair in a low bun, mint blouse and burgundy long skirt, holding a leafy bundle in one hand and tying it with the other.",
+          "column": 1,
+          "row": 0,
+          "crop": [
+            351,
+            29,
+            211,
+            423
+          ]
+        },
+        {
+          "id": "market-vendor-b-roots",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "front",
+          "marketRole": "vendor",
+          "heightM": 1.73,
+          "task": "Man about 55, narrow face and short salt-and-pepper curls, worn blue short-sleeved shirt and dark shorts, carrying a woven basket of root vegetables at one hip.",
+          "column": 2,
+          "row": 0,
+          "crop": [
+            610,
+            28,
+            224,
+            423
+          ]
+        },
+        {
+          "id": "market-vendor-b-leaf-parcel",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "left",
+          "marketRole": "vendor",
+          "heightM": 1.58,
+          "task": "Short stocky woman about 50, short natural black curls, deep orange floral island dress, folding broad green leaves around a small produce bundle.",
+          "column": 3,
+          "row": 0,
+          "crop": [
+            923,
+            59,
+            183,
+            391
+          ]
+        },
+        {
+          "id": "market-vendor-b-crate",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "marketRole": "vendor",
+          "heightM": 1.77,
+          "task": "Lean man about 30, short hair and clean shaven face, plain olive T-shirt and tan shorts, carrying a blue perforated vegetable crate at waist height.",
+          "column": 0,
+          "row": 1,
+          "crop": [
+            59,
+            466,
+            209,
+            419
+          ]
+        },
+        {
+          "id": "market-vendor-b-bananas",
+          "lifeStage": "adult",
+          "pose": "talking",
+          "facing": "left",
+          "marketRole": "vendor",
+          "heightM": 1.65,
+          "task": "Woman about 40, long oval face, coiled hair tied at the back, pale lavender blouse and patterned navy skirt, gently offering a small hand of green bananas.",
+          "column": 1,
+          "row": 1,
+          "crop": [
+            343,
+            471,
+            228,
+            412
+          ]
+        },
+        {
+          "id": "market-vendor-b-cash",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "front",
+          "marketRole": "vendor",
+          "heightM": 1.61,
+          "task": "Woman about 28, fuller cheeks and cropped natural curls, pale yellow blouse and plum long skirt, looking down as she counts a few coins in one palm.",
+          "column": 2,
+          "row": 1,
+          "crop": [
+            627,
+            471,
+            180,
+            414
+          ]
+        },
+        {
+          "id": "market-vendor-b-flower-bunch",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "marketRole": "vendor",
+          "heightM": 1.66,
+          "task": "Woman about 55, broad shoulders and greying tightly curled hair, navy island dress with small pale leaf print, holding a modest bunch of red anthuriums and green leaves from the photographed market flower displays.",
+          "column": 3,
+          "row": 1,
+          "crop": [
+            916,
+            474,
+            223,
+            404
+          ]
+        },
+        {
+          "id": "market-vendor-b-chayote",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "left",
+          "marketRole": "vendor",
+          "heightM": 1.59,
+          "task": "Woman about 32, long face and hair in a loose top bun, simple turquoise blouse and brown long skirt, examining a chayote in one hand, holding two more in a small bag.",
+          "column": 0,
+          "row": 2,
+          "crop": [
+            64,
+            894,
+            160,
+            424
+          ]
+        },
+        {
+          "id": "market-vendor-b-arranging",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "marketRole": "vendor",
+          "heightM": 1.71,
+          "task": "Tall woman about 48, slim angular face, black hair tied low, red blouse and dark patterned wrap skirt, both hands reaching forward to arrange produce just below waist height; no table.",
+          "column": 1,
+          "row": 2,
+          "crop": [
+            316,
+            911,
+            233,
+            405
+          ]
+        },
+        {
+          "id": "market-vendor-b-carrots",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "front",
+          "marketRole": "vendor",
+          "heightM": 1.74,
+          "task": "Man about 42, round face with a short beard, light striped short-sleeved shirt and charcoal shorts, holding a small bunch of carrots with their leafy tops.",
+          "column": 2,
+          "row": 2,
+          "crop": [
+            619,
+            897,
+            217,
+            419
+          ]
+        },
+        {
+          "id": "market-vendor-b-serving",
+          "lifeStage": "adult",
+          "pose": "talking",
+          "facing": "right",
+          "marketRole": "vendor",
+          "heightM": 1.63,
+          "task": "Woman about 38, sturdy build and short tight curls, purple floral island dress, offering a small woven produce basket to a customer out of frame.",
+          "column": 3,
+          "row": 2,
+          "crop": [
+            896,
+            908,
+            249,
+            409
+          ]
+        }
+      ]
+    },
+    {
+      "file": "port-vila-market-vendors-c-v1.png",
+      "cols": 4,
+      "rows": 3,
+      "cells": [
+        {
+          "id": "market-vendor-c-elder-roots",
+          "lifeStage": "elder",
+          "pose": "seated",
+          "facing": "right",
+          "marketRole": "vendor",
+          "heightM": 1.22,
+          "task": "Elder woman about 73, very short grey curls, round face and sturdy build, terracotta floral island dress, seated on a low white plastic stool sorting small root vegetables in a woven basket on her lap. Complete stool and feet.",
+          "column": 0,
+          "row": 0,
+          "crop": [
+            51,
+            94,
+            210,
+            347
+          ]
+        },
+        {
+          "id": "market-vendor-c-elder-beans",
+          "lifeStage": "elder",
+          "pose": "seated",
+          "facing": "left",
+          "marketRole": "vendor",
+          "heightM": 1.19,
+          "task": "Elder woman about 67, silver hair in a low bun, long narrow face and slim build, orange leaf-print island dress, seated on a white plastic stool bundling long green beans in her hands. Complete stool and feet.",
+          "column": 1,
+          "row": 0,
+          "crop": [
+            327,
+            86,
+            200,
+            355
+          ]
+        },
+        {
+          "id": "market-vendor-c-elder-cash",
+          "lifeStage": "elder",
+          "pose": "seated",
+          "facing": "right",
+          "marketRole": "vendor",
+          "heightM": 1.24,
+          "task": "Elder woman about 70, short salt-and-pepper curls and modest spectacles, broad face and larger build, deep green floral island dress, seated on a white plastic stool counting coins in her palm. Complete stool and feet.",
+          "column": 2,
+          "row": 0,
+          "crop": [
+            592,
+            92,
+            209,
+            347
+          ]
+        },
+        {
+          "id": "market-vendor-c-elder-greens",
+          "lifeStage": "elder",
+          "pose": "seated",
+          "facing": "left",
+          "marketRole": "vendor",
+          "heightM": 1.2,
+          "task": "Elder woman about 76, grey hair in a small braided bun, softly lined square face, plain pink blouse and patterned brown long skirt, seated on a white plastic stool holding a bundle of leafy greens and looking toward a shopper. Complete stool and feet.",
+          "column": 3,
+          "row": 0,
+          "crop": [
+            860,
+            96,
+            222,
+            344
+          ]
+        },
+        {
+          "id": "market-vendor-c-pawpaw",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "marketRole": "vendor",
+          "heightM": 1.64,
+          "task": "Woman about 46, oval face and thick curls tied back, pale blue blouse and long maroon skirt, holding a small pawpaw in one hand and a folded cloth in the other.",
+          "column": 0,
+          "row": 1,
+          "crop": [
+            83,
+            507,
+            170,
+            384
+          ]
+        },
+        {
+          "id": "market-vendor-c-bundle",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "left",
+          "marketRole": "vendor",
+          "heightM": 1.69,
+          "task": "Woman about 27, broad forehead and short natural curls, olive island dress with a small cream floral print, tying a small bundle of spring onions.",
+          "column": 1,
+          "row": 1,
+          "crop": [
+            351,
+            506,
+            152,
+            386
+          ]
+        },
+        {
+          "id": "market-vendor-c-basket",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "front",
+          "marketRole": "vendor",
+          "heightM": 1.75,
+          "task": "Man about 58, square face, greying short hair and moustache, faded maroon polo and knee-length grey shorts, lifting a shallow woven basket with green vegetables.",
+          "column": 2,
+          "row": 1,
+          "crop": [
+            608,
+            504,
+            184,
+            389
+          ]
+        },
+        {
+          "id": "market-vendor-c-taro",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "marketRole": "vendor",
+          "heightM": 1.62,
+          "task": "Woman about 36, fuller build and hair in a high bun, plain peach blouse and indigo long skirt, looking down at two taro roots in a small broad-leaf parcel.",
+          "column": 3,
+          "row": 1,
+          "crop": [
+            876,
+            503,
+            178,
+            390
+          ]
+        },
+        {
+          "id": "market-vendor-c-bagging",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "left",
+          "marketRole": "vendor",
+          "heightM": 1.6,
+          "task": "Woman about 52, short greying curls and narrow face, dark turquoise floral dress, holding open a reusable shopping bag and placing a few small vegetables inside.",
+          "column": 0,
+          "row": 2,
+          "crop": [
+            78,
+            948,
+            166,
+            372
+          ]
+        },
+        {
+          "id": "market-vendor-c-leafy",
+          "lifeStage": "adult",
+          "pose": "talking",
+          "facing": "right",
+          "marketRole": "vendor",
+          "heightM": 1.66,
+          "task": "Woman about 30, angular face with hair tied low, cream blouse and green patterned skirt, raising a small bundle of greens toward a customer while speaking.",
+          "column": 1,
+          "row": 2,
+          "crop": [
+            317,
+            950,
+            204,
+            369
+          ]
+        },
+        {
+          "id": "market-vendor-c-carrier",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "front",
+          "marketRole": "vendor",
+          "heightM": 1.79,
+          "task": "Broad-built man about 39, short tightly curled hair and a clean shaven round face, grey polo and navy shorts, holding a low blue perforated produce crate in both hands.",
+          "column": 2,
+          "row": 2,
+          "crop": [
+            594,
+            946,
+            205,
+            373
+          ]
+        },
+        {
+          "id": "market-vendor-c-tomato-bowl",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "left",
+          "marketRole": "vendor",
+          "heightM": 1.64,
+          "task": "Woman about 43, fine facial features and natural curls tied at the back, burgundy blouse and long mustard skirt, sorting a few tomatoes into a modest plastic bowl held at waist height.",
+          "column": 3,
+          "row": 2,
+          "crop": [
+            887,
+            947,
+            151,
+            373
+          ]
+        }
+      ]
+    },
+    {
+      "file": "port-vila-market-shoppers-d-v1.png",
+      "cols": 4,
+      "rows": 3,
+      "cells": [
+        {
+          "id": "market-shopper-d-basket-woman",
+          "lifeStage": "adult",
+          "pose": "walking",
+          "facing": "right",
+          "marketRole": "shopper",
+          "heightM": 1.64,
+          "task": "Woman about 37, oval face and black hair in a low bun, navy and white floral island dress, walking with a woven pandanus basket containing greens.",
+          "column": 0,
+          "row": 0,
+          "crop": [
+            49,
+            76,
+            227,
+            434
+          ]
+        },
+        {
+          "id": "market-shopper-d-bag-man",
+          "lifeStage": "adult",
+          "pose": "walking",
+          "facing": "left",
+          "marketRole": "shopper",
+          "heightM": 1.78,
+          "task": "Tall slim man about 29, short natural curls and long face, plain rust T-shirt and charcoal shorts, walking with a cloth shopping bag of produce.",
+          "column": 1,
+          "row": 0,
+          "crop": [
+            298,
+            51,
+            226,
+            460
+          ]
+        },
+        {
+          "id": "market-shopper-d-choosing",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "left",
+          "marketRole": "shopper",
+          "heightM": 1.62,
+          "task": "Woman about 50, broad face and short greying curls, pale green blouse and blue patterned long skirt, looking down toward produce and making a small selecting gesture.",
+          "column": 2,
+          "row": 0,
+          "crop": [
+            565,
+            74,
+            192,
+            439
+          ]
+        },
+        {
+          "id": "market-shopper-d-onions",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "marketRole": "shopper",
+          "heightM": 1.73,
+          "task": "Man about 45, larger build, close black curls and moustache, light blue polo and brown shorts, checking a small bunch of spring onions while holding a reusable bag.",
+          "column": 3,
+          "row": 0,
+          "crop": [
+            830,
+            64,
+            241,
+            452
+          ]
+        },
+        {
+          "id": "market-shopper-d-caregiver",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "marketRole": "shopper",
+          "heightM": 1.68,
+          "task": "Caregiver in a white T-shirt and red skirt supporting a clothed baby on her hip.",
+          "column": 0,
+          "row": 1,
+          "crop": [
+            75,
+            546,
+            153,
+            435
+          ]
+        },
+        {
+          "id": "market-shopper-d-paying",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "left",
+          "marketRole": "shopper",
+          "heightM": 1.76,
+          "task": "Man about 56, square face and salt-and-pepper hair, short-sleeved patterned pale shirt and dark shorts, extending a few coins in one hand and holding a folded shopping bag in the other.",
+          "column": 1,
+          "row": 1,
+          "crop": [
+            307,
+            528,
+            206,
+            458
+          ]
+        },
+        {
+          "id": "market-shopper-d-elder-woman",
+          "lifeStage": "elder",
+          "pose": "walking",
+          "facing": "left",
+          "marketRole": "shopper",
+          "heightM": 1.58,
+          "task": "Elder woman about 68, grey hair tied back and a broad kind face, plum island dress with a modest pale print, walking slowly carrying a light woven basket.",
+          "column": 2,
+          "row": 1,
+          "crop": [
+            548,
+            545,
+            234,
+            440
+          ]
+        },
+        {
+          "id": "market-shopper-d-elder-man",
+          "lifeStage": "elder",
+          "pose": "standing",
+          "facing": "right",
+          "marketRole": "shopper",
+          "heightM": 1.69,
+          "task": "Elder man about 72, closely cropped white hair and a lined slim face, pale yellow collared shirt and navy shorts, standing with a small bag of bananas and listening to a vendor.",
+          "column": 3,
+          "row": 1,
+          "crop": [
+            855,
+            539,
+            174,
+            449
+          ]
+        },
+        {
+          "id": "market-shopper-d-teen-girl",
+          "lifeStage": "teen",
+          "pose": "standing",
+          "facing": "left",
+          "marketRole": "shopper",
+          "heightM": 1.59,
+          "task": "Teen girl about 17, natural curls in a low ponytail, plain coral blouse and long blue skirt, shoulder bag, looking toward a stall with relaxed hands.",
+          "column": 0,
+          "row": 2,
+          "crop": [
+            43,
+            1007,
+            175,
+            386
+          ]
+        },
+        {
+          "id": "market-shopper-d-teen-boy",
+          "lifeStage": "teen",
+          "pose": "walking",
+          "facing": "right",
+          "marketRole": "shopper",
+          "heightM": 1.65,
+          "task": "Teen boy about 16, short tightly curled hair and a narrow face, muted green T-shirt and simple shorts, walking carrying a light empty cloth bag.",
+          "column": 1,
+          "row": 2,
+          "crop": [
+            296,
+            998,
+            200,
+            395
+          ]
+        },
+        {
+          "id": "market-shopper-d-child-girl",
+          "lifeStage": "child",
+          "pose": "standing",
+          "facing": "left",
+          "marketRole": "shopper",
+          "heightM": 1.21,
+          "task": "Girl about 9, natural hair in two small puffs, plain lavender T-shirt and knee-length navy skirt, holding a little cloth bag while accompanying an adult. Natural child proportions, not a worker.",
+          "column": 2,
+          "row": 2,
+          "crop": [
+            600,
+            1039,
+            150,
+            351
+          ]
+        },
+        {
+          "id": "market-shopper-d-child-boy",
+          "lifeStage": "child",
+          "pose": "standing",
+          "facing": "right",
+          "marketRole": "shopper",
+          "heightM": 1.25,
+          "task": "Boy about 9, short curly hair, ordinary yellow T-shirt and blue shorts, holding a small bag with two pieces of fruit while accompanying an adult. Natural child proportions, not a worker.",
+          "column": 3,
+          "row": 2,
+          "crop": [
+            863,
+            1037,
+            166,
+            357
+          ]
+        }
+      ]
+    }
+  ]
+}
