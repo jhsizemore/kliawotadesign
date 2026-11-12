@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-06",
+  "reviewedAt": "2026-11-13",
   "timezone": "Pacific/Efate",
   "projects": [
     {
@@ -45,6 +45,13 @@
       "href": "/portvilasandbox/"
     },
     {
+      "id": "port-vila-cbd",
+      "title": "Port Vila CBD Redevelopment Simulator",
+      "status": "Public-site build committed · Live unverified",
+      "description": "A 3D exploration of central Port Vila and redevelopment possibilities, with guided navigation and photographic reference work around the market. The new site route exists in code; public runtime testing remains outstanding.",
+      "unreleased": true
+    },
+    {
       "id": "island-together",
       "title": "Island Together",
       "status": "Public playable prototype",
@@ -57,9 +64,9 @@
       "status": "Active development · Aggregate snapshot",
       "description": "A music-discovery workflow for remixes, edits and mashups. The working catalogue remains private.",
       "metric": {
-        "count": 2533,
+        "count": 2714,
         "sourceCount": 7,
-        "asOf": "2026-11-05"
+        "asOf": "2026-11-13"
       }
     },
     {
@@ -116,6 +123,20 @@
       "title": "Beowulf",
       "status": "In development",
       "description": "A further Universes Eternal literary Magic fan-set project. No release date announced here.",
+      "unreleased": true
+    },
+    {
+      "id": "cozy-tv",
+      "title": "The Night Channel / Cozy TV",
+      "status": "Unreleased · Private prototype",
+      "description": "A curated screen-entertainment catalogue with outbound viewing links and saved selections. A recent pass connected most entries to matching streaming pages; public deployment is unverified.",
+      "unreleased": true
+    },
+    {
+      "id": "pacific-2035",
+      "title": "Pacific 2035 Command",
+      "status": "Unreleased · Private creative prototypes",
+      "description": "An interactive Pacific scenario chronicle and a turn-based Vanuatu strategy game, exploring branching developments through timelines, maps and playable choices.",
       "unreleased": true
     }
   ],
@@ -376,6 +397,29 @@
         {
           "label": "Route ordering fix",
           "href": "https://github.com/jhsizemore/kliawotadesign/commit/74399bcb57f5b4e0079ecebc5cebf5ee78538bbb"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-13",
+      "from": "2026-11-07",
+      "through": "2026-11-13",
+      "publishedAt": "2026-11-13",
+      "title": "Walking through the future of Port Vila",
+      "paragraphs": [
+        "Port Vila's interactive mapping work branched into a dedicated CBD Redevelopment Simulator build. The public repository gained a new /urbanfutures/portvila/ route on 12 November, followed by several revisions to the market-area model: people with distinct appearances, reference-informed surroundings, pedestrian islands, forecourt and parking details. The recorded build reached version 0.1.30. These changes make the model more legible at street level, while photographic reconstruction and planning concepts must not be mistaken for surveyed geometry or an approved redevelopment plan.",
+        "Other audience-oriented experiments moved forward outside the public portfolio. A private Pacific-centred scenario interface and playable Vanuatu strategy prototype took shape, while The Night Channel / Cozy TV catalogue gained matching Rivestream links for 112 of 115 entries; the remaining three retained official destinations. These are meaningful working artifacts, not independently verified public launches. The separate Tanna explorer remains in development with its route committed but field accuracy and live behavior not yet independently confirmed.",
+        "DJ Radar's private Remix Index now contains 2,714 rows with both a populated track/version and artist, 181 more than the last reviewed snapshot of 2,533. The latest First Seen entry is dated 13 November. Settings still lists seven planned weekly source rotations; that is not a measure of successful scans. The public portfolio carries only these aggregate figures, never the working catalogue or sourcing notes."
+      ],
+      "status": "CBD simulator v0.1.30 is committed in public code, but its live route and device interactions were not independently verified. The Pacific scenario and Cozy TV remain private/unreleased; the Odyssey's public development tools do not signal release of its fan set.",
+      "sources": [
+        {
+          "label": "CBD simulator route",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/4e64d669108481d3ba7d4675edcd30249e07a28f"
+        },
+        {
+          "label": "Market reference refinement",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/336dd79a2a1a39ee2505b2426f6788b408493218"
         }
       ]
     }
