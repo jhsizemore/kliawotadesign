@@ -2,7 +2,7 @@
   "version": "0.1.30",
   "project": "Port Vila CBD Redevelopment Simulator",
   "release": "market-reference-fit-2026-11-12",
-  "publishedAt": "2026-11-12T05:49:36.929Z",
+  "publishedAt": "2026-11-12T05:57:02.754Z",
   "basePath": "/urbanfutures/portvila/",
   "baseline": "cbd-demolition-2026-09-17.1",
   "features": [
@@ -21,6 +21,7 @@
     "Timber police booth and shaded waiting benches",
     "Chuan Store frontage on retained unit only",
     "Six outward-facing parked vehicles clear of pedestrian areas and the pull-through",
+    "All static market vehicle envelopes audited together with no overlaps",
     "Concrete, coral and soil island finishes",
     "Photo-informed roadside planting pockets and utility cover",
     "Open rough timber frame without an invented roof lattice, weathered tree guard and wheelbarrow",
