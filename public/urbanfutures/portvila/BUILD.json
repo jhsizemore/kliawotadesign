@@ -1,8 +1,8 @@
 {
-  "version": "0.1.28",
+  "version": "0.1.29",
   "project": "Port Vila CBD Redevelopment Simulator",
-  "release": "market-forecourt-2026-11-12",
-  "publishedAt": "2026-11-12T04:02:54.191Z",
+  "release": "market-islands-2026-11-12",
+  "publishedAt": "2026-11-12T04:49:34.205Z",
   "basePath": "/urbanfutures/portvila/",
   "baseline": "cbd-demolition-2026-09-17.1",
   "features": [
@@ -21,6 +21,11 @@
     "Timber police booth and shaded waiting benches",
     "Chuan Store frontage on retained unit only",
     "Six parked vehicles clear of pedestrian areas",
+    "Concrete, coral and soil island finishes",
+    "Photo-informed roadside planting pockets and utility cover",
+    "Open rough timber booth and horizontal-board tree guard",
+    "Irregular tree roots and connected fine-leaf canopies",
+    "Market pedestrian islands review view",
     "Matched waterfront proposal views",
     "Still export"
   ],
