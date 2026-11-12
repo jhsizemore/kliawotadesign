@@ -1,0 +1,333 @@
+{
+  "schema": 1,
+  "title": "Port Vila illustrated residents — original concept cutouts",
+  "source": "Original AI-generated architectural illustrations, informed by contemporary Vanuatu references; fictional people for concept visualisation.",
+  "sheets": [
+    {
+      "file": "ni-vanuatu-people-a.png",
+      "cols": 4,
+      "rows": 3,
+      "cells": [
+        {
+          "id": "a-child-girl-standing",
+          "lifeStage": "child",
+          "pose": "standing",
+          "facing": "front",
+          "heightM": 1.14,
+          "crop": [
+            71,
+            93,
+            124,
+            386
+          ]
+        },
+        {
+          "id": "a-child-boy-walking",
+          "lifeStage": "child",
+          "pose": "walking",
+          "facing": "right",
+          "heightM": 1.25,
+          "crop": [
+            282,
+            52,
+            199,
+            425
+          ]
+        },
+        {
+          "id": "a-teen-girl-talking",
+          "lifeStage": "teen",
+          "pose": "talking",
+          "facing": "left",
+          "heightM": 1.55,
+          "crop": [
+            538,
+            40,
+            206,
+            441
+          ]
+        },
+        {
+          "id": "a-teen-boy-standing",
+          "lifeStage": "teen",
+          "pose": "standing",
+          "facing": "front",
+          "heightM": 1.67,
+          "crop": [
+            808,
+            23,
+            173,
+            463
+          ]
+        },
+        {
+          "id": "a-adult-island-dress-talking",
+          "lifeStage": "adult",
+          "pose": "talking",
+          "facing": "right",
+          "heightM": 1.62,
+          "crop": [
+            34,
+            504,
+            219,
+            493
+          ]
+        },
+        {
+          "id": "a-adult-collared-shirt-talking",
+          "lifeStage": "adult",
+          "pose": "talking",
+          "facing": "left",
+          "heightM": 1.74,
+          "crop": [
+            303,
+            500,
+            205,
+            495
+          ]
+        },
+        {
+          "id": "a-adult-casual-woman-walking",
+          "lifeStage": "adult",
+          "pose": "walking",
+          "facing": "left",
+          "heightM": 1.68,
+          "crop": [
+            534,
+            531,
+            213,
+            463
+          ]
+        },
+        {
+          "id": "a-adult-tshirt-man-standing",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "front",
+          "heightM": 1.78,
+          "crop": [
+            808,
+            500,
+            199,
+            498
+          ]
+        },
+        {
+          "id": "a-elder-woman-standing",
+          "lifeStage": "elder",
+          "pose": "standing",
+          "facing": "front",
+          "heightM": 1.58,
+          "crop": [
+            37,
+            1014,
+            209,
+            485
+          ]
+        },
+        {
+          "id": "a-elder-man-talking",
+          "lifeStage": "elder",
+          "pose": "talking",
+          "facing": "right",
+          "heightM": 1.71,
+          "crop": [
+            295,
+            1011,
+            237,
+            488
+          ]
+        },
+        {
+          "id": "a-adult-skirt-woman-talking",
+          "lifeStage": "adult",
+          "pose": "talking",
+          "facing": "left",
+          "heightM": 1.64,
+          "crop": [
+            564,
+            1014,
+            184,
+            489
+          ]
+        },
+        {
+          "id": "a-adult-backpack-man-walking",
+          "lifeStage": "adult",
+          "pose": "walking",
+          "facing": "right",
+          "heightM": 1.76,
+          "crop": [
+            788,
+            1013,
+            236,
+            483
+          ]
+        }
+      ]
+    },
+    {
+      "file": "ni-vanuatu-people-b.png",
+      "cols": 4,
+      "rows": 3,
+      "cells": [
+        {
+          "id": "b-child-preschool-girl-standing",
+          "lifeStage": "child",
+          "pose": "standing",
+          "facing": "front",
+          "heightM": 0.98,
+          "crop": [
+            54,
+            104,
+            123,
+            351
+          ]
+        },
+        {
+          "id": "b-child-preschool-boy-walking",
+          "lifeStage": "child",
+          "pose": "walking",
+          "facing": "right",
+          "heightM": 1.2,
+          "crop": [
+            289,
+            92,
+            187,
+            354
+          ]
+        },
+        {
+          "id": "b-teen-schoolgirl-talking",
+          "lifeStage": "teen",
+          "pose": "talking",
+          "facing": "left",
+          "heightM": 1.55,
+          "crop": [
+            532,
+            46,
+            192,
+            404
+          ]
+        },
+        {
+          "id": "b-teen-boy-walking",
+          "lifeStage": "teen",
+          "pose": "walking",
+          "facing": "right",
+          "heightM": 1.63,
+          "crop": [
+            813,
+            9,
+            201,
+            441
+          ]
+        },
+        {
+          "id": "b-teen-girl-standing",
+          "lifeStage": "teen",
+          "pose": "standing",
+          "facing": "front",
+          "heightM": 1.59,
+          "crop": [
+            49,
+            483,
+            160,
+            465
+          ]
+        },
+        {
+          "id": "b-adult-larger-build-woman-talking",
+          "lifeStage": "adult",
+          "pose": "talking",
+          "facing": "right",
+          "heightM": 1.66,
+          "crop": [
+            276,
+            483,
+            263,
+            470
+          ]
+        },
+        {
+          "id": "b-adult-lean-man-talking",
+          "lifeStage": "adult",
+          "pose": "talking",
+          "facing": "left",
+          "heightM": 1.73,
+          "crop": [
+            546,
+            461,
+            190,
+            488
+          ]
+        },
+        {
+          "id": "b-adult-blouse-woman-walking",
+          "lifeStage": "adult",
+          "pose": "walking",
+          "facing": "right",
+          "heightM": 1.61,
+          "crop": [
+            789,
+            491,
+            217,
+            458
+          ]
+        },
+        {
+          "id": "b-adult-polo-man-standing",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "front",
+          "heightM": 1.82,
+          "crop": [
+            23,
+            950,
+            200,
+            550
+          ]
+        },
+        {
+          "id": "b-elder-woman-walking",
+          "lifeStage": "elder",
+          "pose": "walking",
+          "facing": "left",
+          "heightM": 1.6,
+          "crop": [
+            281,
+            1022,
+            237,
+            474
+          ]
+        },
+        {
+          "id": "b-elder-man-walking",
+          "lifeStage": "elder",
+          "pose": "walking",
+          "facing": "right",
+          "heightM": 1.75,
+          "crop": [
+            556,
+            982,
+            234,
+            513
+          ]
+        },
+        {
+          "id": "b-adult-mother-standing",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "front",
+          "heightM": 1.69,
+          "crop": [
+            819,
+            1003,
+            183,
+            495
+          ]
+        }
+      ]
+    }
+  ]
+}

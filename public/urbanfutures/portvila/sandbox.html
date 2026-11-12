@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#132b2c" />
+    <meta name="description" content="Explore downtown Port Vila as an interactive 3D city prototype, including rough DUAP July 2025 plan layers." />
+    <title>Port Vila Sandbox</title>
+    <style>#district-card{display:none!important}.bottom-left{top:142px!important;bottom:auto!important;left:26px!important}body[data-city-view=vision] .bottom-left,body.research-open .bottom-left{display:none!important}#loading{text-align:center;padding:max(44px, env(safe-area-inset-top)) 24px max(34px, env(safe-area-inset-bottom));box-sizing:border-box;overflow:auto;justify-content:center!important}#loading .loading-brand{margin-top:0;display:none}#loading .loading-line{flex:none;margin:28px 0 10px}#loading .pv-loading-state{text-align:center;width:min(540px,100vw - 42px);margin:0 auto}#loading .pv-loading-label{color:#29483f;letter-spacing:.11em;text-transform:uppercase;font:750 9px/1.35 system-ui,sans-serif}#loading #loading-text.pv-loading-status{color:#617467;max-width:none;margin:5px 0 0;padding:0;font:550 10px/1.45 system-ui,sans-serif}#loading .pv-loading-wait{color:#7a897b;margin:4px 0 0;font:500 9px/1.4 system-ui,sans-serif}#loading h2.pv-loader-title{color:#1f4038;letter-spacing:-.025em;width:min(560px,100vw - 38px);margin:21px auto 17px;font:400 clamp(34px,7vw,48px)/.98 Georgia,serif}#loading h2.pv-loader-title span{display:block}#loading .pv-loading-explainer{text-align:center;width:min(520px,100vw - 42px);margin:0 auto}#loading .pv-loading-explainer p{color:#5f7064;max-width:none;margin:0;padding:0;font:500 11px/1.55 system-ui,sans-serif}#loading .pv-loading-explainer p+p{margin-top:14px}#loading .pv-loading-explainer strong{color:#29483f;margin-bottom:3px;font-size:12px;font-weight:750;display:block}#loading .pv-loader-header{aspect-ratio:1536/509;background:#b8cbbb;border:1px solid #29483f24;border-radius:12px;flex:none;width:min(760px,100vw - 28px);margin:20px auto 22px;overflow:hidden;box-shadow:0 8px 28px #1b41361f}#loading .pv-loader-header img{object-fit:cover;object-position:42% center;width:100%;height:100%;display:block}.pv-welcome-nudge{z-index:30;pointer-events:none;box-sizing:border-box;color:#29443c;-webkit-backdrop-filter:blur(8px);opacity:0;background:#faf8edf2;border:1px solid #364f412e;border-radius:10px;width:min(286px,100vw - 42px);padding:13px 15px;transition:opacity .22s,transform .22s;position:fixed;bottom:35px;left:26px;transform:translateY(6px);box-shadow:0 8px 30px #18382e29}.pv-welcome-nudge.show{opacity:1;transform:translateY(0)}.pv-welcome-nudge strong{margin-bottom:4px;font:700 13px/1.2 system-ui,sans-serif;display:block}.pv-welcome-nudge span{color:#617267;font:500 10px/1.45 system-ui,sans-serif;display:block}.pv-exit-overlay{z-index:140;-webkit-backdrop-filter:blur(4px);background:#132b2c52;place-items:center;padding:22px;display:none;position:fixed;inset:0}.pv-exit-overlay.show{display:grid}.pv-exit-card{color:#29443c;text-align:center;background:#faf8ed;border-radius:13px;width:min(360px,100vw - 38px);padding:25px;box-shadow:0 18px 60px #122c2640}.pv-exit-card h2{margin:0 0 9px;font:400 27px/1.08 Georgia,serif}.pv-exit-card p{color:#66766b;margin:0 0 19px;font:500 11px/1.55 system-ui,sans-serif}.pv-exit-actions{gap:8px;display:flex}.pv-exit-actions button{border-radius:8px;flex:1;min-height:42px;font:650 11px system-ui,sans-serif}.pv-exit-stay{color:#fffdf4;background:#214c40}.pv-exit-leave{color:#496257;background:0 0;border:1px solid #aebcad}@media (width<=760px){.bottom-left{top:max(118px, calc(env(safe-area-inset-top) + 92px))!important;left:14px!important}#loading{padding:max(26px, env(safe-area-inset-top)) 18px max(22px, env(safe-area-inset-bottom))}#loading .loading-brand{margin-top:0}#loading .loading-line{margin:18px 0 9px}#loading .pv-loader-header{border-radius:10px;width:min(520px,100vw - 24px);margin-bottom:17px}#loading h2.pv-loader-title{margin:18px auto 15px;font-size:clamp(32px,10.5vw,42px)}#loading .pv-loading-explainer p{font-size:10.5px;line-height:1.5}#loading .pv-loading-explainer strong{font-size:11.5px}#loading .pv-loading-explainer p+p{margin-top:12px}.pv-welcome-nudge{left:14px;bottom:max(30px, calc(env(safe-area-inset-bottom) + 20px));width:min(282px,100vw - 82px)}}@media (height<=680px) and (width<=760px){#loading .loading-brand{margin-top:0}#loading .loading-line{margin-top:17px}#loading h2.pv-loader-title{margin:14px auto 12px;font-size:31px}#loading .pv-loading-explainer p+p{margin-top:9px}#loading .pv-loader-header{width:min(440px,100vw - 20px);margin-bottom:11px}}@media (prefers-reduced-motion:reduce){.pv-welcome-nudge{transition:none}}</style>
+    <script type="module" crossorigin src="/urbanfutures/portvila/assets/sandbox-DfUmNDB5.js"></script>
+    <link rel="modulepreload" crossorigin href="/urbanfutures/portvila/assets/scenario-B9fC3zyu.js">
+    <link rel="stylesheet" crossorigin href="/urbanfutures/portvila/assets/sandbox-DtJow0-l.css">
+  </head>
+  <body>
+    <div id="app"><div id="pv-boot" role="status" style="position:fixed;inset:0;display:grid;place-content:center;text-align:center;padding:24px;background:#faf8ed;color:#29443c;font:16px/1.5 system-ui"><p>Opening Port Vila Sandbox…</p><button type="button" onclick="location.reload()">Retry loading</button></div></div>
+    <div id="pv-exit-overlay" class="pv-exit-overlay" role="dialog" aria-modal="true" aria-labelledby="pv-exit-title">
+      <div class="pv-exit-card">
+        <h2 id="pv-exit-title">Leave Port Vila Sandbox?</h2>
+        <p>There’s nothing else to step back through inside the app.</p>
+        <div class="pv-exit-actions">
+          <button id="pv-exit-stay" class="pv-exit-stay">Stay here</button>
+          <button id="pv-exit-leave" class="pv-exit-leave">Leave app</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      (() => {
+        let welcomeShown = false;
+        let allowLeave = false;
+        let restoringSelection = false;
+        let lastSelected = null;
+        const selectionHistory = [];
+
+        function enhanceLoading() {
+          const loading = document.getElementById('loading');
+          if (!loading || loading.dataset.pvExplained === 'true') return;
+          const status = loading.querySelector('#loading-text');
+          const heading = loading.querySelector('h2');
+          const line = loading.querySelector('.loading-line');
+          if (!status || !heading || !line) return;
+
+          loading.dataset.pvExplained = 'true';
+
+          const brand = loading.querySelector('.loading-brand');
+          const header = document.createElement('figure');
+          header.className = 'pv-loader-header';
+          header.innerHTML = '<img src="/portvilasandbox/assets/loader-header.jpg?v=2" alt="Elevated oblique overview of central Port Vila with Central Market and the waterfront" onerror="this.closest(\'.pv-loader-header\').hidden=true">';
+          void brand;
+
+          const state = document.createElement('div');
+          state.className = 'pv-loading-state';
+          const label = document.createElement('div');
+          label.className = 'pv-loading-label';
+          label.textContent = 'Loading the interactive 3D city';
+          const wait = document.createElement('p');
+          wait.className = 'pv-loading-wait';
+          wait.textContent = 'First load on mobile may take up to a minute.';
+          status.classList.add('pv-loading-status');
+          state.append(label, status, wait);
+          line.after(state);
+
+          heading.className = 'pv-loader-title';
+          heading.innerHTML = 'Explore Port Vila<span>Downtown in 3D.</span>';
+          state.after(heading);
+
+          const explainer = document.createElement('div');
+          explainer.className = 'pv-loading-explainer';
+          explainer.innerHTML =
+            '<p><strong>Move through the city like a map.</strong>Drag to explore central Port Vila, pinch to zoom, and tap buildings to inspect them. This is an interactive prototype of the downtown city centre.</p>' +
+            '<p><strong>Explore the July 2025 DUAP vision.</strong>Plan Layers and DUAP Vision provide a rough interactive implementation of information from the Port Vila Downtown Renewal Project design booklet launched by DUAP.</p>';
+          heading.after(explainer);
+          explainer.after(header);
+
+        }
+
+        function dismissWelcome() {
+          const nudge = document.getElementById('pv-welcome-nudge');
+          if (!nudge) return;
+          nudge.classList.remove('show');
+          document.body.classList.remove('pv-welcome-active');
+          document.removeEventListener('pointerdown', dismissWelcome, true);
+          document.removeEventListener('wheel', dismissWelcome, true);
+          document.removeEventListener('keydown', dismissWelcome, true);
+          setTimeout(() => nudge.remove(), 220);
+        }
+
+        function showWelcome() {
+          if (welcomeShown || document.getElementById('load-error')) return;
+          welcomeShown = true;
+          const nudge = document.createElement('div');
+          nudge.id = 'pv-welcome-nudge';
+          nudge.className = 'pv-welcome-nudge';
+          nudge.setAttribute('role', 'status');
+          nudge.innerHTML =
+            '<strong>Welcome to the Port Vila Sandbox</strong>' +
+            '<span>Drag to look around · pinch to zoom · tap buildings. Try Plan Layers or DUAP Vision.</span>';
+          document.body.append(nudge);
+          document.body.classList.add('pv-welcome-active');
+          requestAnimationFrame(() => nudge.classList.add('show'));
+          setTimeout(() => {
+            document.addEventListener('pointerdown', dismissWelcome, true);
+            document.addEventListener('wheel', dismissWelcome, true);
+            document.addEventListener('keydown', dismissWelcome, true);
+          }, 250);
+        }
+
+        function inspectState() {
+          enhanceLoading();
+          const returnButton = document.getElementById('return-3d');
+          const controls = document.querySelector('.bottom-left');
+          if (returnButton && controls && returnButton.parentElement !== controls) controls.append(returnButton);
+          const loading = document.getElementById('loading');
+          if (document.getElementById('world') && (!loading || loading.classList.contains('done'))) {
+            showWelcome();
+          }
+        }
+
+        function sampleSelection() {
+          const api = window.sandbox;
+          if (!api) return;
+          const selected = api.selected ?? null;
+          if (restoringSelection) {
+            lastSelected = selected;
+            return;
+          }
+          if (selected === lastSelected) return;
+          if (selected == null) {
+            if (lastSelected != null) selectionHistory.length = 0;
+          } else if (selectionHistory[selectionHistory.length - 1] !== selected) {
+            selectionHistory.push(selected);
+          }
+          lastSelected = selected;
+        }
+
+        function restorePreviousSelection() {
+          const api = window.sandbox;
+          if (!api || api.selected == null) return false;
+          restoringSelection = true;
+          if (selectionHistory.length > 1) {
+            selectionHistory.pop();
+            const previous = selectionHistory[selectionHistory.length - 1];
+            api.select(previous);
+            lastSelected = previous;
+          } else {
+            selectionHistory.length = 0;
+            api.clearSelection();
+            lastSelected = null;
+          }
+          setTimeout(() => { restoringSelection = false; }, 0);
+          return true;
+        }
+
+        function closeOneInAppStep() {
+          const exitOverlay = document.getElementById('pv-exit-overlay');
+          if (exitOverlay.classList.contains('show')) {
+            exitOverlay.classList.remove('show');
+            return true;
+          }
+
+          const dialog = document.getElementById('dialog');
+          if (dialog?.open) {
+            document.getElementById('dialog-close')?.click();
+            return true;
+          }
+
+          if (document.body.classList.contains('research-open')) {
+            const close = document.getElementById('research-close');
+            if (close) close.click();
+            else document.getElementById('research-toggle')?.click();
+            return true;
+          }
+
+          if (window.sandbox?.layersOpen) {
+            window.sandbox.closeLayers();
+            return true;
+          }
+
+          if (restorePreviousSelection()) return true;
+
+          if (document.body.classList.contains('vision-selected')) {
+            document.getElementById('close-inspector')?.click();
+            return true;
+          }
+
+          const vision = document.getElementById('vision');
+          if (vision?.classList.contains('active') || document.body.dataset.cityView === 'vision') {
+            document.getElementById('baseline')?.click();
+            return true;
+          }
+
+          const activeTool = document.querySelector('[data-tool].active');
+          if (activeTool && activeTool.dataset.tool !== 'select') {
+            document.querySelector('[data-tool="select"]')?.click();
+            return true;
+          }
+
+          const proposal = document.getElementById('proposal');
+          if (proposal?.classList.contains('active')) {
+            document.getElementById('baseline')?.click();
+            return true;
+          }
+
+          return false;
+        }
+
+        function armHistory() {
+          const url = location.href;
+          if (!history.state?.pvSandboxRoot && !history.state?.pvSandboxActive) {
+            history.replaceState({ ...(history.state || {}), pvSandboxRoot: true }, '', url);
+            history.pushState({ pvSandboxActive: true }, '', url);
+          } else if (history.state?.pvSandboxRoot) {
+            history.pushState({ pvSandboxActive: true }, '', url);
+          }
+        }
+
+        function rearmHistory() {
+          history.pushState({ pvSandboxActive: true }, '', location.href);
+        }
+
+        function showExitConfirm() {
+          document.getElementById('pv-exit-overlay').classList.add('show');
+        }
+
+        window.addEventListener('popstate', (event) => {
+          if (allowLeave) return;
+          if (event.state?.pvSandboxRoot) {
+            if (closeOneInAppStep()) {
+              rearmHistory();
+            } else {
+              rearmHistory();
+              showExitConfirm();
+            }
+          }
+        });
+
+        document.getElementById('pv-exit-stay').addEventListener('click', () => {
+          document.getElementById('pv-exit-overlay').classList.remove('show');
+        });
+        document.getElementById('pv-exit-leave').addEventListener('click', () => {
+          allowLeave = true;
+          document.getElementById('pv-exit-overlay').classList.remove('show');
+          const fallback = document.referrer || 'https://kliawota.design/';
+          const start = location.href;
+          history.go(-2);
+          setTimeout(() => {
+            if (location.href === start) location.href = fallback;
+          }, 350);
+        });
+
+        armHistory();
+        setInterval(() => { if (!document.hidden) sampleSelection(); }, 180);
+
+        const observer = new MutationObserver(inspectState);
+        observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });
+        inspectState();
+      })();
+    </script>
+  
+</body>
+</html>
+

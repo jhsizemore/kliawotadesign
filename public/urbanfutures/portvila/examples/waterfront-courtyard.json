@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "id": "example-waterfront-courtyard",
+  "title": "Waterfront courtyard",
+  "baselineId": "port-vila-cbd-2026-09-15",
+  "baselineChecksum": "ebafee2a7c9e4cb3fb72e39230b4c65a96e5b67f4118a970f9a94cdf416fbf7e",
+  "revision": 0,
+  "updatedAt": "2026-09-15T03:47:32.909Z",
+  "additions": [
+    {
+      "id": "example-open-space",
+      "kind": "zone",
+      "x": 108.92,
+      "z": -191.5,
+      "rotation": 0,
+      "width": 26,
+      "depth": 20,
+      "height": 0.12,
+      "color": "#78a583",
+      "label": "Proposed open space"
+    },
+    {
+      "id": "example-container-0",
+      "kind": "container",
+      "x": 108.92,
+      "z": -200.5,
+      "rotation": 0,
+      "width": 12.19,
+      "depth": 2.44,
+      "height": 2.9,
+      "color": "#bf7556",
+      "label": "Container building"
+    },
+    {
+      "id": "example-container-1",
+      "kind": "container",
+      "x": 97.92,
+      "z": -191.5,
+      "rotation": 90,
+      "width": 12.19,
+      "depth": 2.44,
+      "height": 2.9,
+      "color": "#bf7556",
+      "label": "Container building"
+    },
+    {
+      "id": "example-container-2",
+      "kind": "container",
+      "x": 119.92,
+      "z": -191.5,
+      "rotation": 90,
+      "width": 12.19,
+      "depth": 2.44,
+      "height": 2.9,
+      "color": "#bf7556",
+      "label": "Container building"
+    },
+    {
+      "id": "example-tree-0",
+      "kind": "tree",
+      "x": 101.92,
+      "z": -186.5,
+      "rotation": 0,
+      "width": 4,
+      "depth": 4,
+      "height": 8,
+      "color": "#52734b",
+      "label": "Shade tree"
+    },
+    {
+      "id": "example-tree-1",
+      "kind": "tree",
+      "x": 115.92,
+      "z": -186.5,
+      "rotation": 0,
+      "width": 4,
+      "depth": 4,
+      "height": 8,
+      "color": "#52734b",
+      "label": "Shade tree"
+    }
+  ],
+  "overrides": {
+    "osm-way-319762696": {
+      "removed": true
+    }
+  },
+  "assumptions": {
+    "floorHeight": 3.4
+  }
+}

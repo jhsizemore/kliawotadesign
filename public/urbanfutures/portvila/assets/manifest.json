@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "authoredBy": "Port Vila Sandbox project",
+  "licence": "Project-authored geometry; no external model dependency",
+  "models": [
+    {
+      "name": "pv-market",
+      "dimensions": [
+        54,
+        13.714662647247316,
+        44.59000015258789
+      ],
+      "meshes": 6,
+      "triangles": 4328
+    },
+    {
+      "name": "pv-shop-two",
+      "dimensions": [
+        12.899999618530273,
+        8.30000019222498,
+        11.661121845245361
+      ],
+      "meshes": 7,
+      "triangles": 624
+    },
+    {
+      "name": "pv-shop-one",
+      "dimensions": [
+        12.899999618530273,
+        5.099999906122685,
+        11.661121845245361
+      ],
+      "meshes": 7,
+      "triangles": 336
+    },
+    {
+      "name": "pv-container",
+      "dimensions": [
+        12.699999809265137,
+        3.1150000572204597,
+        4.4700000286102295
+      ],
+      "meshes": 5,
+      "triangles": 600
+    },
+    {
+      "name": "pv-palm",
+      "dimensions": [
+        8.718695640563965,
+        8.879495221422985,
+        9.255364894866943
+      ],
+      "meshes": 3,
+      "triangles": 2926
+    },
+    {
+      "name": "pv-tree",
+      "dimensions": [
+        8.820032596588135,
+        7.897771272808313,
+        8.45753526687622
+      ],
+      "meshes": 4,
+      "triangles": 4210
+    },
+    {
+      "name": "pv-car",
+      "dimensions": [
+        1.899999976158142,
+        1.6133591867983341,
+        4.099999904632568
+      ],
+      "meshes": 3,
+      "triangles": 196
+    }
+  ],
+  "note": "Reference-led illustrative architecture, not a surveyed condition model."
+}

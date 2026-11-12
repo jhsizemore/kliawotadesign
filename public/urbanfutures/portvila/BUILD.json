@@ -1,0 +1,19 @@
+{
+  "version": "0.1.25",
+  "project": "Port Vila CBD Redevelopment Simulator",
+  "release": "urbanfutures-portvila-2026-11-12",
+  "publishedAt": "2026-11-12T01:26:40.566Z",
+  "basePath": "/urbanfutures/portvila/",
+  "baseline": "cbd-demolition-2026-09-17.1",
+  "features": [
+    "Free navigation",
+    "Guided navigation",
+    "Photo-informed Market House and surrounding frontages",
+    "Four long trading rows",
+    "Illustrated people",
+    "Market road vehicles and minibus-bay animation",
+    "Matched waterfront proposal views",
+    "Still export"
+  ],
+  "sourcePdf": "https://duap.gov.vu/images/Projects/250825_a3_Report_Port%20Vila_FINAL.pdf"
+}
