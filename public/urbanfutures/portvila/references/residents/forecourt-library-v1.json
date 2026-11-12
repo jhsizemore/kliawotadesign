@@ -1,0 +1,206 @@
+{
+  "schema": 1,
+  "title": "Market forecourt waiting, families and attendants",
+  "source": "Original fictional figures, informed by visible activities in April 2023 Street View and the owner’s November 2026 photograph. No actual person is identified.",
+  "sheets": [
+    {
+      "file": "port-vila-forecourt-people-v1.png",
+      "cols": 4,
+      "rows": 3,
+      "cells": [
+        {
+          "id": "market-forecourt-attendant",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "front",
+          "heightM": 1.74,
+          "marketRole": "forecourt",
+          "column": 0,
+          "row": 0,
+          "crop": [
+            70,
+            72,
+            176,
+            422
+          ]
+        },
+        {
+          "id": "market-forecourt-store-worker",
+          "lifeStage": "adult",
+          "pose": "standing",
+          "facing": "right",
+          "heightM": 1.65,
+          "marketRole": "forecourt",
+          "column": 1,
+          "row": 0,
+          "crop": [
+            322,
+            87,
+            214,
+            405
+          ]
+        },
+        {
+          "id": "market-forecourt-parent",
+          "lifeStage": "adult",
+          "pose": "walking",
+          "facing": "right",
+          "heightM": 1.75,
+          "marketRole": "forecourt",
+          "column": 2,
+          "row": 0,
+          "crop": [
+            592,
+            71,
+            187,
+            423
+          ]
+        },
+        {
+          "id": "market-forecourt-child-green",
+          "lifeStage": "child",
+          "pose": "walking",
+          "facing": "right",
+          "heightM": 1.25,
+          "marketRole": "forecourt",
+          "column": 3,
+          "row": 0,
+          "crop": [
+            876,
+            143,
+            156,
+            349
+          ]
+        },
+        {
+          "id": "market-forecourt-child-pink",
+          "lifeStage": "child",
+          "pose": "walking",
+          "facing": "right",
+          "heightM": 1.18,
+          "marketRole": "forecourt",
+          "column": 0,
+          "row": 1,
+          "crop": [
+            70,
+            590,
+            158,
+            345
+          ]
+        },
+        {
+          "id": "market-forecourt-teen-backpack",
+          "lifeStage": "teen",
+          "pose": "walking",
+          "facing": "right",
+          "heightM": 1.64,
+          "marketRole": "forecourt",
+          "column": 1,
+          "row": 1,
+          "crop": [
+            326,
+            537,
+            160,
+            399
+          ]
+        },
+        {
+          "id": "market-forecourt-seated-blue",
+          "lifeStage": "adult",
+          "pose": "seated",
+          "facing": "right",
+          "heightM": 1.23,
+          "marketRole": "forecourt",
+          "column": 2,
+          "row": 1,
+          "crop": [
+            576,
+            591,
+            204,
+            349
+          ]
+        },
+        {
+          "id": "market-forecourt-seated-polo",
+          "lifeStage": "adult",
+          "pose": "seated",
+          "facing": "right",
+          "heightM": 1.22,
+          "marketRole": "forecourt",
+          "column": 3,
+          "row": 1,
+          "crop": [
+            841,
+            603,
+            208,
+            338
+          ]
+        },
+        {
+          "id": "market-forecourt-seated-orange",
+          "lifeStage": "adult",
+          "pose": "seated",
+          "facing": "right",
+          "heightM": 1.22,
+          "marketRole": "forecourt",
+          "column": 0,
+          "row": 2,
+          "crop": [
+            55,
+            1026,
+            206,
+            324
+          ]
+        },
+        {
+          "id": "market-forecourt-elder-purple",
+          "lifeStage": "elder",
+          "pose": "seated",
+          "facing": "right",
+          "heightM": 1.21,
+          "marketRole": "forecourt",
+          "column": 1,
+          "row": 2,
+          "crop": [
+            315,
+            1016,
+            222,
+            332
+          ]
+        },
+        {
+          "id": "market-forecourt-elder-cane",
+          "lifeStage": "elder",
+          "pose": "seated",
+          "facing": "right",
+          "heightM": 1.22,
+          "marketRole": "forecourt",
+          "column": 2,
+          "row": 2,
+          "crop": [
+            587,
+            1018,
+            207,
+            330
+          ]
+        },
+        {
+          "id": "market-forecourt-elder-floral",
+          "lifeStage": "elder",
+          "pose": "seated",
+          "facing": "right",
+          "heightM": 1.2,
+          "marketRole": "forecourt",
+          "column": 3,
+          "row": 2,
+          "crop": [
+            862,
+            1022,
+            199,
+            328
+          ]
+        }
+      ]
+    }
+  ]
+}
