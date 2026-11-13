@@ -1,8 +1,8 @@
 {
-  "version": "0.1.32",
+  "version": "0.1.33",
   "project": "Port Vila CBD Redevelopment Simulator",
-  "release": "surface-notes-2026-11-13",
-  "publishedAt": "2026-11-13T00:40:37.853Z",
+  "release": "reference-tracing-2026-11-13",
+  "publishedAt": "2026-11-13T03:15:57.017Z",
   "basePath": "/urbanfutures/portvila/",
   "baseline": "cbd-demolition-2026-09-17.1",
   "features": [
@@ -30,7 +30,13 @@
     "Undo, redo, whole-stroke eraser, hide and reversible clear",
     "Browser-local markings with labelled PNG and editable JSON export/import",
     "Saved 3D viewpoint with surface markings",
-    "Compact paint palette for unobstructed navigation"
+    "Compact paint palette for unobstructed navigation",
+    "Reference-photo overlay with preserved photo aspect and camera framing",
+    "Paired photo and model landmarks fit camera position, lens and roll",
+    "Lock camera perspective while tracing onto real model surfaces",
+    "Embedded reference photo, matching points, camera and markings in editable tracing files",
+    "Reference-opacity and model-reveal comparison controls",
+    "Reference-aspect PNG export and screenshot paste support"
   ],
   "sourcePdf": "https://duap.gov.vu/images/Projects/250825_a3_Report_Port%20Vila_FINAL.pdf"
 }
