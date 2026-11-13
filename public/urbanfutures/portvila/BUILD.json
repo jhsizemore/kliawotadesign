@@ -1,8 +1,8 @@
 {
-  "version": "0.1.31",
+  "version": "0.1.32",
   "project": "Port Vila CBD Redevelopment Simulator",
-  "release": "market-kerb-study-2026-11-13",
-  "publishedAt": "2026-11-12T23:42:06.712Z",
+  "release": "surface-notes-2026-11-13",
+  "publishedAt": "2026-11-13T00:40:37.853Z",
   "basePath": "/urbanfutures/portvila/",
   "baseline": "cbd-demolition-2026-09-17.1",
   "features": [
@@ -24,7 +24,13 @@
     "Historical imagery distinguished from the later demolition baseline",
     "ABM mass and removed waterfront annex remain absent",
     "Flush ridge sheet patches",
-    "Still export"
+    "Still export",
+    "Surface paint anchored to actual model triangles",
+    "Six vivid annotation colours with editable labels and brush widths",
+    "Undo, redo, whole-stroke eraser, hide and reversible clear",
+    "Browser-local markings with labelled PNG and editable JSON export/import",
+    "Saved 3D viewpoint with surface markings",
+    "Compact paint palette for unobstructed navigation"
   ],
   "sourcePdf": "https://duap.gov.vu/images/Projects/250825_a3_Report_Port%20Vila_FINAL.pdf"
 }
