@@ -1,0 +1,61 @@
+# Trial branch only. Do not merge this configuration into main.
+media:
+  input: cms-trial/media
+  output: /cms-trial/media
+content:
+  - name: homepage
+    label: Homepage — editing trial
+    type: file
+    path: cms-trial/home.json
+    format: json
+    fields:
+      - name: business_name
+        label: "Business name"
+        type: string
+      - name: tagline
+        label: "Short tagline"
+        type: string
+      - name: location
+        label: "Header location"
+        type: string
+      - name: eyebrow
+        label: "Services above headline"
+        type: string
+      - name: headline_line_1
+        label: "Headline — first line"
+        type: string
+      - name: headline_line_2
+        label: "Headline — second line"
+        type: string
+      - name: introduction
+        label: "Introduction"
+        type: text
+      - name: contact_name
+        label: "Contact person"
+        type: string
+      - name: contact_location
+        label: "Contact location"
+        type: string
+      - name: phone
+        label: "Telephone"
+        type: string
+      - name: email
+        label: "Email address"
+        type: string
+      - name: logo
+        label: "Logo"
+        type: image
+      - name: background
+        label: "Background photograph"
+        type: image
+      - name: work_links
+        label: Work and information links
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Link text
+            type: string
+          - name: url
+            label: Link address
+            type: string

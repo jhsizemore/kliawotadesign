@@ -1,0 +1,33 @@
+{
+  "business_name": "Kliawota Disaen",
+  "tagline": "Web · Print · Events",
+  "location": "Port Vila · Vanuatu · Pacific",
+  "eyebrow": "Design · Communications · Creative Support",
+  "headline_line_1": "Kliawota",
+  "headline_line_2": "Disaen",
+  "introduction": "Practical creative capacity, when you need it. Design and communications support for businesses, government and development organisations in Vanuatu and across the Pacific.",
+  "contact_name": "J. Hunter Sizemore",
+  "contact_location": "Port Vila · Vanuatu",
+  "phone": "+678 711 3830",
+  "email": "jhsizemore@gmail.com",
+  "logo": "/assets/kliawota-logo.webp",
+  "background": "/assets/desktop-bg-teal-caustics.webp",
+  "work_links": [
+    {
+      "label": "CV",
+      "url": "https://drive.google.com/file/d/1glP0ZFY97dr01hqtmEc8eiX-1Vbm8rB5/view"
+    },
+    {
+      "label": "Selected Work",
+      "url": "https://drive.google.com/file/d/1nRGL9qMfbVQ8tG2cPng2EtOltsGE3Aio/view"
+    },
+    {
+      "label": "Services",
+      "url": "https://drive.google.com/file/d/1bP9Haw8a5G4SV09Q-TEWAEMvI0JfnLbF/view"
+    },
+    {
+      "label": "Pacific Design",
+      "url": "https://drive.google.com/file/d/1hoZ6HJNNqxd8LUw2AuSN3KUQuo4B_7P9/view"
+    }
+  ]
+}
