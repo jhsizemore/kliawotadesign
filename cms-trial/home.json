@@ -10,8 +10,8 @@
   "contact_location": "Port Vila · Vanuatu",
   "phone": "+678 711 3830",
   "email": "jhsizemore@gmail.com",
-  "logo": "/assets/kliawota-logo.webp",
-  "background": "/assets/desktop-bg-teal-caustics.webp",
+  "logo": "/cms-trial/media/kliawota-logo.webp",
+  "background": "/cms-trial/media/desktop-bg-teal-caustics.webp",
   "work_links": [
     {
       "label": "CV",
