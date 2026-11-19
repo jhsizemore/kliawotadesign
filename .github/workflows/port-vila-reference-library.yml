@@ -1,0 +1,128 @@
+name: Port Vila reference library collection
+on:
+  push:
+    branches: [port-vila-storefront-survey-2026-09-29]
+    paths: ['.github/workflows/port-vila-reference-library.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Install reference inspection dependencies
+        run: python3 -m pip install --quiet requests beautifulsoup4 Pillow
+      - name: Collect limited reference previews and provenance, never deploy images
+        shell: bash
+        run: |
+          mkdir -p reference-candidates/images reference-candidates/pages
+          cat > /tmp/collect.py <<'PY'
+          from concurrent.futures import ThreadPoolExecutor
+          from pathlib import Path
+          from urllib.parse import urljoin, urlparse, quote
+          from bs4 import BeautifulSoup
+          from PIL import Image, ImageOps, ImageDraw
+          import requests, json, re, io, hashlib
+          out=Path('reference-candidates')
+          headers={'User-Agent':'PortVilaSandboxReferenceResearch/1.0 (limited public-image reference collection)'}
+          pages={
+            'fung-home':'https://www.fungkuei.com/',
+            'fung-about':'https://www.fungkuei.com/about/',
+            'pbeg-demolition':'https://pbeg.vu/service/demolition/',
+            'pbase-fung':'https://www.pbase.com/bmcmorrow/image/146981683',
+            'matt-recovery':'https://mattdotvu.blog/2025/06/03/port-vila-is-rising-again-slowly-but-surely/',
+            'abc-cbd':'https://www.abc.net.au/news/2025-01-02/port-vila-cbd-businesses-closed-earthquake/104775128',
+            'vto-fung':'https://www.vanuatu.travel/fr/fung-kuei-duty-free',
+            'flickr-2024':'https://www.flickr.com/photos/121103603@N05/54186976136',
+            'flickr-bretagne':'https://www.flickr.com/photos/ben_caledonia/48726023497',
+            'joe-downtown':'https://3pulse.com/en/photo/sight-1779070-vanuatu-by-joe-galant-71f597'
+          }
+          def fetch(url):
+            r=requests.get(url,headers=headers,timeout=24);r.raise_for_status();return r
+          def inspect(item):
+            key,url=item
+            rec={'key':key,'page_url':url,'retrieved':'2026-09-29','images':[]}
+            try:
+              r=fetch(url);rec['http_status']=r.status_code
+              (out/'pages'/f'{key}.html').write_text(r.text)
+              soup=BeautifulSoup(r.text,'html.parser');rec['title']=soup.title.get_text(' ',strip=True) if soup.title else key
+              rec['text']=soup.get_text(' ',strip=True)[:26000]
+              rec['meta']=[m.attrs for m in soup.find_all('meta') if any(t in str(m.get('property',''))+str(m.get('name','')) for t in ['image','date','time','author'])]
+              rec['links']=[{'url':urljoin(url,a['href']),'text':a.get_text(' ',strip=True)[:160]} for a in soup.select('a[href]') if any(t in a['href'] for t in ['image/','.jpg','.png','.mp4','youtu','vimeo','/original','creativecommons'])]
+              rec['videos']=list(dict.fromkeys(re.findall(r'https?[^\s"<>]+?\.(?:mp4|webm)',r.text)))
+              candidates=[]
+              for meta in soup.select('meta[property="og:image"]'):
+                if meta.get('content'):candidates.append((meta['content'],'Page lead image'))
+              scope=soup.find('article') or soup
+              for im in scope.find_all('img'):
+                src=im.get('data-src') or im.get('src')
+                if src and not src.startswith('data:'):candidates.append((src,im.get('alt','')))
+              for u in re.findall(r'url\([\s\x27\"]*([^\)\x27\"]+)',r.text):
+                if any(x in u.lower() for x in ['.jpg','.png','.webp']):candidates.append((u,'CSS background'))
+              if key=='pbeg-demolition':
+                for u in re.findall(r'https?[^\s"<>]+?\.(?:jpg|png|webp)',r.text):candidates.append((u,'Demolition page image'))
+              seen=set()
+              for u,alt in candidates:
+                u=urljoin(url,u.replace('&amp;','&'))
+                if u in seen or any(t in u.lower() for t in ['logo','icon','avatar','gravatar','pixel','flag','badge']):continue
+                seen.add(u);rec['images'].append({'image_url':u,'alt':alt})
+                if len(rec['images'])>=16:break
+            except Exception as e:rec['error']=str(e)
+            return rec
+          with ThreadPoolExecutor(max_workers=5) as pool:records=list(pool.map(inspect,pages.items()))
+          # A geographically relevant subset of the discovered public Commons street collection.
+          category='https://commons.wikimedia.org/wiki/Category:Streets_in_Port_Vila'
+          try:
+            soup=BeautifulSoup(fetch(category).text,'html.parser')
+            titles=[]
+            for a in soup.select('.gallerytext a[href]'):
+              title=a.get('title','')
+              if title.startswith('File:') and any(t in title for t in ['Town Center','Town Centre','city centre','Downtown','De Paris','Rue de Paris','Lini Highway','LINI Highway','Kumul Highway','Quiet Shopping Street','Sidewalk at the Seaside']):
+                if title not in titles:titles.append(title)
+            titles=titles[:40]
+            if titles:
+              api='https://commons.wikimedia.org/w/api.php'
+              resp=requests.get(api,params={'action':'query','format':'json','prop':'imageinfo|coordinates','iiprop':'url|extmetadata','iiurlwidth':1000,'titles':'|'.join(titles)},headers=headers,timeout=40);resp.raise_for_status()
+              for page in resp.json()['query']['pages'].values():
+                if not page.get('imageinfo'):continue
+                ii=page['imageinfo'][0]
+                records.append({'key':'commons-'+str(page['pageid']),'title':page['title'],'page_url':ii['descriptionurl'],'retrieved':'2026-09-29','metadata':ii.get('extmetadata',{}),'coordinates':page.get('coordinates',[]),'images':[{'image_url':ii.get('thumburl',ii['url']),'original_url':ii['url'],'alt':page['title']}]})
+          except Exception as e:records.append({'key':'commons','page_url':category,'error':str(e),'images':[]})
+          jobs=[]
+          for rec in records:
+            for i,img in enumerate(rec.get('images',[])):
+              jobs.append((rec['key']+'-'+str(i).zfill(2),rec['page_url'],img))
+          def preview(job):
+            key,page,img=job;rec={'id':key,'page_url':page,**img}
+            try:
+              r=fetch(img['image_url']);data=r.content
+              if len(data)>15000000:raise ValueError('Image exceeds 15 MB research limit')
+              im=ImageOps.exif_transpose(Image.open(io.BytesIO(data))).convert('RGB')
+              rec['original_dimensions']=list(im.size)
+              if im.width<260 or im.height<140:raise ValueError('Small graphic; excluded from visual review')
+              rec['sha256_original']=hashlib.sha256(data).hexdigest()
+              small=im.resize((9,8)).convert('L');px=list(small.getdata());rec['dhash']=hex(sum((px[y*9+x]>px[y*9+x+1])<<(y*8+x) for y in range(8) for x in range(8)))
+              im.thumbnail((1000,800));path=out/'images'/f'{key}.jpg';im.save(path,quality=85)
+              rec['preview_file']=str(path.relative_to(out));rec['preview_dimensions']=list(im.size)
+            except Exception as e:rec['error']=str(e)
+            return rec
+          with ThreadPoolExecutor(max_workers=5) as pool:images=list(pool.map(preview,jobs))
+          good=[im for im in images if im.get('preview_file')]
+          for start in range(0,len(good),16):
+            sheet=Image.new('RGB',(1440,1080),'#f4f4f1');draw=ImageDraw.Draw(sheet)
+            for j,rec in enumerate(good[start:start+16]):
+              im=Image.open(out/rec['preview_file']);im.thumbnail((350,225));x=(j%4)*360;y=(j//4)*270;sheet.paste(im,(x+(350-im.width)//2,y));draw.text((x+4,y+230),rec['id'],fill='black');draw.text((x+4,y+245),rec['alt'][:44],fill='black')
+            sheet.save(out/f'contact-{start//16:02}.jpg',quality=88)
+          (out/'pages.json').write_text(json.dumps(records,indent=2,ensure_ascii=False))
+          (out/'images.json').write_text(json.dumps(images,indent=2,ensure_ascii=False))
+          (out/'README.txt').write_text('Uncurated research candidates. Publicly accessible does not mean licensed for republication. Do not publish or use as model textures without checking rights. Dates, named buildings and suitability require human/model visual review. No production files are changed.\n')
+          print(json.dumps({'sources':len(records),'downloaded_previews':len(good),'failed_or_small':len(images)-len(good)},indent=2))
+          PY
+          python3 /tmp/collect.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: port-vila-reference-candidates
+          path: reference-candidates/
+          retention-days: 7
