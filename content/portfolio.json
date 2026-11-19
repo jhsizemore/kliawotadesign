@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-13",
+  "reviewedAt": "2026-11-20",
   "timezone": "Pacific/Efate",
   "projects": [
     {
@@ -48,7 +48,7 @@
       "id": "port-vila-cbd",
       "title": "Port Vila CBD Redevelopment Simulator",
       "status": "Public-site build committed · Live unverified",
-      "description": "A 3D exploration of central Port Vila and redevelopment possibilities, with guided navigation and photographic reference work around the market. The new site route exists in code; public runtime testing remains outstanding.",
+      "description": "An interactive 3D exploration of central Port Vila and redevelopment possibilities. Version 0.1.33 added reference-photo alignment and on-model annotations; the route is committed, but live behaviour and site geometry remain independently unverified.",
       "unreleased": true
     },
     {
@@ -64,9 +64,9 @@
       "status": "Active development · Aggregate snapshot",
       "description": "A music-discovery workflow for remixes, edits and mashups. The working catalogue remains private.",
       "metric": {
-        "count": 2714,
+        "count": 2838,
         "sourceCount": 7,
-        "asOf": "2026-11-13"
+        "asOf": "2026-11-19"
       }
     },
     {
@@ -420,6 +420,26 @@
         {
           "label": "Market reference refinement",
           "href": "https://github.com/jhsizemore/kliawotadesign/commit/336dd79a2a1a39ee2505b2426f6788b408493218"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-20",
+      "from": "2026-11-14",
+      "through": "2026-11-20",
+      "publishedAt": "2026-11-20",
+      "title": "Keeping the tools useful between releases",
+      "paragraphs": [
+        "This was largely a maintenance week for audience-oriented projects, rather than a new public launch. The private Reality Fracture Draft Companion continued its regular data reviews, recalculating card guidance and rechecking the visual catalogue. All 285 cards remained represented with images in the latest available checks. These were refreshes to a private working tool, not a new interface release.",
+        "The Port Vila CBD Redevelopment Simulator's public repository now records version 0.1.33, a 13 November build that added photo-to-model landmark fitting and annotations anchored to model surfaces. That evidence clarifies the state left by the previous review; the build itself predates this week's period. No newer simulator feature commit was found for 14–20 November, and this review could not independently test the live route. A committed, shared prototype is not a verified planning model or production release.",
+        "DJ Radar's private Remix Index advanced from 2,714 to 2,838 records with both track/version and artist populated, a gain of 124. The maximum First Seen date in the current sheet is 19 November 2026. Settings still lists seven planned rotation sources; that is not evidence of seven successful scans. Only the verified aggregate and snapshot date are included in the public portfolio.",
+        "A weekly log is also useful when there is no unveiling. Keeping the maintenance record and release labels accurate makes progress visible without treating private work, proposals or source updates as completed public products."
+      ],
+      "status": "No new public project launch was independently verified this week. The Reality Fracture companion stays private, the Port Vila CBD simulator remains a committed but live-unverified build, and The Odyssey fan set is still unreleased.",
+      "sources": [
+        {
+          "label": "CBD simulator reference-tracing build (13 Nov)",
+          "href": "https://github.com/jhsizemore/kliawotadesign/commit/0c697f799daeee4a0c1d7e455370a80a29f531cd"
         }
       ]
     }
