@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-11-20",
+  "reviewedAt": "2026-11-27",
   "timezone": "Pacific/Efate",
   "projects": [
     {
@@ -64,9 +64,9 @@
       "status": "Active development · Aggregate snapshot",
       "description": "A music-discovery workflow for remixes, edits and mashups. The working catalogue remains private.",
       "metric": {
-        "count": 2838,
+        "count": 3056,
         "sourceCount": 7,
-        "asOf": "2026-11-19"
+        "asOf": "2026-11-27"
       }
     },
     {
@@ -442,6 +442,19 @@
           "href": "https://github.com/jhsizemore/kliawotadesign/commit/0c697f799daeee4a0c1d7e455370a80a29f531cd"
         }
       ]
+    },
+    {
+      "id": "2026-11-27",
+      "from": "2026-11-21",
+      "through": "2026-11-27",
+      "publishedAt": "2026-11-27",
+      "title": "Making context part of the experience",
+      "paragraphs": [
+        "A listening-atlas experiment returned to the workshop this week: the Afterword concept explores how a map, a read-along view and contextual information might accompany an audiobook without interrupting the listening experience. The existing prototype had been described as combining place references, narration-following playback and supporting material. Recovering its implementation and establishing a dependable way to keep those elements in sync remain open questions. This is a development concept, not a new public release.",
+        "DJ Radar's private index passed the three-thousand-record mark. The review counted 3,056 records with both track/version and artist populated, 218 more than the previous snapshot. The latest First Seen date was 27 November 2026; Settings continues to specify seven planned rotation sources, not a tally of successful scans.",
+        "The available records did not establish a new public project launch during this period. The emphasis is on making existing tools dependable and finding ways for supporting information to enrich an experience rather than compete with it."
+      ],
+      "status": "The listening atlas remains an unreleased experiment; its source and runtime were not independently recovered or verified this week. Existing portfolio release labels remain unchanged, including the unreleased Odyssey fan set."
     }
   ]
 }
